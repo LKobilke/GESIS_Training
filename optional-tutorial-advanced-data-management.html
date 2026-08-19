@@ -1,0 +1,1356 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title> 6 Optional tutorial: Advanced data management | Introduction to R</title>
+  <meta name="description" content=" 6 Optional tutorial: Advanced data management | Introduction to R - GESIS Training Course, 24-27 August 2026" />
+  <meta name="generator" content="bookdown 0.47 and GitBook 2.6.7" />
+
+  <meta property="og:title" content=" 6 Optional tutorial: Advanced data management | Introduction to R" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content=" 6 Optional tutorial: Advanced data management | Introduction to R - GESIS Training Course, 24-27 August 2026" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content=" 6 Optional tutorial: Advanced data management | Introduction to R" />
+  
+  <meta name="twitter:description" content=" 6 Optional tutorial: Advanced data management | Introduction to R - GESIS Training Course, 24-27 August 2026" />
+  
+
+<meta name="author" content="Lara Kobilke, Department of Communication and Media Research, University of Zurich" />
+
+
+<meta name="date" content="2026-08-17" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="exercise-3-dplyr.html"/>
+<link rel="next" href="tutorial-data-visualization-with-ggplot.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Intro to R</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Intro to R</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#general-information-on-the-course"><i class="fa fa-check"></i><b>1.1</b> General information on the course</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#what-can-i-learn-from-this-tutorial"><i class="fa fa-check"></i><b>1.2</b> What can I learn from this tutorial?</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#how-this-tutorial-supports-the-four-day-workshop"><i class="fa fa-check"></i><b>1.3</b> How this tutorial supports the four-day workshop</a></li>
+<li class="chapter" data-level="1.4" data-path="index.html"><a href="index.html#prerequisites-and-software"><i class="fa fa-check"></i><b>1.4</b> Prerequisites and software</a>
+<ul>
+<li class="chapter" data-level="1.4.1" data-path="index.html"><a href="index.html#install-the-required-r-packages"><i class="fa fa-check"></i><b>1.4.1</b> Install the required R packages</a></li>
+<li class="chapter" data-level="1.4.2" data-path="index.html"><a href="index.html#windows-users-install-rtools"><i class="fa fa-check"></i><b>1.4.2</b> Windows users: Install Rtools</a></li>
+<li class="chapter" data-level="1.4.3" data-path="index.html"><a href="index.html#test-your-installation-before-the-course"><i class="fa fa-check"></i><b>1.4.3</b> Test your installation before the course</a></li>
+</ul></li>
+<li class="chapter" data-level="1.5" data-path="index.html"><a href="index.html#what-can-i-do-if-i-have-problems-with-my-r-code"><i class="fa fa-check"></i><b>1.5</b> What can I do if I have problems with my R code?</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="tutorial-installing-understanding-rr-studio.html"><a href="tutorial-installing-understanding-rr-studio.html"><i class="fa fa-check"></i><b>2</b> Tutorial: Installing &amp; Understanding R/R Studio</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="tutorial-installing-understanding-rr-studio.html"><a href="tutorial-installing-understanding-rr-studio.html#what-is-r"><i class="fa fa-check"></i><b>2.1</b> What is R?</a></li>
+<li class="chapter" data-level="2.2" data-path="tutorial-installing-understanding-rr-studio.html"><a href="tutorial-installing-understanding-rr-studio.html#installing-r"><i class="fa fa-check"></i><b>2.2</b> Installing R</a></li>
+<li class="chapter" data-level="2.3" data-path="tutorial-installing-understanding-rr-studio.html"><a href="tutorial-installing-understanding-rr-studio.html#installing-rstudio"><i class="fa fa-check"></i><b>2.3</b> Installing RStudio</a></li>
+<li class="chapter" data-level="2.4" data-path="tutorial-installing-understanding-rr-studio.html"><a href="tutorial-installing-understanding-rr-studio.html#updating-r-and-rstudio"><i class="fa fa-check"></i><b>2.4</b> Updating R and RStudio</a></li>
+<li class="chapter" data-level="2.5" data-path="tutorial-installing-understanding-rr-studio.html"><a href="tutorial-installing-understanding-rr-studio.html#how-does-r-work"><i class="fa fa-check"></i><b>2.5</b> How does R work?</a></li>
+<li class="chapter" data-level="2.6" data-path="tutorial-installing-understanding-rr-studio.html"><a href="tutorial-installing-understanding-rr-studio.html#why-should-i-use-r"><i class="fa fa-check"></i><b>2.6</b> Why should I use R?</a></li>
+<li class="chapter" data-level="2.7" data-path="tutorial-installing-understanding-rr-studio.html"><a href="tutorial-installing-understanding-rr-studio.html#how-does-r-studio-work"><i class="fa fa-check"></i><b>2.7</b> How does R Studio work?</a>
+<ul>
+<li class="chapter" data-level="2.7.1" data-path="tutorial-installing-understanding-rr-studio.html"><a href="tutorial-installing-understanding-rr-studio.html#source-writing-your-own-code"><i class="fa fa-check"></i><b>2.7.1</b> Source: Writing your own code</a></li>
+<li class="chapter" data-level="2.7.2" data-path="tutorial-installing-understanding-rr-studio.html"><a href="tutorial-installing-understanding-rr-studio.html#console-printing-results"><i class="fa fa-check"></i><b>2.7.2</b> Console: Printing results</a></li>
+<li class="chapter" data-level="2.7.3" data-path="tutorial-installing-understanding-rr-studio.html"><a href="tutorial-installing-understanding-rr-studio.html#environment-overview-of-objects"><i class="fa fa-check"></i><b>2.7.3</b> Environment: Overview of objects</a></li>
+<li class="chapter" data-level="2.7.4" data-path="tutorial-installing-understanding-rr-studio.html"><a href="tutorial-installing-understanding-rr-studio.html#plotshelppackages-do-everything-else"><i class="fa fa-check"></i><b>2.7.4</b> Plots/Help/Packages: Do everything else</a></li>
+</ul></li>
+<li class="chapter" data-level="2.8" data-path="tutorial-installing-understanding-rr-studio.html"><a href="tutorial-installing-understanding-rr-studio.html#why-arent-we-using-a-gui-for-point-and-click-analyses"><i class="fa fa-check"></i><b>2.8</b> Why aren’t we using a GUI for point-and-click analyses?</a></li>
+<li class="chapter" data-level="2.9" data-path="tutorial-installing-understanding-rr-studio.html"><a href="tutorial-installing-understanding-rr-studio.html#packages"><i class="fa fa-check"></i><b>2.9</b> Packages</a>
+<ul>
+<li class="chapter" data-level="2.9.1" data-path="tutorial-installing-understanding-rr-studio.html"><a href="tutorial-installing-understanding-rr-studio.html#installing-packages"><i class="fa fa-check"></i><b>2.9.1</b> Installing packages</a></li>
+<li class="chapter" data-level="2.9.2" data-path="tutorial-installing-understanding-rr-studio.html"><a href="tutorial-installing-understanding-rr-studio.html#activating-packages"><i class="fa fa-check"></i><b>2.9.2</b> Activating packages</a></li>
+<li class="chapter" data-level="2.9.3" data-path="tutorial-installing-understanding-rr-studio.html"><a href="tutorial-installing-understanding-rr-studio.html#getting-information-about-packages"><i class="fa fa-check"></i><b>2.9.3</b> Getting information about packages</a></li>
+</ul></li>
+<li class="chapter" data-level="2.10" data-path="tutorial-installing-understanding-rr-studio.html"><a href="tutorial-installing-understanding-rr-studio.html#optional-setting-global-options-in-r-for-a-customized-workflow"><i class="fa fa-check"></i><b>2.10</b> Optional: Setting global options in R for a customized workflow</a>
+<ul>
+<li class="chapter" data-level="2.10.1" data-path="tutorial-installing-understanding-rr-studio.html"><a href="tutorial-installing-understanding-rr-studio.html#understanding-options"><i class="fa fa-check"></i><b>2.10.1</b> Understanding <code>options()</code></a></li>
+<li class="chapter" data-level="2.10.2" data-path="tutorial-installing-understanding-rr-studio.html"><a href="tutorial-installing-understanding-rr-studio.html#turn-off-scientific-notation"><i class="fa fa-check"></i><b>2.10.2</b> Turn off scientific notation</a></li>
+<li class="chapter" data-level="2.10.3" data-path="tutorial-installing-understanding-rr-studio.html"><a href="tutorial-installing-understanding-rr-studio.html#customizing-tibble-display"><i class="fa fa-check"></i><b>2.10.3</b> Customizing tibble display</a></li>
+<li class="chapter" data-level="2.10.4" data-path="tutorial-installing-understanding-rr-studio.html"><a href="tutorial-installing-understanding-rr-studio.html#resetting-to-default"><i class="fa fa-check"></i><b>2.10.4</b> Resetting to default</a></li>
+</ul></li>
+<li class="chapter" data-level="2.11" data-path="tutorial-installing-understanding-rr-studio.html"><a href="tutorial-installing-understanding-rr-studio.html#take-aways"><i class="fa fa-check"></i><b>2.11</b> Take-Aways</a></li>
+<li class="chapter" data-level="2.12" data-path="tutorial-installing-understanding-rr-studio.html"><a href="tutorial-installing-understanding-rr-studio.html#additional-tutorials"><i class="fa fa-check"></i><b>2.12</b> Additional tutorials</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="tutorial-using-r-as-a-calculator.html"><a href="tutorial-using-r-as-a-calculator.html"><i class="fa fa-check"></i><b>3</b> Tutorial: Using R as a calculator</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="tutorial-using-r-as-a-calculator.html"><a href="tutorial-using-r-as-a-calculator.html#using-variables-for-calculation"><i class="fa fa-check"></i><b>3.1</b> Using variables for calculation</a></li>
+<li class="chapter" data-level="3.2" data-path="tutorial-using-r-as-a-calculator.html"><a href="tutorial-using-r-as-a-calculator.html#using-vectors-for-calculation"><i class="fa fa-check"></i><b>3.2</b> Using vectors for calculation</a></li>
+<li class="chapter" data-level="3.3" data-path="tutorial-using-r-as-a-calculator.html"><a href="tutorial-using-r-as-a-calculator.html#selecting-values-from-a-vector"><i class="fa fa-check"></i><b>3.3</b> Selecting values from a vector</a></li>
+<li class="chapter" data-level="3.4" data-path="tutorial-using-r-as-a-calculator.html"><a href="tutorial-using-r-as-a-calculator.html#take-aways-1"><i class="fa fa-check"></i><b>3.4</b> Take-Aways</a></li>
+<li class="chapter" data-level="3.5" data-path="tutorial-using-r-as-a-calculator.html"><a href="tutorial-using-r-as-a-calculator.html#additional-tutorials-1"><i class="fa fa-check"></i><b>3.5</b> Additional tutorials</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="exercise-1-base-r.html"><a href="exercise-1-base-r.html"><i class="fa fa-check"></i>Exercise 1: Base R</a>
+<ul>
+<li class="chapter" data-level="" data-path="exercise-1-base-r.html"><a href="exercise-1-base-r.html#task-1"><i class="fa fa-check"></i>Task 1</a></li>
+<li class="chapter" data-level="" data-path="exercise-1-base-r.html"><a href="exercise-1-base-r.html#task-2"><i class="fa fa-check"></i>Task 2</a></li>
+<li class="chapter" data-level="" data-path="exercise-1-base-r.html"><a href="exercise-1-base-r.html#task-3"><i class="fa fa-check"></i>Task 3</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="tutorial-working-with-data-files.html"><a href="tutorial-working-with-data-files.html"><i class="fa fa-check"></i><b>4</b> Tutorial: Working with data (files)</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="tutorial-working-with-data-files.html"><a href="tutorial-working-with-data-files.html#defining-your-working-directory"><i class="fa fa-check"></i><b>4.1</b> Defining your working directory</a></li>
+<li class="chapter" data-level="4.2" data-path="tutorial-working-with-data-files.html"><a href="tutorial-working-with-data-files.html#import-data-from-your-working-directory"><i class="fa fa-check"></i><b>4.2</b> Import data from your working directory</a></li>
+<li class="chapter" data-level="4.3" data-path="tutorial-working-with-data-files.html"><a href="tutorial-working-with-data-files.html#subsetting-variables-columns-in-data-frames"><i class="fa fa-check"></i><b>4.3</b> Subsetting variables / columns in data frames</a></li>
+<li class="chapter" data-level="4.4" data-path="tutorial-working-with-data-files.html"><a href="tutorial-working-with-data-files.html#subsetting-observations-rows-in-data-frames"><i class="fa fa-check"></i><b>4.4</b> Subsetting observations / rows in data frames</a></li>
+<li class="chapter" data-level="4.5" data-path="tutorial-working-with-data-files.html"><a href="tutorial-working-with-data-files.html#subsetting-values-cells-in-data-frames"><i class="fa fa-check"></i><b>4.5</b> Subsetting values / cells in data frames</a></li>
+<li class="chapter" data-level="4.6" data-path="tutorial-working-with-data-files.html"><a href="tutorial-working-with-data-files.html#subsetting-data-with-conditions"><i class="fa fa-check"></i><b>4.6</b> Subsetting data with conditions</a></li>
+<li class="chapter" data-level="4.7" data-path="tutorial-working-with-data-files.html"><a href="tutorial-working-with-data-files.html#eliminate-the-need-to-manually-set-working-directories-by-using-r-projects"><i class="fa fa-check"></i><b>4.7</b> Eliminate the need to manually set working directories by using R Projects</a>
+<ul>
+<li class="chapter" data-level="4.7.1" data-path="tutorial-working-with-data-files.html"><a href="tutorial-working-with-data-files.html#creating-a-new-r-project"><i class="fa fa-check"></i><b>4.7.1</b> Creating a new R Project</a></li>
+<li class="chapter" data-level="4.7.2" data-path="tutorial-working-with-data-files.html"><a href="tutorial-working-with-data-files.html#checking-your-working-directory"><i class="fa fa-check"></i><b>4.7.2</b> Checking your working directory</a></li>
+<li class="chapter" data-level="4.7.3" data-path="tutorial-working-with-data-files.html"><a href="tutorial-working-with-data-files.html#a-recommendation-for-designing-a-good-r-project-structure"><i class="fa fa-check"></i><b>4.7.3</b> A recommendation for designing a good R Project structure</a></li>
+<li class="chapter" data-level="4.7.4" data-path="tutorial-working-with-data-files.html"><a href="tutorial-working-with-data-files.html#navigating-your-working-directory-like-a-pro-the-concept-of-relative-paths"><i class="fa fa-check"></i><b>4.7.4</b> Navigating your working directory like a pro: The concept of relative paths</a></li>
+</ul></li>
+<li class="chapter" data-level="4.8" data-path="tutorial-working-with-data-files.html"><a href="tutorial-working-with-data-files.html#optional-import-data-from-various-file-formats"><i class="fa fa-check"></i><b>4.8</b> Optional: Import data from various file formats</a>
+<ul>
+<li class="chapter" data-level="4.8.1" data-path="tutorial-working-with-data-files.html"><a href="tutorial-working-with-data-files.html#importing-data-from-excel"><i class="fa fa-check"></i><b>4.8.1</b> Importing data from Excel</a></li>
+<li class="chapter" data-level="4.8.2" data-path="tutorial-working-with-data-files.html"><a href="tutorial-working-with-data-files.html#importing-data-from-json"><i class="fa fa-check"></i><b>4.8.2</b> Importing data from JSON</a></li>
+<li class="chapter" data-level="4.8.3" data-path="tutorial-working-with-data-files.html"><a href="tutorial-working-with-data-files.html#importing-data-from-spss"><i class="fa fa-check"></i><b>4.8.3</b> Importing data from SPSS</a></li>
+</ul></li>
+<li class="chapter" data-level="4.9" data-path="tutorial-working-with-data-files.html"><a href="tutorial-working-with-data-files.html#take-aways-2"><i class="fa fa-check"></i><b>4.9</b> Take-Aways</a></li>
+<li class="chapter" data-level="4.10" data-path="tutorial-working-with-data-files.html"><a href="tutorial-working-with-data-files.html#additional-tutorials-2"><i class="fa fa-check"></i><b>4.10</b> Additional tutorials</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="exercise-2-base-r.html"><a href="exercise-2-base-r.html"><i class="fa fa-check"></i>Exercise 2: Base R</a>
+<ul>
+<li class="chapter" data-level="" data-path="exercise-2-base-r.html"><a href="exercise-2-base-r.html#task-1-1"><i class="fa fa-check"></i>Task 1</a></li>
+<li class="chapter" data-level="" data-path="exercise-2-base-r.html"><a href="exercise-2-base-r.html#task-2-1"><i class="fa fa-check"></i>Task 2</a></li>
+<li class="chapter" data-level="" data-path="exercise-2-base-r.html"><a href="exercise-2-base-r.html#task-3-1"><i class="fa fa-check"></i>Task 3</a></li>
+<li class="chapter" data-level="" data-path="exercise-2-base-r.html"><a href="exercise-2-base-r.html#task-4"><i class="fa fa-check"></i>Task 4</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="tutorial-data-management-with-dplyr.html"><a href="tutorial-data-management-with-dplyr.html"><i class="fa fa-check"></i><b>5</b> Tutorial: Data management with dplyr</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="tutorial-data-management-with-dplyr.html"><a href="tutorial-data-management-with-dplyr.html#why-not-stick-with-base-r"><i class="fa fa-check"></i><b>5.1</b> Why not stick with Base R?</a></li>
+<li class="chapter" data-level="5.2" data-path="tutorial-data-management-with-dplyr.html"><a href="tutorial-data-management-with-dplyr.html#tidyverse-packages"><i class="fa fa-check"></i><b>5.2</b> Tidyverse packages</a></li>
+<li class="chapter" data-level="5.3" data-path="tutorial-data-management-with-dplyr.html"><a href="tutorial-data-management-with-dplyr.html#tidy-data"><i class="fa fa-check"></i><b>5.3</b> Tidy data</a></li>
+<li class="chapter" data-level="5.4" data-path="tutorial-data-management-with-dplyr.html"><a href="tutorial-data-management-with-dplyr.html#the-pipe-operator"><i class="fa fa-check"></i><b>5.4</b> The pipe operator</a></li>
+<li class="chapter" data-level="5.5" data-path="tutorial-data-management-with-dplyr.html"><a href="tutorial-data-management-with-dplyr.html#helpful-shortcuts-in-r"><i class="fa fa-check"></i><b>5.5</b> Helpful shortcuts in R</a></li>
+<li class="chapter" data-level="5.6" data-path="tutorial-data-management-with-dplyr.html"><a href="tutorial-data-management-with-dplyr.html#data-transformation-with-dplyr"><i class="fa fa-check"></i><b>5.6</b> Data transformation with dplyr</a>
+<ul>
+<li class="chapter" data-level="5.6.1" data-path="tutorial-data-management-with-dplyr.html"><a href="tutorial-data-management-with-dplyr.html#select"><i class="fa fa-check"></i><b>5.6.1</b> select()</a></li>
+<li class="chapter" data-level="5.6.2" data-path="tutorial-data-management-with-dplyr.html"><a href="tutorial-data-management-with-dplyr.html#filter"><i class="fa fa-check"></i><b>5.6.2</b> filter()</a></li>
+<li class="chapter" data-level="5.6.3" data-path="tutorial-data-management-with-dplyr.html"><a href="tutorial-data-management-with-dplyr.html#arrange"><i class="fa fa-check"></i><b>5.6.3</b> arrange()</a></li>
+<li class="chapter" data-level="5.6.4" data-path="tutorial-data-management-with-dplyr.html"><a href="tutorial-data-management-with-dplyr.html#mutate"><i class="fa fa-check"></i><b>5.6.4</b> mutate()</a></li>
+<li class="chapter" data-level="5.6.5" data-path="tutorial-data-management-with-dplyr.html"><a href="tutorial-data-management-with-dplyr.html#summarize-group_by"><i class="fa fa-check"></i><b>5.6.5</b> summarize() [+ group_by()]</a></li>
+<li class="chapter" data-level="5.6.6" data-path="tutorial-data-management-with-dplyr.html"><a href="tutorial-data-management-with-dplyr.html#chaining-functions-in-a-pipe"><i class="fa fa-check"></i><b>5.6.6</b> Chaining functions in a pipe</a></li>
+</ul></li>
+<li class="chapter" data-level="5.7" data-path="tutorial-data-management-with-dplyr.html"><a href="tutorial-data-management-with-dplyr.html#printing-more-rows-in-the-console-using-dplyr"><i class="fa fa-check"></i><b>5.7</b> Printing more rows in the console using <code>dplyr</code></a></li>
+<li class="chapter" data-level="5.8" data-path="tutorial-data-management-with-dplyr.html"><a href="tutorial-data-management-with-dplyr.html#take-aways-3"><i class="fa fa-check"></i><b>5.8</b> Take-Aways</a></li>
+<li class="chapter" data-level="5.9" data-path="tutorial-data-management-with-dplyr.html"><a href="tutorial-data-management-with-dplyr.html#additional-tutorials-3"><i class="fa fa-check"></i><b>5.9</b> Additional tutorials</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="exercise-3-dplyr.html"><a href="exercise-3-dplyr.html"><i class="fa fa-check"></i>Exercise 3: dplyr</a>
+<ul>
+<li class="chapter" data-level="" data-path="exercise-3-dplyr.html"><a href="exercise-3-dplyr.html#task-1-2"><i class="fa fa-check"></i>Task 1</a></li>
+<li class="chapter" data-level="" data-path="exercise-3-dplyr.html"><a href="exercise-3-dplyr.html#task-2-2"><i class="fa fa-check"></i>Task 2</a></li>
+<li class="chapter" data-level="" data-path="exercise-3-dplyr.html"><a href="exercise-3-dplyr.html#task-3-2"><i class="fa fa-check"></i>Task 3</a></li>
+<li class="chapter" data-level="" data-path="exercise-3-dplyr.html"><a href="exercise-3-dplyr.html#task-4-1"><i class="fa fa-check"></i>Task 4</a></li>
+<li class="chapter" data-level="" data-path="exercise-3-dplyr.html"><a href="exercise-3-dplyr.html#task-5"><i class="fa fa-check"></i>Task 5</a></li>
+<li class="chapter" data-level="" data-path="exercise-3-dplyr.html"><a href="exercise-3-dplyr.html#task-6"><i class="fa fa-check"></i>Task 6</a></li>
+<li class="chapter" data-level="" data-path="exercise-3-dplyr.html"><a href="exercise-3-dplyr.html#task-7"><i class="fa fa-check"></i>Task 7</a></li>
+<li class="chapter" data-level="" data-path="exercise-3-dplyr.html"><a href="exercise-3-dplyr.html#task-8"><i class="fa fa-check"></i>Task 8</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="optional-tutorial-advanced-data-management.html"><a href="optional-tutorial-advanced-data-management.html"><i class="fa fa-check"></i><b>6</b> Optional tutorial: Advanced data management</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="optional-tutorial-advanced-data-management.html"><a href="optional-tutorial-advanced-data-management.html#reading-multiple-files-into-r"><i class="fa fa-check"></i><b>6.1</b> Reading multiple files into R</a>
+<ul>
+<li class="chapter" data-level="6.1.1" data-path="optional-tutorial-advanced-data-management.html"><a href="optional-tutorial-advanced-data-management.html#reading-multiple-files-into-r-with-different-column-names"><i class="fa fa-check"></i><b>6.1.1</b> Reading multiple files into R with different column names</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="optional-tutorial-advanced-data-management.html"><a href="optional-tutorial-advanced-data-management.html#joining-two-datasets"><i class="fa fa-check"></i><b>6.2</b> Joining two datasets</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="optional-tutorial-advanced-data-management.html"><a href="optional-tutorial-advanced-data-management.html#inner_join"><i class="fa fa-check"></i><b>6.2.1</b> inner_join</a></li>
+<li class="chapter" data-level="6.2.2" data-path="optional-tutorial-advanced-data-management.html"><a href="optional-tutorial-advanced-data-management.html#left_join"><i class="fa fa-check"></i><b>6.2.2</b> left_join</a></li>
+<li class="chapter" data-level="6.2.3" data-path="optional-tutorial-advanced-data-management.html"><a href="optional-tutorial-advanced-data-management.html#right_join"><i class="fa fa-check"></i><b>6.2.3</b> right_join</a></li>
+<li class="chapter" data-level="6.2.4" data-path="optional-tutorial-advanced-data-management.html"><a href="optional-tutorial-advanced-data-management.html#full_join"><i class="fa fa-check"></i><b>6.2.4</b> full_join</a></li>
+<li class="chapter" data-level="6.2.5" data-path="optional-tutorial-advanced-data-management.html"><a href="optional-tutorial-advanced-data-management.html#join-without-.x-and-.y-suffixes"><i class="fa fa-check"></i><b>6.2.5</b> Join without .x and .y suffixes</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="optional-tutorial-advanced-data-management.html"><a href="optional-tutorial-advanced-data-management.html#reformatting-datasets"><i class="fa fa-check"></i><b>6.3</b> Reformatting datasets</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="optional-tutorial-advanced-data-management.html"><a href="optional-tutorial-advanced-data-management.html#pivot_longer"><i class="fa fa-check"></i><b>6.3.1</b> pivot_longer()</a></li>
+<li class="chapter" data-level="6.3.2" data-path="optional-tutorial-advanced-data-management.html"><a href="optional-tutorial-advanced-data-management.html#pivot_wider"><i class="fa fa-check"></i><b>6.3.2</b> pivot_wider()</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="optional-tutorial-advanced-data-management.html"><a href="optional-tutorial-advanced-data-management.html#advanced-column-selectors"><i class="fa fa-check"></i><b>6.4</b> Advanced column selectors</a>
+<ul>
+<li class="chapter" data-level="6.4.1" data-path="optional-tutorial-advanced-data-management.html"><a href="optional-tutorial-advanced-data-management.html#selecting-the-last-column"><i class="fa fa-check"></i><b>6.4.1</b> Selecting the last column</a></li>
+<li class="chapter" data-level="6.4.2" data-path="optional-tutorial-advanced-data-management.html"><a href="optional-tutorial-advanced-data-management.html#selecting-columns-that-start-with-end-with-or-contain-a-specific-string"><i class="fa fa-check"></i><b>6.4.2</b> Selecting columns that start with, end with or contain a specific string</a></li>
+<li class="chapter" data-level="6.4.3" data-path="optional-tutorial-advanced-data-management.html"><a href="optional-tutorial-advanced-data-management.html#selecting-columns-based-on-a-numeric-range"><i class="fa fa-check"></i><b>6.4.3</b> Selecting columns based on a numeric range</a></li>
+<li class="chapter" data-level="6.4.4" data-path="optional-tutorial-advanced-data-management.html"><a href="optional-tutorial-advanced-data-management.html#selecting-columns-based-on-their-type"><i class="fa fa-check"></i><b>6.4.4</b> Selecting columns based on their type</a></li>
+<li class="chapter" data-level="6.4.5" data-path="optional-tutorial-advanced-data-management.html"><a href="optional-tutorial-advanced-data-management.html#combine-selectors"><i class="fa fa-check"></i><b>6.4.5</b> Combine selectors</a></li>
+<li class="chapter" data-level="6.4.6" data-path="optional-tutorial-advanced-data-management.html"><a href="optional-tutorial-advanced-data-management.html#reorder-your-columns-with-everything"><i class="fa fa-check"></i><b>6.4.6</b> Reorder your columns with everything()</a></li>
+</ul></li>
+<li class="chapter" data-level="6.5" data-path="optional-tutorial-advanced-data-management.html"><a href="optional-tutorial-advanced-data-management.html#advanced-selection-of-rows"><i class="fa fa-check"></i><b>6.5</b> Advanced selection of rows</a></li>
+<li class="chapter" data-level="6.6" data-path="optional-tutorial-advanced-data-management.html"><a href="optional-tutorial-advanced-data-management.html#take-aways-4"><i class="fa fa-check"></i><b>6.6</b> Take-Aways</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="tutorial-data-visualization-with-ggplot.html"><a href="tutorial-data-visualization-with-ggplot.html"><i class="fa fa-check"></i><b>7</b> Tutorial: Data visualization with ggplot</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="tutorial-data-visualization-with-ggplot.html"><a href="tutorial-data-visualization-with-ggplot.html#why-not-stick-with-base-r-1"><i class="fa fa-check"></i><b>7.1</b> Why not stick with Base R?</a></li>
+<li class="chapter" data-level="7.2" data-path="tutorial-data-visualization-with-ggplot.html"><a href="tutorial-data-visualization-with-ggplot.html#components-of-a-ggplot-graph"><i class="fa fa-check"></i><b>7.2</b> Components of a ggplot graph</a></li>
+<li class="chapter" data-level="7.3" data-path="tutorial-data-visualization-with-ggplot.html"><a href="tutorial-data-visualization-with-ggplot.html#installing-activating-ggplot"><i class="fa fa-check"></i><b>7.3</b> Installing &amp; activating ggplot</a></li>
+<li class="chapter" data-level="7.4" data-path="tutorial-data-visualization-with-ggplot.html"><a href="tutorial-data-visualization-with-ggplot.html#building-your-first-plot"><i class="fa fa-check"></i><b>7.4</b> Building your first plot</a>
+<ul>
+<li class="chapter" data-level="7.4.1" data-path="tutorial-data-visualization-with-ggplot.html"><a href="tutorial-data-visualization-with-ggplot.html#data"><i class="fa fa-check"></i><b>7.4.1</b> Data</a></li>
+<li class="chapter" data-level="7.4.2" data-path="tutorial-data-visualization-with-ggplot.html"><a href="tutorial-data-visualization-with-ggplot.html#aesthetics"><i class="fa fa-check"></i><b>7.4.2</b> Aesthetics</a></li>
+<li class="chapter" data-level="7.4.3" data-path="tutorial-data-visualization-with-ggplot.html"><a href="tutorial-data-visualization-with-ggplot.html#geometrics"><i class="fa fa-check"></i><b>7.4.3</b> Geometrics</a></li>
+<li class="chapter" data-level="7.4.4" data-path="tutorial-data-visualization-with-ggplot.html"><a href="tutorial-data-visualization-with-ggplot.html#scales"><i class="fa fa-check"></i><b>7.4.4</b> Scales</a></li>
+<li class="chapter" data-level="7.4.5" data-path="tutorial-data-visualization-with-ggplot.html"><a href="tutorial-data-visualization-with-ggplot.html#themes"><i class="fa fa-check"></i><b>7.4.5</b> Themes</a></li>
+<li class="chapter" data-level="7.4.6" data-path="tutorial-data-visualization-with-ggplot.html"><a href="tutorial-data-visualization-with-ggplot.html#labs"><i class="fa fa-check"></i><b>7.4.6</b> Labs</a></li>
+<li class="chapter" data-level="7.4.7" data-path="tutorial-data-visualization-with-ggplot.html"><a href="tutorial-data-visualization-with-ggplot.html#facets"><i class="fa fa-check"></i><b>7.4.7</b> Facets</a></li>
+<li class="chapter" data-level="7.4.8" data-path="tutorial-data-visualization-with-ggplot.html"><a href="tutorial-data-visualization-with-ggplot.html#saving-graphs"><i class="fa fa-check"></i><b>7.4.8</b> Saving graphs</a></li>
+</ul></li>
+<li class="chapter" data-level="7.5" data-path="tutorial-data-visualization-with-ggplot.html"><a href="tutorial-data-visualization-with-ggplot.html#other-common-plot-types"><i class="fa fa-check"></i><b>7.5</b> Other common plot types</a>
+<ul>
+<li class="chapter" data-level="7.5.1" data-path="tutorial-data-visualization-with-ggplot.html"><a href="tutorial-data-visualization-with-ggplot.html#bar-plots"><i class="fa fa-check"></i><b>7.5.1</b> bar plots</a></li>
+<li class="chapter" data-level="7.5.2" data-path="tutorial-data-visualization-with-ggplot.html"><a href="tutorial-data-visualization-with-ggplot.html#box-plots"><i class="fa fa-check"></i><b>7.5.2</b> box plots</a></li>
+</ul></li>
+<li class="chapter" data-level="7.6" data-path="tutorial-data-visualization-with-ggplot.html"><a href="tutorial-data-visualization-with-ggplot.html#take-aways-5"><i class="fa fa-check"></i><b>7.6</b> Take Aways</a></li>
+<li class="chapter" data-level="7.7" data-path="tutorial-data-visualization-with-ggplot.html"><a href="tutorial-data-visualization-with-ggplot.html#additional-tutorials-4"><i class="fa fa-check"></i><b>7.7</b> Additional tutorials</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="exercise-4-ggplot.html"><a href="exercise-4-ggplot.html"><i class="fa fa-check"></i>Exercise 4: ggplot</a>
+<ul>
+<li class="chapter" data-level="" data-path="exercise-4-ggplot.html"><a href="exercise-4-ggplot.html#task-1-3"><i class="fa fa-check"></i>Task 1</a></li>
+<li class="chapter" data-level="" data-path="exercise-4-ggplot.html"><a href="exercise-4-ggplot.html#task-2-3"><i class="fa fa-check"></i>Task 2</a></li>
+<li class="chapter" data-level="" data-path="exercise-4-ggplot.html"><a href="exercise-4-ggplot.html#task-3-3"><i class="fa fa-check"></i>Task 3</a></li>
+<li class="chapter" data-level="" data-path="exercise-4-ggplot.html"><a href="exercise-4-ggplot.html#task-4-2"><i class="fa fa-check"></i>Task 4</a></li>
+<li class="chapter" data-level="" data-path="exercise-4-ggplot.html"><a href="exercise-4-ggplot.html#task-5-1"><i class="fa fa-check"></i>Task 5</a></li>
+<li class="chapter" data-level="" data-path="exercise-4-ggplot.html"><a href="exercise-4-ggplot.html#task-6-1"><i class="fa fa-check"></i>Task 6</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="exercise-5-ggplot.html"><a href="exercise-5-ggplot.html"><i class="fa fa-check"></i>Exercise 5: ggplot</a>
+<ul>
+<li class="chapter" data-level="" data-path="exercise-5-ggplot.html"><a href="exercise-5-ggplot.html#task-1-4"><i class="fa fa-check"></i>Task 1</a></li>
+<li class="chapter" data-level="" data-path="exercise-5-ggplot.html"><a href="exercise-5-ggplot.html#task-2-4"><i class="fa fa-check"></i>Task 2</a></li>
+<li class="chapter" data-level="" data-path="exercise-5-ggplot.html"><a href="exercise-5-ggplot.html#task-3-4"><i class="fa fa-check"></i>Task 3</a></li>
+<li class="chapter" data-level="" data-path="exercise-5-ggplot.html"><a href="exercise-5-ggplot.html#task-4-3"><i class="fa fa-check"></i>Task 4</a></li>
+<li class="chapter" data-level="" data-path="exercise-5-ggplot.html"><a href="exercise-5-ggplot.html#task-5-2"><i class="fa fa-check"></i>Task 5</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="tutorial-data-management-with-tidycomm.html"><a href="tutorial-data-management-with-tidycomm.html"><i class="fa fa-check"></i><b>8</b> Tutorial: Data management with tidycomm</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="tutorial-data-management-with-tidycomm.html"><a href="tutorial-data-management-with-tidycomm.html#index-generation"><i class="fa fa-check"></i><b>8.1</b> Index generation</a>
+<ul>
+<li class="chapter" data-level="8.1.1" data-path="tutorial-data-management-with-tidycomm.html"><a href="tutorial-data-management-with-tidycomm.html#add_index"><i class="fa fa-check"></i><b>8.1.1</b> add_index():</a></li>
+<li class="chapter" data-level="8.1.2" data-path="tutorial-data-management-with-tidycomm.html"><a href="tutorial-data-management-with-tidycomm.html#get_reliability"><i class="fa fa-check"></i><b>8.1.2</b> get_reliability()</a></li>
+</ul></li>
+<li class="chapter" data-level="8.2" data-path="tutorial-data-management-with-tidycomm.html"><a href="tutorial-data-management-with-tidycomm.html#rescaling-of-continuous-scales"><i class="fa fa-check"></i><b>8.2</b> Rescaling of continuous scales</a>
+<ul>
+<li class="chapter" data-level="8.2.1" data-path="tutorial-data-management-with-tidycomm.html"><a href="tutorial-data-management-with-tidycomm.html#setna_scale"><i class="fa fa-check"></i><b>8.2.1</b> setna_scale()</a></li>
+<li class="chapter" data-level="8.2.2" data-path="tutorial-data-management-with-tidycomm.html"><a href="tutorial-data-management-with-tidycomm.html#reverse_scale"><i class="fa fa-check"></i><b>8.2.2</b> reverse_scale()</a></li>
+<li class="chapter" data-level="8.2.3" data-path="tutorial-data-management-with-tidycomm.html"><a href="tutorial-data-management-with-tidycomm.html#minmax_scale"><i class="fa fa-check"></i><b>8.2.3</b> minmax_scale()</a></li>
+<li class="chapter" data-level="8.2.4" data-path="tutorial-data-management-with-tidycomm.html"><a href="tutorial-data-management-with-tidycomm.html#center_scale"><i class="fa fa-check"></i><b>8.2.4</b> center_scale()</a></li>
+<li class="chapter" data-level="8.2.5" data-path="tutorial-data-management-with-tidycomm.html"><a href="tutorial-data-management-with-tidycomm.html#z_scale"><i class="fa fa-check"></i><b>8.2.5</b> z_scale()</a></li>
+</ul></li>
+<li class="chapter" data-level="8.3" data-path="tutorial-data-management-with-tidycomm.html"><a href="tutorial-data-management-with-tidycomm.html#categorizing-and-recoding-categorical-scales"><i class="fa fa-check"></i><b>8.3</b> Categorizing and recoding categorical scales</a>
+<ul>
+<li class="chapter" data-level="8.3.1" data-path="tutorial-data-management-with-tidycomm.html"><a href="tutorial-data-management-with-tidycomm.html#categorize_scale"><i class="fa fa-check"></i><b>8.3.1</b> categorize_scale()</a></li>
+<li class="chapter" data-level="8.3.2" data-path="tutorial-data-management-with-tidycomm.html"><a href="tutorial-data-management-with-tidycomm.html#recode_cat_scale"><i class="fa fa-check"></i><b>8.3.2</b> recode_cat_scale()</a></li>
+<li class="chapter" data-level="8.3.3" data-path="tutorial-data-management-with-tidycomm.html"><a href="tutorial-data-management-with-tidycomm.html#summary-of-all-scaling-functions"><i class="fa fa-check"></i><b>8.3.3</b> Summary of all scaling functions</a></li>
+</ul></li>
+<li class="chapter" data-level="8.4" data-path="tutorial-data-management-with-tidycomm.html"><a href="tutorial-data-management-with-tidycomm.html#univariate-analysis"><i class="fa fa-check"></i><b>8.4</b> Univariate analysis</a>
+<ul>
+<li class="chapter" data-level="8.4.1" data-path="tutorial-data-management-with-tidycomm.html"><a href="tutorial-data-management-with-tidycomm.html#describe-continuous-variables"><i class="fa fa-check"></i><b>8.4.1</b> Describe continuous variables</a></li>
+<li class="chapter" data-level="8.4.2" data-path="tutorial-data-management-with-tidycomm.html"><a href="tutorial-data-management-with-tidycomm.html#describe-categorical-variables"><i class="fa fa-check"></i><b>8.4.2</b> Describe categorical variables</a></li>
+</ul></li>
+<li class="chapter" data-level="8.5" data-path="tutorial-data-management-with-tidycomm.html"><a href="tutorial-data-management-with-tidycomm.html#how-to-easily-copy-paste-tidycomm-commands"><i class="fa fa-check"></i><b>8.5</b> How to easily copy-paste tidycomm commands</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="exercise-6-tidycomm.html"><a href="exercise-6-tidycomm.html"><i class="fa fa-check"></i>Exercise 6: tidycomm</a>
+<ul>
+<li class="chapter" data-level="" data-path="exercise-6-tidycomm.html"><a href="exercise-6-tidycomm.html#task-1-5"><i class="fa fa-check"></i>Task 1</a></li>
+<li class="chapter" data-level="" data-path="exercise-6-tidycomm.html"><a href="exercise-6-tidycomm.html#task-2-5"><i class="fa fa-check"></i>Task 2</a></li>
+<li class="chapter" data-level="" data-path="exercise-6-tidycomm.html"><a href="exercise-6-tidycomm.html#task-3-5"><i class="fa fa-check"></i>Task 3</a></li>
+<li class="chapter" data-level="" data-path="exercise-6-tidycomm.html"><a href="exercise-6-tidycomm.html#task-4-4"><i class="fa fa-check"></i>Task 4</a></li>
+<li class="chapter" data-level="" data-path="exercise-6-tidycomm.html"><a href="exercise-6-tidycomm.html#task-5-3"><i class="fa fa-check"></i>Task 5</a></li>
+<li class="chapter" data-level="" data-path="exercise-6-tidycomm.html"><a href="exercise-6-tidycomm.html#task-6-2"><i class="fa fa-check"></i>Task 6</a></li>
+<li class="chapter" data-level="" data-path="exercise-6-tidycomm.html"><a href="exercise-6-tidycomm.html#task-7-1"><i class="fa fa-check"></i>Task 7</a></li>
+<li class="chapter" data-level="" data-path="exercise-6-tidycomm.html"><a href="exercise-6-tidycomm.html#task-8-1"><i class="fa fa-check"></i>Task 8</a></li>
+<li class="chapter" data-level="" data-path="exercise-6-tidycomm.html"><a href="exercise-6-tidycomm.html#task-9"><i class="fa fa-check"></i>Task 9</a></li>
+<li class="chapter" data-level="" data-path="exercise-6-tidycomm.html"><a href="exercise-6-tidycomm.html#task-10"><i class="fa fa-check"></i>Task 10</a></li>
+<li class="chapter" data-level="" data-path="exercise-6-tidycomm.html"><a href="exercise-6-tidycomm.html#task-11"><i class="fa fa-check"></i>Task 11</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="tutorial-inferential-statistics-with-tidycomm.html"><a href="tutorial-inferential-statistics-with-tidycomm.html"><i class="fa fa-check"></i><b>9</b> Tutorial: Inferential statistics with tidycomm</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="tutorial-inferential-statistics-with-tidycomm.html"><a href="tutorial-inferential-statistics-with-tidycomm.html#how-to-run-significance-tests"><i class="fa fa-check"></i><b>9.1</b> How to run significance tests</a>
+<ul>
+<li class="chapter" data-level="9.1.1" data-path="tutorial-inferential-statistics-with-tidycomm.html"><a href="tutorial-inferential-statistics-with-tidycomm.html#crosstab"><i class="fa fa-check"></i><b>9.1.1</b> crosstab()</a></li>
+<li class="chapter" data-level="9.1.2" data-path="tutorial-inferential-statistics-with-tidycomm.html"><a href="tutorial-inferential-statistics-with-tidycomm.html#t_test"><i class="fa fa-check"></i><b>9.1.2</b> t_test()</a></li>
+<li class="chapter" data-level="9.1.3" data-path="tutorial-inferential-statistics-with-tidycomm.html"><a href="tutorial-inferential-statistics-with-tidycomm.html#unianova"><i class="fa fa-check"></i><b>9.1.3</b> unianova()</a></li>
+<li class="chapter" data-level="9.1.4" data-path="tutorial-inferential-statistics-with-tidycomm.html"><a href="tutorial-inferential-statistics-with-tidycomm.html#correlate"><i class="fa fa-check"></i><b>9.1.4</b> correlate()</a></li>
+<li class="chapter" data-level="9.1.5" data-path="tutorial-inferential-statistics-with-tidycomm.html"><a href="tutorial-inferential-statistics-with-tidycomm.html#regress"><i class="fa fa-check"></i><b>9.1.5</b> regress()</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="exercise-7-dplyr-ggplot-tidycomm.html"><a href="exercise-7-dplyr-ggplot-tidycomm.html"><i class="fa fa-check"></i>Exercise 7: dplyr, ggplot, tidycomm</a>
+<ul>
+<li class="chapter" data-level="" data-path="exercise-7-dplyr-ggplot-tidycomm.html"><a href="exercise-7-dplyr-ggplot-tidycomm.html#task-1-6"><i class="fa fa-check"></i>Task 1</a></li>
+<li class="chapter" data-level="" data-path="exercise-7-dplyr-ggplot-tidycomm.html"><a href="exercise-7-dplyr-ggplot-tidycomm.html#task-2-6"><i class="fa fa-check"></i>Task 2</a></li>
+<li class="chapter" data-level="" data-path="exercise-7-dplyr-ggplot-tidycomm.html"><a href="exercise-7-dplyr-ggplot-tidycomm.html#task-3-6"><i class="fa fa-check"></i>Task 3</a></li>
+<li class="chapter" data-level="" data-path="exercise-7-dplyr-ggplot-tidycomm.html"><a href="exercise-7-dplyr-ggplot-tidycomm.html#task-4-5"><i class="fa fa-check"></i>Task 4</a></li>
+<li class="chapter" data-level="" data-path="exercise-7-dplyr-ggplot-tidycomm.html"><a href="exercise-7-dplyr-ggplot-tidycomm.html#task-5-4"><i class="fa fa-check"></i>Task 5</a></li>
+<li class="chapter" data-level="" data-path="exercise-7-dplyr-ggplot-tidycomm.html"><a href="exercise-7-dplyr-ggplot-tidycomm.html#task-6-3"><i class="fa fa-check"></i>Task 6</a></li>
+<li class="chapter" data-level="" data-path="exercise-7-dplyr-ggplot-tidycomm.html"><a href="exercise-7-dplyr-ggplot-tidycomm.html#task-7-2"><i class="fa fa-check"></i>Task 7</a></li>
+<li class="chapter" data-level="" data-path="exercise-7-dplyr-ggplot-tidycomm.html"><a href="exercise-7-dplyr-ggplot-tidycomm.html#task-8-2"><i class="fa fa-check"></i>Task 8</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="optional-tutorial-text-manipulation-with-stringr.html"><a href="optional-tutorial-text-manipulation-with-stringr.html"><i class="fa fa-check"></i><b>10</b> Optional tutorial: Text manipulation with stringr</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="optional-tutorial-text-manipulation-with-stringr.html"><a href="optional-tutorial-text-manipulation-with-stringr.html#whats-stringr"><i class="fa fa-check"></i><b>10.1</b> What’s stringr?</a></li>
+<li class="chapter" data-level="10.2" data-path="optional-tutorial-text-manipulation-with-stringr.html"><a href="optional-tutorial-text-manipulation-with-stringr.html#working-with-strings"><i class="fa fa-check"></i><b>10.2</b> Working with strings</a></li>
+<li class="chapter" data-level="10.3" data-path="optional-tutorial-text-manipulation-with-stringr.html"><a href="optional-tutorial-text-manipulation-with-stringr.html#working-with-string-patterns"><i class="fa fa-check"></i><b>10.3</b> Working with string patterns</a></li>
+<li class="chapter" data-level="10.4" data-path="optional-tutorial-text-manipulation-with-stringr.html"><a href="optional-tutorial-text-manipulation-with-stringr.html#working-with-regular-expressions"><i class="fa fa-check"></i><b>10.4</b> Working with regular expressions</a>
+<ul>
+<li class="chapter" data-level="10.4.1" data-path="optional-tutorial-text-manipulation-with-stringr.html"><a href="optional-tutorial-text-manipulation-with-stringr.html#anchors-alternates-and-quantifiers"><i class="fa fa-check"></i><b>10.4.1</b> Anchors, alternates, and quantifiers</a></li>
+<li class="chapter" data-level="10.4.2" data-path="optional-tutorial-text-manipulation-with-stringr.html"><a href="optional-tutorial-text-manipulation-with-stringr.html#look-arounds-and-groups"><i class="fa fa-check"></i><b>10.4.2</b> Look arounds and groups</a></li>
+<li class="chapter" data-level="10.4.3" data-path="optional-tutorial-text-manipulation-with-stringr.html"><a href="optional-tutorial-text-manipulation-with-stringr.html#match-specific-types-of-characters"><i class="fa fa-check"></i><b>10.4.3</b> Match specific types of characters</a></li>
+</ul></li>
+<li class="chapter" data-level="10.5" data-path="optional-tutorial-text-manipulation-with-stringr.html"><a href="optional-tutorial-text-manipulation-with-stringr.html#take-aways-6"><i class="fa fa-check"></i><b>10.5</b> Take-Aways</a></li>
+<li class="chapter" data-level="10.6" data-path="optional-tutorial-text-manipulation-with-stringr.html"><a href="optional-tutorial-text-manipulation-with-stringr.html#additional-tutorials-5"><i class="fa fa-check"></i><b>10.6</b> Additional tutorials</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="exercise-8-stringr.html"><a href="exercise-8-stringr.html"><i class="fa fa-check"></i>Exercise 8: stringr</a>
+<ul>
+<li class="chapter" data-level="" data-path="exercise-8-stringr.html"><a href="exercise-8-stringr.html#task-1-7"><i class="fa fa-check"></i>Task 1</a></li>
+<li class="chapter" data-level="" data-path="exercise-8-stringr.html"><a href="exercise-8-stringr.html#task-2-7"><i class="fa fa-check"></i>Task 2</a></li>
+<li class="chapter" data-level="" data-path="exercise-8-stringr.html"><a href="exercise-8-stringr.html#task-3-7"><i class="fa fa-check"></i>Task 3</a></li>
+<li class="chapter" data-level="" data-path="exercise-8-stringr.html"><a href="exercise-8-stringr.html#task-4-6"><i class="fa fa-check"></i>Task 4</a></li>
+<li class="chapter" data-level="" data-path="exercise-8-stringr.html"><a href="exercise-8-stringr.html#final-note"><i class="fa fa-check"></i>Final Note</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html"><i class="fa fa-check"></i>Solutions</a>
+<ul>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#solutions-for-exercise-1"><i class="fa fa-check"></i>Solutions for Exercise 1</a>
+<ul>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-1-8"><i class="fa fa-check"></i>Task 1</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-2-8"><i class="fa fa-check"></i>Task 2</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-3-8"><i class="fa fa-check"></i>Task 3</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#solutions-for-exercise-2"><i class="fa fa-check"></i>Solutions for Exercise 2</a>
+<ul>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-1-9"><i class="fa fa-check"></i>Task 1</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-2-9"><i class="fa fa-check"></i>Task 2</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-3-9"><i class="fa fa-check"></i>Task 3</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-4-7"><i class="fa fa-check"></i>Task 4</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#solutions-for-exercise-3"><i class="fa fa-check"></i>Solutions for Exercise 3</a>
+<ul>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-1-10"><i class="fa fa-check"></i>Task 1</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-2-10"><i class="fa fa-check"></i>Task 2</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-3-10"><i class="fa fa-check"></i>Task 3</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-4-8"><i class="fa fa-check"></i>Task 4</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-5-5"><i class="fa fa-check"></i>Task 5</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-6-4"><i class="fa fa-check"></i>Task 6</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-7-3"><i class="fa fa-check"></i>Task 7</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-8-3"><i class="fa fa-check"></i>Task 8</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#solutions-for-exercise-4"><i class="fa fa-check"></i>Solutions for Exercise 4</a>
+<ul>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-1-11"><i class="fa fa-check"></i>Task 1</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-2-11"><i class="fa fa-check"></i>Task 2</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-3-11"><i class="fa fa-check"></i>Task 3</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-4-9"><i class="fa fa-check"></i>Task 4</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-5-6"><i class="fa fa-check"></i>Task 5</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-6-5"><i class="fa fa-check"></i>Task 6</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#solutions-for-exercise-5"><i class="fa fa-check"></i>Solutions for Exercise 5</a>
+<ul>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-1-12"><i class="fa fa-check"></i>Task 1</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-2-12"><i class="fa fa-check"></i>Task 2</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-3-12"><i class="fa fa-check"></i>Task 3</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-4-10"><i class="fa fa-check"></i>Task 4</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-5-7"><i class="fa fa-check"></i>Task 5</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#solutions-for-exercise-6"><i class="fa fa-check"></i>Solutions for Exercise 6</a>
+<ul>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-1-13"><i class="fa fa-check"></i>Task 1</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-2-13"><i class="fa fa-check"></i>Task 2</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-3-13"><i class="fa fa-check"></i>Task 3</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-4-11"><i class="fa fa-check"></i>Task 4</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-5-8"><i class="fa fa-check"></i>Task 5</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-6-6"><i class="fa fa-check"></i>Task 6</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-7-4"><i class="fa fa-check"></i>Task 7</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-8-4"><i class="fa fa-check"></i>Task 8</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-9-1"><i class="fa fa-check"></i>Task 9</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-10-1"><i class="fa fa-check"></i>Task 10</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-11-1"><i class="fa fa-check"></i>Task 11</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#solutions-for-exercise-7"><i class="fa fa-check"></i>Solutions for Exercise 7</a>
+<ul>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-1-14"><i class="fa fa-check"></i>Task 1</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-2-14"><i class="fa fa-check"></i>Task 2</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-3-14"><i class="fa fa-check"></i>Task 3</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-4-12"><i class="fa fa-check"></i>Task 4</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-5-9"><i class="fa fa-check"></i>Task 5</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-6-7"><i class="fa fa-check"></i>Task 6</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-7-5"><i class="fa fa-check"></i>Task 7</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-8-5"><i class="fa fa-check"></i>Task 8</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#solutions-for-exercise-8"><i class="fa fa-check"></i>Solutions for Exercise 8</a>
+<ul>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-1-15"><i class="fa fa-check"></i>Task 1</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-2-15"><i class="fa fa-check"></i>Task 2</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-3-15"><i class="fa fa-check"></i>Task 3</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-4-13"><i class="fa fa-check"></i>Task 4</a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://lkobilke.github.io/Intro_to_R/.git" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Introduction to R</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="optional-tutorial-advanced-data-management" class="section level1 hasAnchor" number="6">
+<h1><span class="header-section-number"> 6</span> Optional tutorial: Advanced data management<a href="optional-tutorial-advanced-data-management.html#optional-tutorial-advanced-data-management" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p><strong>After working through this optional tutorial, you’ll…</strong></p>
+<ul>
+<li>read and combine multiple data files efficiently;</li>
+<li>deal with inconsistent column names across files;</li>
+<li>join datasets using different types of <code>dplyr</code> joins;</li>
+<li>reshape data between wide and long formats with <code>pivot_longer()</code> and <code>pivot_wider()</code>;</li>
+<li>use advanced <code>tidyselect</code> helpers to select and reorder columns;</li>
+<li>filter rows using string patterns and regular expressions.</li>
+</ul>
+<p>This chapter extends the core <code>dplyr</code> workflow with techniques that are especially useful in real research projects. It is included as an <strong>advanced reference chapter</strong>: depending on the pace of the beginner workshop, we may work through selected sections together or you can return to them later.</p>
+<p>Because R Projects and relative paths were already introduced in <a href="tutorial-working-with-data-files.html#tutorial-working-with-data-files">Tutorial: Working with data (files)</a>, the examples below build on that reproducible project workflow rather than changing the working directory with hard-coded paths.</p>
+<p>Load the <code>tidyverse</code> before working through the examples:</p>
+<div class="sourceCode" id="cb179"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb179-1"><a href="optional-tutorial-advanced-data-management.html#cb179-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div>
+<div id="reading-multiple-files-into-r" class="section level2 hasAnchor" number="6.1">
+<h2><span class="header-section-number">6.1</span> Reading multiple files into R<a href="optional-tutorial-advanced-data-management.html#reading-multiple-files-into-r" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>There are several common challenges when reading multiple files into R,
+such as inconsistent column names and file paths, as well as selecting
+only the necessary files. In this tutorial, I’ll teach you a convenient
+solution by creating a character vector of file paths and reading them
+into R using the <code>read_*</code> functions.</p>
+<p>Assuming that your <code>multiple_files</code> folder is a subfolder of your current R Project, save its <strong>relative path</strong> in an object called <code>path</code>. This way, you do not need to change the working directory:</p>
+<div class="sourceCode" id="cb180"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb180-1"><a href="optional-tutorial-advanced-data-management.html#cb180-1" tabindex="-1"></a>path <span class="ot">&lt;-</span> <span class="st">&quot;multiple_files&quot;</span></span>
+<span id="cb180-2"><a href="optional-tutorial-advanced-data-management.html#cb180-2" tabindex="-1"></a>path</span></code></pre></div>
+<p>Next, create a character vector that contains the file names of all
+files contained in your subfolder <code>"multiple_files"</code>. You can look at
+the file names of a folder by using the function <code>list.files()</code>:</p>
+<div class="sourceCode" id="cb181"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb181-1"><a href="optional-tutorial-advanced-data-management.html#cb181-1" tabindex="-1"></a>file_names <span class="ot">&lt;-</span> <span class="fu">list.files</span>(path)</span>
+<span id="cb181-2"><a href="optional-tutorial-advanced-data-management.html#cb181-2" tabindex="-1"></a>file_names</span></code></pre></div>
+<p>Now turn these names into a proper character vector of all the file
+paths by adding additional arguments to the function <code>list.files()</code>:</p>
+<div class="sourceCode" id="cb182"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb182-1"><a href="optional-tutorial-advanced-data-management.html#cb182-1" tabindex="-1"></a>file_paths <span class="ot">&lt;-</span> <span class="fu">list.files</span>(</span>
+<span id="cb182-2"><a href="optional-tutorial-advanced-data-management.html#cb182-2" tabindex="-1"></a>  <span class="at">path =</span> path, <span class="co"># takes the path to the working directory / folder</span></span>
+<span id="cb182-3"><a href="optional-tutorial-advanced-data-management.html#cb182-3" tabindex="-1"></a>  <span class="at">pattern =</span> <span class="st">&quot;csv&quot;</span>, <span class="co"># file should contain the string &#39;csv&#39;, but you could also opt for &quot;WoJ_names&quot;</span></span>
+<span id="cb182-4"><a href="optional-tutorial-advanced-data-management.html#cb182-4" tabindex="-1"></a>  <span class="at">full.names =</span> <span class="cn">TRUE</span></span>
+<span id="cb182-5"><a href="optional-tutorial-advanced-data-management.html#cb182-5" tabindex="-1"></a>) <span class="co"># store the full file paths, not just the file names</span></span>
+<span id="cb182-6"><a href="optional-tutorial-advanced-data-management.html#cb182-6" tabindex="-1"></a>file_paths</span></code></pre></div>
+<p>Finally, read the files using <code>map()</code>: Use <code>map()</code> from the <code>purrr</code>
+package (part of the <code>tidyverse</code> metapackage) to iterate over the file
+paths and read each file using a function like <code>read.csv()</code> (or
+<code>read_excel()</code>, etc.). The result will be a list of data frames.</p>
+<div class="sourceCode" id="cb183"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb183-1"><a href="optional-tutorial-advanced-data-management.html#cb183-1" tabindex="-1"></a>data_list <span class="ot">&lt;-</span> file_paths <span class="sc">%&gt;%</span></span>
+<span id="cb183-2"><a href="optional-tutorial-advanced-data-management.html#cb183-2" tabindex="-1"></a>  <span class="fu">map</span>(<span class="sc">~</span> <span class="fu">read.csv2</span>(<span class="at">file =</span> .x)) <span class="co"># use map to apply read.csv2 (semicolon-separated) to each individual file path, .x stands for each individual file path</span></span>
+<span id="cb183-3"><a href="optional-tutorial-advanced-data-management.html#cb183-3" tabindex="-1"></a>data_list</span></code></pre></div>
+<p>However, we don’t want our data to be read in as separate files. We want
+to combine them in one single file. We can use <code>bind_rows()</code> from the
+<code>dplyr</code> package for that:</p>
+<div class="sourceCode" id="cb184"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb184-1"><a href="optional-tutorial-advanced-data-management.html#cb184-1" tabindex="-1"></a>combined_data <span class="ot">&lt;-</span> data_list <span class="sc">%&gt;%</span> <span class="fu">bind_rows</span>() <span class="co"># bind all of your rows in your data list into one dataframe</span></span></code></pre></div>
+<p>That involved a great number of individual steps. Let’s now consolidate
+everything into a simpler pipeline and execute it:</p>
+<div class="sourceCode" id="cb185"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb185-1"><a href="optional-tutorial-advanced-data-management.html#cb185-1" tabindex="-1"></a>path <span class="ot">&lt;-</span> <span class="st">&quot;multiple_files&quot;</span></span>
+<span id="cb185-2"><a href="optional-tutorial-advanced-data-management.html#cb185-2" tabindex="-1"></a>file_paths <span class="ot">&lt;-</span> <span class="fu">list.files</span>(</span>
+<span id="cb185-3"><a href="optional-tutorial-advanced-data-management.html#cb185-3" tabindex="-1"></a>  <span class="at">path =</span> path,</span>
+<span id="cb185-4"><a href="optional-tutorial-advanced-data-management.html#cb185-4" tabindex="-1"></a>  <span class="at">pattern =</span> <span class="st">&quot;csv&quot;</span>,</span>
+<span id="cb185-5"><a href="optional-tutorial-advanced-data-management.html#cb185-5" tabindex="-1"></a>  <span class="at">full.names =</span> <span class="cn">TRUE</span></span>
+<span id="cb185-6"><a href="optional-tutorial-advanced-data-management.html#cb185-6" tabindex="-1"></a>)</span>
+<span id="cb185-7"><a href="optional-tutorial-advanced-data-management.html#cb185-7" tabindex="-1"></a></span>
+<span id="cb185-8"><a href="optional-tutorial-advanced-data-management.html#cb185-8" tabindex="-1"></a>combined_data <span class="ot">&lt;-</span> file_paths <span class="sc">%&gt;%</span></span>
+<span id="cb185-9"><a href="optional-tutorial-advanced-data-management.html#cb185-9" tabindex="-1"></a>  <span class="fu">map</span>(<span class="sc">~</span> <span class="fu">read.csv2</span>(<span class="at">file =</span> .x)) <span class="sc">%&gt;%</span></span>
+<span id="cb185-10"><a href="optional-tutorial-advanced-data-management.html#cb185-10" tabindex="-1"></a>  <span class="fu">bind_rows</span>()</span></code></pre></div>
+<p><strong>Note:</strong> If the files have different column names or structures, you
+may encounter issues when binding them together with this approach. Make
+sure the files have compatible structures or consider preprocessing the
+data, as shown in the next chapter.</p>
+<div id="reading-multiple-files-into-r-with-different-column-names" class="section level3 hasAnchor" number="6.1.1">
+<h3><span class="header-section-number">6.1.1</span> Reading multiple files into R with different column names<a href="optional-tutorial-advanced-data-management.html#reading-multiple-files-into-r-with-different-column-names" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Things can sometimes get messy. Please download the .csv files that are
+contained in the folder <code>multiple_files_messy</code> on <a href="https://syncandshare.lrz.de/getlink/fiBrHj9PZXRE8BcAAgrZkj/multiple_files_messy">LRZ Sync &amp;
+Share</a>
+and store them in a folder called <code>multiple_files_messy</code> in your R Project.</p>
+<p>In this messy folder, the <code>WoJ_names_1.csv</code> file has been altered. The
+column name <code>country</code> has been capitalized (i.e., changed to <code>COUNTRY</code>)
+, and the column containing names has been accidentally deleted. Let’s
+attempt to reload the .csv files once more and set the column names to
+lowercase dynamically. To handle the missing column, we will use
+<code>bind_rows</code> function:</p>
+<div class="sourceCode" id="cb186"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb186-1"><a href="optional-tutorial-advanced-data-management.html#cb186-1" tabindex="-1"></a>path <span class="ot">&lt;-</span> <span class="st">&quot;multiple_files_messy&quot;</span></span>
+<span id="cb186-2"><a href="optional-tutorial-advanced-data-management.html#cb186-2" tabindex="-1"></a>file_paths <span class="ot">&lt;-</span> <span class="fu">list.files</span>(</span>
+<span id="cb186-3"><a href="optional-tutorial-advanced-data-management.html#cb186-3" tabindex="-1"></a>  <span class="at">path =</span> path,</span>
+<span id="cb186-4"><a href="optional-tutorial-advanced-data-management.html#cb186-4" tabindex="-1"></a>  <span class="at">pattern =</span> <span class="st">&quot;csv&quot;</span>,</span>
+<span id="cb186-5"><a href="optional-tutorial-advanced-data-management.html#cb186-5" tabindex="-1"></a>  <span class="at">full.names =</span> <span class="cn">TRUE</span></span>
+<span id="cb186-6"><a href="optional-tutorial-advanced-data-management.html#cb186-6" tabindex="-1"></a>)</span>
+<span id="cb186-7"><a href="optional-tutorial-advanced-data-management.html#cb186-7" tabindex="-1"></a></span>
+<span id="cb186-8"><a href="optional-tutorial-advanced-data-management.html#cb186-8" tabindex="-1"></a>combined_data <span class="ot">&lt;-</span> file_paths <span class="sc">%&gt;%</span></span>
+<span id="cb186-9"><a href="optional-tutorial-advanced-data-management.html#cb186-9" tabindex="-1"></a>  <span class="fu">map</span>(<span class="sc">~</span> <span class="fu">read.csv2</span>(<span class="at">file =</span> .x) <span class="sc">%&gt;%</span></span>
+<span id="cb186-10"><a href="optional-tutorial-advanced-data-management.html#cb186-10" tabindex="-1"></a>    <span class="fu">setNames</span>(<span class="fu">tolower</span>(<span class="fu">names</span>(.)))) <span class="sc">%&gt;%</span></span>
+<span id="cb186-11"><a href="optional-tutorial-advanced-data-management.html#cb186-11" tabindex="-1"></a>  <span class="fu">bind_rows</span>()</span></code></pre></div>
+<p><strong>Tip for advanced users:</strong> The line <code>setNames(tolower(names(.)))) %&gt;%</code> is where the mismatch between COUNTRY and country is being solved. There are several other common mismatches between data files that you can solve using these lines of code:</p>
+<p><em>1. Extraneous white spaces (leading/trailing spaces):</em>
+<code>setNames(gsub("^\\s+|\\s+$", "", names(.))) %&gt;%</code></p>
+<p><em>2. Replace spaces with underscores:</em>
+<code>setNames(gsub("\\s+", "_", names(.))) %&gt;%</code></p>
+<p><em>3. Remove special characters:</em>
+<code>setNames(gsub("[^[:alnum:]_]", "", names(.))) %&gt;%</code></p>
+<p><em>4. Standardize certain column names:</em>
+If you know in advance that certain files might have deviations in column names, you can use a named vector of replacements. For this, you’d likely want to break the renaming process out of the setNames function for clarity:
+<code>name_corrections &lt;- c("First Column" = "first_column", "Last Column" = "last_column")</code>
+<code>corrected_names &lt;- ifelse(names(.) %in% names(name_corrections), name_corrections[names(.)], names(.))</code></p>
+<p><code>combined_data &lt;- file_paths %&gt;%</code>
+<code>map(~ read.csv2(file = .x) %&gt;%</code>
+<code>setNames(corrected_names) %&gt;%</code>
+<code>bind_rows()</code></p>
+<p>Neat! Note that you can always exchange the string in the <code>pattern</code>
+argument of <code>list.files</code> to include a regular expression. If you want to go deeper into regular expressions, see the optional <code>stringr</code> tutorial later in this guide.</p>
+</div>
+</div>
+<div id="joining-two-datasets" class="section level2 hasAnchor" number="6.2">
+<h2><span class="header-section-number">6.2</span> Joining two datasets<a href="optional-tutorial-advanced-data-management.html#joining-two-datasets" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>We’ve already covered how to join multiple datasets while loading the
+data into R. This next approach joins datasets <strong>after</strong> they’ve been loaded
+into R. It’s the more common approach.</p>
+<p>First things first, let’s load the libraries and data we’ll need. As we load this data, we’re doing an extra step in our pipeline. For every row of data, we’re adding a unique ID. This ID is simply the row’s position in the list (so, the first row is 1, the second is 2, and so on). We’re naming this unique ID as case_id.</p>
+<div class="sourceCode" id="cb187"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb187-1"><a href="optional-tutorial-advanced-data-management.html#cb187-1" tabindex="-1"></a><span class="co"># install.packages(&quot;tidycomm&quot;) # only the first time</span></span>
+<span id="cb187-2"><a href="optional-tutorial-advanced-data-management.html#cb187-2" tabindex="-1"></a><span class="fu">library</span>(tidycomm)</span>
+<span id="cb187-3"><a href="optional-tutorial-advanced-data-management.html#cb187-3" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb187-4"><a href="optional-tutorial-advanced-data-management.html#cb187-4" tabindex="-1"></a>WoJ <span class="ot">&lt;-</span> tidycomm<span class="sc">::</span>WoJ <span class="sc">%&gt;%</span></span>
+<span id="cb187-5"><a href="optional-tutorial-advanced-data-management.html#cb187-5" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">case_id =</span> <span class="fu">row_number</span>())</span></code></pre></div>
+<p>Next, we’ll split the WoJ dataset into two groups based on work
+experience: rookies and veterans. <strong>We’ll also reduce the numbers of
+rookies and veterans based on an arbitrary third variable to make the
+cases included in the datasets somewhat different from each other.</strong></p>
+<div class="sourceCode" id="cb188"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb188-1"><a href="optional-tutorial-advanced-data-management.html#cb188-1" tabindex="-1"></a>rookies <span class="ot">&lt;-</span> WoJ <span class="sc">%&gt;%</span></span>
+<span id="cb188-2"><a href="optional-tutorial-advanced-data-management.html#cb188-2" tabindex="-1"></a>  <span class="fu">filter</span>(work_experience <span class="sc">&lt;=</span> <span class="dv">12</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb188-3"><a href="optional-tutorial-advanced-data-management.html#cb188-3" tabindex="-1"></a>  <span class="fu">filter</span>(autonomy_selection <span class="sc">&gt;</span> <span class="dv">1</span>)</span>
+<span id="cb188-4"><a href="optional-tutorial-advanced-data-management.html#cb188-4" tabindex="-1"></a></span>
+<span id="cb188-5"><a href="optional-tutorial-advanced-data-management.html#cb188-5" tabindex="-1"></a>veterans <span class="ot">&lt;-</span> WoJ <span class="sc">%&gt;%</span></span>
+<span id="cb188-6"><a href="optional-tutorial-advanced-data-management.html#cb188-6" tabindex="-1"></a>  <span class="fu">filter</span>(work_experience <span class="sc">&gt;=</span> <span class="dv">10</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb188-7"><a href="optional-tutorial-advanced-data-management.html#cb188-7" tabindex="-1"></a>  <span class="fu">filter</span>(ethics_1 <span class="sc">&lt;</span> <span class="dv">5</span>)</span></code></pre></div>
+<p>With these restrictions set in place, these two datasets include 1,169 <strong>unique</strong> journalists. The rookies are made up of 433 journalists and the veterans make up 853. 117 journalists are being classified as BOTH rookie AND veteran, i.e. have been counted twice. This means we are dealing with: 433 + 853 - 117 = 1,169.</p>
+<p>Now, let’s say you want to merge these datasets back together for some comparative analysis. <code>dplyr</code> offers you different types of joins for this exact purpose. Let’s explore them!</p>
+<div id="inner_join" class="section level3 hasAnchor" number="6.2.1">
+<h3><span class="header-section-number">6.2.1</span> inner_join<a href="optional-tutorial-advanced-data-management.html#inner_join" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>This is like an overly correct librarian.</strong> It only takes rows that
+have matching keys <strong>in both</strong> datasets, otherwise it will drop the
+rows.</p>
+<div class="sourceCode" id="cb189"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb189-1"><a href="optional-tutorial-advanced-data-management.html#cb189-1" tabindex="-1"></a>inner_joined <span class="ot">&lt;-</span> <span class="fu">inner_join</span>(rookies, veterans, <span class="at">by =</span> <span class="st">&quot;case_id&quot;</span>)</span>
+<span id="cb189-2"><a href="optional-tutorial-advanced-data-management.html#cb189-2" tabindex="-1"></a></span>
+<span id="cb189-3"><a href="optional-tutorial-advanced-data-management.html#cb189-3" tabindex="-1"></a>inner_joined</span></code></pre></div>
+<pre><code>## # A tibble: 117 × 31
+##    country.x   reach.x       employment.x temp_contract.x autonomy_selection.x
+##    &lt;fct&gt;       &lt;fct&gt;         &lt;chr&gt;        &lt;fct&gt;                          &lt;dbl&gt;
+##  1 Germany     National      Full-time    Permanent                          5
+##  2 Denmark     National      Full-time    Permanent                          3
+##  3 UK          Regional      Full-time    Permanent                          3
+##  4 UK          Transnational Full-time    Permanent                          4
+##  5 UK          Regional      Full-time    Permanent                          4
+##  6 Germany     Local         Full-time    Permanent                          4
+##  7 UK          Regional      Full-time    Permanent                          4
+##  8 Switzerland Regional      Freelancer   &lt;NA&gt;                               2
+##  9 Denmark     Regional      Full-time    Temporary                          3
+## 10 Austria     National      Full-time    Permanent                          3
+## # ℹ 107 more rows
+## # ℹ 26 more variables: autonomy_emphasis.x &lt;dbl&gt;, ethics_1.x &lt;dbl&gt;,
+## #   ethics_2.x &lt;dbl&gt;, ethics_3.x &lt;dbl&gt;, ethics_4.x &lt;dbl&gt;,
+## #   work_experience.x &lt;dbl&gt;, trust_parliament.x &lt;dbl&gt;,
+## #   trust_government.x &lt;dbl&gt;, trust_parties.x &lt;dbl&gt;, trust_politicians.x &lt;dbl&gt;,
+## #   case_id &lt;int&gt;, country.y &lt;fct&gt;, reach.y &lt;fct&gt;, employment.y &lt;chr&gt;,
+## #   temp_contract.y &lt;fct&gt;, autonomy_selection.y &lt;dbl&gt;, …</code></pre>
+</div>
+<div id="left_join" class="section level3 hasAnchor" number="6.2.2">
+<h3><span class="header-section-number">6.2.2</span> left_join<a href="optional-tutorial-advanced-data-management.html#left_join" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>This is like a fan of the first dataset.</strong> It takes all rows from the
+first dataset and the matched rows from the second dataset.</p>
+<div class="sourceCode" id="cb191"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb191-1"><a href="optional-tutorial-advanced-data-management.html#cb191-1" tabindex="-1"></a>left_joined <span class="ot">&lt;-</span> <span class="fu">left_join</span>(rookies, veterans, <span class="at">by =</span> <span class="st">&quot;case_id&quot;</span>)</span>
+<span id="cb191-2"><a href="optional-tutorial-advanced-data-management.html#cb191-2" tabindex="-1"></a></span>
+<span id="cb191-3"><a href="optional-tutorial-advanced-data-management.html#cb191-3" tabindex="-1"></a>left_joined</span></code></pre></div>
+<pre><code>## # A tibble: 433 × 31
+##    country.x   reach.x       employment.x temp_contract.x autonomy_selection.x
+##    &lt;fct&gt;       &lt;fct&gt;         &lt;chr&gt;        &lt;fct&gt;                          &lt;dbl&gt;
+##  1 Germany     National      Full-time    Permanent                          5
+##  2 Germany     National      Full-time    Permanent                          3
+##  3 Switzerland Regional      Full-time    Permanent                          4
+##  4 Switzerland Local         Part-time    Permanent                          4
+##  5 Denmark     National      Full-time    Permanent                          3
+##  6 Denmark     National      Full-time    Permanent                          2
+##  7 Austria     Local         Full-time    Permanent                          5
+##  8 UK          Regional      Full-time    Permanent                          3
+##  9 UK          Transnational Full-time    Permanent                          4
+## 10 UK          Transnational Full-time    Permanent                          4
+## # ℹ 423 more rows
+## # ℹ 26 more variables: autonomy_emphasis.x &lt;dbl&gt;, ethics_1.x &lt;dbl&gt;,
+## #   ethics_2.x &lt;dbl&gt;, ethics_3.x &lt;dbl&gt;, ethics_4.x &lt;dbl&gt;,
+## #   work_experience.x &lt;dbl&gt;, trust_parliament.x &lt;dbl&gt;,
+## #   trust_government.x &lt;dbl&gt;, trust_parties.x &lt;dbl&gt;, trust_politicians.x &lt;dbl&gt;,
+## #   case_id &lt;int&gt;, country.y &lt;fct&gt;, reach.y &lt;fct&gt;, employment.y &lt;chr&gt;,
+## #   temp_contract.y &lt;fct&gt;, autonomy_selection.y &lt;dbl&gt;, …</code></pre>
+</div>
+<div id="right_join" class="section level3 hasAnchor" number="6.2.3">
+<h3><span class="header-section-number">6.2.3</span> right_join<a href="optional-tutorial-advanced-data-management.html#right_join" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>This is like a fan of the second dataset.</strong> It takes all rows from the
+second dataset and the matched rows from the first dataset.</p>
+<div class="sourceCode" id="cb193"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb193-1"><a href="optional-tutorial-advanced-data-management.html#cb193-1" tabindex="-1"></a>right_joined <span class="ot">&lt;-</span> <span class="fu">right_join</span>(rookies, veterans, <span class="at">by =</span> <span class="st">&quot;case_id&quot;</span>)</span>
+<span id="cb193-2"><a href="optional-tutorial-advanced-data-management.html#cb193-2" tabindex="-1"></a><span class="co"># Pro tip: you can use the argument `by = your_column_here` to match the two datsets based on a specific column, e.g. case id</span></span>
+<span id="cb193-3"><a href="optional-tutorial-advanced-data-management.html#cb193-3" tabindex="-1"></a></span>
+<span id="cb193-4"><a href="optional-tutorial-advanced-data-management.html#cb193-4" tabindex="-1"></a>right_joined</span></code></pre></div>
+<pre><code>## # A tibble: 853 × 31
+##    country.x   reach.x       employment.x temp_contract.x autonomy_selection.x
+##    &lt;fct&gt;       &lt;fct&gt;         &lt;chr&gt;        &lt;fct&gt;                          &lt;dbl&gt;
+##  1 Germany     National      Full-time    Permanent                          5
+##  2 Denmark     National      Full-time    Permanent                          3
+##  3 UK          Regional      Full-time    Permanent                          3
+##  4 UK          Transnational Full-time    Permanent                          4
+##  5 UK          Regional      Full-time    Permanent                          4
+##  6 Germany     Local         Full-time    Permanent                          4
+##  7 UK          Regional      Full-time    Permanent                          4
+##  8 Switzerland Regional      Freelancer   &lt;NA&gt;                               2
+##  9 Denmark     Regional      Full-time    Temporary                          3
+## 10 Austria     National      Full-time    Permanent                          3
+## # ℹ 843 more rows
+## # ℹ 26 more variables: autonomy_emphasis.x &lt;dbl&gt;, ethics_1.x &lt;dbl&gt;,
+## #   ethics_2.x &lt;dbl&gt;, ethics_3.x &lt;dbl&gt;, ethics_4.x &lt;dbl&gt;,
+## #   work_experience.x &lt;dbl&gt;, trust_parliament.x &lt;dbl&gt;,
+## #   trust_government.x &lt;dbl&gt;, trust_parties.x &lt;dbl&gt;, trust_politicians.x &lt;dbl&gt;,
+## #   case_id &lt;int&gt;, country.y &lt;fct&gt;, reach.y &lt;fct&gt;, employment.y &lt;chr&gt;,
+## #   temp_contract.y &lt;fct&gt;, autonomy_selection.y &lt;dbl&gt;, …</code></pre>
+</div>
+<div id="full_join" class="section level3 hasAnchor" number="6.2.4">
+<h3><span class="header-section-number">6.2.4</span> full_join<a href="optional-tutorial-advanced-data-management.html#full_join" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>This is like a hoarder.</strong> It takes all rows and throws in missings for
+variables that are not part of both datasets.</p>
+<div class="sourceCode" id="cb195"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb195-1"><a href="optional-tutorial-advanced-data-management.html#cb195-1" tabindex="-1"></a>full_joined <span class="ot">&lt;-</span> <span class="fu">full_join</span>(rookies, veterans, <span class="at">by =</span> <span class="st">&quot;case_id&quot;</span>)</span>
+<span id="cb195-2"><a href="optional-tutorial-advanced-data-management.html#cb195-2" tabindex="-1"></a><span class="co"># Pro tip: you can use the argument `by = your_column_here` to match the two datsets based on a specific column, e.g. case id</span></span>
+<span id="cb195-3"><a href="optional-tutorial-advanced-data-management.html#cb195-3" tabindex="-1"></a></span>
+<span id="cb195-4"><a href="optional-tutorial-advanced-data-management.html#cb195-4" tabindex="-1"></a>full_joined</span></code></pre></div>
+<pre><code>## # A tibble: 1,169 × 31
+##    country.x   reach.x       employment.x temp_contract.x autonomy_selection.x
+##    &lt;fct&gt;       &lt;fct&gt;         &lt;chr&gt;        &lt;fct&gt;                          &lt;dbl&gt;
+##  1 Germany     National      Full-time    Permanent                          5
+##  2 Germany     National      Full-time    Permanent                          3
+##  3 Switzerland Regional      Full-time    Permanent                          4
+##  4 Switzerland Local         Part-time    Permanent                          4
+##  5 Denmark     National      Full-time    Permanent                          3
+##  6 Denmark     National      Full-time    Permanent                          2
+##  7 Austria     Local         Full-time    Permanent                          5
+##  8 UK          Regional      Full-time    Permanent                          3
+##  9 UK          Transnational Full-time    Permanent                          4
+## 10 UK          Transnational Full-time    Permanent                          4
+## # ℹ 1,159 more rows
+## # ℹ 26 more variables: autonomy_emphasis.x &lt;dbl&gt;, ethics_1.x &lt;dbl&gt;,
+## #   ethics_2.x &lt;dbl&gt;, ethics_3.x &lt;dbl&gt;, ethics_4.x &lt;dbl&gt;,
+## #   work_experience.x &lt;dbl&gt;, trust_parliament.x &lt;dbl&gt;,
+## #   trust_government.x &lt;dbl&gt;, trust_parties.x &lt;dbl&gt;, trust_politicians.x &lt;dbl&gt;,
+## #   case_id &lt;int&gt;, country.y &lt;fct&gt;, reach.y &lt;fct&gt;, employment.y &lt;chr&gt;,
+## #   temp_contract.y &lt;fct&gt;, autonomy_selection.y &lt;dbl&gt;, …</code></pre>
+</div>
+<div id="join-without-.x-and-.y-suffixes" class="section level3 hasAnchor" number="6.2.5">
+<h3><span class="header-section-number">6.2.5</span> Join without .x and .y suffixes<a href="optional-tutorial-advanced-data-management.html#join-without-.x-and-.y-suffixes" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>You might have noticed that when you’re using dplyr to join two datasets, .x and .y suffixes are added to any columns that have the same names in both datasets. For example, if we join using the <code>case_id</code> variable, all other variables in the resulting combined dataset will be named something like <code>country.x</code> and <code>country.y</code>. The .x and .y suffixes differentiate the country columns from the <code>rookies</code> dataset and the <code>veterans</code> dataset, respectively.</p>
+<p>However, if you’re certain that columns with the same name in both datasets also contain the same values, or if you simply don’t want to retain both versions in the output, there are a couple of approaches to prevent or remove the duplicate columns with the .x and .y suffixes:</p>
+<p><strong>1. Using the <code>by</code> argument:</strong>
+The <code>by</code> argument in the <code>join</code> functions lets you specify which columns to join by. By creating a character vector of the column names in your data frames, you can provide this column name vector to the <code>by</code> argument. This way, you’re specifying to join on <em>all columns</em> in your data frames. Since the column names and values are identical in both data frames, <code>dplyr</code> won’t create the duplicate columns with .x and .y suffixes.</p>
+<div class="sourceCode" id="cb197"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb197-1"><a href="optional-tutorial-advanced-data-management.html#cb197-1" tabindex="-1"></a>column_names <span class="ot">&lt;-</span> <span class="fu">colnames</span>(rookies) <span class="co"># colnames() grabs the column names from the rookies data frame and turns them into a character vector</span></span>
+<span id="cb197-2"><a href="optional-tutorial-advanced-data-management.html#cb197-2" tabindex="-1"></a></span>
+<span id="cb197-3"><a href="optional-tutorial-advanced-data-management.html#cb197-3" tabindex="-1"></a>full_joined <span class="ot">&lt;-</span> <span class="fu">full_join</span>(rookies, veterans, <span class="at">by =</span> column_names)</span>
+<span id="cb197-4"><a href="optional-tutorial-advanced-data-management.html#cb197-4" tabindex="-1"></a></span>
+<span id="cb197-5"><a href="optional-tutorial-advanced-data-management.html#cb197-5" tabindex="-1"></a>full_joined</span></code></pre></div>
+<pre><code>## # A tibble: 1,169 × 16
+##    country   reach employment temp_contract autonomy_selection autonomy_emphasis
+##    &lt;fct&gt;     &lt;fct&gt; &lt;chr&gt;      &lt;fct&gt;                      &lt;dbl&gt;             &lt;dbl&gt;
+##  1 Germany   Nati… Full-time  Permanent                      5                 4
+##  2 Germany   Nati… Full-time  Permanent                      3                 4
+##  3 Switzerl… Regi… Full-time  Permanent                      4                 4
+##  4 Switzerl… Local Part-time  Permanent                      4                 5
+##  5 Denmark   Nati… Full-time  Permanent                      3                 3
+##  6 Denmark   Nati… Full-time  Permanent                      2                 4
+##  7 Austria   Local Full-time  Permanent                      5                 5
+##  8 UK        Regi… Full-time  Permanent                      3                 4
+##  9 UK        Tran… Full-time  Permanent                      4                 5
+## 10 UK        Tran… Full-time  Permanent                      4                 4
+## # ℹ 1,159 more rows
+## # ℹ 10 more variables: ethics_1 &lt;dbl&gt;, ethics_2 &lt;dbl&gt;, ethics_3 &lt;dbl&gt;,
+## #   ethics_4 &lt;dbl&gt;, work_experience &lt;dbl&gt;, trust_parliament &lt;dbl&gt;,
+## #   trust_government &lt;dbl&gt;, trust_parties &lt;dbl&gt;, trust_politicians &lt;dbl&gt;,
+## #   case_id &lt;int&gt;</code></pre>
+<p>You receive only 16 columns in your combined data set. This is the most elegant solution.</p>
+<p><strong>2. Renaming .x columns and dropping .y columns:</strong>
+Using the knowledge that you’ll acquire in the next few tutorials, you could also rename all the .x columns in your combined data set and delete all .y columns.</p>
+<div class="sourceCode" id="cb199"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb199-1"><a href="optional-tutorial-advanced-data-management.html#cb199-1" tabindex="-1"></a>inner_joined <span class="ot">&lt;-</span> inner_joined <span class="sc">%&gt;%</span></span>
+<span id="cb199-2"><a href="optional-tutorial-advanced-data-management.html#cb199-2" tabindex="-1"></a>  <span class="fu">rename_with</span>(<span class="sc">~</span> <span class="fu">gsub</span>(<span class="st">&quot;</span><span class="sc">\\</span><span class="st">.x$&quot;</span>, <span class="st">&quot;&quot;</span>, .), <span class="fu">everything</span>()) <span class="sc">%&gt;%</span> <span class="co"># replaces all column endings &quot;.x&quot; with nothing: &quot;&quot;</span></span>
+<span id="cb199-3"><a href="optional-tutorial-advanced-data-management.html#cb199-3" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span><span class="fu">matches</span>(<span class="st">&quot;</span><span class="sc">\\</span><span class="st">.y$&quot;</span>)) <span class="co"># deselects all columns that end with &quot;.y&quot;</span></span>
+<span id="cb199-4"><a href="optional-tutorial-advanced-data-management.html#cb199-4" tabindex="-1"></a></span>
+<span id="cb199-5"><a href="optional-tutorial-advanced-data-management.html#cb199-5" tabindex="-1"></a>inner_joined</span></code></pre></div>
+<pre><code>## # A tibble: 117 × 16
+##    country   reach employment temp_contract autonomy_selection autonomy_emphasis
+##    &lt;fct&gt;     &lt;fct&gt; &lt;chr&gt;      &lt;fct&gt;                      &lt;dbl&gt;             &lt;dbl&gt;
+##  1 Germany   Nati… Full-time  Permanent                      5                 4
+##  2 Denmark   Nati… Full-time  Permanent                      3                 3
+##  3 UK        Regi… Full-time  Permanent                      3                 4
+##  4 UK        Tran… Full-time  Permanent                      4                 4
+##  5 UK        Regi… Full-time  Permanent                      4                 4
+##  6 Germany   Local Full-time  Permanent                      4                 5
+##  7 UK        Regi… Full-time  Permanent                      4                 4
+##  8 Switzerl… Regi… Freelancer &lt;NA&gt;                           2                 3
+##  9 Denmark   Regi… Full-time  Temporary                      3                 3
+## 10 Austria   Nati… Full-time  Permanent                      3                 4
+## # ℹ 107 more rows
+## # ℹ 10 more variables: ethics_1 &lt;dbl&gt;, ethics_2 &lt;dbl&gt;, ethics_3 &lt;dbl&gt;,
+## #   ethics_4 &lt;dbl&gt;, work_experience &lt;dbl&gt;, trust_parliament &lt;dbl&gt;,
+## #   trust_government &lt;dbl&gt;, trust_parties &lt;dbl&gt;, trust_politicians &lt;dbl&gt;,
+## #   case_id &lt;int&gt;</code></pre>
+<p>You are left with only 16 columns.</p>
+<p><strong>3. Drop the columns from one data frame before joining:</strong>
+This is the most basic and error-prone, but quickest approach.</p>
+<div class="sourceCode" id="cb201"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb201-1"><a href="optional-tutorial-advanced-data-management.html#cb201-1" tabindex="-1"></a>veterans <span class="ot">&lt;-</span> veterans <span class="sc">%&gt;%</span> </span>
+<span id="cb201-2"><a href="optional-tutorial-advanced-data-management.html#cb201-2" tabindex="-1"></a>  <span class="fu">select</span>(case_id) <span class="co"># drop all columns except case_id</span></span>
+<span id="cb201-3"><a href="optional-tutorial-advanced-data-management.html#cb201-3" tabindex="-1"></a></span>
+<span id="cb201-4"><a href="optional-tutorial-advanced-data-management.html#cb201-4" tabindex="-1"></a>left_joined <span class="ot">&lt;-</span> <span class="fu">left_join</span>(rookies, veterans, <span class="at">by =</span> <span class="st">&quot;case_id&quot;</span>)</span>
+<span id="cb201-5"><a href="optional-tutorial-advanced-data-management.html#cb201-5" tabindex="-1"></a></span>
+<span id="cb201-6"><a href="optional-tutorial-advanced-data-management.html#cb201-6" tabindex="-1"></a>left_joined</span></code></pre></div>
+<pre><code>## # A tibble: 433 × 16
+##    country   reach employment temp_contract autonomy_selection autonomy_emphasis
+##    &lt;fct&gt;     &lt;fct&gt; &lt;chr&gt;      &lt;fct&gt;                      &lt;dbl&gt;             &lt;dbl&gt;
+##  1 Germany   Nati… Full-time  Permanent                      5                 4
+##  2 Germany   Nati… Full-time  Permanent                      3                 4
+##  3 Switzerl… Regi… Full-time  Permanent                      4                 4
+##  4 Switzerl… Local Part-time  Permanent                      4                 5
+##  5 Denmark   Nati… Full-time  Permanent                      3                 3
+##  6 Denmark   Nati… Full-time  Permanent                      2                 4
+##  7 Austria   Local Full-time  Permanent                      5                 5
+##  8 UK        Regi… Full-time  Permanent                      3                 4
+##  9 UK        Tran… Full-time  Permanent                      4                 5
+## 10 UK        Tran… Full-time  Permanent                      4                 4
+## # ℹ 423 more rows
+## # ℹ 10 more variables: ethics_1 &lt;dbl&gt;, ethics_2 &lt;dbl&gt;, ethics_3 &lt;dbl&gt;,
+## #   ethics_4 &lt;dbl&gt;, work_experience &lt;dbl&gt;, trust_parliament &lt;dbl&gt;,
+## #   trust_government &lt;dbl&gt;, trust_parties &lt;dbl&gt;, trust_politicians &lt;dbl&gt;,
+## #   case_id &lt;int&gt;</code></pre>
+</div>
+</div>
+<div id="reformatting-datasets" class="section level2 hasAnchor" number="6.3">
+<h2><span class="header-section-number">6.3</span> Reformatting datasets<a href="optional-tutorial-advanced-data-management.html#reformatting-datasets" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>In this subtutorial, we will learn how to use <code>pivot_longer()</code> and
+<code>pivot_wider()</code> functions from the <code>tidyr</code> package. We will create a
+fictional dataset based on the Worlds of Journalism (WoJ) dataset, with
+a twist - it will have several panel waves. Imagine that the WoJ dataset
+has been expanded to include data from different years:</p>
+<div class="sourceCode" id="cb203"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb203-1"><a href="optional-tutorial-advanced-data-management.html#cb203-1" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb203-2"><a href="optional-tutorial-advanced-data-management.html#cb203-2" tabindex="-1"></a>WoJ_panel <span class="ot">&lt;-</span> WoJ <span class="sc">%&gt;%</span></span>
+<span id="cb203-3"><a href="optional-tutorial-advanced-data-management.html#cb203-3" tabindex="-1"></a>  <span class="fu">slice_sample</span>(<span class="at">n =</span> <span class="dv">10</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb203-4"><a href="optional-tutorial-advanced-data-management.html#cb203-4" tabindex="-1"></a>  <span class="fu">select</span>(case_id, work_experience, autonomy_selection) <span class="sc">%&gt;%</span></span>
+<span id="cb203-5"><a href="optional-tutorial-advanced-data-management.html#cb203-5" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb203-6"><a href="optional-tutorial-advanced-data-management.html#cb203-6" tabindex="-1"></a>    <span class="at">work_experience_w2018 =</span> work_experience <span class="sc">+</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">1</span>, <span class="dv">10</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb203-7"><a href="optional-tutorial-advanced-data-management.html#cb203-7" tabindex="-1"></a>    <span class="at">work_experience_w2019 =</span> work_experience_w2018 <span class="sc">+</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">1</span>, <span class="dv">10</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb203-8"><a href="optional-tutorial-advanced-data-management.html#cb203-8" tabindex="-1"></a>    <span class="at">autonomy_selection_w2018 =</span> autonomy_selection <span class="sc">+</span> <span class="fu">sample</span>(<span class="sc">-</span><span class="dv">1</span><span class="sc">:</span><span class="dv">1</span>, <span class="dv">10</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb203-9"><a href="optional-tutorial-advanced-data-management.html#cb203-9" tabindex="-1"></a>    <span class="at">autonomy_selection_w2019 =</span> autonomy_selection_w2018 <span class="sc">+</span> <span class="fu">sample</span>(<span class="sc">-</span><span class="dv">1</span><span class="sc">:</span><span class="dv">1</span>, <span class="dv">10</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb203-10"><a href="optional-tutorial-advanced-data-management.html#cb203-10" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb203-11"><a href="optional-tutorial-advanced-data-management.html#cb203-11" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span><span class="fu">c</span>(work_experience, autonomy_selection))</span>
+<span id="cb203-12"><a href="optional-tutorial-advanced-data-management.html#cb203-12" tabindex="-1"></a></span>
+<span id="cb203-13"><a href="optional-tutorial-advanced-data-management.html#cb203-13" tabindex="-1"></a>WoJ_panel</span></code></pre></div>
+<pre><code>## # A tibble: 10 × 5
+##    case_id work_experience_w2018 work_experience_w2019 autonomy_selection_w2018
+##      &lt;int&gt;                 &lt;dbl&gt;                 &lt;dbl&gt;                    &lt;dbl&gt;
+##  1     415                    24                    25                        3
+##  2     463                     5                     6                        4
+##  3     179                    26                    27                        4
+##  4     526                    38                    39                        3
+##  5     195                    13                    14                        5
+##  6     938                    26                    27                        4
+##  7    1142                     4                     5                        3
+##  8    1038                    10                    11                        6
+##  9     665                    16                    17                        2
+## 10     602                     3                     4                        1
+## # ℹ 1 more variable: autonomy_selection_w2019 &lt;dbl&gt;</code></pre>
+<div id="pivot_longer" class="section level3 hasAnchor" number="6.3.1">
+<h3><span class="header-section-number">6.3.1</span> pivot_longer()<a href="optional-tutorial-advanced-data-management.html#pivot_longer" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Let’s say you want to analyze how work experience and autonomy selection
+change over time. For this, you need to reshape the dataset into a
+longer format.</p>
+<div class="sourceCode" id="cb205"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb205-1"><a href="optional-tutorial-advanced-data-management.html#cb205-1" tabindex="-1"></a>long_data <span class="ot">&lt;-</span> WoJ_panel <span class="sc">%&gt;%</span></span>
+<span id="cb205-2"><a href="optional-tutorial-advanced-data-management.html#cb205-2" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(</span>
+<span id="cb205-3"><a href="optional-tutorial-advanced-data-management.html#cb205-3" tabindex="-1"></a>    <span class="at">cols =</span> <span class="fu">contains</span>(<span class="st">&quot;_w&quot;</span>),</span>
+<span id="cb205-4"><a href="optional-tutorial-advanced-data-management.html#cb205-4" tabindex="-1"></a>    <span class="at">names_to =</span> <span class="fu">c</span>(<span class="st">&quot;variable&quot;</span>, <span class="st">&quot;wave&quot;</span>),</span>
+<span id="cb205-5"><a href="optional-tutorial-advanced-data-management.html#cb205-5" tabindex="-1"></a>    <span class="at">names_pattern =</span> <span class="st">&quot;(.*)_(w</span><span class="sc">\\</span><span class="st">d+)&quot;</span>, <span class="co"># the symbol starts with any symbol that repeats 0 to several times until a _ is reached, followed by a &quot;w&quot; and at least one digit</span></span>
+<span id="cb205-6"><a href="optional-tutorial-advanced-data-management.html#cb205-6" tabindex="-1"></a>    <span class="at">values_to =</span> <span class="st">&quot;value&quot;</span></span>
+<span id="cb205-7"><a href="optional-tutorial-advanced-data-management.html#cb205-7" tabindex="-1"></a>  )</span>
+<span id="cb205-8"><a href="optional-tutorial-advanced-data-management.html#cb205-8" tabindex="-1"></a></span>
+<span id="cb205-9"><a href="optional-tutorial-advanced-data-management.html#cb205-9" tabindex="-1"></a>long_data</span></code></pre></div>
+<pre><code>## # A tibble: 40 × 4
+##    case_id variable           wave  value
+##      &lt;int&gt; &lt;chr&gt;              &lt;chr&gt; &lt;dbl&gt;
+##  1     415 work_experience    w2018    24
+##  2     415 work_experience    w2019    25
+##  3     415 autonomy_selection w2018     3
+##  4     415 autonomy_selection w2019     3
+##  5     463 work_experience    w2018     5
+##  6     463 work_experience    w2019     6
+##  7     463 autonomy_selection w2018     4
+##  8     463 autonomy_selection w2019     5
+##  9     179 work_experience    w2018    26
+## 10     179 work_experience    w2019    27
+## # ℹ 30 more rows</code></pre>
+<p>This code transforms the dataset into a longer format where each row
+represents a single observation for a variable at a specific wave.</p>
+</div>
+<div id="pivot_wider" class="section level3 hasAnchor" number="6.3.2">
+<h3><span class="header-section-number">6.3.2</span> pivot_wider()<a href="optional-tutorial-advanced-data-management.html#pivot_wider" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Now, let’s say you want to do the opposite. You have a long dataset and
+you want to reshape it into a wider format.</p>
+<div class="sourceCode" id="cb207"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb207-1"><a href="optional-tutorial-advanced-data-management.html#cb207-1" tabindex="-1"></a>wide_data <span class="ot">&lt;-</span> long_data <span class="sc">%&gt;%</span></span>
+<span id="cb207-2"><a href="optional-tutorial-advanced-data-management.html#cb207-2" tabindex="-1"></a>  <span class="fu">pivot_wider</span>(</span>
+<span id="cb207-3"><a href="optional-tutorial-advanced-data-management.html#cb207-3" tabindex="-1"></a>    <span class="at">names_from =</span> <span class="fu">c</span>(<span class="st">&quot;variable&quot;</span>, <span class="st">&quot;wave&quot;</span>),</span>
+<span id="cb207-4"><a href="optional-tutorial-advanced-data-management.html#cb207-4" tabindex="-1"></a>    <span class="at">names_sep =</span> <span class="st">&quot;_&quot;</span>,</span>
+<span id="cb207-5"><a href="optional-tutorial-advanced-data-management.html#cb207-5" tabindex="-1"></a>    <span class="at">values_from =</span> <span class="st">&quot;value&quot;</span></span>
+<span id="cb207-6"><a href="optional-tutorial-advanced-data-management.html#cb207-6" tabindex="-1"></a>  )</span>
+<span id="cb207-7"><a href="optional-tutorial-advanced-data-management.html#cb207-7" tabindex="-1"></a></span>
+<span id="cb207-8"><a href="optional-tutorial-advanced-data-management.html#cb207-8" tabindex="-1"></a>wide_data</span></code></pre></div>
+<pre><code>## # A tibble: 10 × 5
+##    case_id work_experience_w2018 work_experience_w2019 autonomy_selection_w2018
+##      &lt;int&gt;                 &lt;dbl&gt;                 &lt;dbl&gt;                    &lt;dbl&gt;
+##  1     415                    24                    25                        3
+##  2     463                     5                     6                        4
+##  3     179                    26                    27                        4
+##  4     526                    38                    39                        3
+##  5     195                    13                    14                        5
+##  6     938                    26                    27                        4
+##  7    1142                     4                     5                        3
+##  8    1038                    10                    11                        6
+##  9     665                    16                    17                        2
+## 10     602                     3                     4                        1
+## # ℹ 1 more variable: autonomy_selection_w2019 &lt;dbl&gt;</code></pre>
+</div>
+</div>
+<div id="advanced-column-selectors" class="section level2 hasAnchor" number="6.4">
+<h2><span class="header-section-number">6.4</span> Advanced column selectors<a href="optional-tutorial-advanced-data-management.html#advanced-column-selectors" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><code>Tidyselect</code> is a package within the <code>tidyverse</code> that provides a set of
+functions for selecting and manipulating columns in a data frame. It is
+mainly used internally by other tidyverse packages, such as <code>dplyr</code> and
+<code>tidyr</code>, to handle column selections. Tidyselect functions, such as
+<code>starts_with()</code>, <code>ends_with()</code>, and <code>contains()</code>, allow you to specify
+column selections based on various patterns, such as prefixes, suffixes,
+and substrings. In this tutorial, we will look at the following <code>tidyselect</code> functions:</p>
+<ul>
+<li>last_col()</li>
+<li>starts_with()</li>
+<li>ends_with()</li>
+<li>contains()</li>
+<li>matches()</li>
+<li>num_range()</li>
+<li>where()</li>
+</ul>
+<p>Let’s first import the full <code>Worlds of Journalism</code> dataset from the
+<code>tidycomm</code> package:</p>
+<div class="sourceCode" id="cb209"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb209-1"><a href="optional-tutorial-advanced-data-management.html#cb209-1" tabindex="-1"></a>WoJ <span class="ot">&lt;-</span> tidycomm<span class="sc">::</span>WoJ</span></code></pre></div>
+<div id="selecting-the-last-column" class="section level3 hasAnchor" number="6.4.1">
+<h3><span class="header-section-number">6.4.1</span> Selecting the last column<a href="optional-tutorial-advanced-data-management.html#selecting-the-last-column" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Use <code>last_col()</code> when you want to select the last column of a data frame
+regardless of its name.</p>
+<div class="sourceCode" id="cb210"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb210-1"><a href="optional-tutorial-advanced-data-management.html#cb210-1" tabindex="-1"></a>WoJ <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="fu">last_col</span>())</span></code></pre></div>
+<pre><code>## # A tibble: 1,200 × 1
+##    trust_politicians
+##                &lt;dbl&gt;
+##  1                 3
+##  2                 3
+##  3                 3
+##  4                 3
+##  5                 2
+##  6                 2
+##  7                 2
+##  8                 3
+##  9                 1
+## 10                 3
+## # ℹ 1,190 more rows</code></pre>
+<p>You can also select all columns except the last one:</p>
+<div class="sourceCode" id="cb212"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb212-1"><a href="optional-tutorial-advanced-data-management.html#cb212-1" tabindex="-1"></a>WoJ <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="sc">!</span><span class="fu">last_col</span>())</span></code></pre></div>
+<pre><code>## # A tibble: 1,200 × 14
+##    country   reach employment temp_contract autonomy_selection autonomy_emphasis
+##    &lt;fct&gt;     &lt;fct&gt; &lt;chr&gt;      &lt;fct&gt;                      &lt;dbl&gt;             &lt;dbl&gt;
+##  1 Germany   Nati… Full-time  Permanent                      5                 4
+##  2 Germany   Nati… Full-time  Permanent                      3                 4
+##  3 Switzerl… Regi… Full-time  Permanent                      4                 4
+##  4 Switzerl… Local Part-time  Permanent                      4                 5
+##  5 Austria   Nati… Part-time  Permanent                      4                 4
+##  6 Switzerl… Local Freelancer &lt;NA&gt;                           4                 4
+##  7 Germany   Local Full-time  Permanent                      4                 4
+##  8 Denmark   Nati… Full-time  Permanent                      3                 3
+##  9 Switzerl… Local Full-time  Permanent                      5                 5
+## 10 Denmark   Nati… Full-time  Permanent                      2                 4
+## # ℹ 1,190 more rows
+## # ℹ 8 more variables: ethics_1 &lt;dbl&gt;, ethics_2 &lt;dbl&gt;, ethics_3 &lt;dbl&gt;,
+## #   ethics_4 &lt;dbl&gt;, work_experience &lt;dbl&gt;, trust_parliament &lt;dbl&gt;,
+## #   trust_government &lt;dbl&gt;, trust_parties &lt;dbl&gt;</code></pre>
+</div>
+<div id="selecting-columns-that-start-with-end-with-or-contain-a-specific-string" class="section level3 hasAnchor" number="6.4.2">
+<h3><span class="header-section-number">6.4.2</span> Selecting columns that start with, end with or contain a specific string<a href="optional-tutorial-advanced-data-management.html#selecting-columns-that-start-with-end-with-or-contain-a-specific-string" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><code>starts_with()</code> selects columns that start with a specific prefix:</p>
+<div class="sourceCode" id="cb214"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb214-1"><a href="optional-tutorial-advanced-data-management.html#cb214-1" tabindex="-1"></a>WoJ <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="fu">starts_with</span>(<span class="st">&quot;ethics&quot;</span>))</span></code></pre></div>
+<pre><code>## # A tibble: 1,200 × 4
+##    ethics_1 ethics_2 ethics_3 ethics_4
+##       &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;
+##  1        2        3        2        1
+##  2        1        2        2        1
+##  3        2        4        2        1
+##  4        1        3        1        2
+##  5        2        3        2        1
+##  6        2        4        4        3
+##  7        1        3        2        2
+##  8        2        4        4        4
+##  9        1        2        1        3
+## 10        1        4        4        4
+## # ℹ 1,190 more rows</code></pre>
+<p><code>ends_with()</code> selects columns that end with one or more specific
+suffixes:</p>
+<div class="sourceCode" id="cb216"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb216-1"><a href="optional-tutorial-advanced-data-management.html#cb216-1" tabindex="-1"></a>WoJ <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="fu">ends_with</span>(<span class="fu">c</span>(<span class="st">&quot;_1&quot;</span>, <span class="st">&quot;_2&quot;</span>))) <span class="co"># ends with _1 OR _2</span></span></code></pre></div>
+<pre><code>## # A tibble: 1,200 × 2
+##    ethics_1 ethics_2
+##       &lt;dbl&gt;    &lt;dbl&gt;
+##  1        2        3
+##  2        1        2
+##  3        2        4
+##  4        1        3
+##  5        2        3
+##  6        2        4
+##  7        1        3
+##  8        2        4
+##  9        1        2
+## 10        1        4
+## # ℹ 1,190 more rows</code></pre>
+<p><code>contains()</code> selects columns that contain a specific substring:</p>
+<div class="sourceCode" id="cb218"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb218-1"><a href="optional-tutorial-advanced-data-management.html#cb218-1" tabindex="-1"></a>WoJ <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="fu">contains</span>(<span class="st">&quot;_&quot;</span>))</span></code></pre></div>
+<pre><code>## # A tibble: 1,200 × 12
+##    temp_contract autonomy_selection autonomy_emphasis ethics_1 ethics_2 ethics_3
+##    &lt;fct&gt;                      &lt;dbl&gt;             &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;
+##  1 Permanent                      5                 4        2        3        2
+##  2 Permanent                      3                 4        1        2        2
+##  3 Permanent                      4                 4        2        4        2
+##  4 Permanent                      4                 5        1        3        1
+##  5 Permanent                      4                 4        2        3        2
+##  6 &lt;NA&gt;                           4                 4        2        4        4
+##  7 Permanent                      4                 4        1        3        2
+##  8 Permanent                      3                 3        2        4        4
+##  9 Permanent                      5                 5        1        2        1
+## 10 Permanent                      2                 4        1        4        4
+## # ℹ 1,190 more rows
+## # ℹ 6 more variables: ethics_4 &lt;dbl&gt;, work_experience &lt;dbl&gt;,
+## #   trust_parliament &lt;dbl&gt;, trust_government &lt;dbl&gt;, trust_parties &lt;dbl&gt;,
+## #   trust_politicians &lt;dbl&gt;</code></pre>
+<p><code>matches()</code> selects columns based on a regular expression pattern:</p>
+<div class="sourceCode" id="cb220"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb220-1"><a href="optional-tutorial-advanced-data-management.html#cb220-1" tabindex="-1"></a>WoJ <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="fu">matches</span>(<span class="st">&quot;^ethics&quot;</span>)) <span class="co"># ^ stands for &quot;begins with&quot; in regex notation</span></span></code></pre></div>
+<pre><code>## # A tibble: 1,200 × 4
+##    ethics_1 ethics_2 ethics_3 ethics_4
+##       &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;
+##  1        2        3        2        1
+##  2        1        2        2        1
+##  3        2        4        2        1
+##  4        1        3        1        2
+##  5        2        3        2        1
+##  6        2        4        4        3
+##  7        1        3        2        2
+##  8        2        4        4        4
+##  9        1        2        1        3
+## 10        1        4        4        4
+## # ℹ 1,190 more rows</code></pre>
+<div class="sourceCode" id="cb222"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb222-1"><a href="optional-tutorial-advanced-data-management.html#cb222-1" tabindex="-1"></a>WoJ <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="fu">matches</span>(<span class="st">&quot;</span><span class="sc">\\</span><span class="st">d&quot;</span>)) <span class="co"># \\d stands for &quot;contains a digit/number&quot; in regex notation</span></span></code></pre></div>
+<pre><code>## # A tibble: 1,200 × 4
+##    ethics_1 ethics_2 ethics_3 ethics_4
+##       &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;
+##  1        2        3        2        1
+##  2        1        2        2        1
+##  3        2        4        2        1
+##  4        1        3        1        2
+##  5        2        3        2        1
+##  6        2        4        4        3
+##  7        1        3        2        2
+##  8        2        4        4        4
+##  9        1        2        1        3
+## 10        1        4        4        4
+## # ℹ 1,190 more rows</code></pre>
+<p><strong>Note</strong>: All of the above functions, except <code>matches()</code> are not case-sensitive. This means that they will match both upper- and
+lowercase letters. If you want to make them case-sensitive, use the <code>ignore.case</code> argument and set it to FALSE.</p>
+<div class="sourceCode" id="cb224"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb224-1"><a href="optional-tutorial-advanced-data-management.html#cb224-1" tabindex="-1"></a>WoJ <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="fu">starts_with</span>(<span class="st">&quot;Ethics&quot;</span>, <span class="at">ignore.case =</span> <span class="cn">FALSE</span>)) <span class="co"># but there is no capitalized Ethics in the data</span></span></code></pre></div>
+<pre><code>## # A tibble: 1,200 × 0</code></pre>
+</div>
+<div id="selecting-columns-based-on-a-numeric-range" class="section level3 hasAnchor" number="6.4.3">
+<h3><span class="header-section-number">6.4.3</span> Selecting columns based on a numeric range<a href="optional-tutorial-advanced-data-management.html#selecting-columns-based-on-a-numeric-range" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>You can select columns based on a numerical range with <code>num_range()</code>:</p>
+<div class="sourceCode" id="cb226"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb226-1"><a href="optional-tutorial-advanced-data-management.html#cb226-1" tabindex="-1"></a>WoJ <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="fu">num_range</span>(<span class="st">&quot;ethics_&quot;</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>)) <span class="co"># selects ethics_1 and ethics2, but not ethics_3, etc.</span></span></code></pre></div>
+<pre><code>## # A tibble: 1,200 × 2
+##    ethics_1 ethics_2
+##       &lt;dbl&gt;    &lt;dbl&gt;
+##  1        2        3
+##  2        1        2
+##  3        2        4
+##  4        1        3
+##  5        2        3
+##  6        2        4
+##  7        1        3
+##  8        2        4
+##  9        1        2
+## 10        1        4
+## # ℹ 1,190 more rows</code></pre>
+</div>
+<div id="selecting-columns-based-on-their-type" class="section level3 hasAnchor" number="6.4.4">
+<h3><span class="header-section-number">6.4.4</span> Selecting columns based on their type<a href="optional-tutorial-advanced-data-management.html#selecting-columns-based-on-their-type" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>You can select columns based on their type with <code>where()</code>, e.g., all
+character columns:</p>
+<div class="sourceCode" id="cb228"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb228-1"><a href="optional-tutorial-advanced-data-management.html#cb228-1" tabindex="-1"></a>WoJ <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="fu">where</span>(is.character))</span></code></pre></div>
+<pre><code>## # A tibble: 1,200 × 1
+##    employment
+##    &lt;chr&gt;     
+##  1 Full-time 
+##  2 Full-time 
+##  3 Full-time 
+##  4 Part-time 
+##  5 Part-time 
+##  6 Freelancer
+##  7 Full-time 
+##  8 Full-time 
+##  9 Full-time 
+## 10 Full-time 
+## # ℹ 1,190 more rows</code></pre>
+<p>Or you could select all columns that contain numbers:</p>
+<div class="sourceCode" id="cb230"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb230-1"><a href="optional-tutorial-advanced-data-management.html#cb230-1" tabindex="-1"></a>WoJ <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="fu">where</span>(is.numeric))</span></code></pre></div>
+<pre><code>## # A tibble: 1,200 × 11
+##    autonomy_selection autonomy_emphasis ethics_1 ethics_2 ethics_3 ethics_4
+##                 &lt;dbl&gt;             &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;
+##  1                  5                 4        2        3        2        1
+##  2                  3                 4        1        2        2        1
+##  3                  4                 4        2        4        2        1
+##  4                  4                 5        1        3        1        2
+##  5                  4                 4        2        3        2        1
+##  6                  4                 4        2        4        4        3
+##  7                  4                 4        1        3        2        2
+##  8                  3                 3        2        4        4        4
+##  9                  5                 5        1        2        1        3
+## 10                  2                 4        1        4        4        4
+## # ℹ 1,190 more rows
+## # ℹ 5 more variables: work_experience &lt;dbl&gt;, trust_parliament &lt;dbl&gt;,
+## #   trust_government &lt;dbl&gt;, trust_parties &lt;dbl&gt;, trust_politicians &lt;dbl&gt;</code></pre>
+<p>You could also use:</p>
+<ul>
+<li>is.integer (whole numbers, e.g., 7)</li>
+<li>is.double (decimal numbers, e.g., 7.25)</li>
+<li>is.logical (e.g., TRUE/FALSE)</li>
+<li>is.factor (e.g., “great”, “greater”, “the greatest”)</li>
+</ul>
+</div>
+<div id="combine-selectors" class="section level3 hasAnchor" number="6.4.5">
+<h3><span class="header-section-number">6.4.5</span> Combine selectors<a href="optional-tutorial-advanced-data-management.html#combine-selectors" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>You can combine selectors, of course. Let’s select all character columns
+and columns that start with “autonomy”.</p>
+<div class="sourceCode" id="cb232"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb232-1"><a href="optional-tutorial-advanced-data-management.html#cb232-1" tabindex="-1"></a>WoJ <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="fu">where</span>(is.character) <span class="sc">|</span> <span class="fu">starts_with</span>(<span class="st">&quot;autonomy&quot;</span>))</span></code></pre></div>
+<pre><code>## # A tibble: 1,200 × 3
+##    employment autonomy_selection autonomy_emphasis
+##    &lt;chr&gt;                   &lt;dbl&gt;             &lt;dbl&gt;
+##  1 Full-time                   5                 4
+##  2 Full-time                   3                 4
+##  3 Full-time                   4                 4
+##  4 Part-time                   4                 5
+##  5 Part-time                   4                 4
+##  6 Freelancer                  4                 4
+##  7 Full-time                   4                 4
+##  8 Full-time                   3                 3
+##  9 Full-time                   5                 5
+## 10 Full-time                   2                 4
+## # ℹ 1,190 more rows</code></pre>
+</div>
+<div id="reorder-your-columns-with-everything" class="section level3 hasAnchor" number="6.4.6">
+<h3><span class="header-section-number">6.4.6</span> Reorder your columns with everything()<a href="optional-tutorial-advanced-data-management.html#reorder-your-columns-with-everything" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Finally, you can select <strong>all</strong> columns with <code>everything()</code>. This allows
+you to reorder your columns quickly:</p>
+<div class="sourceCode" id="cb234"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb234-1"><a href="optional-tutorial-advanced-data-management.html#cb234-1" tabindex="-1"></a>WoJ <span class="sc">%&gt;%</span> <span class="fu">select</span>(temp_contract, country, <span class="fu">everything</span>())</span></code></pre></div>
+<pre><code>## # A tibble: 1,200 × 15
+##    temp_contract country   reach employment autonomy_selection autonomy_emphasis
+##    &lt;fct&gt;         &lt;fct&gt;     &lt;fct&gt; &lt;chr&gt;                   &lt;dbl&gt;             &lt;dbl&gt;
+##  1 Permanent     Germany   Nati… Full-time                   5                 4
+##  2 Permanent     Germany   Nati… Full-time                   3                 4
+##  3 Permanent     Switzerl… Regi… Full-time                   4                 4
+##  4 Permanent     Switzerl… Local Part-time                   4                 5
+##  5 Permanent     Austria   Nati… Part-time                   4                 4
+##  6 &lt;NA&gt;          Switzerl… Local Freelancer                  4                 4
+##  7 Permanent     Germany   Local Full-time                   4                 4
+##  8 Permanent     Denmark   Nati… Full-time                   3                 3
+##  9 Permanent     Switzerl… Local Full-time                   5                 5
+## 10 Permanent     Denmark   Nati… Full-time                   2                 4
+## # ℹ 1,190 more rows
+## # ℹ 9 more variables: ethics_1 &lt;dbl&gt;, ethics_2 &lt;dbl&gt;, ethics_3 &lt;dbl&gt;,
+## #   ethics_4 &lt;dbl&gt;, work_experience &lt;dbl&gt;, trust_parliament &lt;dbl&gt;,
+## #   trust_government &lt;dbl&gt;, trust_parties &lt;dbl&gt;, trust_politicians &lt;dbl&gt;</code></pre>
+</div>
+</div>
+<div id="advanced-selection-of-rows" class="section level2 hasAnchor" number="6.5">
+<h2><span class="header-section-number">6.5</span> Advanced selection of rows<a href="optional-tutorial-advanced-data-management.html#advanced-selection-of-rows" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>You can make very advanced row selections by using the function
+<code>str_detect</code> from the <code>stringr</code> package in combination with <code>filter</code>
+from the <code>dplyr</code> package, especially if you combine <code>str_detect</code> with
+regular expressions.</p>
+<p>Let’s start with partial matching, i.e., when your pattern is <em>part</em> of
+a string, select it:</p>
+<div class="sourceCode" id="cb236"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb236-1"><a href="optional-tutorial-advanced-data-management.html#cb236-1" tabindex="-1"></a>WoJ <span class="sc">%&gt;%</span> <span class="fu">filter</span>(<span class="fu">str_detect</span>(employment, <span class="st">&quot;Free&quot;</span>))</span></code></pre></div>
+<pre><code>## # A tibble: 172 × 15
+##    country   reach employment temp_contract autonomy_selection autonomy_emphasis
+##    &lt;fct&gt;     &lt;fct&gt; &lt;chr&gt;      &lt;fct&gt;                      &lt;dbl&gt;             &lt;dbl&gt;
+##  1 Switzerl… Local Freelancer &lt;NA&gt;                           4                 4
+##  2 Denmark   Nati… Freelancer &lt;NA&gt;                           4                 4
+##  3 Denmark   Nati… Freelancer &lt;NA&gt;                           5                 5
+##  4 UK        Tran… Freelancer &lt;NA&gt;                           4                 4
+##  5 Germany   Regi… Freelancer &lt;NA&gt;                           2                 4
+##  6 Denmark   Nati… Freelancer &lt;NA&gt;                           4                 4
+##  7 Denmark   Nati… Freelancer &lt;NA&gt;                           2                 3
+##  8 Denmark   Nati… Freelancer &lt;NA&gt;                           4                 3
+##  9 Austria   Nati… Freelancer &lt;NA&gt;                           5                 5
+## 10 Denmark   Regi… Freelancer &lt;NA&gt;                           4                 4
+## # ℹ 162 more rows
+## # ℹ 9 more variables: ethics_1 &lt;dbl&gt;, ethics_2 &lt;dbl&gt;, ethics_3 &lt;dbl&gt;,
+## #   ethics_4 &lt;dbl&gt;, work_experience &lt;dbl&gt;, trust_parliament &lt;dbl&gt;,
+## #   trust_government &lt;dbl&gt;, trust_parties &lt;dbl&gt;, trust_politicians &lt;dbl&gt;</code></pre>
+<p>Note that str_detect is case-sensitive, i.e., it reacts sensitive to
+capitalization. You won’t get a match for “free”:</p>
+<div class="sourceCode" id="cb238"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb238-1"><a href="optional-tutorial-advanced-data-management.html#cb238-1" tabindex="-1"></a>WoJ <span class="sc">%&gt;%</span> <span class="fu">filter</span>(<span class="fu">str_detect</span>(employment, <span class="st">&quot;free&quot;</span>))</span></code></pre></div>
+<pre><code>## # A tibble: 0 × 15
+## # ℹ 15 variables: country &lt;fct&gt;, reach &lt;fct&gt;, employment &lt;chr&gt;,
+## #   temp_contract &lt;fct&gt;, autonomy_selection &lt;dbl&gt;, autonomy_emphasis &lt;dbl&gt;,
+## #   ethics_1 &lt;dbl&gt;, ethics_2 &lt;dbl&gt;, ethics_3 &lt;dbl&gt;, ethics_4 &lt;dbl&gt;,
+## #   work_experience &lt;dbl&gt;, trust_parliament &lt;dbl&gt;, trust_government &lt;dbl&gt;,
+## #   trust_parties &lt;dbl&gt;, trust_politicians &lt;dbl&gt;</code></pre>
+<p>In regex language, you can ask <code>str_detect() to</code> look for lowercase and
+uppercase matches, when you are unsure of whether the entries are
+capitalized in your dataset:</p>
+<div class="sourceCode" id="cb240"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb240-1"><a href="optional-tutorial-advanced-data-management.html#cb240-1" tabindex="-1"></a>WoJ <span class="sc">%&gt;%</span> <span class="fu">filter</span>(<span class="fu">str_detect</span>(employment, <span class="st">&quot;[fF]ree&quot;</span>))</span></code></pre></div>
+<pre><code>## # A tibble: 172 × 15
+##    country   reach employment temp_contract autonomy_selection autonomy_emphasis
+##    &lt;fct&gt;     &lt;fct&gt; &lt;chr&gt;      &lt;fct&gt;                      &lt;dbl&gt;             &lt;dbl&gt;
+##  1 Switzerl… Local Freelancer &lt;NA&gt;                           4                 4
+##  2 Denmark   Nati… Freelancer &lt;NA&gt;                           4                 4
+##  3 Denmark   Nati… Freelancer &lt;NA&gt;                           5                 5
+##  4 UK        Tran… Freelancer &lt;NA&gt;                           4                 4
+##  5 Germany   Regi… Freelancer &lt;NA&gt;                           2                 4
+##  6 Denmark   Nati… Freelancer &lt;NA&gt;                           4                 4
+##  7 Denmark   Nati… Freelancer &lt;NA&gt;                           2                 3
+##  8 Denmark   Nati… Freelancer &lt;NA&gt;                           4                 3
+##  9 Austria   Nati… Freelancer &lt;NA&gt;                           5                 5
+## 10 Denmark   Regi… Freelancer &lt;NA&gt;                           4                 4
+## # ℹ 162 more rows
+## # ℹ 9 more variables: ethics_1 &lt;dbl&gt;, ethics_2 &lt;dbl&gt;, ethics_3 &lt;dbl&gt;,
+## #   ethics_4 &lt;dbl&gt;, work_experience &lt;dbl&gt;, trust_parliament &lt;dbl&gt;,
+## #   trust_government &lt;dbl&gt;, trust_parties &lt;dbl&gt;, trust_politicians &lt;dbl&gt;</code></pre>
+<p>You can also ask for matches that end on your pattern:</p>
+<div class="sourceCode" id="cb242"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb242-1"><a href="optional-tutorial-advanced-data-management.html#cb242-1" tabindex="-1"></a>WoJ <span class="sc">%&gt;%</span> <span class="fu">filter</span>(<span class="fu">str_detect</span>(employment, <span class="st">&quot;time$&quot;</span>))</span></code></pre></div>
+<pre><code>## # A tibble: 1,028 × 15
+##    country   reach employment temp_contract autonomy_selection autonomy_emphasis
+##    &lt;fct&gt;     &lt;fct&gt; &lt;chr&gt;      &lt;fct&gt;                      &lt;dbl&gt;             &lt;dbl&gt;
+##  1 Germany   Nati… Full-time  Permanent                      5                 4
+##  2 Germany   Nati… Full-time  Permanent                      3                 4
+##  3 Switzerl… Regi… Full-time  Permanent                      4                 4
+##  4 Switzerl… Local Part-time  Permanent                      4                 5
+##  5 Austria   Nati… Part-time  Permanent                      4                 4
+##  6 Germany   Local Full-time  Permanent                      4                 4
+##  7 Denmark   Nati… Full-time  Permanent                      3                 3
+##  8 Switzerl… Local Full-time  Permanent                      5                 5
+##  9 Denmark   Nati… Full-time  Permanent                      2                 4
+## 10 Austria   Local Full-time  Permanent                      5                 5
+## # ℹ 1,018 more rows
+## # ℹ 9 more variables: ethics_1 &lt;dbl&gt;, ethics_2 &lt;dbl&gt;, ethics_3 &lt;dbl&gt;,
+## #   ethics_4 &lt;dbl&gt;, work_experience &lt;dbl&gt;, trust_parliament &lt;dbl&gt;,
+## #   trust_government &lt;dbl&gt;, trust_parties &lt;dbl&gt;, trust_politicians &lt;dbl&gt;</code></pre>
+<p>If you want to go deeper into regular expressions, see the optional <code>stringr</code> tutorial later in this guide.</p>
+</div>
+<div id="take-aways-4" class="section level2 hasAnchor" number="6.6">
+<h2><span class="header-section-number">6.6</span> Take-Aways<a href="optional-tutorial-advanced-data-management.html#take-aways-4" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li><strong>Reproducible paths:</strong> Keep files inside an R Project and prefer relative paths over machine-specific absolute paths.</li>
+<li><strong>Read multiple files:</strong> Create file paths with <code>list.files()</code>, iterate with <code>purrr::map()</code>, and combine compatible data frames with <code>dplyr::bind_rows()</code>.</li>
+<li><strong>Standardize messy imports:</strong> Clean or harmonize variable names before binding data from different sources.</li>
+<li><strong>Join datasets:</strong> Choose <code>inner_join()</code>, <code>left_join()</code>, <code>right_join()</code>, or <code>full_join()</code> according to which cases you want to retain.</li>
+<li><strong>Reshape data:</strong> Use <code>pivot_longer()</code> and <code>pivot_wider()</code> to move between long and wide data structures.</li>
+<li><strong>Select columns flexibly:</strong> Use helpers such as <code>last_col()</code>, <code>starts_with()</code>, <code>ends_with()</code>, <code>contains()</code>, <code>matches()</code>, <code>num_range()</code>, <code>where()</code>, and <code>everything()</code>.</li>
+<li><strong>Select rows by patterns:</strong> Combine <code>stringr::str_detect()</code> with <code>dplyr::filter()</code> when row selection depends on a string pattern or regular expression.</li>
+</ul>
+<p>You still have questions? The following book can help you with that:</p>
+<ul>
+<li><a href="https://christianb.gumroad.com/l/tidyverse-booster">Going from Beginner to Advanced in the Tidyverse by C. Burkhart</a></li>
+</ul>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="exercise-3-dplyr.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="tutorial-data-visualization-with-ggplot.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": "https://lkobilke.github.io/Intro_to_R/edit/main/index.Rmd",
+    "text": "Edit"
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": ["Intro to R.pdf"],
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "subsection"
+  }
+});
+});
+</script>
+
+</body>
+
+</html>
