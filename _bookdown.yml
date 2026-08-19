@@ -1,0 +1,6 @@
+book_filename: "Intro to R"
+output_dir: "_book"
+language:
+  ui:
+    chapter_name: " "
+delete_merged_file: true

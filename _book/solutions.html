@@ -1,0 +1,1676 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Solutions | Introduction to R</title>
+  <meta name="description" content="Solutions | Introduction to R - GESIS Training Course, 24-27 August 2026" />
+  <meta name="generator" content="bookdown 0.47 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Solutions | Introduction to R" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="Solutions | Introduction to R - GESIS Training Course, 24-27 August 2026" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Solutions | Introduction to R" />
+  
+  <meta name="twitter:description" content="Solutions | Introduction to R - GESIS Training Course, 24-27 August 2026" />
+  
+
+<meta name="author" content="Lara Kobilke, Department of Communication and Media Research, University of Zurich" />
+
+
+<meta name="date" content="2026-08-17" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="exercise-8-stringr.html"/>
+
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Intro to R</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Intro to R</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#general-information-on-the-course"><i class="fa fa-check"></i><b>1.1</b> General information on the course</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#what-can-i-learn-from-this-tutorial"><i class="fa fa-check"></i><b>1.2</b> What can I learn from this tutorial?</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#how-this-tutorial-supports-the-four-day-workshop"><i class="fa fa-check"></i><b>1.3</b> How this tutorial supports the four-day workshop</a></li>
+<li class="chapter" data-level="1.4" data-path="index.html"><a href="index.html#prerequisites-and-software"><i class="fa fa-check"></i><b>1.4</b> Prerequisites and software</a>
+<ul>
+<li class="chapter" data-level="1.4.1" data-path="index.html"><a href="index.html#install-the-required-r-packages"><i class="fa fa-check"></i><b>1.4.1</b> Install the required R packages</a></li>
+<li class="chapter" data-level="1.4.2" data-path="index.html"><a href="index.html#windows-users-install-rtools"><i class="fa fa-check"></i><b>1.4.2</b> Windows users: Install Rtools</a></li>
+<li class="chapter" data-level="1.4.3" data-path="index.html"><a href="index.html#test-your-installation-before-the-course"><i class="fa fa-check"></i><b>1.4.3</b> Test your installation before the course</a></li>
+</ul></li>
+<li class="chapter" data-level="1.5" data-path="index.html"><a href="index.html#what-can-i-do-if-i-have-problems-with-my-r-code"><i class="fa fa-check"></i><b>1.5</b> What can I do if I have problems with my R code?</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="tutorial-installing-understanding-rr-studio.html"><a href="tutorial-installing-understanding-rr-studio.html"><i class="fa fa-check"></i><b>2</b> Tutorial: Installing &amp; Understanding R/R Studio</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="tutorial-installing-understanding-rr-studio.html"><a href="tutorial-installing-understanding-rr-studio.html#what-is-r"><i class="fa fa-check"></i><b>2.1</b> What is R?</a></li>
+<li class="chapter" data-level="2.2" data-path="tutorial-installing-understanding-rr-studio.html"><a href="tutorial-installing-understanding-rr-studio.html#installing-r"><i class="fa fa-check"></i><b>2.2</b> Installing R</a></li>
+<li class="chapter" data-level="2.3" data-path="tutorial-installing-understanding-rr-studio.html"><a href="tutorial-installing-understanding-rr-studio.html#installing-rstudio"><i class="fa fa-check"></i><b>2.3</b> Installing RStudio</a></li>
+<li class="chapter" data-level="2.4" data-path="tutorial-installing-understanding-rr-studio.html"><a href="tutorial-installing-understanding-rr-studio.html#updating-r-and-rstudio"><i class="fa fa-check"></i><b>2.4</b> Updating R and RStudio</a></li>
+<li class="chapter" data-level="2.5" data-path="tutorial-installing-understanding-rr-studio.html"><a href="tutorial-installing-understanding-rr-studio.html#how-does-r-work"><i class="fa fa-check"></i><b>2.5</b> How does R work?</a></li>
+<li class="chapter" data-level="2.6" data-path="tutorial-installing-understanding-rr-studio.html"><a href="tutorial-installing-understanding-rr-studio.html#why-should-i-use-r"><i class="fa fa-check"></i><b>2.6</b> Why should I use R?</a></li>
+<li class="chapter" data-level="2.7" data-path="tutorial-installing-understanding-rr-studio.html"><a href="tutorial-installing-understanding-rr-studio.html#how-does-r-studio-work"><i class="fa fa-check"></i><b>2.7</b> How does R Studio work?</a>
+<ul>
+<li class="chapter" data-level="2.7.1" data-path="tutorial-installing-understanding-rr-studio.html"><a href="tutorial-installing-understanding-rr-studio.html#source-writing-your-own-code"><i class="fa fa-check"></i><b>2.7.1</b> Source: Writing your own code</a></li>
+<li class="chapter" data-level="2.7.2" data-path="tutorial-installing-understanding-rr-studio.html"><a href="tutorial-installing-understanding-rr-studio.html#console-printing-results"><i class="fa fa-check"></i><b>2.7.2</b> Console: Printing results</a></li>
+<li class="chapter" data-level="2.7.3" data-path="tutorial-installing-understanding-rr-studio.html"><a href="tutorial-installing-understanding-rr-studio.html#environment-overview-of-objects"><i class="fa fa-check"></i><b>2.7.3</b> Environment: Overview of objects</a></li>
+<li class="chapter" data-level="2.7.4" data-path="tutorial-installing-understanding-rr-studio.html"><a href="tutorial-installing-understanding-rr-studio.html#plotshelppackages-do-everything-else"><i class="fa fa-check"></i><b>2.7.4</b> Plots/Help/Packages: Do everything else</a></li>
+</ul></li>
+<li class="chapter" data-level="2.8" data-path="tutorial-installing-understanding-rr-studio.html"><a href="tutorial-installing-understanding-rr-studio.html#why-arent-we-using-a-gui-for-point-and-click-analyses"><i class="fa fa-check"></i><b>2.8</b> Why aren’t we using a GUI for point-and-click analyses?</a></li>
+<li class="chapter" data-level="2.9" data-path="tutorial-installing-understanding-rr-studio.html"><a href="tutorial-installing-understanding-rr-studio.html#packages"><i class="fa fa-check"></i><b>2.9</b> Packages</a>
+<ul>
+<li class="chapter" data-level="2.9.1" data-path="tutorial-installing-understanding-rr-studio.html"><a href="tutorial-installing-understanding-rr-studio.html#installing-packages"><i class="fa fa-check"></i><b>2.9.1</b> Installing packages</a></li>
+<li class="chapter" data-level="2.9.2" data-path="tutorial-installing-understanding-rr-studio.html"><a href="tutorial-installing-understanding-rr-studio.html#activating-packages"><i class="fa fa-check"></i><b>2.9.2</b> Activating packages</a></li>
+<li class="chapter" data-level="2.9.3" data-path="tutorial-installing-understanding-rr-studio.html"><a href="tutorial-installing-understanding-rr-studio.html#getting-information-about-packages"><i class="fa fa-check"></i><b>2.9.3</b> Getting information about packages</a></li>
+</ul></li>
+<li class="chapter" data-level="2.10" data-path="tutorial-installing-understanding-rr-studio.html"><a href="tutorial-installing-understanding-rr-studio.html#optional-setting-global-options-in-r-for-a-customized-workflow"><i class="fa fa-check"></i><b>2.10</b> Optional: Setting global options in R for a customized workflow</a>
+<ul>
+<li class="chapter" data-level="2.10.1" data-path="tutorial-installing-understanding-rr-studio.html"><a href="tutorial-installing-understanding-rr-studio.html#understanding-options"><i class="fa fa-check"></i><b>2.10.1</b> Understanding <code>options()</code></a></li>
+<li class="chapter" data-level="2.10.2" data-path="tutorial-installing-understanding-rr-studio.html"><a href="tutorial-installing-understanding-rr-studio.html#turn-off-scientific-notation"><i class="fa fa-check"></i><b>2.10.2</b> Turn off scientific notation</a></li>
+<li class="chapter" data-level="2.10.3" data-path="tutorial-installing-understanding-rr-studio.html"><a href="tutorial-installing-understanding-rr-studio.html#customizing-tibble-display"><i class="fa fa-check"></i><b>2.10.3</b> Customizing tibble display</a></li>
+<li class="chapter" data-level="2.10.4" data-path="tutorial-installing-understanding-rr-studio.html"><a href="tutorial-installing-understanding-rr-studio.html#resetting-to-default"><i class="fa fa-check"></i><b>2.10.4</b> Resetting to default</a></li>
+</ul></li>
+<li class="chapter" data-level="2.11" data-path="tutorial-installing-understanding-rr-studio.html"><a href="tutorial-installing-understanding-rr-studio.html#take-aways"><i class="fa fa-check"></i><b>2.11</b> Take-Aways</a></li>
+<li class="chapter" data-level="2.12" data-path="tutorial-installing-understanding-rr-studio.html"><a href="tutorial-installing-understanding-rr-studio.html#additional-tutorials"><i class="fa fa-check"></i><b>2.12</b> Additional tutorials</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="tutorial-using-r-as-a-calculator.html"><a href="tutorial-using-r-as-a-calculator.html"><i class="fa fa-check"></i><b>3</b> Tutorial: Using R as a calculator</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="tutorial-using-r-as-a-calculator.html"><a href="tutorial-using-r-as-a-calculator.html#using-variables-for-calculation"><i class="fa fa-check"></i><b>3.1</b> Using variables for calculation</a></li>
+<li class="chapter" data-level="3.2" data-path="tutorial-using-r-as-a-calculator.html"><a href="tutorial-using-r-as-a-calculator.html#using-vectors-for-calculation"><i class="fa fa-check"></i><b>3.2</b> Using vectors for calculation</a></li>
+<li class="chapter" data-level="3.3" data-path="tutorial-using-r-as-a-calculator.html"><a href="tutorial-using-r-as-a-calculator.html#selecting-values-from-a-vector"><i class="fa fa-check"></i><b>3.3</b> Selecting values from a vector</a></li>
+<li class="chapter" data-level="3.4" data-path="tutorial-using-r-as-a-calculator.html"><a href="tutorial-using-r-as-a-calculator.html#take-aways-1"><i class="fa fa-check"></i><b>3.4</b> Take-Aways</a></li>
+<li class="chapter" data-level="3.5" data-path="tutorial-using-r-as-a-calculator.html"><a href="tutorial-using-r-as-a-calculator.html#additional-tutorials-1"><i class="fa fa-check"></i><b>3.5</b> Additional tutorials</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="exercise-1-base-r.html"><a href="exercise-1-base-r.html"><i class="fa fa-check"></i>Exercise 1: Base R</a>
+<ul>
+<li class="chapter" data-level="" data-path="exercise-1-base-r.html"><a href="exercise-1-base-r.html#task-1"><i class="fa fa-check"></i>Task 1</a></li>
+<li class="chapter" data-level="" data-path="exercise-1-base-r.html"><a href="exercise-1-base-r.html#task-2"><i class="fa fa-check"></i>Task 2</a></li>
+<li class="chapter" data-level="" data-path="exercise-1-base-r.html"><a href="exercise-1-base-r.html#task-3"><i class="fa fa-check"></i>Task 3</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="tutorial-working-with-data-files.html"><a href="tutorial-working-with-data-files.html"><i class="fa fa-check"></i><b>4</b> Tutorial: Working with data (files)</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="tutorial-working-with-data-files.html"><a href="tutorial-working-with-data-files.html#defining-your-working-directory"><i class="fa fa-check"></i><b>4.1</b> Defining your working directory</a></li>
+<li class="chapter" data-level="4.2" data-path="tutorial-working-with-data-files.html"><a href="tutorial-working-with-data-files.html#import-data-from-your-working-directory"><i class="fa fa-check"></i><b>4.2</b> Import data from your working directory</a></li>
+<li class="chapter" data-level="4.3" data-path="tutorial-working-with-data-files.html"><a href="tutorial-working-with-data-files.html#subsetting-variables-columns-in-data-frames"><i class="fa fa-check"></i><b>4.3</b> Subsetting variables / columns in data frames</a></li>
+<li class="chapter" data-level="4.4" data-path="tutorial-working-with-data-files.html"><a href="tutorial-working-with-data-files.html#subsetting-observations-rows-in-data-frames"><i class="fa fa-check"></i><b>4.4</b> Subsetting observations / rows in data frames</a></li>
+<li class="chapter" data-level="4.5" data-path="tutorial-working-with-data-files.html"><a href="tutorial-working-with-data-files.html#subsetting-values-cells-in-data-frames"><i class="fa fa-check"></i><b>4.5</b> Subsetting values / cells in data frames</a></li>
+<li class="chapter" data-level="4.6" data-path="tutorial-working-with-data-files.html"><a href="tutorial-working-with-data-files.html#subsetting-data-with-conditions"><i class="fa fa-check"></i><b>4.6</b> Subsetting data with conditions</a></li>
+<li class="chapter" data-level="4.7" data-path="tutorial-working-with-data-files.html"><a href="tutorial-working-with-data-files.html#eliminate-the-need-to-manually-set-working-directories-by-using-r-projects"><i class="fa fa-check"></i><b>4.7</b> Eliminate the need to manually set working directories by using R Projects</a>
+<ul>
+<li class="chapter" data-level="4.7.1" data-path="tutorial-working-with-data-files.html"><a href="tutorial-working-with-data-files.html#creating-a-new-r-project"><i class="fa fa-check"></i><b>4.7.1</b> Creating a new R Project</a></li>
+<li class="chapter" data-level="4.7.2" data-path="tutorial-working-with-data-files.html"><a href="tutorial-working-with-data-files.html#checking-your-working-directory"><i class="fa fa-check"></i><b>4.7.2</b> Checking your working directory</a></li>
+<li class="chapter" data-level="4.7.3" data-path="tutorial-working-with-data-files.html"><a href="tutorial-working-with-data-files.html#a-recommendation-for-designing-a-good-r-project-structure"><i class="fa fa-check"></i><b>4.7.3</b> A recommendation for designing a good R Project structure</a></li>
+<li class="chapter" data-level="4.7.4" data-path="tutorial-working-with-data-files.html"><a href="tutorial-working-with-data-files.html#navigating-your-working-directory-like-a-pro-the-concept-of-relative-paths"><i class="fa fa-check"></i><b>4.7.4</b> Navigating your working directory like a pro: The concept of relative paths</a></li>
+</ul></li>
+<li class="chapter" data-level="4.8" data-path="tutorial-working-with-data-files.html"><a href="tutorial-working-with-data-files.html#optional-import-data-from-various-file-formats"><i class="fa fa-check"></i><b>4.8</b> Optional: Import data from various file formats</a>
+<ul>
+<li class="chapter" data-level="4.8.1" data-path="tutorial-working-with-data-files.html"><a href="tutorial-working-with-data-files.html#importing-data-from-excel"><i class="fa fa-check"></i><b>4.8.1</b> Importing data from Excel</a></li>
+<li class="chapter" data-level="4.8.2" data-path="tutorial-working-with-data-files.html"><a href="tutorial-working-with-data-files.html#importing-data-from-json"><i class="fa fa-check"></i><b>4.8.2</b> Importing data from JSON</a></li>
+<li class="chapter" data-level="4.8.3" data-path="tutorial-working-with-data-files.html"><a href="tutorial-working-with-data-files.html#importing-data-from-spss"><i class="fa fa-check"></i><b>4.8.3</b> Importing data from SPSS</a></li>
+</ul></li>
+<li class="chapter" data-level="4.9" data-path="tutorial-working-with-data-files.html"><a href="tutorial-working-with-data-files.html#take-aways-2"><i class="fa fa-check"></i><b>4.9</b> Take-Aways</a></li>
+<li class="chapter" data-level="4.10" data-path="tutorial-working-with-data-files.html"><a href="tutorial-working-with-data-files.html#additional-tutorials-2"><i class="fa fa-check"></i><b>4.10</b> Additional tutorials</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="exercise-2-base-r.html"><a href="exercise-2-base-r.html"><i class="fa fa-check"></i>Exercise 2: Base R</a>
+<ul>
+<li class="chapter" data-level="" data-path="exercise-2-base-r.html"><a href="exercise-2-base-r.html#task-1-1"><i class="fa fa-check"></i>Task 1</a></li>
+<li class="chapter" data-level="" data-path="exercise-2-base-r.html"><a href="exercise-2-base-r.html#task-2-1"><i class="fa fa-check"></i>Task 2</a></li>
+<li class="chapter" data-level="" data-path="exercise-2-base-r.html"><a href="exercise-2-base-r.html#task-3-1"><i class="fa fa-check"></i>Task 3</a></li>
+<li class="chapter" data-level="" data-path="exercise-2-base-r.html"><a href="exercise-2-base-r.html#task-4"><i class="fa fa-check"></i>Task 4</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="tutorial-data-management-with-dplyr.html"><a href="tutorial-data-management-with-dplyr.html"><i class="fa fa-check"></i><b>5</b> Tutorial: Data management with dplyr</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="tutorial-data-management-with-dplyr.html"><a href="tutorial-data-management-with-dplyr.html#why-not-stick-with-base-r"><i class="fa fa-check"></i><b>5.1</b> Why not stick with Base R?</a></li>
+<li class="chapter" data-level="5.2" data-path="tutorial-data-management-with-dplyr.html"><a href="tutorial-data-management-with-dplyr.html#tidyverse-packages"><i class="fa fa-check"></i><b>5.2</b> Tidyverse packages</a></li>
+<li class="chapter" data-level="5.3" data-path="tutorial-data-management-with-dplyr.html"><a href="tutorial-data-management-with-dplyr.html#tidy-data"><i class="fa fa-check"></i><b>5.3</b> Tidy data</a></li>
+<li class="chapter" data-level="5.4" data-path="tutorial-data-management-with-dplyr.html"><a href="tutorial-data-management-with-dplyr.html#the-pipe-operator"><i class="fa fa-check"></i><b>5.4</b> The pipe operator</a></li>
+<li class="chapter" data-level="5.5" data-path="tutorial-data-management-with-dplyr.html"><a href="tutorial-data-management-with-dplyr.html#helpful-shortcuts-in-r"><i class="fa fa-check"></i><b>5.5</b> Helpful shortcuts in R</a></li>
+<li class="chapter" data-level="5.6" data-path="tutorial-data-management-with-dplyr.html"><a href="tutorial-data-management-with-dplyr.html#data-transformation-with-dplyr"><i class="fa fa-check"></i><b>5.6</b> Data transformation with dplyr</a>
+<ul>
+<li class="chapter" data-level="5.6.1" data-path="tutorial-data-management-with-dplyr.html"><a href="tutorial-data-management-with-dplyr.html#select"><i class="fa fa-check"></i><b>5.6.1</b> select()</a></li>
+<li class="chapter" data-level="5.6.2" data-path="tutorial-data-management-with-dplyr.html"><a href="tutorial-data-management-with-dplyr.html#filter"><i class="fa fa-check"></i><b>5.6.2</b> filter()</a></li>
+<li class="chapter" data-level="5.6.3" data-path="tutorial-data-management-with-dplyr.html"><a href="tutorial-data-management-with-dplyr.html#arrange"><i class="fa fa-check"></i><b>5.6.3</b> arrange()</a></li>
+<li class="chapter" data-level="5.6.4" data-path="tutorial-data-management-with-dplyr.html"><a href="tutorial-data-management-with-dplyr.html#mutate"><i class="fa fa-check"></i><b>5.6.4</b> mutate()</a></li>
+<li class="chapter" data-level="5.6.5" data-path="tutorial-data-management-with-dplyr.html"><a href="tutorial-data-management-with-dplyr.html#summarize-group_by"><i class="fa fa-check"></i><b>5.6.5</b> summarize() [+ group_by()]</a></li>
+<li class="chapter" data-level="5.6.6" data-path="tutorial-data-management-with-dplyr.html"><a href="tutorial-data-management-with-dplyr.html#chaining-functions-in-a-pipe"><i class="fa fa-check"></i><b>5.6.6</b> Chaining functions in a pipe</a></li>
+</ul></li>
+<li class="chapter" data-level="5.7" data-path="tutorial-data-management-with-dplyr.html"><a href="tutorial-data-management-with-dplyr.html#printing-more-rows-in-the-console-using-dplyr"><i class="fa fa-check"></i><b>5.7</b> Printing more rows in the console using <code>dplyr</code></a></li>
+<li class="chapter" data-level="5.8" data-path="tutorial-data-management-with-dplyr.html"><a href="tutorial-data-management-with-dplyr.html#take-aways-3"><i class="fa fa-check"></i><b>5.8</b> Take-Aways</a></li>
+<li class="chapter" data-level="5.9" data-path="tutorial-data-management-with-dplyr.html"><a href="tutorial-data-management-with-dplyr.html#additional-tutorials-3"><i class="fa fa-check"></i><b>5.9</b> Additional tutorials</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="exercise-3-dplyr.html"><a href="exercise-3-dplyr.html"><i class="fa fa-check"></i>Exercise 3: dplyr</a>
+<ul>
+<li class="chapter" data-level="" data-path="exercise-3-dplyr.html"><a href="exercise-3-dplyr.html#task-1-2"><i class="fa fa-check"></i>Task 1</a></li>
+<li class="chapter" data-level="" data-path="exercise-3-dplyr.html"><a href="exercise-3-dplyr.html#task-2-2"><i class="fa fa-check"></i>Task 2</a></li>
+<li class="chapter" data-level="" data-path="exercise-3-dplyr.html"><a href="exercise-3-dplyr.html#task-3-2"><i class="fa fa-check"></i>Task 3</a></li>
+<li class="chapter" data-level="" data-path="exercise-3-dplyr.html"><a href="exercise-3-dplyr.html#task-4-1"><i class="fa fa-check"></i>Task 4</a></li>
+<li class="chapter" data-level="" data-path="exercise-3-dplyr.html"><a href="exercise-3-dplyr.html#task-5"><i class="fa fa-check"></i>Task 5</a></li>
+<li class="chapter" data-level="" data-path="exercise-3-dplyr.html"><a href="exercise-3-dplyr.html#task-6"><i class="fa fa-check"></i>Task 6</a></li>
+<li class="chapter" data-level="" data-path="exercise-3-dplyr.html"><a href="exercise-3-dplyr.html#task-7"><i class="fa fa-check"></i>Task 7</a></li>
+<li class="chapter" data-level="" data-path="exercise-3-dplyr.html"><a href="exercise-3-dplyr.html#task-8"><i class="fa fa-check"></i>Task 8</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="optional-tutorial-advanced-data-management.html"><a href="optional-tutorial-advanced-data-management.html"><i class="fa fa-check"></i><b>6</b> Optional tutorial: Advanced data management</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="optional-tutorial-advanced-data-management.html"><a href="optional-tutorial-advanced-data-management.html#reading-multiple-files-into-r"><i class="fa fa-check"></i><b>6.1</b> Reading multiple files into R</a>
+<ul>
+<li class="chapter" data-level="6.1.1" data-path="optional-tutorial-advanced-data-management.html"><a href="optional-tutorial-advanced-data-management.html#reading-multiple-files-into-r-with-different-column-names"><i class="fa fa-check"></i><b>6.1.1</b> Reading multiple files into R with different column names</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="optional-tutorial-advanced-data-management.html"><a href="optional-tutorial-advanced-data-management.html#joining-two-datasets"><i class="fa fa-check"></i><b>6.2</b> Joining two datasets</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="optional-tutorial-advanced-data-management.html"><a href="optional-tutorial-advanced-data-management.html#inner_join"><i class="fa fa-check"></i><b>6.2.1</b> inner_join</a></li>
+<li class="chapter" data-level="6.2.2" data-path="optional-tutorial-advanced-data-management.html"><a href="optional-tutorial-advanced-data-management.html#left_join"><i class="fa fa-check"></i><b>6.2.2</b> left_join</a></li>
+<li class="chapter" data-level="6.2.3" data-path="optional-tutorial-advanced-data-management.html"><a href="optional-tutorial-advanced-data-management.html#right_join"><i class="fa fa-check"></i><b>6.2.3</b> right_join</a></li>
+<li class="chapter" data-level="6.2.4" data-path="optional-tutorial-advanced-data-management.html"><a href="optional-tutorial-advanced-data-management.html#full_join"><i class="fa fa-check"></i><b>6.2.4</b> full_join</a></li>
+<li class="chapter" data-level="6.2.5" data-path="optional-tutorial-advanced-data-management.html"><a href="optional-tutorial-advanced-data-management.html#join-without-.x-and-.y-suffixes"><i class="fa fa-check"></i><b>6.2.5</b> Join without .x and .y suffixes</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="optional-tutorial-advanced-data-management.html"><a href="optional-tutorial-advanced-data-management.html#reformatting-datasets"><i class="fa fa-check"></i><b>6.3</b> Reformatting datasets</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="optional-tutorial-advanced-data-management.html"><a href="optional-tutorial-advanced-data-management.html#pivot_longer"><i class="fa fa-check"></i><b>6.3.1</b> pivot_longer()</a></li>
+<li class="chapter" data-level="6.3.2" data-path="optional-tutorial-advanced-data-management.html"><a href="optional-tutorial-advanced-data-management.html#pivot_wider"><i class="fa fa-check"></i><b>6.3.2</b> pivot_wider()</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="optional-tutorial-advanced-data-management.html"><a href="optional-tutorial-advanced-data-management.html#advanced-column-selectors"><i class="fa fa-check"></i><b>6.4</b> Advanced column selectors</a>
+<ul>
+<li class="chapter" data-level="6.4.1" data-path="optional-tutorial-advanced-data-management.html"><a href="optional-tutorial-advanced-data-management.html#selecting-the-last-column"><i class="fa fa-check"></i><b>6.4.1</b> Selecting the last column</a></li>
+<li class="chapter" data-level="6.4.2" data-path="optional-tutorial-advanced-data-management.html"><a href="optional-tutorial-advanced-data-management.html#selecting-columns-that-start-with-end-with-or-contain-a-specific-string"><i class="fa fa-check"></i><b>6.4.2</b> Selecting columns that start with, end with or contain a specific string</a></li>
+<li class="chapter" data-level="6.4.3" data-path="optional-tutorial-advanced-data-management.html"><a href="optional-tutorial-advanced-data-management.html#selecting-columns-based-on-a-numeric-range"><i class="fa fa-check"></i><b>6.4.3</b> Selecting columns based on a numeric range</a></li>
+<li class="chapter" data-level="6.4.4" data-path="optional-tutorial-advanced-data-management.html"><a href="optional-tutorial-advanced-data-management.html#selecting-columns-based-on-their-type"><i class="fa fa-check"></i><b>6.4.4</b> Selecting columns based on their type</a></li>
+<li class="chapter" data-level="6.4.5" data-path="optional-tutorial-advanced-data-management.html"><a href="optional-tutorial-advanced-data-management.html#combine-selectors"><i class="fa fa-check"></i><b>6.4.5</b> Combine selectors</a></li>
+<li class="chapter" data-level="6.4.6" data-path="optional-tutorial-advanced-data-management.html"><a href="optional-tutorial-advanced-data-management.html#reorder-your-columns-with-everything"><i class="fa fa-check"></i><b>6.4.6</b> Reorder your columns with everything()</a></li>
+</ul></li>
+<li class="chapter" data-level="6.5" data-path="optional-tutorial-advanced-data-management.html"><a href="optional-tutorial-advanced-data-management.html#advanced-selection-of-rows"><i class="fa fa-check"></i><b>6.5</b> Advanced selection of rows</a></li>
+<li class="chapter" data-level="6.6" data-path="optional-tutorial-advanced-data-management.html"><a href="optional-tutorial-advanced-data-management.html#take-aways-4"><i class="fa fa-check"></i><b>6.6</b> Take-Aways</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="tutorial-data-visualization-with-ggplot.html"><a href="tutorial-data-visualization-with-ggplot.html"><i class="fa fa-check"></i><b>7</b> Tutorial: Data visualization with ggplot</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="tutorial-data-visualization-with-ggplot.html"><a href="tutorial-data-visualization-with-ggplot.html#why-not-stick-with-base-r-1"><i class="fa fa-check"></i><b>7.1</b> Why not stick with Base R?</a></li>
+<li class="chapter" data-level="7.2" data-path="tutorial-data-visualization-with-ggplot.html"><a href="tutorial-data-visualization-with-ggplot.html#components-of-a-ggplot-graph"><i class="fa fa-check"></i><b>7.2</b> Components of a ggplot graph</a></li>
+<li class="chapter" data-level="7.3" data-path="tutorial-data-visualization-with-ggplot.html"><a href="tutorial-data-visualization-with-ggplot.html#installing-activating-ggplot"><i class="fa fa-check"></i><b>7.3</b> Installing &amp; activating ggplot</a></li>
+<li class="chapter" data-level="7.4" data-path="tutorial-data-visualization-with-ggplot.html"><a href="tutorial-data-visualization-with-ggplot.html#building-your-first-plot"><i class="fa fa-check"></i><b>7.4</b> Building your first plot</a>
+<ul>
+<li class="chapter" data-level="7.4.1" data-path="tutorial-data-visualization-with-ggplot.html"><a href="tutorial-data-visualization-with-ggplot.html#data"><i class="fa fa-check"></i><b>7.4.1</b> Data</a></li>
+<li class="chapter" data-level="7.4.2" data-path="tutorial-data-visualization-with-ggplot.html"><a href="tutorial-data-visualization-with-ggplot.html#aesthetics"><i class="fa fa-check"></i><b>7.4.2</b> Aesthetics</a></li>
+<li class="chapter" data-level="7.4.3" data-path="tutorial-data-visualization-with-ggplot.html"><a href="tutorial-data-visualization-with-ggplot.html#geometrics"><i class="fa fa-check"></i><b>7.4.3</b> Geometrics</a></li>
+<li class="chapter" data-level="7.4.4" data-path="tutorial-data-visualization-with-ggplot.html"><a href="tutorial-data-visualization-with-ggplot.html#scales"><i class="fa fa-check"></i><b>7.4.4</b> Scales</a></li>
+<li class="chapter" data-level="7.4.5" data-path="tutorial-data-visualization-with-ggplot.html"><a href="tutorial-data-visualization-with-ggplot.html#themes"><i class="fa fa-check"></i><b>7.4.5</b> Themes</a></li>
+<li class="chapter" data-level="7.4.6" data-path="tutorial-data-visualization-with-ggplot.html"><a href="tutorial-data-visualization-with-ggplot.html#labs"><i class="fa fa-check"></i><b>7.4.6</b> Labs</a></li>
+<li class="chapter" data-level="7.4.7" data-path="tutorial-data-visualization-with-ggplot.html"><a href="tutorial-data-visualization-with-ggplot.html#facets"><i class="fa fa-check"></i><b>7.4.7</b> Facets</a></li>
+<li class="chapter" data-level="7.4.8" data-path="tutorial-data-visualization-with-ggplot.html"><a href="tutorial-data-visualization-with-ggplot.html#saving-graphs"><i class="fa fa-check"></i><b>7.4.8</b> Saving graphs</a></li>
+</ul></li>
+<li class="chapter" data-level="7.5" data-path="tutorial-data-visualization-with-ggplot.html"><a href="tutorial-data-visualization-with-ggplot.html#other-common-plot-types"><i class="fa fa-check"></i><b>7.5</b> Other common plot types</a>
+<ul>
+<li class="chapter" data-level="7.5.1" data-path="tutorial-data-visualization-with-ggplot.html"><a href="tutorial-data-visualization-with-ggplot.html#bar-plots"><i class="fa fa-check"></i><b>7.5.1</b> bar plots</a></li>
+<li class="chapter" data-level="7.5.2" data-path="tutorial-data-visualization-with-ggplot.html"><a href="tutorial-data-visualization-with-ggplot.html#box-plots"><i class="fa fa-check"></i><b>7.5.2</b> box plots</a></li>
+</ul></li>
+<li class="chapter" data-level="7.6" data-path="tutorial-data-visualization-with-ggplot.html"><a href="tutorial-data-visualization-with-ggplot.html#take-aways-5"><i class="fa fa-check"></i><b>7.6</b> Take Aways</a></li>
+<li class="chapter" data-level="7.7" data-path="tutorial-data-visualization-with-ggplot.html"><a href="tutorial-data-visualization-with-ggplot.html#additional-tutorials-4"><i class="fa fa-check"></i><b>7.7</b> Additional tutorials</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="exercise-4-ggplot.html"><a href="exercise-4-ggplot.html"><i class="fa fa-check"></i>Exercise 4: ggplot</a>
+<ul>
+<li class="chapter" data-level="" data-path="exercise-4-ggplot.html"><a href="exercise-4-ggplot.html#task-1-3"><i class="fa fa-check"></i>Task 1</a></li>
+<li class="chapter" data-level="" data-path="exercise-4-ggplot.html"><a href="exercise-4-ggplot.html#task-2-3"><i class="fa fa-check"></i>Task 2</a></li>
+<li class="chapter" data-level="" data-path="exercise-4-ggplot.html"><a href="exercise-4-ggplot.html#task-3-3"><i class="fa fa-check"></i>Task 3</a></li>
+<li class="chapter" data-level="" data-path="exercise-4-ggplot.html"><a href="exercise-4-ggplot.html#task-4-2"><i class="fa fa-check"></i>Task 4</a></li>
+<li class="chapter" data-level="" data-path="exercise-4-ggplot.html"><a href="exercise-4-ggplot.html#task-5-1"><i class="fa fa-check"></i>Task 5</a></li>
+<li class="chapter" data-level="" data-path="exercise-4-ggplot.html"><a href="exercise-4-ggplot.html#task-6-1"><i class="fa fa-check"></i>Task 6</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="exercise-5-ggplot.html"><a href="exercise-5-ggplot.html"><i class="fa fa-check"></i>Exercise 5: ggplot</a>
+<ul>
+<li class="chapter" data-level="" data-path="exercise-5-ggplot.html"><a href="exercise-5-ggplot.html#task-1-4"><i class="fa fa-check"></i>Task 1</a></li>
+<li class="chapter" data-level="" data-path="exercise-5-ggplot.html"><a href="exercise-5-ggplot.html#task-2-4"><i class="fa fa-check"></i>Task 2</a></li>
+<li class="chapter" data-level="" data-path="exercise-5-ggplot.html"><a href="exercise-5-ggplot.html#task-3-4"><i class="fa fa-check"></i>Task 3</a></li>
+<li class="chapter" data-level="" data-path="exercise-5-ggplot.html"><a href="exercise-5-ggplot.html#task-4-3"><i class="fa fa-check"></i>Task 4</a></li>
+<li class="chapter" data-level="" data-path="exercise-5-ggplot.html"><a href="exercise-5-ggplot.html#task-5-2"><i class="fa fa-check"></i>Task 5</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="tutorial-data-management-with-tidycomm.html"><a href="tutorial-data-management-with-tidycomm.html"><i class="fa fa-check"></i><b>8</b> Tutorial: Data management with tidycomm</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="tutorial-data-management-with-tidycomm.html"><a href="tutorial-data-management-with-tidycomm.html#index-generation"><i class="fa fa-check"></i><b>8.1</b> Index generation</a>
+<ul>
+<li class="chapter" data-level="8.1.1" data-path="tutorial-data-management-with-tidycomm.html"><a href="tutorial-data-management-with-tidycomm.html#add_index"><i class="fa fa-check"></i><b>8.1.1</b> add_index():</a></li>
+<li class="chapter" data-level="8.1.2" data-path="tutorial-data-management-with-tidycomm.html"><a href="tutorial-data-management-with-tidycomm.html#get_reliability"><i class="fa fa-check"></i><b>8.1.2</b> get_reliability()</a></li>
+</ul></li>
+<li class="chapter" data-level="8.2" data-path="tutorial-data-management-with-tidycomm.html"><a href="tutorial-data-management-with-tidycomm.html#rescaling-of-continuous-scales"><i class="fa fa-check"></i><b>8.2</b> Rescaling of continuous scales</a>
+<ul>
+<li class="chapter" data-level="8.2.1" data-path="tutorial-data-management-with-tidycomm.html"><a href="tutorial-data-management-with-tidycomm.html#setna_scale"><i class="fa fa-check"></i><b>8.2.1</b> setna_scale()</a></li>
+<li class="chapter" data-level="8.2.2" data-path="tutorial-data-management-with-tidycomm.html"><a href="tutorial-data-management-with-tidycomm.html#reverse_scale"><i class="fa fa-check"></i><b>8.2.2</b> reverse_scale()</a></li>
+<li class="chapter" data-level="8.2.3" data-path="tutorial-data-management-with-tidycomm.html"><a href="tutorial-data-management-with-tidycomm.html#minmax_scale"><i class="fa fa-check"></i><b>8.2.3</b> minmax_scale()</a></li>
+<li class="chapter" data-level="8.2.4" data-path="tutorial-data-management-with-tidycomm.html"><a href="tutorial-data-management-with-tidycomm.html#center_scale"><i class="fa fa-check"></i><b>8.2.4</b> center_scale()</a></li>
+<li class="chapter" data-level="8.2.5" data-path="tutorial-data-management-with-tidycomm.html"><a href="tutorial-data-management-with-tidycomm.html#z_scale"><i class="fa fa-check"></i><b>8.2.5</b> z_scale()</a></li>
+</ul></li>
+<li class="chapter" data-level="8.3" data-path="tutorial-data-management-with-tidycomm.html"><a href="tutorial-data-management-with-tidycomm.html#categorizing-and-recoding-categorical-scales"><i class="fa fa-check"></i><b>8.3</b> Categorizing and recoding categorical scales</a>
+<ul>
+<li class="chapter" data-level="8.3.1" data-path="tutorial-data-management-with-tidycomm.html"><a href="tutorial-data-management-with-tidycomm.html#categorize_scale"><i class="fa fa-check"></i><b>8.3.1</b> categorize_scale()</a></li>
+<li class="chapter" data-level="8.3.2" data-path="tutorial-data-management-with-tidycomm.html"><a href="tutorial-data-management-with-tidycomm.html#recode_cat_scale"><i class="fa fa-check"></i><b>8.3.2</b> recode_cat_scale()</a></li>
+<li class="chapter" data-level="8.3.3" data-path="tutorial-data-management-with-tidycomm.html"><a href="tutorial-data-management-with-tidycomm.html#summary-of-all-scaling-functions"><i class="fa fa-check"></i><b>8.3.3</b> Summary of all scaling functions</a></li>
+</ul></li>
+<li class="chapter" data-level="8.4" data-path="tutorial-data-management-with-tidycomm.html"><a href="tutorial-data-management-with-tidycomm.html#univariate-analysis"><i class="fa fa-check"></i><b>8.4</b> Univariate analysis</a>
+<ul>
+<li class="chapter" data-level="8.4.1" data-path="tutorial-data-management-with-tidycomm.html"><a href="tutorial-data-management-with-tidycomm.html#describe-continuous-variables"><i class="fa fa-check"></i><b>8.4.1</b> Describe continuous variables</a></li>
+<li class="chapter" data-level="8.4.2" data-path="tutorial-data-management-with-tidycomm.html"><a href="tutorial-data-management-with-tidycomm.html#describe-categorical-variables"><i class="fa fa-check"></i><b>8.4.2</b> Describe categorical variables</a></li>
+</ul></li>
+<li class="chapter" data-level="8.5" data-path="tutorial-data-management-with-tidycomm.html"><a href="tutorial-data-management-with-tidycomm.html#how-to-easily-copy-paste-tidycomm-commands"><i class="fa fa-check"></i><b>8.5</b> How to easily copy-paste tidycomm commands</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="exercise-6-tidycomm.html"><a href="exercise-6-tidycomm.html"><i class="fa fa-check"></i>Exercise 6: tidycomm</a>
+<ul>
+<li class="chapter" data-level="" data-path="exercise-6-tidycomm.html"><a href="exercise-6-tidycomm.html#task-1-5"><i class="fa fa-check"></i>Task 1</a></li>
+<li class="chapter" data-level="" data-path="exercise-6-tidycomm.html"><a href="exercise-6-tidycomm.html#task-2-5"><i class="fa fa-check"></i>Task 2</a></li>
+<li class="chapter" data-level="" data-path="exercise-6-tidycomm.html"><a href="exercise-6-tidycomm.html#task-3-5"><i class="fa fa-check"></i>Task 3</a></li>
+<li class="chapter" data-level="" data-path="exercise-6-tidycomm.html"><a href="exercise-6-tidycomm.html#task-4-4"><i class="fa fa-check"></i>Task 4</a></li>
+<li class="chapter" data-level="" data-path="exercise-6-tidycomm.html"><a href="exercise-6-tidycomm.html#task-5-3"><i class="fa fa-check"></i>Task 5</a></li>
+<li class="chapter" data-level="" data-path="exercise-6-tidycomm.html"><a href="exercise-6-tidycomm.html#task-6-2"><i class="fa fa-check"></i>Task 6</a></li>
+<li class="chapter" data-level="" data-path="exercise-6-tidycomm.html"><a href="exercise-6-tidycomm.html#task-7-1"><i class="fa fa-check"></i>Task 7</a></li>
+<li class="chapter" data-level="" data-path="exercise-6-tidycomm.html"><a href="exercise-6-tidycomm.html#task-8-1"><i class="fa fa-check"></i>Task 8</a></li>
+<li class="chapter" data-level="" data-path="exercise-6-tidycomm.html"><a href="exercise-6-tidycomm.html#task-9"><i class="fa fa-check"></i>Task 9</a></li>
+<li class="chapter" data-level="" data-path="exercise-6-tidycomm.html"><a href="exercise-6-tidycomm.html#task-10"><i class="fa fa-check"></i>Task 10</a></li>
+<li class="chapter" data-level="" data-path="exercise-6-tidycomm.html"><a href="exercise-6-tidycomm.html#task-11"><i class="fa fa-check"></i>Task 11</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="tutorial-inferential-statistics-with-tidycomm.html"><a href="tutorial-inferential-statistics-with-tidycomm.html"><i class="fa fa-check"></i><b>9</b> Tutorial: Inferential statistics with tidycomm</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="tutorial-inferential-statistics-with-tidycomm.html"><a href="tutorial-inferential-statistics-with-tidycomm.html#how-to-run-significance-tests"><i class="fa fa-check"></i><b>9.1</b> How to run significance tests</a>
+<ul>
+<li class="chapter" data-level="9.1.1" data-path="tutorial-inferential-statistics-with-tidycomm.html"><a href="tutorial-inferential-statistics-with-tidycomm.html#crosstab"><i class="fa fa-check"></i><b>9.1.1</b> crosstab()</a></li>
+<li class="chapter" data-level="9.1.2" data-path="tutorial-inferential-statistics-with-tidycomm.html"><a href="tutorial-inferential-statistics-with-tidycomm.html#t_test"><i class="fa fa-check"></i><b>9.1.2</b> t_test()</a></li>
+<li class="chapter" data-level="9.1.3" data-path="tutorial-inferential-statistics-with-tidycomm.html"><a href="tutorial-inferential-statistics-with-tidycomm.html#unianova"><i class="fa fa-check"></i><b>9.1.3</b> unianova()</a></li>
+<li class="chapter" data-level="9.1.4" data-path="tutorial-inferential-statistics-with-tidycomm.html"><a href="tutorial-inferential-statistics-with-tidycomm.html#correlate"><i class="fa fa-check"></i><b>9.1.4</b> correlate()</a></li>
+<li class="chapter" data-level="9.1.5" data-path="tutorial-inferential-statistics-with-tidycomm.html"><a href="tutorial-inferential-statistics-with-tidycomm.html#regress"><i class="fa fa-check"></i><b>9.1.5</b> regress()</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="exercise-7-dplyr-ggplot-tidycomm.html"><a href="exercise-7-dplyr-ggplot-tidycomm.html"><i class="fa fa-check"></i>Exercise 7: dplyr, ggplot, tidycomm</a>
+<ul>
+<li class="chapter" data-level="" data-path="exercise-7-dplyr-ggplot-tidycomm.html"><a href="exercise-7-dplyr-ggplot-tidycomm.html#task-1-6"><i class="fa fa-check"></i>Task 1</a></li>
+<li class="chapter" data-level="" data-path="exercise-7-dplyr-ggplot-tidycomm.html"><a href="exercise-7-dplyr-ggplot-tidycomm.html#task-2-6"><i class="fa fa-check"></i>Task 2</a></li>
+<li class="chapter" data-level="" data-path="exercise-7-dplyr-ggplot-tidycomm.html"><a href="exercise-7-dplyr-ggplot-tidycomm.html#task-3-6"><i class="fa fa-check"></i>Task 3</a></li>
+<li class="chapter" data-level="" data-path="exercise-7-dplyr-ggplot-tidycomm.html"><a href="exercise-7-dplyr-ggplot-tidycomm.html#task-4-5"><i class="fa fa-check"></i>Task 4</a></li>
+<li class="chapter" data-level="" data-path="exercise-7-dplyr-ggplot-tidycomm.html"><a href="exercise-7-dplyr-ggplot-tidycomm.html#task-5-4"><i class="fa fa-check"></i>Task 5</a></li>
+<li class="chapter" data-level="" data-path="exercise-7-dplyr-ggplot-tidycomm.html"><a href="exercise-7-dplyr-ggplot-tidycomm.html#task-6-3"><i class="fa fa-check"></i>Task 6</a></li>
+<li class="chapter" data-level="" data-path="exercise-7-dplyr-ggplot-tidycomm.html"><a href="exercise-7-dplyr-ggplot-tidycomm.html#task-7-2"><i class="fa fa-check"></i>Task 7</a></li>
+<li class="chapter" data-level="" data-path="exercise-7-dplyr-ggplot-tidycomm.html"><a href="exercise-7-dplyr-ggplot-tidycomm.html#task-8-2"><i class="fa fa-check"></i>Task 8</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="optional-tutorial-text-manipulation-with-stringr.html"><a href="optional-tutorial-text-manipulation-with-stringr.html"><i class="fa fa-check"></i><b>10</b> Optional tutorial: Text manipulation with stringr</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="optional-tutorial-text-manipulation-with-stringr.html"><a href="optional-tutorial-text-manipulation-with-stringr.html#whats-stringr"><i class="fa fa-check"></i><b>10.1</b> What’s stringr?</a></li>
+<li class="chapter" data-level="10.2" data-path="optional-tutorial-text-manipulation-with-stringr.html"><a href="optional-tutorial-text-manipulation-with-stringr.html#working-with-strings"><i class="fa fa-check"></i><b>10.2</b> Working with strings</a></li>
+<li class="chapter" data-level="10.3" data-path="optional-tutorial-text-manipulation-with-stringr.html"><a href="optional-tutorial-text-manipulation-with-stringr.html#working-with-string-patterns"><i class="fa fa-check"></i><b>10.3</b> Working with string patterns</a></li>
+<li class="chapter" data-level="10.4" data-path="optional-tutorial-text-manipulation-with-stringr.html"><a href="optional-tutorial-text-manipulation-with-stringr.html#working-with-regular-expressions"><i class="fa fa-check"></i><b>10.4</b> Working with regular expressions</a>
+<ul>
+<li class="chapter" data-level="10.4.1" data-path="optional-tutorial-text-manipulation-with-stringr.html"><a href="optional-tutorial-text-manipulation-with-stringr.html#anchors-alternates-and-quantifiers"><i class="fa fa-check"></i><b>10.4.1</b> Anchors, alternates, and quantifiers</a></li>
+<li class="chapter" data-level="10.4.2" data-path="optional-tutorial-text-manipulation-with-stringr.html"><a href="optional-tutorial-text-manipulation-with-stringr.html#look-arounds-and-groups"><i class="fa fa-check"></i><b>10.4.2</b> Look arounds and groups</a></li>
+<li class="chapter" data-level="10.4.3" data-path="optional-tutorial-text-manipulation-with-stringr.html"><a href="optional-tutorial-text-manipulation-with-stringr.html#match-specific-types-of-characters"><i class="fa fa-check"></i><b>10.4.3</b> Match specific types of characters</a></li>
+</ul></li>
+<li class="chapter" data-level="10.5" data-path="optional-tutorial-text-manipulation-with-stringr.html"><a href="optional-tutorial-text-manipulation-with-stringr.html#take-aways-6"><i class="fa fa-check"></i><b>10.5</b> Take-Aways</a></li>
+<li class="chapter" data-level="10.6" data-path="optional-tutorial-text-manipulation-with-stringr.html"><a href="optional-tutorial-text-manipulation-with-stringr.html#additional-tutorials-5"><i class="fa fa-check"></i><b>10.6</b> Additional tutorials</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="exercise-8-stringr.html"><a href="exercise-8-stringr.html"><i class="fa fa-check"></i>Exercise 8: stringr</a>
+<ul>
+<li class="chapter" data-level="" data-path="exercise-8-stringr.html"><a href="exercise-8-stringr.html#task-1-7"><i class="fa fa-check"></i>Task 1</a></li>
+<li class="chapter" data-level="" data-path="exercise-8-stringr.html"><a href="exercise-8-stringr.html#task-2-7"><i class="fa fa-check"></i>Task 2</a></li>
+<li class="chapter" data-level="" data-path="exercise-8-stringr.html"><a href="exercise-8-stringr.html#task-3-7"><i class="fa fa-check"></i>Task 3</a></li>
+<li class="chapter" data-level="" data-path="exercise-8-stringr.html"><a href="exercise-8-stringr.html#task-4-6"><i class="fa fa-check"></i>Task 4</a></li>
+<li class="chapter" data-level="" data-path="exercise-8-stringr.html"><a href="exercise-8-stringr.html#final-note"><i class="fa fa-check"></i>Final Note</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html"><i class="fa fa-check"></i>Solutions</a>
+<ul>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#solutions-for-exercise-1"><i class="fa fa-check"></i>Solutions for Exercise 1</a>
+<ul>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-1-8"><i class="fa fa-check"></i>Task 1</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-2-8"><i class="fa fa-check"></i>Task 2</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-3-8"><i class="fa fa-check"></i>Task 3</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#solutions-for-exercise-2"><i class="fa fa-check"></i>Solutions for Exercise 2</a>
+<ul>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-1-9"><i class="fa fa-check"></i>Task 1</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-2-9"><i class="fa fa-check"></i>Task 2</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-3-9"><i class="fa fa-check"></i>Task 3</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-4-7"><i class="fa fa-check"></i>Task 4</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#solutions-for-exercise-3"><i class="fa fa-check"></i>Solutions for Exercise 3</a>
+<ul>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-1-10"><i class="fa fa-check"></i>Task 1</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-2-10"><i class="fa fa-check"></i>Task 2</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-3-10"><i class="fa fa-check"></i>Task 3</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-4-8"><i class="fa fa-check"></i>Task 4</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-5-5"><i class="fa fa-check"></i>Task 5</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-6-4"><i class="fa fa-check"></i>Task 6</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-7-3"><i class="fa fa-check"></i>Task 7</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-8-3"><i class="fa fa-check"></i>Task 8</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#solutions-for-exercise-4"><i class="fa fa-check"></i>Solutions for Exercise 4</a>
+<ul>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-1-11"><i class="fa fa-check"></i>Task 1</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-2-11"><i class="fa fa-check"></i>Task 2</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-3-11"><i class="fa fa-check"></i>Task 3</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-4-9"><i class="fa fa-check"></i>Task 4</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-5-6"><i class="fa fa-check"></i>Task 5</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-6-5"><i class="fa fa-check"></i>Task 6</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#solutions-for-exercise-5"><i class="fa fa-check"></i>Solutions for Exercise 5</a>
+<ul>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-1-12"><i class="fa fa-check"></i>Task 1</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-2-12"><i class="fa fa-check"></i>Task 2</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-3-12"><i class="fa fa-check"></i>Task 3</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-4-10"><i class="fa fa-check"></i>Task 4</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-5-7"><i class="fa fa-check"></i>Task 5</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#solutions-for-exercise-6"><i class="fa fa-check"></i>Solutions for Exercise 6</a>
+<ul>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-1-13"><i class="fa fa-check"></i>Task 1</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-2-13"><i class="fa fa-check"></i>Task 2</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-3-13"><i class="fa fa-check"></i>Task 3</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-4-11"><i class="fa fa-check"></i>Task 4</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-5-8"><i class="fa fa-check"></i>Task 5</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-6-6"><i class="fa fa-check"></i>Task 6</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-7-4"><i class="fa fa-check"></i>Task 7</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-8-4"><i class="fa fa-check"></i>Task 8</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-9-1"><i class="fa fa-check"></i>Task 9</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-10-1"><i class="fa fa-check"></i>Task 10</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-11-1"><i class="fa fa-check"></i>Task 11</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#solutions-for-exercise-7"><i class="fa fa-check"></i>Solutions for Exercise 7</a>
+<ul>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-1-14"><i class="fa fa-check"></i>Task 1</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-2-14"><i class="fa fa-check"></i>Task 2</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-3-14"><i class="fa fa-check"></i>Task 3</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-4-12"><i class="fa fa-check"></i>Task 4</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-5-9"><i class="fa fa-check"></i>Task 5</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-6-7"><i class="fa fa-check"></i>Task 6</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-7-5"><i class="fa fa-check"></i>Task 7</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-8-5"><i class="fa fa-check"></i>Task 8</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#solutions-for-exercise-8"><i class="fa fa-check"></i>Solutions for Exercise 8</a>
+<ul>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-1-15"><i class="fa fa-check"></i>Task 1</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-2-15"><i class="fa fa-check"></i>Task 2</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-3-15"><i class="fa fa-check"></i>Task 3</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-4-13"><i class="fa fa-check"></i>Task 4</a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://lkobilke.github.io/Intro_to_R/.git" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Introduction to R</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="solutions" class="section level1 unnumbered hasAnchor">
+<h1>Solutions<a href="solutions.html#solutions" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>This is where you’ll find solutions for all of the tutorials.</p>
+<div id="solutions-for-exercise-1" class="section level2 unnumbered hasAnchor">
+<h2>Solutions for Exercise 1<a href="solutions.html#solutions-for-exercise-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="task-1-8" class="section level3 unnumbered hasAnchor">
+<h3>Task 1<a href="solutions.html#task-1-8" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Below you will see multiple choice questions. Please try to identify the
+correct answers. 1, 2, 3 and 4 correct answers are possible for each
+question.</p>
+<p><strong>1. What panels are part of RStudio?</strong></p>
+<p><em>Solution:</em></p>
+<ul>
+<li>source (x)</li>
+<li>console (x)</li>
+<li>packages, files &amp; plots (x)</li>
+</ul>
+<p><strong>2. How do you activate R packages after you have installed them?</strong></p>
+<p><em>Solution:</em></p>
+<ul>
+<li>library() (x)</li>
+</ul>
+<p><strong>3. How do you create a vector in R with elements 1, 2, 3?</strong></p>
+<p><em>Solution:</em></p>
+<ul>
+<li>c(1,2,3) (x)</li>
+</ul>
+<p><strong>4. Imagine you have a vector called ‘vector’ with 10 numeric elements.
+How do you retrieve the 8th element?</strong></p>
+<p><em>Solution:</em></p>
+<ul>
+<li>vector[8] (x)</li>
+</ul>
+<p><strong>5. Imagine you have a vector called ‘hair’ with 5 elements: brown,
+black, red, blond, other. How do you retrieve the color ‘blond’?</strong></p>
+<p><em>Solution:</em></p>
+<ul>
+<li>hair[4] (x)</li>
+</ul>
+</div>
+<div id="task-2-8" class="section level3 unnumbered hasAnchor">
+<h3>Task 2<a href="solutions.html#task-2-8" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Create a numeric vector with 8 values and assign the name <em>age</em> to the
+vector. First, display all elements of the vector. Then print only the
+5th element. After that, display all elements except the 5th. Finally,
+display the elements at the positions 6 to 8.</p>
+<p><em>Solution:</em></p>
+<div class="sourceCode" id="cb485"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb485-1"><a href="solutions.html#cb485-1" tabindex="-1"></a>age <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">65</span>, <span class="dv">52</span>, <span class="dv">73</span>, <span class="dv">71</span>, <span class="dv">80</span>, <span class="dv">62</span>, <span class="dv">68</span>, <span class="dv">87</span>)</span>
+<span id="cb485-2"><a href="solutions.html#cb485-2" tabindex="-1"></a>age</span></code></pre></div>
+<pre><code>## [1] 65 52 73 71 80 62 68 87</code></pre>
+<div class="sourceCode" id="cb487"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb487-1"><a href="solutions.html#cb487-1" tabindex="-1"></a>age[<span class="dv">5</span>]</span></code></pre></div>
+<pre><code>## [1] 80</code></pre>
+<div class="sourceCode" id="cb489"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb489-1"><a href="solutions.html#cb489-1" tabindex="-1"></a>age[<span class="sc">-</span><span class="dv">5</span>]</span></code></pre></div>
+<pre><code>## [1] 65 52 73 71 62 68 87</code></pre>
+<div class="sourceCode" id="cb491"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb491-1"><a href="solutions.html#cb491-1" tabindex="-1"></a>age[<span class="dv">6</span><span class="sc">:</span><span class="dv">8</span>]</span></code></pre></div>
+<pre><code>## [1] 62 68 87</code></pre>
+</div>
+<div id="task-3-8" class="section level3 unnumbered hasAnchor">
+<h3>Task 3<a href="solutions.html#task-3-8" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Create a non-numeric, i.e. character, vector with 4 elements and assign
+the name <em>eye_color</em> to the vector. First, print all elements of this
+vector to the console. Then have only the value in the 2nd element
+displayed, then all values except the 2nd element. At the end, display
+the elements at the positions 2 to 4.</p>
+<p><em>Solution:</em></p>
+<div class="sourceCode" id="cb493"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb493-1"><a href="solutions.html#cb493-1" tabindex="-1"></a>eye_color <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;blue&quot;</span>, <span class="st">&quot;green&quot;</span>, <span class="st">&quot;brown&quot;</span>, <span class="st">&quot;grey&quot;</span>)</span>
+<span id="cb493-2"><a href="solutions.html#cb493-2" tabindex="-1"></a>eye_color</span></code></pre></div>
+<pre><code>## [1] &quot;blue&quot;  &quot;green&quot; &quot;brown&quot; &quot;grey&quot;</code></pre>
+<div class="sourceCode" id="cb495"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb495-1"><a href="solutions.html#cb495-1" tabindex="-1"></a>eye_color[<span class="dv">2</span>]</span></code></pre></div>
+<pre><code>## [1] &quot;green&quot;</code></pre>
+<div class="sourceCode" id="cb497"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb497-1"><a href="solutions.html#cb497-1" tabindex="-1"></a>eye_color[<span class="sc">-</span><span class="dv">2</span>]</span></code></pre></div>
+<pre><code>## [1] &quot;blue&quot;  &quot;brown&quot; &quot;grey&quot;</code></pre>
+<div class="sourceCode" id="cb499"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb499-1"><a href="solutions.html#cb499-1" tabindex="-1"></a>eye_color[<span class="dv">2</span><span class="sc">:</span><span class="dv">4</span>]</span></code></pre></div>
+<pre><code>## [1] &quot;green&quot; &quot;brown&quot; &quot;grey&quot;</code></pre>
+<div class="sourceCode" id="cb501"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb501-1"><a href="solutions.html#cb501-1" tabindex="-1"></a><span class="co"># Alternatively, you could also use this approach:</span></span>
+<span id="cb501-2"><a href="solutions.html#cb501-2" tabindex="-1"></a>eye_color[<span class="fu">c</span>(<span class="dv">2</span>)]</span></code></pre></div>
+<pre><code>## [1] &quot;green&quot;</code></pre>
+<div class="sourceCode" id="cb503"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb503-1"><a href="solutions.html#cb503-1" tabindex="-1"></a>eye_color[<span class="fu">c</span>(<span class="sc">-</span><span class="dv">2</span>)]</span></code></pre></div>
+<pre><code>## [1] &quot;blue&quot;  &quot;brown&quot; &quot;grey&quot;</code></pre>
+<div class="sourceCode" id="cb505"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb505-1"><a href="solutions.html#cb505-1" tabindex="-1"></a>eye_color[<span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>)]</span></code></pre></div>
+<pre><code>## [1] &quot;green&quot; &quot;brown&quot; &quot;grey&quot;</code></pre>
+</div>
+</div>
+<div id="solutions-for-exercise-2" class="section level2 unnumbered hasAnchor">
+<h2>Solutions for Exercise 2<a href="solutions.html#solutions-for-exercise-2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="task-1-9" class="section level3 unnumbered hasAnchor">
+<h3>Task 1<a href="solutions.html#task-1-9" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Download the <em>“WoJ_names.csv”</em> from LRZ Sync &amp; Share (<a href="https://syncandshare.lrz.de/getlink/fiVXUkKnZzQLJZJwiznMVF/">click
+here</a>) and
+put it into the folder that you want to use as working directory.</p>
+<p>Set your working directory and load the data into R by saving it into a
+source object called <em>data</em>. <strong>Note:</strong> This time, it’s a csv that is
+separated by semicolons, not by commas.</p>
+<p><em>Solution:</em></p>
+<div class="sourceCode" id="cb507"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb507-1"><a href="solutions.html#cb507-1" tabindex="-1"></a><span class="co"># Note: you may need to set your working directory first</span></span>
+<span id="cb507-2"><a href="solutions.html#cb507-2" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read.csv2</span>(<span class="st">&quot;WoJ_names.csv&quot;</span>, <span class="at">header =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+</div>
+<div id="task-2-9" class="section level3 unnumbered hasAnchor">
+<h3>Task 2<a href="solutions.html#task-2-9" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Now, print only the column to the console that shows the <em>trust in
+government</em>. Use the <code>$</code> operator first. Then try to achieve the same
+result using the subsetting operators, i.e. <code>[]</code>.</p>
+<p><em>Solution:</em></p>
+<div class="sourceCode" id="cb508"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb508-1"><a href="solutions.html#cb508-1" tabindex="-1"></a>data<span class="sc">$</span>trust_government <span class="co"># first version</span></span></code></pre></div>
+<pre><code>##  [1] 3 4 4 4 2 4 1 3 1 3 2 3 2 2 2 2 3 3 4 3 3 2 3 4 3 3 3 2 3 3 3 3 4 2 3 2 2 2
+## [39] 2 3</code></pre>
+<div class="sourceCode" id="cb510"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb510-1"><a href="solutions.html#cb510-1" tabindex="-1"></a>data[, <span class="dv">8</span>] <span class="co"># second version</span></span></code></pre></div>
+<pre><code>##  [1] 3 4 4 4 2 4 1 3 1 3 2 3 2 2 2 2 3 3 4 3 3 2 3 4 3 3 3 2 3 3 3 3 4 2 3 2 2 2
+## [39] 2 3</code></pre>
+</div>
+<div id="task-3-9" class="section level3 unnumbered hasAnchor">
+<h3>Task 3<a href="solutions.html#task-3-9" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Print only the first 6 <em>trust in government</em> numbers to the console. Use
+the <code>$</code> operator first. Then try to achieve the same result using the
+subsetting operators, i.e. <code>[]</code>.</p>
+<p><em>Solution:</em></p>
+<div class="sourceCode" id="cb512"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb512-1"><a href="solutions.html#cb512-1" tabindex="-1"></a>data<span class="sc">$</span>trust_government[<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>] <span class="co"># first version</span></span></code></pre></div>
+<pre><code>## [1] 3 4 4 4 2 4</code></pre>
+<div class="sourceCode" id="cb514"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb514-1"><a href="solutions.html#cb514-1" tabindex="-1"></a>data[<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>, <span class="dv">8</span>] <span class="co"># second version</span></span></code></pre></div>
+<pre><code>## [1] 3 4 4 4 2 4</code></pre>
+</div>
+<div id="task-4-7" class="section level3 unnumbered hasAnchor">
+<h3>Task 4<a href="solutions.html#task-4-7" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Repeat Task 1, but use an R project this time to set your working directory.</p>
+<p><em>Solution:</em></p>
+<p>Easiest way: convert an existing folder into a project via <strong>File → New Project… → Existing Directory</strong>.</p>
+</div>
+</div>
+<div id="solutions-for-exercise-3" class="section level2 unnumbered hasAnchor">
+<h2>Solutions for Exercise 3<a href="solutions.html#solutions-for-exercise-3" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="task-1-10" class="section level3 unnumbered hasAnchor">
+<h3>Task 1<a href="solutions.html#task-1-10" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Below you will see multiple choice questions. Please try to identify the
+correct answers. 1, 2, 3 and 4 correct answers are possible for each
+question.</p>
+<p><strong>1. What are the main characteristics of tidy data?</strong></p>
+<p><em>Solution:</em></p>
+<ul>
+<li>Every observation is a row. (x)</li>
+</ul>
+<p><strong>2. What are <code>dplyr</code> functions?</strong></p>
+<p><em>Solution:</em></p>
+<ul>
+<li><code>mutate()</code> (x)</li>
+</ul>
+<p><strong>3. How can you sort the eye_color of Star Wars characters from Z to
+A?</strong></p>
+<p><em>Solution:</em></p>
+<ul>
+<li><code>starwars_data %&gt;% arrange(desc(eye_color))</code> (x)</li>
+<li><code>starwars_data %&gt;% select(eye_color) %&gt;% arrange(desc(eye_color))</code>
+<ol start="24" style="list-style-type: lower-alpha">
+<li></li>
+</ol></li>
+</ul>
+<p><strong>4. Imagine you want to recode the height of the these characters. You
+want to have three categories from small and medium to tall. What is a
+valid approach?</strong></p>
+<p><em>Solution:</em></p>
+<ul>
+<li><code>starwars_data %&gt;% mutate(height = case_when(height&lt;=150~"small",height&lt;=190~"medium",height&gt;190~"tall"))</code>
+<ol start="24" style="list-style-type: lower-alpha">
+<li></li>
+</ol></li>
+</ul>
+<p><strong>5. Imagine you want to provide a systematic overview over all hair
+colors and what species wear these hair colors frequently (not
+accounting for the skewed sampling of species)? What is a valid
+approach?</strong></p>
+<p><em>Solution:</em></p>
+<ul>
+<li><code>starwars_data %&gt;% group_by(hair_color, species) %&gt;% summarize(count = n()) %&gt;% arrange(hair_color)</code>
+<ol start="24" style="list-style-type: lower-alpha">
+<li></li>
+</ol></li>
+</ul>
+</div>
+<div id="task-2-10" class="section level3 unnumbered hasAnchor">
+<h3>Task 2<a href="solutions.html#task-2-10" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>It’s your turn now. Load the starwars data like this:</p>
+<div class="sourceCode" id="cb516"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb516-1"><a href="solutions.html#cb516-1" tabindex="-1"></a><span class="fu">library</span>(dplyr) <span class="co"># to activate the dplyr package</span></span>
+<span id="cb516-2"><a href="solutions.html#cb516-2" tabindex="-1"></a>starwars_data <span class="ot">&lt;-</span> starwars <span class="co"># to assign the pre-installed starwars data set (dplyr) into a source object in our environment</span></span></code></pre></div>
+<p><em>Solution:</em></p>
+<p>How many humans are contained in the starwars dataset overall?
+First, solve this task using <code>filter()</code> only.</p>
+<div class="sourceCode" id="cb517"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb517-1"><a href="solutions.html#cb517-1" tabindex="-1"></a>starwars_data <span class="sc">%&gt;%</span></span>
+<span id="cb517-2"><a href="solutions.html#cb517-2" tabindex="-1"></a>  <span class="fu">filter</span>(species <span class="sc">==</span> <span class="st">&quot;Human&quot;</span>)</span></code></pre></div>
+<pre><code>## # A tibble: 35 × 14
+##    name     height  mass hair_color skin_color eye_color birth_year sex   gender
+##    &lt;chr&gt;     &lt;int&gt; &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;      &lt;chr&gt;          &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt; 
+##  1 Luke Sk…    172    77 blond      fair       blue            19   male  mascu…
+##  2 Darth V…    202   136 none       white      yellow          41.9 male  mascu…
+##  3 Leia Or…    150    49 brown      light      brown           19   fema… femin…
+##  4 Owen La…    178   120 brown, gr… light      blue            52   male  mascu…
+##  5 Beru Wh…    165    75 brown      light      blue            47   fema… femin…
+##  6 Biggs D…    183    84 black      light      brown           24   male  mascu…
+##  7 Obi-Wan…    182    77 auburn, w… fair       blue-gray       57   male  mascu…
+##  8 Anakin …    188    84 blond      fair       blue            41.9 male  mascu…
+##  9 Wilhuff…    180    NA auburn, g… fair       blue            64   male  mascu…
+## 10 Han Solo    180    80 brown      fair       brown           29   male  mascu…
+## # ℹ 25 more rows
+## # ℹ 5 more variables: homeworld &lt;chr&gt;, species &lt;chr&gt;, films &lt;list&gt;,
+## #   vehicles &lt;list&gt;, starships &lt;list&gt;</code></pre>
+<p>Next, solve it by combining <code>filter()</code> with <code>summarize(count = n())</code>.</p>
+<div class="sourceCode" id="cb519"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb519-1"><a href="solutions.html#cb519-1" tabindex="-1"></a>starwars_data <span class="sc">%&gt;%</span></span>
+<span id="cb519-2"><a href="solutions.html#cb519-2" tabindex="-1"></a>  <span class="fu">filter</span>(species <span class="sc">==</span> <span class="st">&quot;Human&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb519-3"><a href="solutions.html#cb519-3" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">count =</span> <span class="fu">n</span>())</span></code></pre></div>
+<pre><code>## # A tibble: 1 × 1
+##   count
+##   &lt;int&gt;
+## 1    35</code></pre>
+<p>Finally, try to solve it with <code>count()</code>.</p>
+<div class="sourceCode" id="cb521"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb521-1"><a href="solutions.html#cb521-1" tabindex="-1"></a>starwars_data <span class="sc">%&gt;%</span></span>
+<span id="cb521-2"><a href="solutions.html#cb521-2" tabindex="-1"></a>  <span class="fu">count</span>(species <span class="sc">==</span> <span class="st">&quot;Human&quot;</span>)</span></code></pre></div>
+<pre><code>## # A tibble: 3 × 2
+##   `species == &quot;Human&quot;`     n
+##   &lt;lgl&gt;                &lt;int&gt;
+## 1 FALSE                   48
+## 2 TRUE                    35
+## 3 NA                       4</code></pre>
+</div>
+<div id="task-3-10" class="section level3 unnumbered hasAnchor">
+<h3>Task 3<a href="solutions.html#task-3-10" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Use <code>mutate()</code> and <code>case_when()</code> to create a new column height_group with:</p>
+<ul>
+<li>“short” if height &lt; 140</li>
+<li>“medium” if height &lt; 180</li>
+<li>“tall” otherwise.</li>
+</ul>
+<p><em>Solution:</em></p>
+<div class="sourceCode" id="cb523"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb523-1"><a href="solutions.html#cb523-1" tabindex="-1"></a>starwars_data <span class="ot">&lt;-</span> starwars_data <span class="sc">%&gt;%</span></span>
+<span id="cb523-2"><a href="solutions.html#cb523-2" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">height_group =</span> <span class="fu">case_when</span>(</span>
+<span id="cb523-3"><a href="solutions.html#cb523-3" tabindex="-1"></a>    height <span class="sc">&lt;</span> <span class="dv">140</span> <span class="sc">~</span> <span class="st">&quot;short&quot;</span>,</span>
+<span id="cb523-4"><a href="solutions.html#cb523-4" tabindex="-1"></a>    height <span class="sc">&lt;</span> <span class="dv">180</span> <span class="sc">~</span> <span class="st">&quot;medium&quot;</span>,</span>
+<span id="cb523-5"><a href="solutions.html#cb523-5" tabindex="-1"></a>    height <span class="sc">&gt;=</span> <span class="dv">180</span> <span class="sc">~</span> <span class="st">&quot;tall&quot;</span></span>
+<span id="cb523-6"><a href="solutions.html#cb523-6" tabindex="-1"></a>  ))</span></code></pre></div>
+</div>
+<div id="task-4-8" class="section level3 unnumbered hasAnchor">
+<h3>Task 4<a href="solutions.html#task-4-8" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>How many humans are contained in starwars by height_group? (Hint: You’ll need to chain multiple functions. Remember that <code>summarize()</code> has a best friend that will help you solve this task. :))</p>
+<p><em>Solution:</em></p>
+<div class="sourceCode" id="cb524"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb524-1"><a href="solutions.html#cb524-1" tabindex="-1"></a>starwars_data <span class="sc">%&gt;%</span></span>
+<span id="cb524-2"><a href="solutions.html#cb524-2" tabindex="-1"></a>  <span class="fu">filter</span>(species <span class="sc">==</span> <span class="st">&quot;Human&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb524-3"><a href="solutions.html#cb524-3" tabindex="-1"></a>  <span class="fu">group_by</span>(height_group) <span class="sc">%&gt;%</span></span>
+<span id="cb524-4"><a href="solutions.html#cb524-4" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">count =</span> <span class="fu">n</span>())</span></code></pre></div>
+<pre><code>## # A tibble: 3 × 2
+##   height_group count
+##   &lt;chr&gt;        &lt;int&gt;
+## 1 medium          13
+## 2 tall            17
+## 3 &lt;NA&gt;             5</code></pre>
+</div>
+<div id="task-5-5" class="section level3 unnumbered hasAnchor">
+<h3>Task 5<a href="solutions.html#task-5-5" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>What is the most common height_group among Star Wars characters? (Hint: You’ll need to chain multiple functions, but one of them should be <code>arrange()</code>)__</p>
+<p><em>Solution:</em></p>
+<div class="sourceCode" id="cb526"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb526-1"><a href="solutions.html#cb526-1" tabindex="-1"></a>starwars_data <span class="sc">%&gt;%</span></span>
+<span id="cb526-2"><a href="solutions.html#cb526-2" tabindex="-1"></a>  <span class="fu">group_by</span>(height_group) <span class="sc">%&gt;%</span></span>
+<span id="cb526-3"><a href="solutions.html#cb526-3" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">count =</span> <span class="fu">n</span>()) <span class="sc">%&gt;%</span></span>
+<span id="cb526-4"><a href="solutions.html#cb526-4" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(count))</span></code></pre></div>
+<pre><code>## # A tibble: 4 × 2
+##   height_group count
+##   &lt;chr&gt;        &lt;int&gt;
+## 1 tall            44
+## 2 medium          27
+## 3 short           10
+## 4 &lt;NA&gt;             6</code></pre>
+<p>Alternatively, you could use the <code>count()</code> function:</p>
+<div class="sourceCode" id="cb528"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb528-1"><a href="solutions.html#cb528-1" tabindex="-1"></a>starwars_data <span class="sc">%&gt;%</span></span>
+<span id="cb528-2"><a href="solutions.html#cb528-2" tabindex="-1"></a>  <span class="fu">count</span>(height_group) <span class="sc">%&gt;%</span></span>
+<span id="cb528-3"><a href="solutions.html#cb528-3" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(n))</span></code></pre></div>
+<pre><code>## # A tibble: 4 × 2
+##   height_group     n
+##   &lt;chr&gt;        &lt;int&gt;
+## 1 tall            44
+## 2 medium          27
+## 3 short           10
+## 4 &lt;NA&gt;             6</code></pre>
+</div>
+<div id="task-6-4" class="section level3 unnumbered hasAnchor">
+<h3>Task 6<a href="solutions.html#task-6-4" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>What is the average mass of Star Wars characters that are not human and
+have yellow eyes? (Hint: You’ll need to calculate descriptive statistics and remove all <code>NAs</code>.)</p>
+<p><em>Solution:</em></p>
+<div class="sourceCode" id="cb530"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb530-1"><a href="solutions.html#cb530-1" tabindex="-1"></a>starwars_data <span class="sc">%&gt;%</span></span>
+<span id="cb530-2"><a href="solutions.html#cb530-2" tabindex="-1"></a>  <span class="fu">filter</span>(species <span class="sc">!=</span> <span class="st">&quot;Human&quot;</span> <span class="sc">&amp;</span> eye_color <span class="sc">==</span> <span class="st">&quot;yellow&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb530-3"><a href="solutions.html#cb530-3" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">mean_mass =</span> <span class="fu">mean</span>(mass, <span class="at">na.rm =</span> <span class="cn">TRUE</span>))</span></code></pre></div>
+<pre><code>## # A tibble: 1 × 1
+##   mean_mass
+##       &lt;dbl&gt;
+## 1      74.1</code></pre>
+</div>
+<div id="task-7-3" class="section level3 unnumbered hasAnchor">
+<h3>Task 7<a href="solutions.html#task-7-3" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Compare the mean, median, and standard deviation of mass for all humans
+and droids. (Hint: You’ll need to calculate descriptive statistics and remove all <code>NAs</code>.)</p>
+<p><em>Solution:</em></p>
+<div class="sourceCode" id="cb532"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb532-1"><a href="solutions.html#cb532-1" tabindex="-1"></a>starwars_data <span class="sc">%&gt;%</span></span>
+<span id="cb532-2"><a href="solutions.html#cb532-2" tabindex="-1"></a>  <span class="fu">filter</span>(species <span class="sc">==</span> <span class="st">&quot;Human&quot;</span> <span class="sc">|</span> species <span class="sc">==</span> <span class="st">&quot;Droid&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb532-3"><a href="solutions.html#cb532-3" tabindex="-1"></a>  <span class="fu">group_by</span>(species) <span class="sc">%&gt;%</span></span>
+<span id="cb532-4"><a href="solutions.html#cb532-4" tabindex="-1"></a>  <span class="fu">summarize</span>(</span>
+<span id="cb532-5"><a href="solutions.html#cb532-5" tabindex="-1"></a>    <span class="at">M =</span> <span class="fu">mean</span>(mass, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb532-6"><a href="solutions.html#cb532-6" tabindex="-1"></a>    <span class="at">Med =</span> <span class="fu">median</span>(mass, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb532-7"><a href="solutions.html#cb532-7" tabindex="-1"></a>    <span class="at">SD =</span> <span class="fu">sd</span>(mass, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb532-8"><a href="solutions.html#cb532-8" tabindex="-1"></a>  )</span></code></pre></div>
+<pre><code>## # A tibble: 2 × 4
+##   species     M   Med    SD
+##   &lt;chr&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+## 1 Droid    69.8  53.5  51.0
+## 2 Human    81.3  79    19.3</code></pre>
+</div>
+<div id="task-8-3" class="section level3 unnumbered hasAnchor">
+<h3>Task 8<a href="solutions.html#task-8-3" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Create a new variable in which you store the mass in gram. Add it to the
+dataframe.</p>
+<p><em>Solution:</em></p>
+<div class="sourceCode" id="cb534"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb534-1"><a href="solutions.html#cb534-1" tabindex="-1"></a>starwars_data <span class="ot">&lt;-</span> starwars_data <span class="sc">%&gt;%</span></span>
+<span id="cb534-2"><a href="solutions.html#cb534-2" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">gr_mass =</span> mass <span class="sc">*</span> <span class="dv">1000</span>)</span>
+<span id="cb534-3"><a href="solutions.html#cb534-3" tabindex="-1"></a></span>
+<span id="cb534-4"><a href="solutions.html#cb534-4" tabindex="-1"></a>starwars_data <span class="sc">%&gt;%</span></span>
+<span id="cb534-5"><a href="solutions.html#cb534-5" tabindex="-1"></a>  <span class="fu">select</span>(name, species, mass, gr_mass)</span></code></pre></div>
+<pre><code>## # A tibble: 87 × 4
+##    name               species  mass gr_mass
+##    &lt;chr&gt;              &lt;chr&gt;   &lt;dbl&gt;   &lt;dbl&gt;
+##  1 Luke Skywalker     Human      77   77000
+##  2 C-3PO              Droid      75   75000
+##  3 R2-D2              Droid      32   32000
+##  4 Darth Vader        Human     136  136000
+##  5 Leia Organa        Human      49   49000
+##  6 Owen Lars          Human     120  120000
+##  7 Beru Whitesun Lars Human      75   75000
+##  8 R5-D4              Droid      32   32000
+##  9 Biggs Darklighter  Human      84   84000
+## 10 Obi-Wan Kenobi     Human      77   77000
+## # ℹ 77 more rows</code></pre>
+</div>
+</div>
+<div id="solutions-for-exercise-4" class="section level2 unnumbered hasAnchor">
+<h2>Solutions for Exercise 4<a href="solutions.html#solutions-for-exercise-4" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="task-1-11" class="section level3 unnumbered hasAnchor">
+<h3>Task 1<a href="solutions.html#task-1-11" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Show how journalists’ work experience (<code>work_experience</code>) is associated
+with their trust in politicians (<code>trust_politicians</code>). To do this,
+create a very basic scatter plot using <code>ggplot2</code> and the respective
+<code>ggplot()</code> function. Use the <code>aes()</code> function inside <code>ggplot()</code> to map
+variables to the visual properties. Use <code>geom_point()</code> to add points to
+the plot.</p>
+<p><em>Solution:</em></p>
+<div class="sourceCode" id="cb536"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb536-1"><a href="solutions.html#cb536-1" tabindex="-1"></a>WoJ <span class="sc">%&gt;%</span></span>
+<span id="cb536-2"><a href="solutions.html#cb536-2" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> work_experience, <span class="at">y =</span> trust_politicians)) <span class="sc">+</span></span>
+<span id="cb536-3"><a href="solutions.html#cb536-3" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code></pre></div>
+<p><img src="Intro-to-R_files/figure-html/unnamed-chunk-312-1.png" alt="" width="672" /></p>
+</div>
+<div id="task-2-11" class="section level3 unnumbered hasAnchor">
+<h3>Task 2<a href="solutions.html#task-2-11" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Do more experienced journalists become less trusting in politicians? Add
+this code to your plot to create a regression line:
+<code>+ geom_smooth(method = lm, se = FALSE)</code>.</p>
+<p>What can you conclude from the regression line?</p>
+<p><em>Solution:</em></p>
+<div class="sourceCode" id="cb537"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb537-1"><a href="solutions.html#cb537-1" tabindex="-1"></a>WoJ <span class="sc">%&gt;%</span></span>
+<span id="cb537-2"><a href="solutions.html#cb537-2" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> work_experience, <span class="at">y =</span> trust_politicians)) <span class="sc">+</span></span>
+<span id="cb537-3"><a href="solutions.html#cb537-3" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb537-4"><a href="solutions.html#cb537-4" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> lm, <span class="at">se =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
+<p><img src="Intro-to-R_files/figure-html/unnamed-chunk-313-1.png" alt="" width="672" /></p>
+<p>The regression line shows us that there is no relationship between work
+experience and trust in politicians. In other words, more experienced
+journalists <strong>do not</strong> become less trusting in politicians.</p>
+</div>
+<div id="task-3-11" class="section level3 unnumbered hasAnchor">
+<h3>Task 3<a href="solutions.html#task-3-11" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Does the relationship between work experience and trust in politicians
+remain stable across different countries? Alternatively, does work
+experience influence trust in politicians differently depending on the
+specific country context?</p>
+<p>Try to create a visualization to answer this question using
+<code>facet_wrap()</code>.</p>
+<p><em>Solution:</em></p>
+<div class="sourceCode" id="cb538"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb538-1"><a href="solutions.html#cb538-1" tabindex="-1"></a>WoJ <span class="sc">%&gt;%</span></span>
+<span id="cb538-2"><a href="solutions.html#cb538-2" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> work_experience, <span class="at">y =</span> trust_politicians)) <span class="sc">+</span></span>
+<span id="cb538-3"><a href="solutions.html#cb538-3" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb538-4"><a href="solutions.html#cb538-4" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> lm, <span class="at">se =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb538-5"><a href="solutions.html#cb538-5" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>country)</span></code></pre></div>
+<p><img src="Intro-to-R_files/figure-html/unnamed-chunk-314-1.png" alt="" width="672" /></p>
+</div>
+<div id="task-4-9" class="section level3 unnumbered hasAnchor">
+<h3>Task 4<a href="solutions.html#task-4-9" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>In your current visualization, it may be challenging to discern
+cross-country differences. Let’s aim to create a visualization that
+illustrates these differences across countries more distinctly.</p>
+<p>Remove the <code>facet_wrap()</code> and the <code>geom_point()</code> code line. This leaves
+you with this graph:</p>
+<div class="sourceCode" id="cb539"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb539-1"><a href="solutions.html#cb539-1" tabindex="-1"></a>WoJ <span class="sc">%&gt;%</span></span>
+<span id="cb539-2"><a href="solutions.html#cb539-2" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> work_experience, <span class="at">y =</span> trust_politicians)) <span class="sc">+</span></span>
+<span id="cb539-3"><a href="solutions.html#cb539-3" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> lm, <span class="at">se =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
+<p><img src="Intro-to-R_files/figure-html/unnamed-chunk-315-1.png" alt="" width="672" /></p>
+<p>Now, display every country in a separate color by using the <code>color</code>
+argument inside the <code>aes()</code> function.</p>
+<p><em>Solution:</em></p>
+<div class="sourceCode" id="cb540"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb540-1"><a href="solutions.html#cb540-1" tabindex="-1"></a>WoJ <span class="sc">%&gt;%</span></span>
+<span id="cb540-2"><a href="solutions.html#cb540-2" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> work_experience, <span class="at">y =</span> trust_politicians, <span class="at">color =</span> country)) <span class="sc">+</span></span>
+<span id="cb540-3"><a href="solutions.html#cb540-3" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> lm, <span class="at">se =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
+<p><img src="Intro-to-R_files/figure-html/unnamed-chunk-316-1.png" alt="" width="672" /></p>
+</div>
+<div id="task-5-6" class="section level3 unnumbered hasAnchor">
+<h3>Task 5<a href="solutions.html#task-5-6" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Add fitting labels to your plot. For example, set the main title to
+display: “Impact of Work Experience on Trust in Politicians”. The x-axis
+label should read “Years of Work Experience in Journalism”, and the
+y-axis label should read “Trust in Politicians on a 5-point Likert
+Scale”. The label for the color legend should be “Country”.</p>
+<p><em>Solution:</em></p>
+<div class="sourceCode" id="cb541"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb541-1"><a href="solutions.html#cb541-1" tabindex="-1"></a>WoJ <span class="sc">%&gt;%</span></span>
+<span id="cb541-2"><a href="solutions.html#cb541-2" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> work_experience, <span class="at">y =</span> trust_politicians, <span class="at">color =</span> country)) <span class="sc">+</span></span>
+<span id="cb541-3"><a href="solutions.html#cb541-3" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> lm, <span class="at">se =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb541-4"><a href="solutions.html#cb541-4" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb541-5"><a href="solutions.html#cb541-5" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">&quot;Impact of Work Experience on Trust in Politicians&quot;</span>,</span>
+<span id="cb541-6"><a href="solutions.html#cb541-6" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">&quot;Trust in Politicians on a 5-point Likert Scale&quot;</span>,</span>
+<span id="cb541-7"><a href="solutions.html#cb541-7" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">&quot;Years of Work Experience in Journalism&quot;</span>,</span>
+<span id="cb541-8"><a href="solutions.html#cb541-8" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">&quot;Country&quot;</span></span>
+<span id="cb541-9"><a href="solutions.html#cb541-9" tabindex="-1"></a>  )</span></code></pre></div>
+<p><img src="Intro-to-R_files/figure-html/unnamed-chunk-317-1.png" alt="" width="672" /></p>
+</div>
+<div id="task-6-5" class="section level3 unnumbered hasAnchor">
+<h3>Task 6<a href="solutions.html#task-6-5" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Add a nice theme that you like, e.g. <code>theme_minimal()</code>,
+<code>theme_classic()</code> or <code>theme_bw()</code>.</p>
+<p><em>Solution:</em></p>
+<div class="sourceCode" id="cb542"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb542-1"><a href="solutions.html#cb542-1" tabindex="-1"></a>WoJ <span class="sc">%&gt;%</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> work_experience, <span class="at">y =</span> trust_politicians, <span class="at">color =</span> country)) <span class="sc">+</span></span>
+<span id="cb542-2"><a href="solutions.html#cb542-2" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> lm, <span class="at">se =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb542-3"><a href="solutions.html#cb542-3" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb542-4"><a href="solutions.html#cb542-4" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">&quot;Impact of Work Experience on Trust in Politicians&quot;</span>,</span>
+<span id="cb542-5"><a href="solutions.html#cb542-5" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">&quot;Trust in Politicians on a 5-point Likert Scale&quot;</span>,</span>
+<span id="cb542-6"><a href="solutions.html#cb542-6" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">&quot;Years of Work Experience&quot;</span>,</span>
+<span id="cb542-7"><a href="solutions.html#cb542-7" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">&quot;Country&quot;</span></span>
+<span id="cb542-8"><a href="solutions.html#cb542-8" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb542-9"><a href="solutions.html#cb542-9" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code></pre></div>
+<p><img src="Intro-to-R_files/figure-html/unnamed-chunk-318-1.png" alt="" width="672" /></p>
+</div>
+</div>
+<div id="solutions-for-exercise-5" class="section level2 unnumbered hasAnchor">
+<h2>Solutions for Exercise 5<a href="solutions.html#solutions-for-exercise-5" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb543"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb543-1"><a href="solutions.html#cb543-1" tabindex="-1"></a><span class="co"># Note: you may need to set your working directory first</span></span>
+<span id="cb543-2"><a href="solutions.html#cb543-2" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read.csv2</span>(<span class="st">&quot;WoJ_names.csv&quot;</span>, <span class="at">header =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<div id="task-1-12" class="section level3 unnumbered hasAnchor">
+<h3>Task 1<a href="solutions.html#task-1-12" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><em>Solution:</em></p>
+<div class="sourceCode" id="cb544"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb544-1"><a href="solutions.html#cb544-1" tabindex="-1"></a>data <span class="sc">%&gt;%</span></span>
+<span id="cb544-2"><a href="solutions.html#cb544-2" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> country, <span class="at">y =</span> work_experience)) <span class="sc">+</span></span>
+<span id="cb544-3"><a href="solutions.html#cb544-3" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
+<span id="cb544-4"><a href="solutions.html#cb544-4" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb544-5"><a href="solutions.html#cb544-5" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Country&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Work Experience (Years)&quot;</span>, <span class="at">title =</span> <span class="st">&quot;Distribution of Work Experience by Country&quot;</span>)</span></code></pre></div>
+<p><img src="Intro-to-R_files/figure-html/unnamed-chunk-319-1.png" alt="" width="672" /></p>
+</div>
+<div id="task-2-12" class="section level3 unnumbered hasAnchor">
+<h3>Task 2<a href="solutions.html#task-2-12" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><em>Solution:</em></p>
+<div class="sourceCode" id="cb545"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb545-1"><a href="solutions.html#cb545-1" tabindex="-1"></a>data <span class="sc">%&gt;%</span></span>
+<span id="cb545-2"><a href="solutions.html#cb545-2" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> work_experience, <span class="at">y =</span> trust_government, <span class="at">color =</span> country)) <span class="sc">+</span></span>
+<span id="cb545-3"><a href="solutions.html#cb545-3" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb545-4"><a href="solutions.html#cb545-4" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb545-5"><a href="solutions.html#cb545-5" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Work Experience (Years)&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Trust in Government&quot;</span>, <span class="at">color =</span> <span class="st">&quot;Country&quot;</span>, <span class="at">title =</span> <span class="st">&quot;Trust in Government by Work Experience and Country&quot;</span>)</span></code></pre></div>
+<p><img src="Intro-to-R_files/figure-html/unnamed-chunk-320-1.png" alt="" width="672" /></p>
+</div>
+<div id="task-3-12" class="section level3 unnumbered hasAnchor">
+<h3>Task 3<a href="solutions.html#task-3-12" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><em>Solution:</em></p>
+<div class="sourceCode" id="cb546"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb546-1"><a href="solutions.html#cb546-1" tabindex="-1"></a>data <span class="sc">%&gt;%</span></span>
+<span id="cb546-2"><a href="solutions.html#cb546-2" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> work_experience, <span class="at">y =</span> trust_government, <span class="at">color =</span> country)) <span class="sc">+</span></span>
+<span id="cb546-3"><a href="solutions.html#cb546-3" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb546-4"><a href="solutions.html#cb546-4" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> name), <span class="at">check_overlap =</span> <span class="cn">TRUE</span>, <span class="at">max.overlaps =</span> <span class="cn">Inf</span>, <span class="at">hjust =</span> <span class="dv">0</span>, <span class="at">vjust =</span> <span class="dv">0</span>) <span class="sc">+</span></span>
+<span id="cb546-5"><a href="solutions.html#cb546-5" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb546-6"><a href="solutions.html#cb546-6" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Work Experience (Years)&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Trust in Government&quot;</span>, <span class="at">color =</span> <span class="st">&quot;Country&quot;</span>, <span class="at">title =</span> <span class="st">&quot;Trust in Government by Work Experience and Country&quot;</span>)</span></code></pre></div>
+<p><img src="Intro-to-R_files/figure-html/unnamed-chunk-321-1.png" alt="" width="672" /></p>
+</div>
+<div id="task-4-10" class="section level3 unnumbered hasAnchor">
+<h3>Task 4<a href="solutions.html#task-4-10" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><em>Solution:</em></p>
+<div class="sourceCode" id="cb547"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb547-1"><a href="solutions.html#cb547-1" tabindex="-1"></a>data <span class="sc">%&gt;%</span></span>
+<span id="cb547-2"><a href="solutions.html#cb547-2" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> country, <span class="at">fill =</span> employment)) <span class="sc">+</span></span>
+<span id="cb547-3"><a href="solutions.html#cb547-3" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="st">&quot;dodge&quot;</span>) <span class="sc">+</span></span>
+<span id="cb547-4"><a href="solutions.html#cb547-4" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb547-5"><a href="solutions.html#cb547-5" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Country&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Count&quot;</span>, <span class="at">fill =</span> <span class="st">&quot;Employment Type&quot;</span>, <span class="at">title =</span> <span class="st">&quot;Employment Types by Country&quot;</span>)</span></code></pre></div>
+<p><img src="Intro-to-R_files/figure-html/unnamed-chunk-322-1.png" alt="" width="672" /></p>
+<p><em>Alternative Solution:</em> Those who prefer the width of the bars to be
+aligned can use this code:</p>
+<div class="sourceCode" id="cb548"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb548-1"><a href="solutions.html#cb548-1" tabindex="-1"></a>data <span class="sc">%&gt;%</span></span>
+<span id="cb548-2"><a href="solutions.html#cb548-2" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> country, <span class="at">fill =</span> employment)) <span class="sc">+</span></span>
+<span id="cb548-3"><a href="solutions.html#cb548-3" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="fu">position_dodge</span>(<span class="at">preserve =</span> <span class="st">&quot;single&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb548-4"><a href="solutions.html#cb548-4" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb548-5"><a href="solutions.html#cb548-5" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Country&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Count&quot;</span>, <span class="at">fill =</span> <span class="st">&quot;Employment Type&quot;</span>, <span class="at">title =</span> <span class="st">&quot;Employment Types by Country&quot;</span>)</span></code></pre></div>
+<p><img src="Intro-to-R_files/figure-html/unnamed-chunk-323-1.png" alt="" width="672" /></p>
+</div>
+<div id="task-5-7" class="section level3 unnumbered hasAnchor">
+<h3>Task 5<a href="solutions.html#task-5-7" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>You can solve this exercise using two approaches. The first approach is
+to create a new variable called <em>experience_level</em> and save it in your
+original data set to be used for data visualization in the next,
+separate step:</p>
+<p><em>Solution:</em></p>
+<div class="sourceCode" id="cb549"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb549-1"><a href="solutions.html#cb549-1" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
+<span id="cb549-2"><a href="solutions.html#cb549-2" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">experience_level =</span> <span class="fu">case_when</span>(</span>
+<span id="cb549-3"><a href="solutions.html#cb549-3" tabindex="-1"></a>    work_experience <span class="sc">&lt;=</span> <span class="dv">10</span> <span class="sc">~</span> <span class="st">&quot;Junior&quot;</span>,</span>
+<span id="cb549-4"><a href="solutions.html#cb549-4" tabindex="-1"></a>    work_experience <span class="sc">&gt;</span> <span class="dv">10</span> <span class="sc">&amp;</span> work_experience <span class="sc">&lt;=</span> <span class="dv">20</span> <span class="sc">~</span> <span class="st">&quot;Mid-Level&quot;</span>,</span>
+<span id="cb549-5"><a href="solutions.html#cb549-5" tabindex="-1"></a>    work_experience <span class="sc">&gt;</span> <span class="dv">20</span> <span class="sc">~</span> <span class="st">&quot;Senior&quot;</span></span>
+<span id="cb549-6"><a href="solutions.html#cb549-6" tabindex="-1"></a>  ))</span>
+<span id="cb549-7"><a href="solutions.html#cb549-7" tabindex="-1"></a></span>
+<span id="cb549-8"><a href="solutions.html#cb549-8" tabindex="-1"></a>data <span class="sc">%&gt;%</span></span>
+<span id="cb549-9"><a href="solutions.html#cb549-9" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> country, <span class="at">fill =</span> employment)) <span class="sc">+</span></span>
+<span id="cb549-10"><a href="solutions.html#cb549-10" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="st">&quot;dodge&quot;</span>) <span class="sc">+</span></span>
+<span id="cb549-11"><a href="solutions.html#cb549-11" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb549-12"><a href="solutions.html#cb549-12" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Country&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Count&quot;</span>, <span class="at">fill =</span> <span class="st">&quot;Employment Type&quot;</span>, <span class="at">title =</span> <span class="st">&quot;Employment Types by Country and Level of Experience&quot;</span>) <span class="sc">+</span></span>
+<span id="cb549-13"><a href="solutions.html#cb549-13" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>experience_level) <span class="sc">+</span></span>
+<span id="cb549-14"><a href="solutions.html#cb549-14" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="dv">1</span>))</span></code></pre></div>
+<p><img src="Intro-to-R_files/figure-html/unnamed-chunk-324-1.png" alt="" width="672" /></p>
+<p>The more elegant solution is to perform your data management in one go
+without saving the variable experience_level back into your original
+data set. Using this approach will help declutter your data because you
+won’t need to create and save a new variable that is only required for a
+single visualization:</p>
+<div class="sourceCode" id="cb550"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb550-1"><a href="solutions.html#cb550-1" tabindex="-1"></a>data <span class="sc">%&gt;%</span></span>
+<span id="cb550-2"><a href="solutions.html#cb550-2" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">experience_level =</span> <span class="fu">case_when</span>(</span>
+<span id="cb550-3"><a href="solutions.html#cb550-3" tabindex="-1"></a>    work_experience <span class="sc">&lt;=</span> <span class="dv">10</span> <span class="sc">~</span> <span class="st">&quot;Junior&quot;</span>,</span>
+<span id="cb550-4"><a href="solutions.html#cb550-4" tabindex="-1"></a>    work_experience <span class="sc">&gt;</span> <span class="dv">10</span> <span class="sc">&amp;</span> work_experience <span class="sc">&lt;=</span> <span class="dv">20</span> <span class="sc">~</span> <span class="st">&quot;Mid-Level&quot;</span>,</span>
+<span id="cb550-5"><a href="solutions.html#cb550-5" tabindex="-1"></a>    work_experience <span class="sc">&gt;</span> <span class="dv">20</span> <span class="sc">~</span> <span class="st">&quot;Senior&quot;</span></span>
+<span id="cb550-6"><a href="solutions.html#cb550-6" tabindex="-1"></a>  )) <span class="sc">%&gt;%</span></span>
+<span id="cb550-7"><a href="solutions.html#cb550-7" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> country, <span class="at">fill =</span> employment)) <span class="sc">+</span></span>
+<span id="cb550-8"><a href="solutions.html#cb550-8" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="st">&quot;dodge&quot;</span>) <span class="sc">+</span></span>
+<span id="cb550-9"><a href="solutions.html#cb550-9" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb550-10"><a href="solutions.html#cb550-10" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Country&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Count&quot;</span>, <span class="at">fill =</span> <span class="st">&quot;Employment Type&quot;</span>, <span class="at">title =</span> <span class="st">&quot;Employment Types by Country and Level of Experience&quot;</span>) <span class="sc">+</span></span>
+<span id="cb550-11"><a href="solutions.html#cb550-11" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>experience_level) <span class="sc">+</span></span>
+<span id="cb550-12"><a href="solutions.html#cb550-12" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="dv">1</span>))</span></code></pre></div>
+<p><img src="Intro-to-R_files/figure-html/unnamed-chunk-325-1.png" alt="" width="672" /></p>
+</div>
+</div>
+<div id="solutions-for-exercise-6" class="section level2 unnumbered hasAnchor">
+<h2>Solutions for Exercise 6<a href="solutions.html#solutions-for-exercise-6" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="task-1-13" class="section level3 unnumbered hasAnchor">
+<h3>Task 1<a href="solutions.html#task-1-13" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>How many characters are contained in the <em>starwars_data</em> that have no <em>hair_color</em>, i.e. <em>hair_color</em> that are equal to “none”?
+Solve this task using <code>tidycomm::tab_frequencies()</code> and then keeping only the row that you are interested in by combining it with <code>dplyr::filter()</code>.</p>
+<p><em>Solution:</em></p>
+<div class="sourceCode" id="cb551"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb551-1"><a href="solutions.html#cb551-1" tabindex="-1"></a>starwars_data <span class="sc">%&gt;%</span></span>
+<span id="cb551-2"><a href="solutions.html#cb551-2" tabindex="-1"></a>  <span class="fu">tab_frequencies</span>(hair_color) <span class="sc">%&gt;%</span> </span>
+<span id="cb551-3"><a href="solutions.html#cb551-3" tabindex="-1"></a>  <span class="fu">filter</span>(hair_color <span class="sc">==</span> <span class="st">&quot;none&quot;</span>)</span></code></pre></div>
+<pre><code>## # A tibble: 1 × 5
+##   hair_color     n percent cum_n cum_percent
+##   &lt;chr&gt;      &lt;int&gt;   &lt;dbl&gt; &lt;int&gt;       &lt;dbl&gt;
+## 1 none          38   0.437    78       0.897</code></pre>
+</div>
+<div id="task-2-13" class="section level3 unnumbered hasAnchor">
+<h3>Task 2<a href="solutions.html#task-2-13" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Replace all values of <em>hair_color</em> that are equal to “none” with <code>NA</code>, i.e., define them as missings. Remember to check the <code>overwrite</code> argument. :)</p>
+<p><em>Solution:</em></p>
+<div class="sourceCode" id="cb553"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb553-1"><a href="solutions.html#cb553-1" tabindex="-1"></a>starwars_data <span class="ot">&lt;-</span> starwars_data <span class="sc">%&gt;%</span></span>
+<span id="cb553-2"><a href="solutions.html#cb553-2" tabindex="-1"></a>  <span class="fu">setna_scale</span>(hair_color, <span class="at">value =</span> <span class="st">&quot;none&quot;</span>, <span class="at">overwrite =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+</div>
+<div id="task-3-13" class="section level3 unnumbered hasAnchor">
+<h3>Task 3<a href="solutions.html#task-3-13" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Reverse the variable <em>mass</em>, and call the new variable “<em>skinnyness</em>”.
+Reverse the variable <em>height</em>, and call the new variable “<em>tinyness</em>”.</p>
+<p><em>Solution:</em></p>
+<div class="sourceCode" id="cb554"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb554-1"><a href="solutions.html#cb554-1" tabindex="-1"></a>starwars_data <span class="ot">&lt;-</span> starwars_data <span class="sc">%&gt;%</span></span>
+<span id="cb554-2"><a href="solutions.html#cb554-2" tabindex="-1"></a>  <span class="fu">reverse_scale</span>(mass, <span class="at">name =</span> <span class="st">&quot;skinnyness&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb554-3"><a href="solutions.html#cb554-3" tabindex="-1"></a>  <span class="fu">reverse_scale</span>(height, <span class="at">name =</span> <span class="st">&quot;tinyness&quot;</span>)</span></code></pre></div>
+</div>
+<div id="task-4-11" class="section level3 unnumbered hasAnchor">
+<h3>Task 4<a href="solutions.html#task-4-11" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Scale <em>skinnyness</em> to a new range from 0 to 1. The function should automatically create a variable called <em>skinnyness_0to1</em>.
+Display only the variables <em>name</em>, <em>skinnyness</em>, and <em>skinnyness_0to1</em>.</p>
+<p><em>Solution:</em></p>
+<div class="sourceCode" id="cb555"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb555-1"><a href="solutions.html#cb555-1" tabindex="-1"></a>starwars_data <span class="ot">&lt;-</span> starwars_data <span class="sc">%&gt;%</span></span>
+<span id="cb555-2"><a href="solutions.html#cb555-2" tabindex="-1"></a>  <span class="fu">minmax_scale</span>(skinnyness,</span>
+<span id="cb555-3"><a href="solutions.html#cb555-3" tabindex="-1"></a>               <span class="at">change_to_min =</span> <span class="dv">0</span>,</span>
+<span id="cb555-4"><a href="solutions.html#cb555-4" tabindex="-1"></a>               <span class="at">change_to_max =</span> <span class="dv">1</span>)</span>
+<span id="cb555-5"><a href="solutions.html#cb555-5" tabindex="-1"></a></span>
+<span id="cb555-6"><a href="solutions.html#cb555-6" tabindex="-1"></a>starwars_data <span class="sc">%&gt;%</span> </span>
+<span id="cb555-7"><a href="solutions.html#cb555-7" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(name, skinnyness, skinnyness_0to1)</span></code></pre></div>
+<pre><code>## # A tibble: 87 × 3
+##    name               skinnyness skinnyness_0to1
+##    &lt;chr&gt;                   &lt;dbl&gt;           &lt;dbl&gt;
+##  1 Luke Skywalker           1296           0.954
+##  2 C-3PO                    1298           0.955
+##  3 R2-D2                    1341           0.987
+##  4 Darth Vader              1237           0.910
+##  5 Leia Organa              1324           0.975
+##  6 Owen Lars                1253           0.922
+##  7 Beru Whitesun Lars       1298           0.955
+##  8 R5-D4                    1341           0.987
+##  9 Biggs Darklighter        1289           0.949
+## 10 Obi-Wan Kenobi           1296           0.954
+## # ℹ 77 more rows</code></pre>
+</div>
+<div id="task-5-8" class="section level3 unnumbered hasAnchor">
+<h3>Task 5<a href="solutions.html#task-5-8" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Create two new variables: <em>skinnyness_centered</em> with <code>center_scale()</code> and <em>skinnyness_z</em> with <code>z_scale()</code>.
+Display all the variables <em>name</em>, <em>skinnyness</em>, <em>skinnyness_0to1</em>, <em>skinnyness_centered</em>, <em>skinnyness_z</em>.</p>
+<p><em>Solution:</em></p>
+<div class="sourceCode" id="cb557"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb557-1"><a href="solutions.html#cb557-1" tabindex="-1"></a>starwars_data <span class="ot">&lt;-</span> starwars_data <span class="sc">%&gt;%</span></span>
+<span id="cb557-2"><a href="solutions.html#cb557-2" tabindex="-1"></a>  <span class="fu">center_scale</span>(skinnyness) <span class="sc">%&gt;%</span></span>
+<span id="cb557-3"><a href="solutions.html#cb557-3" tabindex="-1"></a>  <span class="fu">z_scale</span>(skinnyness)</span>
+<span id="cb557-4"><a href="solutions.html#cb557-4" tabindex="-1"></a></span>
+<span id="cb557-5"><a href="solutions.html#cb557-5" tabindex="-1"></a>starwars_data <span class="sc">%&gt;%</span> </span>
+<span id="cb557-6"><a href="solutions.html#cb557-6" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(name, skinnyness, skinnyness_0to1, skinnyness_centered, skinnyness_z)</span></code></pre></div>
+<pre><code>## # A tibble: 87 × 5
+##    name              skinnyness skinnyness_0to1 skinnyness_centered skinnyness_z
+##    &lt;chr&gt;                  &lt;dbl&gt;           &lt;dbl&gt;               &lt;dbl&gt;        &lt;dbl&gt;
+##  1 Luke Skywalker          1296           0.954                20.3       0.120 
+##  2 C-3PO                   1298           0.955                22.3       0.132 
+##  3 R2-D2                   1341           0.987                65.3       0.385 
+##  4 Darth Vader             1237           0.910               -38.7      -0.228 
+##  5 Leia Organa             1324           0.975                48.3       0.285 
+##  6 Owen Lars               1253           0.922               -22.7      -0.134 
+##  7 Beru Whitesun La…       1298           0.955                22.3       0.132 
+##  8 R5-D4                   1341           0.987                65.3       0.385 
+##  9 Biggs Darklighter       1289           0.949                13.3       0.0786
+## 10 Obi-Wan Kenobi          1296           0.954                20.3       0.120 
+## # ℹ 77 more rows</code></pre>
+</div>
+<div id="task-6-6" class="section level3 unnumbered hasAnchor">
+<h3>Task 6<a href="solutions.html#task-6-6" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Visualize the variables <em>skinnyness</em>, <em>skinnyness_0to1</em>, <em>skinnyness_centered</em>, <em>skinnyness_z</em> using <code>tidycomm::tab_frequencies)</code> and <code>tidycomm::visualize()</code>.</p>
+<p><em>Solution:</em></p>
+<div class="sourceCode" id="cb559"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb559-1"><a href="solutions.html#cb559-1" tabindex="-1"></a>starwars_data <span class="sc">%&gt;%</span></span>
+<span id="cb559-2"><a href="solutions.html#cb559-2" tabindex="-1"></a>  <span class="fu">tab_frequencies</span>(skinnyness, skinnyness_0to1, skinnyness_centered, skinnyness_z) <span class="sc">%&gt;%</span> </span>
+<span id="cb559-3"><a href="solutions.html#cb559-3" tabindex="-1"></a>  <span class="fu">visualize</span>()</span></code></pre></div>
+<p><img src="Intro-to-R_files/figure-html/unnamed-chunk-331-1.png" alt="" width="672" /></p>
+</div>
+<div id="task-7-4" class="section level3 unnumbered hasAnchor">
+<h3>Task 7<a href="solutions.html#task-7-4" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Categorize <em>skinnyness</em> into three groups:
+- <strong>“Heavy”</strong> for values <strong>≤ 1200</strong><br />
+- <strong>“Slim”</strong> for values <strong>&gt; 1200 and ≤ 1300</strong><br />
+- <strong>“Skinny”</strong> for values <strong>&gt; 1300</strong></p>
+<p>Use <code>tidycomm::categorize_scale()</code>. The function should automatically create a variable called <em>skinnyness_cat</em>. Display the variables <em>name</em>, <em>skinnyness</em>, and <em>skinnyness_cat</em>.</p>
+<p><em>Solution:</em></p>
+<div class="sourceCode" id="cb560"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb560-1"><a href="solutions.html#cb560-1" tabindex="-1"></a>starwars_data <span class="ot">&lt;-</span> starwars_data <span class="sc">%&gt;%</span></span>
+<span id="cb560-2"><a href="solutions.html#cb560-2" tabindex="-1"></a>  <span class="fu">categorize_scale</span>(skinnyness,</span>
+<span id="cb560-3"><a href="solutions.html#cb560-3" tabindex="-1"></a>                   <span class="at">lower_end =</span> <span class="dv">0</span>,</span>
+<span id="cb560-4"><a href="solutions.html#cb560-4" tabindex="-1"></a>                   <span class="at">upper_end =</span> <span class="dv">1400</span>,</span>
+<span id="cb560-5"><a href="solutions.html#cb560-5" tabindex="-1"></a>                   <span class="at">breaks =</span> <span class="fu">c</span>(<span class="dv">1200</span>, <span class="dv">1300</span>),</span>
+<span id="cb560-6"><a href="solutions.html#cb560-6" tabindex="-1"></a>                   <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;Heavy&quot;</span>, <span class="st">&quot;Slim&quot;</span>, <span class="st">&quot;Skinny&quot;</span>))</span>
+<span id="cb560-7"><a href="solutions.html#cb560-7" tabindex="-1"></a></span>
+<span id="cb560-8"><a href="solutions.html#cb560-8" tabindex="-1"></a>starwars_data <span class="sc">%&gt;%</span> </span>
+<span id="cb560-9"><a href="solutions.html#cb560-9" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(name, skinnyness, skinnyness_cat)</span></code></pre></div>
+<pre><code>## # A tibble: 87 × 3
+##    name               skinnyness skinnyness_cat
+##    &lt;chr&gt;                   &lt;dbl&gt; &lt;fct&gt;         
+##  1 Luke Skywalker           1296 Slim          
+##  2 C-3PO                    1298 Slim          
+##  3 R2-D2                    1341 Skinny        
+##  4 Darth Vader              1237 Slim          
+##  5 Leia Organa              1324 Skinny        
+##  6 Owen Lars                1253 Slim          
+##  7 Beru Whitesun Lars       1298 Slim          
+##  8 R5-D4                    1341 Skinny        
+##  9 Biggs Darklighter        1289 Slim          
+## 10 Obi-Wan Kenobi           1296 Slim          
+## # ℹ 77 more rows</code></pre>
+</div>
+<div id="task-8-4" class="section level3 unnumbered hasAnchor">
+<h3>Task 8<a href="solutions.html#task-8-4" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Use <code>tidycomm::recode_cat_scale()</code> to recode <em>skinnyness_cat</em> like this:</p>
+<ul>
+<li><code>"Heavy"</code> → <code>"high_mass"</code><br />
+</li>
+<li><code>"Slim"</code> → <code>"medium_mass"</code><br />
+</li>
+<li><code>"Skinny"</code> → <code>"low_mass"</code></li>
+</ul>
+<p>Do <strong>not</strong> overwrite the original variable. Instead, let <code>recode_cat_scale()</code> create a new variable automatically.<br />
+Display the variables <em>name</em>, <em>skinnyness</em>, <em>skinnyness_cat</em>, and the recoded variable.</p>
+<p><em>Solution:</em></p>
+<div class="sourceCode" id="cb562"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb562-1"><a href="solutions.html#cb562-1" tabindex="-1"></a>starwars_data <span class="ot">&lt;-</span> starwars_data <span class="sc">%&gt;%</span></span>
+<span id="cb562-2"><a href="solutions.html#cb562-2" tabindex="-1"></a>  <span class="fu">recode_cat_scale</span>(skinnyness_cat,</span>
+<span id="cb562-3"><a href="solutions.html#cb562-3" tabindex="-1"></a>                   <span class="at">assign =</span> <span class="fu">c</span>(<span class="st">&quot;Heavy&quot;</span>  <span class="ot">=</span> <span class="st">&quot;high_mass&quot;</span>,</span>
+<span id="cb562-4"><a href="solutions.html#cb562-4" tabindex="-1"></a>                              <span class="st">&quot;Slim&quot;</span>   <span class="ot">=</span> <span class="st">&quot;medium_mass&quot;</span>,</span>
+<span id="cb562-5"><a href="solutions.html#cb562-5" tabindex="-1"></a>                              <span class="st">&quot;Skinny&quot;</span> <span class="ot">=</span> <span class="st">&quot;low_mass&quot;</span>),</span>
+<span id="cb562-6"><a href="solutions.html#cb562-6" tabindex="-1"></a>                   <span class="at">overwrite =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb562-7"><a href="solutions.html#cb562-7" tabindex="-1"></a></span>
+<span id="cb562-8"><a href="solutions.html#cb562-8" tabindex="-1"></a>starwars_data <span class="sc">%&gt;%</span></span>
+<span id="cb562-9"><a href="solutions.html#cb562-9" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(name, skinnyness, skinnyness_cat, skinnyness_cat_rec)</span></code></pre></div>
+<pre><code>## # A tibble: 87 × 4
+##    name               skinnyness skinnyness_cat skinnyness_cat_rec
+##    &lt;chr&gt;                   &lt;dbl&gt; &lt;fct&gt;          &lt;fct&gt;             
+##  1 Luke Skywalker           1296 Slim           medium_mass       
+##  2 C-3PO                    1298 Slim           medium_mass       
+##  3 R2-D2                    1341 Skinny         low_mass          
+##  4 Darth Vader              1237 Slim           medium_mass       
+##  5 Leia Organa              1324 Skinny         low_mass          
+##  6 Owen Lars                1253 Slim           medium_mass       
+##  7 Beru Whitesun Lars       1298 Slim           medium_mass       
+##  8 R5-D4                    1341 Skinny         low_mass          
+##  9 Biggs Darklighter        1289 Slim           medium_mass       
+## 10 Obi-Wan Kenobi           1296 Slim           medium_mass       
+## # ℹ 77 more rows</code></pre>
+</div>
+<div id="task-9-1" class="section level3 unnumbered hasAnchor">
+<h3>Task 9<a href="solutions.html#task-9-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Create a mean index called <em>smallness_index</em> using the variables <em>skinnyness</em> and <em>tinyness</em>.
+Then display only the mean index and the original variables that were used to create it.</p>
+<p><em>Solution:</em></p>
+<div class="sourceCode" id="cb564"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb564-1"><a href="solutions.html#cb564-1" tabindex="-1"></a>starwars_data <span class="ot">&lt;-</span> starwars_data <span class="sc">%&gt;%</span></span>
+<span id="cb564-2"><a href="solutions.html#cb564-2" tabindex="-1"></a>  <span class="fu">add_index</span>(smallness_index,</span>
+<span id="cb564-3"><a href="solutions.html#cb564-3" tabindex="-1"></a>                      skinnyness,</span>
+<span id="cb564-4"><a href="solutions.html#cb564-4" tabindex="-1"></a>                      tinyness)</span>
+<span id="cb564-5"><a href="solutions.html#cb564-5" tabindex="-1"></a></span>
+<span id="cb564-6"><a href="solutions.html#cb564-6" tabindex="-1"></a>starwars_data <span class="sc">%&gt;%</span></span>
+<span id="cb564-7"><a href="solutions.html#cb564-7" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(smallness_index,</span>
+<span id="cb564-8"><a href="solutions.html#cb564-8" tabindex="-1"></a>                skinnyness,</span>
+<span id="cb564-9"><a href="solutions.html#cb564-9" tabindex="-1"></a>                tinyness)</span></code></pre></div>
+<pre><code>## # A tibble: 87 × 3
+##    smallness_index skinnyness tinyness
+##              &lt;dbl&gt;      &lt;dbl&gt;    &lt;dbl&gt;
+##  1            727        1296      158
+##  2            730.       1298      163
+##  3            788.       1341      234
+##  4            682.       1237      128
+##  5            752        1324      180
+##  6            702.       1253      152
+##  7            732.       1298      165
+##  8            787        1341      233
+##  9            718        1289      147
+## 10            722        1296      148
+## # ℹ 77 more rows</code></pre>
+</div>
+<div id="task-10-1" class="section level3 unnumbered hasAnchor">
+<h3>Task 10<a href="solutions.html#task-10-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Now create a sum index with the same variables and call it <em>smallness_sum_index</em>.
+Then display only the mean AND sum index and the original variables that were used to create it.</p>
+<p><em>Solution:</em></p>
+<div class="sourceCode" id="cb566"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb566-1"><a href="solutions.html#cb566-1" tabindex="-1"></a>starwars_data <span class="ot">&lt;-</span> starwars_data <span class="sc">%&gt;%</span></span>
+<span id="cb566-2"><a href="solutions.html#cb566-2" tabindex="-1"></a>  <span class="fu">add_index</span>(smallness_sum_index,</span>
+<span id="cb566-3"><a href="solutions.html#cb566-3" tabindex="-1"></a>            skinnyness,</span>
+<span id="cb566-4"><a href="solutions.html#cb566-4" tabindex="-1"></a>            tinyness,</span>
+<span id="cb566-5"><a href="solutions.html#cb566-5" tabindex="-1"></a>            <span class="at">type =</span> <span class="st">&quot;sum&quot;</span>)</span>
+<span id="cb566-6"><a href="solutions.html#cb566-6" tabindex="-1"></a></span>
+<span id="cb566-7"><a href="solutions.html#cb566-7" tabindex="-1"></a>starwars_data <span class="sc">%&gt;%</span></span>
+<span id="cb566-8"><a href="solutions.html#cb566-8" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(smallness_index,</span>
+<span id="cb566-9"><a href="solutions.html#cb566-9" tabindex="-1"></a>                smallness_sum_index,</span>
+<span id="cb566-10"><a href="solutions.html#cb566-10" tabindex="-1"></a>                skinnyness,</span>
+<span id="cb566-11"><a href="solutions.html#cb566-11" tabindex="-1"></a>                tinyness)</span></code></pre></div>
+<pre><code>## # A tibble: 87 × 4
+##    smallness_index smallness_sum_index skinnyness tinyness
+##              &lt;dbl&gt;               &lt;dbl&gt;      &lt;dbl&gt;    &lt;dbl&gt;
+##  1            727                 1454       1296      158
+##  2            730.                1461       1298      163
+##  3            788.                1575       1341      234
+##  4            682.                1365       1237      128
+##  5            752                 1504       1324      180
+##  6            702.                1405       1253      152
+##  7            732.                1463       1298      165
+##  8            787                 1574       1341      233
+##  9            718                 1436       1289      147
+## 10            722                 1444       1296      148
+## # ℹ 77 more rows</code></pre>
+</div>
+<div id="task-11-1" class="section level3 unnumbered hasAnchor">
+<h3>Task 11<a href="solutions.html#task-11-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Compute reliability estimates for the mean index <em>smallness_index</em>.</p>
+<div class="sourceCode" id="cb568"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb568-1"><a href="solutions.html#cb568-1" tabindex="-1"></a>starwars_data <span class="sc">%&gt;%</span></span>
+<span id="cb568-2"><a href="solutions.html#cb568-2" tabindex="-1"></a>  <span class="fu">get_reliability</span>(smallness_index)</span></code></pre></div>
+<pre><code>## # A tibble: 1 × 5
+##   Index           Index_of                 M    SD Cronbachs_Alpha
+## * &lt;chr&gt;           &lt;chr&gt;                &lt;dbl&gt; &lt;dbl&gt;           &lt;dbl&gt;
+## 1 smallness_index skinnyness, tinyness  563.  263.          0.0965</code></pre>
+</div>
+</div>
+<div id="solutions-for-exercise-7" class="section level2 unnumbered hasAnchor">
+<h2>Solutions for Exercise 7<a href="solutions.html#solutions-for-exercise-7" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="task-1-14" class="section level3 unnumbered hasAnchor">
+<h3>Task 1<a href="solutions.html#task-1-14" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Check the data set for missing values (<em>NA</em>s) and delete all
+observations that have missing values.</p>
+<p><em>Solution:</em></p>
+<p>You can solve this by excluding NAs in every single column:</p>
+<div class="sourceCode" id="cb570"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb570-1"><a href="solutions.html#cb570-1" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb570-2"><a href="solutions.html#cb570-2" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">as_tibble</span>(mtcars)</span>
+<span id="cb570-3"><a href="solutions.html#cb570-3" tabindex="-1"></a></span>
+<span id="cb570-4"><a href="solutions.html#cb570-4" tabindex="-1"></a><span class="co"># we&#39;ll now only keep observations that are NOT NAs in the following variables (remember that &amp; = AND)</span></span>
+<span id="cb570-5"><a href="solutions.html#cb570-5" tabindex="-1"></a></span>
+<span id="cb570-6"><a href="solutions.html#cb570-6" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span> </span>
+<span id="cb570-7"><a href="solutions.html#cb570-7" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(mpg) <span class="sc">&amp;</span> </span>
+<span id="cb570-8"><a href="solutions.html#cb570-8" tabindex="-1"></a>         <span class="sc">!</span><span class="fu">is.na</span>(cyl) <span class="sc">&amp;</span> </span>
+<span id="cb570-9"><a href="solutions.html#cb570-9" tabindex="-1"></a>         <span class="sc">!</span><span class="fu">is.na</span>(disp) <span class="sc">&amp;</span> </span>
+<span id="cb570-10"><a href="solutions.html#cb570-10" tabindex="-1"></a>         <span class="sc">!</span><span class="fu">is.na</span>(hp) <span class="sc">&amp;</span> </span>
+<span id="cb570-11"><a href="solutions.html#cb570-11" tabindex="-1"></a>         <span class="sc">!</span><span class="fu">is.na</span>(drat) <span class="sc">&amp;</span> </span>
+<span id="cb570-12"><a href="solutions.html#cb570-12" tabindex="-1"></a>         <span class="sc">!</span><span class="fu">is.na</span>(wt) <span class="sc">&amp;</span> </span>
+<span id="cb570-13"><a href="solutions.html#cb570-13" tabindex="-1"></a>         <span class="sc">!</span><span class="fu">is.na</span>(qsec) <span class="sc">&amp;</span> </span>
+<span id="cb570-14"><a href="solutions.html#cb570-14" tabindex="-1"></a>         <span class="sc">!</span><span class="fu">is.na</span>(vs) <span class="sc">&amp;</span> </span>
+<span id="cb570-15"><a href="solutions.html#cb570-15" tabindex="-1"></a>         <span class="sc">!</span><span class="fu">is.na</span>(am) <span class="sc">&amp;</span> </span>
+<span id="cb570-16"><a href="solutions.html#cb570-16" tabindex="-1"></a>         <span class="sc">!</span><span class="fu">is.na</span>(gear) <span class="sc">&amp;</span> </span>
+<span id="cb570-17"><a href="solutions.html#cb570-17" tabindex="-1"></a>         <span class="sc">!</span><span class="fu">is.na</span>(carb))</span></code></pre></div>
+<p>Alternatively, excluding NAs from the entire data set works, too, but
+you have not learned the <code>drop_na()</code>function in the tutorials:</p>
+<div class="sourceCode" id="cb571"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb571-1"><a href="solutions.html#cb571-1" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
+<span id="cb571-2"><a href="solutions.html#cb571-2" tabindex="-1"></a>  <span class="fu">drop_na</span>()</span></code></pre></div>
+</div>
+<div id="task-2-14" class="section level3 unnumbered hasAnchor">
+<h3>Task 2<a href="solutions.html#task-2-14" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Let’s transform the weight <em>wt</em> of the cars. Currently, it’s given as
+<em>Weight in 1000 lbs</em>. I guess you are not used to lbs, so try to mutate <em>wt</em> to represent <em>Weight in 1000 kg</em>. 1000 lbs = 453.59 kg, so we will need to divide by 2.20.</p>
+<p>Similarly, I think that you are not very familiar with the unit <em>Miles per gallon</em> of the <em>mpg</em> variable. Let’s transform it into <em>Kilometer per liter</em>. 1 m/g = 0.425144 km/l, so again divide by 2.20.</p>
+<p><em>Solution:</em></p>
+<div class="sourceCode" id="cb572"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb572-1"><a href="solutions.html#cb572-1" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
+<span id="cb572-2"><a href="solutions.html#cb572-2" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">wt =</span> wt <span class="sc">/</span> <span class="fl">2.20</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb573"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb573-1"><a href="solutions.html#cb573-1" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
+<span id="cb573-2"><a href="solutions.html#cb573-2" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">mpg =</span> mpg <span class="sc">/</span> <span class="fl">2.20</span>)</span></code></pre></div>
+</div>
+<div id="task-3-14" class="section level3 unnumbered hasAnchor">
+<h3>Task 3<a href="solutions.html#task-3-14" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Now we want to group the weight of the cars in three categories: light, medium, heavy. But how to define light, medium, and heavy cars, i.e., at what kg should you put the threshold? A reasonable approach is to use quantiles (see Tutorial: <a href="tutorial-data-management-with-dplyr.html#summarize-group_by">summarize() [+ group_by()]</a>). Quantiles divide data. For example, the 75% quantile states that exactly 75% of the data values are equal or below the quantile value. The rest of the values are equal or above it.</p>
+<p>Use the lower quantile (0.25) and the upper quantile (0.75) to estimate two values that divide the weight of the cars in three groups. What are these values?</p>
+<p><em>Solution:</em></p>
+<p>You can use <code>dplyr</code>for this job:</p>
+<div class="sourceCode" id="cb574"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb574-1"><a href="solutions.html#cb574-1" tabindex="-1"></a>data <span class="sc">%&gt;%</span></span>
+<span id="cb574-2"><a href="solutions.html#cb574-2" tabindex="-1"></a>  <span class="fu">summarize</span>(</span>
+<span id="cb574-3"><a href="solutions.html#cb574-3" tabindex="-1"></a>    <span class="at">LQ_wt =</span> <span class="fu">quantile</span>(wt, <span class="fl">0.25</span>),</span>
+<span id="cb574-4"><a href="solutions.html#cb574-4" tabindex="-1"></a>    <span class="at">UQ_wt =</span> <span class="fu">quantile</span>(wt, <span class="fl">0.75</span>)</span>
+<span id="cb574-5"><a href="solutions.html#cb574-5" tabindex="-1"></a>  )</span></code></pre></div>
+<pre><code>## # A tibble: 1 × 2
+##   LQ_wt UQ_wt
+##   &lt;dbl&gt; &lt;dbl&gt;
+## 1  1.17  1.64</code></pre>
+<p>Or you can use the <code>tidycomm</code> package:</p>
+<div class="sourceCode" id="cb576"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb576-1"><a href="solutions.html#cb576-1" tabindex="-1"></a>data <span class="sc">%&gt;%</span></span>
+<span id="cb576-2"><a href="solutions.html#cb576-2" tabindex="-1"></a>  tidycomm<span class="sc">::</span><span class="fu">tab_percentiles</span>(wt, <span class="at">levels =</span> <span class="fu">c</span>(<span class="fl">0.25</span>, <span class="fl">0.75</span>))</span></code></pre></div>
+<pre><code>## # A tibble: 1 × 3
+##   Variable   p25   p75
+## * &lt;chr&gt;    &lt;dbl&gt; &lt;dbl&gt;
+## 1 wt        1.17  1.64</code></pre>
+<p>75% of all cars weigh 1.622727* 1000kg or less and 25% of all cars
+weigh 1.190909* 1000kg or less.</p>
+</div>
+<div id="task-4-12" class="section level3 unnumbered hasAnchor">
+<h3>Task 4<a href="solutions.html#task-4-12" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Use the values from Task 3 to create a new variable <em>wt_cat</em> that
+divides the cars in three groups: light, medium, and heavy cars.</p>
+<p><em>Solution:</em></p>
+<div class="sourceCode" id="cb578"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb578-1"><a href="solutions.html#cb578-1" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
+<span id="cb578-2"><a href="solutions.html#cb578-2" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">wt_cat =</span> <span class="fu">case_when</span>(</span>
+<span id="cb578-3"><a href="solutions.html#cb578-3" tabindex="-1"></a>    wt <span class="sc">&lt;=</span> <span class="fl">1.190909</span> <span class="sc">~</span> <span class="st">&quot;light car&quot;</span>,</span>
+<span id="cb578-4"><a href="solutions.html#cb578-4" tabindex="-1"></a>    wt <span class="sc">&lt;</span> <span class="fl">1.622727</span> <span class="sc">~</span> <span class="st">&quot;medium car&quot;</span>,</span>
+<span id="cb578-5"><a href="solutions.html#cb578-5" tabindex="-1"></a>    wt <span class="sc">&gt;=</span> <span class="fl">1.622727</span> <span class="sc">~</span> <span class="st">&quot;heavy car&quot;</span></span>
+<span id="cb578-6"><a href="solutions.html#cb578-6" tabindex="-1"></a>  ))</span></code></pre></div>
+<p>Alternatively, you can use the <code>tidycomm</code> package:</p>
+<div class="sourceCode" id="cb579"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb579-1"><a href="solutions.html#cb579-1" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
+<span id="cb579-2"><a href="solutions.html#cb579-2" tabindex="-1"></a>  tidycomm<span class="sc">::</span><span class="fu">categorize_scale</span>(wt,</span>
+<span id="cb579-3"><a href="solutions.html#cb579-3" tabindex="-1"></a>                             <span class="at">lower_end =</span> <span class="dv">0</span>,</span>
+<span id="cb579-4"><a href="solutions.html#cb579-4" tabindex="-1"></a>                             <span class="at">upper_end =</span> <span class="dv">6</span>,</span>
+<span id="cb579-5"><a href="solutions.html#cb579-5" tabindex="-1"></a>                             <span class="at">breaks =</span> <span class="fu">c</span>(<span class="fl">1.190909</span>, <span class="fl">1.622727</span>),</span>
+<span id="cb579-6"><a href="solutions.html#cb579-6" tabindex="-1"></a>                             <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;light car&quot;</span>,</span>
+<span id="cb579-7"><a href="solutions.html#cb579-7" tabindex="-1"></a>                                        <span class="st">&quot;medium car&quot;</span>,</span>
+<span id="cb579-8"><a href="solutions.html#cb579-8" tabindex="-1"></a>                                        <span class="st">&quot;heavy car&quot;</span>))</span>
+<span id="cb579-9"><a href="solutions.html#cb579-9" tabindex="-1"></a></span>
+<span id="cb579-10"><a href="solutions.html#cb579-10" tabindex="-1"></a>data <span class="sc">%&gt;%</span></span>
+<span id="cb579-11"><a href="solutions.html#cb579-11" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(wt, wt_cat)</span></code></pre></div>
+<pre><code>## # A tibble: 32 × 2
+##       wt wt_cat    
+##    &lt;dbl&gt; &lt;fct&gt;     
+##  1  1.19 medium car
+##  2  1.31 medium car
+##  3  1.05 light car 
+##  4  1.46 medium car
+##  5  1.56 medium car
+##  6  1.57 medium car
+##  7  1.62 heavy car 
+##  8  1.45 medium car
+##  9  1.43 medium car
+## 10  1.56 medium car
+## # ℹ 22 more rows</code></pre>
+</div>
+<div id="task-5-9" class="section level3 unnumbered hasAnchor">
+<h3>Task 5<a href="solutions.html#task-5-9" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>How many light, medium, and heavy cars are part of the data?</p>
+<p><em>Solution:</em></p>
+<p>You can solve this with the <code>summarize(count = n()</code> function:</p>
+<div class="sourceCode" id="cb581"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb581-1"><a href="solutions.html#cb581-1" tabindex="-1"></a>data <span class="sc">%&gt;%</span></span>
+<span id="cb581-2"><a href="solutions.html#cb581-2" tabindex="-1"></a>  <span class="fu">group_by</span>(wt_cat) <span class="sc">%&gt;%</span></span>
+<span id="cb581-3"><a href="solutions.html#cb581-3" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">count =</span> <span class="fu">n</span>())</span></code></pre></div>
+<pre><code>## # A tibble: 3 × 2
+##   wt_cat     count
+##   &lt;fct&gt;      &lt;int&gt;
+## 1 light car      8
+## 2 medium car    14
+## 3 heavy car     10</code></pre>
+<p>9 heavy cars, 13 medium cars, and 7 light cars.</p>
+<p>Alternatively, you can also use the <code>count()</code> function:</p>
+<div class="sourceCode" id="cb583"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb583-1"><a href="solutions.html#cb583-1" tabindex="-1"></a>data <span class="sc">%&gt;%</span></span>
+<span id="cb583-2"><a href="solutions.html#cb583-2" tabindex="-1"></a>  <span class="fu">count</span>(wt_cat)</span></code></pre></div>
+<pre><code>## # A tibble: 3 × 2
+##   wt_cat         n
+##   &lt;fct&gt;      &lt;int&gt;
+## 1 light car      8
+## 2 medium car    14
+## 3 heavy car     10</code></pre>
+<p>Alternatively, you can use the <code>tab_frequencies()</code> fucntion of the
+<code>tidycomm</code>:</p>
+<div class="sourceCode" id="cb585"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb585-1"><a href="solutions.html#cb585-1" tabindex="-1"></a>data <span class="sc">%&gt;%</span></span>
+<span id="cb585-2"><a href="solutions.html#cb585-2" tabindex="-1"></a>  tidycomm<span class="sc">::</span><span class="fu">tab_frequencies</span>(wt_cat)</span></code></pre></div>
+<pre><code>## # A tibble: 3 × 5
+##   wt_cat         n percent cum_n cum_percent
+## * &lt;fct&gt;      &lt;int&gt;   &lt;dbl&gt; &lt;int&gt;       &lt;dbl&gt;
+## 1 light car      8   0.25      8       0.25 
+## 2 medium car    14   0.438    22       0.688
+## 3 heavy car     10   0.312    32       1</code></pre>
+</div>
+<div id="task-6-7" class="section level3 unnumbered hasAnchor">
+<h3>Task 6<a href="solutions.html#task-6-7" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Now sort this count of the car weight classes from highest to lowest.</p>
+<p><em>Solution:</em></p>
+<div class="sourceCode" id="cb587"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb587-1"><a href="solutions.html#cb587-1" tabindex="-1"></a>data <span class="sc">%&gt;%</span></span>
+<span id="cb587-2"><a href="solutions.html#cb587-2" tabindex="-1"></a>  <span class="fu">group_by</span>(wt_cat) <span class="sc">%&gt;%</span></span>
+<span id="cb587-3"><a href="solutions.html#cb587-3" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">count =</span> <span class="fu">n</span>()) <span class="sc">%&gt;%</span></span>
+<span id="cb587-4"><a href="solutions.html#cb587-4" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(count))</span></code></pre></div>
+<pre><code>## # A tibble: 3 × 2
+##   wt_cat     count
+##   &lt;fct&gt;      &lt;int&gt;
+## 1 medium car    14
+## 2 heavy car     10
+## 3 light car      8</code></pre>
+<p>Alternatively, use <code>tidycomm</code>:</p>
+<div class="sourceCode" id="cb589"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb589-1"><a href="solutions.html#cb589-1" tabindex="-1"></a>data <span class="sc">%&gt;%</span></span>
+<span id="cb589-2"><a href="solutions.html#cb589-2" tabindex="-1"></a>  tidycomm<span class="sc">::</span><span class="fu">tab_frequencies</span>(wt_cat) <span class="sc">%&gt;%</span></span>
+<span id="cb589-3"><a href="solutions.html#cb589-3" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(n))</span></code></pre></div>
+<pre><code>## # A tibble: 3 × 5
+##   wt_cat         n percent cum_n cum_percent
+##   &lt;fct&gt;      &lt;int&gt;   &lt;dbl&gt; &lt;int&gt;       &lt;dbl&gt;
+## 1 medium car    14   0.438    22       0.688
+## 2 heavy car     10   0.312    32       1    
+## 3 light car      8   0.25      8       0.25</code></pre>
+</div>
+<div id="task-7-5" class="section level3 unnumbered hasAnchor">
+<h3>Task 7<a href="solutions.html#task-7-5" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Make a scatter plot to indicate how many km per liter (<em>mpg</em>) a car can drive depending on its weight (<em>wt</em>). Facet the plot by weight class (<em>wt_cat</em>).</p>
+<p><em>Solution:</em></p>
+<div class="sourceCode" id="cb591"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb591-1"><a href="solutions.html#cb591-1" tabindex="-1"></a>data <span class="sc">%&gt;%</span></span>
+<span id="cb591-2"><a href="solutions.html#cb591-2" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">wt_cat =</span> <span class="fu">factor</span>(wt_cat, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">&quot;light car&quot;</span>, <span class="st">&quot;medium car&quot;</span>, <span class="st">&quot;heavy car&quot;</span>))) <span class="sc">%&gt;%</span></span>
+<span id="cb591-3"><a href="solutions.html#cb591-3" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> wt, <span class="at">y =</span> mpg)) <span class="sc">+</span></span>
+<span id="cb591-4"><a href="solutions.html#cb591-4" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb591-5"><a href="solutions.html#cb591-5" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb591-6"><a href="solutions.html#cb591-6" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Relationship between car weight and achieved kilometers per liter&quot;</span>, <span class="at">x =</span> <span class="st">&quot;Weight in 1000kg&quot;</span>, <span class="at">y =</span> <span class="st">&quot;km/l&quot;</span>) <span class="sc">+</span></span>
+<span id="cb591-7"><a href="solutions.html#cb591-7" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>wt_cat)</span></code></pre></div>
+<p><img src="Intro-to-R_files/figure-html/unnamed-chunk-350-1.png" alt="" width="672" /></p>
+<p>Alternatively, you can use <code>tidycomm</code>:</p>
+<div class="sourceCode" id="cb592"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb592-1"><a href="solutions.html#cb592-1" tabindex="-1"></a>data <span class="sc">%&gt;%</span></span>
+<span id="cb592-2"><a href="solutions.html#cb592-2" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">wt_cat =</span> <span class="fu">factor</span>(wt_cat, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">&quot;light car&quot;</span>, <span class="st">&quot;medium car&quot;</span>, <span class="st">&quot;heavy car&quot;</span>))) <span class="sc">%&gt;%</span></span>
+<span id="cb592-3"><a href="solutions.html#cb592-3" tabindex="-1"></a>  tidycomm<span class="sc">::</span><span class="fu">correlate</span>(wt, mpg) <span class="sc">%&gt;%</span></span>
+<span id="cb592-4"><a href="solutions.html#cb592-4" tabindex="-1"></a>  tidycomm<span class="sc">::</span><span class="fu">visualize</span>() <span class="sc">+</span></span>
+<span id="cb592-5"><a href="solutions.html#cb592-5" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Relationship between car weight and</span><span class="sc">\n</span><span class="st"> achieved kilometers per liter&quot;</span>, <span class="at">x =</span> <span class="st">&quot;Weight in 1000kg&quot;</span>, <span class="at">y =</span> <span class="st">&quot;km/l&quot;</span>) <span class="sc">+</span></span>
+<span id="cb592-6"><a href="solutions.html#cb592-6" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb592-7"><a href="solutions.html#cb592-7" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>wt_cat)</span></code></pre></div>
+<p><img src="Intro-to-R_files/figure-html/unnamed-chunk-351-1.png" alt="" width="672" /></p>
+</div>
+<div id="task-8-5" class="section level3 unnumbered hasAnchor">
+<h3>Task 8<a href="solutions.html#task-8-5" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Recreate the diagram from Task 7, but exclude all cars that weigh
+between 1.4613636 and 1.5636364 *1000kg from it.</p>
+<p><em>Solution:</em></p>
+<div class="sourceCode" id="cb593"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb593-1"><a href="solutions.html#cb593-1" tabindex="-1"></a>data <span class="sc">%&gt;%</span></span>
+<span id="cb593-2"><a href="solutions.html#cb593-2" tabindex="-1"></a>  <span class="fu">filter</span>(wt <span class="sc">&lt;</span> <span class="fl">1.4613636</span> <span class="sc">|</span> wt <span class="sc">&gt;</span> <span class="fl">1.5636364</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb593-3"><a href="solutions.html#cb593-3" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">wt_cat =</span> <span class="fu">factor</span>(wt_cat, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">&quot;light car&quot;</span>, <span class="st">&quot;medium car&quot;</span>, <span class="st">&quot;heavy car&quot;</span>))) <span class="sc">%&gt;%</span></span>
+<span id="cb593-4"><a href="solutions.html#cb593-4" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> wt, <span class="at">y =</span> mpg)) <span class="sc">+</span></span>
+<span id="cb593-5"><a href="solutions.html#cb593-5" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb593-6"><a href="solutions.html#cb593-6" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb593-7"><a href="solutions.html#cb593-7" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&quot;none&quot;</span>) <span class="sc">+</span></span>
+<span id="cb593-8"><a href="solutions.html#cb593-8" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Relationship between car weight and achieved kilometers per liter&quot;</span>, <span class="at">x =</span> <span class="st">&quot;Weight in 1000kg&quot;</span>, <span class="at">y =</span> <span class="st">&quot;km/l&quot;</span>) <span class="sc">+</span></span>
+<span id="cb593-9"><a href="solutions.html#cb593-9" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>wt_cat)</span></code></pre></div>
+<p><img src="Intro-to-R_files/figure-html/unnamed-chunk-352-1.png" alt="" width="672" /></p>
+<p>With <code>tidycomm</code>:</p>
+<div class="sourceCode" id="cb594"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb594-1"><a href="solutions.html#cb594-1" tabindex="-1"></a>data <span class="sc">%&gt;%</span></span>
+<span id="cb594-2"><a href="solutions.html#cb594-2" tabindex="-1"></a>  <span class="fu">filter</span>(wt <span class="sc">&lt;</span> <span class="fl">1.4613636</span> <span class="sc">|</span> wt <span class="sc">&gt;</span> <span class="fl">1.5636364</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb594-3"><a href="solutions.html#cb594-3" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">wt_cat =</span> <span class="fu">factor</span>(wt_cat, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">&quot;light car&quot;</span>, <span class="st">&quot;medium car&quot;</span>, <span class="st">&quot;heavy car&quot;</span>))) <span class="sc">%&gt;%</span></span>
+<span id="cb594-4"><a href="solutions.html#cb594-4" tabindex="-1"></a>  tidycomm<span class="sc">::</span><span class="fu">correlate</span>(wt, mpg) <span class="sc">%&gt;%</span></span>
+<span id="cb594-5"><a href="solutions.html#cb594-5" tabindex="-1"></a>  tidycomm<span class="sc">::</span><span class="fu">visualize</span>() <span class="sc">+</span></span>
+<span id="cb594-6"><a href="solutions.html#cb594-6" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Relationship between car weight and achieved kilometers per liter&quot;</span>, <span class="at">x =</span> <span class="st">&quot;Weight in 1000kg&quot;</span>, <span class="at">y =</span> <span class="st">&quot;km/l&quot;</span>) <span class="sc">+</span></span>
+<span id="cb594-7"><a href="solutions.html#cb594-7" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb594-8"><a href="solutions.html#cb594-8" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>wt_cat)</span></code></pre></div>
+<p><img src="Intro-to-R_files/figure-html/unnamed-chunk-353-1.png" alt="" width="672" /></p>
+<p><strong>Why would we use <code>data %&gt;% filter(wt &lt; 1.4613636 | wt &gt; 1.5636364)</code>
+instead of <code>data %&gt;% filter(wt &gt; 1.4613636 | wt &lt; 1.5636364)</code>?</strong></p>
+<p>Let’s look at the resulting data sets when you apply those filters to
+compare them:</p>
+<div class="sourceCode" id="cb595"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb595-1"><a href="solutions.html#cb595-1" tabindex="-1"></a>data <span class="sc">%&gt;%</span></span>
+<span id="cb595-2"><a href="solutions.html#cb595-2" tabindex="-1"></a>  <span class="fu">select</span>(wt) <span class="sc">%&gt;%</span></span>
+<span id="cb595-3"><a href="solutions.html#cb595-3" tabindex="-1"></a>  <span class="fu">filter</span>(wt <span class="sc">&lt;</span> <span class="fl">1.4613636</span> <span class="sc">|</span> wt <span class="sc">&gt;</span> <span class="fl">1.5636364</span>)</span></code></pre></div>
+<pre><code>## # A tibble: 27 × 1
+##       wt
+##    &lt;dbl&gt;
+##  1  1.19
+##  2  1.31
+##  3  1.05
+##  4  1.57
+##  5  1.62
+##  6  1.45
+##  7  1.43
+##  8  1.85
+##  9  1.70
+## 10  1.72
+## # ℹ 17 more rows</code></pre>
+<p>The resulting table does not include any cars that weigh between
+1.4613636 and 1.5636364. But if you use
+<code>data %&gt;% filter(wt &gt; 1.4613636 | wt &lt; 1.5636364)</code>…</p>
+<div class="sourceCode" id="cb597"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb597-1"><a href="solutions.html#cb597-1" tabindex="-1"></a>data <span class="sc">%&gt;%</span></span>
+<span id="cb597-2"><a href="solutions.html#cb597-2" tabindex="-1"></a>  <span class="fu">select</span>(wt) <span class="sc">%&gt;%</span></span>
+<span id="cb597-3"><a href="solutions.html#cb597-3" tabindex="-1"></a>  <span class="fu">filter</span>(wt <span class="sc">&gt;</span> <span class="fl">1.4613636</span> <span class="sc">|</span> wt <span class="sc">&lt;</span> <span class="fl">1.5636364</span>)</span></code></pre></div>
+<pre><code>## # A tibble: 32 × 1
+##       wt
+##    &lt;dbl&gt;
+##  1  1.19
+##  2  1.31
+##  3  1.05
+##  4  1.46
+##  5  1.56
+##  6  1.57
+##  7  1.62
+##  8  1.45
+##  9  1.43
+## 10  1.56
+## # ℹ 22 more rows</code></pre>
+<p>… cars that weigh between 1.4613636 and 1.5636364 are still included!</p>
+<p><strong>But why?</strong> The <code>filter()</code>function always <em>keeps</em> cases based on the
+criteria that you provide.</p>
+<p>In plain English, my solution code says the following: Take my dataset
+“data” and keep only those cases where the weight variable <em>wt</em> is less
+than 1.4613636 OR larger than 1.5636364. Put differently, the solution
+code says: Delete all cases that are greater than 1.4613636 but are also less than 1.5636364.</p>
+<p>The wrong code, on the other hand, says: Take my dataset “data” and keep only those cases where the weight variable <em>wt</em> is greater than
+1.4613636 OR smaller than 1.5636364. This is ALL the data because all
+your cases will be greater than 1.4613636 OR smaller than 1.5636364. You are not excluding any cars.</p>
+</div>
+</div>
+<div id="solutions-for-exercise-8" class="section level2 unnumbered hasAnchor">
+<h2>Solutions for Exercise 8<a href="solutions.html#solutions-for-exercise-8" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>First, load the library <code>stringr</code> (or the entire <code>tidyverse</code>).</p>
+<div class="sourceCode" id="cb599"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb599-1"><a href="solutions.html#cb599-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse) <span class="co"># loads stringr + dplyr and pipe operator</span></span></code></pre></div>
+<p>We will work on real data in this exercise. But before that, we will test our regex on a simple “test” vector that contains hyperlinks of media outlets and webpages. So run this code and create a vector called “seitenURL” in your environment:</p>
+<div class="sourceCode" id="cb600"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb600-1"><a href="solutions.html#cb600-1" tabindex="-1"></a>seitenURL <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;https://www.bild.de&quot;</span>, <span class="st">&quot;https://www.kicker.at/sport&quot;</span>, <span class="st">&quot;http://www.mycoffee.net/fresh&quot;</span>, <span class="st">&quot;http://www1.neuegedanken.blog&quot;</span>, <span class="st">&quot;https://home.1und1.info/magazine/unterhaltung&quot;</span>, <span class="st">&quot;https://de.sputniknews.com/technik&quot;</span>, <span class="st">&quot;https://rp-online.de/nrw/staedte/geldern&quot;</span>, <span class="st">&quot;https://www.bzbasel.ch/limmattal/region-limmattal&quot;</span>, <span class="st">&quot;http://sportdeutschland.tv/wm-maenner-2019&quot;</span>)</span></code></pre></div>
+<div id="task-1-15" class="section level3 unnumbered hasAnchor">
+<h3>Task 1<a href="solutions.html#task-1-15" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Let’s get rid of the first part of the URL strings in our “seitenURL” vector, i.e., everything that comes before the name of the outlet (You will need to work with <code>str_replace</code>). Usually, this is some kind of version of “<a href="https://www" class="uri">https://www</a>.” or “<a href="http://www" class="uri">http://www</a>.” Try to make your pattern as versatile as possible! In a big data set, there will always be exceptions to the rule (e.g., “<a href="http://sportdeutschland.tv" class="uri">http://sportdeutschland.tv</a>”), so try to match regex–i.e., types of characters instead of real characters–as often as you can!</p>
+<div class="sourceCode" id="cb601"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb601-1"><a href="solutions.html#cb601-1" tabindex="-1"></a>seitenURL <span class="ot">&lt;-</span><span class="fu">str_replace</span>(seitenURL, <span class="st">&quot;^(http)(s?)[:punct:]{3}(www[:punct:]|www1[:punct:]|w?)&quot;</span>, <span class="st">&quot;&quot;</span>)</span>
+<span id="cb601-2"><a href="solutions.html#cb601-2" tabindex="-1"></a><span class="co"># this matches all strings that start with http: &#39;^(http)&#39;</span></span>
+<span id="cb601-3"><a href="solutions.html#cb601-3" tabindex="-1"></a><span class="co"># this matches all strings that are either http or https: (s?) -&gt; because &#39;?&#39; means &quot;zero or more&quot;</span></span>
+<span id="cb601-4"><a href="solutions.html#cb601-4" tabindex="-1"></a><span class="co"># followed by exactly one dot and two forwardslashes: &#39;[:punct:]{3}&#39;</span></span>
+<span id="cb601-5"><a href="solutions.html#cb601-5" tabindex="-1"></a><span class="co"># followed by either a www.: &#39;(www[:punct:]&#39;</span></span>
+<span id="cb601-6"><a href="solutions.html#cb601-6" tabindex="-1"></a><span class="co"># or followed by a www1.: &#39;|www1[:punct:])&#39;</span></span>
+<span id="cb601-7"><a href="solutions.html#cb601-7" tabindex="-1"></a><span class="co"># or followed by zero or one w (this is necessary for the rp-online-URL): &#39;w?&#39;</span></span>
+<span id="cb601-8"><a href="solutions.html#cb601-8" tabindex="-1"></a><span class="co"># and replaces the match with nothing, i.e., an empty string: &#39;, &quot;&quot;&#39;</span></span></code></pre></div>
+</div>
+<div id="task-2-15" class="section level3 unnumbered hasAnchor">
+<h3>Task 2<a href="solutions.html#task-2-15" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Using the seitenURL vector, try to get rid of the characters that follow the media outlet (e.g., “.de” or “.com”).</p>
+<div class="sourceCode" id="cb602"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb602-1"><a href="solutions.html#cb602-1" tabindex="-1"></a>seitenURL <span class="ot">&lt;-</span> <span class="fu">str_replace</span>(seitenURL, <span class="st">&quot;[:punct:]{1}(com|de|blog|net|tv|at|ch|info).*&quot;</span>, <span class="st">&quot;&quot;</span>)</span>
+<span id="cb602-2"><a href="solutions.html#cb602-2" tabindex="-1"></a><span class="co"># this matches all strings that have exactly one dot: &quot;[:punct:]{1}&quot;</span></span>
+<span id="cb602-3"><a href="solutions.html#cb602-3" tabindex="-1"></a><span class="co"># this matches either com, de, blog and many more: &quot;(com|de|blog|net|tv|at|ch)&quot;</span></span>
+<span id="cb602-4"><a href="solutions.html#cb602-4" tabindex="-1"></a><span class="co"># this matches any character zero or multiple times: &quot;.*&quot;</span></span></code></pre></div>
+</div>
+<div id="task-3-15" class="section level3 unnumbered hasAnchor">
+<h3>Task 3<a href="solutions.html#task-3-15" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Use this command and adapt it with your patterns (it uses str_replace in combination with mutate):</p>
+<div class="sourceCode" id="cb603"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb603-1"><a href="solutions.html#cb603-1" tabindex="-1"></a>data2 <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
+<span id="cb603-2"><a href="solutions.html#cb603-2" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">seitenURL =</span> <span class="fu">str_replace_all</span>(seitenURL, <span class="st">&quot;^(http)(s?)[:punct:]{3}(www[:punct:]|www1[:punct:]|w?)&quot;</span>, <span class="st">&quot;&quot;</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb603-3"><a href="solutions.html#cb603-3" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">seitenURL =</span> <span class="fu">str_replace_all</span>(seitenURL, <span class="st">&quot;[:punct:]{1}(com|de|blog|net|tv|at|ch|info).*&quot;</span>, <span class="st">&quot;&quot;</span>))</span></code></pre></div>
+</div>
+<div id="task-4-13" class="section level3 unnumbered hasAnchor">
+<h3>Task 4<a href="solutions.html#task-4-13" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The data set provides two additional, highly informative columns: “SeitenAnzahlTwitter” and “SeitenAnzahlFacebook”. These columns show the number of reactions (shares, likes, comments) for each URL. Having extracted the media outlets, let us examine which media outlet got the most engagement on Twitter and Facebook from all their URLs. Utilize your <code>dplyr</code> abilities to create an R object named “overview” that stores the summary statistic (remember <em>group_by</em> and <em>summarize</em>!) of the engagement on Twitter and Facebook per media outlet.</p>
+<p>Next, arrange your “overview” data to reveal which media outlet creates the most engagement on Twitter. Do the same for Facebook.</p>
+<div class="sourceCode" id="cb604"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb604-1"><a href="solutions.html#cb604-1" tabindex="-1"></a>overview <span class="ot">&lt;-</span> data2 <span class="sc">%&gt;%</span></span>
+<span id="cb604-2"><a href="solutions.html#cb604-2" tabindex="-1"></a>  <span class="fu">group_by</span>(seitenURL) <span class="sc">%&gt;%</span></span>
+<span id="cb604-3"><a href="solutions.html#cb604-3" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">twitter =</span> <span class="fu">sum</span>(seitenAnzahlTwitter),</span>
+<span id="cb604-4"><a href="solutions.html#cb604-4" tabindex="-1"></a>            <span class="at">facebook =</span> <span class="fu">sum</span>(seitenAnzahlFacebook))</span>
+<span id="cb604-5"><a href="solutions.html#cb604-5" tabindex="-1"></a></span>
+<span id="cb604-6"><a href="solutions.html#cb604-6" tabindex="-1"></a>overview <span class="sc">%&gt;%</span></span>
+<span id="cb604-7"><a href="solutions.html#cb604-7" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(twitter))</span>
+<span id="cb604-8"><a href="solutions.html#cb604-8" tabindex="-1"></a></span>
+<span id="cb604-9"><a href="solutions.html#cb604-9" tabindex="-1"></a>overview <span class="sc">%&gt;%</span></span>
+<span id="cb604-10"><a href="solutions.html#cb604-10" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(facebook))</span></code></pre></div>
+
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="exercise-8-stringr.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": "https://lkobilke.github.io/Intro_to_R/edit/main/index.Rmd",
+    "text": "Edit"
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": ["Intro to R.pdf"],
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "subsection"
+  }
+});
+});
+</script>
+
+</body>
+
+</html>

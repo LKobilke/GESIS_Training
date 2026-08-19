@@ -1,0 +1,1129 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title> 2 Tutorial: Installing &amp; Understanding R/R Studio | Introduction to R</title>
+  <meta name="description" content=" 2 Tutorial: Installing &amp; Understanding R/R Studio | Introduction to R - GESIS Training Course, 24-27 August 2026" />
+  <meta name="generator" content="bookdown 0.47 and GitBook 2.6.7" />
+
+  <meta property="og:title" content=" 2 Tutorial: Installing &amp; Understanding R/R Studio | Introduction to R" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content=" 2 Tutorial: Installing &amp; Understanding R/R Studio | Introduction to R - GESIS Training Course, 24-27 August 2026" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content=" 2 Tutorial: Installing &amp; Understanding R/R Studio | Introduction to R" />
+  
+  <meta name="twitter:description" content=" 2 Tutorial: Installing &amp; Understanding R/R Studio | Introduction to R - GESIS Training Course, 24-27 August 2026" />
+  
+
+<meta name="author" content="Lara Kobilke, Department of Communication and Media Research, University of Zurich" />
+
+
+<meta name="date" content="2026-08-17" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="index.html"/>
+<link rel="next" href="tutorial-using-r-as-a-calculator.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Intro to R</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Intro to R</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#general-information-on-the-course"><i class="fa fa-check"></i><b>1.1</b> General information on the course</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#what-can-i-learn-from-this-tutorial"><i class="fa fa-check"></i><b>1.2</b> What can I learn from this tutorial?</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#how-this-tutorial-supports-the-four-day-workshop"><i class="fa fa-check"></i><b>1.3</b> How this tutorial supports the four-day workshop</a></li>
+<li class="chapter" data-level="1.4" data-path="index.html"><a href="index.html#prerequisites-and-software"><i class="fa fa-check"></i><b>1.4</b> Prerequisites and software</a>
+<ul>
+<li class="chapter" data-level="1.4.1" data-path="index.html"><a href="index.html#install-the-required-r-packages"><i class="fa fa-check"></i><b>1.4.1</b> Install the required R packages</a></li>
+<li class="chapter" data-level="1.4.2" data-path="index.html"><a href="index.html#windows-users-install-rtools"><i class="fa fa-check"></i><b>1.4.2</b> Windows users: Install Rtools</a></li>
+<li class="chapter" data-level="1.4.3" data-path="index.html"><a href="index.html#test-your-installation-before-the-course"><i class="fa fa-check"></i><b>1.4.3</b> Test your installation before the course</a></li>
+</ul></li>
+<li class="chapter" data-level="1.5" data-path="index.html"><a href="index.html#what-can-i-do-if-i-have-problems-with-my-r-code"><i class="fa fa-check"></i><b>1.5</b> What can I do if I have problems with my R code?</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="tutorial-installing-understanding-rr-studio.html"><a href="tutorial-installing-understanding-rr-studio.html"><i class="fa fa-check"></i><b>2</b> Tutorial: Installing &amp; Understanding R/R Studio</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="tutorial-installing-understanding-rr-studio.html"><a href="tutorial-installing-understanding-rr-studio.html#what-is-r"><i class="fa fa-check"></i><b>2.1</b> What is R?</a></li>
+<li class="chapter" data-level="2.2" data-path="tutorial-installing-understanding-rr-studio.html"><a href="tutorial-installing-understanding-rr-studio.html#installing-r"><i class="fa fa-check"></i><b>2.2</b> Installing R</a></li>
+<li class="chapter" data-level="2.3" data-path="tutorial-installing-understanding-rr-studio.html"><a href="tutorial-installing-understanding-rr-studio.html#installing-rstudio"><i class="fa fa-check"></i><b>2.3</b> Installing RStudio</a></li>
+<li class="chapter" data-level="2.4" data-path="tutorial-installing-understanding-rr-studio.html"><a href="tutorial-installing-understanding-rr-studio.html#updating-r-and-rstudio"><i class="fa fa-check"></i><b>2.4</b> Updating R and RStudio</a></li>
+<li class="chapter" data-level="2.5" data-path="tutorial-installing-understanding-rr-studio.html"><a href="tutorial-installing-understanding-rr-studio.html#how-does-r-work"><i class="fa fa-check"></i><b>2.5</b> How does R work?</a></li>
+<li class="chapter" data-level="2.6" data-path="tutorial-installing-understanding-rr-studio.html"><a href="tutorial-installing-understanding-rr-studio.html#why-should-i-use-r"><i class="fa fa-check"></i><b>2.6</b> Why should I use R?</a></li>
+<li class="chapter" data-level="2.7" data-path="tutorial-installing-understanding-rr-studio.html"><a href="tutorial-installing-understanding-rr-studio.html#how-does-r-studio-work"><i class="fa fa-check"></i><b>2.7</b> How does R Studio work?</a>
+<ul>
+<li class="chapter" data-level="2.7.1" data-path="tutorial-installing-understanding-rr-studio.html"><a href="tutorial-installing-understanding-rr-studio.html#source-writing-your-own-code"><i class="fa fa-check"></i><b>2.7.1</b> Source: Writing your own code</a></li>
+<li class="chapter" data-level="2.7.2" data-path="tutorial-installing-understanding-rr-studio.html"><a href="tutorial-installing-understanding-rr-studio.html#console-printing-results"><i class="fa fa-check"></i><b>2.7.2</b> Console: Printing results</a></li>
+<li class="chapter" data-level="2.7.3" data-path="tutorial-installing-understanding-rr-studio.html"><a href="tutorial-installing-understanding-rr-studio.html#environment-overview-of-objects"><i class="fa fa-check"></i><b>2.7.3</b> Environment: Overview of objects</a></li>
+<li class="chapter" data-level="2.7.4" data-path="tutorial-installing-understanding-rr-studio.html"><a href="tutorial-installing-understanding-rr-studio.html#plotshelppackages-do-everything-else"><i class="fa fa-check"></i><b>2.7.4</b> Plots/Help/Packages: Do everything else</a></li>
+</ul></li>
+<li class="chapter" data-level="2.8" data-path="tutorial-installing-understanding-rr-studio.html"><a href="tutorial-installing-understanding-rr-studio.html#why-arent-we-using-a-gui-for-point-and-click-analyses"><i class="fa fa-check"></i><b>2.8</b> Why aren’t we using a GUI for point-and-click analyses?</a></li>
+<li class="chapter" data-level="2.9" data-path="tutorial-installing-understanding-rr-studio.html"><a href="tutorial-installing-understanding-rr-studio.html#packages"><i class="fa fa-check"></i><b>2.9</b> Packages</a>
+<ul>
+<li class="chapter" data-level="2.9.1" data-path="tutorial-installing-understanding-rr-studio.html"><a href="tutorial-installing-understanding-rr-studio.html#installing-packages"><i class="fa fa-check"></i><b>2.9.1</b> Installing packages</a></li>
+<li class="chapter" data-level="2.9.2" data-path="tutorial-installing-understanding-rr-studio.html"><a href="tutorial-installing-understanding-rr-studio.html#activating-packages"><i class="fa fa-check"></i><b>2.9.2</b> Activating packages</a></li>
+<li class="chapter" data-level="2.9.3" data-path="tutorial-installing-understanding-rr-studio.html"><a href="tutorial-installing-understanding-rr-studio.html#getting-information-about-packages"><i class="fa fa-check"></i><b>2.9.3</b> Getting information about packages</a></li>
+</ul></li>
+<li class="chapter" data-level="2.10" data-path="tutorial-installing-understanding-rr-studio.html"><a href="tutorial-installing-understanding-rr-studio.html#optional-setting-global-options-in-r-for-a-customized-workflow"><i class="fa fa-check"></i><b>2.10</b> Optional: Setting global options in R for a customized workflow</a>
+<ul>
+<li class="chapter" data-level="2.10.1" data-path="tutorial-installing-understanding-rr-studio.html"><a href="tutorial-installing-understanding-rr-studio.html#understanding-options"><i class="fa fa-check"></i><b>2.10.1</b> Understanding <code>options()</code></a></li>
+<li class="chapter" data-level="2.10.2" data-path="tutorial-installing-understanding-rr-studio.html"><a href="tutorial-installing-understanding-rr-studio.html#turn-off-scientific-notation"><i class="fa fa-check"></i><b>2.10.2</b> Turn off scientific notation</a></li>
+<li class="chapter" data-level="2.10.3" data-path="tutorial-installing-understanding-rr-studio.html"><a href="tutorial-installing-understanding-rr-studio.html#customizing-tibble-display"><i class="fa fa-check"></i><b>2.10.3</b> Customizing tibble display</a></li>
+<li class="chapter" data-level="2.10.4" data-path="tutorial-installing-understanding-rr-studio.html"><a href="tutorial-installing-understanding-rr-studio.html#resetting-to-default"><i class="fa fa-check"></i><b>2.10.4</b> Resetting to default</a></li>
+</ul></li>
+<li class="chapter" data-level="2.11" data-path="tutorial-installing-understanding-rr-studio.html"><a href="tutorial-installing-understanding-rr-studio.html#take-aways"><i class="fa fa-check"></i><b>2.11</b> Take-Aways</a></li>
+<li class="chapter" data-level="2.12" data-path="tutorial-installing-understanding-rr-studio.html"><a href="tutorial-installing-understanding-rr-studio.html#additional-tutorials"><i class="fa fa-check"></i><b>2.12</b> Additional tutorials</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="tutorial-using-r-as-a-calculator.html"><a href="tutorial-using-r-as-a-calculator.html"><i class="fa fa-check"></i><b>3</b> Tutorial: Using R as a calculator</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="tutorial-using-r-as-a-calculator.html"><a href="tutorial-using-r-as-a-calculator.html#using-variables-for-calculation"><i class="fa fa-check"></i><b>3.1</b> Using variables for calculation</a></li>
+<li class="chapter" data-level="3.2" data-path="tutorial-using-r-as-a-calculator.html"><a href="tutorial-using-r-as-a-calculator.html#using-vectors-for-calculation"><i class="fa fa-check"></i><b>3.2</b> Using vectors for calculation</a></li>
+<li class="chapter" data-level="3.3" data-path="tutorial-using-r-as-a-calculator.html"><a href="tutorial-using-r-as-a-calculator.html#selecting-values-from-a-vector"><i class="fa fa-check"></i><b>3.3</b> Selecting values from a vector</a></li>
+<li class="chapter" data-level="3.4" data-path="tutorial-using-r-as-a-calculator.html"><a href="tutorial-using-r-as-a-calculator.html#take-aways-1"><i class="fa fa-check"></i><b>3.4</b> Take-Aways</a></li>
+<li class="chapter" data-level="3.5" data-path="tutorial-using-r-as-a-calculator.html"><a href="tutorial-using-r-as-a-calculator.html#additional-tutorials-1"><i class="fa fa-check"></i><b>3.5</b> Additional tutorials</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="exercise-1-base-r.html"><a href="exercise-1-base-r.html"><i class="fa fa-check"></i>Exercise 1: Base R</a>
+<ul>
+<li class="chapter" data-level="" data-path="exercise-1-base-r.html"><a href="exercise-1-base-r.html#task-1"><i class="fa fa-check"></i>Task 1</a></li>
+<li class="chapter" data-level="" data-path="exercise-1-base-r.html"><a href="exercise-1-base-r.html#task-2"><i class="fa fa-check"></i>Task 2</a></li>
+<li class="chapter" data-level="" data-path="exercise-1-base-r.html"><a href="exercise-1-base-r.html#task-3"><i class="fa fa-check"></i>Task 3</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="tutorial-working-with-data-files.html"><a href="tutorial-working-with-data-files.html"><i class="fa fa-check"></i><b>4</b> Tutorial: Working with data (files)</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="tutorial-working-with-data-files.html"><a href="tutorial-working-with-data-files.html#defining-your-working-directory"><i class="fa fa-check"></i><b>4.1</b> Defining your working directory</a></li>
+<li class="chapter" data-level="4.2" data-path="tutorial-working-with-data-files.html"><a href="tutorial-working-with-data-files.html#import-data-from-your-working-directory"><i class="fa fa-check"></i><b>4.2</b> Import data from your working directory</a></li>
+<li class="chapter" data-level="4.3" data-path="tutorial-working-with-data-files.html"><a href="tutorial-working-with-data-files.html#subsetting-variables-columns-in-data-frames"><i class="fa fa-check"></i><b>4.3</b> Subsetting variables / columns in data frames</a></li>
+<li class="chapter" data-level="4.4" data-path="tutorial-working-with-data-files.html"><a href="tutorial-working-with-data-files.html#subsetting-observations-rows-in-data-frames"><i class="fa fa-check"></i><b>4.4</b> Subsetting observations / rows in data frames</a></li>
+<li class="chapter" data-level="4.5" data-path="tutorial-working-with-data-files.html"><a href="tutorial-working-with-data-files.html#subsetting-values-cells-in-data-frames"><i class="fa fa-check"></i><b>4.5</b> Subsetting values / cells in data frames</a></li>
+<li class="chapter" data-level="4.6" data-path="tutorial-working-with-data-files.html"><a href="tutorial-working-with-data-files.html#subsetting-data-with-conditions"><i class="fa fa-check"></i><b>4.6</b> Subsetting data with conditions</a></li>
+<li class="chapter" data-level="4.7" data-path="tutorial-working-with-data-files.html"><a href="tutorial-working-with-data-files.html#eliminate-the-need-to-manually-set-working-directories-by-using-r-projects"><i class="fa fa-check"></i><b>4.7</b> Eliminate the need to manually set working directories by using R Projects</a>
+<ul>
+<li class="chapter" data-level="4.7.1" data-path="tutorial-working-with-data-files.html"><a href="tutorial-working-with-data-files.html#creating-a-new-r-project"><i class="fa fa-check"></i><b>4.7.1</b> Creating a new R Project</a></li>
+<li class="chapter" data-level="4.7.2" data-path="tutorial-working-with-data-files.html"><a href="tutorial-working-with-data-files.html#checking-your-working-directory"><i class="fa fa-check"></i><b>4.7.2</b> Checking your working directory</a></li>
+<li class="chapter" data-level="4.7.3" data-path="tutorial-working-with-data-files.html"><a href="tutorial-working-with-data-files.html#a-recommendation-for-designing-a-good-r-project-structure"><i class="fa fa-check"></i><b>4.7.3</b> A recommendation for designing a good R Project structure</a></li>
+<li class="chapter" data-level="4.7.4" data-path="tutorial-working-with-data-files.html"><a href="tutorial-working-with-data-files.html#navigating-your-working-directory-like-a-pro-the-concept-of-relative-paths"><i class="fa fa-check"></i><b>4.7.4</b> Navigating your working directory like a pro: The concept of relative paths</a></li>
+</ul></li>
+<li class="chapter" data-level="4.8" data-path="tutorial-working-with-data-files.html"><a href="tutorial-working-with-data-files.html#optional-import-data-from-various-file-formats"><i class="fa fa-check"></i><b>4.8</b> Optional: Import data from various file formats</a>
+<ul>
+<li class="chapter" data-level="4.8.1" data-path="tutorial-working-with-data-files.html"><a href="tutorial-working-with-data-files.html#importing-data-from-excel"><i class="fa fa-check"></i><b>4.8.1</b> Importing data from Excel</a></li>
+<li class="chapter" data-level="4.8.2" data-path="tutorial-working-with-data-files.html"><a href="tutorial-working-with-data-files.html#importing-data-from-json"><i class="fa fa-check"></i><b>4.8.2</b> Importing data from JSON</a></li>
+<li class="chapter" data-level="4.8.3" data-path="tutorial-working-with-data-files.html"><a href="tutorial-working-with-data-files.html#importing-data-from-spss"><i class="fa fa-check"></i><b>4.8.3</b> Importing data from SPSS</a></li>
+</ul></li>
+<li class="chapter" data-level="4.9" data-path="tutorial-working-with-data-files.html"><a href="tutorial-working-with-data-files.html#take-aways-2"><i class="fa fa-check"></i><b>4.9</b> Take-Aways</a></li>
+<li class="chapter" data-level="4.10" data-path="tutorial-working-with-data-files.html"><a href="tutorial-working-with-data-files.html#additional-tutorials-2"><i class="fa fa-check"></i><b>4.10</b> Additional tutorials</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="exercise-2-base-r.html"><a href="exercise-2-base-r.html"><i class="fa fa-check"></i>Exercise 2: Base R</a>
+<ul>
+<li class="chapter" data-level="" data-path="exercise-2-base-r.html"><a href="exercise-2-base-r.html#task-1-1"><i class="fa fa-check"></i>Task 1</a></li>
+<li class="chapter" data-level="" data-path="exercise-2-base-r.html"><a href="exercise-2-base-r.html#task-2-1"><i class="fa fa-check"></i>Task 2</a></li>
+<li class="chapter" data-level="" data-path="exercise-2-base-r.html"><a href="exercise-2-base-r.html#task-3-1"><i class="fa fa-check"></i>Task 3</a></li>
+<li class="chapter" data-level="" data-path="exercise-2-base-r.html"><a href="exercise-2-base-r.html#task-4"><i class="fa fa-check"></i>Task 4</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="tutorial-data-management-with-dplyr.html"><a href="tutorial-data-management-with-dplyr.html"><i class="fa fa-check"></i><b>5</b> Tutorial: Data management with dplyr</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="tutorial-data-management-with-dplyr.html"><a href="tutorial-data-management-with-dplyr.html#why-not-stick-with-base-r"><i class="fa fa-check"></i><b>5.1</b> Why not stick with Base R?</a></li>
+<li class="chapter" data-level="5.2" data-path="tutorial-data-management-with-dplyr.html"><a href="tutorial-data-management-with-dplyr.html#tidyverse-packages"><i class="fa fa-check"></i><b>5.2</b> Tidyverse packages</a></li>
+<li class="chapter" data-level="5.3" data-path="tutorial-data-management-with-dplyr.html"><a href="tutorial-data-management-with-dplyr.html#tidy-data"><i class="fa fa-check"></i><b>5.3</b> Tidy data</a></li>
+<li class="chapter" data-level="5.4" data-path="tutorial-data-management-with-dplyr.html"><a href="tutorial-data-management-with-dplyr.html#the-pipe-operator"><i class="fa fa-check"></i><b>5.4</b> The pipe operator</a></li>
+<li class="chapter" data-level="5.5" data-path="tutorial-data-management-with-dplyr.html"><a href="tutorial-data-management-with-dplyr.html#helpful-shortcuts-in-r"><i class="fa fa-check"></i><b>5.5</b> Helpful shortcuts in R</a></li>
+<li class="chapter" data-level="5.6" data-path="tutorial-data-management-with-dplyr.html"><a href="tutorial-data-management-with-dplyr.html#data-transformation-with-dplyr"><i class="fa fa-check"></i><b>5.6</b> Data transformation with dplyr</a>
+<ul>
+<li class="chapter" data-level="5.6.1" data-path="tutorial-data-management-with-dplyr.html"><a href="tutorial-data-management-with-dplyr.html#select"><i class="fa fa-check"></i><b>5.6.1</b> select()</a></li>
+<li class="chapter" data-level="5.6.2" data-path="tutorial-data-management-with-dplyr.html"><a href="tutorial-data-management-with-dplyr.html#filter"><i class="fa fa-check"></i><b>5.6.2</b> filter()</a></li>
+<li class="chapter" data-level="5.6.3" data-path="tutorial-data-management-with-dplyr.html"><a href="tutorial-data-management-with-dplyr.html#arrange"><i class="fa fa-check"></i><b>5.6.3</b> arrange()</a></li>
+<li class="chapter" data-level="5.6.4" data-path="tutorial-data-management-with-dplyr.html"><a href="tutorial-data-management-with-dplyr.html#mutate"><i class="fa fa-check"></i><b>5.6.4</b> mutate()</a></li>
+<li class="chapter" data-level="5.6.5" data-path="tutorial-data-management-with-dplyr.html"><a href="tutorial-data-management-with-dplyr.html#summarize-group_by"><i class="fa fa-check"></i><b>5.6.5</b> summarize() [+ group_by()]</a></li>
+<li class="chapter" data-level="5.6.6" data-path="tutorial-data-management-with-dplyr.html"><a href="tutorial-data-management-with-dplyr.html#chaining-functions-in-a-pipe"><i class="fa fa-check"></i><b>5.6.6</b> Chaining functions in a pipe</a></li>
+</ul></li>
+<li class="chapter" data-level="5.7" data-path="tutorial-data-management-with-dplyr.html"><a href="tutorial-data-management-with-dplyr.html#printing-more-rows-in-the-console-using-dplyr"><i class="fa fa-check"></i><b>5.7</b> Printing more rows in the console using <code>dplyr</code></a></li>
+<li class="chapter" data-level="5.8" data-path="tutorial-data-management-with-dplyr.html"><a href="tutorial-data-management-with-dplyr.html#take-aways-3"><i class="fa fa-check"></i><b>5.8</b> Take-Aways</a></li>
+<li class="chapter" data-level="5.9" data-path="tutorial-data-management-with-dplyr.html"><a href="tutorial-data-management-with-dplyr.html#additional-tutorials-3"><i class="fa fa-check"></i><b>5.9</b> Additional tutorials</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="exercise-3-dplyr.html"><a href="exercise-3-dplyr.html"><i class="fa fa-check"></i>Exercise 3: dplyr</a>
+<ul>
+<li class="chapter" data-level="" data-path="exercise-3-dplyr.html"><a href="exercise-3-dplyr.html#task-1-2"><i class="fa fa-check"></i>Task 1</a></li>
+<li class="chapter" data-level="" data-path="exercise-3-dplyr.html"><a href="exercise-3-dplyr.html#task-2-2"><i class="fa fa-check"></i>Task 2</a></li>
+<li class="chapter" data-level="" data-path="exercise-3-dplyr.html"><a href="exercise-3-dplyr.html#task-3-2"><i class="fa fa-check"></i>Task 3</a></li>
+<li class="chapter" data-level="" data-path="exercise-3-dplyr.html"><a href="exercise-3-dplyr.html#task-4-1"><i class="fa fa-check"></i>Task 4</a></li>
+<li class="chapter" data-level="" data-path="exercise-3-dplyr.html"><a href="exercise-3-dplyr.html#task-5"><i class="fa fa-check"></i>Task 5</a></li>
+<li class="chapter" data-level="" data-path="exercise-3-dplyr.html"><a href="exercise-3-dplyr.html#task-6"><i class="fa fa-check"></i>Task 6</a></li>
+<li class="chapter" data-level="" data-path="exercise-3-dplyr.html"><a href="exercise-3-dplyr.html#task-7"><i class="fa fa-check"></i>Task 7</a></li>
+<li class="chapter" data-level="" data-path="exercise-3-dplyr.html"><a href="exercise-3-dplyr.html#task-8"><i class="fa fa-check"></i>Task 8</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="optional-tutorial-advanced-data-management.html"><a href="optional-tutorial-advanced-data-management.html"><i class="fa fa-check"></i><b>6</b> Optional tutorial: Advanced data management</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="optional-tutorial-advanced-data-management.html"><a href="optional-tutorial-advanced-data-management.html#reading-multiple-files-into-r"><i class="fa fa-check"></i><b>6.1</b> Reading multiple files into R</a>
+<ul>
+<li class="chapter" data-level="6.1.1" data-path="optional-tutorial-advanced-data-management.html"><a href="optional-tutorial-advanced-data-management.html#reading-multiple-files-into-r-with-different-column-names"><i class="fa fa-check"></i><b>6.1.1</b> Reading multiple files into R with different column names</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="optional-tutorial-advanced-data-management.html"><a href="optional-tutorial-advanced-data-management.html#joining-two-datasets"><i class="fa fa-check"></i><b>6.2</b> Joining two datasets</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="optional-tutorial-advanced-data-management.html"><a href="optional-tutorial-advanced-data-management.html#inner_join"><i class="fa fa-check"></i><b>6.2.1</b> inner_join</a></li>
+<li class="chapter" data-level="6.2.2" data-path="optional-tutorial-advanced-data-management.html"><a href="optional-tutorial-advanced-data-management.html#left_join"><i class="fa fa-check"></i><b>6.2.2</b> left_join</a></li>
+<li class="chapter" data-level="6.2.3" data-path="optional-tutorial-advanced-data-management.html"><a href="optional-tutorial-advanced-data-management.html#right_join"><i class="fa fa-check"></i><b>6.2.3</b> right_join</a></li>
+<li class="chapter" data-level="6.2.4" data-path="optional-tutorial-advanced-data-management.html"><a href="optional-tutorial-advanced-data-management.html#full_join"><i class="fa fa-check"></i><b>6.2.4</b> full_join</a></li>
+<li class="chapter" data-level="6.2.5" data-path="optional-tutorial-advanced-data-management.html"><a href="optional-tutorial-advanced-data-management.html#join-without-.x-and-.y-suffixes"><i class="fa fa-check"></i><b>6.2.5</b> Join without .x and .y suffixes</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="optional-tutorial-advanced-data-management.html"><a href="optional-tutorial-advanced-data-management.html#reformatting-datasets"><i class="fa fa-check"></i><b>6.3</b> Reformatting datasets</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="optional-tutorial-advanced-data-management.html"><a href="optional-tutorial-advanced-data-management.html#pivot_longer"><i class="fa fa-check"></i><b>6.3.1</b> pivot_longer()</a></li>
+<li class="chapter" data-level="6.3.2" data-path="optional-tutorial-advanced-data-management.html"><a href="optional-tutorial-advanced-data-management.html#pivot_wider"><i class="fa fa-check"></i><b>6.3.2</b> pivot_wider()</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="optional-tutorial-advanced-data-management.html"><a href="optional-tutorial-advanced-data-management.html#advanced-column-selectors"><i class="fa fa-check"></i><b>6.4</b> Advanced column selectors</a>
+<ul>
+<li class="chapter" data-level="6.4.1" data-path="optional-tutorial-advanced-data-management.html"><a href="optional-tutorial-advanced-data-management.html#selecting-the-last-column"><i class="fa fa-check"></i><b>6.4.1</b> Selecting the last column</a></li>
+<li class="chapter" data-level="6.4.2" data-path="optional-tutorial-advanced-data-management.html"><a href="optional-tutorial-advanced-data-management.html#selecting-columns-that-start-with-end-with-or-contain-a-specific-string"><i class="fa fa-check"></i><b>6.4.2</b> Selecting columns that start with, end with or contain a specific string</a></li>
+<li class="chapter" data-level="6.4.3" data-path="optional-tutorial-advanced-data-management.html"><a href="optional-tutorial-advanced-data-management.html#selecting-columns-based-on-a-numeric-range"><i class="fa fa-check"></i><b>6.4.3</b> Selecting columns based on a numeric range</a></li>
+<li class="chapter" data-level="6.4.4" data-path="optional-tutorial-advanced-data-management.html"><a href="optional-tutorial-advanced-data-management.html#selecting-columns-based-on-their-type"><i class="fa fa-check"></i><b>6.4.4</b> Selecting columns based on their type</a></li>
+<li class="chapter" data-level="6.4.5" data-path="optional-tutorial-advanced-data-management.html"><a href="optional-tutorial-advanced-data-management.html#combine-selectors"><i class="fa fa-check"></i><b>6.4.5</b> Combine selectors</a></li>
+<li class="chapter" data-level="6.4.6" data-path="optional-tutorial-advanced-data-management.html"><a href="optional-tutorial-advanced-data-management.html#reorder-your-columns-with-everything"><i class="fa fa-check"></i><b>6.4.6</b> Reorder your columns with everything()</a></li>
+</ul></li>
+<li class="chapter" data-level="6.5" data-path="optional-tutorial-advanced-data-management.html"><a href="optional-tutorial-advanced-data-management.html#advanced-selection-of-rows"><i class="fa fa-check"></i><b>6.5</b> Advanced selection of rows</a></li>
+<li class="chapter" data-level="6.6" data-path="optional-tutorial-advanced-data-management.html"><a href="optional-tutorial-advanced-data-management.html#take-aways-4"><i class="fa fa-check"></i><b>6.6</b> Take-Aways</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="tutorial-data-visualization-with-ggplot.html"><a href="tutorial-data-visualization-with-ggplot.html"><i class="fa fa-check"></i><b>7</b> Tutorial: Data visualization with ggplot</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="tutorial-data-visualization-with-ggplot.html"><a href="tutorial-data-visualization-with-ggplot.html#why-not-stick-with-base-r-1"><i class="fa fa-check"></i><b>7.1</b> Why not stick with Base R?</a></li>
+<li class="chapter" data-level="7.2" data-path="tutorial-data-visualization-with-ggplot.html"><a href="tutorial-data-visualization-with-ggplot.html#components-of-a-ggplot-graph"><i class="fa fa-check"></i><b>7.2</b> Components of a ggplot graph</a></li>
+<li class="chapter" data-level="7.3" data-path="tutorial-data-visualization-with-ggplot.html"><a href="tutorial-data-visualization-with-ggplot.html#installing-activating-ggplot"><i class="fa fa-check"></i><b>7.3</b> Installing &amp; activating ggplot</a></li>
+<li class="chapter" data-level="7.4" data-path="tutorial-data-visualization-with-ggplot.html"><a href="tutorial-data-visualization-with-ggplot.html#building-your-first-plot"><i class="fa fa-check"></i><b>7.4</b> Building your first plot</a>
+<ul>
+<li class="chapter" data-level="7.4.1" data-path="tutorial-data-visualization-with-ggplot.html"><a href="tutorial-data-visualization-with-ggplot.html#data"><i class="fa fa-check"></i><b>7.4.1</b> Data</a></li>
+<li class="chapter" data-level="7.4.2" data-path="tutorial-data-visualization-with-ggplot.html"><a href="tutorial-data-visualization-with-ggplot.html#aesthetics"><i class="fa fa-check"></i><b>7.4.2</b> Aesthetics</a></li>
+<li class="chapter" data-level="7.4.3" data-path="tutorial-data-visualization-with-ggplot.html"><a href="tutorial-data-visualization-with-ggplot.html#geometrics"><i class="fa fa-check"></i><b>7.4.3</b> Geometrics</a></li>
+<li class="chapter" data-level="7.4.4" data-path="tutorial-data-visualization-with-ggplot.html"><a href="tutorial-data-visualization-with-ggplot.html#scales"><i class="fa fa-check"></i><b>7.4.4</b> Scales</a></li>
+<li class="chapter" data-level="7.4.5" data-path="tutorial-data-visualization-with-ggplot.html"><a href="tutorial-data-visualization-with-ggplot.html#themes"><i class="fa fa-check"></i><b>7.4.5</b> Themes</a></li>
+<li class="chapter" data-level="7.4.6" data-path="tutorial-data-visualization-with-ggplot.html"><a href="tutorial-data-visualization-with-ggplot.html#labs"><i class="fa fa-check"></i><b>7.4.6</b> Labs</a></li>
+<li class="chapter" data-level="7.4.7" data-path="tutorial-data-visualization-with-ggplot.html"><a href="tutorial-data-visualization-with-ggplot.html#facets"><i class="fa fa-check"></i><b>7.4.7</b> Facets</a></li>
+<li class="chapter" data-level="7.4.8" data-path="tutorial-data-visualization-with-ggplot.html"><a href="tutorial-data-visualization-with-ggplot.html#saving-graphs"><i class="fa fa-check"></i><b>7.4.8</b> Saving graphs</a></li>
+</ul></li>
+<li class="chapter" data-level="7.5" data-path="tutorial-data-visualization-with-ggplot.html"><a href="tutorial-data-visualization-with-ggplot.html#other-common-plot-types"><i class="fa fa-check"></i><b>7.5</b> Other common plot types</a>
+<ul>
+<li class="chapter" data-level="7.5.1" data-path="tutorial-data-visualization-with-ggplot.html"><a href="tutorial-data-visualization-with-ggplot.html#bar-plots"><i class="fa fa-check"></i><b>7.5.1</b> bar plots</a></li>
+<li class="chapter" data-level="7.5.2" data-path="tutorial-data-visualization-with-ggplot.html"><a href="tutorial-data-visualization-with-ggplot.html#box-plots"><i class="fa fa-check"></i><b>7.5.2</b> box plots</a></li>
+</ul></li>
+<li class="chapter" data-level="7.6" data-path="tutorial-data-visualization-with-ggplot.html"><a href="tutorial-data-visualization-with-ggplot.html#take-aways-5"><i class="fa fa-check"></i><b>7.6</b> Take Aways</a></li>
+<li class="chapter" data-level="7.7" data-path="tutorial-data-visualization-with-ggplot.html"><a href="tutorial-data-visualization-with-ggplot.html#additional-tutorials-4"><i class="fa fa-check"></i><b>7.7</b> Additional tutorials</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="exercise-4-ggplot.html"><a href="exercise-4-ggplot.html"><i class="fa fa-check"></i>Exercise 4: ggplot</a>
+<ul>
+<li class="chapter" data-level="" data-path="exercise-4-ggplot.html"><a href="exercise-4-ggplot.html#task-1-3"><i class="fa fa-check"></i>Task 1</a></li>
+<li class="chapter" data-level="" data-path="exercise-4-ggplot.html"><a href="exercise-4-ggplot.html#task-2-3"><i class="fa fa-check"></i>Task 2</a></li>
+<li class="chapter" data-level="" data-path="exercise-4-ggplot.html"><a href="exercise-4-ggplot.html#task-3-3"><i class="fa fa-check"></i>Task 3</a></li>
+<li class="chapter" data-level="" data-path="exercise-4-ggplot.html"><a href="exercise-4-ggplot.html#task-4-2"><i class="fa fa-check"></i>Task 4</a></li>
+<li class="chapter" data-level="" data-path="exercise-4-ggplot.html"><a href="exercise-4-ggplot.html#task-5-1"><i class="fa fa-check"></i>Task 5</a></li>
+<li class="chapter" data-level="" data-path="exercise-4-ggplot.html"><a href="exercise-4-ggplot.html#task-6-1"><i class="fa fa-check"></i>Task 6</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="exercise-5-ggplot.html"><a href="exercise-5-ggplot.html"><i class="fa fa-check"></i>Exercise 5: ggplot</a>
+<ul>
+<li class="chapter" data-level="" data-path="exercise-5-ggplot.html"><a href="exercise-5-ggplot.html#task-1-4"><i class="fa fa-check"></i>Task 1</a></li>
+<li class="chapter" data-level="" data-path="exercise-5-ggplot.html"><a href="exercise-5-ggplot.html#task-2-4"><i class="fa fa-check"></i>Task 2</a></li>
+<li class="chapter" data-level="" data-path="exercise-5-ggplot.html"><a href="exercise-5-ggplot.html#task-3-4"><i class="fa fa-check"></i>Task 3</a></li>
+<li class="chapter" data-level="" data-path="exercise-5-ggplot.html"><a href="exercise-5-ggplot.html#task-4-3"><i class="fa fa-check"></i>Task 4</a></li>
+<li class="chapter" data-level="" data-path="exercise-5-ggplot.html"><a href="exercise-5-ggplot.html#task-5-2"><i class="fa fa-check"></i>Task 5</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="tutorial-data-management-with-tidycomm.html"><a href="tutorial-data-management-with-tidycomm.html"><i class="fa fa-check"></i><b>8</b> Tutorial: Data management with tidycomm</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="tutorial-data-management-with-tidycomm.html"><a href="tutorial-data-management-with-tidycomm.html#index-generation"><i class="fa fa-check"></i><b>8.1</b> Index generation</a>
+<ul>
+<li class="chapter" data-level="8.1.1" data-path="tutorial-data-management-with-tidycomm.html"><a href="tutorial-data-management-with-tidycomm.html#add_index"><i class="fa fa-check"></i><b>8.1.1</b> add_index():</a></li>
+<li class="chapter" data-level="8.1.2" data-path="tutorial-data-management-with-tidycomm.html"><a href="tutorial-data-management-with-tidycomm.html#get_reliability"><i class="fa fa-check"></i><b>8.1.2</b> get_reliability()</a></li>
+</ul></li>
+<li class="chapter" data-level="8.2" data-path="tutorial-data-management-with-tidycomm.html"><a href="tutorial-data-management-with-tidycomm.html#rescaling-of-continuous-scales"><i class="fa fa-check"></i><b>8.2</b> Rescaling of continuous scales</a>
+<ul>
+<li class="chapter" data-level="8.2.1" data-path="tutorial-data-management-with-tidycomm.html"><a href="tutorial-data-management-with-tidycomm.html#setna_scale"><i class="fa fa-check"></i><b>8.2.1</b> setna_scale()</a></li>
+<li class="chapter" data-level="8.2.2" data-path="tutorial-data-management-with-tidycomm.html"><a href="tutorial-data-management-with-tidycomm.html#reverse_scale"><i class="fa fa-check"></i><b>8.2.2</b> reverse_scale()</a></li>
+<li class="chapter" data-level="8.2.3" data-path="tutorial-data-management-with-tidycomm.html"><a href="tutorial-data-management-with-tidycomm.html#minmax_scale"><i class="fa fa-check"></i><b>8.2.3</b> minmax_scale()</a></li>
+<li class="chapter" data-level="8.2.4" data-path="tutorial-data-management-with-tidycomm.html"><a href="tutorial-data-management-with-tidycomm.html#center_scale"><i class="fa fa-check"></i><b>8.2.4</b> center_scale()</a></li>
+<li class="chapter" data-level="8.2.5" data-path="tutorial-data-management-with-tidycomm.html"><a href="tutorial-data-management-with-tidycomm.html#z_scale"><i class="fa fa-check"></i><b>8.2.5</b> z_scale()</a></li>
+</ul></li>
+<li class="chapter" data-level="8.3" data-path="tutorial-data-management-with-tidycomm.html"><a href="tutorial-data-management-with-tidycomm.html#categorizing-and-recoding-categorical-scales"><i class="fa fa-check"></i><b>8.3</b> Categorizing and recoding categorical scales</a>
+<ul>
+<li class="chapter" data-level="8.3.1" data-path="tutorial-data-management-with-tidycomm.html"><a href="tutorial-data-management-with-tidycomm.html#categorize_scale"><i class="fa fa-check"></i><b>8.3.1</b> categorize_scale()</a></li>
+<li class="chapter" data-level="8.3.2" data-path="tutorial-data-management-with-tidycomm.html"><a href="tutorial-data-management-with-tidycomm.html#recode_cat_scale"><i class="fa fa-check"></i><b>8.3.2</b> recode_cat_scale()</a></li>
+<li class="chapter" data-level="8.3.3" data-path="tutorial-data-management-with-tidycomm.html"><a href="tutorial-data-management-with-tidycomm.html#summary-of-all-scaling-functions"><i class="fa fa-check"></i><b>8.3.3</b> Summary of all scaling functions</a></li>
+</ul></li>
+<li class="chapter" data-level="8.4" data-path="tutorial-data-management-with-tidycomm.html"><a href="tutorial-data-management-with-tidycomm.html#univariate-analysis"><i class="fa fa-check"></i><b>8.4</b> Univariate analysis</a>
+<ul>
+<li class="chapter" data-level="8.4.1" data-path="tutorial-data-management-with-tidycomm.html"><a href="tutorial-data-management-with-tidycomm.html#describe-continuous-variables"><i class="fa fa-check"></i><b>8.4.1</b> Describe continuous variables</a></li>
+<li class="chapter" data-level="8.4.2" data-path="tutorial-data-management-with-tidycomm.html"><a href="tutorial-data-management-with-tidycomm.html#describe-categorical-variables"><i class="fa fa-check"></i><b>8.4.2</b> Describe categorical variables</a></li>
+</ul></li>
+<li class="chapter" data-level="8.5" data-path="tutorial-data-management-with-tidycomm.html"><a href="tutorial-data-management-with-tidycomm.html#how-to-easily-copy-paste-tidycomm-commands"><i class="fa fa-check"></i><b>8.5</b> How to easily copy-paste tidycomm commands</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="exercise-6-tidycomm.html"><a href="exercise-6-tidycomm.html"><i class="fa fa-check"></i>Exercise 6: tidycomm</a>
+<ul>
+<li class="chapter" data-level="" data-path="exercise-6-tidycomm.html"><a href="exercise-6-tidycomm.html#task-1-5"><i class="fa fa-check"></i>Task 1</a></li>
+<li class="chapter" data-level="" data-path="exercise-6-tidycomm.html"><a href="exercise-6-tidycomm.html#task-2-5"><i class="fa fa-check"></i>Task 2</a></li>
+<li class="chapter" data-level="" data-path="exercise-6-tidycomm.html"><a href="exercise-6-tidycomm.html#task-3-5"><i class="fa fa-check"></i>Task 3</a></li>
+<li class="chapter" data-level="" data-path="exercise-6-tidycomm.html"><a href="exercise-6-tidycomm.html#task-4-4"><i class="fa fa-check"></i>Task 4</a></li>
+<li class="chapter" data-level="" data-path="exercise-6-tidycomm.html"><a href="exercise-6-tidycomm.html#task-5-3"><i class="fa fa-check"></i>Task 5</a></li>
+<li class="chapter" data-level="" data-path="exercise-6-tidycomm.html"><a href="exercise-6-tidycomm.html#task-6-2"><i class="fa fa-check"></i>Task 6</a></li>
+<li class="chapter" data-level="" data-path="exercise-6-tidycomm.html"><a href="exercise-6-tidycomm.html#task-7-1"><i class="fa fa-check"></i>Task 7</a></li>
+<li class="chapter" data-level="" data-path="exercise-6-tidycomm.html"><a href="exercise-6-tidycomm.html#task-8-1"><i class="fa fa-check"></i>Task 8</a></li>
+<li class="chapter" data-level="" data-path="exercise-6-tidycomm.html"><a href="exercise-6-tidycomm.html#task-9"><i class="fa fa-check"></i>Task 9</a></li>
+<li class="chapter" data-level="" data-path="exercise-6-tidycomm.html"><a href="exercise-6-tidycomm.html#task-10"><i class="fa fa-check"></i>Task 10</a></li>
+<li class="chapter" data-level="" data-path="exercise-6-tidycomm.html"><a href="exercise-6-tidycomm.html#task-11"><i class="fa fa-check"></i>Task 11</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="tutorial-inferential-statistics-with-tidycomm.html"><a href="tutorial-inferential-statistics-with-tidycomm.html"><i class="fa fa-check"></i><b>9</b> Tutorial: Inferential statistics with tidycomm</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="tutorial-inferential-statistics-with-tidycomm.html"><a href="tutorial-inferential-statistics-with-tidycomm.html#how-to-run-significance-tests"><i class="fa fa-check"></i><b>9.1</b> How to run significance tests</a>
+<ul>
+<li class="chapter" data-level="9.1.1" data-path="tutorial-inferential-statistics-with-tidycomm.html"><a href="tutorial-inferential-statistics-with-tidycomm.html#crosstab"><i class="fa fa-check"></i><b>9.1.1</b> crosstab()</a></li>
+<li class="chapter" data-level="9.1.2" data-path="tutorial-inferential-statistics-with-tidycomm.html"><a href="tutorial-inferential-statistics-with-tidycomm.html#t_test"><i class="fa fa-check"></i><b>9.1.2</b> t_test()</a></li>
+<li class="chapter" data-level="9.1.3" data-path="tutorial-inferential-statistics-with-tidycomm.html"><a href="tutorial-inferential-statistics-with-tidycomm.html#unianova"><i class="fa fa-check"></i><b>9.1.3</b> unianova()</a></li>
+<li class="chapter" data-level="9.1.4" data-path="tutorial-inferential-statistics-with-tidycomm.html"><a href="tutorial-inferential-statistics-with-tidycomm.html#correlate"><i class="fa fa-check"></i><b>9.1.4</b> correlate()</a></li>
+<li class="chapter" data-level="9.1.5" data-path="tutorial-inferential-statistics-with-tidycomm.html"><a href="tutorial-inferential-statistics-with-tidycomm.html#regress"><i class="fa fa-check"></i><b>9.1.5</b> regress()</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="exercise-7-dplyr-ggplot-tidycomm.html"><a href="exercise-7-dplyr-ggplot-tidycomm.html"><i class="fa fa-check"></i>Exercise 7: dplyr, ggplot, tidycomm</a>
+<ul>
+<li class="chapter" data-level="" data-path="exercise-7-dplyr-ggplot-tidycomm.html"><a href="exercise-7-dplyr-ggplot-tidycomm.html#task-1-6"><i class="fa fa-check"></i>Task 1</a></li>
+<li class="chapter" data-level="" data-path="exercise-7-dplyr-ggplot-tidycomm.html"><a href="exercise-7-dplyr-ggplot-tidycomm.html#task-2-6"><i class="fa fa-check"></i>Task 2</a></li>
+<li class="chapter" data-level="" data-path="exercise-7-dplyr-ggplot-tidycomm.html"><a href="exercise-7-dplyr-ggplot-tidycomm.html#task-3-6"><i class="fa fa-check"></i>Task 3</a></li>
+<li class="chapter" data-level="" data-path="exercise-7-dplyr-ggplot-tidycomm.html"><a href="exercise-7-dplyr-ggplot-tidycomm.html#task-4-5"><i class="fa fa-check"></i>Task 4</a></li>
+<li class="chapter" data-level="" data-path="exercise-7-dplyr-ggplot-tidycomm.html"><a href="exercise-7-dplyr-ggplot-tidycomm.html#task-5-4"><i class="fa fa-check"></i>Task 5</a></li>
+<li class="chapter" data-level="" data-path="exercise-7-dplyr-ggplot-tidycomm.html"><a href="exercise-7-dplyr-ggplot-tidycomm.html#task-6-3"><i class="fa fa-check"></i>Task 6</a></li>
+<li class="chapter" data-level="" data-path="exercise-7-dplyr-ggplot-tidycomm.html"><a href="exercise-7-dplyr-ggplot-tidycomm.html#task-7-2"><i class="fa fa-check"></i>Task 7</a></li>
+<li class="chapter" data-level="" data-path="exercise-7-dplyr-ggplot-tidycomm.html"><a href="exercise-7-dplyr-ggplot-tidycomm.html#task-8-2"><i class="fa fa-check"></i>Task 8</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="optional-tutorial-text-manipulation-with-stringr.html"><a href="optional-tutorial-text-manipulation-with-stringr.html"><i class="fa fa-check"></i><b>10</b> Optional tutorial: Text manipulation with stringr</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="optional-tutorial-text-manipulation-with-stringr.html"><a href="optional-tutorial-text-manipulation-with-stringr.html#whats-stringr"><i class="fa fa-check"></i><b>10.1</b> What’s stringr?</a></li>
+<li class="chapter" data-level="10.2" data-path="optional-tutorial-text-manipulation-with-stringr.html"><a href="optional-tutorial-text-manipulation-with-stringr.html#working-with-strings"><i class="fa fa-check"></i><b>10.2</b> Working with strings</a></li>
+<li class="chapter" data-level="10.3" data-path="optional-tutorial-text-manipulation-with-stringr.html"><a href="optional-tutorial-text-manipulation-with-stringr.html#working-with-string-patterns"><i class="fa fa-check"></i><b>10.3</b> Working with string patterns</a></li>
+<li class="chapter" data-level="10.4" data-path="optional-tutorial-text-manipulation-with-stringr.html"><a href="optional-tutorial-text-manipulation-with-stringr.html#working-with-regular-expressions"><i class="fa fa-check"></i><b>10.4</b> Working with regular expressions</a>
+<ul>
+<li class="chapter" data-level="10.4.1" data-path="optional-tutorial-text-manipulation-with-stringr.html"><a href="optional-tutorial-text-manipulation-with-stringr.html#anchors-alternates-and-quantifiers"><i class="fa fa-check"></i><b>10.4.1</b> Anchors, alternates, and quantifiers</a></li>
+<li class="chapter" data-level="10.4.2" data-path="optional-tutorial-text-manipulation-with-stringr.html"><a href="optional-tutorial-text-manipulation-with-stringr.html#look-arounds-and-groups"><i class="fa fa-check"></i><b>10.4.2</b> Look arounds and groups</a></li>
+<li class="chapter" data-level="10.4.3" data-path="optional-tutorial-text-manipulation-with-stringr.html"><a href="optional-tutorial-text-manipulation-with-stringr.html#match-specific-types-of-characters"><i class="fa fa-check"></i><b>10.4.3</b> Match specific types of characters</a></li>
+</ul></li>
+<li class="chapter" data-level="10.5" data-path="optional-tutorial-text-manipulation-with-stringr.html"><a href="optional-tutorial-text-manipulation-with-stringr.html#take-aways-6"><i class="fa fa-check"></i><b>10.5</b> Take-Aways</a></li>
+<li class="chapter" data-level="10.6" data-path="optional-tutorial-text-manipulation-with-stringr.html"><a href="optional-tutorial-text-manipulation-with-stringr.html#additional-tutorials-5"><i class="fa fa-check"></i><b>10.6</b> Additional tutorials</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="exercise-8-stringr.html"><a href="exercise-8-stringr.html"><i class="fa fa-check"></i>Exercise 8: stringr</a>
+<ul>
+<li class="chapter" data-level="" data-path="exercise-8-stringr.html"><a href="exercise-8-stringr.html#task-1-7"><i class="fa fa-check"></i>Task 1</a></li>
+<li class="chapter" data-level="" data-path="exercise-8-stringr.html"><a href="exercise-8-stringr.html#task-2-7"><i class="fa fa-check"></i>Task 2</a></li>
+<li class="chapter" data-level="" data-path="exercise-8-stringr.html"><a href="exercise-8-stringr.html#task-3-7"><i class="fa fa-check"></i>Task 3</a></li>
+<li class="chapter" data-level="" data-path="exercise-8-stringr.html"><a href="exercise-8-stringr.html#task-4-6"><i class="fa fa-check"></i>Task 4</a></li>
+<li class="chapter" data-level="" data-path="exercise-8-stringr.html"><a href="exercise-8-stringr.html#final-note"><i class="fa fa-check"></i>Final Note</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html"><i class="fa fa-check"></i>Solutions</a>
+<ul>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#solutions-for-exercise-1"><i class="fa fa-check"></i>Solutions for Exercise 1</a>
+<ul>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-1-8"><i class="fa fa-check"></i>Task 1</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-2-8"><i class="fa fa-check"></i>Task 2</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-3-8"><i class="fa fa-check"></i>Task 3</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#solutions-for-exercise-2"><i class="fa fa-check"></i>Solutions for Exercise 2</a>
+<ul>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-1-9"><i class="fa fa-check"></i>Task 1</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-2-9"><i class="fa fa-check"></i>Task 2</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-3-9"><i class="fa fa-check"></i>Task 3</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-4-7"><i class="fa fa-check"></i>Task 4</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#solutions-for-exercise-3"><i class="fa fa-check"></i>Solutions for Exercise 3</a>
+<ul>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-1-10"><i class="fa fa-check"></i>Task 1</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-2-10"><i class="fa fa-check"></i>Task 2</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-3-10"><i class="fa fa-check"></i>Task 3</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-4-8"><i class="fa fa-check"></i>Task 4</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-5-5"><i class="fa fa-check"></i>Task 5</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-6-4"><i class="fa fa-check"></i>Task 6</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-7-3"><i class="fa fa-check"></i>Task 7</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-8-3"><i class="fa fa-check"></i>Task 8</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#solutions-for-exercise-4"><i class="fa fa-check"></i>Solutions for Exercise 4</a>
+<ul>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-1-11"><i class="fa fa-check"></i>Task 1</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-2-11"><i class="fa fa-check"></i>Task 2</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-3-11"><i class="fa fa-check"></i>Task 3</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-4-9"><i class="fa fa-check"></i>Task 4</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-5-6"><i class="fa fa-check"></i>Task 5</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-6-5"><i class="fa fa-check"></i>Task 6</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#solutions-for-exercise-5"><i class="fa fa-check"></i>Solutions for Exercise 5</a>
+<ul>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-1-12"><i class="fa fa-check"></i>Task 1</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-2-12"><i class="fa fa-check"></i>Task 2</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-3-12"><i class="fa fa-check"></i>Task 3</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-4-10"><i class="fa fa-check"></i>Task 4</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-5-7"><i class="fa fa-check"></i>Task 5</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#solutions-for-exercise-6"><i class="fa fa-check"></i>Solutions for Exercise 6</a>
+<ul>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-1-13"><i class="fa fa-check"></i>Task 1</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-2-13"><i class="fa fa-check"></i>Task 2</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-3-13"><i class="fa fa-check"></i>Task 3</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-4-11"><i class="fa fa-check"></i>Task 4</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-5-8"><i class="fa fa-check"></i>Task 5</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-6-6"><i class="fa fa-check"></i>Task 6</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-7-4"><i class="fa fa-check"></i>Task 7</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-8-4"><i class="fa fa-check"></i>Task 8</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-9-1"><i class="fa fa-check"></i>Task 9</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-10-1"><i class="fa fa-check"></i>Task 10</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-11-1"><i class="fa fa-check"></i>Task 11</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#solutions-for-exercise-7"><i class="fa fa-check"></i>Solutions for Exercise 7</a>
+<ul>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-1-14"><i class="fa fa-check"></i>Task 1</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-2-14"><i class="fa fa-check"></i>Task 2</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-3-14"><i class="fa fa-check"></i>Task 3</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-4-12"><i class="fa fa-check"></i>Task 4</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-5-9"><i class="fa fa-check"></i>Task 5</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-6-7"><i class="fa fa-check"></i>Task 6</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-7-5"><i class="fa fa-check"></i>Task 7</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-8-5"><i class="fa fa-check"></i>Task 8</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#solutions-for-exercise-8"><i class="fa fa-check"></i>Solutions for Exercise 8</a>
+<ul>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-1-15"><i class="fa fa-check"></i>Task 1</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-2-15"><i class="fa fa-check"></i>Task 2</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-3-15"><i class="fa fa-check"></i>Task 3</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-4-13"><i class="fa fa-check"></i>Task 4</a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://lkobilke.github.io/Intro_to_R/.git" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Introduction to R</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="tutorial-installing-understanding-rr-studio" class="section level1 hasAnchor" number="2">
+<h1><span class="header-section-number"> 2</span> Tutorial: Installing &amp; Understanding R/R Studio<a href="tutorial-installing-understanding-rr-studio.html#tutorial-installing-understanding-rr-studio" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p><strong>After working through Tutorial 2, you’ll… </strong></p>
+<ul>
+<li>know how to install R and RStudio</li>
+<li>know how to update R and RStudio</li>
+<li>understand the layout of RStudio</li>
+</ul>
+<div id="what-is-r" class="section level2 hasAnchor" number="2.1">
+<h2><span class="header-section-number">2.1</span> What is R?<a href="tutorial-installing-understanding-rr-studio.html#what-is-r" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>R is the programming language we’ll use to import, edit, and analyze
+data. Its original form is called Base R. A more recent and streamlined
+syntax for R is called the tidyverse. Base R and the tidyverse are both
+popular approaches to data manipulation and analysis in R, but they
+differ in their philosophies and syntax.</p>
+<p>Base R is the set of core functions that come with the R programming
+language without any additional installations. These functions allow you
+to perform a wide range of data manipulation and analysis tasks,
+including reading and writing data, transforming and summarizing data,
+and creating visualizations. Base R is designed to be efficient and
+flexible, and it provides a lot of low-level functionality for working
+with data.</p>
+<p>The tidyverse, on the other hand, is a collection of R packages (thus
+called a “meta-package”) developed by Hadley Wickham and his team at
+RStudio. The tidyverse is very readable code: You can usually read the
+code out loud and understand what it is doing. Moreover, the tidyverse
+is built around a set of principles and syntax that emphasize the
+importance of tidy data, i.e. data that is organized into rows and
+columns, where each column represents a variable and each row represents
+an observation. As you can see: tidy data looks just like your typical
+SPSS data window!</p>
+<p>In this tutorial, we will mainly work in the tidyverse style and complement it with the <code>tidycomm</code> package. <code>tidycomm</code> follows tidyverse conventions and provides convenient functions for common social-science workflows, including scaling, recoding, descriptive statistics, significance tests, and visualizations. This makes it particularly useful for moving from point-and-click software to a transparent script-based workflow.</p>
+<p>A hint for best practice: Usually, R users decide to use either Base R
+or the tidyverse at some point. When writing code, it’s a good practice
+to stick two one of the two approaches, Base R or tidyverse, and not mix
+them up because that makes the code less readable (just like writing in
+German dialect, Bavarian and East Frisian are both German, but a
+Bavarian will struggle more when reading a text that is partly written
+in East Frisian).</p>
+<p>The approach of this tutorial is to use the first lesson to teach you a
+little bit of Base R – just enough that you are able to identify code
+as being written in Base. This way, you can distinguish helpful answers
+in online forums that are written in “your dialect” (i.e. tidyverse R)
+from those that are not written in your dialect (i.e., Base R). After
+that first lesson, we will stick to the tidyverse approach because it is
+so much more similar to SPSS and much more readable and easy-to-learn
+for beginners.</p>
+<table>
+<colgroup>
+<col width="100%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td align="left"><em>R and (meta-)packages covered in this course:</em></td>
+</tr>
+<tr class="even">
+<td align="left"><img src="images/Visualisierung_von_R.jpg" /></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="installing-r" class="section level2 hasAnchor" number="2.2">
+<h2><span class="header-section-number">2.2</span> Installing R<a href="tutorial-installing-understanding-rr-studio.html#installing-r" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Before the workshop, please install the <strong>current release of R</strong> from <a href="https://cran.r-project.org/">CRAN</a>. Choose the installer for your operating system and follow the installation instructions.</p>
+<ul>
+<li><strong>Windows:</strong> <a href="https://cran.r-project.org/bin/windows/base/">CRAN for Windows</a></li>
+<li><strong>macOS:</strong> <a href="https://cran.r-project.org/bin/macosx/">CRAN for macOS</a></li>
+</ul>
+<p><strong>Mac users:</strong> Please read the notes on the CRAN macOS page carefully, because additional system requirements can depend on your hardware and macOS version.</p>
+</div>
+<div id="installing-rstudio" class="section level2 hasAnchor" number="2.3">
+<h2><span class="header-section-number">2.3</span> Installing RStudio<a href="tutorial-installing-understanding-rr-studio.html#installing-rstudio" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Next, install the <strong>current release of RStudio Desktop</strong> from the <a href="https://posit.co/download/rstudio-desktop/">Posit download page</a>. R is the programming language; RStudio is the desktop application that provides the interface in which we will write, run, inspect, and save our code.</p>
+</div>
+<div id="updating-r-and-rstudio" class="section level2 hasAnchor" number="2.4">
+<h2><span class="header-section-number">2.4</span> Updating R and RStudio<a href="tutorial-installing-understanding-rr-studio.html#updating-r-and-rstudio" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>If you already have R and RStudio installed, check your current versions in the Console:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="tutorial-installing-understanding-rr-studio.html#cb5-1" tabindex="-1"></a>R.version.string</span>
+<span id="cb5-2"><a href="tutorial-installing-understanding-rr-studio.html#cb5-2" tabindex="-1"></a><span class="fu">RStudio.Version</span>()<span class="sc">$</span>version</span></code></pre></div>
+<p>If either installation is outdated, download the current release from CRAN (R) or Posit (RStudio Desktop) and install it before the first session. Restart RStudio afterwards. If RStudio does not automatically use the newly installed R version, you can select it via <strong>Tools → Global Options → General → R version</strong>.</p>
+</div>
+<div id="how-does-r-work" class="section level2 hasAnchor" number="2.5">
+<h2><span class="header-section-number">2.5</span> How does R work?<a href="tutorial-installing-understanding-rr-studio.html#how-does-r-work" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>R is an object- and function-oriented programming language. Chambers
+<a href="https://arxiv.org/pdf/1409.3531.pdf">(2014, p. 4)</a> explains “object-
+and function-oriented” like this:</p>
+<ul>
+<li>Everything that exists is an object.</li>
+<li>Everything that happens is a function call.</li>
+</ul>
+<p>In R, you will assign values (for instance, single numbers/letters,
+several numbers/letters, or whole data files) to objects in R to work
+with them. For example, this command will assign the letters “hello” to
+an object called <em>word</em> by using the <em>assign operator</em> <em>&lt;-</em> (a function
+used to assign values to objects):</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="tutorial-installing-understanding-rr-studio.html#cb6-1" tabindex="-1"></a>word <span class="ot">&lt;-</span> <span class="st">&quot;hello&quot;</span></span></code></pre></div>
+<p>The type of each object will dictate what sorts of computations you may
+perform with this object. The object <em>word</em>, for example, is
+distinguished by the fact that it is made up of characters (i.e., it is
+a word) - which may make it impossible to compute the object’s mean
+value, for example (which is possible only for objects consisting of
+numerical data).</p>
+</div>
+<div id="why-should-i-use-r" class="section level2 hasAnchor" number="2.6">
+<h2><span class="header-section-number">2.6</span> Why should I use R?<a href="tutorial-installing-understanding-rr-studio.html#why-should-i-use-r" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>There are several reasons why I’m an advocate of R (or similar
+programming languages such as Python) over programs such as SPSS.</p>
+<ol style="list-style-type: decimal">
+<li><p>R is <strong>free.</strong> Other than most (statistical) programs, you do
+not need to buy it (or rely on an university license, that is likely
+to run out once you leave your department).</p></li>
+<li><p>R is an <strong>open source</strong> program. Other than most programs, the
+source code - i.e., the basis of the program - is freely available.
+So are the hundred of packages (we’ll get to those later – these
+are basically additional functions you may need for more specific
+analyses) on CRAN that you can use to extend R’s base functions.</p></li>
+<li><p>R offers you <strong>flexibility</strong>. You can work with almost any type of
+data and rely on a large (!) set of functions to import, edit, or
+analyze such data. You can perform “complex” statistical modeling
+like SEM, panel analysis, multilevel analysis, and computational
+methods in R. And if the function you need to do so hasn’t been
+implemented (or simply does not exist yet), you can write it
+yourself! R supports package development!</p></li>
+<li><p>Learning R can also increase your opportunities on the <strong>job market</strong>. For many
+jobs (e.g., market research, data science, data journalism),
+applicants are required to know at least one programming language.</p></li>
+<li><p>You can even write entire papers / theses in R (using <code>RMarkdown</code>). This
+allows for the complete reproducibility of your analysis and report.
+All of the code, data, and visualizations can be easily shared and
+reproduced, ensuring <strong>transparency and enhancing the credibility</strong>
+of your work. Conveniently, documents can <strong>automatically update
+tables and graphs</strong> when changes are made to the underlying data or
+analysis. This saves time and reduces the likelihood of errors when
+updating results.</p></li>
+</ol>
+</div>
+<div id="how-does-r-studio-work" class="section level2 hasAnchor" number="2.7">
+<h2><span class="header-section-number">2.7</span> How does R Studio work?<a href="tutorial-installing-understanding-rr-studio.html#how-does-r-studio-work" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>As mentioned before, R Studio is a graphical interface which facilitates
+programming with R. It contains up to four main windows, which allow for
+different things:</p>
+<ul>
+<li>Writing your own code (Window 1: Source). <em>Important</em>: When first
+installing R/R Studio and opening R Studio, you may not see this
+window right away. In this case, simply open it by clicking on
+<em>File/New File/R Script</em>.</li>
+<li>Executing your own code (Window 2: Console)</li>
+<li>Inspecting objects (Window 3: Environment)</li>
+<li>Visualizing data, searching for help, updating packages etc. (Window
+4: Files/Plots/Packages etc.)</li>
+</ul>
+<table>
+<colgroup>
+<col width="100%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td align="left"><em>Image: Four main windows in R</em></td>
+</tr>
+<tr class="even">
+<td align="left"><img src="images/Tut1_Overview.jpg" /></td>
+</tr>
+</tbody>
+</table>
+<p>Please note that the specific set-up of your R Studio may look different
+(the order of windows may vary and so may the windows’ names). I have
+made the experience that having these four windows open works best for
+me. This may be different for you. If you want to modify the appearance
+of your R Studio, simply choose <em>“Tools/Global Options/Pane Layout”</em>. In
+the options menu, you can perform various cool customizations, such as
+enabling rainbow parentheses (highly recommended). With this feature, a
+starting parenthesis will be displayed in the same color as its
+corresponding closing parenthesis.</p>
+<table>
+<colgroup>
+<col width="100%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td align="left"><em>Image: Changing the Layout</em></td>
+</tr>
+<tr class="even">
+<td align="left"><img src="images/Tut1_Change.JPG" /></td>
+</tr>
+</tbody>
+</table>
+<table>
+<colgroup>
+<col width="100%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td align="left"><em>Image: Activating rainbow parantheses</em></td>
+</tr>
+<tr class="even">
+<td align="left"><img src="images/rainbow_parantheses.png" /></td>
+</tr>
+</tbody>
+</table>
+<div id="source-writing-your-own-code" class="section level3 hasAnchor" number="2.7.1">
+<h3><span class="header-section-number">2.7.1</span> Source: Writing your own code<a href="tutorial-installing-understanding-rr-studio.html#source-writing-your-own-code" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Using the window “Source”, you’ll write your own code to execute
+whichever task you want R to fulfill.</p>
+<div id="writing-code" class="section level4 hasAnchor" number="2.7.1.1">
+<h4><span class="header-section-number">2.7.1.1</span> Writing Code<a href="tutorial-installing-understanding-rr-studio.html#writing-code" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Let’s start with an easy example: Assume you simply want R to print the
+word “hello”. In this case, you would first write a simple command that
+assigns the word “hello” to an object called <em>word</em>. The assignment of
+values to named objects is done via either the operator “&lt;-” or the
+operator “=”. The left side of that command contains the object that
+should be created; its right side the values that should be assigned to
+this object.</p>
+<p>In short, this command tells R to assign the world “hello” to an object
+called <em>word</em>.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="tutorial-installing-understanding-rr-studio.html#cb7-1" tabindex="-1"></a>word <span class="ot">&lt;-</span> <span class="st">&quot;hello&quot;</span></span></code></pre></div>
+<table>
+<colgroup>
+<col width="100%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td align="left"><em>Image: “Source”</em></td>
+</tr>
+<tr class="even">
+<td align="left"><img src="images/Tut1_Source_Panel.jpg" /></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="annotating-code" class="section level4 hasAnchor" number="2.7.1.2">
+<h4><span class="header-section-number">2.7.1.2</span> Annotating Code<a href="tutorial-installing-understanding-rr-studio.html#annotating-code" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Another helpful aspect of R is that you can comment your own code.
+Often, this is very helpful for understanding your code later (if you
+write several hundred lines of codes, you may not remember their exact
+meaning months later).</p>
+<p>Comments or notes can be made via hashtags <code>#</code>. Anything following a
+hashtag will not be considered code by R but be ignored instead.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="tutorial-installing-understanding-rr-studio.html#cb8-1" tabindex="-1"></a>word <span class="ot">&lt;-</span> <span class="st">&quot;hello&quot;</span> <span class="co"># this line of code assigns the word &quot;hello&quot; to an object called word</span></span></code></pre></div>
+</div>
+<div id="executing-code" class="section level4 hasAnchor" number="2.7.1.3">
+<h4><span class="header-section-number">2.7.1.3</span> Executing Code<a href="tutorial-installing-understanding-rr-studio.html#executing-code" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>We now want to execute our code. Doing so is simple:</p>
+<ul>
+<li>Mark the parts of the code you want to run (for instance, single
+rows of code or blocks of code across several rows)</li>
+<li>Either press <em>Run</em> (see upper right side of the same window) or
+press <strong>Ctrl / Command + Enter</strong> (On Mac OS X, hold the command key
+and press return instead).</li>
+</ul>
+<p>R should now execute exactly those lines of codes that you marked
+(hereby creating the object <em>word</em>). If you haven’t marked any specific
+code, all lines of code will be executed.</p>
+<table>
+<colgroup>
+<col width="100%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td align="left"><em>Image: Executing Code</em></td>
+</tr>
+<tr class="even">
+<td align="left"><img src="images/Tut1_Execute.jpg" /></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="saving-code" class="section level4 hasAnchor" number="2.7.1.4">
+<h4><span class="header-section-number">2.7.1.4</span> Saving Code<a href="tutorial-installing-understanding-rr-studio.html#saving-code" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>A great feature of R is that it makes analyses easily reproducible -
+given that you save your code. When reopening R Studio and your script,
+you can simply “rerun” the code with one click and your analysis will be
+reproduced.</p>
+<p>To save code, you have two options:</p>
+<ul>
+<li>Choose the menu option <em>File/Save as</em>. <strong>Important</strong>: Code needs to
+be saved with the ending <strong>“.R”</strong>.</li>
+<li>Chose the <em>Save</em>-button in the <em>source</em> window and save your code in
+the correct format, for instance as “MyCode.R” (some advice: try to
+avoid numbers or dates as file names because this can break the
+saving process).</li>
+</ul>
+<table>
+<colgroup>
+<col width="100%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td align="left"><em>Image: Saving code</em></td>
+</tr>
+<tr class="even">
+<td align="left"><img src="images/Tut2_save.JPG" /></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="console-printing-results" class="section level3 hasAnchor" number="2.7.2">
+<h3><span class="header-section-number">2.7.2</span> Console: Printing results<a href="tutorial-installing-understanding-rr-studio.html#console-printing-results" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Results of executing code are printed in a second window called
+“Console”, which includes the code you ran and the object you may have
+called when doing so.</p>
+<p>Previously, we defined an object called word, which consists of the
+single word “hello”. Thus, R prints our code as well as objects called
+when running this code (here, the object word) in the console.</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="tutorial-installing-understanding-rr-studio.html#cb9-1" tabindex="-1"></a>word <span class="ot">&lt;-</span> <span class="st">&quot;hello&quot;</span></span>
+<span id="cb9-2"><a href="tutorial-installing-understanding-rr-studio.html#cb9-2" tabindex="-1"></a>word</span></code></pre></div>
+<pre><code>## [1] &quot;hello&quot;</code></pre>
+<table>
+<colgroup>
+<col width="100%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td align="left"><em>Image: Window “Console”</em></td>
+</tr>
+<tr class="even">
+<td align="left"><img src="images/Tut1_Konsole%20Panel.JPG" /></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="environment-overview-of-objects" class="section level3 hasAnchor" number="2.7.3">
+<h3><span class="header-section-number">2.7.3</span> Environment: Overview of objects<a href="tutorial-installing-understanding-rr-studio.html#environment-overview-of-objects" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The third window is called “Environment”<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>. This window displays all
+the objects currently existing - in our case, only the object “word”. As
+soon as you start creating more objects, this environment will fill up.</p>
+<p>If you are an SPSS user, you may find this window very similar to what
+is referred to as the <em>Datenansicht / Data overview</em> in SPSS. However,
+the R version of this view is much more flexible as it can contain
+multiple datasets simultaneously in one environment.</p>
+<table>
+<colgroup>
+<col width="100%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td align="left"><em>Image: Window “Environment”</em></td>
+</tr>
+<tr class="even">
+<td align="left"><img src="images/Tut1_Environment_Panel.JPG" /></td>
+</tr>
+</tbody>
+</table>
+<p>It is important to note that we can visually examine any object in R by
+using the <em>View()</em> command. Upon running this command, a new tab will
+open in the “Source” window. While this may not seem particularly useful
+at the moment, it becomes immensely helpful when working with larger
+datasets that have multiple observations and variables.</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="tutorial-installing-understanding-rr-studio.html#cb11-1" tabindex="-1"></a><span class="fu">View</span>(word)</span></code></pre></div>
+<table>
+<colgroup>
+<col width="100%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td align="left"><em>Image: Window “View”</em></td>
+</tr>
+<tr class="even">
+<td align="left"><img src="images/Tut1_View.jpg" /></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="plotshelppackages-do-everything-else" class="section level3 hasAnchor" number="2.7.4">
+<h3><span class="header-section-number">2.7.4</span> Plots/Help/Packages: Do everything else<a href="tutorial-installing-understanding-rr-studio.html#plotshelppackages-do-everything-else" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The fourth window in the standard R Studio interface, which contains
+several sub-sections like “Files”, “Plots”, or “Packages”, has specific
+functions that you will understand later. For example, it can be used to
+plot and visualize results or to see which packages are currently
+loaded.</p>
+<table>
+<colgroup>
+<col width="100%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td align="left"><em>Image: Window “Files/Plots/Packages”</em></td>
+</tr>
+<tr class="even">
+<td align="left"><img src="images/Tut1_Files_Plots_Packages.JPG" /></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="why-arent-we-using-a-gui-for-point-and-click-analyses" class="section level2 hasAnchor" number="2.8">
+<h2><span class="header-section-number">2.8</span> Why aren’t we using a GUI for point-and-click analyses?<a href="tutorial-installing-understanding-rr-studio.html#why-arent-we-using-a-gui-for-point-and-click-analyses" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>If you know SPSS, you might miss having a graphical user interface (GUI)
+in RStudio for point-and-click analyses. For those who prefer such a
+GUI, they can install <code>jamovi</code>, which is a GUI for R. However, I’d
+recommend against using <code>jamovi</code>.</p>
+<p>The reason for this is that coding skills allow for faster adaptation of
+the written syntax to fit individual needs. Those who first learn to
+handle a statistics program through point-and-click may have a weaker
+understanding of the resulting code. If adjustments to the code need to
+be made later on, you may not be able to do so, and analyses may need to
+be redone completely by clicking instead of quickly adapting them
+throughout the script (e.g., with<code>Search + Replace</code>).</p>
+<p>Thus, starting to code early helps with understanding and efficiency.</p>
+</div>
+<div id="packages" class="section level2 hasAnchor" number="2.9">
+<h2><span class="header-section-number">2.9</span> Packages<a href="tutorial-installing-understanding-rr-studio.html#packages" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>While <code>Base R</code>, i.e., the standard version of R, already includes many
+helpful functions, you may at times need other, additional functions.
+For instance, if we want to manage, visualize, or analyze data more efficiently, we may need packages that provide additional functions.</p>
+<p><strong>Packages are collections of task-specific functions that extend the
+functions implemented in Base R</strong>.</p>
+<p>In the spirit of “open science”, anyone can write and publish these
+additional functions and related packages and anyone can also access the
+code used to do so.</p>
+<p>You’ll find a list of all of R packages
+<a href="https://cran.r-project.org/web/packages/">here</a>. In this workshop, we will
+for instance use packages like
+<a href="https://cran.r-project.org/web/packages/dplyr/index.html">dplyr</a> for
+advanced data management.</p>
+<div id="installing-packages" class="section level3 hasAnchor" number="2.9.1">
+<h3><span class="header-section-number">2.9.1</span> Installing packages<a href="tutorial-installing-understanding-rr-studio.html#installing-packages" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>To use a package, you have to install it first. Let’s say you’re
+interested in using the package
+<a href="https://cran.r-project.org/web/packages/dplyr/index.html">dplyr</a>. Using
+the command <code>install.packages()</code>, you can install the package on your
+computer. You’ll have to give the function the name of the package you
+are interested in installing.</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="tutorial-installing-understanding-rr-studio.html#cb12-1" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;dplyr&quot;</span>)</span></code></pre></div>
+<p>After the installation, the package is now available locally on your
+computer. It is important to note that the <code>install.packages()</code> command
+only needs to be executed <strong>once</strong> for each package. In subsequent R
+sessions (e.g., after closing RSTudio and reopening it the next day),
+you only need to activate the installed package, which we will learn in
+the following section.</p>
+</div>
+<div id="activating-packages" class="section level3 hasAnchor" number="2.9.2">
+<h3><span class="header-section-number">2.9.2</span> Activating packages<a href="tutorial-installing-understanding-rr-studio.html#activating-packages" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Before we are able to use a package, we need to activate it <strong>in each
+session</strong>. Thus, you should not only define a working directory at the
+beginning of each session but also activate the packages you want to use
+via the <em>library</em>()_ command. Again, you’ll have to give R the name of
+the package you want to activate:</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="tutorial-installing-understanding-rr-studio.html#cb13-1" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span></code></pre></div>
+<p>You can also use the name of the package followed by two colons <em>::</em> to
+activate a package directly before calling one of its functions. For
+instance, I do not need use to activate the <code>dplyr</code> package (by using
+the <em>library()</em> function) to use the function <code>summarize()</code> if I use the
+following code:</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="tutorial-installing-understanding-rr-studio.html#cb14-1" tabindex="-1"></a>dplyr<span class="sc">::</span><span class="fu">summarize</span>()</span></code></pre></div>
+</div>
+<div id="getting-information-about-packages" class="section level3 hasAnchor" number="2.9.3">
+<h3><span class="header-section-number">2.9.3</span> Getting information about packages<a href="tutorial-installing-understanding-rr-studio.html#getting-information-about-packages" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The package is installed and activated - but how can we use it? To get
+an overview of functions included in a given package, you can consult
+its corresponding “reference manual” (overview document containing all
+of a package’s functions) or, if available, its “vignette” (tutorials on
+how to use selected functions for the corresponding package) provided by
+a package’s author on a website called “CRAN”.</p>
+<p>The easiest way to finding these manuals/vignettes is Google: Simply
+google <em>CRAN dplyr</em>, for instance, and you’ll be guided to the following
+<a href="https://cran.r-project.org/web/packages/dplyr/index.html">website</a>:</p>
+<table>
+<colgroup>
+<col width="100%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td align="left"><em>Image: Cran Overview dplyr package</em></td>
+</tr>
+<tr class="even">
+<td align="left"><img src="images/Tut2_packages.JPG" /></td>
+</tr>
+</tbody>
+</table>
+<p>The first paragraph (circled in red) gives you an overview of aspects
+for which this package may be useful. The second red-circled area links
+to the reference manual and the vignette. You can, for instance, check
+out the reference manual to get an idea of the many functions the
+<code>dplyr</code> package contains.</p>
+</div>
+</div>
+<div id="optional-setting-global-options-in-r-for-a-customized-workflow" class="section level2 hasAnchor" number="2.10">
+<h2><span class="header-section-number">2.10</span> Optional: Setting global options in R for a customized workflow<a href="tutorial-installing-understanding-rr-studio.html#optional-setting-global-options-in-r-for-a-customized-workflow" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Now that you’ve set up <code>R</code> + <code>RStudio</code> and are eager to dive into data management, it’s essential to understand that R provides a way to modify its default settings to cater to your specific requirements. By setting global options at the beginning of your R script, you can customize how R behaves throughout <strong>your active session</strong> (this means that this customization needs to be reactivated whenever you close &amp; restart RStudio). This tutorial will guide you through adjusting some of these global settings to enhance your R experience.</p>
+<div id="understanding-options" class="section level3 hasAnchor" number="2.10.1">
+<h3><span class="header-section-number">2.10.1</span> Understanding <code>options()</code><a href="tutorial-installing-understanding-rr-studio.html#understanding-options" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>R has a function called <code>options()</code> that allows you to query or set a list of global options. These options influence the behavior of the base and many other R packages. You can see the current settings by simply calling the function without any arguments:</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="tutorial-installing-understanding-rr-studio.html#cb15-1" tabindex="-1"></a><span class="fu">options</span>()</span></code></pre></div>
+<p>This will give a list of all the current settings. If you’re curious about a particular option, you can retrieve its value by:</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="tutorial-installing-understanding-rr-studio.html#cb16-1" tabindex="-1"></a><span class="fu">options</span>(<span class="st">&quot;option_name&quot;</span>) <span class="co"># insert the option name here that you&#39;d like to learn about</span></span></code></pre></div>
+<p>For example, to see the current setting for “scipen” (i.e., the scientific notation option in <code>R</code>):</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="tutorial-installing-understanding-rr-studio.html#cb17-1" tabindex="-1"></a><span class="fu">options</span>(<span class="st">&quot;scipen&quot;</span>)</span></code></pre></div>
+<pre><code>## $scipen
+## [1] 999</code></pre>
+</div>
+<div id="turn-off-scientific-notation" class="section level3 hasAnchor" number="2.10.2">
+<h3><span class="header-section-number">2.10.2</span> Turn off scientific notation<a href="tutorial-installing-understanding-rr-studio.html#turn-off-scientific-notation" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>By default, R might show large or small numbers in scientific notation (e.g., 1.23e+4). If you prefer to see the full number:</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="tutorial-installing-understanding-rr-studio.html#cb19-1" tabindex="-1"></a><span class="fu">options</span>(<span class="at">scipen=</span><span class="dv">999</span>)</span></code></pre></div>
+</div>
+<div id="customizing-tibble-display" class="section level3 hasAnchor" number="2.10.3">
+<h3><span class="header-section-number">2.10.3</span> Customizing tibble display<a href="tutorial-installing-understanding-rr-studio.html#customizing-tibble-display" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Later in this course, when you’ve learned how to work with tibbles (a modern reimagining of the data from the <code>tidyverse</code>), you can adjust their display.</p>
+<p>By default, tibbles display 10 rows of your data. If you want to see 20:</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="tutorial-installing-understanding-rr-studio.html#cb20-1" tabindex="-1"></a><span class="fu">options</span>(<span class="at">tibble.print_max =</span> <span class="dv">20</span>)</span></code></pre></div>
+<p>In addition, when a tibble is printed to the console, it might display fewer significant digits by default, providing a general sense of the data instead of precise values. To modify this behavior, use <code>pillar.sigfig</code> and set its value to the desired number of decimal points (e.g., 2 decimal points):</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="tutorial-installing-understanding-rr-studio.html#cb21-1" tabindex="-1"></a><span class="fu">options</span>(<span class="at">pillar.sigfig =</span> <span class="dv">2</span>)</span></code></pre></div>
+</div>
+<div id="resetting-to-default" class="section level3 hasAnchor" number="2.10.4">
+<h3><span class="header-section-number">2.10.4</span> Resetting to default<a href="tutorial-installing-understanding-rr-studio.html#resetting-to-default" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>If at any point you feel like you’ve tinkered too much and want to revert to the default settings, you can restart your <code>R</code> session. In <code>RStudio</code>, you can do this via the menu Session &gt; Restart R or by pressing Ctrl+Shift+F10.</p>
+</div>
+</div>
+<div id="take-aways" class="section level2 hasAnchor" number="2.11">
+<h2><span class="header-section-number">2.11</span> Take-Aways<a href="tutorial-installing-understanding-rr-studio.html#take-aways" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li><strong>Window “Source”</strong>: used to write/execute code in R</li>
+<li><strong>Window “Console”</strong>: used to return results of executed code</li>
+<li><strong>Window “Environment”</strong>: used to inspect objects on which to use
+functions</li>
+<li><strong>Window “Files/Plots/Packages etc.”</strong>: used for additional
+functions, for instance visualizations/searching for help/activating
+or updating packages</li>
+</ul>
+</div>
+<div id="additional-tutorials" class="section level2 hasAnchor" number="2.12">
+<h2><span class="header-section-number">2.12</span> Additional tutorials<a href="tutorial-installing-understanding-rr-studio.html#additional-tutorials" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>You still have questions? The following tutorials &amp; papers can help you
+with that:</p>
+<ul>
+<li><a href="https://bookdown.org/ndphillips/YaRrr/started.html">YaRrr! The Pirate’s Guide to R by N.D.Phillips, Tutorial
+2</a></li>
+<li><a href="https://bookdown.org/joone/ComputationalMethods/firststeps.html">Computational Methods in der politischen Kommunikationsforschung
+by J. Unkel, Tutorial
+1</a></li>
+<li><a href="https://sicss.io/boot_camp#install">SICSS Boot Camp by C. Bail, Video
+1</a></li>
+<li><a href="https://youtu.be/p6f4oq08z48">wegweisR by M. Haim, Video 1</a></li>
+<li><a href="https://rc2e.com/gettingstarted#recipe-id001">R Cookbook by Long et al., Tutorial
+1</a></li>
+</ul>
+<p>Now that you know the layout of R, we can get started with some real
+action: <a href="tutorial-using-r-as-a-calculator.html#tutorial-using-r-as-a-calculator">Tutorial: Using R as a calculator</a></p>
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="1">
+<li id="fn1"><p>again, this only applies for the way I set up my R Studio. You can
+change this via <em>“Tools/Global Options/Pane Layout”</em><a href="tutorial-installing-understanding-rr-studio.html#fnref1" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="tutorial-using-r-as-a-calculator.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": "https://lkobilke.github.io/Intro_to_R/edit/main/index.Rmd",
+    "text": "Edit"
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": ["Intro to R.pdf"],
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "subsection"
+  }
+});
+});
+</script>
+
+</body>
+
+</html>
