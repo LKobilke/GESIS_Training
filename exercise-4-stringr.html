@@ -4,20 +4,20 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Page not found | Introduction to R</title>
-  <meta name="description" content="Page not found | Introduction to R - GESIS Training Course, 24-27 August 2026" />
+  <title>Exercise 4: stringr | Introduction to R</title>
+  <meta name="description" content="Exercise 4: stringr | Introduction to R - GESIS Training Course, 24-27 August 2026" />
   <meta name="generator" content="bookdown 0.47 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Page not found | Introduction to R" />
+  <meta property="og:title" content="Exercise 4: stringr | Introduction to R" />
   <meta property="og:type" content="book" />
   
-  <meta property="og:description" content="Page not found | Introduction to R - GESIS Training Course, 24-27 August 2026" />
+  <meta property="og:description" content="Exercise 4: stringr | Introduction to R - GESIS Training Course, 24-27 August 2026" />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Page not found | Introduction to R" />
+  <meta name="twitter:title" content="Exercise 4: stringr | Introduction to R" />
   
-  <meta name="twitter:description" content="Page not found | Introduction to R - GESIS Training Course, 24-27 August 2026" />
+  <meta name="twitter:description" content="Exercise 4: stringr | Introduction to R - GESIS Training Course, 24-27 August 2026" />
   
 
 <meta name="author" content="Lara Kobilke, Department of Communication and Media Research, University of Zurich" />
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-
+<link rel="prev" href="text-manipulation-with-stringr.html"/>
+<link rel="next" href="advanced-data-management.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -387,19 +387,40 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="page-not-found" class="section level1">
-<h1>Page not found</h1>
-<p>The page you requested cannot be found (perhaps it was moved or renamed).</p>
-<p>You may want to try searching to find the page's new location, or use
-the table of contents to find the page you are looking for.</p>
+<div id="exercise-4-stringr" class="section level1 unnumbered hasAnchor">
+<h1>Exercise 4: stringr<a href="exercise-4-stringr.html#exercise-4-stringr" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>First, load the library <code>stringr</code> (or the entire <code>tidyverse</code>).</p>
+<div class="sourceCode" id="cb245"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb245-1"><a href="exercise-4-stringr.html#cb245-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse) <span class="co"># loads stringr + dplyr and pipe operator</span></span></code></pre></div>
+<p>We will work on real data in this exercise. But before that, we will test our regex on a simple “test” vector that contains hyperlinks of media outlets and webpages. So run this code and create a vector called “seitenURL” in your environment:</p>
+<div class="sourceCode" id="cb246"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb246-1"><a href="exercise-4-stringr.html#cb246-1" tabindex="-1"></a>seitenURL <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;https://www.bild.de&quot;</span>, <span class="st">&quot;https://www.kicker.at/sport&quot;</span>, <span class="st">&quot;http://www.mycoffee.net/fresh&quot;</span>, <span class="st">&quot;http://www1.neuegedanken.blog&quot;</span>, <span class="st">&quot;https://home.1und1.info/magazine/unterhaltung&quot;</span>, <span class="st">&quot;https://de.sputniknews.com/technik&quot;</span>, <span class="st">&quot;https://rp-online.de/nrw/staedte/geldern&quot;</span>, <span class="st">&quot;https://www.bzbasel.ch/limmattal/region-limmattal&quot;</span>, <span class="st">&quot;http://sportdeutschland.tv/wm-maenner-2019&quot;</span>)</span></code></pre></div>
+<div id="task-1-3" class="section level2 unnumbered hasAnchor">
+<h2>Task 1<a href="exercise-4-stringr.html#task-1-3" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Let’s get rid of the first part of the URL strings in our “seitenURL” vector, i.e., everything that comes before the name of the outlet (You will need to work with <code>str_replace</code>). Usually, this is some kind of version of “<a href="https://www" class="uri">https://www</a>.” or “<a href="http://www" class="uri">http://www</a>.” Try to make your pattern as versatile as possible! In a big data set, there will always be exceptions to the rule (e.g., “<a href="http://sportdeutschland.tv" class="uri">http://sportdeutschland.tv</a>”), so try to match regex–i.e., types of characters instead of real characters–as often as you can!</p>
+</div>
+<div id="task-2-3" class="section level2 unnumbered hasAnchor">
+<h2>Task 2<a href="exercise-4-stringr.html#task-2-3" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Using the seitenURL vector, try to get rid of the characters that follow the media outlet (e.g., “.de” or “.com”).</p>
+</div>
+<div id="task-3-3" class="section level2 unnumbered hasAnchor">
+<h2>Task 3<a href="exercise-4-stringr.html#task-3-3" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Now download our newest dataset ‘seitenURL.csv’ from GESIS Moodle and load it into <code>R</code> as an object called “data”. It is a very reduced version of the original data set that I’ve worked with for a project. The data set investigates what kind of outlets and webpages are most often shared and engaged with on Twitter and Facebook. We have tracked every webpage, from big players like <em>BILD</em> to small, private blogs. However, this is a reduced version of my <strong>raw data</strong>. The outlets are still hidden in the URLs, so we need to extract them first using the regex patterns that you’ve just created.</p>
+<p>Use this command and adapt it with your patterns (it uses str_replace in combination with mutate):</p>
+<div class="sourceCode" id="cb247"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb247-1"><a href="exercise-4-stringr.html#cb247-1" tabindex="-1"></a>data2 <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
+<span id="cb247-2"><a href="exercise-4-stringr.html#cb247-2" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">seitenURL =</span> <span class="fu">str_replace_all</span>(seitenURL, <span class="st">&quot;your https pattern here&quot;</span>, <span class="st">&quot;&quot;</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb247-3"><a href="exercise-4-stringr.html#cb247-3" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">seitenURL =</span> <span class="fu">str_replace_all</span>(seitenURL, <span class="st">&quot;your .de/.com pattern here&quot;</span>, <span class="st">&quot;&quot;</span>)) </span></code></pre></div>
+</div>
+<div id="task-4-2" class="section level2 unnumbered hasAnchor">
+<h2>Task 4<a href="exercise-4-stringr.html#task-4-2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The data set provides two additional, highly informative columns: “SeitenAnzahlTwitter” and “SeitenAnzahlFacebook”. These columns show the number of reactions (shares, likes, comments) for each URL. Having extracted the media outlets, let us examine which media outlet got the most engagement on Twitter and Facebook from all their URLs. Utilize your <code>dplyr</code> abilities to create an R object named “overview” that stores the summary statistic (remmeber <em>group_by</em> and <em>summarize</em>!) of the engagement on Twitter and Facebook per media outlet.</p>
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-
-
+<a href="text-manipulation-with-stringr.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="advanced-data-management.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -430,7 +451,7 @@ gitbook.start({
     "size": 2
   },
   "edit": {
-    "link": "https://lkobilke.github.io/Intro_to_R/edit/main/%s",
+    "link": "https://lkobilke.github.io/Intro_to_R/edit/main/index.Rmd",
     "text": "Edit"
   },
   "history": {

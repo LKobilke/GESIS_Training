@@ -23,14 +23,14 @@
 <meta name="author" content="Lara Kobilke, Department of Communication and Media Research, University of Zurich" />
 
 
-<meta name="date" content="2026-08-24" />
+<meta name="date" content="2026-08-25" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="exercise-3-dplyr.html"/>
+<link rel="prev" href="exercise-advanced-data-management.html"/>
 
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -220,6 +220,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.8.1" data-path="tutorial-working-with-data-files.html"><a href="tutorial-working-with-data-files.html#importing-data-from-excel"><i class="fa fa-check"></i><b>4.8.1</b> Importing data from Excel</a></li>
 <li class="chapter" data-level="4.8.2" data-path="tutorial-working-with-data-files.html"><a href="tutorial-working-with-data-files.html#importing-data-from-json"><i class="fa fa-check"></i><b>4.8.2</b> Importing data from JSON</a></li>
 <li class="chapter" data-level="4.8.3" data-path="tutorial-working-with-data-files.html"><a href="tutorial-working-with-data-files.html#importing-data-from-spss"><i class="fa fa-check"></i><b>4.8.3</b> Importing data from SPSS</a></li>
+<li class="chapter" data-level="4.8.4" data-path="tutorial-working-with-data-files.html"><a href="tutorial-working-with-data-files.html#importing-data-from-stata"><i class="fa fa-check"></i><b>4.8.4</b> Importing data from Stata</a></li>
 </ul></li>
 <li class="chapter" data-level="4.9" data-path="tutorial-working-with-data-files.html"><a href="tutorial-working-with-data-files.html#take-aways-2"><i class="fa fa-check"></i><b>4.9</b> Take-Aways</a></li>
 <li class="chapter" data-level="4.10" data-path="tutorial-working-with-data-files.html"><a href="tutorial-working-with-data-files.html#additional-tutorials-2"><i class="fa fa-check"></i><b>4.10</b> Additional tutorials</a></li>
@@ -262,31 +263,108 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="exercise-3-dplyr.html"><a href="exercise-3-dplyr.html#task-7"><i class="fa fa-check"></i>Task 7</a></li>
 <li class="chapter" data-level="" data-path="exercise-3-dplyr.html"><a href="exercise-3-dplyr.html#task-8"><i class="fa fa-check"></i>Task 8</a></li>
 </ul></li>
+<li class="chapter" data-level="6" data-path="text-manipulation-with-stringr.html"><a href="text-manipulation-with-stringr.html"><i class="fa fa-check"></i><b>6</b> Text manipulation with stringr</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="text-manipulation-with-stringr.html"><a href="text-manipulation-with-stringr.html#whats-stringr"><i class="fa fa-check"></i><b>6.1</b> What’s stringr?</a></li>
+<li class="chapter" data-level="6.2" data-path="text-manipulation-with-stringr.html"><a href="text-manipulation-with-stringr.html#working-with-strings"><i class="fa fa-check"></i><b>6.2</b> Working with strings</a></li>
+<li class="chapter" data-level="6.3" data-path="text-manipulation-with-stringr.html"><a href="text-manipulation-with-stringr.html#working-with-string-patterns"><i class="fa fa-check"></i><b>6.3</b> Working with string patterns</a></li>
+<li class="chapter" data-level="6.4" data-path="text-manipulation-with-stringr.html"><a href="text-manipulation-with-stringr.html#working-with-regular-expressions"><i class="fa fa-check"></i><b>6.4</b> Working with regular expressions</a>
+<ul>
+<li class="chapter" data-level="6.4.1" data-path="text-manipulation-with-stringr.html"><a href="text-manipulation-with-stringr.html#anchors-alternates-and-quantifiers"><i class="fa fa-check"></i><b>6.4.1</b> Anchors, alternates, and quantifiers</a></li>
+<li class="chapter" data-level="6.4.2" data-path="text-manipulation-with-stringr.html"><a href="text-manipulation-with-stringr.html#look-arounds-and-groups"><i class="fa fa-check"></i><b>6.4.2</b> Look arounds and groups</a></li>
+<li class="chapter" data-level="6.4.3" data-path="text-manipulation-with-stringr.html"><a href="text-manipulation-with-stringr.html#match-specific-types-of-characters"><i class="fa fa-check"></i><b>6.4.3</b> Match specific types of characters</a></li>
+</ul></li>
+<li class="chapter" data-level="6.5" data-path="text-manipulation-with-stringr.html"><a href="text-manipulation-with-stringr.html#take-aways-4"><i class="fa fa-check"></i><b>6.5</b> Take-Aways</a></li>
+<li class="chapter" data-level="6.6" data-path="text-manipulation-with-stringr.html"><a href="text-manipulation-with-stringr.html#additional-tutorials-4"><i class="fa fa-check"></i><b>6.6</b> Additional tutorials</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="exercise-4-stringr.html"><a href="exercise-4-stringr.html"><i class="fa fa-check"></i>Exercise 4: stringr</a>
+<ul>
+<li class="chapter" data-level="" data-path="exercise-4-stringr.html"><a href="exercise-4-stringr.html#task-1-3"><i class="fa fa-check"></i>Task 1</a></li>
+<li class="chapter" data-level="" data-path="exercise-4-stringr.html"><a href="exercise-4-stringr.html#task-2-3"><i class="fa fa-check"></i>Task 2</a></li>
+<li class="chapter" data-level="" data-path="exercise-4-stringr.html"><a href="exercise-4-stringr.html#task-3-3"><i class="fa fa-check"></i>Task 3</a></li>
+<li class="chapter" data-level="" data-path="exercise-4-stringr.html"><a href="exercise-4-stringr.html#task-4-2"><i class="fa fa-check"></i>Task 4</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="advanced-data-management.html"><a href="advanced-data-management.html"><i class="fa fa-check"></i><b>7</b> Advanced data management</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="advanced-data-management.html"><a href="advanced-data-management.html#reading-multiple-files-into-r"><i class="fa fa-check"></i><b>7.1</b> Reading multiple files into R</a>
+<ul>
+<li class="chapter" data-level="7.1.1" data-path="advanced-data-management.html"><a href="advanced-data-management.html#reading-multiple-files-into-r-with-different-column-names"><i class="fa fa-check"></i><b>7.1.1</b> Reading multiple files into R with different column names</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="advanced-data-management.html"><a href="advanced-data-management.html#joining-two-datasets"><i class="fa fa-check"></i><b>7.2</b> Joining two datasets</a>
+<ul>
+<li class="chapter" data-level="7.2.1" data-path="advanced-data-management.html"><a href="advanced-data-management.html#inner_join"><i class="fa fa-check"></i><b>7.2.1</b> inner_join</a></li>
+<li class="chapter" data-level="7.2.2" data-path="advanced-data-management.html"><a href="advanced-data-management.html#left_join"><i class="fa fa-check"></i><b>7.2.2</b> left_join</a></li>
+<li class="chapter" data-level="7.2.3" data-path="advanced-data-management.html"><a href="advanced-data-management.html#right_join"><i class="fa fa-check"></i><b>7.2.3</b> right_join</a></li>
+<li class="chapter" data-level="7.2.4" data-path="advanced-data-management.html"><a href="advanced-data-management.html#full_join"><i class="fa fa-check"></i><b>7.2.4</b> full_join</a></li>
+<li class="chapter" data-level="7.2.5" data-path="advanced-data-management.html"><a href="advanced-data-management.html#join-without-.x-and-.y-suffixes"><i class="fa fa-check"></i><b>7.2.5</b> Join without .x and .y suffixes</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="advanced-data-management.html"><a href="advanced-data-management.html#reformatting-datasets"><i class="fa fa-check"></i><b>7.3</b> Reformatting datasets</a>
+<ul>
+<li class="chapter" data-level="7.3.1" data-path="advanced-data-management.html"><a href="advanced-data-management.html#pivot_longer"><i class="fa fa-check"></i><b>7.3.1</b> pivot_longer()</a></li>
+<li class="chapter" data-level="7.3.2" data-path="advanced-data-management.html"><a href="advanced-data-management.html#pivot_wider"><i class="fa fa-check"></i><b>7.3.2</b> pivot_wider()</a></li>
+</ul></li>
+<li class="chapter" data-level="7.4" data-path="advanced-data-management.html"><a href="advanced-data-management.html#advanced-column-selectors"><i class="fa fa-check"></i><b>7.4</b> Advanced column selectors</a>
+<ul>
+<li class="chapter" data-level="7.4.1" data-path="advanced-data-management.html"><a href="advanced-data-management.html#selecting-the-last-column"><i class="fa fa-check"></i><b>7.4.1</b> Selecting the last column</a></li>
+<li class="chapter" data-level="7.4.2" data-path="advanced-data-management.html"><a href="advanced-data-management.html#selecting-columns-that-start-with-end-with-or-contain-a-specific-string"><i class="fa fa-check"></i><b>7.4.2</b> Selecting columns that start with, end with or contain a specific string</a></li>
+<li class="chapter" data-level="7.4.3" data-path="advanced-data-management.html"><a href="advanced-data-management.html#selecting-columns-based-on-a-numeric-range"><i class="fa fa-check"></i><b>7.4.3</b> Selecting columns based on a numeric range</a></li>
+<li class="chapter" data-level="7.4.4" data-path="advanced-data-management.html"><a href="advanced-data-management.html#selecting-columns-based-on-their-type"><i class="fa fa-check"></i><b>7.4.4</b> Selecting columns based on their type</a></li>
+<li class="chapter" data-level="7.4.5" data-path="advanced-data-management.html"><a href="advanced-data-management.html#combine-selectors"><i class="fa fa-check"></i><b>7.4.5</b> Combine selectors</a></li>
+<li class="chapter" data-level="7.4.6" data-path="advanced-data-management.html"><a href="advanced-data-management.html#reorder-your-columns-with-everything"><i class="fa fa-check"></i><b>7.4.6</b> Reorder your columns with everything()</a></li>
+</ul></li>
+<li class="chapter" data-level="7.5" data-path="advanced-data-management.html"><a href="advanced-data-management.html#advanced-selection-of-rows"><i class="fa fa-check"></i><b>7.5</b> Advanced selection of rows</a></li>
+<li class="chapter" data-level="7.6" data-path="advanced-data-management.html"><a href="advanced-data-management.html#take-aways-5"><i class="fa fa-check"></i><b>7.6</b> Take-Aways</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="exercise-advanced-data-management.html"><a href="exercise-advanced-data-management.html"><i class="fa fa-check"></i>Exercise 5: Advanced data management</a>
+<ul>
+<li class="chapter" data-level="" data-path="exercise-advanced-data-management.html"><a href="exercise-advanced-data-management.html#task-1-4"><i class="fa fa-check"></i>Task 1</a></li>
+<li class="chapter" data-level="" data-path="exercise-advanced-data-management.html"><a href="exercise-advanced-data-management.html#task-2-4"><i class="fa fa-check"></i>Task 2</a></li>
+<li class="chapter" data-level="" data-path="exercise-advanced-data-management.html"><a href="exercise-advanced-data-management.html#task-3-4"><i class="fa fa-check"></i>Task 3</a></li>
+<li class="chapter" data-level="" data-path="exercise-advanced-data-management.html"><a href="exercise-advanced-data-management.html#task-4-3"><i class="fa fa-check"></i>Task 4</a></li>
+<li class="chapter" data-level="" data-path="exercise-advanced-data-management.html"><a href="exercise-advanced-data-management.html#task-5-1"><i class="fa fa-check"></i>Task 5</a></li>
+<li class="chapter" data-level="" data-path="exercise-advanced-data-management.html"><a href="exercise-advanced-data-management.html#task-6-1"><i class="fa fa-check"></i>Task 6</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html"><i class="fa fa-check"></i>Solutions</a>
 <ul>
 <li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#solutions-for-exercise-1"><i class="fa fa-check"></i>Solutions for Exercise 1</a>
 <ul>
-<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-1-3"><i class="fa fa-check"></i>Task 1</a></li>
-<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-2-3"><i class="fa fa-check"></i>Task 2</a></li>
-<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-3-3"><i class="fa fa-check"></i>Task 3</a></li>
-</ul></li>
-<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#solutions-for-exercise-2"><i class="fa fa-check"></i>Solutions for Exercise 2</a>
-<ul>
-<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-1-4"><i class="fa fa-check"></i>Task 1</a></li>
-<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-2-4"><i class="fa fa-check"></i>Task 2</a></li>
-<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-3-4"><i class="fa fa-check"></i>Task 3</a></li>
-<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-4-2"><i class="fa fa-check"></i>Task 4</a></li>
-</ul></li>
-<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#solutions-for-exercise-3"><i class="fa fa-check"></i>Solutions for Exercise 3</a>
-<ul>
 <li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-1-5"><i class="fa fa-check"></i>Task 1</a></li>
 <li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-2-5"><i class="fa fa-check"></i>Task 2</a></li>
 <li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-3-5"><i class="fa fa-check"></i>Task 3</a></li>
-<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-4-3"><i class="fa fa-check"></i>Task 4</a></li>
-<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-5-1"><i class="fa fa-check"></i>Task 5</a></li>
-<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-6-1"><i class="fa fa-check"></i>Task 6</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#solutions-for-exercise-2"><i class="fa fa-check"></i>Solutions for Exercise 2</a>
+<ul>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-1-6"><i class="fa fa-check"></i>Task 1</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-2-6"><i class="fa fa-check"></i>Task 2</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-3-6"><i class="fa fa-check"></i>Task 3</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-4-4"><i class="fa fa-check"></i>Task 4</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#solutions-for-exercise-3"><i class="fa fa-check"></i>Solutions for Exercise 3</a>
+<ul>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-1-7"><i class="fa fa-check"></i>Task 1</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-2-7"><i class="fa fa-check"></i>Task 2</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-3-7"><i class="fa fa-check"></i>Task 3</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-4-5"><i class="fa fa-check"></i>Task 4</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-5-2"><i class="fa fa-check"></i>Task 5</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-6-2"><i class="fa fa-check"></i>Task 6</a></li>
 <li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-7-1"><i class="fa fa-check"></i>Task 7</a></li>
 <li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-8-1"><i class="fa fa-check"></i>Task 8</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#solutions-for-exercise-4"><i class="fa fa-check"></i>Solutions for Exercise 4</a>
+<ul>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-1-8"><i class="fa fa-check"></i>Task 1</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-2-8"><i class="fa fa-check"></i>Task 2</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-3-8"><i class="fa fa-check"></i>Task 3</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-4-6"><i class="fa fa-check"></i>Task 4</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#solutions-advanced-data-management"><i class="fa fa-check"></i>Solutions for Exercise 5</a>
+<ul>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-1-import-and-combine-several-files"><i class="fa fa-check"></i>Task 1: Import and combine several files</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-2-deal-with-messy-column-names"><i class="fa fa-check"></i>Task 2: Deal with messy column names</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-3-choose-the-correct-join"><i class="fa fa-check"></i>Task 3: Choose the correct join</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-4-reshape-panel-data"><i class="fa fa-check"></i>Task 4: Reshape panel data</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-5-advanced-selection"><i class="fa fa-check"></i>Task 5: Advanced selection</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-6-cumulative-challenge"><i class="fa fa-check"></i>Task 6: Cumulative challenge</a></li>
 </ul></li>
 </ul></li>
 <li class="divider"></li>
@@ -314,8 +392,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>This is where you’ll find solutions for all of the tutorials.</p>
 <div id="solutions-for-exercise-1" class="section level2 unnumbered hasAnchor">
 <h2>Solutions for Exercise 1<a href="solutions.html#solutions-for-exercise-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div id="task-1-3" class="section level3 unnumbered hasAnchor">
-<h3>Task 1<a href="solutions.html#task-1-3" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="task-1-5" class="section level3 unnumbered hasAnchor">
+<h3>Task 1<a href="solutions.html#task-1-5" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Below you will see multiple choice questions. Please try to identify the
 correct answers. 1, 2, 3 and 4 correct answers are possible for each
 question.</p>
@@ -349,126 +427,139 @@ black, red, blond, other. How do you retrieve the color ‘blond’?</strong></p
 <li>hair[4] (x)</li>
 </ul>
 </div>
-<div id="task-2-3" class="section level3 unnumbered hasAnchor">
-<h3>Task 2<a href="solutions.html#task-2-3" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="task-2-5" class="section level3 unnumbered hasAnchor">
+<h3>Task 2<a href="solutions.html#task-2-5" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Create a numeric vector with 8 values and assign the name <em>age</em> to the
 vector. First, display all elements of the vector. Then print only the
 5th element. After that, display all elements except the 5th. Finally,
 display the elements at the positions 6 to 8.</p>
 <p><em>Solution:</em></p>
-<div class="sourceCode" id="cb179"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb179-1"><a href="solutions.html#cb179-1" tabindex="-1"></a>age <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">65</span>, <span class="dv">52</span>, <span class="dv">73</span>, <span class="dv">71</span>, <span class="dv">80</span>, <span class="dv">62</span>, <span class="dv">68</span>, <span class="dv">87</span>)</span>
-<span id="cb179-2"><a href="solutions.html#cb179-2" tabindex="-1"></a>age</span></code></pre></div>
+<div class="sourceCode" id="cb316"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb316-1"><a href="solutions.html#cb316-1" tabindex="-1"></a>age <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">65</span>, <span class="dv">52</span>, <span class="dv">73</span>, <span class="dv">71</span>, <span class="dv">80</span>, <span class="dv">62</span>, <span class="dv">68</span>, <span class="dv">87</span>)</span>
+<span id="cb316-2"><a href="solutions.html#cb316-2" tabindex="-1"></a>age</span></code></pre></div>
 <pre><code>## [1] 65 52 73 71 80 62 68 87</code></pre>
-<div class="sourceCode" id="cb181"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb181-1"><a href="solutions.html#cb181-1" tabindex="-1"></a>age[<span class="dv">5</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb318"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb318-1"><a href="solutions.html#cb318-1" tabindex="-1"></a>age[<span class="dv">5</span>]</span></code></pre></div>
 <pre><code>## [1] 80</code></pre>
-<div class="sourceCode" id="cb183"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb183-1"><a href="solutions.html#cb183-1" tabindex="-1"></a>age[<span class="sc">-</span><span class="dv">5</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb320"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb320-1"><a href="solutions.html#cb320-1" tabindex="-1"></a>age[<span class="sc">-</span><span class="dv">5</span>]</span></code></pre></div>
 <pre><code>## [1] 65 52 73 71 62 68 87</code></pre>
-<div class="sourceCode" id="cb185"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb185-1"><a href="solutions.html#cb185-1" tabindex="-1"></a>age[<span class="dv">6</span><span class="sc">:</span><span class="dv">8</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb322"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb322-1"><a href="solutions.html#cb322-1" tabindex="-1"></a>age[<span class="dv">6</span><span class="sc">:</span><span class="dv">8</span>]</span></code></pre></div>
 <pre><code>## [1] 62 68 87</code></pre>
 </div>
-<div id="task-3-3" class="section level3 unnumbered hasAnchor">
-<h3>Task 3<a href="solutions.html#task-3-3" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="task-3-5" class="section level3 unnumbered hasAnchor">
+<h3>Task 3<a href="solutions.html#task-3-5" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Create a non-numeric, i.e. character, vector with 4 elements and assign
 the name <em>eye_color</em> to the vector. First, print all elements of this
 vector to the console. Then have only the value in the 2nd element
 displayed, then all values except the 2nd element. At the end, display
 the elements at the positions 2 to 4.</p>
 <p><em>Solution:</em></p>
-<div class="sourceCode" id="cb187"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb187-1"><a href="solutions.html#cb187-1" tabindex="-1"></a>eye_color <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;blue&quot;</span>, <span class="st">&quot;green&quot;</span>, <span class="st">&quot;brown&quot;</span>, <span class="st">&quot;grey&quot;</span>)</span>
-<span id="cb187-2"><a href="solutions.html#cb187-2" tabindex="-1"></a>eye_color</span></code></pre></div>
+<div class="sourceCode" id="cb324"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb324-1"><a href="solutions.html#cb324-1" tabindex="-1"></a>eye_color <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;blue&quot;</span>, <span class="st">&quot;green&quot;</span>, <span class="st">&quot;brown&quot;</span>, <span class="st">&quot;grey&quot;</span>)</span>
+<span id="cb324-2"><a href="solutions.html#cb324-2" tabindex="-1"></a>eye_color</span></code></pre></div>
 <pre><code>## [1] &quot;blue&quot;  &quot;green&quot; &quot;brown&quot; &quot;grey&quot;</code></pre>
-<div class="sourceCode" id="cb189"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb189-1"><a href="solutions.html#cb189-1" tabindex="-1"></a>eye_color[<span class="dv">2</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb326"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb326-1"><a href="solutions.html#cb326-1" tabindex="-1"></a>eye_color[<span class="dv">2</span>]</span></code></pre></div>
 <pre><code>## [1] &quot;green&quot;</code></pre>
-<div class="sourceCode" id="cb191"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb191-1"><a href="solutions.html#cb191-1" tabindex="-1"></a>eye_color[<span class="sc">-</span><span class="dv">2</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb328"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb328-1"><a href="solutions.html#cb328-1" tabindex="-1"></a>eye_color[<span class="sc">-</span><span class="dv">2</span>]</span></code></pre></div>
 <pre><code>## [1] &quot;blue&quot;  &quot;brown&quot; &quot;grey&quot;</code></pre>
-<div class="sourceCode" id="cb193"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb193-1"><a href="solutions.html#cb193-1" tabindex="-1"></a>eye_color[<span class="dv">2</span><span class="sc">:</span><span class="dv">4</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb330"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb330-1"><a href="solutions.html#cb330-1" tabindex="-1"></a>eye_color[<span class="dv">2</span><span class="sc">:</span><span class="dv">4</span>]</span></code></pre></div>
 <pre><code>## [1] &quot;green&quot; &quot;brown&quot; &quot;grey&quot;</code></pre>
-<div class="sourceCode" id="cb195"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb195-1"><a href="solutions.html#cb195-1" tabindex="-1"></a><span class="co"># Alternatively, you could also use this approach:</span></span>
-<span id="cb195-2"><a href="solutions.html#cb195-2" tabindex="-1"></a>eye_color[<span class="fu">c</span>(<span class="dv">2</span>)]</span></code></pre></div>
+<div class="sourceCode" id="cb332"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb332-1"><a href="solutions.html#cb332-1" tabindex="-1"></a><span class="co"># Alternatively, you could also use this approach:</span></span>
+<span id="cb332-2"><a href="solutions.html#cb332-2" tabindex="-1"></a>eye_color[<span class="fu">c</span>(<span class="dv">2</span>)]</span></code></pre></div>
 <pre><code>## [1] &quot;green&quot;</code></pre>
-<div class="sourceCode" id="cb197"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb197-1"><a href="solutions.html#cb197-1" tabindex="-1"></a>eye_color[<span class="fu">c</span>(<span class="sc">-</span><span class="dv">2</span>)]</span></code></pre></div>
+<div class="sourceCode" id="cb334"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb334-1"><a href="solutions.html#cb334-1" tabindex="-1"></a>eye_color[<span class="fu">c</span>(<span class="sc">-</span><span class="dv">2</span>)]</span></code></pre></div>
 <pre><code>## [1] &quot;blue&quot;  &quot;brown&quot; &quot;grey&quot;</code></pre>
-<div class="sourceCode" id="cb199"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb199-1"><a href="solutions.html#cb199-1" tabindex="-1"></a>eye_color[<span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>)]</span></code></pre></div>
+<div class="sourceCode" id="cb336"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb336-1"><a href="solutions.html#cb336-1" tabindex="-1"></a>eye_color[<span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>)]</span></code></pre></div>
 <pre><code>## [1] &quot;green&quot; &quot;brown&quot; &quot;grey&quot;</code></pre>
 </div>
 </div>
 <div id="solutions-for-exercise-2" class="section level2 unnumbered hasAnchor">
 <h2>Solutions for Exercise 2<a href="solutions.html#solutions-for-exercise-2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div id="task-1-4" class="section level3 unnumbered hasAnchor">
-<h3>Task 1<a href="solutions.html#task-1-4" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="task-1-6" class="section level3 unnumbered hasAnchor">
+<h3>Task 1<a href="solutions.html#task-1-6" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Download the <em>“WoJ_names.csv”</em> from GESIS Moodle and
 put it into the folder that you want to use as working directory.</p>
 <p>Set your working directory and load the data into R by saving it into a
 source object called <em>data</em>. <strong>Note:</strong> This time, it’s a csv that is
 separated by semicolons, not by commas.</p>
 <p><em>Solution:</em></p>
-<div class="sourceCode" id="cb201"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb201-1"><a href="solutions.html#cb201-1" tabindex="-1"></a><span class="co"># Open the GESIS_R project first so that the project folder is your working directory.</span></span>
-<span id="cb201-2"><a href="solutions.html#cb201-2" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read.csv2</span>(<span class="st">&quot;WoJ_names.csv&quot;</span>, <span class="at">header =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb338"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb338-1"><a href="solutions.html#cb338-1" tabindex="-1"></a><span class="co"># Open the GESIS_R project first so that the project folder is your working directory.</span></span>
+<span id="cb338-2"><a href="solutions.html#cb338-2" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read.csv2</span>(<span class="st">&quot;WoJ_names.csv&quot;</span>, <span class="at">header =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
 </div>
-<div id="task-2-4" class="section level3 unnumbered hasAnchor">
-<h3>Task 2<a href="solutions.html#task-2-4" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="task-2-6" class="section level3 unnumbered hasAnchor">
+<h3>Task 2<a href="solutions.html#task-2-6" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Now, print only the column to the console that shows the <em>trust in
 government</em>. Use the <code>$</code> operator first. Then try to achieve the same
 result using the subsetting operators, i.e. <code>[]</code>.</p>
 <p><em>Solution:</em></p>
-<div class="sourceCode" id="cb202"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb202-1"><a href="solutions.html#cb202-1" tabindex="-1"></a>data<span class="sc">$</span>trust_government <span class="co"># first version</span></span></code></pre></div>
-<pre><code>## &lt;labelled&lt;double&gt;[40]&gt;: Trust in government (likert)
-##  [1] 3 4 4 4 2 4 1 3 1 3 2 3 2 2 2 2 3 3 4 3 3 2 3 4 3 3 3 2 3 3 3 3 4 2 3 2 2 2
-## [39] 2 3
-## 
-## Labels:
-##  value       label
-##      1 none at all
-##      2    a little
-##      3      partly
-##      4       a lot
-##      5   very much</code></pre>
-<div class="sourceCode" id="cb204"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb204-1"><a href="solutions.html#cb204-1" tabindex="-1"></a>data[, <span class="dv">8</span>] <span class="co"># second version</span></span></code></pre></div>
-<pre><code>## # A tibble: 40 × 1
-##    trust_government
-##    &lt;dbl+lbl&gt;       
-##  1 3 [partly]      
-##  2 4 [a lot]       
-##  3 4 [a lot]       
-##  4 4 [a lot]       
-##  5 2 [a little]    
-##  6 4 [a lot]       
-##  7 1 [none at all] 
-##  8 3 [partly]      
-##  9 1 [none at all] 
-## 10 3 [partly]      
-## # ℹ 30 more rows</code></pre>
+<div class="sourceCode" id="cb339"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb339-1"><a href="solutions.html#cb339-1" tabindex="-1"></a>data<span class="sc">$</span>trust_government <span class="co"># first version</span></span></code></pre></div>
+<pre><code>##    [1] 3 4 4 4 2 4 1 3 1 3 2 3 2 2 2 2 3 3 4 3 3 2 3 4 3 3 3 2 3 3 3 3 4 2 3 2 2
+##   [38] 2 2 3 3 3 3 4 3 4 3 2 1 4 1 2 3 3 3 2 3 2 3 4 3 1 3 3 3 3 4 2 2 4 4 4 3 2
+##   [75] 3 4 2 3 3 4 3 2 2 3 2 2 3 3 3 2 2 4 2 3 3 3 2 2 2 3 3 2 3 2 2 1 3 4 4 3 3
+##  [112] 2 2 3 2 4 2 3 3 3 3 3 3 3 2 3 3 4 3 2 4 2 3 3 3 5 1 3 4 1 4 4 4 2 4 4 3 1
+##  [149] 3 2 3 3 3 4 3 3 3 2 2 3 4 4 1 1 4 1 2 3 3 2 4 3 4 2 3 2 2 1 2 3 3 2 2 2 3
+##  [186] 2 3 4 2 3 1 1 3 3 2 3 3 3 1 3 3 4 3 2 2 3 4 2 3 3 3 2 3 2 3 2 1 3 3 3 2 2
+##  [223] 2 4 3 3 3 1 1 3 2 3 2 4 3 2 2 3 3 1 3 3 2 3 2 3 2 4 2 2 2 3 4 4 3 2 2 4 3
+##  [260] 3 3 3 2 4 4 2 3 3 3 3 3 3 3 3 2 4 3 3 2 3 3 3 4 5 2 2 3 2 1 3 4 1 3 4 2 2
+##  [297] 3 3 1 4 3 3 2 1 4 2 1 3 3 3 4 3 3 4 2 2 4 1 3 2 3 3 3 3 4 3 4 5 1 3 2 3 3
+##  [334] 3 3 1 3 3 3 4 4 1 3 3 3 3 4 3 2 2 3 3 3 3 3 2 3 3 3 1 4 4 2 2 3 3 2 3 4 3
+##  [371] 3 1 2 4 3 2 1 4 3 5 2 3 1 4 4 1 4 2 4 3 1 4 2 3 4 3 4 3 4 3 2 4 3 2 3 4 3
+##  [408] 3 3 1 3 3 3 2 3 3 4 4 3 3 4 3 4 3 2 3 3 3 2 1 2 3 3 4 2 2 2 2 4 3 4 2 2 3
+##  [445] 3 3 1 3 3 2 3 2 3 4 2 2 3 3 3 4 1 4 5 4 3 4 3 3 3 2 3 2 3 2 4 3 4 3 3 1 3
+##  [482] 2 3 2 3 3 2 2 2 2 3 2 4 3 2 3 3 2 3 4 2 2 3 4 4 1 3 3 3 2 4 3 4 2 3 2 3 3
+##  [519] 2 4 1 2 3 4 3 2 3 2 2 2 3 3 4 3 4 2 2 2 3 3 2 3 3 2 4 3 2 3 3 4 3 3 2 3 2
+##  [556] 2 2 4 3 3 1 2 1 4 4 4 3 3 3 3 4 2 3 2 2 3 4 4 3 3 3 2 3 3 2 3 3 2 3 4 2 3
+##  [593] 3 2 4 3 3 1 2 3 3 1 3 4 1 3 4 4 3 2 3 3 3 4 2 2 3 3 2 1 4 1 3 3 2 4 3 3 1
+##  [630] 3 1 3 2 3 3 3 3 3 2 2 4 3 3 2 4 2 3 3 3 4 4 3 3 3 3 1 4 2 3 2 1 3 2 2 3 2
+##  [667] 4 3 2 3 3 4 3 3 2 2 2 3 2 4 4 2 4 4 2 2 3 3 4 3 4 2 3 3 2 4 3 3 3 3 2 2 3
+##  [704] 4 4 4 2 3 3 4 3 3 2 2 2 3 3 3 2 2 3 1 1 3 3 2 2 3 2 3 2 3 1 3 3 2 2 3 4 3
+##  [741] 3 2 4 2 3 3 3 3 2 4 3 5 3 4 3 2 2 3 3 2 3 3 3 3 2 3 4 4 3 4 3 4 4 3 3 2 3
+##  [778] 4 3 3 3 3 3 4 3 2 2 4 2 5 4 2 4 3 3 2 3 4 3 3 3 4 3 2 4 4 4 3 3 3 3 4 4 3
+##  [815] 3 2 3 3 1 4 2 3 2 4 4 3 1 3 4 4 4 3 4 3 3 1 3 3 3 3 2 4 4 3 2 3 2 3 3 2 3
+##  [852] 4 1 3 3 2 2 3 1 1 3 2 3 2 4 4 3 3 3 2 3 4 2 2 3 2 2 3 1 3 2 3 4 4 3 2 3 2
+##  [889] 4 3 2 3 3 2 3 1 3 3 3 1 1 4 2 2 2 3 2 3 4 2 3 3 3 2 3 4 2 2 3 4 3 3 4 2 3
+##  [926] 3 2 3 3 4 3 2 3 1 3 2 4 3 3 4 2 4 3 2 3 3 4 3 1 3 2 4 3 4 4 4 2 1 2 4 1 4
+##  [963] 4 5 4 3 3 3 3 2 3 4 2 2 2 3 3 2 4 4 2 3 5 1 3 2 3 3 2 2 2 4 1 1 3 3 3 3 1
+## [1000] 1 4 3 2 4 2 3 4 3 2 4 3 3 3 3 3 3 3 1 3 4 2 3 3 4 4 3 4 2 2 3 1 2 3 3 3 3
+## [1037] 2 4 4 3 4 4 2 3 3 3 4 3 4 2 3 3 3 3 3 3 2 4 3 3 2 5 2 3 4 4 3 2 3 2 3 3 4
+## [1074] 2 3 3 3 2 4 3 3 4 2 3 1 3 2 2 2 4 2 1 4 2 4 3 3 4 4 2 2 3 3 3 3 3 3 2 3 3
+## [1111] 2 1 2 2 2 4 3 3 2 4 2 2 3 3 2 3 3 3 3 2 3 4 3 2 4 3 3 4 4 3 1 4 3 3 4 4 3
+## [1148] 3 4 2 4 3 3 4 3 3 2 2 2 3 3 3 3 3 2 2 3 3 3 3 3 3 3 3 3 4 4 3 3 3 3 3 4 3
+## [1185] 2 2 3 2 3 3 3 3 4 3 4 4 3 1 3 4</code></pre>
+<div class="sourceCode" id="cb341"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb341-1"><a href="solutions.html#cb341-1" tabindex="-1"></a>data[, <span class="dv">8</span>] <span class="co"># second version</span></span></code></pre></div>
+<pre><code>## # A tibble: 1,200 × 1
+##    ethics_2
+##       &lt;dbl&gt;
+##  1        3
+##  2        2
+##  3        4
+##  4        3
+##  5        3
+##  6        4
+##  7        3
+##  8        4
+##  9        2
+## 10        4
+## # ℹ 1,190 more rows</code></pre>
 </div>
-<div id="task-3-4" class="section level3 unnumbered hasAnchor">
-<h3>Task 3<a href="solutions.html#task-3-4" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="task-3-6" class="section level3 unnumbered hasAnchor">
+<h3>Task 3<a href="solutions.html#task-3-6" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Print only the first 6 <em>trust in government</em> numbers to the console. Use
 the <code>$</code> operator first. Then try to achieve the same result using the
 subsetting operators, i.e. <code>[]</code>.</p>
 <p><em>Solution:</em></p>
-<div class="sourceCode" id="cb206"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb206-1"><a href="solutions.html#cb206-1" tabindex="-1"></a>data<span class="sc">$</span>trust_government[<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>] <span class="co"># first version</span></span></code></pre></div>
-<pre><code>## &lt;labelled&lt;double&gt;[6]&gt;: Trust in government (likert)
-## [1] 3 4 4 4 2 4
-## 
-## Labels:
-##  value       label
-##      1 none at all
-##      2    a little
-##      3      partly
-##      4       a lot
-##      5   very much</code></pre>
-<div class="sourceCode" id="cb208"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb208-1"><a href="solutions.html#cb208-1" tabindex="-1"></a>data[<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>, <span class="dv">8</span>] <span class="co"># second version</span></span></code></pre></div>
+<div class="sourceCode" id="cb343"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb343-1"><a href="solutions.html#cb343-1" tabindex="-1"></a>data<span class="sc">$</span>trust_government[<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>] <span class="co"># first version</span></span></code></pre></div>
+<pre><code>## [1] 3 4 4 4 2 4</code></pre>
+<div class="sourceCode" id="cb345"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb345-1"><a href="solutions.html#cb345-1" tabindex="-1"></a>data[<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>, <span class="dv">8</span>] <span class="co"># second version</span></span></code></pre></div>
 <pre><code>## # A tibble: 6 × 1
-##   trust_government
-##   &lt;dbl+lbl&gt;       
-## 1 3 [partly]      
-## 2 4 [a lot]       
-## 3 4 [a lot]       
-## 4 4 [a lot]       
-## 5 2 [a little]    
-## 6 4 [a lot]</code></pre>
+##   ethics_2
+##      &lt;dbl&gt;
+## 1        3
+## 2        2
+## 3        4
+## 4        3
+## 5        3
+## 6        4</code></pre>
 </div>
-<div id="task-4-2" class="section level3 unnumbered hasAnchor">
-<h3>Task 4<a href="solutions.html#task-4-2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="task-4-4" class="section level3 unnumbered hasAnchor">
+<h3>Task 4<a href="solutions.html#task-4-4" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Repeat Task 1, but use an R project this time to set your working directory.</p>
 <p><em>Solution:</em></p>
 <p>Easiest way: convert an existing folder into a project via <strong>File → New Project… → Existing Directory</strong>.</p>
@@ -476,8 +567,8 @@ subsetting operators, i.e. <code>[]</code>.</p>
 </div>
 <div id="solutions-for-exercise-3" class="section level2 unnumbered hasAnchor">
 <h2>Solutions for Exercise 3<a href="solutions.html#solutions-for-exercise-3" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div id="task-1-5" class="section level3 unnumbered hasAnchor">
-<h3>Task 1<a href="solutions.html#task-1-5" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="task-1-7" class="section level3 unnumbered hasAnchor">
+<h3>Task 1<a href="solutions.html#task-1-7" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Below you will see multiple choice questions. Please try to identify the
 correct answers. 1, 2, 3 and 4 correct answers are possible for each
 question.</p>
@@ -523,16 +614,16 @@ approach?</strong></p>
 </ol></li>
 </ul>
 </div>
-<div id="task-2-5" class="section level3 unnumbered hasAnchor">
-<h3>Task 2<a href="solutions.html#task-2-5" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="task-2-7" class="section level3 unnumbered hasAnchor">
+<h3>Task 2<a href="solutions.html#task-2-7" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>It’s your turn now. Load the starwars data like this:</p>
-<div class="sourceCode" id="cb210"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb210-1"><a href="solutions.html#cb210-1" tabindex="-1"></a><span class="fu">library</span>(dplyr) <span class="co"># to activate the dplyr package</span></span>
-<span id="cb210-2"><a href="solutions.html#cb210-2" tabindex="-1"></a>starwars_data <span class="ot">&lt;-</span> starwars <span class="co"># to assign the pre-installed starwars data set (dplyr) into a source object in our environment</span></span></code></pre></div>
+<div class="sourceCode" id="cb347"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb347-1"><a href="solutions.html#cb347-1" tabindex="-1"></a><span class="fu">library</span>(dplyr) <span class="co"># to activate the dplyr package</span></span>
+<span id="cb347-2"><a href="solutions.html#cb347-2" tabindex="-1"></a>starwars_data <span class="ot">&lt;-</span> starwars <span class="co"># to assign the pre-installed starwars data set (dplyr) into a source object in our environment</span></span></code></pre></div>
 <p><em>Solution:</em></p>
 <p>How many humans are contained in the starwars dataset overall?
 First, solve this task using <code>filter()</code> only.</p>
-<div class="sourceCode" id="cb211"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb211-1"><a href="solutions.html#cb211-1" tabindex="-1"></a>starwars_data <span class="sc">%&gt;%</span></span>
-<span id="cb211-2"><a href="solutions.html#cb211-2" tabindex="-1"></a>  <span class="fu">filter</span>(species <span class="sc">==</span> <span class="st">&quot;Human&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb348"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb348-1"><a href="solutions.html#cb348-1" tabindex="-1"></a>starwars_data <span class="sc">%&gt;%</span></span>
+<span id="cb348-2"><a href="solutions.html#cb348-2" tabindex="-1"></a>  <span class="fu">filter</span>(species <span class="sc">==</span> <span class="st">&quot;Human&quot;</span>)</span></code></pre></div>
 <pre><code>## # A tibble: 35 × 14
 ##    name     height  mass hair_color skin_color eye_color birth_year sex   gender
 ##    &lt;chr&gt;     &lt;int&gt; &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;      &lt;chr&gt;          &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt; 
@@ -550,16 +641,16 @@ First, solve this task using <code>filter()</code> only.</p>
 ## # ℹ 5 more variables: homeworld &lt;chr&gt;, species &lt;chr&gt;, films &lt;list&gt;,
 ## #   vehicles &lt;list&gt;, starships &lt;list&gt;</code></pre>
 <p>Next, solve it by combining <code>filter()</code> with <code>summarize(count = n())</code>.</p>
-<div class="sourceCode" id="cb213"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb213-1"><a href="solutions.html#cb213-1" tabindex="-1"></a>starwars_data <span class="sc">%&gt;%</span></span>
-<span id="cb213-2"><a href="solutions.html#cb213-2" tabindex="-1"></a>  <span class="fu">filter</span>(species <span class="sc">==</span> <span class="st">&quot;Human&quot;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb213-3"><a href="solutions.html#cb213-3" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">count =</span> <span class="fu">n</span>())</span></code></pre></div>
+<div class="sourceCode" id="cb350"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb350-1"><a href="solutions.html#cb350-1" tabindex="-1"></a>starwars_data <span class="sc">%&gt;%</span></span>
+<span id="cb350-2"><a href="solutions.html#cb350-2" tabindex="-1"></a>  <span class="fu">filter</span>(species <span class="sc">==</span> <span class="st">&quot;Human&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb350-3"><a href="solutions.html#cb350-3" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">count =</span> <span class="fu">n</span>())</span></code></pre></div>
 <pre><code>## # A tibble: 1 × 1
 ##   count
 ##   &lt;int&gt;
 ## 1    35</code></pre>
 <p>Finally, try to solve it with <code>count()</code>.</p>
-<div class="sourceCode" id="cb215"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb215-1"><a href="solutions.html#cb215-1" tabindex="-1"></a>starwars_data <span class="sc">%&gt;%</span></span>
-<span id="cb215-2"><a href="solutions.html#cb215-2" tabindex="-1"></a>  <span class="fu">count</span>(species <span class="sc">==</span> <span class="st">&quot;Human&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb352"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb352-1"><a href="solutions.html#cb352-1" tabindex="-1"></a>starwars_data <span class="sc">%&gt;%</span></span>
+<span id="cb352-2"><a href="solutions.html#cb352-2" tabindex="-1"></a>  <span class="fu">count</span>(species <span class="sc">==</span> <span class="st">&quot;Human&quot;</span>)</span></code></pre></div>
 <pre><code>## # A tibble: 3 × 2
 ##   `species == &quot;Human&quot;`     n
 ##   &lt;lgl&gt;                &lt;int&gt;
@@ -567,8 +658,8 @@ First, solve this task using <code>filter()</code> only.</p>
 ## 2 TRUE                    35
 ## 3 NA                       4</code></pre>
 </div>
-<div id="task-3-5" class="section level3 unnumbered hasAnchor">
-<h3>Task 3<a href="solutions.html#task-3-5" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="task-3-7" class="section level3 unnumbered hasAnchor">
+<h3>Task 3<a href="solutions.html#task-3-7" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Use <code>mutate()</code> and <code>case_when()</code> to create a new column height_group with:</p>
 <ul>
 <li>“short” if height &lt; 140</li>
@@ -576,21 +667,21 @@ First, solve this task using <code>filter()</code> only.</p>
 <li>“tall” otherwise.</li>
 </ul>
 <p><em>Solution:</em></p>
-<div class="sourceCode" id="cb217"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb217-1"><a href="solutions.html#cb217-1" tabindex="-1"></a>starwars_data <span class="ot">&lt;-</span> starwars_data <span class="sc">%&gt;%</span></span>
-<span id="cb217-2"><a href="solutions.html#cb217-2" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">height_group =</span> <span class="fu">case_when</span>(</span>
-<span id="cb217-3"><a href="solutions.html#cb217-3" tabindex="-1"></a>    height <span class="sc">&lt;</span> <span class="dv">140</span> <span class="sc">~</span> <span class="st">&quot;short&quot;</span>,</span>
-<span id="cb217-4"><a href="solutions.html#cb217-4" tabindex="-1"></a>    height <span class="sc">&lt;</span> <span class="dv">180</span> <span class="sc">~</span> <span class="st">&quot;medium&quot;</span>,</span>
-<span id="cb217-5"><a href="solutions.html#cb217-5" tabindex="-1"></a>    height <span class="sc">&gt;=</span> <span class="dv">180</span> <span class="sc">~</span> <span class="st">&quot;tall&quot;</span></span>
-<span id="cb217-6"><a href="solutions.html#cb217-6" tabindex="-1"></a>  ))</span></code></pre></div>
+<div class="sourceCode" id="cb354"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb354-1"><a href="solutions.html#cb354-1" tabindex="-1"></a>starwars_data <span class="ot">&lt;-</span> starwars_data <span class="sc">%&gt;%</span></span>
+<span id="cb354-2"><a href="solutions.html#cb354-2" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">height_group =</span> <span class="fu">case_when</span>(</span>
+<span id="cb354-3"><a href="solutions.html#cb354-3" tabindex="-1"></a>    height <span class="sc">&lt;</span> <span class="dv">140</span> <span class="sc">~</span> <span class="st">&quot;short&quot;</span>,</span>
+<span id="cb354-4"><a href="solutions.html#cb354-4" tabindex="-1"></a>    height <span class="sc">&lt;</span> <span class="dv">180</span> <span class="sc">~</span> <span class="st">&quot;medium&quot;</span>,</span>
+<span id="cb354-5"><a href="solutions.html#cb354-5" tabindex="-1"></a>    height <span class="sc">&gt;=</span> <span class="dv">180</span> <span class="sc">~</span> <span class="st">&quot;tall&quot;</span></span>
+<span id="cb354-6"><a href="solutions.html#cb354-6" tabindex="-1"></a>  ))</span></code></pre></div>
 </div>
-<div id="task-4-3" class="section level3 unnumbered hasAnchor">
-<h3>Task 4<a href="solutions.html#task-4-3" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="task-4-5" class="section level3 unnumbered hasAnchor">
+<h3>Task 4<a href="solutions.html#task-4-5" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>How many humans are contained in starwars by height_group? (Hint: You’ll need to chain multiple functions. Remember that <code>summarize()</code> has a best friend that will help you solve this task. :))</p>
 <p><em>Solution:</em></p>
-<div class="sourceCode" id="cb218"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb218-1"><a href="solutions.html#cb218-1" tabindex="-1"></a>starwars_data <span class="sc">%&gt;%</span></span>
-<span id="cb218-2"><a href="solutions.html#cb218-2" tabindex="-1"></a>  <span class="fu">filter</span>(species <span class="sc">==</span> <span class="st">&quot;Human&quot;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb218-3"><a href="solutions.html#cb218-3" tabindex="-1"></a>  <span class="fu">group_by</span>(height_group) <span class="sc">%&gt;%</span></span>
-<span id="cb218-4"><a href="solutions.html#cb218-4" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">count =</span> <span class="fu">n</span>())</span></code></pre></div>
+<div class="sourceCode" id="cb355"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb355-1"><a href="solutions.html#cb355-1" tabindex="-1"></a>starwars_data <span class="sc">%&gt;%</span></span>
+<span id="cb355-2"><a href="solutions.html#cb355-2" tabindex="-1"></a>  <span class="fu">filter</span>(species <span class="sc">==</span> <span class="st">&quot;Human&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb355-3"><a href="solutions.html#cb355-3" tabindex="-1"></a>  <span class="fu">group_by</span>(height_group) <span class="sc">%&gt;%</span></span>
+<span id="cb355-4"><a href="solutions.html#cb355-4" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">count =</span> <span class="fu">n</span>())</span></code></pre></div>
 <pre><code>## # A tibble: 3 × 2
 ##   height_group count
 ##   &lt;chr&gt;        &lt;int&gt;
@@ -598,14 +689,14 @@ First, solve this task using <code>filter()</code> only.</p>
 ## 2 tall            17
 ## 3 &lt;NA&gt;             5</code></pre>
 </div>
-<div id="task-5-1" class="section level3 unnumbered hasAnchor">
-<h3>Task 5<a href="solutions.html#task-5-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="task-5-2" class="section level3 unnumbered hasAnchor">
+<h3>Task 5<a href="solutions.html#task-5-2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>What is the most common height_group among Star Wars characters? (Hint: You’ll need to chain multiple functions, but one of them should be <code>arrange()</code>)__</p>
 <p><em>Solution:</em></p>
-<div class="sourceCode" id="cb220"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb220-1"><a href="solutions.html#cb220-1" tabindex="-1"></a>starwars_data <span class="sc">%&gt;%</span></span>
-<span id="cb220-2"><a href="solutions.html#cb220-2" tabindex="-1"></a>  <span class="fu">group_by</span>(height_group) <span class="sc">%&gt;%</span></span>
-<span id="cb220-3"><a href="solutions.html#cb220-3" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">count =</span> <span class="fu">n</span>()) <span class="sc">%&gt;%</span></span>
-<span id="cb220-4"><a href="solutions.html#cb220-4" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(count))</span></code></pre></div>
+<div class="sourceCode" id="cb357"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb357-1"><a href="solutions.html#cb357-1" tabindex="-1"></a>starwars_data <span class="sc">%&gt;%</span></span>
+<span id="cb357-2"><a href="solutions.html#cb357-2" tabindex="-1"></a>  <span class="fu">group_by</span>(height_group) <span class="sc">%&gt;%</span></span>
+<span id="cb357-3"><a href="solutions.html#cb357-3" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">count =</span> <span class="fu">n</span>()) <span class="sc">%&gt;%</span></span>
+<span id="cb357-4"><a href="solutions.html#cb357-4" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(count))</span></code></pre></div>
 <pre><code>## # A tibble: 4 × 2
 ##   height_group count
 ##   &lt;chr&gt;        &lt;int&gt;
@@ -614,9 +705,9 @@ First, solve this task using <code>filter()</code> only.</p>
 ## 3 short           10
 ## 4 &lt;NA&gt;             6</code></pre>
 <p>Alternatively, you could use the <code>count()</code> function:</p>
-<div class="sourceCode" id="cb222"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb222-1"><a href="solutions.html#cb222-1" tabindex="-1"></a>starwars_data <span class="sc">%&gt;%</span></span>
-<span id="cb222-2"><a href="solutions.html#cb222-2" tabindex="-1"></a>  <span class="fu">count</span>(height_group) <span class="sc">%&gt;%</span></span>
-<span id="cb222-3"><a href="solutions.html#cb222-3" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(n))</span></code></pre></div>
+<div class="sourceCode" id="cb359"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb359-1"><a href="solutions.html#cb359-1" tabindex="-1"></a>starwars_data <span class="sc">%&gt;%</span></span>
+<span id="cb359-2"><a href="solutions.html#cb359-2" tabindex="-1"></a>  <span class="fu">count</span>(height_group) <span class="sc">%&gt;%</span></span>
+<span id="cb359-3"><a href="solutions.html#cb359-3" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(n))</span></code></pre></div>
 <pre><code>## # A tibble: 4 × 2
 ##   height_group     n
 ##   &lt;chr&gt;        &lt;int&gt;
@@ -625,14 +716,14 @@ First, solve this task using <code>filter()</code> only.</p>
 ## 3 short           10
 ## 4 &lt;NA&gt;             6</code></pre>
 </div>
-<div id="task-6-1" class="section level3 unnumbered hasAnchor">
-<h3>Task 6<a href="solutions.html#task-6-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="task-6-2" class="section level3 unnumbered hasAnchor">
+<h3>Task 6<a href="solutions.html#task-6-2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>What is the average mass of Star Wars characters that are not human and
 have yellow eyes? (Hint: You’ll need to calculate descriptive statistics and remove all <code>NAs</code>.)</p>
 <p><em>Solution:</em></p>
-<div class="sourceCode" id="cb224"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb224-1"><a href="solutions.html#cb224-1" tabindex="-1"></a>starwars_data <span class="sc">%&gt;%</span></span>
-<span id="cb224-2"><a href="solutions.html#cb224-2" tabindex="-1"></a>  <span class="fu">filter</span>(species <span class="sc">!=</span> <span class="st">&quot;Human&quot;</span> <span class="sc">&amp;</span> eye_color <span class="sc">==</span> <span class="st">&quot;yellow&quot;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb224-3"><a href="solutions.html#cb224-3" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">mean_mass =</span> <span class="fu">mean</span>(mass, <span class="at">na.rm =</span> <span class="cn">TRUE</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb361"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb361-1"><a href="solutions.html#cb361-1" tabindex="-1"></a>starwars_data <span class="sc">%&gt;%</span></span>
+<span id="cb361-2"><a href="solutions.html#cb361-2" tabindex="-1"></a>  <span class="fu">filter</span>(species <span class="sc">!=</span> <span class="st">&quot;Human&quot;</span> <span class="sc">&amp;</span> eye_color <span class="sc">==</span> <span class="st">&quot;yellow&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb361-3"><a href="solutions.html#cb361-3" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">mean_mass =</span> <span class="fu">mean</span>(mass, <span class="at">na.rm =</span> <span class="cn">TRUE</span>))</span></code></pre></div>
 <pre><code>## # A tibble: 1 × 1
 ##   mean_mass
 ##       &lt;dbl&gt;
@@ -643,14 +734,14 @@ have yellow eyes? (Hint: You’ll need to calculate descriptive statistics and r
 <p>Compare the mean, median, and standard deviation of mass for all humans
 and droids. (Hint: You’ll need to calculate descriptive statistics and remove all <code>NAs</code>.)</p>
 <p><em>Solution:</em></p>
-<div class="sourceCode" id="cb226"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb226-1"><a href="solutions.html#cb226-1" tabindex="-1"></a>starwars_data <span class="sc">%&gt;%</span></span>
-<span id="cb226-2"><a href="solutions.html#cb226-2" tabindex="-1"></a>  <span class="fu">filter</span>(species <span class="sc">==</span> <span class="st">&quot;Human&quot;</span> <span class="sc">|</span> species <span class="sc">==</span> <span class="st">&quot;Droid&quot;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb226-3"><a href="solutions.html#cb226-3" tabindex="-1"></a>  <span class="fu">group_by</span>(species) <span class="sc">%&gt;%</span></span>
-<span id="cb226-4"><a href="solutions.html#cb226-4" tabindex="-1"></a>  <span class="fu">summarize</span>(</span>
-<span id="cb226-5"><a href="solutions.html#cb226-5" tabindex="-1"></a>    <span class="at">M =</span> <span class="fu">mean</span>(mass, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb226-6"><a href="solutions.html#cb226-6" tabindex="-1"></a>    <span class="at">Med =</span> <span class="fu">median</span>(mass, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb226-7"><a href="solutions.html#cb226-7" tabindex="-1"></a>    <span class="at">SD =</span> <span class="fu">sd</span>(mass, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb226-8"><a href="solutions.html#cb226-8" tabindex="-1"></a>  )</span></code></pre></div>
+<div class="sourceCode" id="cb363"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb363-1"><a href="solutions.html#cb363-1" tabindex="-1"></a>starwars_data <span class="sc">%&gt;%</span></span>
+<span id="cb363-2"><a href="solutions.html#cb363-2" tabindex="-1"></a>  <span class="fu">filter</span>(species <span class="sc">==</span> <span class="st">&quot;Human&quot;</span> <span class="sc">|</span> species <span class="sc">==</span> <span class="st">&quot;Droid&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb363-3"><a href="solutions.html#cb363-3" tabindex="-1"></a>  <span class="fu">group_by</span>(species) <span class="sc">%&gt;%</span></span>
+<span id="cb363-4"><a href="solutions.html#cb363-4" tabindex="-1"></a>  <span class="fu">summarize</span>(</span>
+<span id="cb363-5"><a href="solutions.html#cb363-5" tabindex="-1"></a>    <span class="at">M =</span> <span class="fu">mean</span>(mass, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb363-6"><a href="solutions.html#cb363-6" tabindex="-1"></a>    <span class="at">Med =</span> <span class="fu">median</span>(mass, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb363-7"><a href="solutions.html#cb363-7" tabindex="-1"></a>    <span class="at">SD =</span> <span class="fu">sd</span>(mass, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb363-8"><a href="solutions.html#cb363-8" tabindex="-1"></a>  )</span></code></pre></div>
 <pre><code>## # A tibble: 2 × 4
 ##   species     M   Med    SD
 ##   &lt;chr&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
@@ -662,11 +753,11 @@ and droids. (Hint: You’ll need to calculate descriptive statistics and remove 
 <p>Create a new variable in which you store the mass in gram. Add it to the
 dataframe.</p>
 <p><em>Solution:</em></p>
-<div class="sourceCode" id="cb228"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb228-1"><a href="solutions.html#cb228-1" tabindex="-1"></a>starwars_data <span class="ot">&lt;-</span> starwars_data <span class="sc">%&gt;%</span></span>
-<span id="cb228-2"><a href="solutions.html#cb228-2" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">gr_mass =</span> mass <span class="sc">*</span> <span class="dv">1000</span>)</span>
-<span id="cb228-3"><a href="solutions.html#cb228-3" tabindex="-1"></a></span>
-<span id="cb228-4"><a href="solutions.html#cb228-4" tabindex="-1"></a>starwars_data <span class="sc">%&gt;%</span></span>
-<span id="cb228-5"><a href="solutions.html#cb228-5" tabindex="-1"></a>  <span class="fu">select</span>(name, species, mass, gr_mass)</span></code></pre></div>
+<div class="sourceCode" id="cb365"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb365-1"><a href="solutions.html#cb365-1" tabindex="-1"></a>starwars_data <span class="ot">&lt;-</span> starwars_data <span class="sc">%&gt;%</span></span>
+<span id="cb365-2"><a href="solutions.html#cb365-2" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">gr_mass =</span> mass <span class="sc">*</span> <span class="dv">1000</span>)</span>
+<span id="cb365-3"><a href="solutions.html#cb365-3" tabindex="-1"></a></span>
+<span id="cb365-4"><a href="solutions.html#cb365-4" tabindex="-1"></a>starwars_data <span class="sc">%&gt;%</span></span>
+<span id="cb365-5"><a href="solutions.html#cb365-5" tabindex="-1"></a>  <span class="fu">select</span>(name, species, mass, gr_mass)</span></code></pre></div>
 <pre><code>## # A tibble: 87 × 4
 ##    name               species  mass gr_mass
 ##    &lt;chr&gt;              &lt;chr&gt;   &lt;dbl&gt;   &lt;dbl&gt;
@@ -681,6 +772,640 @@ dataframe.</p>
 ##  9 Biggs Darklighter  Human      84   84000
 ## 10 Obi-Wan Kenobi     Human      77   77000
 ## # ℹ 77 more rows</code></pre>
+</div>
+</div>
+<div id="solutions-for-exercise-4" class="section level2 unnumbered hasAnchor">
+<h2>Solutions for Exercise 4<a href="solutions.html#solutions-for-exercise-4" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>First, load the library <code>stringr</code> (or the entire <code>tidyverse</code>).</p>
+<div class="sourceCode" id="cb367"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb367-1"><a href="solutions.html#cb367-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse) <span class="co"># loads stringr + dplyr and pipe operator</span></span></code></pre></div>
+<p>We will work on real data in this exercise. But before that, we will test our regex on a simple “test” vector that contains hyperlinks of media outlets and webpages. So run this code and create a vector called “seitenURL” in your environment:</p>
+<div class="sourceCode" id="cb368"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb368-1"><a href="solutions.html#cb368-1" tabindex="-1"></a>seitenURL <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;https://www.bild.de&quot;</span>, <span class="st">&quot;https://www.kicker.at/sport&quot;</span>, <span class="st">&quot;http://www.mycoffee.net/fresh&quot;</span>, <span class="st">&quot;http://www1.neuegedanken.blog&quot;</span>, <span class="st">&quot;https://home.1und1.info/magazine/unterhaltung&quot;</span>, <span class="st">&quot;https://de.sputniknews.com/technik&quot;</span>, <span class="st">&quot;https://rp-online.de/nrw/staedte/geldern&quot;</span>, <span class="st">&quot;https://www.bzbasel.ch/limmattal/region-limmattal&quot;</span>, <span class="st">&quot;http://sportdeutschland.tv/wm-maenner-2019&quot;</span>)</span></code></pre></div>
+<div id="task-1-8" class="section level3 unnumbered hasAnchor">
+<h3>Task 1<a href="solutions.html#task-1-8" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Let’s get rid of the first part of the URL strings in our “seitenURL” vector, i.e., everything that comes before the name of the outlet (You will need to work with <code>str_replace</code>). Usually, this is some kind of version of “<a href="https://www" class="uri">https://www</a>.” or “<a href="http://www" class="uri">http://www</a>.” Try to make your pattern as versatile as possible! In a big data set, there will always be exceptions to the rule (e.g., “<a href="http://sportdeutschland.tv" class="uri">http://sportdeutschland.tv</a>”), so try to match regex–i.e., types of characters instead of real characters–as often as you can!</p>
+<div class="sourceCode" id="cb369"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb369-1"><a href="solutions.html#cb369-1" tabindex="-1"></a>seitenURL <span class="ot">&lt;-</span><span class="fu">str_replace</span>(seitenURL, <span class="st">&quot;^(http)(s?)[:punct:]{3}(www[:punct:]|www1[:punct:]|w?)&quot;</span>, <span class="st">&quot;&quot;</span>)</span>
+<span id="cb369-2"><a href="solutions.html#cb369-2" tabindex="-1"></a><span class="co"># this matches all strings that start with http: &#39;^(http)&#39;</span></span>
+<span id="cb369-3"><a href="solutions.html#cb369-3" tabindex="-1"></a><span class="co"># this matches all strings that are either http or https: (s?) -&gt; because &#39;?&#39; means &quot;zero or more&quot;</span></span>
+<span id="cb369-4"><a href="solutions.html#cb369-4" tabindex="-1"></a><span class="co"># followed by exactly one dot and two forwardslashes: &#39;[:punct:]{3}&#39;</span></span>
+<span id="cb369-5"><a href="solutions.html#cb369-5" tabindex="-1"></a><span class="co"># followed by either a www.: &#39;(www[:punct:]&#39;</span></span>
+<span id="cb369-6"><a href="solutions.html#cb369-6" tabindex="-1"></a><span class="co"># or followed by a www1.: &#39;|www1[:punct:])&#39;</span></span>
+<span id="cb369-7"><a href="solutions.html#cb369-7" tabindex="-1"></a><span class="co"># or followed by zero or one w (this is necessary for the rp-online-URL): &#39;w?&#39;</span></span>
+<span id="cb369-8"><a href="solutions.html#cb369-8" tabindex="-1"></a><span class="co"># and replaces the match with nothing, i.e., an empty string: &#39;, &quot;&quot;&#39;</span></span></code></pre></div>
+</div>
+<div id="task-2-8" class="section level3 unnumbered hasAnchor">
+<h3>Task 2<a href="solutions.html#task-2-8" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Using the seitenURL vector, try to get rid of the characters that follow the media outlet (e.g., “.de” or “.com”).</p>
+<div class="sourceCode" id="cb370"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb370-1"><a href="solutions.html#cb370-1" tabindex="-1"></a>seitenURL <span class="ot">&lt;-</span> <span class="fu">str_replace</span>(seitenURL, <span class="st">&quot;[:punct:]{1}(com|de|blog|net|tv|at|ch|info).*&quot;</span>, <span class="st">&quot;&quot;</span>)</span>
+<span id="cb370-2"><a href="solutions.html#cb370-2" tabindex="-1"></a><span class="co"># this matches all strings that have exactly one dot: &quot;[:punct:]{1}&quot;</span></span>
+<span id="cb370-3"><a href="solutions.html#cb370-3" tabindex="-1"></a><span class="co"># this matches either com, de, blog and many more: &quot;(com|de|blog|net|tv|at|ch)&quot;</span></span>
+<span id="cb370-4"><a href="solutions.html#cb370-4" tabindex="-1"></a><span class="co"># this matches any character zero or multiple times: &quot;.*&quot;</span></span></code></pre></div>
+</div>
+<div id="task-3-8" class="section level3 unnumbered hasAnchor">
+<h3>Task 3<a href="solutions.html#task-3-8" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Use this command and adapt it with your patterns (it uses str_replace in combination with mutate):</p>
+<div class="sourceCode" id="cb371"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb371-1"><a href="solutions.html#cb371-1" tabindex="-1"></a>data2 <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
+<span id="cb371-2"><a href="solutions.html#cb371-2" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">seitenURL =</span> <span class="fu">str_replace_all</span>(seitenURL, <span class="st">&quot;^(http)(s?)[:punct:]{3}(www[:punct:]|www1[:punct:]|w?)&quot;</span>, <span class="st">&quot;&quot;</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb371-3"><a href="solutions.html#cb371-3" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">seitenURL =</span> <span class="fu">str_replace_all</span>(seitenURL, <span class="st">&quot;[:punct:]{1}(com|de|blog|net|tv|at|ch|info).*&quot;</span>, <span class="st">&quot;&quot;</span>))</span></code></pre></div>
+</div>
+<div id="task-4-6" class="section level3 unnumbered hasAnchor">
+<h3>Task 4<a href="solutions.html#task-4-6" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The data set provides two additional, highly informative columns: “SeitenAnzahlTwitter” and “SeitenAnzahlFacebook”. These columns show the number of reactions (shares, likes, comments) for each URL. Having extracted the media outlets, let us examine which media outlet got the most engagement on Twitter and Facebook from all their URLs. Utilize your <code>dplyr</code> abilities to create an R object named “overview” that stores the summary statistic (remember <em>group_by</em> and <em>summarize</em>!) of the engagement on Twitter and Facebook per media outlet.</p>
+<p>Next, arrange your “overview” data to reveal which media outlet creates the most engagement on Twitter. Do the same for Facebook.</p>
+<div class="sourceCode" id="cb372"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb372-1"><a href="solutions.html#cb372-1" tabindex="-1"></a>overview <span class="ot">&lt;-</span> data2 <span class="sc">%&gt;%</span></span>
+<span id="cb372-2"><a href="solutions.html#cb372-2" tabindex="-1"></a>  <span class="fu">group_by</span>(seitenURL) <span class="sc">%&gt;%</span></span>
+<span id="cb372-3"><a href="solutions.html#cb372-3" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">twitter =</span> <span class="fu">sum</span>(seitenAnzahlTwitter),</span>
+<span id="cb372-4"><a href="solutions.html#cb372-4" tabindex="-1"></a>            <span class="at">facebook =</span> <span class="fu">sum</span>(seitenAnzahlFacebook))</span>
+<span id="cb372-5"><a href="solutions.html#cb372-5" tabindex="-1"></a></span>
+<span id="cb372-6"><a href="solutions.html#cb372-6" tabindex="-1"></a>overview <span class="sc">%&gt;%</span></span>
+<span id="cb372-7"><a href="solutions.html#cb372-7" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(twitter))</span>
+<span id="cb372-8"><a href="solutions.html#cb372-8" tabindex="-1"></a></span>
+<span id="cb372-9"><a href="solutions.html#cb372-9" tabindex="-1"></a>overview <span class="sc">%&gt;%</span></span>
+<span id="cb372-10"><a href="solutions.html#cb372-10" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(facebook))</span></code></pre></div>
+</div>
+</div>
+<div id="solutions-advanced-data-management" class="section level2 unnumbered hasAnchor">
+<h2>Solutions for Exercise 5<a href="solutions.html#solutions-advanced-data-management" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="task-1-import-and-combine-several-files" class="section level3 unnumbered hasAnchor">
+<h3>Task 1: Import and combine several files<a href="solutions.html#task-1-import-and-combine-several-files" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><em>Solution:</em></p>
+<div class="sourceCode" id="cb373"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb373-1"><a href="solutions.html#cb373-1" tabindex="-1"></a>path <span class="ot">&lt;-</span> <span class="st">&quot;data/advanced_practice/multiple_files&quot;</span></span>
+<span id="cb373-2"><a href="solutions.html#cb373-2" tabindex="-1"></a></span>
+<span id="cb373-3"><a href="solutions.html#cb373-3" tabindex="-1"></a>file_paths <span class="ot">&lt;-</span> <span class="fu">list.files</span>(</span>
+<span id="cb373-4"><a href="solutions.html#cb373-4" tabindex="-1"></a>  <span class="at">path =</span> path,</span>
+<span id="cb373-5"><a href="solutions.html#cb373-5" tabindex="-1"></a>  <span class="at">pattern =</span> <span class="st">&quot;</span><span class="sc">\\</span><span class="st">.csv$&quot;</span>,</span>
+<span id="cb373-6"><a href="solutions.html#cb373-6" tabindex="-1"></a>  <span class="at">full.names =</span> <span class="cn">TRUE</span></span>
+<span id="cb373-7"><a href="solutions.html#cb373-7" tabindex="-1"></a>)</span>
+<span id="cb373-8"><a href="solutions.html#cb373-8" tabindex="-1"></a></span>
+<span id="cb373-9"><a href="solutions.html#cb373-9" tabindex="-1"></a>file_paths</span></code></pre></div>
+<pre><code>## [1] &quot;data/advanced_practice/multiple_files/journalist_batch_1.csv&quot;
+## [2] &quot;data/advanced_practice/multiple_files/journalist_batch_2.csv&quot;
+## [3] &quot;data/advanced_practice/multiple_files/journalist_batch_3.csv&quot;</code></pre>
+<div class="sourceCode" id="cb375"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb375-1"><a href="solutions.html#cb375-1" tabindex="-1"></a><span class="fu">length</span>(file_paths)</span></code></pre></div>
+<pre><code>## [1] 3</code></pre>
+<p>Read and combine the files:</p>
+<div class="sourceCode" id="cb377"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb377-1"><a href="solutions.html#cb377-1" tabindex="-1"></a>combined_data <span class="ot">&lt;-</span> file_paths <span class="sc">%&gt;%</span></span>
+<span id="cb377-2"><a href="solutions.html#cb377-2" tabindex="-1"></a>  <span class="fu">map</span>(<span class="sc">~</span> <span class="fu">read.csv2</span>(.x)) <span class="sc">%&gt;%</span></span>
+<span id="cb377-3"><a href="solutions.html#cb377-3" tabindex="-1"></a>  <span class="fu">bind_rows</span>()</span>
+<span id="cb377-4"><a href="solutions.html#cb377-4" tabindex="-1"></a></span>
+<span id="cb377-5"><a href="solutions.html#cb377-5" tabindex="-1"></a><span class="fu">nrow</span>(combined_data)</span></code></pre></div>
+<pre><code>## [1] 36</code></pre>
+<div class="sourceCode" id="cb379"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb379-1"><a href="solutions.html#cb379-1" tabindex="-1"></a><span class="fu">ncol</span>(combined_data)</span></code></pre></div>
+<pre><code>## [1] 8</code></pre>
+<div class="sourceCode" id="cb381"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb381-1"><a href="solutions.html#cb381-1" tabindex="-1"></a><span class="fu">names</span>(combined_data)</span></code></pre></div>
+<pre><code>## [1] &quot;respondent_id&quot;      &quot;country&quot;            &quot;employment&quot;        
+## [4] &quot;work_experience&quot;    &quot;autonomy_selection&quot; &quot;autonomy_emphasis&quot; 
+## [7] &quot;trust_government&quot;   &quot;ethics_1&quot;</code></pre>
+<p>R should find <strong>3 files</strong>. The combined dataset contains <strong>36 respondents</strong>
+and <strong>8 variables</strong>.</p>
+</div>
+<div id="task-2-deal-with-messy-column-names" class="section level3 unnumbered hasAnchor">
+<h3>Task 2: Deal with messy column names<a href="solutions.html#task-2-deal-with-messy-column-names" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><em>Solution:</em></p>
+<div class="sourceCode" id="cb383"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb383-1"><a href="solutions.html#cb383-1" tabindex="-1"></a>messy_paths <span class="ot">&lt;-</span> <span class="fu">list.files</span>(</span>
+<span id="cb383-2"><a href="solutions.html#cb383-2" tabindex="-1"></a>  <span class="at">path =</span> <span class="st">&quot;data/advanced_practice/multiple_files_messy&quot;</span>,</span>
+<span id="cb383-3"><a href="solutions.html#cb383-3" tabindex="-1"></a>  <span class="at">pattern =</span> <span class="st">&quot;</span><span class="sc">\\</span><span class="st">.csv$&quot;</span>,</span>
+<span id="cb383-4"><a href="solutions.html#cb383-4" tabindex="-1"></a>  <span class="at">full.names =</span> <span class="cn">TRUE</span></span>
+<span id="cb383-5"><a href="solutions.html#cb383-5" tabindex="-1"></a>)</span>
+<span id="cb383-6"><a href="solutions.html#cb383-6" tabindex="-1"></a></span>
+<span id="cb383-7"><a href="solutions.html#cb383-7" tabindex="-1"></a>combined_messy <span class="ot">&lt;-</span> messy_paths <span class="sc">%&gt;%</span></span>
+<span id="cb383-8"><a href="solutions.html#cb383-8" tabindex="-1"></a>  <span class="fu">map</span>(<span class="sc">~</span> <span class="fu">read.csv2</span>(.x, <span class="at">check.names =</span> <span class="cn">FALSE</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb383-9"><a href="solutions.html#cb383-9" tabindex="-1"></a>        <span class="fu">setNames</span>(</span>
+<span id="cb383-10"><a href="solutions.html#cb383-10" tabindex="-1"></a>          <span class="fu">gsub</span>(</span>
+<span id="cb383-11"><a href="solutions.html#cb383-11" tabindex="-1"></a>            <span class="st">&quot;</span><span class="sc">\\</span><span class="st">s+&quot;</span>, <span class="st">&quot;_&quot;</span>,</span>
+<span id="cb383-12"><a href="solutions.html#cb383-12" tabindex="-1"></a>            <span class="fu">tolower</span>(<span class="fu">trimws</span>(<span class="fu">names</span>(.)))</span>
+<span id="cb383-13"><a href="solutions.html#cb383-13" tabindex="-1"></a>          )</span>
+<span id="cb383-14"><a href="solutions.html#cb383-14" tabindex="-1"></a>        )) <span class="sc">%&gt;%</span></span>
+<span id="cb383-15"><a href="solutions.html#cb383-15" tabindex="-1"></a>  <span class="fu">bind_rows</span>()</span>
+<span id="cb383-16"><a href="solutions.html#cb383-16" tabindex="-1"></a></span>
+<span id="cb383-17"><a href="solutions.html#cb383-17" tabindex="-1"></a><span class="fu">names</span>(combined_messy)</span></code></pre></div>
+<pre><code>## [1] &quot;respondent_id&quot;      &quot;country&quot;            &quot;employment&quot;        
+## [4] &quot;work_experience&quot;    &quot;autonomy_selection&quot; &quot;autonomy_emphasis&quot; 
+## [7] &quot;trust_government&quot;   &quot;ethics_1&quot;</code></pre>
+<p>Count the missing values in <code>trust_government</code>:</p>
+<div class="sourceCode" id="cb385"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb385-1"><a href="solutions.html#cb385-1" tabindex="-1"></a>combined_messy <span class="sc">%&gt;%</span></span>
+<span id="cb385-2"><a href="solutions.html#cb385-2" tabindex="-1"></a>  <span class="fu">summarize</span>(</span>
+<span id="cb385-3"><a href="solutions.html#cb385-3" tabindex="-1"></a>    <span class="at">missing_trust =</span> <span class="fu">sum</span>(<span class="fu">is.na</span>(trust_government))</span>
+<span id="cb385-4"><a href="solutions.html#cb385-4" tabindex="-1"></a>  )</span></code></pre></div>
+<pre><code>##   missing_trust
+## 1             8</code></pre>
+<p>The result should be <strong>8 missing values</strong>. The third file intentionally
+does not contain the <code>trust_government</code> variable. <code>bind_rows()</code> creates
+that column in the combined dataset and fills the unavailable values with
+<code>NA</code>.</p>
+</div>
+<div id="task-3-choose-the-correct-join" class="section level3 unnumbered hasAnchor">
+<h3>Task 3: Choose the correct join<a href="solutions.html#task-3-choose-the-correct-join" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><em>Solution:</em></p>
+<div class="sourceCode" id="cb387"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb387-1"><a href="solutions.html#cb387-1" tabindex="-1"></a>profiles <span class="ot">&lt;-</span> <span class="fu">read.csv2</span>(</span>
+<span id="cb387-2"><a href="solutions.html#cb387-2" tabindex="-1"></a>  <span class="st">&quot;data/advanced_practice/joins/journalist_profiles.csv&quot;</span></span>
+<span id="cb387-3"><a href="solutions.html#cb387-3" tabindex="-1"></a>)</span>
+<span id="cb387-4"><a href="solutions.html#cb387-4" tabindex="-1"></a></span>
+<span id="cb387-5"><a href="solutions.html#cb387-5" tabindex="-1"></a>attitudes <span class="ot">&lt;-</span> <span class="fu">read.csv2</span>(</span>
+<span id="cb387-6"><a href="solutions.html#cb387-6" tabindex="-1"></a>  <span class="st">&quot;data/advanced_practice/joins/journalist_attitudes.csv&quot;</span></span>
+<span id="cb387-7"><a href="solutions.html#cb387-7" tabindex="-1"></a>)</span></code></pre></div>
+<p>Create the four joins:</p>
+<div class="sourceCode" id="cb388"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb388-1"><a href="solutions.html#cb388-1" tabindex="-1"></a>inner_data <span class="ot">&lt;-</span> <span class="fu">inner_join</span>(profiles, attitudes, <span class="at">by =</span> <span class="st">&quot;respondent_id&quot;</span>)</span>
+<span id="cb388-2"><a href="solutions.html#cb388-2" tabindex="-1"></a>left_data  <span class="ot">&lt;-</span> <span class="fu">left_join</span>(profiles, attitudes, <span class="at">by =</span> <span class="st">&quot;respondent_id&quot;</span>)</span>
+<span id="cb388-3"><a href="solutions.html#cb388-3" tabindex="-1"></a>right_data <span class="ot">&lt;-</span> <span class="fu">right_join</span>(profiles, attitudes, <span class="at">by =</span> <span class="st">&quot;respondent_id&quot;</span>)</span>
+<span id="cb388-4"><a href="solutions.html#cb388-4" tabindex="-1"></a>full_data  <span class="ot">&lt;-</span> <span class="fu">full_join</span>(profiles, attitudes, <span class="at">by =</span> <span class="st">&quot;respondent_id&quot;</span>)</span>
+<span id="cb388-5"><a href="solutions.html#cb388-5" tabindex="-1"></a></span>
+<span id="cb388-6"><a href="solutions.html#cb388-6" tabindex="-1"></a><span class="fu">nrow</span>(inner_data)</span></code></pre></div>
+<pre><code>## [1] 10</code></pre>
+<div class="sourceCode" id="cb390"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb390-1"><a href="solutions.html#cb390-1" tabindex="-1"></a><span class="fu">nrow</span>(left_data)</span></code></pre></div>
+<pre><code>## [1] 20</code></pre>
+<div class="sourceCode" id="cb392"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb392-1"><a href="solutions.html#cb392-1" tabindex="-1"></a><span class="fu">nrow</span>(right_data)</span></code></pre></div>
+<pre><code>## [1] 20</code></pre>
+<div class="sourceCode" id="cb394"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb394-1"><a href="solutions.html#cb394-1" tabindex="-1"></a><span class="fu">nrow</span>(full_data)</span></code></pre></div>
+<pre><code>## [1] 30</code></pre>
+<p>The expected numbers of rows are:</p>
+<ul>
+<li><code>inner_join()</code>: <strong>10</strong></li>
+<li><code>left_join()</code>: <strong>20</strong></li>
+<li><code>right_join()</code>: <strong>20</strong></li>
+<li><code>full_join()</code>: <strong>30</strong></li>
+</ul>
+<p>The logic is:</p>
+<ul>
+<li><code>inner_join()</code> keeps cases found in both datasets;</li>
+<li><code>left_join()</code> keeps all cases from the first dataset;</li>
+<li><code>right_join()</code> keeps all cases from the second dataset;</li>
+<li><code>full_join()</code> keeps all cases found in either dataset.</li>
+</ul>
+<p>The bonus task can be solved with:</p>
+<div class="sourceCode" id="cb396"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb396-1"><a href="solutions.html#cb396-1" tabindex="-1"></a>profiles <span class="sc">%&gt;%</span></span>
+<span id="cb396-2"><a href="solutions.html#cb396-2" tabindex="-1"></a>  <span class="fu">anti_join</span>(attitudes, <span class="at">by =</span> <span class="st">&quot;respondent_id&quot;</span>)</span></code></pre></div>
+<pre><code>##    respondent_id     country employment work_experience
+## 1           J101     Germany  Full-time              15
+## 2           J102 Switzerland  Part-time              18
+## 3           J103     Austria Freelancer              21
+## 4           J104     Germany  Temporary              24
+## 5           J105 Switzerland  Full-time              27
+## 6           J106     Austria  Part-time              30
+## 7           J107     Germany Freelancer               4
+## 8           J108 Switzerland  Temporary               7
+## 9           J109     Austria  Full-time              10
+## 10          J110     Germany  Part-time              13</code></pre>
+</div>
+<div id="task-4-reshape-panel-data" class="section level3 unnumbered hasAnchor">
+<h3>Task 4: Reshape panel data<a href="solutions.html#task-4-reshape-panel-data" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><em>Solution:</em></p>
+<div class="sourceCode" id="cb398"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb398-1"><a href="solutions.html#cb398-1" tabindex="-1"></a>panel_wide <span class="ot">&lt;-</span> <span class="fu">read.csv2</span>(</span>
+<span id="cb398-2"><a href="solutions.html#cb398-2" tabindex="-1"></a>  <span class="st">&quot;data/advanced_practice/panel/journalist_panel_wide.csv&quot;</span></span>
+<span id="cb398-3"><a href="solutions.html#cb398-3" tabindex="-1"></a>)</span></code></pre></div>
+<p>Transform the data into long format:</p>
+<div class="sourceCode" id="cb399"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb399-1"><a href="solutions.html#cb399-1" tabindex="-1"></a>panel_long <span class="ot">&lt;-</span> panel_wide <span class="sc">%&gt;%</span></span>
+<span id="cb399-2"><a href="solutions.html#cb399-2" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(</span>
+<span id="cb399-3"><a href="solutions.html#cb399-3" tabindex="-1"></a>    <span class="at">cols =</span> <span class="sc">-</span><span class="fu">c</span>(respondent_id, country),</span>
+<span id="cb399-4"><a href="solutions.html#cb399-4" tabindex="-1"></a>    <span class="at">names_to =</span> <span class="fu">c</span>(<span class="st">&quot;measure&quot;</span>, <span class="st">&quot;wave&quot;</span>),</span>
+<span id="cb399-5"><a href="solutions.html#cb399-5" tabindex="-1"></a>    <span class="at">names_pattern =</span> <span class="st">&quot;(.*)_(w</span><span class="sc">\\</span><span class="st">d+)&quot;</span>,</span>
+<span id="cb399-6"><a href="solutions.html#cb399-6" tabindex="-1"></a>    <span class="at">values_to =</span> <span class="st">&quot;score&quot;</span></span>
+<span id="cb399-7"><a href="solutions.html#cb399-7" tabindex="-1"></a>  )</span>
+<span id="cb399-8"><a href="solutions.html#cb399-8" tabindex="-1"></a></span>
+<span id="cb399-9"><a href="solutions.html#cb399-9" tabindex="-1"></a>panel_long</span></code></pre></div>
+<pre><code>## # A tibble: 40 × 5
+##    respondent_id country     measure            wave  score
+##    &lt;chr&gt;         &lt;chr&gt;       &lt;chr&gt;              &lt;chr&gt; &lt;int&gt;
+##  1 J201          Germany     autonomy_selection w1        2
+##  2 J201          Germany     autonomy_selection w2        2
+##  3 J201          Germany     trust_government   w1        4
+##  4 J201          Germany     trust_government   w2        3
+##  5 J202          Switzerland autonomy_selection w1        3
+##  6 J202          Switzerland autonomy_selection w2        3
+##  7 J202          Switzerland trust_government   w1        5
+##  8 J202          Switzerland trust_government   w2        5
+##  9 J203          Austria     autonomy_selection w1        4
+## 10 J203          Austria     autonomy_selection w2        5
+## # ℹ 30 more rows</code></pre>
+<p>Transform it back into wide format:</p>
+<div class="sourceCode" id="cb401"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb401-1"><a href="solutions.html#cb401-1" tabindex="-1"></a>panel_wide_again <span class="ot">&lt;-</span> panel_long <span class="sc">%&gt;%</span></span>
+<span id="cb401-2"><a href="solutions.html#cb401-2" tabindex="-1"></a>  <span class="fu">pivot_wider</span>(</span>
+<span id="cb401-3"><a href="solutions.html#cb401-3" tabindex="-1"></a>    <span class="at">names_from =</span> <span class="fu">c</span>(measure, wave),</span>
+<span id="cb401-4"><a href="solutions.html#cb401-4" tabindex="-1"></a>    <span class="at">names_sep =</span> <span class="st">&quot;_&quot;</span>,</span>
+<span id="cb401-5"><a href="solutions.html#cb401-5" tabindex="-1"></a>    <span class="at">values_from =</span> score</span>
+<span id="cb401-6"><a href="solutions.html#cb401-6" tabindex="-1"></a>  )</span>
+<span id="cb401-7"><a href="solutions.html#cb401-7" tabindex="-1"></a></span>
+<span id="cb401-8"><a href="solutions.html#cb401-8" tabindex="-1"></a>panel_wide_again</span></code></pre></div>
+<pre><code>## # A tibble: 10 × 6
+##    respondent_id country     autonomy_selection_w1 autonomy_selection_w2
+##    &lt;chr&gt;         &lt;chr&gt;                       &lt;int&gt;                 &lt;int&gt;
+##  1 J201          Germany                         2                     2
+##  2 J202          Switzerland                     3                     3
+##  3 J203          Austria                         4                     5
+##  4 J204          Germany                         5                     4
+##  5 J205          Switzerland                     1                     1
+##  6 J206          Austria                         2                     3
+##  7 J207          Germany                         3                     3
+##  8 J208          Switzerland                    NA                     3
+##  9 J209          Austria                         5                     5
+## 10 J210          Germany                         1                     1
+## # ℹ 2 more variables: trust_government_w1 &lt;int&gt;, trust_government_w2 &lt;int&gt;</code></pre>
+<p>Compare the dimensions:</p>
+<div class="sourceCode" id="cb403"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb403-1"><a href="solutions.html#cb403-1" tabindex="-1"></a><span class="fu">dim</span>(panel_wide)</span></code></pre></div>
+<pre><code>## [1] 10  6</code></pre>
+<div class="sourceCode" id="cb405"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb405-1"><a href="solutions.html#cb405-1" tabindex="-1"></a><span class="fu">dim</span>(panel_long)</span></code></pre></div>
+<pre><code>## [1] 40  5</code></pre>
+<div class="sourceCode" id="cb407"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb407-1"><a href="solutions.html#cb407-1" tabindex="-1"></a><span class="fu">dim</span>(panel_wide_again)</span></code></pre></div>
+<pre><code>## [1] 10  6</code></pre>
+<p>The original wide dataset contains <strong>10 rows and 6 columns</strong>. The long
+version contains <strong>40 rows and 5 columns</strong>.</p>
+</div>
+<div id="task-5-advanced-selection" class="section level3 unnumbered hasAnchor">
+<h3>Task 5: Advanced selection<a href="solutions.html#task-5-advanced-selection" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Select <code>respondent_id</code> and all autonomy variables:</p>
+<div class="sourceCode" id="cb409"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb409-1"><a href="solutions.html#cb409-1" tabindex="-1"></a>combined_data <span class="sc">%&gt;%</span></span>
+<span id="cb409-2"><a href="solutions.html#cb409-2" tabindex="-1"></a>  <span class="fu">select</span>(respondent_id, <span class="fu">starts_with</span>(<span class="st">&quot;autonomy&quot;</span>))</span></code></pre></div>
+<pre><code>##    respondent_id autonomy_selection autonomy_emphasis
+## 1           J001                  3                 2
+## 2           J002                  5                 5
+## 3           J003                  4                 5
+## 4           J004                  2                 1
+## 5           J005                  2                 2
+## 6           J006                  4                 4
+## 7           J007                  5                 4
+## 8           J008                  3                 4
+## 9           J009                  1                 1
+## 10          J010                  4                 5
+## 11          J011                  2                 2
+## 12          J012                  2                 3
+## 13          J013                  3                 2
+## 14          J014                  2                 3
+## 15          J015                  1                 1
+## 16          J016                  3                 4
+## 17          J017                  4                 3
+## 18          J018                  2                 3
+## 19          J019                  4                 3
+## 20          J020                  1                 1
+## 21          J021                  4                 3
+## 22          J022                  1                 1
+## 23          J023                  1                 2
+## 24          J024                  4                 3
+## 25          J025                  4                 4
+## 26          J026                  1                 1
+## 27          J027                  3                 2
+## 28          J028                  2                 2
+## 29          J029                  3                 3
+## 30          J030                  5                 5
+## 31          J031                  3                 3
+## 32          J032                  3                 4
+## 33          J033                  4                 3
+## 34          J034                  5                 5
+## 35          J035                  3                 3
+## 36          J036                  3                 4</code></pre>
+<p>Select numeric variables:</p>
+<div class="sourceCode" id="cb411"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb411-1"><a href="solutions.html#cb411-1" tabindex="-1"></a>combined_data <span class="sc">%&gt;%</span></span>
+<span id="cb411-2"><a href="solutions.html#cb411-2" tabindex="-1"></a>  <span class="fu">select</span>(<span class="fu">where</span>(is.numeric))</span></code></pre></div>
+<pre><code>##    work_experience autonomy_selection autonomy_emphasis trust_government
+## 1               30                  3                 2                4
+## 2                2                  5                 5                4
+## 3               21                  4                 5                4
+## 4               28                  2                 1                4
+## 5               13                  2                 2                5
+## 6               26                  4                 4                4
+## 7                9                  5                 4                2
+## 8                6                  3                 4                3
+## 9               17                  1                 1                1
+## 10              30                  4                 5                2
+## 11               3                  2                 2                4
+## 12              16                  2                 3                2
+## 13               1                  3                 2                4
+## 14               8                  2                 3                4
+## 15              11                  1                 1                2
+## 16              25                  3                 4                1
+## 17              31                  4                 3                1
+## 18               8                  2                 3                1
+## 19              22                  4                 3                2
+## 20               4                  1                 1                2
+## 21              18                  4                 3                3
+## 22              17                  1                 1                4
+## 23              24                  1                 2                1
+## 24              31                  4                 3                3
+## 25              27                  4                 4                5
+## 26              32                  1                 1                3
+## 27              13                  3                 2                3
+## 28              25                  2                 2                2
+## 29               5                  3                 3                5
+## 30              16                  5                 5                2
+## 31              30                  3                 3                4
+## 32               9                  3                 4                2
+## 33              16                  4                 3                3
+## 34              21                  5                 5                2
+## 35              26                  3                 3                1
+## 36              17                  3                 4                1
+##    ethics_1
+## 1         1
+## 2         4
+## 3         2
+## 4         5
+## 5         3
+## 6         2
+## 7         1
+## 8         3
+## 9         2
+## 10        5
+## 11        2
+## 12        2
+## 13        1
+## 14        1
+## 15        1
+## 16        2
+## 17        1
+## 18        2
+## 19        5
+## 20        1
+## 21        3
+## 22        1
+## 23        5
+## 24        4
+## 25        4
+## 26        2
+## 27        1
+## 28        3
+## 29        1
+## 30        2
+## 31        2
+## 32        4
+## 33        3
+## 34        4
+## 35        4
+## 36        5</code></pre>
+<p>Select character variables:</p>
+<div class="sourceCode" id="cb413"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb413-1"><a href="solutions.html#cb413-1" tabindex="-1"></a>combined_data <span class="sc">%&gt;%</span></span>
+<span id="cb413-2"><a href="solutions.html#cb413-2" tabindex="-1"></a>  <span class="fu">select</span>(<span class="fu">where</span>(is.character))</span></code></pre></div>
+<pre><code>##    respondent_id     country employment
+## 1           J001 Switzerland  Temporary
+## 2           J002     Germany  Full-time
+## 3           J003     Austria Freelancer
+## 4           J004     Germany  Temporary
+## 5           J005 Switzerland  Temporary
+## 6           J006 Switzerland  Part-time
+## 7           J007 Switzerland  Full-time
+## 8           J008     Austria  Full-time
+## 9           J009 Switzerland  Part-time
+## 10          J010 Switzerland  Part-time
+## 11          J011     Austria  Part-time
+## 12          J012     Germany  Full-time
+## 13          J013     Germany  Full-time
+## 14          J014     Germany  Full-time
+## 15          J015 Switzerland  Temporary
+## 16          J016 Switzerland  Part-time
+## 17          J017     Germany  Part-time
+## 18          J018     Austria  Part-time
+## 19          J019 Switzerland  Full-time
+## 20          J020     Germany Freelancer
+## 21          J021 Switzerland  Full-time
+## 22          J022     Austria  Full-time
+## 23          J023     Germany Freelancer
+## 24          J024     Germany Freelancer
+## 25          J025     Austria  Temporary
+## 26          J026     Austria Freelancer
+## 27          J027     Austria  Temporary
+## 28          J028     Austria Freelancer
+## 29          J029 Switzerland  Temporary
+## 30          J030     Germany Freelancer
+## 31          J031     Austria  Part-time
+## 32          J032     Austria  Temporary
+## 33          J033     Germany  Full-time
+## 34          J034 Switzerland Freelancer
+## 35          J035     Germany  Part-time
+## 36          J036     Austria  Full-time</code></pre>
+<p>Reorder columns:</p>
+<div class="sourceCode" id="cb415"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb415-1"><a href="solutions.html#cb415-1" tabindex="-1"></a>combined_data <span class="sc">%&gt;%</span></span>
+<span id="cb415-2"><a href="solutions.html#cb415-2" tabindex="-1"></a>  <span class="fu">select</span>(respondent_id, country, employment, <span class="fu">everything</span>())</span></code></pre></div>
+<pre><code>##    respondent_id     country employment work_experience autonomy_selection
+## 1           J001 Switzerland  Temporary              30                  3
+## 2           J002     Germany  Full-time               2                  5
+## 3           J003     Austria Freelancer              21                  4
+## 4           J004     Germany  Temporary              28                  2
+## 5           J005 Switzerland  Temporary              13                  2
+## 6           J006 Switzerland  Part-time              26                  4
+## 7           J007 Switzerland  Full-time               9                  5
+## 8           J008     Austria  Full-time               6                  3
+## 9           J009 Switzerland  Part-time              17                  1
+## 10          J010 Switzerland  Part-time              30                  4
+## 11          J011     Austria  Part-time               3                  2
+## 12          J012     Germany  Full-time              16                  2
+## 13          J013     Germany  Full-time               1                  3
+## 14          J014     Germany  Full-time               8                  2
+## 15          J015 Switzerland  Temporary              11                  1
+## 16          J016 Switzerland  Part-time              25                  3
+## 17          J017     Germany  Part-time              31                  4
+## 18          J018     Austria  Part-time               8                  2
+## 19          J019 Switzerland  Full-time              22                  4
+## 20          J020     Germany Freelancer               4                  1
+## 21          J021 Switzerland  Full-time              18                  4
+## 22          J022     Austria  Full-time              17                  1
+## 23          J023     Germany Freelancer              24                  1
+## 24          J024     Germany Freelancer              31                  4
+## 25          J025     Austria  Temporary              27                  4
+## 26          J026     Austria Freelancer              32                  1
+## 27          J027     Austria  Temporary              13                  3
+## 28          J028     Austria Freelancer              25                  2
+## 29          J029 Switzerland  Temporary               5                  3
+## 30          J030     Germany Freelancer              16                  5
+## 31          J031     Austria  Part-time              30                  3
+## 32          J032     Austria  Temporary               9                  3
+## 33          J033     Germany  Full-time              16                  4
+## 34          J034 Switzerland Freelancer              21                  5
+## 35          J035     Germany  Part-time              26                  3
+## 36          J036     Austria  Full-time              17                  3
+##    autonomy_emphasis trust_government ethics_1
+## 1                  2                4        1
+## 2                  5                4        4
+## 3                  5                4        2
+## 4                  1                4        5
+## 5                  2                5        3
+## 6                  4                4        2
+## 7                  4                2        1
+## 8                  4                3        3
+## 9                  1                1        2
+## 10                 5                2        5
+## 11                 2                4        2
+## 12                 3                2        2
+## 13                 2                4        1
+## 14                 3                4        1
+## 15                 1                2        1
+## 16                 4                1        2
+## 17                 3                1        1
+## 18                 3                1        2
+## 19                 3                2        5
+## 20                 1                2        1
+## 21                 3                3        3
+## 22                 1                4        1
+## 23                 2                1        5
+## 24                 3                3        4
+## 25                 4                5        4
+## 26                 1                3        2
+## 27                 2                3        1
+## 28                 2                2        3
+## 29                 3                5        1
+## 30                 5                2        2
+## 31                 3                4        2
+## 32                 4                2        4
+## 33                 3                3        3
+## 34                 5                2        4
+## 35                 3                1        4
+## 36                 4                1        5</code></pre>
+<p>Select freelancers:</p>
+<div class="sourceCode" id="cb417"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb417-1"><a href="solutions.html#cb417-1" tabindex="-1"></a>combined_data <span class="sc">%&gt;%</span></span>
+<span id="cb417-2"><a href="solutions.html#cb417-2" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">str_detect</span>(employment, <span class="st">&quot;Free&quot;</span>))</span></code></pre></div>
+<pre><code>##   respondent_id     country employment work_experience autonomy_selection
+## 1          J003     Austria Freelancer              21                  4
+## 2          J020     Germany Freelancer               4                  1
+## 3          J023     Germany Freelancer              24                  1
+## 4          J024     Germany Freelancer              31                  4
+## 5          J026     Austria Freelancer              32                  1
+## 6          J028     Austria Freelancer              25                  2
+## 7          J030     Germany Freelancer              16                  5
+## 8          J034 Switzerland Freelancer              21                  5
+##   autonomy_emphasis trust_government ethics_1
+## 1                 5                4        2
+## 2                 1                2        1
+## 3                 2                1        5
+## 4                 3                3        4
+## 5                 1                3        2
+## 6                 2                2        3
+## 7                 5                2        2
+## 8                 5                2        4</code></pre>
+<p>Select employment categories ending in <code>"time"</code>:</p>
+<div class="sourceCode" id="cb419"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb419-1"><a href="solutions.html#cb419-1" tabindex="-1"></a>combined_data <span class="sc">%&gt;%</span></span>
+<span id="cb419-2"><a href="solutions.html#cb419-2" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">str_detect</span>(employment, <span class="st">&quot;time$&quot;</span>))</span></code></pre></div>
+<pre><code>##    respondent_id     country employment work_experience autonomy_selection
+## 1           J002     Germany  Full-time               2                  5
+## 2           J006 Switzerland  Part-time              26                  4
+## 3           J007 Switzerland  Full-time               9                  5
+## 4           J008     Austria  Full-time               6                  3
+## 5           J009 Switzerland  Part-time              17                  1
+## 6           J010 Switzerland  Part-time              30                  4
+## 7           J011     Austria  Part-time               3                  2
+## 8           J012     Germany  Full-time              16                  2
+## 9           J013     Germany  Full-time               1                  3
+## 10          J014     Germany  Full-time               8                  2
+## 11          J016 Switzerland  Part-time              25                  3
+## 12          J017     Germany  Part-time              31                  4
+## 13          J018     Austria  Part-time               8                  2
+## 14          J019 Switzerland  Full-time              22                  4
+## 15          J021 Switzerland  Full-time              18                  4
+## 16          J022     Austria  Full-time              17                  1
+## 17          J031     Austria  Part-time              30                  3
+## 18          J033     Germany  Full-time              16                  4
+## 19          J035     Germany  Part-time              26                  3
+## 20          J036     Austria  Full-time              17                  3
+##    autonomy_emphasis trust_government ethics_1
+## 1                  5                4        4
+## 2                  4                4        2
+## 3                  4                2        1
+## 4                  4                3        3
+## 5                  1                1        2
+## 6                  5                2        5
+## 7                  2                4        2
+## 8                  3                2        2
+## 9                  2                4        1
+## 10                 3                4        1
+## 11                 4                1        2
+## 12                 3                1        1
+## 13                 3                1        2
+## 14                 3                2        5
+## 15                 3                3        3
+## 16                 1                4        1
+## 17                 3                4        2
+## 18                 3                3        3
+## 19                 3                1        4
+## 20                 4                1        5</code></pre>
+<p>Select both groups:</p>
+<div class="sourceCode" id="cb421"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb421-1"><a href="solutions.html#cb421-1" tabindex="-1"></a>combined_data <span class="sc">%&gt;%</span></span>
+<span id="cb421-2"><a href="solutions.html#cb421-2" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">str_detect</span>(employment, <span class="st">&quot;Free|time$&quot;</span>))</span></code></pre></div>
+<pre><code>##    respondent_id     country employment work_experience autonomy_selection
+## 1           J002     Germany  Full-time               2                  5
+## 2           J003     Austria Freelancer              21                  4
+## 3           J006 Switzerland  Part-time              26                  4
+## 4           J007 Switzerland  Full-time               9                  5
+## 5           J008     Austria  Full-time               6                  3
+## 6           J009 Switzerland  Part-time              17                  1
+## 7           J010 Switzerland  Part-time              30                  4
+## 8           J011     Austria  Part-time               3                  2
+## 9           J012     Germany  Full-time              16                  2
+## 10          J013     Germany  Full-time               1                  3
+## 11          J014     Germany  Full-time               8                  2
+## 12          J016 Switzerland  Part-time              25                  3
+## 13          J017     Germany  Part-time              31                  4
+## 14          J018     Austria  Part-time               8                  2
+## 15          J019 Switzerland  Full-time              22                  4
+## 16          J020     Germany Freelancer               4                  1
+## 17          J021 Switzerland  Full-time              18                  4
+## 18          J022     Austria  Full-time              17                  1
+## 19          J023     Germany Freelancer              24                  1
+## 20          J024     Germany Freelancer              31                  4
+## 21          J026     Austria Freelancer              32                  1
+## 22          J028     Austria Freelancer              25                  2
+## 23          J030     Germany Freelancer              16                  5
+## 24          J031     Austria  Part-time              30                  3
+## 25          J033     Germany  Full-time              16                  4
+## 26          J034 Switzerland Freelancer              21                  5
+## 27          J035     Germany  Part-time              26                  3
+## 28          J036     Austria  Full-time              17                  3
+##    autonomy_emphasis trust_government ethics_1
+## 1                  5                4        4
+## 2                  5                4        2
+## 3                  4                4        2
+## 4                  4                2        1
+## 5                  4                3        3
+## 6                  1                1        2
+## 7                  5                2        5
+## 8                  2                4        2
+## 9                  3                2        2
+## 10                 2                4        1
+## 11                 3                4        1
+## 12                 4                1        2
+## 13                 3                1        1
+## 14                 3                1        2
+## 15                 3                2        5
+## 16                 1                2        1
+## 17                 3                3        3
+## 18                 1                4        1
+## 19                 2                1        5
+## 20                 3                3        4
+## 21                 1                3        2
+## 22                 2                2        3
+## 23                 5                2        2
+## 24                 3                4        2
+## 25                 3                3        3
+## 26                 5                2        4
+## 27                 3                1        4
+## 28                 4                1        5</code></pre>
+</div>
+<div id="task-6-cumulative-challenge" class="section level3 unnumbered hasAnchor">
+<h3>Task 6: Cumulative challenge<a href="solutions.html#task-6-cumulative-challenge" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><em>Solution:</em></p>
+<div class="sourceCode" id="cb423"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb423-1"><a href="solutions.html#cb423-1" tabindex="-1"></a>advanced_summary <span class="ot">&lt;-</span> profiles <span class="sc">%&gt;%</span></span>
+<span id="cb423-2"><a href="solutions.html#cb423-2" tabindex="-1"></a>  <span class="fu">full_join</span>(attitudes, <span class="at">by =</span> <span class="st">&quot;respondent_id&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb423-3"><a href="solutions.html#cb423-3" tabindex="-1"></a>  <span class="fu">select</span>(</span>
+<span id="cb423-4"><a href="solutions.html#cb423-4" tabindex="-1"></a>    respondent_id,</span>
+<span id="cb423-5"><a href="solutions.html#cb423-5" tabindex="-1"></a>    country,</span>
+<span id="cb423-6"><a href="solutions.html#cb423-6" tabindex="-1"></a>    employment,</span>
+<span id="cb423-7"><a href="solutions.html#cb423-7" tabindex="-1"></a>    work_experience,</span>
+<span id="cb423-8"><a href="solutions.html#cb423-8" tabindex="-1"></a>    <span class="fu">starts_with</span>(<span class="st">&quot;autonomy&quot;</span>),</span>
+<span id="cb423-9"><a href="solutions.html#cb423-9" tabindex="-1"></a>    trust_government</span>
+<span id="cb423-10"><a href="solutions.html#cb423-10" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb423-11"><a href="solutions.html#cb423-11" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(employment)) <span class="sc">%&gt;%</span></span>
+<span id="cb423-12"><a href="solutions.html#cb423-12" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">str_detect</span>(employment, <span class="st">&quot;Free|time$&quot;</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb423-13"><a href="solutions.html#cb423-13" tabindex="-1"></a>  <span class="fu">group_by</span>(country) <span class="sc">%&gt;%</span></span>
+<span id="cb423-14"><a href="solutions.html#cb423-14" tabindex="-1"></a>  <span class="fu">summarize</span>(</span>
+<span id="cb423-15"><a href="solutions.html#cb423-15" tabindex="-1"></a>    <span class="at">mean_autonomy =</span> <span class="fu">mean</span>(autonomy_selection, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb423-16"><a href="solutions.html#cb423-16" tabindex="-1"></a>    <span class="at">mean_experience =</span> <span class="fu">mean</span>(work_experience, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb423-17"><a href="solutions.html#cb423-17" tabindex="-1"></a>    <span class="at">n =</span> <span class="fu">n</span>()</span>
+<span id="cb423-18"><a href="solutions.html#cb423-18" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb423-19"><a href="solutions.html#cb423-19" tabindex="-1"></a>  <span class="fu">arrange</span>(country)</span>
+<span id="cb423-20"><a href="solutions.html#cb423-20" tabindex="-1"></a></span>
+<span id="cb423-21"><a href="solutions.html#cb423-21" tabindex="-1"></a>advanced_summary</span></code></pre></div>
+<pre><code>## # A tibble: 3 × 4
+##   country     mean_autonomy mean_experience     n
+##   &lt;chr&gt;               &lt;dbl&gt;           &lt;dbl&gt; &lt;int&gt;
+## 1 Austria              2.5             19.4     5
+## 2 Germany              4.5             13       5
+## 3 Switzerland          3.33            18.2     5</code></pre>
+<p>The important part of this task is not the exact formatting of the code,
+but the sequence of decisions: <strong>join → select → filter → group → summarize
+→ arrange</strong>.</p>
 
 </div>
 </div>
@@ -702,7 +1427,7 @@ dataframe.</p>
           </div>
         </div>
       </div>
-<a href="exercise-3-dplyr.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="exercise-advanced-data-management.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 
     </div>
   </div>

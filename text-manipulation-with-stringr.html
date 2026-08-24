@@ -4,20 +4,20 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Page not found | Introduction to R</title>
-  <meta name="description" content="Page not found | Introduction to R - GESIS Training Course, 24-27 August 2026" />
+  <title> 6 Text manipulation with stringr | Introduction to R</title>
+  <meta name="description" content=" 6 Text manipulation with stringr | Introduction to R - GESIS Training Course, 24-27 August 2026" />
   <meta name="generator" content="bookdown 0.47 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Page not found | Introduction to R" />
+  <meta property="og:title" content=" 6 Text manipulation with stringr | Introduction to R" />
   <meta property="og:type" content="book" />
   
-  <meta property="og:description" content="Page not found | Introduction to R - GESIS Training Course, 24-27 August 2026" />
+  <meta property="og:description" content=" 6 Text manipulation with stringr | Introduction to R - GESIS Training Course, 24-27 August 2026" />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Page not found | Introduction to R" />
+  <meta name="twitter:title" content=" 6 Text manipulation with stringr | Introduction to R" />
   
-  <meta name="twitter:description" content="Page not found | Introduction to R - GESIS Training Course, 24-27 August 2026" />
+  <meta name="twitter:description" content=" 6 Text manipulation with stringr | Introduction to R - GESIS Training Course, 24-27 August 2026" />
   
 
 <meta name="author" content="Lara Kobilke, Department of Communication and Media Research, University of Zurich" />
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-
+<link rel="prev" href="exercise-3-dplyr.html"/>
+<link rel="next" href="exercise-4-stringr.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -387,19 +387,235 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="page-not-found" class="section level1">
-<h1>Page not found</h1>
-<p>The page you requested cannot be found (perhaps it was moved or renamed).</p>
-<p>You may want to try searching to find the page's new location, or use
-the table of contents to find the page you are looking for.</p>
+<div id="text-manipulation-with-stringr" class="section level1 hasAnchor" number="6">
+<h1><span class="header-section-number"> 6</span> Text manipulation with stringr<a href="text-manipulation-with-stringr.html#text-manipulation-with-stringr" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p><strong>After working through Tutorial 6, you’ll…</strong></p>
+<ul>
+<li>understand the concept of string patterns and regular expressions</li>
+<li>know how to search for string patterns</li>
+</ul>
+<div id="whats-stringr" class="section level2 hasAnchor" number="6.1">
+<h2><span class="header-section-number">6.1</span> What’s stringr?<a href="text-manipulation-with-stringr.html#whats-stringr" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The <code>stringr</code> package is another package of the <code>tidyverse</code> family,
+i.e., it comes pre-installed with the tidyverse. The package offers a
+neat set of functions that makes working with strings really simple for beginners. Therefore, <code>stringr</code> is a good place to start getting into text data management. A string is <em>a data type that is used to represent text rather than numbers</em>.</p>
+<div class="sourceCode" id="cb186"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb186-1"><a href="text-manipulation-with-stringr.html#cb186-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse) <span class="co"># loads stringr + dplyr and pipe operator</span></span></code></pre></div>
+</div>
+<div id="working-with-strings" class="section level2 hasAnchor" number="6.2">
+<h2><span class="header-section-number">6.2</span> Working with strings<a href="text-manipulation-with-stringr.html#working-with-strings" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Let’s create a vector containing some email addresses and print them to the console.</p>
+<div class="sourceCode" id="cb187"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb187-1"><a href="text-manipulation-with-stringr.html#cb187-1" tabindex="-1"></a>emails <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;mark@example.com&quot;</span>, <span class="st">&quot;john@example.com&quot;</span>, <span class="st">&quot;lisa@example.org&quot;</span>, <span class="st">&quot;peter@example.net&quot;</span>, <span class="st">&quot;jane@example.co.uk&quot;</span>, <span class="st">&quot;tim@example.edu&quot;</span>, <span class="st">&quot;emmajay@example.gov&quot;</span>)</span>
+<span id="cb187-2"><a href="text-manipulation-with-stringr.html#cb187-2" tabindex="-1"></a></span>
+<span id="cb187-3"><a href="text-manipulation-with-stringr.html#cb187-3" tabindex="-1"></a>emails</span></code></pre></div>
+<pre><code>## [1] &quot;mark@example.com&quot;    &quot;john@example.com&quot;    &quot;lisa@example.org&quot;   
+## [4] &quot;peter@example.net&quot;   &quot;jane@example.co.uk&quot;  &quot;tim@example.edu&quot;    
+## [7] &quot;emmajay@example.gov&quot;</code></pre>
+<p>We can use the <code>str_length()</code> function to find out how many characters each email address contains.</p>
+<div class="sourceCode" id="cb189"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb189-1"><a href="text-manipulation-with-stringr.html#cb189-1" tabindex="-1"></a><span class="fu">str_length</span>(emails)</span></code></pre></div>
+<pre><code>## [1] 16 16 16 17 18 15 19</code></pre>
+<p>That was easy. Next, we want to join multiple strings into a single
+string. We will use the <code>str_c()</code> function.</p>
+<div class="sourceCode" id="cb191"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb191-1"><a href="text-manipulation-with-stringr.html#cb191-1" tabindex="-1"></a><span class="fu">str_c</span>(emails, <span class="at">collapse =</span> <span class="st">&quot; and &quot;</span>)</span></code></pre></div>
+<pre><code>## [1] &quot;mark@example.com and john@example.com and lisa@example.org and peter@example.net and jane@example.co.uk and tim@example.edu and emmajay@example.gov&quot;</code></pre>
+<div class="sourceCode" id="cb193"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb193-1"><a href="text-manipulation-with-stringr.html#cb193-1" tabindex="-1"></a><span class="co"># If collapse is not NULL, it will be inserted between elements of the result, here: and</span></span></code></pre></div>
+<p>You can also change the order of the <code>str_c</code> function:</p>
+<div class="sourceCode" id="cb194"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb194-1"><a href="text-manipulation-with-stringr.html#cb194-1" tabindex="-1"></a><span class="fu">str_c</span>(<span class="st">&quot;My favourite correspondent is: &quot;</span>, emails, <span class="at">collapse =</span> <span class="cn">NULL</span>) </span></code></pre></div>
+<pre><code>## [1] &quot;My favourite correspondent is: mark@example.com&quot;   
+## [2] &quot;My favourite correspondent is: john@example.com&quot;   
+## [3] &quot;My favourite correspondent is: lisa@example.org&quot;   
+## [4] &quot;My favourite correspondent is: peter@example.net&quot;  
+## [5] &quot;My favourite correspondent is: jane@example.co.uk&quot; 
+## [6] &quot;My favourite correspondent is: tim@example.edu&quot;    
+## [7] &quot;My favourite correspondent is: emmajay@example.gov&quot;</code></pre>
+<p>If we want to extract substrings from a character vector, for example, keeping only the user part of each email address, we can use the <code>str_sub()</code> function.</p>
+<div class="sourceCode" id="cb196"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb196-1"><a href="text-manipulation-with-stringr.html#cb196-1" tabindex="-1"></a><span class="fu">str_sub</span>(emails, <span class="at">start =</span> <span class="dv">1</span>, <span class="at">end =</span> <span class="fu">str_locate</span>(emails, <span class="st">&quot;@&quot;</span>)[, <span class="st">&quot;start&quot;</span>] <span class="sc">-</span> <span class="dv">1</span>)</span></code></pre></div>
+<pre><code>## [1] &quot;mark&quot;    &quot;john&quot;    &quot;lisa&quot;    &quot;peter&quot;   &quot;jane&quot;    &quot;tim&quot;     &quot;emmajay&quot;</code></pre>
+</div>
+<div id="working-with-string-patterns" class="section level2 hasAnchor" number="6.3">
+<h2><span class="header-section-number">6.3</span> Working with string patterns<a href="text-manipulation-with-stringr.html#working-with-string-patterns" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Often we want to search for certain string patterns in a text document.
+<strong>String patterns</strong> are character sequences (for instance, letter,
+numbers, or special characters). Suppose we have some email addresses where ‘@’ was wrongly replaced with ‘#’.</p>
+<div class="sourceCode" id="cb198"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb198-1"><a href="text-manipulation-with-stringr.html#cb198-1" tabindex="-1"></a>wrong_emails <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;mark#example.com&quot;</span>, <span class="st">&quot;john@example.com&quot;</span>, <span class="st">&quot;lisa@example.org&quot;</span>, <span class="st">&quot;peter@example.net&quot;</span>, <span class="st">&quot;jane@example.co.uk&quot;</span>, <span class="st">&quot;tim@example.edu&quot;</span>, <span class="st">&quot;emmajay@example.gov&quot;</span>)</span></code></pre></div>
+<p>We can search for the string pattern “#” and replace it with “@” automatically. Let’s first identify the emails that contain ‘#’ using <code>str_detect()</code>.</p>
+<div class="sourceCode" id="cb199"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb199-1"><a href="text-manipulation-with-stringr.html#cb199-1" tabindex="-1"></a><span class="fu">str_detect</span>(wrong_emails, <span class="st">&quot;#&quot;</span>)</span></code></pre></div>
+<pre><code>## [1]  TRUE FALSE FALSE FALSE FALSE FALSE FALSE</code></pre>
+<p>We can extract the email addresses that contain ‘#’ using <code>str_subset()</code>.</p>
+<div class="sourceCode" id="cb201"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb201-1"><a href="text-manipulation-with-stringr.html#cb201-1" tabindex="-1"></a><span class="fu">str_subset</span>(wrong_emails, <span class="st">&quot;#&quot;</span>)</span></code></pre></div>
+<pre><code>## [1] &quot;mark#example.com&quot;</code></pre>
+<p>We can fix the wrong email addresses using the <code>str_replace()</code> function.</p>
+<div class="sourceCode" id="cb203"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb203-1"><a href="text-manipulation-with-stringr.html#cb203-1" tabindex="-1"></a>corrected_emails <span class="ot">&lt;-</span> <span class="fu">str_replace</span>(wrong_emails, <span class="st">&quot;#&quot;</span>, <span class="st">&quot;@&quot;</span>)</span>
+<span id="cb203-2"><a href="text-manipulation-with-stringr.html#cb203-2" tabindex="-1"></a></span>
+<span id="cb203-3"><a href="text-manipulation-with-stringr.html#cb203-3" tabindex="-1"></a>corrected_emails</span></code></pre></div>
+<pre><code>## [1] &quot;mark@example.com&quot;    &quot;john@example.com&quot;    &quot;lisa@example.org&quot;   
+## [4] &quot;peter@example.net&quot;   &quot;jane@example.co.uk&quot;  &quot;tim@example.edu&quot;    
+## [7] &quot;emmajay@example.gov&quot;</code></pre>
+<p>As a final step, we can split an email address into user and domain parts based on the ‘@’ character using the <code>str_split()</code> function:</p>
+<div class="sourceCode" id="cb205"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb205-1"><a href="text-manipulation-with-stringr.html#cb205-1" tabindex="-1"></a><span class="fu">str_split</span>(corrected_emails, <span class="st">&quot;@&quot;</span>)</span></code></pre></div>
+<pre><code>## [[1]]
+## [1] &quot;mark&quot;        &quot;example.com&quot;
+## 
+## [[2]]
+## [1] &quot;john&quot;        &quot;example.com&quot;
+## 
+## [[3]]
+## [1] &quot;lisa&quot;        &quot;example.org&quot;
+## 
+## [[4]]
+## [1] &quot;peter&quot;       &quot;example.net&quot;
+## 
+## [[5]]
+## [1] &quot;jane&quot;          &quot;example.co.uk&quot;
+## 
+## [[6]]
+## [1] &quot;tim&quot;         &quot;example.edu&quot;
+## 
+## [[7]]
+## [1] &quot;emmajay&quot;     &quot;example.gov&quot;</code></pre>
+</div>
+<div id="working-with-regular-expressions" class="section level2 hasAnchor" number="6.4">
+<h2><span class="header-section-number">6.4</span> Working with regular expressions<a href="text-manipulation-with-stringr.html#working-with-regular-expressions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Often, we want to match more complicated string patterns than a simple
+“#”. For example, we might wish to detect all strings in our mail list that do start with “L”, because we want to email those people.</p>
+<p>To search and match complex string patterns, we need regular
+expressions. <strong>Regular expressions</strong> (short: <em>regex</em>) are a concise
+language for describing patterns of text. Regex should not be taken
+literally, but have a non-literal meaning.</p>
+<div id="anchors-alternates-and-quantifiers" class="section level3 hasAnchor" number="6.4.1">
+<h3><span class="header-section-number">6.4.1</span> Anchors, alternates, and quantifiers<a href="text-manipulation-with-stringr.html#anchors-alternates-and-quantifiers" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="anchors" class="section level4 hasAnchor" number="6.4.1.1">
+<h4><span class="header-section-number">6.4.1.1</span> Anchors<a href="text-manipulation-with-stringr.html#anchors" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Let’s search for all email addresses that start with the letter ‘j’. To do this, we will first learn what “anchors” are. Anchors are used to match the beginning or end of a string, i.e., they denote the start or end of a pattern and are usually used in combination with other patterns. First, let’s look for all strings that start with the
+letter <em>j</em> using the <code>^</code> (start of string) anchor.</p>
+<div class="sourceCode" id="cb207"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb207-1"><a href="text-manipulation-with-stringr.html#cb207-1" tabindex="-1"></a><span class="fu">str_detect</span>(emails, <span class="st">&quot;^j&quot;</span>) <span class="co"># ^ stands for &quot;start of string&quot;, i.e. we are matching for strings that start with the letter j</span></span></code></pre></div>
+<pre><code>## [1] FALSE  TRUE FALSE FALSE  TRUE FALSE FALSE</code></pre>
+<p>To find all emails that end with “.com”:</p>
+<div class="sourceCode" id="cb209"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb209-1"><a href="text-manipulation-with-stringr.html#cb209-1" tabindex="-1"></a><span class="fu">str_detect</span>(emails, <span class="st">&quot;com$&quot;</span>) <span class="co"># $ stands for &quot;end of string&quot;, i.e. we are matching for strings that end with the letters com</span></span></code></pre></div>
+<pre><code>## [1]  TRUE  TRUE FALSE FALSE FALSE FALSE FALSE</code></pre>
+<p>Please, note the difference to not matching these two regexes (<code>^</code> and <code>$</code>), but the simple string pattern “<em>j</em>”:</p>
+<div class="sourceCode" id="cb211"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb211-1"><a href="text-manipulation-with-stringr.html#cb211-1" tabindex="-1"></a><span class="fu">str_detect</span>(emails, <span class="st">&quot;j&quot;</span>) <span class="co"># matches all strings that contain the letter j at any position</span></span></code></pre></div>
+<pre><code>## [1] FALSE  TRUE FALSE FALSE  TRUE FALSE  TRUE</code></pre>
+<p>Finally, you should also not confuse “<em>^j</em>” with “<em>[^j]</em>”, because <code>[^]</code> stands for “anything but” in regex language.</p>
+<div class="sourceCode" id="cb213"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb213-1"><a href="text-manipulation-with-stringr.html#cb213-1" tabindex="-1"></a><span class="fu">str_detect</span>(emails, <span class="st">&quot;[^j]&quot;</span>) <span class="co"># matches all strings that contain any letters different from j(s)</span></span></code></pre></div>
+<pre><code>## [1] TRUE TRUE TRUE TRUE TRUE TRUE TRUE</code></pre>
+</div>
+<div id="alternates" class="section level4 hasAnchor" number="6.4.1.2">
+<h4><span class="header-section-number">6.4.1.2</span> Alternates<a href="text-manipulation-with-stringr.html#alternates" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Next, let’s look at “alternates” in regex. Alternates are used to match multiple characters in a single position. They are specified in square brackets, with a list of characters that could be matched. For example, the regular expression “[mj]ohn” will match any string that starts with m, or j, followed by ohn. This means it will match both <em>mohn</em> and <em>john.</em></p>
+<p>Let’s look at our fruits again and learn about the <strong>very</strong> powerful “match any one of” regex <code>[]</code>. We will now try to find all the emails that contain the letter m or the letter j at any position of the string.</p>
+<div class="sourceCode" id="cb215"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb215-1"><a href="text-manipulation-with-stringr.html#cb215-1" tabindex="-1"></a><span class="fu">str_detect</span>(emails, <span class="st">&quot;[mj]&quot;</span>) <span class="co"># matches all strings that contain either the letter m or the letter j</span></span></code></pre></div>
+<pre><code>## [1] TRUE TRUE TRUE TRUE TRUE TRUE TRUE</code></pre>
+<p>Next, we can match all emails that contain letters that range between p to z in the ABC. We will need to use the range operator <code>[-]</code>:</p>
+<div class="sourceCode" id="cb217"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb217-1"><a href="text-manipulation-with-stringr.html#cb217-1" tabindex="-1"></a><span class="fu">str_detect</span>(emails, <span class="st">&quot;[j-m]&quot;</span>) <span class="co"># matches all strings that contain either the letter j, k, l, m</span></span></code></pre></div>
+<pre><code>## [1] TRUE TRUE TRUE TRUE TRUE TRUE TRUE</code></pre>
+</div>
+<div id="quantifiers" class="section level4 hasAnchor" number="6.4.1.3">
+<h4><span class="header-section-number">6.4.1.3</span> Quantifiers<a href="text-manipulation-with-stringr.html#quantifiers" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>The <code>?</code> operator (zero or one) <code>*</code> operator (zero or more), the <code>+</code> operator (one or more), and the <code>{n}</code> operator (exactly n) are also handy. These regex are called “quantifiers” and are used to specify how many of the preceding characters should be matched in a string.</p>
+<div class="sourceCode" id="cb219"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb219-1"><a href="text-manipulation-with-stringr.html#cb219-1" tabindex="-1"></a><span class="fu">str_detect</span>(emails, <span class="st">&quot;a?&quot;</span>) <span class="co"># matches all strings that contain zero or one a</span></span></code></pre></div>
+<pre><code>## [1] TRUE TRUE TRUE TRUE TRUE TRUE TRUE</code></pre>
+<div class="sourceCode" id="cb221"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb221-1"><a href="text-manipulation-with-stringr.html#cb221-1" tabindex="-1"></a><span class="fu">str_detect</span>(emails, <span class="st">&quot;r*&quot;</span>) <span class="co"># matches all strings that contain zero or more a</span></span></code></pre></div>
+<pre><code>## [1] TRUE TRUE TRUE TRUE TRUE TRUE TRUE</code></pre>
+<div class="sourceCode" id="cb223"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb223-1"><a href="text-manipulation-with-stringr.html#cb223-1" tabindex="-1"></a><span class="fu">str_detect</span>(emails, <span class="st">&quot;r+&quot;</span>) <span class="co"># matches all strings that contain one or more rs</span></span></code></pre></div>
+<pre><code>## [1]  TRUE FALSE  TRUE  TRUE FALSE FALSE FALSE</code></pre>
+<p>Lastly, let’s find all emails that contain exactly two a’s:</p>
+<div class="sourceCode" id="cb225"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb225-1"><a href="text-manipulation-with-stringr.html#cb225-1" tabindex="-1"></a><span class="fu">str_detect</span>(emails, <span class="st">&quot;r{2}&quot;</span>) <span class="co"># matches all strings that contain exactly two as</span></span></code></pre></div>
+<pre><code>## [1] FALSE FALSE FALSE FALSE FALSE FALSE FALSE</code></pre>
+<p>This looks great! We now know what what anchors, alternates, and quantifiers in regex are!</p>
+</div>
+</div>
+<div id="look-arounds-and-groups" class="section level3 hasAnchor" number="6.4.2">
+<h3><span class="header-section-number">6.4.2</span> Look arounds and groups<a href="text-manipulation-with-stringr.html#look-arounds-and-groups" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Another useful type of regex are “look arounds” and “groups”. Look arounds are used to match patterns before or after a certain character or pattern, and groups are used to group elements of a pattern and specify the order in which they should be evaluated.</p>
+<p>We can leverage look arounds to find certain characters or patterns in our emails. For example, let’s say we want to find all emails where the letter ‘a’ is immediately followed by the letter ‘c’. This is where the “followed by” regex (<code>?=</code>) comes in.</p>
+<div class="sourceCode" id="cb227"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb227-1"><a href="text-manipulation-with-stringr.html#cb227-1" tabindex="-1"></a><span class="fu">str_detect</span>(emails, <span class="st">&quot;a(?=c)&quot;</span>) <span class="co"># matches all strings that contain an &#39;a&#39; followed by a &#39;c&#39;</span></span></code></pre></div>
+<pre><code>## [1] FALSE FALSE FALSE FALSE FALSE FALSE FALSE</code></pre>
+<p>Alternatively, we can use a “not followed by” look around (?!). For instance, let’s find all emails where ‘a’ is not followed by ‘c’:</p>
+<div class="sourceCode" id="cb229"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb229-1"><a href="text-manipulation-with-stringr.html#cb229-1" tabindex="-1"></a><span class="fu">str_detect</span>(emails, <span class="st">&quot;a(?!c)&quot;</span>) <span class="co"># matches all strings that contain an &#39;a&#39; not followed by a &#39;c&#39;</span></span></code></pre></div>
+<pre><code>## [1] TRUE TRUE TRUE TRUE TRUE TRUE TRUE</code></pre>
+<p>Another useful look around is “preceded by” (?&lt;=). This look around finds patterns that are preceded by a specific string or character. As an example, we can find all emails where ‘r’ is preceded by ‘e’:</p>
+<div class="sourceCode" id="cb231"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb231-1"><a href="text-manipulation-with-stringr.html#cb231-1" tabindex="-1"></a><span class="fu">str_detect</span>(emails, <span class="st">&quot;(?&lt;=e)r&quot;</span>) <span class="co"># matches all strings that contain an &#39;r&#39; preceeded by an &#39;e&#39;</span></span></code></pre></div>
+<pre><code>## [1] FALSE FALSE FALSE  TRUE FALSE FALSE FALSE</code></pre>
+<p>We can also negate this into “not preceeded by” with the help of !:</p>
+<div class="sourceCode" id="cb233"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb233-1"><a href="text-manipulation-with-stringr.html#cb233-1" tabindex="-1"></a><span class="fu">str_detect</span>(emails, <span class="st">&quot;(?&lt;!e)r&quot;</span>) <span class="co"># matches all strings that contain an &#39;r&#39; that is not preceeded by an &#39;e&#39;</span></span></code></pre></div>
+<pre><code>## [1]  TRUE FALSE  TRUE FALSE FALSE FALSE FALSE</code></pre>
+<p>Next, let’s discuss “groups”. These are used to group elements of a pattern and specify the order in which they should be evaluated.</p>
+<div class="sourceCode" id="cb235"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb235-1"><a href="text-manipulation-with-stringr.html#cb235-1" tabindex="-1"></a><span class="fu">str_detect</span>(emails, <span class="st">&quot;(e|a)r&quot;</span>) <span class="co"># matches all strings that contain an &#39;e&#39; or an &#39;a&#39; followed by an &#39;r&#39;</span></span></code></pre></div>
+<pre><code>## [1]  TRUE FALSE FALSE  TRUE FALSE FALSE FALSE</code></pre>
+<p>Remember the “alternates” regex we discussed above? We can also use it here:</p>
+<div class="sourceCode" id="cb237"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb237-1"><a href="text-manipulation-with-stringr.html#cb237-1" tabindex="-1"></a><span class="fu">str_detect</span>(emails, <span class="st">&quot;[ea]r&quot;</span>) <span class="co"># matches all strings that contain an &#39;e&#39; or an &#39;a&#39; which are followed by an &#39;r&#39;</span></span></code></pre></div>
+<pre><code>## [1]  TRUE FALSE FALSE  TRUE FALSE FALSE FALSE</code></pre>
+<p>However, groups can become handy if you need to chain multiple groups for complex patterns. This is more advanced, but it’s worth knowing about.</p>
+<p>This was a lot, so here comes an overview / summary of all the regex (screenshot of the <code>stringr</code> cheat sheet):</p>
+<table>
+<colgroup>
+<col width="100%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td align="left"><em>Screenshot of anchors, alternates, quantifiers, look arounds, and groups (stringr cheat sheet):</em></td>
+</tr>
+<tr class="even">
+<td align="left"><img src="images/stringr2.JPG" /></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="match-specific-types-of-characters" class="section level3 hasAnchor" number="6.4.3">
+<h3><span class="header-section-number">6.4.3</span> Match specific types of characters<a href="text-manipulation-with-stringr.html#match-specific-types-of-characters" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>There is one last thing I would like to teach you. It’s how to match specific types of characters (e.g., numbers, space symbols, etc.):</p>
+<div class="sourceCode" id="cb239"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb239-1"><a href="text-manipulation-with-stringr.html#cb239-1" tabindex="-1"></a><span class="fu">str_detect</span>(emails, <span class="st">&quot;[:digit:]&quot;</span>) <span class="co"># matches all strings that contain a number</span></span></code></pre></div>
+<pre><code>## [1] FALSE FALSE FALSE FALSE FALSE FALSE FALSE</code></pre>
+<p>We can also detect email addresses that falsely contain a space symbol:</p>
+<div class="sourceCode" id="cb241"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb241-1"><a href="text-manipulation-with-stringr.html#cb241-1" tabindex="-1"></a><span class="fu">str_detect</span>(emails, <span class="st">&quot;[:space:]&quot;</span>) <span class="co"># matches all strings that contain a space</span></span></code></pre></div>
+<pre><code>## [1] FALSE FALSE FALSE FALSE FALSE FALSE FALSE</code></pre>
+<p>Or detext email adresses that contain ANY kind of letter / symbol:</p>
+<div class="sourceCode" id="cb243"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb243-1"><a href="text-manipulation-with-stringr.html#cb243-1" tabindex="-1"></a><span class="fu">str_detect</span>(emails, <span class="st">&quot;.&quot;</span>) <span class="co"># . matches any character</span></span></code></pre></div>
+<pre><code>## [1] TRUE TRUE TRUE TRUE TRUE TRUE TRUE</code></pre>
+<table>
+<colgroup>
+<col width="100%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td align="left"><em>Screenshot of types of characters that can be matched in stringr (stringr cheat sheet):</em></td>
+</tr>
+<tr class="even">
+<td align="left"><img src="images/stringr1.JPG" /></td>
+</tr>
+</tbody>
+</table>
+<p>Finished! Repeat and practice these commands and you will become a real expert on regular expressions! This tutorial provided an in-depth overview of regular expressions, with only a very few aspects left to explore. If you feel like you need to look up some regular expressions, you can find them in this awesome <a href="https://github.com/rstudio/cheatsheets/blob/main/strings.pdf">stringr cheat sheet</a>.</p>
+</div>
+</div>
+<div id="take-aways-4" class="section level2 hasAnchor" number="6.5">
+<h2><span class="header-section-number">6.5</span> Take-Aways<a href="text-manipulation-with-stringr.html#take-aways-4" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li><strong>String patterns &amp; RegEx</strong>: String patterns are sequences of
+characters; regular expressions are a type of abstract, generalized string pattern used
+to match or detect other string patterns in texts.</li>
+<li><strong>Important regular expressions</strong>: Anchors, alternates, quantifiers, look arounds and groups.
+The best overview of all regex options can be found in the <a href="https://github.com/rstudio/cheatsheets/blob/main/strings.pdf">stringr cheat sheet</a>.</li>
+</ul>
+</div>
+<div id="additional-tutorials-4" class="section level2 hasAnchor" number="6.6">
+<h2><span class="header-section-number">6.6</span> Additional tutorials<a href="text-manipulation-with-stringr.html#additional-tutorials-4" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>You still have questions? The following tutorials, books, &amp; tools may
+help you:</p>
+<ul>
+<li><a href="https://regexr.com/">Regexr - Learn, build, and test RegEx</a></li>
+<li><a href="https://bookdown.org/valerie_hase/TextasData_HS2021/tutorial-9-searching-manipulating-string-patterns.html">Text as Data by V. Hase, Tutorial 9</a></li>
+</ul>
+<p>Now that you know the basics of the <code>stringr</code> package, we can get started with some exercises: <a href="exercise-4-stringr.html#exercise-4-stringr">Exercise 4: stringr</a></p>
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-
-
+<a href="exercise-3-dplyr.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="exercise-4-stringr.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -430,7 +646,7 @@ gitbook.start({
     "size": 2
   },
   "edit": {
-    "link": "https://lkobilke.github.io/Intro_to_R/edit/main/%s",
+    "link": "https://lkobilke.github.io/Intro_to_R/edit/main/index.Rmd",
     "text": "Edit"
   },
   "history": {

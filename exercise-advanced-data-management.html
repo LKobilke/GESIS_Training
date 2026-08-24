@@ -4,20 +4,20 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Page not found | Introduction to R</title>
-  <meta name="description" content="Page not found | Introduction to R - GESIS Training Course, 24-27 August 2026" />
+  <title>Exercise 5: Advanced data management | Introduction to R</title>
+  <meta name="description" content="Exercise 5: Advanced data management | Introduction to R - GESIS Training Course, 24-27 August 2026" />
   <meta name="generator" content="bookdown 0.47 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Page not found | Introduction to R" />
+  <meta property="og:title" content="Exercise 5: Advanced data management | Introduction to R" />
   <meta property="og:type" content="book" />
   
-  <meta property="og:description" content="Page not found | Introduction to R - GESIS Training Course, 24-27 August 2026" />
+  <meta property="og:description" content="Exercise 5: Advanced data management | Introduction to R - GESIS Training Course, 24-27 August 2026" />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Page not found | Introduction to R" />
+  <meta name="twitter:title" content="Exercise 5: Advanced data management | Introduction to R" />
   
-  <meta name="twitter:description" content="Page not found | Introduction to R - GESIS Training Course, 24-27 August 2026" />
+  <meta name="twitter:description" content="Exercise 5: Advanced data management | Introduction to R - GESIS Training Course, 24-27 August 2026" />
   
 
 <meta name="author" content="Lara Kobilke, Department of Communication and Media Research, University of Zurich" />
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-
+<link rel="prev" href="advanced-data-management.html"/>
+<link rel="next" href="solutions.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -387,19 +387,188 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="page-not-found" class="section level1">
-<h1>Page not found</h1>
-<p>The page you requested cannot be found (perhaps it was moved or renamed).</p>
-<p>You may want to try searching to find the page's new location, or use
-the table of contents to find the page you are looking for.</p>
+<div id="exercise-advanced-data-management" class="section level1 unnumbered hasAnchor">
+<h1>Exercise 5: Advanced data management<a href="exercise-advanced-data-management.html#exercise-advanced-data-management" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p><strong>After working through this exercise, you’ll…</strong></p>
+<ul>
+<li>import and combine several files without copying and pasting code;</li>
+<li>clean inconsistent variable names before combining datasets;</li>
+<li>choose an appropriate <code>dplyr</code> join for a research question;</li>
+<li>reshape data from wide to long format and back again;</li>
+<li>select variables with <code>tidyselect</code> helpers;</li>
+<li>select observations with <code>stringr::str_detect()</code>;</li>
+<li>combine several advanced data-management steps in one workflow.</li>
+</ul>
+<p>For this exercise, we will work with <strong>fictional survey data</strong> created
+specifically for this course. None of the files contain real respondents.</p>
+<p>Download the practice-data package and unzip it into the <strong>root folder of
+your R Project</strong>. Keep the folder structure unchanged. After unzipping,
+you should have a folder called:</p>
+<pre class="text"><code>data/advanced_practice/</code></pre>
+<p>Before starting, load the packages that we need:</p>
+<div class="sourceCode" id="cb314"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb314-1"><a href="exercise-advanced-data-management.html#cb314-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div>
+<div id="task-1-4" class="section level2 unnumbered hasAnchor">
+<h2>Task 1<a href="exercise-advanced-data-management.html#task-1-4" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The folder <code>data/advanced_practice/multiple_files</code> contains three
+semicolon-separated CSV files. All three files contain the same variables,
+but each file contains different respondents.</p>
+<p>Your goal is to combine them into <strong>one data frame without importing the
+files one by one</strong>.</p>
+<ol style="list-style-type: decimal">
+<li>Save the relative folder path in an object called <code>path</code>.</li>
+<li>Use <code>list.files()</code> to find all CSV files in the folder. Store their full
+relative paths in <code>file_paths</code>.</li>
+<li>Use <code>map()</code> and <code>read.csv2()</code> to read all files.</li>
+<li>Combine all files with <code>bind_rows()</code> and save the result as
+<code>combined_data</code>.</li>
+<li>Use <code>nrow()</code>, <code>ncol()</code>, and <code>names()</code> to inspect the result.</li>
+</ol>
+<p><strong>Questions:</strong></p>
+<ul>
+<li>How many files did R find?</li>
+<li>How many respondents are contained in the combined dataset?</li>
+<li>How many variables are contained in the combined dataset?</li>
+</ul>
+<p><strong>Challenge:</strong> Try to perform the import and the <code>bind_rows()</code> step in one
+single pipe.</p>
+</div>
+<div id="task-2-4" class="section level2 unnumbered hasAnchor">
+<h2>Task 2<a href="exercise-advanced-data-management.html#task-2-4" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Real research data are not always perfectly standardized. The folder
+<code>data/advanced_practice/multiple_files_messy</code> contains three additional
+CSV files. They are supposed to contain the same variables, but their
+column names are inconsistent.</p>
+<p><strong>Do not manually edit the CSV files.</strong> Fix the problem in R.</p>
+<ol style="list-style-type: decimal">
+<li>Create a vector called <code>messy_paths</code> containing all CSV file paths in
+this folder.</li>
+<li>Read all files with <code>map()</code> and <code>read.csv2()</code>. Use <code>check.names = FALSE</code>
+so that R does not automatically modify the inconsistent headers before
+you clean them yourself.</li>
+<li>Before combining them, standardize the column names so that they are:
+<ul>
+<li>lowercase;</li>
+<li>free of leading or trailing spaces;</li>
+<li>written with underscores instead of spaces.</li>
+</ul></li>
+<li>Combine the cleaned files with <code>bind_rows()</code> and save the result as
+<code>combined_messy</code>.</li>
+<li>Inspect the resulting column names with <code>names()</code>.</li>
+<li>Determine how many missing values occur in <code>trust_government</code>.</li>
+</ol>
+<p><strong>Hint:</strong> The following Base R functions may help when cleaning names:
+<code>tolower()</code>, <code>trimws()</code>, and <code>gsub()</code>. If you need help, you can always use <code>help()</code>,
+e.g., <code>help(tolower())</code>.</p>
+<p><strong>Think about it:</strong> Why can <code>bind_rows()</code> still combine the datasets when
+one of the files does not contain every variable?</p>
+</div>
+<div id="task-3-4" class="section level2 unnumbered hasAnchor">
+<h2>Task 3<a href="exercise-advanced-data-management.html#task-3-4" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The folder <code>data/advanced_practice/joins</code> contains two datasets:</p>
+<ul>
+<li><code>journalist_profiles.csv</code> contains demographic and employment
+information;</li>
+<li><code>journalist_attitudes.csv</code> contains attitude measures.</li>
+</ul>
+<p>Import both files as <code>profiles</code> and <code>attitudes</code>.</p>
+<p>Both datasets use <code>respondent_id</code> as their unique identifier, but they do
+<strong>not</strong> contain exactly the same respondents.</p>
+<p>Create four new datasets by joining <code>profiles</code> and <code>attitudes</code> with:</p>
+<ol style="list-style-type: decimal">
+<li><code>inner_join()</code></li>
+<li><code>left_join()</code></li>
+<li><code>right_join()</code></li>
+<li><code>full_join()</code></li>
+</ol>
+<p>Use <code>nrow()</code> to compare the resulting datasets.</p>
+<p>Before running the joins, predict which join you would use if you wanted
+to:</p>
+<ul>
+<li>keep only respondents contained in <strong>both</strong> datasets;</li>
+<li>keep every respondent from <code>profiles</code>;</li>
+<li>keep every respondent from <code>attitudes</code>;</li>
+<li>keep every respondent contained in <strong>either</strong> dataset.</li>
+</ul>
+<p><strong>Bonus:</strong> Use <code>anti_join()</code> to identify respondents that appear in
+<code>profiles</code> but not in <code>attitudes</code>.</p>
+</div>
+<div id="task-4-3" class="section level2 unnumbered hasAnchor">
+<h2>Task 4<a href="exercise-advanced-data-management.html#task-4-3" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The file <code>data/advanced_practice/panel/journalist_panel_wide.csv</code> contains
+fictional measurements from two survey waves.</p>
+<p>Import the file as <code>panel_wide</code> and inspect its structure.</p>
+<p>The variables follow a naming pattern such as:</p>
+<pre class="text"><code>autonomy_selection_w1
+autonomy_selection_w2
+trust_government_w1
+trust_government_w2</code></pre>
+<p>Use <code>pivot_longer()</code> to transform the dataset into a long format with the
+following columns:</p>
+<ul>
+<li><code>respondent_id</code></li>
+<li><code>country</code></li>
+<li><code>measure</code></li>
+<li><code>wave</code></li>
+<li><code>score</code></li>
+</ul>
+<p>Store the result as <code>panel_long</code>.</p>
+<p><strong>Hint:</strong> You can use <code>names_to = c("measure", "wave")</code> together with
+<code>names_pattern</code>.</p>
+<p>Next, transform <code>panel_long</code> back into wide format with <code>pivot_wider()</code> and
+store the result as <code>panel_wide_again</code>.</p>
+<p>Compare the dimensions of the wide and long datasets using <code>dim()</code>. If you need help, you can always use <code>help()</code>,
+e.g., <code>help(dim())</code>.</p>
+</div>
+<div id="task-5-1" class="section level2 unnumbered hasAnchor">
+<h2>Task 5<a href="exercise-advanced-data-management.html#task-5-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Return to <code>combined_data</code> from Task 1.</p>
+<p>Solve the following tasks with <code>select()</code> and tidyselect helpers:</p>
+<ol style="list-style-type: decimal">
+<li>Select <code>respondent_id</code> and all variables whose names start with
+<code>"autonomy"</code>.</li>
+<li>Select all numeric variables.</li>
+<li>Select all character variables.</li>
+<li>Reorder the complete dataset so that <code>respondent_id</code>, <code>country</code>, and
+<code>employment</code> appear first, followed by all remaining variables.</li>
+</ol>
+<p>Then use <code>filter()</code> and <code>str_detect()</code> to:</p>
+<ol start="5" style="list-style-type: decimal">
+<li>select all freelancers;</li>
+<li>select all employment categories whose labels end in <code>"time"</code>;</li>
+<li>select everyone who is either a freelancer <strong>or</strong> whose employment
+category ends in <code>"time"</code>.</li>
+</ol>
+</div>
+<div id="task-6-1" class="section level2 unnumbered hasAnchor">
+<h2>Task 6<a href="exercise-advanced-data-management.html#task-6-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Now combine several of the techniques from this chapter.</p>
+<p>Starting with the two datasets from Task 3:</p>
+<ol style="list-style-type: decimal">
+<li>join <code>profiles</code> and <code>attitudes</code> so that <strong>all respondents from either
+dataset are retained</strong>;</li>
+<li>keep <code>respondent_id</code>, <code>country</code>, <code>employment</code>, <code>work_experience</code>, and
+all variables whose names start with <code>"autonomy"</code>, plus
+<code>trust_government</code>;</li>
+<li>keep only respondents for whom <code>employment</code> is available;</li>
+<li>keep only freelancers or employment categories ending in <code>"time"</code>;</li>
+<li>group the data by <code>country</code>;</li>
+<li>calculate the mean of <code>autonomy_selection</code> and <code>trust_government</code>,
+removing missing values;</li>
+<li>also calculate the number of respondents in each country;</li>
+<li>arrange the result alphabetically by country.</li>
+</ol>
+<p>Try to write the complete solution as <strong>one continuous pipe</strong>.</p>
+<p>When you’re ready to look at the solutions, you can find them here:
+<a href="solutions.html#solutions-advanced-data-management">Solutions for Exercise 5</a>.</p>
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-
-
+<a href="advanced-data-management.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="solutions.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -430,7 +599,7 @@ gitbook.start({
     "size": 2
   },
   "edit": {
-    "link": "https://lkobilke.github.io/Intro_to_R/edit/main/%s",
+    "link": "https://lkobilke.github.io/Intro_to_R/edit/main/index.Rmd",
     "text": "Edit"
   },
   "history": {
