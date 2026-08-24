@@ -4,20 +4,20 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Page not found | Introduction to R</title>
-  <meta name="description" content="Page not found | Introduction to R - GESIS Training Course, 24-27 August 2026" />
+  <title>Exercise 2: Base R | Introduction to R</title>
+  <meta name="description" content="Exercise 2: Base R | Introduction to R - GESIS Training Course, 24-27 August 2026" />
   <meta name="generator" content="bookdown 0.47 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Page not found | Introduction to R" />
+  <meta property="og:title" content="Exercise 2: Base R | Introduction to R" />
   <meta property="og:type" content="book" />
   
-  <meta property="og:description" content="Page not found | Introduction to R - GESIS Training Course, 24-27 August 2026" />
+  <meta property="og:description" content="Exercise 2: Base R | Introduction to R - GESIS Training Course, 24-27 August 2026" />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Page not found | Introduction to R" />
+  <meta name="twitter:title" content="Exercise 2: Base R | Introduction to R" />
   
-  <meta name="twitter:description" content="Page not found | Introduction to R - GESIS Training Course, 24-27 August 2026" />
+  <meta name="twitter:description" content="Exercise 2: Base R | Introduction to R - GESIS Training Course, 24-27 August 2026" />
   
 
 <meta name="author" content="Lara Kobilke, Department of Communication and Media Research, University of Zurich" />
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-
+<link rel="prev" href="tutorial-working-with-data-files.html"/>
+<link rel="next" href="tutorial-data-management-with-dplyr.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -309,19 +309,49 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="page-not-found" class="section level1">
-<h1>Page not found</h1>
-<p>The page you requested cannot be found (perhaps it was moved or renamed).</p>
-<p>You may want to try searching to find the page's new location, or use
-the table of contents to find the page you are looking for.</p>
+<div id="exercise-2-base-r" class="section level1 unnumbered hasAnchor">
+<h1>Exercise 2: Base R<a href="exercise-2-base-r.html#exercise-2-base-r" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p><strong>After working through Exercise 2, you’ll…</strong></p>
+<ul>
+<li>have double-checked whether you understand how to import data</li>
+<li>have learned to subset variables in data frames</li>
+<li>have learned to subset observations and values in data frames</li>
+</ul>
+<div id="task-1-1" class="section level2 unnumbered hasAnchor">
+<h2>Task 1<a href="exercise-2-base-r.html#task-1-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Download the <em>“WoJ_names.csv”</em> from LRZ Sync &amp; Share (<a href="https://syncandshare.lrz.de/getlink/fiwoSeB27JvNosTM6e6xp/WoJ_names.csv">click here</a>) and
+put it into the folder that you want to use as working directory.</p>
+<p>Set your working directory and load the data into R by saving it into a
+source object called <em>data</em>. Use <code>setwd()</code>.</p>
+<p><strong>Note:</strong> This time, it’s a csv that is separated by semicolons, not by
+commas.</p>
+</div>
+<div id="task-2-1" class="section level2 unnumbered hasAnchor">
+<h2>Task 2<a href="exercise-2-base-r.html#task-2-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Now, print only the column to the console that shows the <em>trust in the
+government</em>. Use the <code>$</code> operator first. Then try to achieve the same
+result using the subsetting operators, i.e. <code>[]</code>.</p>
+</div>
+<div id="task-3-1" class="section level2 unnumbered hasAnchor">
+<h2>Task 3<a href="exercise-2-base-r.html#task-3-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Print only the first 6 <em>trust in the government</em> numbers to the console.
+Use the <code>$</code> operator first. Then try to achieve the same result using
+the subsetting operators, i.e. <code>[]</code>.</p>
+</div>
+<div id="task-4" class="section level2 unnumbered hasAnchor">
+<h2>Task 4<a href="exercise-2-base-r.html#task-4" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Repeat Task 1, but use an R project this time to set your working directory.</p>
+<p>When you’re ready to look at the solutions, you can find them
+here: <a href="solutions.html#solutions-for-exercise-2">Solutions for Exercise 2</a>.</p>
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-
-
+<a href="tutorial-working-with-data-files.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="tutorial-data-management-with-dplyr.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -352,7 +382,7 @@ gitbook.start({
     "size": 2
   },
   "edit": {
-    "link": "https://lkobilke.github.io/Intro_to_R/edit/main/%s",
+    "link": "https://lkobilke.github.io/Intro_to_R/edit/main/index.Rmd",
     "text": "Edit"
   },
   "history": {

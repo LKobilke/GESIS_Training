@@ -4,20 +4,20 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Page not found | Introduction to R</title>
-  <meta name="description" content="Page not found | Introduction to R - GESIS Training Course, 24-27 August 2026" />
+  <title> 3 Tutorial: Using R as a calculator | Introduction to R</title>
+  <meta name="description" content=" 3 Tutorial: Using R as a calculator | Introduction to R - GESIS Training Course, 24-27 August 2026" />
   <meta name="generator" content="bookdown 0.47 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Page not found | Introduction to R" />
+  <meta property="og:title" content=" 3 Tutorial: Using R as a calculator | Introduction to R" />
   <meta property="og:type" content="book" />
   
-  <meta property="og:description" content="Page not found | Introduction to R - GESIS Training Course, 24-27 August 2026" />
+  <meta property="og:description" content=" 3 Tutorial: Using R as a calculator | Introduction to R - GESIS Training Course, 24-27 August 2026" />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Page not found | Introduction to R" />
+  <meta name="twitter:title" content=" 3 Tutorial: Using R as a calculator | Introduction to R" />
   
-  <meta name="twitter:description" content="Page not found | Introduction to R - GESIS Training Course, 24-27 August 2026" />
+  <meta name="twitter:description" content=" 3 Tutorial: Using R as a calculator | Introduction to R - GESIS Training Course, 24-27 August 2026" />
   
 
 <meta name="author" content="Lara Kobilke, Department of Communication and Media Research, University of Zurich" />
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-
+<link rel="prev" href="tutorial-installing-understanding-rr-studio.html"/>
+<link rel="next" href="exercise-1-base-r.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -309,19 +309,146 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="page-not-found" class="section level1">
-<h1>Page not found</h1>
-<p>The page you requested cannot be found (perhaps it was moved or renamed).</p>
-<p>You may want to try searching to find the page's new location, or use
-the table of contents to find the page you are looking for.</p>
+<div id="tutorial-using-r-as-a-calculator" class="section level1 hasAnchor" number="3">
+<h1><span class="header-section-number"> 3</span> Tutorial: Using R as a calculator<a href="tutorial-using-r-as-a-calculator.html#tutorial-using-r-as-a-calculator" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p><strong>After working through Tutorial 3, you’ll…</strong></p>
+<ul>
+<li>be able to work with mathematical operators in R</li>
+<li>be able to use mathematical operators on variables and vectors</li>
+<li>subset values from vectors</li>
+</ul>
+<p>One of the first things everyone learns in R is to use R as a
+calculator. You have access to many mathematical operators in R (e.g. +,
+-, *, /, ^). Let’s try some of them.</p>
+<ol style="list-style-type: decimal">
+<li>Addition:</li>
+</ol>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="tutorial-using-r-as-a-calculator.html#cb22-1" tabindex="-1"></a><span class="dv">5</span> <span class="sc">+</span> <span class="dv">7</span></span></code></pre></div>
+<pre><code>## [1] 12</code></pre>
+<ol start="2" style="list-style-type: decimal">
+<li>Subtraction:</li>
+</ol>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="tutorial-using-r-as-a-calculator.html#cb24-1" tabindex="-1"></a><span class="dv">12</span> <span class="sc">-</span> <span class="dv">7</span></span></code></pre></div>
+<pre><code>## [1] 5</code></pre>
+<ol start="3" style="list-style-type: decimal">
+<li>Exponentiation:</li>
+</ol>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="tutorial-using-r-as-a-calculator.html#cb26-1" tabindex="-1"></a><span class="dv">3</span><span class="sc">^</span><span class="dv">3</span></span></code></pre></div>
+<pre><code>## [1] 27</code></pre>
+<div id="using-variables-for-calculation" class="section level2 hasAnchor" number="3.1">
+<h2><span class="header-section-number">3.1</span> Using variables for calculation<a href="tutorial-using-r-as-a-calculator.html#using-variables-for-calculation" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>You can also assign numbers to variables with the assign operator “&lt;-”.
+We have already talked about assigning word or numbers to variables in
+the chapter <a href="tutorial-installing-understanding-rr-studio.html#writing-code">Writing Code</a>. Please remember that a variable name in R
+can include numeric and alphabets along with special characters like dot
+(.) and underline (_).’</p>
+<p>Therefore, these are good options to name your variables:</p>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="tutorial-using-r-as-a-calculator.html#cb28-1" tabindex="-1"></a>my_1st_number <span class="ot">&lt;-</span> <span class="dv">3</span></span>
+<span id="cb28-2"><a href="tutorial-using-r-as-a-calculator.html#cb28-2" tabindex="-1"></a>my<span class="fl">.1</span>st.numer <span class="ot">&lt;-</span> <span class="dv">3</span></span></code></pre></div>
+<p>Do <strong>! N O T !</strong> use these variable names because they will cause errors
+and throw warning messages. I have therefore put the code as annotation
+to avoid the warning messages (with #):</p>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="tutorial-using-r-as-a-calculator.html#cb29-1" tabindex="-1"></a><span class="co">#  _number &lt;- 3</span></span>
+<span id="cb29-2"><a href="tutorial-using-r-as-a-calculator.html#cb29-2" tabindex="-1"></a><span class="co">#  .number &lt;- 3</span></span>
+<span id="cb29-3"><a href="tutorial-using-r-as-a-calculator.html#cb29-3" tabindex="-1"></a><span class="co">#  my-1st-number &lt;- 3</span></span></code></pre></div>
+<p>You can use variables in your calculations by assigning the numbers to
+variables (i.e. store the numerical value in the variable).’</p>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="tutorial-using-r-as-a-calculator.html#cb30-1" tabindex="-1"></a>five <span class="ot">&lt;-</span> <span class="dv">5</span></span>
+<span id="cb30-2"><a href="tutorial-using-r-as-a-calculator.html#cb30-2" tabindex="-1"></a>seven <span class="ot">&lt;-</span> <span class="dv">7</span></span>
+<span id="cb30-3"><a href="tutorial-using-r-as-a-calculator.html#cb30-3" tabindex="-1"></a>twelve <span class="ot">&lt;-</span> five <span class="sc">+</span> seven <span class="co"># here you add the two variables in which the numbers are stored. The result of the addition is stored in the variable &quot;twelve&quot;</span></span>
+<span id="cb30-4"><a href="tutorial-using-r-as-a-calculator.html#cb30-4" tabindex="-1"></a>twelve <span class="co"># now you have to retrieve the content of the variable, so that the result is printed to the console</span></span></code></pre></div>
+<pre><code>## [1] 12</code></pre>
+<p>The names of the variables are freely selectable. For example, you can
+also proceed like this:</p>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="tutorial-using-r-as-a-calculator.html#cb32-1" tabindex="-1"></a>three <span class="ot">&lt;-</span> <span class="dv">5</span></span>
+<span id="cb32-2"><a href="tutorial-using-r-as-a-calculator.html#cb32-2" tabindex="-1"></a>three <span class="co"># print the content of the variable to the console</span></span></code></pre></div>
+<pre><code>## [1] 5</code></pre>
+</div>
+<div id="using-vectors-for-calculation" class="section level2 hasAnchor" number="3.2">
+<h2><span class="header-section-number">3.2</span> Using vectors for calculation<a href="tutorial-using-r-as-a-calculator.html#using-vectors-for-calculation" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>You can also store more than one number in a variable. We call this
+process “creating vectors” because variables that contain more than one
+number are called <em>“vectors”</em> in R. Vectors are created using the
+combine function <code>c()</code> in R.</p>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="tutorial-using-r-as-a-calculator.html#cb34-1" tabindex="-1"></a>twelve <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">9</span>, <span class="dv">10</span>, <span class="dv">11</span>, <span class="dv">12</span>)</span>
+<span id="cb34-2"><a href="tutorial-using-r-as-a-calculator.html#cb34-2" tabindex="-1"></a>twelve <span class="co"># print the content of the variable to the console</span></span></code></pre></div>
+<pre><code>##  [1]  1  2  3  4  5  6  7  8  9 10 11 12</code></pre>
+<p>Again, the variable name is chosen arbitrarily. You can also do this:</p>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="tutorial-using-r-as-a-calculator.html#cb36-1" tabindex="-1"></a>twelve <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">4</span>, <span class="dv">10</span>, <span class="dv">15</span>, <span class="dv">21</span>, <span class="dv">33</span>)</span>
+<span id="cb36-2"><a href="tutorial-using-r-as-a-calculator.html#cb36-2" tabindex="-1"></a>twelve <span class="co"># print the content of the variable to the console</span></span></code></pre></div>
+<pre><code>## [1]  4 10 15 21 33</code></pre>
+<p>You can use mathematical operations on vectors (e.g., +, -, * and /).
+Let’s create two vectors “weight” and “height” that contain the weight
+and height measures of 6 individuals. For example, the first individual
+weighs 60 kg and is 1.75 m tall:</p>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="tutorial-using-r-as-a-calculator.html#cb38-1" tabindex="-1"></a>weight <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">60</span>, <span class="dv">72</span>, <span class="dv">57</span>, <span class="dv">90</span>, <span class="dv">95</span>, <span class="dv">72</span>)</span>
+<span id="cb38-2"><a href="tutorial-using-r-as-a-calculator.html#cb38-2" tabindex="-1"></a>height <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">1.75</span>, <span class="fl">1.80</span>, <span class="fl">1.65</span>, <span class="fl">1.90</span>, <span class="fl">1.74</span>, <span class="fl">1.91</span>)</span></code></pre></div>
+<p>Now we can calculate the Body Mass Index (BMI) using the BMI formula:</p>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="tutorial-using-r-as-a-calculator.html#cb39-1" tabindex="-1"></a>BMI <span class="ot">&lt;-</span> weight <span class="sc">/</span> height<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb39-2"><a href="tutorial-using-r-as-a-calculator.html#cb39-2" tabindex="-1"></a>BMI <span class="co"># print the content of the BMI variable to the console</span></span></code></pre></div>
+<pre><code>## [1] 19.59184 22.22222 20.93664 24.93075 31.37799 19.73630</code></pre>
+<p>Now we know that the first person has a BMI of 19.59, which is within
+the range of normality (18.5 and 24.9).</p>
+</div>
+<div id="selecting-values-from-a-vector" class="section level2 hasAnchor" number="3.3">
+<h2><span class="header-section-number">3.3</span> Selecting values from a vector<a href="tutorial-using-r-as-a-calculator.html#selecting-values-from-a-vector" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><strong>We still see the BMI of all the other five people, i.e. the entire
+vector. How can we select only the first person?</strong></p>
+<p>You can select values from a vector by using square brackets <code>[ ]</code> and
+enter the number of the entry that you want to print to your console.</p>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="tutorial-using-r-as-a-calculator.html#cb41-1" tabindex="-1"></a>BMI[<span class="dv">1</span>]</span></code></pre></div>
+<pre><code>## [1] 19.59184</code></pre>
+<p>Again, you can see that the first person has a BMI of 19.59. You could
+also decide to look at all values <em>except</em> the first one:</p>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="tutorial-using-r-as-a-calculator.html#cb43-1" tabindex="-1"></a>BMI[<span class="sc">-</span><span class="dv">1</span>]</span></code></pre></div>
+<pre><code>## [1] 22.22222 20.93664 24.93075 31.37799 19.73630</code></pre>
+<p>You can even use the <code>[ ]</code> selector on vectors that consist of words
+instead of numbers. These vectors are called <em>“character vectors”</em>,
+while vectors that contain numbers are called <em>“numeric vectors”</em>. Let’s
+create a character vector that contains the BMIs of the six individuals
+as words. We’ll need to put quotation marks around your entries so that
+R knows that those values are words not numbers.</p>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="tutorial-using-r-as-a-calculator.html#cb45-1" tabindex="-1"></a>BMI_word <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;nineteen&quot;</span>, <span class="st">&quot;twenty-two&quot;</span>, <span class="st">&quot;twenty&quot;</span>, <span class="st">&quot;twenty-four&quot;</span>, <span class="st">&quot;thirty-one&quot;</span>, <span class="st">&quot;nineteen&quot;</span>)</span>
+<span id="cb45-2"><a href="tutorial-using-r-as-a-calculator.html#cb45-2" tabindex="-1"></a>BMI_word</span></code></pre></div>
+<pre><code>## [1] &quot;nineteen&quot;    &quot;twenty-two&quot;  &quot;twenty&quot;      &quot;twenty-four&quot; &quot;thirty-one&quot; 
+## [6] &quot;nineteen&quot;</code></pre>
+<p>We’ll now select only the first value of of this BMI_word character
+vector:</p>
+<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="tutorial-using-r-as-a-calculator.html#cb47-1" tabindex="-1"></a>BMI_word[<span class="dv">1</span>]</span></code></pre></div>
+<pre><code>## [1] &quot;nineteen&quot;</code></pre>
+<p>If you want to select multiple values, you can index them. Let’s select
+the BMI of the third, fourth and fifth individual:</p>
+<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="tutorial-using-r-as-a-calculator.html#cb49-1" tabindex="-1"></a>BMI_word[<span class="dv">3</span><span class="sc">:</span><span class="dv">5</span>]</span></code></pre></div>
+<pre><code>## [1] &quot;twenty&quot;      &quot;twenty-four&quot; &quot;thirty-one&quot;</code></pre>
+</div>
+<div id="take-aways-1" class="section level2 hasAnchor" number="3.4">
+<h2><span class="header-section-number">3.4</span> Take-Aways<a href="tutorial-using-r-as-a-calculator.html#take-aways-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li><strong>Mathematical operators</strong>: use +, -, *, /, ^</li>
+<li><strong>Use case</strong>: use these operators on numbers, variables, and vectors</li>
+<li><strong>Create vectors</strong>: use the combine function <code>c()</code></li>
+<li><strong>Select values from vectors</strong>: use square brackets <code>[ ]</code></li>
+</ul>
+</div>
+<div id="additional-tutorials-1" class="section level2 hasAnchor" number="3.5">
+<h2><span class="header-section-number">3.5</span> Additional tutorials<a href="tutorial-using-r-as-a-calculator.html#additional-tutorials-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>You still have questions? The following online guides can help you with
+that:</p>
+<ul>
+<li><a href="http://statseducation.com/Introduction-to-R/modules/getting%20started/calculator/">Using R as a
+Calculator</a></li>
+<li><a href="https://www.datamentor.io/r-programming/vector/">R Vector</a></li>
+</ul>
+<p>Now it’s your time to get into coding: Try <a href="exercise-1-base-r.html#exercise-1-base-r">Exercise 1: Base R</a>.</p>
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-
-
+<a href="tutorial-installing-understanding-rr-studio.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="exercise-1-base-r.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -352,7 +479,7 @@ gitbook.start({
     "size": 2
   },
   "edit": {
-    "link": "https://lkobilke.github.io/Intro_to_R/edit/main/%s",
+    "link": "https://lkobilke.github.io/Intro_to_R/edit/main/index.Rmd",
     "text": "Edit"
   },
   "history": {

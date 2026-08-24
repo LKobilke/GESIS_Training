@@ -1,0 +1,956 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title> 4 Tutorial: Working with data (files) | Introduction to R</title>
+  <meta name="description" content=" 4 Tutorial: Working with data (files) | Introduction to R - GESIS Training Course, 24-27 August 2026" />
+  <meta name="generator" content="bookdown 0.47 and GitBook 2.6.7" />
+
+  <meta property="og:title" content=" 4 Tutorial: Working with data (files) | Introduction to R" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content=" 4 Tutorial: Working with data (files) | Introduction to R - GESIS Training Course, 24-27 August 2026" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content=" 4 Tutorial: Working with data (files) | Introduction to R" />
+  
+  <meta name="twitter:description" content=" 4 Tutorial: Working with data (files) | Introduction to R - GESIS Training Course, 24-27 August 2026" />
+  
+
+<meta name="author" content="Lara Kobilke, Department of Communication and Media Research, University of Zurich" />
+
+
+<meta name="date" content="2026-08-24" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="exercise-1-base-r.html"/>
+<link rel="next" href="exercise-2-base-r.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Intro to R</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Intro to R</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#general-information-on-the-course"><i class="fa fa-check"></i><b>1.1</b> General information on the course</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#what-can-i-learn-from-this-tutorial"><i class="fa fa-check"></i><b>1.2</b> What can I learn from this tutorial?</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#how-this-tutorial-supports-the-four-day-workshop"><i class="fa fa-check"></i><b>1.3</b> How this tutorial supports the four-day workshop</a></li>
+<li class="chapter" data-level="1.4" data-path="index.html"><a href="index.html#prerequisites-and-software"><i class="fa fa-check"></i><b>1.4</b> Prerequisites and software</a>
+<ul>
+<li class="chapter" data-level="1.4.1" data-path="index.html"><a href="index.html#install-the-required-r-packages"><i class="fa fa-check"></i><b>1.4.1</b> Install the required R packages</a></li>
+<li class="chapter" data-level="1.4.2" data-path="index.html"><a href="index.html#windows-users-install-rtools"><i class="fa fa-check"></i><b>1.4.2</b> Windows users: Install Rtools</a></li>
+<li class="chapter" data-level="1.4.3" data-path="index.html"><a href="index.html#test-your-installation-before-the-course"><i class="fa fa-check"></i><b>1.4.3</b> Test your installation before the course</a></li>
+</ul></li>
+<li class="chapter" data-level="1.5" data-path="index.html"><a href="index.html#what-can-i-do-if-i-have-problems-with-my-r-code"><i class="fa fa-check"></i><b>1.5</b> What can I do if I have problems with my R code?</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="tutorial-installing-understanding-rr-studio.html"><a href="tutorial-installing-understanding-rr-studio.html"><i class="fa fa-check"></i><b>2</b> Tutorial: Installing &amp; Understanding R/R Studio</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="tutorial-installing-understanding-rr-studio.html"><a href="tutorial-installing-understanding-rr-studio.html#what-is-r"><i class="fa fa-check"></i><b>2.1</b> What is R?</a></li>
+<li class="chapter" data-level="2.2" data-path="tutorial-installing-understanding-rr-studio.html"><a href="tutorial-installing-understanding-rr-studio.html#installing-r"><i class="fa fa-check"></i><b>2.2</b> Installing R</a></li>
+<li class="chapter" data-level="2.3" data-path="tutorial-installing-understanding-rr-studio.html"><a href="tutorial-installing-understanding-rr-studio.html#installing-rstudio"><i class="fa fa-check"></i><b>2.3</b> Installing RStudio</a></li>
+<li class="chapter" data-level="2.4" data-path="tutorial-installing-understanding-rr-studio.html"><a href="tutorial-installing-understanding-rr-studio.html#updating-r-and-rstudio"><i class="fa fa-check"></i><b>2.4</b> Updating R and RStudio</a></li>
+<li class="chapter" data-level="2.5" data-path="tutorial-installing-understanding-rr-studio.html"><a href="tutorial-installing-understanding-rr-studio.html#how-does-r-work"><i class="fa fa-check"></i><b>2.5</b> How does R work?</a></li>
+<li class="chapter" data-level="2.6" data-path="tutorial-installing-understanding-rr-studio.html"><a href="tutorial-installing-understanding-rr-studio.html#why-should-i-use-r"><i class="fa fa-check"></i><b>2.6</b> Why should I use R?</a></li>
+<li class="chapter" data-level="2.7" data-path="tutorial-installing-understanding-rr-studio.html"><a href="tutorial-installing-understanding-rr-studio.html#how-does-r-studio-work"><i class="fa fa-check"></i><b>2.7</b> How does R Studio work?</a>
+<ul>
+<li class="chapter" data-level="2.7.1" data-path="tutorial-installing-understanding-rr-studio.html"><a href="tutorial-installing-understanding-rr-studio.html#source-writing-your-own-code"><i class="fa fa-check"></i><b>2.7.1</b> Source: Writing your own code</a></li>
+<li class="chapter" data-level="2.7.2" data-path="tutorial-installing-understanding-rr-studio.html"><a href="tutorial-installing-understanding-rr-studio.html#console-printing-results"><i class="fa fa-check"></i><b>2.7.2</b> Console: Printing results</a></li>
+<li class="chapter" data-level="2.7.3" data-path="tutorial-installing-understanding-rr-studio.html"><a href="tutorial-installing-understanding-rr-studio.html#environment-overview-of-objects"><i class="fa fa-check"></i><b>2.7.3</b> Environment: Overview of objects</a></li>
+<li class="chapter" data-level="2.7.4" data-path="tutorial-installing-understanding-rr-studio.html"><a href="tutorial-installing-understanding-rr-studio.html#plotshelppackages-do-everything-else"><i class="fa fa-check"></i><b>2.7.4</b> Plots/Help/Packages: Do everything else</a></li>
+</ul></li>
+<li class="chapter" data-level="2.8" data-path="tutorial-installing-understanding-rr-studio.html"><a href="tutorial-installing-understanding-rr-studio.html#why-arent-we-using-a-gui-for-point-and-click-analyses"><i class="fa fa-check"></i><b>2.8</b> Why aren’t we using a GUI for point-and-click analyses?</a></li>
+<li class="chapter" data-level="2.9" data-path="tutorial-installing-understanding-rr-studio.html"><a href="tutorial-installing-understanding-rr-studio.html#packages"><i class="fa fa-check"></i><b>2.9</b> Packages</a>
+<ul>
+<li class="chapter" data-level="2.9.1" data-path="tutorial-installing-understanding-rr-studio.html"><a href="tutorial-installing-understanding-rr-studio.html#installing-packages"><i class="fa fa-check"></i><b>2.9.1</b> Installing packages</a></li>
+<li class="chapter" data-level="2.9.2" data-path="tutorial-installing-understanding-rr-studio.html"><a href="tutorial-installing-understanding-rr-studio.html#activating-packages"><i class="fa fa-check"></i><b>2.9.2</b> Activating packages</a></li>
+<li class="chapter" data-level="2.9.3" data-path="tutorial-installing-understanding-rr-studio.html"><a href="tutorial-installing-understanding-rr-studio.html#getting-information-about-packages"><i class="fa fa-check"></i><b>2.9.3</b> Getting information about packages</a></li>
+</ul></li>
+<li class="chapter" data-level="2.10" data-path="tutorial-installing-understanding-rr-studio.html"><a href="tutorial-installing-understanding-rr-studio.html#optional-setting-global-options-in-r-for-a-customized-workflow"><i class="fa fa-check"></i><b>2.10</b> Optional: Setting global options in R for a customized workflow</a>
+<ul>
+<li class="chapter" data-level="2.10.1" data-path="tutorial-installing-understanding-rr-studio.html"><a href="tutorial-installing-understanding-rr-studio.html#understanding-options"><i class="fa fa-check"></i><b>2.10.1</b> Understanding <code>options()</code></a></li>
+<li class="chapter" data-level="2.10.2" data-path="tutorial-installing-understanding-rr-studio.html"><a href="tutorial-installing-understanding-rr-studio.html#turn-off-scientific-notation"><i class="fa fa-check"></i><b>2.10.2</b> Turn off scientific notation</a></li>
+<li class="chapter" data-level="2.10.3" data-path="tutorial-installing-understanding-rr-studio.html"><a href="tutorial-installing-understanding-rr-studio.html#customizing-tibble-display"><i class="fa fa-check"></i><b>2.10.3</b> Customizing tibble display</a></li>
+<li class="chapter" data-level="2.10.4" data-path="tutorial-installing-understanding-rr-studio.html"><a href="tutorial-installing-understanding-rr-studio.html#resetting-to-default"><i class="fa fa-check"></i><b>2.10.4</b> Resetting to default</a></li>
+</ul></li>
+<li class="chapter" data-level="2.11" data-path="tutorial-installing-understanding-rr-studio.html"><a href="tutorial-installing-understanding-rr-studio.html#take-aways"><i class="fa fa-check"></i><b>2.11</b> Take-Aways</a></li>
+<li class="chapter" data-level="2.12" data-path="tutorial-installing-understanding-rr-studio.html"><a href="tutorial-installing-understanding-rr-studio.html#additional-tutorials"><i class="fa fa-check"></i><b>2.12</b> Additional tutorials</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="tutorial-using-r-as-a-calculator.html"><a href="tutorial-using-r-as-a-calculator.html"><i class="fa fa-check"></i><b>3</b> Tutorial: Using R as a calculator</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="tutorial-using-r-as-a-calculator.html"><a href="tutorial-using-r-as-a-calculator.html#using-variables-for-calculation"><i class="fa fa-check"></i><b>3.1</b> Using variables for calculation</a></li>
+<li class="chapter" data-level="3.2" data-path="tutorial-using-r-as-a-calculator.html"><a href="tutorial-using-r-as-a-calculator.html#using-vectors-for-calculation"><i class="fa fa-check"></i><b>3.2</b> Using vectors for calculation</a></li>
+<li class="chapter" data-level="3.3" data-path="tutorial-using-r-as-a-calculator.html"><a href="tutorial-using-r-as-a-calculator.html#selecting-values-from-a-vector"><i class="fa fa-check"></i><b>3.3</b> Selecting values from a vector</a></li>
+<li class="chapter" data-level="3.4" data-path="tutorial-using-r-as-a-calculator.html"><a href="tutorial-using-r-as-a-calculator.html#take-aways-1"><i class="fa fa-check"></i><b>3.4</b> Take-Aways</a></li>
+<li class="chapter" data-level="3.5" data-path="tutorial-using-r-as-a-calculator.html"><a href="tutorial-using-r-as-a-calculator.html#additional-tutorials-1"><i class="fa fa-check"></i><b>3.5</b> Additional tutorials</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="exercise-1-base-r.html"><a href="exercise-1-base-r.html"><i class="fa fa-check"></i>Exercise 1: Base R</a>
+<ul>
+<li class="chapter" data-level="" data-path="exercise-1-base-r.html"><a href="exercise-1-base-r.html#task-1"><i class="fa fa-check"></i>Task 1</a></li>
+<li class="chapter" data-level="" data-path="exercise-1-base-r.html"><a href="exercise-1-base-r.html#task-2"><i class="fa fa-check"></i>Task 2</a></li>
+<li class="chapter" data-level="" data-path="exercise-1-base-r.html"><a href="exercise-1-base-r.html#task-3"><i class="fa fa-check"></i>Task 3</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="tutorial-working-with-data-files.html"><a href="tutorial-working-with-data-files.html"><i class="fa fa-check"></i><b>4</b> Tutorial: Working with data (files)</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="tutorial-working-with-data-files.html"><a href="tutorial-working-with-data-files.html#defining-your-working-directory"><i class="fa fa-check"></i><b>4.1</b> Defining your working directory</a></li>
+<li class="chapter" data-level="4.2" data-path="tutorial-working-with-data-files.html"><a href="tutorial-working-with-data-files.html#import-data-from-your-working-directory"><i class="fa fa-check"></i><b>4.2</b> Import data from your working directory</a></li>
+<li class="chapter" data-level="4.3" data-path="tutorial-working-with-data-files.html"><a href="tutorial-working-with-data-files.html#subsetting-variables-columns-in-data-frames"><i class="fa fa-check"></i><b>4.3</b> Subsetting variables / columns in data frames</a></li>
+<li class="chapter" data-level="4.4" data-path="tutorial-working-with-data-files.html"><a href="tutorial-working-with-data-files.html#subsetting-observations-rows-in-data-frames"><i class="fa fa-check"></i><b>4.4</b> Subsetting observations / rows in data frames</a></li>
+<li class="chapter" data-level="4.5" data-path="tutorial-working-with-data-files.html"><a href="tutorial-working-with-data-files.html#subsetting-values-cells-in-data-frames"><i class="fa fa-check"></i><b>4.5</b> Subsetting values / cells in data frames</a></li>
+<li class="chapter" data-level="4.6" data-path="tutorial-working-with-data-files.html"><a href="tutorial-working-with-data-files.html#subsetting-data-with-conditions"><i class="fa fa-check"></i><b>4.6</b> Subsetting data with conditions</a></li>
+<li class="chapter" data-level="4.7" data-path="tutorial-working-with-data-files.html"><a href="tutorial-working-with-data-files.html#eliminate-the-need-to-manually-set-working-directories-by-using-r-projects"><i class="fa fa-check"></i><b>4.7</b> Eliminate the need to manually set working directories by using R Projects</a>
+<ul>
+<li class="chapter" data-level="4.7.1" data-path="tutorial-working-with-data-files.html"><a href="tutorial-working-with-data-files.html#creating-a-new-r-project"><i class="fa fa-check"></i><b>4.7.1</b> Creating a new R Project</a></li>
+<li class="chapter" data-level="4.7.2" data-path="tutorial-working-with-data-files.html"><a href="tutorial-working-with-data-files.html#checking-your-working-directory"><i class="fa fa-check"></i><b>4.7.2</b> Checking your working directory</a></li>
+<li class="chapter" data-level="4.7.3" data-path="tutorial-working-with-data-files.html"><a href="tutorial-working-with-data-files.html#a-recommendation-for-designing-a-good-r-project-structure"><i class="fa fa-check"></i><b>4.7.3</b> A recommendation for designing a good R Project structure</a></li>
+<li class="chapter" data-level="4.7.4" data-path="tutorial-working-with-data-files.html"><a href="tutorial-working-with-data-files.html#navigating-your-working-directory-like-a-pro-the-concept-of-relative-paths"><i class="fa fa-check"></i><b>4.7.4</b> Navigating your working directory like a pro: The concept of relative paths</a></li>
+</ul></li>
+<li class="chapter" data-level="4.8" data-path="tutorial-working-with-data-files.html"><a href="tutorial-working-with-data-files.html#optional-import-data-from-various-file-formats"><i class="fa fa-check"></i><b>4.8</b> Optional: Import data from various file formats</a>
+<ul>
+<li class="chapter" data-level="4.8.1" data-path="tutorial-working-with-data-files.html"><a href="tutorial-working-with-data-files.html#importing-data-from-excel"><i class="fa fa-check"></i><b>4.8.1</b> Importing data from Excel</a></li>
+<li class="chapter" data-level="4.8.2" data-path="tutorial-working-with-data-files.html"><a href="tutorial-working-with-data-files.html#importing-data-from-json"><i class="fa fa-check"></i><b>4.8.2</b> Importing data from JSON</a></li>
+<li class="chapter" data-level="4.8.3" data-path="tutorial-working-with-data-files.html"><a href="tutorial-working-with-data-files.html#importing-data-from-spss"><i class="fa fa-check"></i><b>4.8.3</b> Importing data from SPSS</a></li>
+</ul></li>
+<li class="chapter" data-level="4.9" data-path="tutorial-working-with-data-files.html"><a href="tutorial-working-with-data-files.html#take-aways-2"><i class="fa fa-check"></i><b>4.9</b> Take-Aways</a></li>
+<li class="chapter" data-level="4.10" data-path="tutorial-working-with-data-files.html"><a href="tutorial-working-with-data-files.html#additional-tutorials-2"><i class="fa fa-check"></i><b>4.10</b> Additional tutorials</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="exercise-2-base-r.html"><a href="exercise-2-base-r.html"><i class="fa fa-check"></i>Exercise 2: Base R</a>
+<ul>
+<li class="chapter" data-level="" data-path="exercise-2-base-r.html"><a href="exercise-2-base-r.html#task-1-1"><i class="fa fa-check"></i>Task 1</a></li>
+<li class="chapter" data-level="" data-path="exercise-2-base-r.html"><a href="exercise-2-base-r.html#task-2-1"><i class="fa fa-check"></i>Task 2</a></li>
+<li class="chapter" data-level="" data-path="exercise-2-base-r.html"><a href="exercise-2-base-r.html#task-3-1"><i class="fa fa-check"></i>Task 3</a></li>
+<li class="chapter" data-level="" data-path="exercise-2-base-r.html"><a href="exercise-2-base-r.html#task-4"><i class="fa fa-check"></i>Task 4</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="tutorial-data-management-with-dplyr.html"><a href="tutorial-data-management-with-dplyr.html"><i class="fa fa-check"></i><b>5</b> Tutorial: Data management with dplyr</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="tutorial-data-management-with-dplyr.html"><a href="tutorial-data-management-with-dplyr.html#why-not-stick-with-base-r"><i class="fa fa-check"></i><b>5.1</b> Why not stick with Base R?</a></li>
+<li class="chapter" data-level="5.2" data-path="tutorial-data-management-with-dplyr.html"><a href="tutorial-data-management-with-dplyr.html#tidyverse-packages"><i class="fa fa-check"></i><b>5.2</b> Tidyverse packages</a></li>
+<li class="chapter" data-level="5.3" data-path="tutorial-data-management-with-dplyr.html"><a href="tutorial-data-management-with-dplyr.html#tidy-data"><i class="fa fa-check"></i><b>5.3</b> Tidy data</a></li>
+<li class="chapter" data-level="5.4" data-path="tutorial-data-management-with-dplyr.html"><a href="tutorial-data-management-with-dplyr.html#the-pipe-operator"><i class="fa fa-check"></i><b>5.4</b> The pipe operator</a></li>
+<li class="chapter" data-level="5.5" data-path="tutorial-data-management-with-dplyr.html"><a href="tutorial-data-management-with-dplyr.html#helpful-shortcuts-in-r"><i class="fa fa-check"></i><b>5.5</b> Helpful shortcuts in R</a></li>
+<li class="chapter" data-level="5.6" data-path="tutorial-data-management-with-dplyr.html"><a href="tutorial-data-management-with-dplyr.html#data-transformation-with-dplyr"><i class="fa fa-check"></i><b>5.6</b> Data transformation with dplyr</a>
+<ul>
+<li class="chapter" data-level="5.6.1" data-path="tutorial-data-management-with-dplyr.html"><a href="tutorial-data-management-with-dplyr.html#select"><i class="fa fa-check"></i><b>5.6.1</b> select()</a></li>
+<li class="chapter" data-level="5.6.2" data-path="tutorial-data-management-with-dplyr.html"><a href="tutorial-data-management-with-dplyr.html#filter"><i class="fa fa-check"></i><b>5.6.2</b> filter()</a></li>
+<li class="chapter" data-level="5.6.3" data-path="tutorial-data-management-with-dplyr.html"><a href="tutorial-data-management-with-dplyr.html#arrange"><i class="fa fa-check"></i><b>5.6.3</b> arrange()</a></li>
+<li class="chapter" data-level="5.6.4" data-path="tutorial-data-management-with-dplyr.html"><a href="tutorial-data-management-with-dplyr.html#mutate"><i class="fa fa-check"></i><b>5.6.4</b> mutate()</a></li>
+<li class="chapter" data-level="5.6.5" data-path="tutorial-data-management-with-dplyr.html"><a href="tutorial-data-management-with-dplyr.html#summarize-group_by"><i class="fa fa-check"></i><b>5.6.5</b> summarize() [+ group_by()]</a></li>
+<li class="chapter" data-level="5.6.6" data-path="tutorial-data-management-with-dplyr.html"><a href="tutorial-data-management-with-dplyr.html#chaining-functions-in-a-pipe"><i class="fa fa-check"></i><b>5.6.6</b> Chaining functions in a pipe</a></li>
+</ul></li>
+<li class="chapter" data-level="5.7" data-path="tutorial-data-management-with-dplyr.html"><a href="tutorial-data-management-with-dplyr.html#printing-more-rows-in-the-console-using-dplyr"><i class="fa fa-check"></i><b>5.7</b> Printing more rows in the console using <code>dplyr</code></a></li>
+<li class="chapter" data-level="5.8" data-path="tutorial-data-management-with-dplyr.html"><a href="tutorial-data-management-with-dplyr.html#take-aways-3"><i class="fa fa-check"></i><b>5.8</b> Take-Aways</a></li>
+<li class="chapter" data-level="5.9" data-path="tutorial-data-management-with-dplyr.html"><a href="tutorial-data-management-with-dplyr.html#additional-tutorials-3"><i class="fa fa-check"></i><b>5.9</b> Additional tutorials</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="exercise-3-dplyr.html"><a href="exercise-3-dplyr.html"><i class="fa fa-check"></i>Exercise 3: dplyr</a>
+<ul>
+<li class="chapter" data-level="" data-path="exercise-3-dplyr.html"><a href="exercise-3-dplyr.html#task-1-2"><i class="fa fa-check"></i>Task 1</a></li>
+<li class="chapter" data-level="" data-path="exercise-3-dplyr.html"><a href="exercise-3-dplyr.html#task-2-2"><i class="fa fa-check"></i>Task 2</a></li>
+<li class="chapter" data-level="" data-path="exercise-3-dplyr.html"><a href="exercise-3-dplyr.html#task-3-2"><i class="fa fa-check"></i>Task 3</a></li>
+<li class="chapter" data-level="" data-path="exercise-3-dplyr.html"><a href="exercise-3-dplyr.html#task-4-1"><i class="fa fa-check"></i>Task 4</a></li>
+<li class="chapter" data-level="" data-path="exercise-3-dplyr.html"><a href="exercise-3-dplyr.html#task-5"><i class="fa fa-check"></i>Task 5</a></li>
+<li class="chapter" data-level="" data-path="exercise-3-dplyr.html"><a href="exercise-3-dplyr.html#task-6"><i class="fa fa-check"></i>Task 6</a></li>
+<li class="chapter" data-level="" data-path="exercise-3-dplyr.html"><a href="exercise-3-dplyr.html#task-7"><i class="fa fa-check"></i>Task 7</a></li>
+<li class="chapter" data-level="" data-path="exercise-3-dplyr.html"><a href="exercise-3-dplyr.html#task-8"><i class="fa fa-check"></i>Task 8</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html"><i class="fa fa-check"></i>Solutions</a>
+<ul>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#solutions-for-exercise-1"><i class="fa fa-check"></i>Solutions for Exercise 1</a>
+<ul>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-1-3"><i class="fa fa-check"></i>Task 1</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-2-3"><i class="fa fa-check"></i>Task 2</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-3-3"><i class="fa fa-check"></i>Task 3</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#solutions-for-exercise-2"><i class="fa fa-check"></i>Solutions for Exercise 2</a>
+<ul>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-1-4"><i class="fa fa-check"></i>Task 1</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-2-4"><i class="fa fa-check"></i>Task 2</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-3-4"><i class="fa fa-check"></i>Task 3</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-4-2"><i class="fa fa-check"></i>Task 4</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#solutions-for-exercise-3"><i class="fa fa-check"></i>Solutions for Exercise 3</a>
+<ul>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-1-5"><i class="fa fa-check"></i>Task 1</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-2-5"><i class="fa fa-check"></i>Task 2</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-3-5"><i class="fa fa-check"></i>Task 3</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-4-3"><i class="fa fa-check"></i>Task 4</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-5-1"><i class="fa fa-check"></i>Task 5</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-6-1"><i class="fa fa-check"></i>Task 6</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-7-1"><i class="fa fa-check"></i>Task 7</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-8-1"><i class="fa fa-check"></i>Task 8</a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://lkobilke.github.io/Intro_to_R/.git" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Introduction to R</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="tutorial-working-with-data-files" class="section level1 hasAnchor" number="4">
+<h1><span class="header-section-number"> 4</span> Tutorial: Working with data (files)<a href="tutorial-working-with-data-files.html#tutorial-working-with-data-files" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p><strong>After working through Tutorial 4, you’ll…</strong></p>
+<ul>
+<li>understand how to import data</li>
+<li>know how to select variables in data frames</li>
+<li>know how to access values in data frames</li>
+</ul>
+<div id="defining-your-working-directory" class="section level2 hasAnchor" number="4.1">
+<h2><span class="header-section-number">4.1</span> Defining your working directory<a href="tutorial-working-with-data-files.html#defining-your-working-directory" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>In most cases, you don’t want to manually enter all your values into R
+and combine them with the <code>c()</code> function. Instead, you’ll likely want to
+import data files that you already have on your personal computer or
+drive. Therefore, the first step to importing your data into R is
+usually to define your <em>working directory</em>.</p>
+<p><strong>Your working directory is the folder from which data can be imported
+into R or to which you can export and save data created with R</strong>.</p>
+<p>Create a folder that you want to use as your working directory for this
+tutorial (or use an existing one). For this example, I’ll create a
+folder called <em>“IPR”</em> here in the screenshots, but you could use a different name, most likely “GESIS_R”.</p>
+<table>
+<colgroup>
+<col width="100%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td align="left"><em>Image: Working Directory on Windows</em></td>
+</tr>
+<tr class="even">
+<td align="left"><img src="images/Tut2_wd1.jpg" /></td>
+</tr>
+</tbody>
+</table>
+<p>Go to that folder and copy the folder path to it:</p>
+<table>
+<colgroup>
+<col width="100%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td align="left"><em>Image: Copy Working Directory on Windows</em></td>
+</tr>
+<tr class="even">
+<td align="left"><img src="images/Tut2_wd2.JPG" /></td>
+</tr>
+</tbody>
+</table>
+<p>On Mac, you go to <strong>a document in your folder</strong> and right click on it.
+An options menu opens and you can copy the folder path:</p>
+<table>
+<colgroup>
+<col width="100%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td align="left"><em>Image: Copy Working Directory on MAC</em></td>
+</tr>
+<tr class="even">
+<td align="left"><img src="images/Tut2_wd4.png" /></td>
+</tr>
+</tbody>
+</table>
+<p><strong>NOTE:</strong> On MAC, your folder path might be too long to display the full name. In this case, I’d recommend to move your files a few levels up. E.g., from “GESIS_R” to “Documents”. In addition, white spaces might occur in the folder path. In this case, you might need to replace them with underscores.</p>
+<p>Now <em>you</em> know where this working directory is located - but R should
+know too! Telling R from which folder to import data or where to export
+data is called <em>setting your working directory</em>. We use a function
+called <code>setwd()</code> (you guessed it right: short for “set working
+directory”) which allows us to do exactly that.</p>
+<p><strong>Important</strong>: The way this working directory is set differs between
+Windows- and Mac-Operating Systems.</p>
+<p><strong>Windows:</strong> The dashes need to be pointing towards the right direction
+(if you simply copy the path to the folder, you may need to replace
+these signs “\” with “/”)</p>
+<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="tutorial-working-with-data-files.html#cb51-1" tabindex="-1"></a><span class="co"># Example Working Directory:</span></span>
+<span id="cb51-2"><a href="tutorial-working-with-data-files.html#cb51-2" tabindex="-1"></a><span class="fu">setwd</span>(<span class="st">&quot;C:/Users/YourName/Documents/GESIS_R&quot;</span>)</span></code></pre></div>
+<p><strong>Mac:</strong> You may need to add a “/” at the beginning:</p>
+<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="tutorial-working-with-data-files.html#cb52-1" tabindex="-1"></a><span class="co"># Example Working Directory:</span></span>
+<span id="cb52-2"><a href="tutorial-working-with-data-files.html#cb52-2" tabindex="-1"></a><span class="fu">setwd</span>(<span class="st">&quot;/Users/YourName/Documents/GESIS_R&quot;</span>)</span></code></pre></div>
+<p><strong>NOTE:</strong> Setting your entire desktop as the working directory rarely
+works. It’s better to create a new folder on your desktop and set that
+folder as your working directory.</p>
+<p>If you have forgotten where you set your current working directory, you
+can also ask R about the path of your current working directory with
+<em>getwd()</em>:</p>
+<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="tutorial-working-with-data-files.html#cb53-1" tabindex="-1"></a><span class="fu">getwd</span>()</span></code></pre></div>
+<pre><code>## [1] &quot;C:/Users/YourName/Documents/GESIS_R&quot;</code></pre>
+</div>
+<div id="import-data-from-your-working-directory" class="section level2 hasAnchor" number="4.2">
+<h2><span class="header-section-number">4.2</span> Import data from your working directory<a href="tutorial-working-with-data-files.html#import-data-from-your-working-directory" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>After setting the working directory, you need to transfer the data file
+that you want to work with to that folder (here: the “<em>GESIS_R</em>” folder). To
+do this, download the <em>“WoJ.csv”</em> file from LRZ Sync &amp; Share using this
+<a href="https://syncandshare.lrz.de/getlink/fiHRaY9p84sCnCTLQWsnU4/WoJ.csv">link</a>. The
+dataset is a subset of the <em>Worlds of Journalism 2012-16</em> study
+containing survey data from 40 journalists from five European countries. Put the downloaded data file in the folder that you just set up as your working directory (here: the “<em>GESIS_R</em>” folder).</p>
+<p>The data file <em>WoJ.csv</em> is structured as follows:</p>
+<ul>
+<li>Each row contains the survey answers of a single journalist.</li>
+<li>Each column contains the values given by all journalists for a
+single variable.</li>
+</ul>
+<p>The variables included here are:</p>
+<ul>
+<li><strong>country</strong>: the home country of the journalist (e.g. Germany,
+Switzerland)</li>
+<li><strong>reach</strong>: the reach of the outlet that the journalist is working
+for (Transnational, National, Regional, Local)</li>
+<li><strong>employment</strong>: the journalist’s current employment status
+(Full-time, Part-time, Freelancer)</li>
+<li><strong>temp_contract</strong>: the journalist’s type of contract (Permenent,
+Temporary)</li>
+<li><strong>autonomy_selection</strong>: how much autonomy the journalist indicates
+to have in his/her daily work (from 1 = none at all to 5 = very
+much)</li>
+<li><strong>work_experience</strong>: in years</li>
+<li><strong>trust_parliament</strong> &amp; <strong>trust_government</strong>: how much trust the
+journalist indicates to have (from 1 = none at all to 5 = very much)</li>
+</ul>
+<p>We will read in the file using <code>read.csv()</code>. We specify the <em>file path
+in quotation marks</em> to indicate where to find the data file. However, if
+you have already set your working directory to the folder where the file
+is located, you don’t need to specify the path. Additionally, we use the
+argument <em>header = TRUE</em> to let R know that the first row contains
+variable names. Finally, we assign the data file to a <em>source object</em>
+named <em>survey</em> (but you could choose a different name for your source
+object like <em>WoJ</em> or <em>data</em>). The data is now stored in this object.</p>
+<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="tutorial-working-with-data-files.html#cb55-1" tabindex="-1"></a>survey <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;WoJ.csv&quot;</span>, <span class="at">header =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<pre><code>##        country         reach employment temp_contract autonomy_selection
+## 1      Germany      National  Full-time     Permanent                  5
+## 2      Germany      National  Full-time     Permanent                  3
+## 3  Switzerland      Regional  Full-time     Permanent                  4
+## 4  Switzerland         Local  Part-time     Permanent                  4
+## 5      Austria      National  Part-time     Permanent                  4
+## 6  Switzerland         Local Freelancer          &lt;NA&gt;                  4
+## 7      Germany         Local  Full-time     Permanent                  4
+## 8      Denmark      National  Full-time     Permanent                  3
+## 9  Switzerland         Local  Full-time     Permanent                  5
+## 10     Denmark      National  Full-time     Permanent                  2
+## 11     Austria         Local  Full-time     Permanent                  5
+## 12     Denmark      National Freelancer          &lt;NA&gt;                  4
+## 13          UK      Regional  Full-time     Permanent                  3
+## 14          UK Transnational  Full-time     Permanent                  4
+## 15     Austria      National  Full-time     Permanent                  3
+## 16     Denmark      National Freelancer          &lt;NA&gt;                  5
+## 17          UK Transnational  Full-time     Permanent                  4
+## 18 Switzerland      Regional  Full-time     Permanent                  4
+## 19 Switzerland      National  Part-time     Permanent                  4
+## 20     Denmark      National  Full-time     Permanent                  4
+##    work_experience trust_parliament trust_government
+## 1               10                3                3
+## 2                7                4                4
+## 3                6                4                4
+## 4                7                4                4
+## 5               15                3                2
+## 6               27                4                4
+## 7               24                2                1
+## 8               11                4                3
+## 9               25                1                1
+## 10               4                3                3
+## 11               8                3                2
+## 12              25                3                3
+## 13              10                3                2
+## 14               5                3                2
+## 15              23                3                2
+## 16              25                4                2
+## 17              11                2                3
+## 18               8                3                3
+## 19              32                3                4
+## 20              21                3                3</code></pre>
+<p><strong>NOTE:</strong> While <em>read.csv()</em> reads in comma-separated values,
+<em>read.csv2()</em> reads in values that are separated by semicolons.</p>
+<p>To make the dataset a little more tangible, we will give the journalists
+40 different fictitious names. The names will be saved into a new column
+in the dataset, which we will call <em>name</em>. Please run this code to add
+names to your data:</p>
+<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="tutorial-working-with-data-files.html#cb57-1" tabindex="-1"></a>survey<span class="sc">$</span>name <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
+<span id="cb57-2"><a href="tutorial-working-with-data-files.html#cb57-2" tabindex="-1"></a>  <span class="st">&quot;Rosalie&quot;</span>, <span class="st">&quot;Laurens&quot;</span>, <span class="st">&quot;Florian&quot;</span>, <span class="st">&quot;Chantal&quot;</span>, <span class="st">&quot;Cynthia&quot;</span>, <span class="st">&quot;Paul&quot;</span>, <span class="st">&quot;Jonas&quot;</span>,</span>
+<span id="cb57-3"><a href="tutorial-working-with-data-files.html#cb57-3" tabindex="-1"></a>  <span class="st">&quot;Tanja&quot;</span>, <span class="st">&quot;David&quot;</span>, <span class="st">&quot;Ferdinand&quot;</span>, <span class="st">&quot;Caroline&quot;</span>, <span class="st">&quot;Charline&quot;</span>, <span class="st">&quot;Sev&quot;</span>, <span class="st">&quot;Theodor&quot;</span>,</span>
+<span id="cb57-4"><a href="tutorial-working-with-data-files.html#cb57-4" tabindex="-1"></a>  <span class="st">&quot;Helke&quot;</span>, <span class="st">&quot;Joshua&quot;</span>, <span class="st">&quot;Jona&quot;</span>, <span class="st">&quot;Konrad&quot;</span>, <span class="st">&quot;Lennart&quot;</span>, <span class="st">&quot;Luise&quot;</span>, <span class="st">&quot;Wiebke&quot;</span>, <span class="st">&quot;Marie&quot;</span>, <span class="st">&quot;Rosa&quot;</span>,</span>
+<span id="cb57-5"><a href="tutorial-working-with-data-files.html#cb57-5" tabindex="-1"></a>  <span class="st">&quot;Alma&quot;</span>, <span class="st">&quot;Ida&quot;</span>, <span class="st">&quot;Jean&quot;</span>, <span class="st">&quot;Leonie&quot;</span>, <span class="st">&quot;Tom&quot;</span>, <span class="st">&quot;Maximilian&quot;</span>, <span class="st">&quot;Viktor&quot;</span>, <span class="st">&quot;Marianne&quot;</span>, <span class="st">&quot;Velma&quot;</span>, <span class="st">&quot;Carl&quot;</span>,</span>
+<span id="cb57-6"><a href="tutorial-working-with-data-files.html#cb57-6" tabindex="-1"></a>  <span class="st">&quot;Wolf&quot;</span>, <span class="st">&quot;Merten&quot;</span>, <span class="st">&quot;Tong-Tong&quot;</span>, <span class="st">&quot;Sal&quot;</span>, <span class="st">&quot;Joe&quot;</span>, <span class="st">&quot;Alex&quot;</span>, <span class="st">&quot;Robin&quot;</span></span>
+<span id="cb57-7"><a href="tutorial-working-with-data-files.html#cb57-7" tabindex="-1"></a>)</span></code></pre></div>
+</div>
+<div id="subsetting-variables-columns-in-data-frames" class="section level2 hasAnchor" number="4.3">
+<h2><span class="header-section-number">4.3</span> Subsetting variables / columns in data frames<a href="tutorial-working-with-data-files.html#subsetting-variables-columns-in-data-frames" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>In the <a href="tutorial-using-r-as-a-calculator.html#tutorial-using-r-as-a-calculator">Tutorial: Using R as a calculator</a>, your <em>variables</em> were
+“floating” in your workspace or environment. They were not stored in a
+container, so you could call them by simply writing their name in the
+console. When you import data files into R, all variables in that
+dataset are stored in a “container,” which is your <em>source object</em>.
+These containers for variables are called <em>data frames</em> in R.</p>
+<p>Variables that are part of a data frame can be accessed by their name,
+but we need to specify the data frame <em>AND</em> the variable name and
+combine them with the access operator: <em>$</em>. This takes the form of:</p>
+<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="tutorial-working-with-data-files.html#cb58-1" tabindex="-1"></a>dataframe<span class="sc">$</span>variablename</span>
+<span id="cb58-2"><a href="tutorial-working-with-data-files.html#cb58-2" tabindex="-1"></a><span class="co"># the first part is the container name, i.e. data frame</span></span>
+<span id="cb58-3"><a href="tutorial-working-with-data-files.html#cb58-3" tabindex="-1"></a><span class="co"># this is followed by the access operator $</span></span>
+<span id="cb58-4"><a href="tutorial-working-with-data-files.html#cb58-4" tabindex="-1"></a><span class="co"># finally, you call the variable by name</span></span></code></pre></div>
+<p>For instance, we could retrieve the variable / column <em>“name”</em> in our
+<em>survey</em> data frame by simply using its variable name: We specify the
+object we want to access, the data frame <em>survey</em> and then retrieve the
+column <em>name</em> via the operator <em>$</em>:</p>
+<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb59-1"><a href="tutorial-working-with-data-files.html#cb59-1" tabindex="-1"></a>survey<span class="sc">$</span>name</span></code></pre></div>
+<pre><code>##  [1] &quot;Rosalie&quot;    &quot;Laurens&quot;    &quot;Florian&quot;    &quot;Chantal&quot;    &quot;Cynthia&quot;   
+##  [6] &quot;Paul&quot;       &quot;Jonas&quot;      &quot;Tanja&quot;      &quot;David&quot;      &quot;Ferdinand&quot; 
+## [11] &quot;Caroline&quot;   &quot;Charline&quot;   &quot;Sev&quot;        &quot;Theodor&quot;    &quot;Helke&quot;     
+## [16] &quot;Joshua&quot;     &quot;Jona&quot;       &quot;Konrad&quot;     &quot;Lennart&quot;    &quot;Luise&quot;     
+## [21] &quot;Wiebke&quot;     &quot;Marie&quot;      &quot;Rosa&quot;       &quot;Alma&quot;       &quot;Ida&quot;       
+## [26] &quot;Jean&quot;       &quot;Leonie&quot;     &quot;Tom&quot;        &quot;Maximilian&quot; &quot;Viktor&quot;    
+## [31] &quot;Marianne&quot;   &quot;Velma&quot;      &quot;Carl&quot;       &quot;Wolf&quot;       &quot;Merten&quot;    
+## [36] &quot;Tong-Tong&quot;  &quot;Sal&quot;        &quot;Joe&quot;        &quot;Alex&quot;       &quot;Robin&quot;</code></pre>
+<p>You know that the name variable is the <em>ninth</em> column of you data frame.
+Therefore, you can also access this column / variable by calling it by
+its index number (<em>column index</em>, here: 9). Just like you’ve learned in
+the <a href="tutorial-using-r-as-a-calculator.html#tutorial-using-r-as-a-calculator">Tutorial: Using R as a calculator</a>, you can access sub-elements of
+a greater object with square brackets <code>[ ]</code>:</p>
+<div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb61-1"><a href="tutorial-working-with-data-files.html#cb61-1" tabindex="-1"></a>survey[<span class="dv">9</span>]</span></code></pre></div>
+<pre><code>##          name
+## 1     Rosalie
+## 2     Laurens
+## 3     Florian
+## 4     Chantal
+## 5     Cynthia
+## 6        Paul
+## 7       Jonas
+## 8       Tanja
+## 9       David
+## 10  Ferdinand
+## 11   Caroline
+## 12   Charline
+## 13        Sev
+## 14    Theodor
+## 15      Helke
+## 16     Joshua
+## 17       Jona
+## 18     Konrad
+## 19    Lennart
+## 20      Luise
+## 21     Wiebke
+## 22      Marie
+## 23       Rosa
+## 24       Alma
+## 25        Ida
+## 26       Jean
+## 27     Leonie
+## 28        Tom
+## 29 Maximilian
+## 30     Viktor
+## 31   Marianne
+## 32      Velma
+## 33       Carl
+## 34       Wolf
+## 35     Merten
+## 36  Tong-Tong
+## 37        Sal
+## 38        Joe
+## 39       Alex
+## 40      Robin</code></pre>
+<p><strong>Note:</strong> While the first command gives you the names as a vector, the
+second one gives you the names as a data frame object with only one
+column. This keeps the column header “<em>name</em>” intact. However, if you
+want to retrieve a vector using the <em>column index</em>, you need to provide
+two indices: one for the row that you want to select, followed by a
+comma, and one for the column. Since we want to select <em>all</em> rows, but
+only column No. 9, we need leave the row No. blank:</p>
+<div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb63-1"><a href="tutorial-working-with-data-files.html#cb63-1" tabindex="-1"></a>survey[, <span class="dv">9</span>] <span class="co"># column index = 9</span></span></code></pre></div>
+<pre><code>##  [1] &quot;Rosalie&quot;    &quot;Laurens&quot;    &quot;Florian&quot;    &quot;Chantal&quot;    &quot;Cynthia&quot;   
+##  [6] &quot;Paul&quot;       &quot;Jonas&quot;      &quot;Tanja&quot;      &quot;David&quot;      &quot;Ferdinand&quot; 
+## [11] &quot;Caroline&quot;   &quot;Charline&quot;   &quot;Sev&quot;        &quot;Theodor&quot;    &quot;Helke&quot;     
+## [16] &quot;Joshua&quot;     &quot;Jona&quot;       &quot;Konrad&quot;     &quot;Lennart&quot;    &quot;Luise&quot;     
+## [21] &quot;Wiebke&quot;     &quot;Marie&quot;      &quot;Rosa&quot;       &quot;Alma&quot;       &quot;Ida&quot;       
+## [26] &quot;Jean&quot;       &quot;Leonie&quot;     &quot;Tom&quot;        &quot;Maximilian&quot; &quot;Viktor&quot;    
+## [31] &quot;Marianne&quot;   &quot;Velma&quot;      &quot;Carl&quot;       &quot;Wolf&quot;       &quot;Merten&quot;    
+## [36] &quot;Tong-Tong&quot;  &quot;Sal&quot;        &quot;Joe&quot;        &quot;Alex&quot;       &quot;Robin&quot;</code></pre>
+</div>
+<div id="subsetting-observations-rows-in-data-frames" class="section level2 hasAnchor" number="4.4">
+<h2><span class="header-section-number">4.4</span> Subsetting observations / rows in data frames<a href="tutorial-working-with-data-files.html#subsetting-observations-rows-in-data-frames" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Using the same indexing technique, you can also select an entire row
+(i.e., journalist) by providing a <em>row index</em> and leaving the column
+index blank:</p>
+<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb65-1"><a href="tutorial-working-with-data-files.html#cb65-1" tabindex="-1"></a>survey[<span class="dv">1</span>, ] <span class="co"># row index = 1</span></span></code></pre></div>
+<pre><code>##   country    reach employment temp_contract autonomy_selection work_experience
+## 1 Germany National  Full-time     Permanent                  5              10
+##   trust_parliament trust_government    name
+## 1                3                3 Rosalie</code></pre>
+</div>
+<div id="subsetting-values-cells-in-data-frames" class="section level2 hasAnchor" number="4.5">
+<h2><span class="header-section-number">4.5</span> Subsetting values / cells in data frames<a href="tutorial-working-with-data-files.html#subsetting-values-cells-in-data-frames" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>To subset values of a data set, you can call a variable / column by its
+name. You just have to specify the data frame, the variable name, <em>AND</em>
+the row index. For example, to look only at the first name entry in the
+data, which is <em>Rosalie</em>, you can use the following code:</p>
+<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb67-1"><a href="tutorial-working-with-data-files.html#cb67-1" tabindex="-1"></a>survey<span class="sc">$</span>name[<span class="dv">1</span>]</span></code></pre></div>
+<pre><code>## [1] &quot;Rosalie&quot;</code></pre>
+<p>Now, can you guess how to access the exact same value using the column
+index instead of the column name?</p>
+<p>You can enter the row index first, followed by a comma, and then finish
+with the column index, like this:</p>
+<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb69-1"><a href="tutorial-working-with-data-files.html#cb69-1" tabindex="-1"></a>survey[<span class="dv">1</span>, <span class="dv">9</span>] <span class="co"># row index = 1, column index = 9</span></span></code></pre></div>
+<pre><code>## [1] &quot;Rosalie&quot;</code></pre>
+<p>Of course, you can use complex indexing on data frames. Let’s look at
+the first ten rows of the eighth (<em>trust_government</em>) and ninth (<em>name</em>)
+column:</p>
+<div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb71-1"><a href="tutorial-working-with-data-files.html#cb71-1" tabindex="-1"></a>survey[<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>, <span class="dv">8</span><span class="sc">:</span><span class="dv">9</span>]</span></code></pre></div>
+<pre><code>##    trust_government      name
+## 1                 3   Rosalie
+## 2                 4   Laurens
+## 3                 4   Florian
+## 4                 4   Chantal
+## 5                 2   Cynthia
+## 6                 4      Paul
+## 7                 1     Jonas
+## 8                 3     Tanja
+## 9                 1     David
+## 10                3 Ferdinand</code></pre>
+<p>Or select the second ten rows of the sixth (<em>work_experience</em>) and ninth
+(<em>name</em>) column:</p>
+<div class="sourceCode" id="cb73"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb73-1"><a href="tutorial-working-with-data-files.html#cb73-1" tabindex="-1"></a>survey[<span class="dv">10</span><span class="sc">:</span><span class="dv">20</span>, <span class="fu">c</span>(<span class="dv">6</span>, <span class="dv">9</span>)]</span></code></pre></div>
+<pre><code>##    work_experience      name
+## 10               4 Ferdinand
+## 11               8  Caroline
+## 12              25  Charline
+## 13              10       Sev
+## 14               5   Theodor
+## 15              23     Helke
+## 16              25    Joshua
+## 17              11      Jona
+## 18               8    Konrad
+## 19              32   Lennart
+## 20              21     Luise</code></pre>
+</div>
+<div id="subsetting-data-with-conditions" class="section level2 hasAnchor" number="4.6">
+<h2><span class="header-section-number">4.6</span> Subsetting data with conditions<a href="tutorial-working-with-data-files.html#subsetting-data-with-conditions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Let’s say we want to select all names of journalists who have a work
+experience of at least 25 years. This time, we’ll need to use a
+<em>condition</em> to select our rows:</p>
+<div class="sourceCode" id="cb75"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb75-1"><a href="tutorial-working-with-data-files.html#cb75-1" tabindex="-1"></a>survey[survey<span class="sc">$</span>work_experience <span class="sc">&gt;=</span> <span class="dv">25</span>, <span class="dv">9</span>]</span></code></pre></div>
+<pre><code>##  [1] &quot;Paul&quot;       &quot;David&quot;      &quot;Charline&quot;   &quot;Joshua&quot;     &quot;Lennart&quot;   
+##  [6] &quot;Alma&quot;       &quot;Ida&quot;        &quot;Maximilian&quot; &quot;Viktor&quot;     &quot;Marianne&quot;  
+## [11] &quot;Merten&quot;</code></pre>
+<div class="sourceCode" id="cb77"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb77-1"><a href="tutorial-working-with-data-files.html#cb77-1" tabindex="-1"></a><span class="co"># Read: I want to select column 9 (name) from the survey data frame</span></span>
+<span id="cb77-2"><a href="tutorial-working-with-data-files.html#cb77-2" tabindex="-1"></a><span class="co"># and display all rows in which the work experience column of the survey data frame has a value greater than or equal to 25</span></span></code></pre></div>
+<p>Alternatively, if you want to show <em>all</em> columns that belong to
+journalists who have a work experience of at least 25 years, you would
+do it like that:</p>
+<div class="sourceCode" id="cb78"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb78-1"><a href="tutorial-working-with-data-files.html#cb78-1" tabindex="-1"></a>survey[survey<span class="sc">$</span>work_experience <span class="sc">&gt;=</span> <span class="dv">25</span>, ]</span></code></pre></div>
+<pre><code>##        country         reach employment temp_contract autonomy_selection
+## 6  Switzerland         Local Freelancer          &lt;NA&gt;                  4
+## 9  Switzerland         Local  Full-time     Permanent                  5
+## 12     Denmark      National Freelancer          &lt;NA&gt;                  4
+## 16     Denmark      National Freelancer          &lt;NA&gt;                  5
+## 19 Switzerland      National  Part-time     Permanent                  4
+## 24          UK Transnational Freelancer          &lt;NA&gt;                  4
+## 25     Austria      National  Full-time     Permanent                  4
+## 29     Austria      Regional  Full-time     Permanent                  4
+## 30     Denmark      National Freelancer          &lt;NA&gt;                  4
+## 31     Denmark      National  Full-time     Permanent                  4
+## 35     Denmark      National  Full-time     Permanent                  4
+##    work_experience trust_parliament trust_government       name
+## 6               27                4                4       Paul
+## 9               25                1                1      David
+## 12              25                3                3   Charline
+## 16              25                4                2     Joshua
+## 19              32                3                4    Lennart
+## 24              29                4                4       Alma
+## 25              30                3                3        Ida
+## 29              30                3                3 Maximilian
+## 30              35                3                3     Viktor
+## 31              25                3                3   Marianne
+## 35              29                3                3     Merten</code></pre>
+<p>Of course, you can index more than one column:</p>
+<div class="sourceCode" id="cb80"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb80-1"><a href="tutorial-working-with-data-files.html#cb80-1" tabindex="-1"></a>survey[survey<span class="sc">$</span>work_experience <span class="sc">&gt;=</span> <span class="dv">25</span>, <span class="dv">8</span><span class="sc">:</span><span class="dv">9</span>]</span></code></pre></div>
+<pre><code>##    trust_government       name
+## 6                 4       Paul
+## 9                 1      David
+## 12                3   Charline
+## 16                2     Joshua
+## 19                4    Lennart
+## 24                4       Alma
+## 25                3        Ida
+## 29                3 Maximilian
+## 30                3     Viktor
+## 31                3   Marianne
+## 35                3     Merten</code></pre>
+<p>Finally, you can use multiple conditions:</p>
+<div class="sourceCode" id="cb82"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb82-1"><a href="tutorial-working-with-data-files.html#cb82-1" tabindex="-1"></a>survey[survey<span class="sc">$</span>work_experience <span class="sc">&gt;=</span> <span class="dv">25</span> <span class="sc">&amp;</span> survey<span class="sc">$</span>trust_government <span class="sc">&lt;</span> <span class="dv">2</span>, ]</span></code></pre></div>
+<pre><code>##       country reach employment temp_contract autonomy_selection work_experience
+## 9 Switzerland Local  Full-time     Permanent                  5              25
+##   trust_parliament trust_government  name
+## 9                1                1 David</code></pre>
+</div>
+<div id="eliminate-the-need-to-manually-set-working-directories-by-using-r-projects" class="section level2 hasAnchor" number="4.7">
+<h2><span class="header-section-number">4.7</span> Eliminate the need to manually set working directories by using R Projects<a href="tutorial-working-with-data-files.html#eliminate-the-need-to-manually-set-working-directories-by-using-r-projects" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>This part of the tutorial teaches you how to <strong>create and use R Projects</strong> in RStudio. You’ll learn why projects simplify file paths and eliminate the need for <code>setwd()</code>.</p>
+<p>An <strong>R Project</strong> is a self-contained folder where your code, data, and outputs (e.g., analysis results) live together. When you open the project’s <code>.Rproj</code> file, RStudio automatically sets the <strong>working directory</strong> to the project folder.</p>
+<div id="creating-a-new-r-project" class="section level3 hasAnchor" number="4.7.1">
+<h3><span class="header-section-number">4.7.1</span> Creating a new R Project<a href="tutorial-working-with-data-files.html#creating-a-new-r-project" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ol style="list-style-type: decimal">
+<li>In RStudio, click <strong>File → New Project…</strong></li>
+<li>Choose <strong>New Directory → New Project</strong></li>
+<li>Pick a folder name (e.g., <code>GESIS_R</code>) and a location</li>
+<li>Click <strong>Create Project</strong></li>
+</ol>
+<p>RStudio will create:
+- a new folder,
+- an <code>.Rproj</code> file,
+- and will set your working directory to this project whenever you open it.</p>
+<p><strong>Tip</strong>: You can also convert an existing folder into a project via <strong>File → New Project… → Existing Directory</strong>.</p>
+</div>
+<div id="checking-your-working-directory" class="section level3 hasAnchor" number="4.7.2">
+<h3><span class="header-section-number">4.7.2</span> Checking your working directory<a href="tutorial-working-with-data-files.html#checking-your-working-directory" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Let’s confirm where R thinks you are working. It should be your project folder.</p>
+<div class="sourceCode" id="cb84"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb84-1"><a href="tutorial-working-with-data-files.html#cb84-1" tabindex="-1"></a><span class="fu">getwd</span>()</span></code></pre></div>
+</div>
+<div id="a-recommendation-for-designing-a-good-r-project-structure" class="section level3 hasAnchor" number="4.7.3">
+<h3><span class="header-section-number">4.7.3</span> A recommendation for designing a good R Project structure<a href="tutorial-working-with-data-files.html#a-recommendation-for-designing-a-good-r-project-structure" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>You can now create a new layout for your R project folder. Here is an example for a simple, organized layout for an R project folder called “Forschungsbericht”, which contains all your materials for preparing a Forschungsbericht (= research report). “├──” marks subfolders and data stored in folders:</p>
+<pre><code>Forschungsbericht/
+├── data/
+│   └── mydata.csv
+├── figures/
+│   └── plot1.png
+├── code/
+│   └── data_preprocessing.R
+│   └── data_analysis.R
+├── Mein_Forschungsbericht.Rmd
+└── Forschungsbericht.Rproj</code></pre>
+<p><strong>Why this helps</strong>: Keeping all inputs and outputs in one place makes it much easier to share your work with colleagues or other participants and to reproduce results later. Other people can open your data and R scripts (code) without changing the working directory on their machines. They can start working with your materials right away.</p>
+</div>
+<div id="navigating-your-working-directory-like-a-pro-the-concept-of-relative-paths" class="section level3 hasAnchor" number="4.7.4">
+<h3><span class="header-section-number">4.7.4</span> Navigating your working directory like a pro: The concept of relative paths<a href="tutorial-working-with-data-files.html#navigating-your-working-directory-like-a-pro-the-concept-of-relative-paths" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>If you have subfolders in your working directory, you can navigate them with relative paths. A relative path is like giving directions from your current location: “go into the data folder” or “go one folder up.” An absolute path, in contrast, gives the entire address from the root of your computer. Relative paths are usually preferable in reproducible projects because they can keep working when the complete project folder is moved to another computer.</p>
+<p>In R, a relative path specifies the path to a folder or file <strong>relative to your current working directory</strong> in RStudio. It doesn’t include the complete path from the root of your file system. Instead, it describes how to navigate through the folders and subfolders starting from your current location. Relative paths are flexible and can adapt to different working directories.</p>
+<div id="moving-up-and-down-folders-by-using-relative-paths" class="section level4 hasAnchor" number="4.7.4.1">
+<h4><span class="header-section-number">4.7.4.1</span> Moving up and down folders by using relative paths<a href="tutorial-working-with-data-files.html#moving-up-and-down-folders-by-using-relative-paths" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>To move down a folder, you can use the <code>./</code> notation. The <code>./</code>
+represents the child directory of the current working directory that you
+want to navigate to. For example, if you’re in the folder
+<code>"C:/Users/YourName/Documents/GESIS_R/"</code> and you want to move your working
+directory down to the <code>"data"</code> subfolder, you can use the
+following code:</p>
+<div class="sourceCode" id="cb86"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb86-1"><a href="tutorial-working-with-data-files.html#cb86-1" tabindex="-1"></a><span class="fu">setwd</span>(<span class="st">&quot;./data&quot;</span>)</span></code></pre></div>
+<p>To move up one level in the folder hierarchy again, you can use the
+<code>../</code> notation. The <code>../</code> represents the parent directory of the current
+working directory. You can use this notation with the <code>setwd()</code> function
+to navigate up the folder again:</p>
+<div class="sourceCode" id="cb87"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb87-1"><a href="tutorial-working-with-data-files.html#cb87-1" tabindex="-1"></a><span class="fu">setwd</span>(<span class="st">&quot;../&quot;</span>)</span></code></pre></div>
+</div>
+</div>
+</div>
+<div id="optional-import-data-from-various-file-formats" class="section level2 hasAnchor" number="4.8">
+<h2><span class="header-section-number">4.8</span> Optional: Import data from various file formats<a href="tutorial-working-with-data-files.html#optional-import-data-from-various-file-formats" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>R provides a wide range of functions and packages to import data from
+various file formats such as Excel, SPSS, SAS, Stata, JSON and others.
+Here, we will focus on some commonly used file formats and the R
+functions to import them.</p>
+<div id="importing-data-from-excel" class="section level3 hasAnchor" number="4.8.1">
+<h3><span class="header-section-number">4.8.1</span> Importing data from Excel<a href="tutorial-working-with-data-files.html#importing-data-from-excel" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>We will use the <code>readxl</code> package to import data from Excel files. First,
+we need to install and load the <code>readxl</code> package:</p>
+<div class="sourceCode" id="cb88"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb88-1"><a href="tutorial-working-with-data-files.html#cb88-1" tabindex="-1"></a><span class="co"># Install and load the &#39;readxl&#39; package</span></span>
+<span id="cb88-2"><a href="tutorial-working-with-data-files.html#cb88-2" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;readxl&quot;</span>) <span class="co"># run only the first time</span></span>
+<span id="cb88-3"><a href="tutorial-working-with-data-files.html#cb88-3" tabindex="-1"></a><span class="fu">library</span>(readxl)</span></code></pre></div>
+<p>To import Excel data from your working directory into R, you can now use
+the <code>read_excel()</code> function:</p>
+<div class="sourceCode" id="cb89"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb89-1"><a href="tutorial-working-with-data-files.html#cb89-1" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">&quot;WoJ.xlsx&quot;</span>)</span></code></pre></div>
+<p>This will create a data frame named <em>“data”</em> containing the Excel data.
+By default, the first row of the Excel file is assumed to contain column
+names.</p>
+</div>
+<div id="importing-data-from-json" class="section level3 hasAnchor" number="4.8.2">
+<h3><span class="header-section-number">4.8.2</span> Importing data from JSON<a href="tutorial-working-with-data-files.html#importing-data-from-json" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>JSON files are a popular file format for storing structured data, such
+as data collected from Social Networking Sites. To import data from a
+JSON file into R, you can use the <code>jsonlite</code> package:</p>
+<div class="sourceCode" id="cb90"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb90-1"><a href="tutorial-working-with-data-files.html#cb90-1" tabindex="-1"></a><span class="co"># Install and load the &#39;jsonlite&#39; package</span></span>
+<span id="cb90-2"><a href="tutorial-working-with-data-files.html#cb90-2" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;jsonlite&quot;</span>) <span class="co"># run only the first time</span></span>
+<span id="cb90-3"><a href="tutorial-working-with-data-files.html#cb90-3" tabindex="-1"></a><span class="fu">library</span>(jsonlite)</span></code></pre></div>
+<p>And import your data:</p>
+<div class="sourceCode" id="cb91"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb91-1"><a href="tutorial-working-with-data-files.html#cb91-1" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">fromJSON</span>(<span class="st">&quot;WoJ.json&quot;</span>)</span></code></pre></div>
+</div>
+<div id="importing-data-from-spss" class="section level3 hasAnchor" number="4.8.3">
+<h3><span class="header-section-number">4.8.3</span> Importing data from SPSS<a href="tutorial-working-with-data-files.html#importing-data-from-spss" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>SPSS files are still commonly used in social science research and you
+might want to import your current SPSS projects to R. In R, we can
+import SPSS files using the <code>haven</code> package.</p>
+<div class="sourceCode" id="cb92"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb92-1"><a href="tutorial-working-with-data-files.html#cb92-1" tabindex="-1"></a><span class="co"># Install and load the &#39;haven&#39; package</span></span>
+<span id="cb92-2"><a href="tutorial-working-with-data-files.html#cb92-2" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;haven&quot;</span>) <span class="co"># run only the first time</span></span>
+<span id="cb92-3"><a href="tutorial-working-with-data-files.html#cb92-3" tabindex="-1"></a><span class="fu">library</span>(haven)</span></code></pre></div>
+<p>To import your data into R, use the <code>read_spss()</code> function (here I
+repeated the entire working directory, but you could only write
+<code>read_spss("WoJ.sav")</code>):</p>
+<div class="sourceCode" id="cb93"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb93-1"><a href="tutorial-working-with-data-files.html#cb93-1" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read_spss</span>(<span class="st">&quot;C:/Users/YourName/Documents/GESIS_R/WoJ.sav&quot;</span>)</span></code></pre></div>
+<p>By default, the <code>read_spss()</code> function will convert user-defined
+missings to <code>NA</code> (i.e., missings in R). If you want to read variables
+with user defined missings into R (e.g., keep -9 instead of turning it
+into <code>NA</code>), you can use the <code>user_na</code> argument:</p>
+<div class="sourceCode" id="cb94"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb94-1"><a href="tutorial-working-with-data-files.html#cb94-1" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read_spss</span>(<span class="st">&quot;C:/Users/YourName/Documents/GESIS_R/WoJ.sav&quot;</span>, <span class="at">user_na =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<p><code>read_spss</code> reads all your labelled variables in as an object type
+(i.e., <code>class</code>) called <code>haven_labelled</code> that stores your label
+information. You can check your label information by inspecting your
+data in your environment (by default: right-hand side of RStudio). Just
+click on the blue error next to your source object:</p>
+<table>
+<colgroup>
+<col width="100%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td align="left"><em>Image: Inspecting your labelled data frame</em></td>
+</tr>
+<tr class="even">
+<td align="left"><img src="images/haven_labelled.PNG" /></td>
+</tr>
+</tbody>
+</table>
+<p><strong>NOTE FOR ADVANCED USERS</strong>: If you want to add, change, or remove any
+kind of labels in R, you can use the <code>labelled</code> package:</p>
+<div class="sourceCode" id="cb95"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb95-1"><a href="tutorial-working-with-data-files.html#cb95-1" tabindex="-1"></a><span class="co"># Install and load the &#39;labelled&#39; package</span></span>
+<span id="cb95-2"><a href="tutorial-working-with-data-files.html#cb95-2" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;labelled&quot;</span>)</span>
+<span id="cb95-3"><a href="tutorial-working-with-data-files.html#cb95-3" tabindex="-1"></a><span class="fu">library</span>(labelled)</span></code></pre></div>
+<p>To add a label to a variable, use the <code>var_label()</code> function:</p>
+<div class="sourceCode" id="cb96"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb96-1"><a href="tutorial-working-with-data-files.html#cb96-1" tabindex="-1"></a>var_labels <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
+<span id="cb96-2"><a href="tutorial-working-with-data-files.html#cb96-2" tabindex="-1"></a>  <span class="at">country =</span> <span class="st">&quot;The journalist&#39;s country of origin&quot;</span>,</span>
+<span id="cb96-3"><a href="tutorial-working-with-data-files.html#cb96-3" tabindex="-1"></a>  <span class="at">reach =</span> <span class="st">&quot;The reach of the journalist&#39;s outlet&quot;</span>,</span>
+<span id="cb96-4"><a href="tutorial-working-with-data-files.html#cb96-4" tabindex="-1"></a>  <span class="at">employment =</span> <span class="st">&quot;The journalist&#39;s employment status&quot;</span>,</span>
+<span id="cb96-5"><a href="tutorial-working-with-data-files.html#cb96-5" tabindex="-1"></a>  <span class="at">temp_contract =</span> <span class="st">&quot;The journalist&#39;s type of contract&quot;</span>,</span>
+<span id="cb96-6"><a href="tutorial-working-with-data-files.html#cb96-6" tabindex="-1"></a>  <span class="at">autonomy_selection =</span> <span class="st">&quot;The journalist&#39;s perceived autonomy&quot;</span>,</span>
+<span id="cb96-7"><a href="tutorial-working-with-data-files.html#cb96-7" tabindex="-1"></a>  <span class="at">work_experience =</span> <span class="st">&quot;The journalist&#39;s work experience in years&quot;</span>,</span>
+<span id="cb96-8"><a href="tutorial-working-with-data-files.html#cb96-8" tabindex="-1"></a>  <span class="at">trust_parliament =</span> <span class="st">&quot;The journalist&#39;s trust in the current parliament&quot;</span>,</span>
+<span id="cb96-9"><a href="tutorial-working-with-data-files.html#cb96-9" tabindex="-1"></a>  <span class="at">trust_government =</span> <span class="st">&quot;The journalist&#39;s trust in the current government&quot;</span>,</span>
+<span id="cb96-10"><a href="tutorial-working-with-data-files.html#cb96-10" tabindex="-1"></a>  <span class="at">name =</span> <span class="st">&quot;Name of journalist&quot;</span></span>
+<span id="cb96-11"><a href="tutorial-working-with-data-files.html#cb96-11" tabindex="-1"></a>) <span class="co"># Creates a vector with your variable labels</span></span>
+<span id="cb96-12"><a href="tutorial-working-with-data-files.html#cb96-12" tabindex="-1"></a><span class="fu">var_label</span>(survey) <span class="ot">&lt;-</span> var_labels <span class="co"># Applies the labels to your column variables of the unlabeled &quot;survey&quot; data set (you could also apply it to the SPSS-labelled &quot;data&quot; data set)</span></span></code></pre></div>
+<p>To add value labels to a variable, use the <code>set_value_labels</code> function:</p>
+<div class="sourceCode" id="cb97"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb97-1"><a href="tutorial-working-with-data-files.html#cb97-1" tabindex="-1"></a>trust_labels <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;none at all&quot;</span> <span class="ot">=</span> <span class="dv">1</span>, <span class="st">&quot;a little&quot;</span> <span class="ot">=</span> <span class="dv">2</span>, <span class="st">&quot;partly&quot;</span> <span class="ot">=</span> <span class="dv">3</span>, <span class="st">&quot;a lot&quot;</span> <span class="ot">=</span> <span class="dv">4</span>, <span class="st">&quot;very much&quot;</span> <span class="ot">=</span> <span class="dv">5</span>)</span>
+<span id="cb97-2"><a href="tutorial-working-with-data-files.html#cb97-2" tabindex="-1"></a>data<span class="sc">$</span>trust_parliament <span class="ot">&lt;-</span> <span class="fu">set_value_labels</span>(data<span class="sc">$</span>trust_parliament, <span class="at">.labels =</span> trust_labels)</span>
+<span id="cb97-3"><a href="tutorial-working-with-data-files.html#cb97-3" tabindex="-1"></a>data<span class="sc">$</span>trust_government <span class="ot">&lt;-</span> <span class="fu">set_value_labels</span>(data<span class="sc">$</span>trust_government, <span class="at">.labels =</span> trust_labels)</span></code></pre></div>
+<p>To remove a variable label from a variable, use the <code>remove_var_label</code>
+function:</p>
+<div class="sourceCode" id="cb98"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb98-1"><a href="tutorial-working-with-data-files.html#cb98-1" tabindex="-1"></a>data<span class="sc">$</span>trust_parliament <span class="ot">&lt;-</span> <span class="fu">remove_var_label</span>(data<span class="sc">$</span>trust_parliament)</span></code></pre></div>
+<p>And to remove a value label from a variable, use the <code>remove_val_labels</code>
+function:</p>
+<div class="sourceCode" id="cb99"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb99-1"><a href="tutorial-working-with-data-files.html#cb99-1" tabindex="-1"></a>data<span class="sc">$</span>trust_parliament <span class="ot">&lt;-</span> <span class="fu">remove_val_labels</span>(data<span class="sc">$</span>trust_parliament)</span></code></pre></div>
+<p>For a full documentation and a helpful cheat sheet of the <code>labelled</code>
+package, click this
+<a href="http://larmarange.github.io/labelled/index.html">link</a>. It also
+contains information on how to use the <code>labelled</code> package in combination
+with the <code>tidyverse</code>. I’ve used <code>Base R</code> in this tutorial.</p>
+</div>
+</div>
+<div id="take-aways-2" class="section level2 hasAnchor" number="4.9">
+<h2><span class="header-section-number">4.9</span> Take-Aways<a href="tutorial-working-with-data-files.html#take-aways-2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li><strong>Setting the working directory:</strong> tells R where your folder with
+the data is located on your drive, <code>setwd(your_filepath)</code></li>
+<li><strong>Import data</strong>: after setting the working directory, with
+<code>read.csv()</code> (comma-separated) or <code>read.csv2()</code>
+(semicolon-separated) or the package of your choice (e.g., <code>haven</code>)</li>
+<li><strong>Access variables</strong>: either by the access operator $
+(<code>dataframe&amp;variablename</code>) or by the column index <code>[,columnNo.]</code></li>
+<li><strong>Access values</strong>: by indexing, i.e. using <code>[ ]</code> and row + column
+indices</li>
+<li><strong>Conditions</strong>: you can select rows based on conditions, e.g.:
+greater <code>&gt;</code>, greater or equal <code>&gt;=</code>, equal <code>==</code>, and not equal <code>!=</code></li>
+</ul>
+</div>
+<div id="additional-tutorials-2" class="section level2 hasAnchor" number="4.10">
+<h2><span class="header-section-number">4.10</span> Additional tutorials<a href="tutorial-working-with-data-files.html#additional-tutorials-2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>You still have questions? The following online guides can help you with
+that:</p>
+<ul>
+<li><a href="https://www.r-bloggers.com/2021/12/import-csv-files-into-r-step-by-step-guide/">Import CSV Files into R Step-by-Step
+Guide</a></li>
+<li><a href="https://stats.oarc.ucla.edu/r/modules/subsetting-data/">Subsetting
+data</a></li>
+<li><a href="http://www.cookbook-r.com/Basics/Indexing_into_a_data_structure/">Indexing into a data
+structure</a></li>
+</ul>
+<p>Now it’s your time to get into coding: Try <a href="exercise-2-base-r.html#exercise-2-base-r">Exercise 2: Base R</a>.</p>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="exercise-1-base-r.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="exercise-2-base-r.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": "https://lkobilke.github.io/Intro_to_R/edit/main/index.Rmd",
+    "text": "Edit"
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": ["Intro to R.pdf"],
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "subsection"
+  }
+});
+});
+</script>
+
+</body>
+
+</html>
