@@ -830,7 +830,7 @@ The exercise is therefore <strong>OPTIONAL</strong> and is intended as a resourc
 <div id="task-1-9" class="section level3 unnumbered hasAnchor">
 <h3>Task 1<a href="solutions.html#task-1-9" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><em>Solution:</em></p>
-<div class="sourceCode" id="cb373"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb373-1"><a href="solutions.html#cb373-1" tabindex="-1"></a>path <span class="ot">&lt;-</span> <span class="st">&quot;data/advanced_practice/multiple_files&quot;</span></span>
+<div class="sourceCode" id="cb373"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb373-1"><a href="solutions.html#cb373-1" tabindex="-1"></a>path <span class="ot">&lt;-</span> <span class="st">&quot;advanced_practice/multiple_files&quot;</span></span>
 <span id="cb373-2"><a href="solutions.html#cb373-2" tabindex="-1"></a></span>
 <span id="cb373-3"><a href="solutions.html#cb373-3" tabindex="-1"></a>file_paths <span class="ot">&lt;-</span> <span class="fu">list.files</span>(</span>
 <span id="cb373-4"><a href="solutions.html#cb373-4" tabindex="-1"></a>  <span class="at">path =</span> path,</span>
@@ -838,58 +838,36 @@ The exercise is therefore <strong>OPTIONAL</strong> and is intended as a resourc
 <span id="cb373-6"><a href="solutions.html#cb373-6" tabindex="-1"></a>  <span class="at">full.names =</span> <span class="cn">TRUE</span></span>
 <span id="cb373-7"><a href="solutions.html#cb373-7" tabindex="-1"></a>)</span>
 <span id="cb373-8"><a href="solutions.html#cb373-8" tabindex="-1"></a></span>
-<span id="cb373-9"><a href="solutions.html#cb373-9" tabindex="-1"></a>file_paths</span></code></pre></div>
-<pre><code>## [1] &quot;data/advanced_practice/multiple_files/journalist_batch_1.csv&quot;
-## [2] &quot;data/advanced_practice/multiple_files/journalist_batch_2.csv&quot;
-## [3] &quot;data/advanced_practice/multiple_files/journalist_batch_3.csv&quot;</code></pre>
-<div class="sourceCode" id="cb375"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb375-1"><a href="solutions.html#cb375-1" tabindex="-1"></a><span class="fu">length</span>(file_paths)</span></code></pre></div>
-<pre><code>## [1] 3</code></pre>
+<span id="cb373-9"><a href="solutions.html#cb373-9" tabindex="-1"></a>file_paths</span>
+<span id="cb373-10"><a href="solutions.html#cb373-10" tabindex="-1"></a><span class="fu">length</span>(file_paths)</span></code></pre></div>
 <p>Read and combine the files:</p>
-<div class="sourceCode" id="cb377"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb377-1"><a href="solutions.html#cb377-1" tabindex="-1"></a>combined_data <span class="ot">&lt;-</span> file_paths <span class="sc">%&gt;%</span></span>
-<span id="cb377-2"><a href="solutions.html#cb377-2" tabindex="-1"></a>  <span class="fu">map</span>(<span class="sc">~</span> <span class="fu">read.csv2</span>(.x)) <span class="sc">%&gt;%</span></span>
-<span id="cb377-3"><a href="solutions.html#cb377-3" tabindex="-1"></a>  <span class="fu">bind_rows</span>()</span>
-<span id="cb377-4"><a href="solutions.html#cb377-4" tabindex="-1"></a></span>
-<span id="cb377-5"><a href="solutions.html#cb377-5" tabindex="-1"></a><span class="fu">nrow</span>(combined_data)</span></code></pre></div>
-<pre><code>## [1] 36</code></pre>
-<div class="sourceCode" id="cb379"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb379-1"><a href="solutions.html#cb379-1" tabindex="-1"></a><span class="fu">ncol</span>(combined_data)</span></code></pre></div>
-<pre><code>## [1] 8</code></pre>
-<div class="sourceCode" id="cb381"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb381-1"><a href="solutions.html#cb381-1" tabindex="-1"></a><span class="fu">names</span>(combined_data)</span></code></pre></div>
-<pre><code>## [1] &quot;respondent_id&quot;      &quot;country&quot;            &quot;employment&quot;        
-## [4] &quot;work_experience&quot;    &quot;autonomy_selection&quot; &quot;autonomy_emphasis&quot; 
-## [7] &quot;trust_government&quot;   &quot;ethics_1&quot;</code></pre>
-<p>R should find <strong>3 files</strong>. The combined dataset contains <strong>36 respondents</strong>
+<div class="sourceCode" id="cb374"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb374-1"><a href="solutions.html#cb374-1" tabindex="-1"></a>combined_data <span class="ot">&lt;-</span> file_paths <span class="sc">%&gt;%</span></span>
+<span id="cb374-2"><a href="solutions.html#cb374-2" tabindex="-1"></a>  <span class="fu">map</span>(<span class="sc">~</span> <span class="fu">read.csv2</span>(.x)) <span class="sc">%&gt;%</span></span>
+<span id="cb374-3"><a href="solutions.html#cb374-3" tabindex="-1"></a>  <span class="fu">bind_rows</span>()</span></code></pre></div>
+<p>The combined dataset contains <strong>36 respondents</strong>
 and <strong>8 variables</strong>.</p>
 </div>
 <div id="task-2-deal-with-messy-column-names" class="section level3 unnumbered hasAnchor">
 <h3>Task 2: Deal with messy column names<a href="solutions.html#task-2-deal-with-messy-column-names" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><em>Solution:</em></p>
-<div class="sourceCode" id="cb383"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb383-1"><a href="solutions.html#cb383-1" tabindex="-1"></a>messy_paths <span class="ot">&lt;-</span> <span class="fu">list.files</span>(</span>
-<span id="cb383-2"><a href="solutions.html#cb383-2" tabindex="-1"></a>  <span class="at">path =</span> <span class="st">&quot;data/advanced_practice/multiple_files_messy&quot;</span>,</span>
-<span id="cb383-3"><a href="solutions.html#cb383-3" tabindex="-1"></a>  <span class="at">pattern =</span> <span class="st">&quot;</span><span class="sc">\\</span><span class="st">.csv$&quot;</span>,</span>
-<span id="cb383-4"><a href="solutions.html#cb383-4" tabindex="-1"></a>  <span class="at">full.names =</span> <span class="cn">TRUE</span></span>
-<span id="cb383-5"><a href="solutions.html#cb383-5" tabindex="-1"></a>)</span>
-<span id="cb383-6"><a href="solutions.html#cb383-6" tabindex="-1"></a></span>
-<span id="cb383-7"><a href="solutions.html#cb383-7" tabindex="-1"></a>combined_messy <span class="ot">&lt;-</span> messy_paths <span class="sc">%&gt;%</span></span>
-<span id="cb383-8"><a href="solutions.html#cb383-8" tabindex="-1"></a>  <span class="fu">map</span>(<span class="sc">~</span> <span class="fu">read.csv2</span>(.x, <span class="at">check.names =</span> <span class="cn">FALSE</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb383-9"><a href="solutions.html#cb383-9" tabindex="-1"></a>        <span class="fu">setNames</span>(</span>
-<span id="cb383-10"><a href="solutions.html#cb383-10" tabindex="-1"></a>          <span class="fu">gsub</span>(</span>
-<span id="cb383-11"><a href="solutions.html#cb383-11" tabindex="-1"></a>            <span class="st">&quot;</span><span class="sc">\\</span><span class="st">s+&quot;</span>, <span class="st">&quot;_&quot;</span>,</span>
-<span id="cb383-12"><a href="solutions.html#cb383-12" tabindex="-1"></a>            <span class="fu">tolower</span>(<span class="fu">trimws</span>(<span class="fu">names</span>(.)))</span>
-<span id="cb383-13"><a href="solutions.html#cb383-13" tabindex="-1"></a>          )</span>
-<span id="cb383-14"><a href="solutions.html#cb383-14" tabindex="-1"></a>        )) <span class="sc">%&gt;%</span></span>
-<span id="cb383-15"><a href="solutions.html#cb383-15" tabindex="-1"></a>  <span class="fu">bind_rows</span>()</span>
-<span id="cb383-16"><a href="solutions.html#cb383-16" tabindex="-1"></a></span>
-<span id="cb383-17"><a href="solutions.html#cb383-17" tabindex="-1"></a><span class="fu">names</span>(combined_messy)</span></code></pre></div>
-<pre><code>## [1] &quot;respondent_id&quot;      &quot;country&quot;            &quot;employment&quot;        
-## [4] &quot;work_experience&quot;    &quot;autonomy_selection&quot; &quot;autonomy_emphasis&quot; 
-## [7] &quot;trust_government&quot;   &quot;ethics_1&quot;</code></pre>
+<div class="sourceCode" id="cb375"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb375-1"><a href="solutions.html#cb375-1" tabindex="-1"></a>messy_paths <span class="ot">&lt;-</span> <span class="fu">list.files</span>(</span>
+<span id="cb375-2"><a href="solutions.html#cb375-2" tabindex="-1"></a>  <span class="at">path =</span> <span class="st">&quot;advanced_practice/multiple_files_messy&quot;</span>,</span>
+<span id="cb375-3"><a href="solutions.html#cb375-3" tabindex="-1"></a>  <span class="at">pattern =</span> <span class="st">&quot;</span><span class="sc">\\</span><span class="st">.csv$&quot;</span>,</span>
+<span id="cb375-4"><a href="solutions.html#cb375-4" tabindex="-1"></a>  <span class="at">full.names =</span> <span class="cn">TRUE</span></span>
+<span id="cb375-5"><a href="solutions.html#cb375-5" tabindex="-1"></a>)</span>
+<span id="cb375-6"><a href="solutions.html#cb375-6" tabindex="-1"></a></span>
+<span id="cb375-7"><a href="solutions.html#cb375-7" tabindex="-1"></a>combined_messy <span class="ot">&lt;-</span> messy_paths <span class="sc">%&gt;%</span></span>
+<span id="cb375-8"><a href="solutions.html#cb375-8" tabindex="-1"></a>  <span class="fu">map</span>(<span class="sc">~</span> <span class="fu">read.csv2</span>(.x, <span class="at">check.names =</span> <span class="cn">FALSE</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb375-9"><a href="solutions.html#cb375-9" tabindex="-1"></a>        <span class="fu">setNames</span>(</span>
+<span id="cb375-10"><a href="solutions.html#cb375-10" tabindex="-1"></a>          <span class="fu">gsub</span>(</span>
+<span id="cb375-11"><a href="solutions.html#cb375-11" tabindex="-1"></a>            <span class="st">&quot;</span><span class="sc">\\</span><span class="st">s+&quot;</span>, <span class="st">&quot;_&quot;</span>,</span>
+<span id="cb375-12"><a href="solutions.html#cb375-12" tabindex="-1"></a>            <span class="fu">tolower</span>(<span class="fu">trimws</span>(<span class="fu">names</span>(.)))</span>
+<span id="cb375-13"><a href="solutions.html#cb375-13" tabindex="-1"></a>          )</span>
+<span id="cb375-14"><a href="solutions.html#cb375-14" tabindex="-1"></a>        )) <span class="sc">%&gt;%</span></span>
+<span id="cb375-15"><a href="solutions.html#cb375-15" tabindex="-1"></a>  <span class="fu">bind_rows</span>()</span></code></pre></div>
 <p>Count the missing values in <code>trust_government</code>:</p>
-<div class="sourceCode" id="cb385"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb385-1"><a href="solutions.html#cb385-1" tabindex="-1"></a>combined_messy <span class="sc">%&gt;%</span></span>
-<span id="cb385-2"><a href="solutions.html#cb385-2" tabindex="-1"></a>  <span class="fu">summarize</span>(</span>
-<span id="cb385-3"><a href="solutions.html#cb385-3" tabindex="-1"></a>    <span class="at">missing_trust =</span> <span class="fu">sum</span>(<span class="fu">is.na</span>(trust_government))</span>
-<span id="cb385-4"><a href="solutions.html#cb385-4" tabindex="-1"></a>  )</span></code></pre></div>
-<pre><code>##   missing_trust
-## 1             8</code></pre>
+<div class="sourceCode" id="cb376"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb376-1"><a href="solutions.html#cb376-1" tabindex="-1"></a>combined_messy <span class="sc">%&gt;%</span></span>
+<span id="cb376-2"><a href="solutions.html#cb376-2" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">is.na</span>(trust_government))</span></code></pre></div>
 <p>The result should be <strong>8 missing values</strong>. The third file intentionally
 does not contain the <code>trust_government</code> variable. <code>bind_rows()</code> creates
 that column in the combined dataset and fills the unavailable values with
@@ -898,27 +876,23 @@ that column in the combined dataset and fills the unavailable values with
 <div id="task-3-9" class="section level3 unnumbered hasAnchor">
 <h3>Task 3<a href="solutions.html#task-3-9" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><em>Solution:</em></p>
-<div class="sourceCode" id="cb387"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb387-1"><a href="solutions.html#cb387-1" tabindex="-1"></a>profiles <span class="ot">&lt;-</span> <span class="fu">read.csv2</span>(</span>
-<span id="cb387-2"><a href="solutions.html#cb387-2" tabindex="-1"></a>  <span class="st">&quot;data/advanced_practice/joins/journalist_profiles.csv&quot;</span></span>
-<span id="cb387-3"><a href="solutions.html#cb387-3" tabindex="-1"></a>)</span>
-<span id="cb387-4"><a href="solutions.html#cb387-4" tabindex="-1"></a></span>
-<span id="cb387-5"><a href="solutions.html#cb387-5" tabindex="-1"></a>attitudes <span class="ot">&lt;-</span> <span class="fu">read.csv2</span>(</span>
-<span id="cb387-6"><a href="solutions.html#cb387-6" tabindex="-1"></a>  <span class="st">&quot;data/advanced_practice/joins/journalist_attitudes.csv&quot;</span></span>
-<span id="cb387-7"><a href="solutions.html#cb387-7" tabindex="-1"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb377"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb377-1"><a href="solutions.html#cb377-1" tabindex="-1"></a>profiles <span class="ot">&lt;-</span> <span class="fu">read.csv2</span>(</span>
+<span id="cb377-2"><a href="solutions.html#cb377-2" tabindex="-1"></a>  <span class="st">&quot;advanced_practice/joins/journalist_profiles.csv&quot;</span></span>
+<span id="cb377-3"><a href="solutions.html#cb377-3" tabindex="-1"></a>)</span>
+<span id="cb377-4"><a href="solutions.html#cb377-4" tabindex="-1"></a></span>
+<span id="cb377-5"><a href="solutions.html#cb377-5" tabindex="-1"></a>attitudes <span class="ot">&lt;-</span> <span class="fu">read.csv2</span>(</span>
+<span id="cb377-6"><a href="solutions.html#cb377-6" tabindex="-1"></a>  <span class="st">&quot;advanced_practice/joins/journalist_attitudes.csv&quot;</span></span>
+<span id="cb377-7"><a href="solutions.html#cb377-7" tabindex="-1"></a>)</span></code></pre></div>
 <p>Create the four joins:</p>
-<div class="sourceCode" id="cb388"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb388-1"><a href="solutions.html#cb388-1" tabindex="-1"></a>inner_data <span class="ot">&lt;-</span> <span class="fu">inner_join</span>(profiles, attitudes, <span class="at">by =</span> <span class="st">&quot;respondent_id&quot;</span>)</span>
-<span id="cb388-2"><a href="solutions.html#cb388-2" tabindex="-1"></a>left_data  <span class="ot">&lt;-</span> <span class="fu">left_join</span>(profiles, attitudes, <span class="at">by =</span> <span class="st">&quot;respondent_id&quot;</span>)</span>
-<span id="cb388-3"><a href="solutions.html#cb388-3" tabindex="-1"></a>right_data <span class="ot">&lt;-</span> <span class="fu">right_join</span>(profiles, attitudes, <span class="at">by =</span> <span class="st">&quot;respondent_id&quot;</span>)</span>
-<span id="cb388-4"><a href="solutions.html#cb388-4" tabindex="-1"></a>full_data  <span class="ot">&lt;-</span> <span class="fu">full_join</span>(profiles, attitudes, <span class="at">by =</span> <span class="st">&quot;respondent_id&quot;</span>)</span>
-<span id="cb388-5"><a href="solutions.html#cb388-5" tabindex="-1"></a></span>
-<span id="cb388-6"><a href="solutions.html#cb388-6" tabindex="-1"></a><span class="fu">nrow</span>(inner_data)</span></code></pre></div>
-<pre><code>## [1] 10</code></pre>
-<div class="sourceCode" id="cb390"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb390-1"><a href="solutions.html#cb390-1" tabindex="-1"></a><span class="fu">nrow</span>(left_data)</span></code></pre></div>
-<pre><code>## [1] 20</code></pre>
-<div class="sourceCode" id="cb392"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb392-1"><a href="solutions.html#cb392-1" tabindex="-1"></a><span class="fu">nrow</span>(right_data)</span></code></pre></div>
-<pre><code>## [1] 20</code></pre>
-<div class="sourceCode" id="cb394"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb394-1"><a href="solutions.html#cb394-1" tabindex="-1"></a><span class="fu">nrow</span>(full_data)</span></code></pre></div>
-<pre><code>## [1] 30</code></pre>
+<div class="sourceCode" id="cb378"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb378-1"><a href="solutions.html#cb378-1" tabindex="-1"></a>inner_data <span class="ot">&lt;-</span> <span class="fu">inner_join</span>(profiles, attitudes, <span class="at">by =</span> <span class="st">&quot;respondent_id&quot;</span>)</span>
+<span id="cb378-2"><a href="solutions.html#cb378-2" tabindex="-1"></a>left_data  <span class="ot">&lt;-</span> <span class="fu">left_join</span>(profiles, attitudes, <span class="at">by =</span> <span class="st">&quot;respondent_id&quot;</span>)</span>
+<span id="cb378-3"><a href="solutions.html#cb378-3" tabindex="-1"></a>right_data <span class="ot">&lt;-</span> <span class="fu">right_join</span>(profiles, attitudes, <span class="at">by =</span> <span class="st">&quot;respondent_id&quot;</span>)</span>
+<span id="cb378-4"><a href="solutions.html#cb378-4" tabindex="-1"></a>full_data  <span class="ot">&lt;-</span> <span class="fu">full_join</span>(profiles, attitudes, <span class="at">by =</span> <span class="st">&quot;respondent_id&quot;</span>)</span>
+<span id="cb378-5"><a href="solutions.html#cb378-5" tabindex="-1"></a></span>
+<span id="cb378-6"><a href="solutions.html#cb378-6" tabindex="-1"></a><span class="fu">nrow</span>(inner_data)</span>
+<span id="cb378-7"><a href="solutions.html#cb378-7" tabindex="-1"></a><span class="fu">nrow</span>(left_data)</span>
+<span id="cb378-8"><a href="solutions.html#cb378-8" tabindex="-1"></a><span class="fu">nrow</span>(right_data)</span>
+<span id="cb378-9"><a href="solutions.html#cb378-9" tabindex="-1"></a><span class="fu">nrow</span>(full_data)</span></code></pre></div>
 <p>The expected numbers of rows are:</p>
 <ul>
 <li><code>inner_join()</code>: <strong>10</strong></li>
@@ -934,477 +908,85 @@ that column in the combined dataset and fills the unavailable values with
 <li><code>full_join()</code> keeps all cases found in either dataset.</li>
 </ul>
 <p>The bonus task can be solved with:</p>
-<div class="sourceCode" id="cb396"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb396-1"><a href="solutions.html#cb396-1" tabindex="-1"></a>profiles <span class="sc">%&gt;%</span></span>
-<span id="cb396-2"><a href="solutions.html#cb396-2" tabindex="-1"></a>  <span class="fu">anti_join</span>(attitudes, <span class="at">by =</span> <span class="st">&quot;respondent_id&quot;</span>)</span></code></pre></div>
-<pre><code>##    respondent_id     country employment work_experience
-## 1           J101     Germany  Full-time              15
-## 2           J102 Switzerland  Part-time              18
-## 3           J103     Austria Freelancer              21
-## 4           J104     Germany  Temporary              24
-## 5           J105 Switzerland  Full-time              27
-## 6           J106     Austria  Part-time              30
-## 7           J107     Germany Freelancer               4
-## 8           J108 Switzerland  Temporary               7
-## 9           J109     Austria  Full-time              10
-## 10          J110     Germany  Part-time              13</code></pre>
+<div class="sourceCode" id="cb379"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb379-1"><a href="solutions.html#cb379-1" tabindex="-1"></a>profiles <span class="sc">%&gt;%</span></span>
+<span id="cb379-2"><a href="solutions.html#cb379-2" tabindex="-1"></a>  <span class="fu">anti_join</span>(attitudes, <span class="at">by =</span> <span class="st">&quot;respondent_id&quot;</span>)</span></code></pre></div>
 </div>
 <div id="task-4-7" class="section level3 unnumbered hasAnchor">
 <h3>Task 4<a href="solutions.html#task-4-7" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><em>Solution:</em></p>
-<div class="sourceCode" id="cb398"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb398-1"><a href="solutions.html#cb398-1" tabindex="-1"></a>panel_wide <span class="ot">&lt;-</span> <span class="fu">read.csv2</span>(</span>
-<span id="cb398-2"><a href="solutions.html#cb398-2" tabindex="-1"></a>  <span class="st">&quot;data/advanced_practice/panel/journalist_panel_wide.csv&quot;</span></span>
-<span id="cb398-3"><a href="solutions.html#cb398-3" tabindex="-1"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb380"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb380-1"><a href="solutions.html#cb380-1" tabindex="-1"></a>panel_wide <span class="ot">&lt;-</span> <span class="fu">read.csv2</span>(</span>
+<span id="cb380-2"><a href="solutions.html#cb380-2" tabindex="-1"></a>  <span class="st">&quot;advanced_practice/panel/journalist_panel_wide.csv&quot;</span></span>
+<span id="cb380-3"><a href="solutions.html#cb380-3" tabindex="-1"></a>)</span></code></pre></div>
 <p>Transform the data into long format:</p>
-<div class="sourceCode" id="cb399"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb399-1"><a href="solutions.html#cb399-1" tabindex="-1"></a>panel_long <span class="ot">&lt;-</span> panel_wide <span class="sc">%&gt;%</span></span>
-<span id="cb399-2"><a href="solutions.html#cb399-2" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(</span>
-<span id="cb399-3"><a href="solutions.html#cb399-3" tabindex="-1"></a>    <span class="at">cols =</span> <span class="sc">-</span><span class="fu">c</span>(respondent_id, country),</span>
-<span id="cb399-4"><a href="solutions.html#cb399-4" tabindex="-1"></a>    <span class="at">names_to =</span> <span class="fu">c</span>(<span class="st">&quot;measure&quot;</span>, <span class="st">&quot;wave&quot;</span>),</span>
-<span id="cb399-5"><a href="solutions.html#cb399-5" tabindex="-1"></a>    <span class="at">names_pattern =</span> <span class="st">&quot;(.*)_(w</span><span class="sc">\\</span><span class="st">d+)&quot;</span>,</span>
-<span id="cb399-6"><a href="solutions.html#cb399-6" tabindex="-1"></a>    <span class="at">values_to =</span> <span class="st">&quot;score&quot;</span></span>
-<span id="cb399-7"><a href="solutions.html#cb399-7" tabindex="-1"></a>  )</span>
-<span id="cb399-8"><a href="solutions.html#cb399-8" tabindex="-1"></a></span>
-<span id="cb399-9"><a href="solutions.html#cb399-9" tabindex="-1"></a>panel_long</span></code></pre></div>
-<pre><code>## # A tibble: 40 × 5
-##    respondent_id country     measure            wave  score
-##    &lt;chr&gt;         &lt;chr&gt;       &lt;chr&gt;              &lt;chr&gt; &lt;int&gt;
-##  1 J201          Germany     autonomy_selection w1        2
-##  2 J201          Germany     autonomy_selection w2        2
-##  3 J201          Germany     trust_government   w1        4
-##  4 J201          Germany     trust_government   w2        3
-##  5 J202          Switzerland autonomy_selection w1        3
-##  6 J202          Switzerland autonomy_selection w2        3
-##  7 J202          Switzerland trust_government   w1        5
-##  8 J202          Switzerland trust_government   w2        5
-##  9 J203          Austria     autonomy_selection w1        4
-## 10 J203          Austria     autonomy_selection w2        5
-## # ℹ 30 more rows</code></pre>
+<div class="sourceCode" id="cb381"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb381-1"><a href="solutions.html#cb381-1" tabindex="-1"></a>panel_long <span class="ot">&lt;-</span> panel_wide <span class="sc">%&gt;%</span></span>
+<span id="cb381-2"><a href="solutions.html#cb381-2" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(</span>
+<span id="cb381-3"><a href="solutions.html#cb381-3" tabindex="-1"></a>    <span class="at">cols =</span> <span class="sc">-</span><span class="fu">c</span>(respondent_id, country),</span>
+<span id="cb381-4"><a href="solutions.html#cb381-4" tabindex="-1"></a>    <span class="at">names_to =</span> <span class="fu">c</span>(<span class="st">&quot;measure&quot;</span>, <span class="st">&quot;wave&quot;</span>),</span>
+<span id="cb381-5"><a href="solutions.html#cb381-5" tabindex="-1"></a>    <span class="at">names_pattern =</span> <span class="st">&quot;(.*)_(w</span><span class="sc">\\</span><span class="st">d+)&quot;</span>,</span>
+<span id="cb381-6"><a href="solutions.html#cb381-6" tabindex="-1"></a>    <span class="at">values_to =</span> <span class="st">&quot;score&quot;</span></span>
+<span id="cb381-7"><a href="solutions.html#cb381-7" tabindex="-1"></a>  )</span>
+<span id="cb381-8"><a href="solutions.html#cb381-8" tabindex="-1"></a></span>
+<span id="cb381-9"><a href="solutions.html#cb381-9" tabindex="-1"></a>panel_long</span></code></pre></div>
 <p>Transform it back into wide format:</p>
-<div class="sourceCode" id="cb401"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb401-1"><a href="solutions.html#cb401-1" tabindex="-1"></a>panel_wide_again <span class="ot">&lt;-</span> panel_long <span class="sc">%&gt;%</span></span>
-<span id="cb401-2"><a href="solutions.html#cb401-2" tabindex="-1"></a>  <span class="fu">pivot_wider</span>(</span>
-<span id="cb401-3"><a href="solutions.html#cb401-3" tabindex="-1"></a>    <span class="at">names_from =</span> <span class="fu">c</span>(measure, wave),</span>
-<span id="cb401-4"><a href="solutions.html#cb401-4" tabindex="-1"></a>    <span class="at">names_sep =</span> <span class="st">&quot;_&quot;</span>,</span>
-<span id="cb401-5"><a href="solutions.html#cb401-5" tabindex="-1"></a>    <span class="at">values_from =</span> score</span>
-<span id="cb401-6"><a href="solutions.html#cb401-6" tabindex="-1"></a>  )</span>
-<span id="cb401-7"><a href="solutions.html#cb401-7" tabindex="-1"></a></span>
-<span id="cb401-8"><a href="solutions.html#cb401-8" tabindex="-1"></a>panel_wide_again</span></code></pre></div>
-<pre><code>## # A tibble: 10 × 6
-##    respondent_id country     autonomy_selection_w1 autonomy_selection_w2
-##    &lt;chr&gt;         &lt;chr&gt;                       &lt;int&gt;                 &lt;int&gt;
-##  1 J201          Germany                         2                     2
-##  2 J202          Switzerland                     3                     3
-##  3 J203          Austria                         4                     5
-##  4 J204          Germany                         5                     4
-##  5 J205          Switzerland                     1                     1
-##  6 J206          Austria                         2                     3
-##  7 J207          Germany                         3                     3
-##  8 J208          Switzerland                    NA                     3
-##  9 J209          Austria                         5                     5
-## 10 J210          Germany                         1                     1
-## # ℹ 2 more variables: trust_government_w1 &lt;int&gt;, trust_government_w2 &lt;int&gt;</code></pre>
-<p>Compare the dimensions:</p>
-<div class="sourceCode" id="cb403"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb403-1"><a href="solutions.html#cb403-1" tabindex="-1"></a><span class="fu">dim</span>(panel_wide)</span></code></pre></div>
-<pre><code>## [1] 10  6</code></pre>
-<div class="sourceCode" id="cb405"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb405-1"><a href="solutions.html#cb405-1" tabindex="-1"></a><span class="fu">dim</span>(panel_long)</span></code></pre></div>
-<pre><code>## [1] 40  5</code></pre>
-<div class="sourceCode" id="cb407"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb407-1"><a href="solutions.html#cb407-1" tabindex="-1"></a><span class="fu">dim</span>(panel_wide_again)</span></code></pre></div>
-<pre><code>## [1] 10  6</code></pre>
+<div class="sourceCode" id="cb382"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb382-1"><a href="solutions.html#cb382-1" tabindex="-1"></a>panel_wide_again <span class="ot">&lt;-</span> panel_long <span class="sc">%&gt;%</span></span>
+<span id="cb382-2"><a href="solutions.html#cb382-2" tabindex="-1"></a>  <span class="fu">pivot_wider</span>(</span>
+<span id="cb382-3"><a href="solutions.html#cb382-3" tabindex="-1"></a>    <span class="at">names_from =</span> <span class="fu">c</span>(measure, wave),</span>
+<span id="cb382-4"><a href="solutions.html#cb382-4" tabindex="-1"></a>    <span class="at">names_sep =</span> <span class="st">&quot;_&quot;</span>,</span>
+<span id="cb382-5"><a href="solutions.html#cb382-5" tabindex="-1"></a>    <span class="at">values_from =</span> score</span>
+<span id="cb382-6"><a href="solutions.html#cb382-6" tabindex="-1"></a>  )</span>
+<span id="cb382-7"><a href="solutions.html#cb382-7" tabindex="-1"></a></span>
+<span id="cb382-8"><a href="solutions.html#cb382-8" tabindex="-1"></a>panel_wide_again</span></code></pre></div>
 <p>The original wide dataset contains <strong>10 rows and 6 columns</strong>. The long
 version contains <strong>40 rows and 5 columns</strong>.</p>
 </div>
 <div id="task-5-3" class="section level3 unnumbered hasAnchor">
 <h3>Task 5<a href="solutions.html#task-5-3" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Select <code>respondent_id</code> and all autonomy variables:</p>
-<div class="sourceCode" id="cb409"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb409-1"><a href="solutions.html#cb409-1" tabindex="-1"></a>combined_data <span class="sc">%&gt;%</span></span>
-<span id="cb409-2"><a href="solutions.html#cb409-2" tabindex="-1"></a>  <span class="fu">select</span>(respondent_id, <span class="fu">starts_with</span>(<span class="st">&quot;autonomy&quot;</span>))</span></code></pre></div>
-<pre><code>##    respondent_id autonomy_selection autonomy_emphasis
-## 1           J001                  3                 2
-## 2           J002                  5                 5
-## 3           J003                  4                 5
-## 4           J004                  2                 1
-## 5           J005                  2                 2
-## 6           J006                  4                 4
-## 7           J007                  5                 4
-## 8           J008                  3                 4
-## 9           J009                  1                 1
-## 10          J010                  4                 5
-## 11          J011                  2                 2
-## 12          J012                  2                 3
-## 13          J013                  3                 2
-## 14          J014                  2                 3
-## 15          J015                  1                 1
-## 16          J016                  3                 4
-## 17          J017                  4                 3
-## 18          J018                  2                 3
-## 19          J019                  4                 3
-## 20          J020                  1                 1
-## 21          J021                  4                 3
-## 22          J022                  1                 1
-## 23          J023                  1                 2
-## 24          J024                  4                 3
-## 25          J025                  4                 4
-## 26          J026                  1                 1
-## 27          J027                  3                 2
-## 28          J028                  2                 2
-## 29          J029                  3                 3
-## 30          J030                  5                 5
-## 31          J031                  3                 3
-## 32          J032                  3                 4
-## 33          J033                  4                 3
-## 34          J034                  5                 5
-## 35          J035                  3                 3
-## 36          J036                  3                 4</code></pre>
+<div class="sourceCode" id="cb383"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb383-1"><a href="solutions.html#cb383-1" tabindex="-1"></a>combined_data <span class="sc">%&gt;%</span></span>
+<span id="cb383-2"><a href="solutions.html#cb383-2" tabindex="-1"></a>  <span class="fu">select</span>(respondent_id, <span class="fu">starts_with</span>(<span class="st">&quot;autonomy&quot;</span>))</span></code></pre></div>
 <p>Select numeric variables:</p>
-<div class="sourceCode" id="cb411"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb411-1"><a href="solutions.html#cb411-1" tabindex="-1"></a>combined_data <span class="sc">%&gt;%</span></span>
-<span id="cb411-2"><a href="solutions.html#cb411-2" tabindex="-1"></a>  <span class="fu">select</span>(<span class="fu">where</span>(is.numeric))</span></code></pre></div>
-<pre><code>##    work_experience autonomy_selection autonomy_emphasis trust_government
-## 1               30                  3                 2                4
-## 2                2                  5                 5                4
-## 3               21                  4                 5                4
-## 4               28                  2                 1                4
-## 5               13                  2                 2                5
-## 6               26                  4                 4                4
-## 7                9                  5                 4                2
-## 8                6                  3                 4                3
-## 9               17                  1                 1                1
-## 10              30                  4                 5                2
-## 11               3                  2                 2                4
-## 12              16                  2                 3                2
-## 13               1                  3                 2                4
-## 14               8                  2                 3                4
-## 15              11                  1                 1                2
-## 16              25                  3                 4                1
-## 17              31                  4                 3                1
-## 18               8                  2                 3                1
-## 19              22                  4                 3                2
-## 20               4                  1                 1                2
-## 21              18                  4                 3                3
-## 22              17                  1                 1                4
-## 23              24                  1                 2                1
-## 24              31                  4                 3                3
-## 25              27                  4                 4                5
-## 26              32                  1                 1                3
-## 27              13                  3                 2                3
-## 28              25                  2                 2                2
-## 29               5                  3                 3                5
-## 30              16                  5                 5                2
-## 31              30                  3                 3                4
-## 32               9                  3                 4                2
-## 33              16                  4                 3                3
-## 34              21                  5                 5                2
-## 35              26                  3                 3                1
-## 36              17                  3                 4                1
-##    ethics_1
-## 1         1
-## 2         4
-## 3         2
-## 4         5
-## 5         3
-## 6         2
-## 7         1
-## 8         3
-## 9         2
-## 10        5
-## 11        2
-## 12        2
-## 13        1
-## 14        1
-## 15        1
-## 16        2
-## 17        1
-## 18        2
-## 19        5
-## 20        1
-## 21        3
-## 22        1
-## 23        5
-## 24        4
-## 25        4
-## 26        2
-## 27        1
-## 28        3
-## 29        1
-## 30        2
-## 31        2
-## 32        4
-## 33        3
-## 34        4
-## 35        4
-## 36        5</code></pre>
+<div class="sourceCode" id="cb384"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb384-1"><a href="solutions.html#cb384-1" tabindex="-1"></a>combined_data <span class="sc">%&gt;%</span></span>
+<span id="cb384-2"><a href="solutions.html#cb384-2" tabindex="-1"></a>  <span class="fu">select</span>(<span class="fu">where</span>(is.numeric))</span></code></pre></div>
 <p>Select character variables:</p>
-<div class="sourceCode" id="cb413"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb413-1"><a href="solutions.html#cb413-1" tabindex="-1"></a>combined_data <span class="sc">%&gt;%</span></span>
-<span id="cb413-2"><a href="solutions.html#cb413-2" tabindex="-1"></a>  <span class="fu">select</span>(<span class="fu">where</span>(is.character))</span></code></pre></div>
-<pre><code>##    respondent_id     country employment
-## 1           J001 Switzerland  Temporary
-## 2           J002     Germany  Full-time
-## 3           J003     Austria Freelancer
-## 4           J004     Germany  Temporary
-## 5           J005 Switzerland  Temporary
-## 6           J006 Switzerland  Part-time
-## 7           J007 Switzerland  Full-time
-## 8           J008     Austria  Full-time
-## 9           J009 Switzerland  Part-time
-## 10          J010 Switzerland  Part-time
-## 11          J011     Austria  Part-time
-## 12          J012     Germany  Full-time
-## 13          J013     Germany  Full-time
-## 14          J014     Germany  Full-time
-## 15          J015 Switzerland  Temporary
-## 16          J016 Switzerland  Part-time
-## 17          J017     Germany  Part-time
-## 18          J018     Austria  Part-time
-## 19          J019 Switzerland  Full-time
-## 20          J020     Germany Freelancer
-## 21          J021 Switzerland  Full-time
-## 22          J022     Austria  Full-time
-## 23          J023     Germany Freelancer
-## 24          J024     Germany Freelancer
-## 25          J025     Austria  Temporary
-## 26          J026     Austria Freelancer
-## 27          J027     Austria  Temporary
-## 28          J028     Austria Freelancer
-## 29          J029 Switzerland  Temporary
-## 30          J030     Germany Freelancer
-## 31          J031     Austria  Part-time
-## 32          J032     Austria  Temporary
-## 33          J033     Germany  Full-time
-## 34          J034 Switzerland Freelancer
-## 35          J035     Germany  Part-time
-## 36          J036     Austria  Full-time</code></pre>
+<div class="sourceCode" id="cb385"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb385-1"><a href="solutions.html#cb385-1" tabindex="-1"></a>combined_data <span class="sc">%&gt;%</span></span>
+<span id="cb385-2"><a href="solutions.html#cb385-2" tabindex="-1"></a>  <span class="fu">select</span>(<span class="fu">where</span>(is.character))</span></code></pre></div>
 <p>Reorder columns:</p>
-<div class="sourceCode" id="cb415"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb415-1"><a href="solutions.html#cb415-1" tabindex="-1"></a>combined_data <span class="sc">%&gt;%</span></span>
-<span id="cb415-2"><a href="solutions.html#cb415-2" tabindex="-1"></a>  <span class="fu">select</span>(respondent_id, country, employment, <span class="fu">everything</span>())</span></code></pre></div>
-<pre><code>##    respondent_id     country employment work_experience autonomy_selection
-## 1           J001 Switzerland  Temporary              30                  3
-## 2           J002     Germany  Full-time               2                  5
-## 3           J003     Austria Freelancer              21                  4
-## 4           J004     Germany  Temporary              28                  2
-## 5           J005 Switzerland  Temporary              13                  2
-## 6           J006 Switzerland  Part-time              26                  4
-## 7           J007 Switzerland  Full-time               9                  5
-## 8           J008     Austria  Full-time               6                  3
-## 9           J009 Switzerland  Part-time              17                  1
-## 10          J010 Switzerland  Part-time              30                  4
-## 11          J011     Austria  Part-time               3                  2
-## 12          J012     Germany  Full-time              16                  2
-## 13          J013     Germany  Full-time               1                  3
-## 14          J014     Germany  Full-time               8                  2
-## 15          J015 Switzerland  Temporary              11                  1
-## 16          J016 Switzerland  Part-time              25                  3
-## 17          J017     Germany  Part-time              31                  4
-## 18          J018     Austria  Part-time               8                  2
-## 19          J019 Switzerland  Full-time              22                  4
-## 20          J020     Germany Freelancer               4                  1
-## 21          J021 Switzerland  Full-time              18                  4
-## 22          J022     Austria  Full-time              17                  1
-## 23          J023     Germany Freelancer              24                  1
-## 24          J024     Germany Freelancer              31                  4
-## 25          J025     Austria  Temporary              27                  4
-## 26          J026     Austria Freelancer              32                  1
-## 27          J027     Austria  Temporary              13                  3
-## 28          J028     Austria Freelancer              25                  2
-## 29          J029 Switzerland  Temporary               5                  3
-## 30          J030     Germany Freelancer              16                  5
-## 31          J031     Austria  Part-time              30                  3
-## 32          J032     Austria  Temporary               9                  3
-## 33          J033     Germany  Full-time              16                  4
-## 34          J034 Switzerland Freelancer              21                  5
-## 35          J035     Germany  Part-time              26                  3
-## 36          J036     Austria  Full-time              17                  3
-##    autonomy_emphasis trust_government ethics_1
-## 1                  2                4        1
-## 2                  5                4        4
-## 3                  5                4        2
-## 4                  1                4        5
-## 5                  2                5        3
-## 6                  4                4        2
-## 7                  4                2        1
-## 8                  4                3        3
-## 9                  1                1        2
-## 10                 5                2        5
-## 11                 2                4        2
-## 12                 3                2        2
-## 13                 2                4        1
-## 14                 3                4        1
-## 15                 1                2        1
-## 16                 4                1        2
-## 17                 3                1        1
-## 18                 3                1        2
-## 19                 3                2        5
-## 20                 1                2        1
-## 21                 3                3        3
-## 22                 1                4        1
-## 23                 2                1        5
-## 24                 3                3        4
-## 25                 4                5        4
-## 26                 1                3        2
-## 27                 2                3        1
-## 28                 2                2        3
-## 29                 3                5        1
-## 30                 5                2        2
-## 31                 3                4        2
-## 32                 4                2        4
-## 33                 3                3        3
-## 34                 5                2        4
-## 35                 3                1        4
-## 36                 4                1        5</code></pre>
+<div class="sourceCode" id="cb386"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb386-1"><a href="solutions.html#cb386-1" tabindex="-1"></a>combined_data <span class="sc">%&gt;%</span></span>
+<span id="cb386-2"><a href="solutions.html#cb386-2" tabindex="-1"></a>  <span class="fu">select</span>(respondent_id, country, employment, <span class="fu">everything</span>())</span></code></pre></div>
 <p>Select freelancers:</p>
-<div class="sourceCode" id="cb417"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb417-1"><a href="solutions.html#cb417-1" tabindex="-1"></a>combined_data <span class="sc">%&gt;%</span></span>
-<span id="cb417-2"><a href="solutions.html#cb417-2" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">str_detect</span>(employment, <span class="st">&quot;Free&quot;</span>))</span></code></pre></div>
-<pre><code>##   respondent_id     country employment work_experience autonomy_selection
-## 1          J003     Austria Freelancer              21                  4
-## 2          J020     Germany Freelancer               4                  1
-## 3          J023     Germany Freelancer              24                  1
-## 4          J024     Germany Freelancer              31                  4
-## 5          J026     Austria Freelancer              32                  1
-## 6          J028     Austria Freelancer              25                  2
-## 7          J030     Germany Freelancer              16                  5
-## 8          J034 Switzerland Freelancer              21                  5
-##   autonomy_emphasis trust_government ethics_1
-## 1                 5                4        2
-## 2                 1                2        1
-## 3                 2                1        5
-## 4                 3                3        4
-## 5                 1                3        2
-## 6                 2                2        3
-## 7                 5                2        2
-## 8                 5                2        4</code></pre>
+<div class="sourceCode" id="cb387"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb387-1"><a href="solutions.html#cb387-1" tabindex="-1"></a>combined_data <span class="sc">%&gt;%</span></span>
+<span id="cb387-2"><a href="solutions.html#cb387-2" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">str_detect</span>(employment, <span class="st">&quot;Free&quot;</span>))</span></code></pre></div>
 <p>Select employment categories ending in <code>"time"</code>:</p>
-<div class="sourceCode" id="cb419"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb419-1"><a href="solutions.html#cb419-1" tabindex="-1"></a>combined_data <span class="sc">%&gt;%</span></span>
-<span id="cb419-2"><a href="solutions.html#cb419-2" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">str_detect</span>(employment, <span class="st">&quot;time$&quot;</span>))</span></code></pre></div>
-<pre><code>##    respondent_id     country employment work_experience autonomy_selection
-## 1           J002     Germany  Full-time               2                  5
-## 2           J006 Switzerland  Part-time              26                  4
-## 3           J007 Switzerland  Full-time               9                  5
-## 4           J008     Austria  Full-time               6                  3
-## 5           J009 Switzerland  Part-time              17                  1
-## 6           J010 Switzerland  Part-time              30                  4
-## 7           J011     Austria  Part-time               3                  2
-## 8           J012     Germany  Full-time              16                  2
-## 9           J013     Germany  Full-time               1                  3
-## 10          J014     Germany  Full-time               8                  2
-## 11          J016 Switzerland  Part-time              25                  3
-## 12          J017     Germany  Part-time              31                  4
-## 13          J018     Austria  Part-time               8                  2
-## 14          J019 Switzerland  Full-time              22                  4
-## 15          J021 Switzerland  Full-time              18                  4
-## 16          J022     Austria  Full-time              17                  1
-## 17          J031     Austria  Part-time              30                  3
-## 18          J033     Germany  Full-time              16                  4
-## 19          J035     Germany  Part-time              26                  3
-## 20          J036     Austria  Full-time              17                  3
-##    autonomy_emphasis trust_government ethics_1
-## 1                  5                4        4
-## 2                  4                4        2
-## 3                  4                2        1
-## 4                  4                3        3
-## 5                  1                1        2
-## 6                  5                2        5
-## 7                  2                4        2
-## 8                  3                2        2
-## 9                  2                4        1
-## 10                 3                4        1
-## 11                 4                1        2
-## 12                 3                1        1
-## 13                 3                1        2
-## 14                 3                2        5
-## 15                 3                3        3
-## 16                 1                4        1
-## 17                 3                4        2
-## 18                 3                3        3
-## 19                 3                1        4
-## 20                 4                1        5</code></pre>
+<div class="sourceCode" id="cb388"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb388-1"><a href="solutions.html#cb388-1" tabindex="-1"></a>combined_data <span class="sc">%&gt;%</span></span>
+<span id="cb388-2"><a href="solutions.html#cb388-2" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">str_detect</span>(employment, <span class="st">&quot;time$&quot;</span>))</span></code></pre></div>
 <p>Select both groups:</p>
-<div class="sourceCode" id="cb421"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb421-1"><a href="solutions.html#cb421-1" tabindex="-1"></a>combined_data <span class="sc">%&gt;%</span></span>
-<span id="cb421-2"><a href="solutions.html#cb421-2" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">str_detect</span>(employment, <span class="st">&quot;Free|time$&quot;</span>))</span></code></pre></div>
-<pre><code>##    respondent_id     country employment work_experience autonomy_selection
-## 1           J002     Germany  Full-time               2                  5
-## 2           J003     Austria Freelancer              21                  4
-## 3           J006 Switzerland  Part-time              26                  4
-## 4           J007 Switzerland  Full-time               9                  5
-## 5           J008     Austria  Full-time               6                  3
-## 6           J009 Switzerland  Part-time              17                  1
-## 7           J010 Switzerland  Part-time              30                  4
-## 8           J011     Austria  Part-time               3                  2
-## 9           J012     Germany  Full-time              16                  2
-## 10          J013     Germany  Full-time               1                  3
-## 11          J014     Germany  Full-time               8                  2
-## 12          J016 Switzerland  Part-time              25                  3
-## 13          J017     Germany  Part-time              31                  4
-## 14          J018     Austria  Part-time               8                  2
-## 15          J019 Switzerland  Full-time              22                  4
-## 16          J020     Germany Freelancer               4                  1
-## 17          J021 Switzerland  Full-time              18                  4
-## 18          J022     Austria  Full-time              17                  1
-## 19          J023     Germany Freelancer              24                  1
-## 20          J024     Germany Freelancer              31                  4
-## 21          J026     Austria Freelancer              32                  1
-## 22          J028     Austria Freelancer              25                  2
-## 23          J030     Germany Freelancer              16                  5
-## 24          J031     Austria  Part-time              30                  3
-## 25          J033     Germany  Full-time              16                  4
-## 26          J034 Switzerland Freelancer              21                  5
-## 27          J035     Germany  Part-time              26                  3
-## 28          J036     Austria  Full-time              17                  3
-##    autonomy_emphasis trust_government ethics_1
-## 1                  5                4        4
-## 2                  5                4        2
-## 3                  4                4        2
-## 4                  4                2        1
-## 5                  4                3        3
-## 6                  1                1        2
-## 7                  5                2        5
-## 8                  2                4        2
-## 9                  3                2        2
-## 10                 2                4        1
-## 11                 3                4        1
-## 12                 4                1        2
-## 13                 3                1        1
-## 14                 3                1        2
-## 15                 3                2        5
-## 16                 1                2        1
-## 17                 3                3        3
-## 18                 1                4        1
-## 19                 2                1        5
-## 20                 3                3        4
-## 21                 1                3        2
-## 22                 2                2        3
-## 23                 5                2        2
-## 24                 3                4        2
-## 25                 3                3        3
-## 26                 5                2        4
-## 27                 3                1        4
-## 28                 4                1        5</code></pre>
+<div class="sourceCode" id="cb389"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb389-1"><a href="solutions.html#cb389-1" tabindex="-1"></a>combined_data <span class="sc">%&gt;%</span></span>
+<span id="cb389-2"><a href="solutions.html#cb389-2" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">str_detect</span>(employment, <span class="st">&quot;Free|time$&quot;</span>))</span></code></pre></div>
 </div>
 <div id="task-6-3" class="section level3 unnumbered hasAnchor">
 <h3>Task 6<a href="solutions.html#task-6-3" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><em>Solution:</em></p>
-<div class="sourceCode" id="cb423"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb423-1"><a href="solutions.html#cb423-1" tabindex="-1"></a>advanced_summary <span class="ot">&lt;-</span> profiles <span class="sc">%&gt;%</span></span>
-<span id="cb423-2"><a href="solutions.html#cb423-2" tabindex="-1"></a>  <span class="fu">full_join</span>(attitudes, <span class="at">by =</span> <span class="st">&quot;respondent_id&quot;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb423-3"><a href="solutions.html#cb423-3" tabindex="-1"></a>  <span class="fu">select</span>(</span>
-<span id="cb423-4"><a href="solutions.html#cb423-4" tabindex="-1"></a>    respondent_id,</span>
-<span id="cb423-5"><a href="solutions.html#cb423-5" tabindex="-1"></a>    country,</span>
-<span id="cb423-6"><a href="solutions.html#cb423-6" tabindex="-1"></a>    employment,</span>
-<span id="cb423-7"><a href="solutions.html#cb423-7" tabindex="-1"></a>    work_experience,</span>
-<span id="cb423-8"><a href="solutions.html#cb423-8" tabindex="-1"></a>    <span class="fu">starts_with</span>(<span class="st">&quot;autonomy&quot;</span>),</span>
-<span id="cb423-9"><a href="solutions.html#cb423-9" tabindex="-1"></a>    trust_government</span>
-<span id="cb423-10"><a href="solutions.html#cb423-10" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb423-11"><a href="solutions.html#cb423-11" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(employment)) <span class="sc">%&gt;%</span></span>
-<span id="cb423-12"><a href="solutions.html#cb423-12" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">str_detect</span>(employment, <span class="st">&quot;Free|time$&quot;</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb423-13"><a href="solutions.html#cb423-13" tabindex="-1"></a>  <span class="fu">group_by</span>(country) <span class="sc">%&gt;%</span></span>
-<span id="cb423-14"><a href="solutions.html#cb423-14" tabindex="-1"></a>  <span class="fu">summarize</span>(</span>
-<span id="cb423-15"><a href="solutions.html#cb423-15" tabindex="-1"></a>    <span class="at">mean_autonomy =</span> <span class="fu">mean</span>(autonomy_selection, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb423-16"><a href="solutions.html#cb423-16" tabindex="-1"></a>    <span class="at">mean_experience =</span> <span class="fu">mean</span>(work_experience, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb423-17"><a href="solutions.html#cb423-17" tabindex="-1"></a>    <span class="at">n =</span> <span class="fu">n</span>()</span>
-<span id="cb423-18"><a href="solutions.html#cb423-18" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb423-19"><a href="solutions.html#cb423-19" tabindex="-1"></a>  <span class="fu">arrange</span>(country)</span>
-<span id="cb423-20"><a href="solutions.html#cb423-20" tabindex="-1"></a></span>
-<span id="cb423-21"><a href="solutions.html#cb423-21" tabindex="-1"></a>advanced_summary</span></code></pre></div>
-<pre><code>## # A tibble: 3 × 4
-##   country     mean_autonomy mean_experience     n
-##   &lt;chr&gt;               &lt;dbl&gt;           &lt;dbl&gt; &lt;int&gt;
-## 1 Austria              2.5             19.4     5
-## 2 Germany              4.5             13       5
-## 3 Switzerland          3.33            18.2     5</code></pre>
+<div class="sourceCode" id="cb390"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb390-1"><a href="solutions.html#cb390-1" tabindex="-1"></a>advanced_summary <span class="ot">&lt;-</span> profiles <span class="sc">%&gt;%</span></span>
+<span id="cb390-2"><a href="solutions.html#cb390-2" tabindex="-1"></a>  <span class="fu">full_join</span>(attitudes, <span class="at">by =</span> <span class="st">&quot;respondent_id&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb390-3"><a href="solutions.html#cb390-3" tabindex="-1"></a>  <span class="fu">select</span>(</span>
+<span id="cb390-4"><a href="solutions.html#cb390-4" tabindex="-1"></a>    respondent_id,</span>
+<span id="cb390-5"><a href="solutions.html#cb390-5" tabindex="-1"></a>    country,</span>
+<span id="cb390-6"><a href="solutions.html#cb390-6" tabindex="-1"></a>    employment,</span>
+<span id="cb390-7"><a href="solutions.html#cb390-7" tabindex="-1"></a>    work_experience,</span>
+<span id="cb390-8"><a href="solutions.html#cb390-8" tabindex="-1"></a>    <span class="fu">starts_with</span>(<span class="st">&quot;autonomy&quot;</span>),</span>
+<span id="cb390-9"><a href="solutions.html#cb390-9" tabindex="-1"></a>    trust_government</span>
+<span id="cb390-10"><a href="solutions.html#cb390-10" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb390-11"><a href="solutions.html#cb390-11" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(employment)) <span class="sc">%&gt;%</span></span>
+<span id="cb390-12"><a href="solutions.html#cb390-12" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">str_detect</span>(employment, <span class="st">&quot;Free|time$&quot;</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb390-13"><a href="solutions.html#cb390-13" tabindex="-1"></a>  <span class="fu">group_by</span>(country) <span class="sc">%&gt;%</span></span>
+<span id="cb390-14"><a href="solutions.html#cb390-14" tabindex="-1"></a>  <span class="fu">summarize</span>(</span>
+<span id="cb390-15"><a href="solutions.html#cb390-15" tabindex="-1"></a>    <span class="at">mean_autonomy =</span> <span class="fu">mean</span>(autonomy_selection, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb390-16"><a href="solutions.html#cb390-16" tabindex="-1"></a>    <span class="at">mean_experience =</span> <span class="fu">mean</span>(work_experience, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb390-17"><a href="solutions.html#cb390-17" tabindex="-1"></a>    <span class="at">n =</span> <span class="fu">n</span>()</span>
+<span id="cb390-18"><a href="solutions.html#cb390-18" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb390-19"><a href="solutions.html#cb390-19" tabindex="-1"></a>  <span class="fu">arrange</span>(country)</span>
+<span id="cb390-20"><a href="solutions.html#cb390-20" tabindex="-1"></a></span>
+<span id="cb390-21"><a href="solutions.html#cb390-21" tabindex="-1"></a>advanced_summary</span></code></pre></div>
 <p>The important part of this task is not the exact formatting of the code,
 but the sequence of decisions: <strong>join → select → filter → group → summarize
 → arrange</strong>.</p>
