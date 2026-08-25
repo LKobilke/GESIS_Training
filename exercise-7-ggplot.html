@@ -4,20 +4,20 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Exercise 2: Base R | Introduction to R</title>
-  <meta name="description" content="Exercise 2: Base R | Introduction to R - GESIS Training Course, 24-27 August 2026" />
+  <title>Exercise 7: ggplot | Introduction to R</title>
+  <meta name="description" content="Exercise 7: ggplot | Introduction to R - GESIS Training Course, 24-27 August 2026" />
   <meta name="generator" content="bookdown 0.47 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Exercise 2: Base R | Introduction to R" />
+  <meta property="og:title" content="Exercise 7: ggplot | Introduction to R" />
   <meta property="og:type" content="book" />
   
-  <meta property="og:description" content="Exercise 2: Base R | Introduction to R - GESIS Training Course, 24-27 August 2026" />
+  <meta property="og:description" content="Exercise 7: ggplot | Introduction to R - GESIS Training Course, 24-27 August 2026" />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Exercise 2: Base R | Introduction to R" />
+  <meta name="twitter:title" content="Exercise 7: ggplot | Introduction to R" />
   
-  <meta name="twitter:description" content="Exercise 2: Base R | Introduction to R - GESIS Training Course, 24-27 August 2026" />
+  <meta name="twitter:description" content="Exercise 7: ggplot | Introduction to R - GESIS Training Course, 24-27 August 2026" />
   
 
 <meta name="author" content="Lara Kobilke, Department of Communication and Media Research, University of Zurich" />
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="tutorial-working-with-data-files.html"/>
-<link rel="next" href="tutorial-data-management-with-dplyr.html"/>
+<link rel="prev" href="exercise-6-ggplot.html"/>
+<link rel="next" href="solutions.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -446,40 +446,67 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="exercise-2-base-r" class="section level1 unnumbered hasAnchor">
-<h1>Exercise 2: Base R<a href="exercise-2-base-r.html#exercise-2-base-r" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p><strong>After working through Exercise 2, you’ll…</strong></p>
+<div id="exercise-7-ggplot" class="section level1 unnumbered hasAnchor">
+<h1>Exercise 7: ggplot<a href="exercise-7-ggplot.html#exercise-7-ggplot" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p><strong>After working through Exercise 7, you’ll…</strong></p>
 <ul>
-<li>have double-checked whether you understand how to import data</li>
-<li>have learned to subset variables in data frames</li>
-<li>have learned to subset observations and values in data frames</li>
+<li>be able to see a graph and recreate it with <code>ggplot2</code></li>
+<li>be able to see a problem and customize any type of plot with <code>dplyr</code> &amp; <code>ggplot2</code> to solve it</li>
 </ul>
-<div id="task-1-1" class="section level2 unnumbered hasAnchor">
-<h2>Task 1<a href="exercise-2-base-r.html#task-1-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Download the <em>“WoJ_names.csv”</em> from GESIS Moodle and
-put it into the folder that you want to use as working directory.</p>
-<p>Set your working directory and load the data into R by saving it into a
-source object called <em>data</em>. Use <code>setwd()</code>.</p>
-<p><strong>Note:</strong> This time, it’s a csv that is separated by semicolons, not by
-commas.</p>
+<div id="task-1-6" class="section level2 unnumbered hasAnchor">
+<h2>Task 1<a href="exercise-7-ggplot.html#task-1-6" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Please set your working directory and load the WoJ_names.csv.</p>
+<div class="sourceCode" id="cb348"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb348-1"><a href="exercise-7-ggplot.html#cb348-1" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read.csv2</span>(<span class="st">&quot;WoJ_names.csv&quot;</span>, <span class="at">header =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<p>Load the ggplot2 package.</p>
+<div class="sourceCode" id="cb349"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb349-1"><a href="exercise-7-ggplot.html#cb349-1" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span></code></pre></div>
+<p>Now, create a box plot to visualize the distribution of work experience
+in years for each country in the dataset:</p>
+<ul>
+<li>Assign country to the x-axis and work_experience to the y-axis.</li>
+<li>Use the <code>geom_boxplot()</code> function to generate a box plot.</li>
+<li>Choose an appropriate theme.</li>
+<li>Label the axes and the title appropriately using <code>labs()</code>.</li>
+</ul>
+<p><img src="Intro-to-R_files/figure-html/unnamed-chunk-220-1.png" alt="" width="672" /></p>
 </div>
-<div id="task-2-1" class="section level2 unnumbered hasAnchor">
-<h2>Task 2<a href="exercise-2-base-r.html#task-2-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Now, print only the column to the console that shows the <em>trust in the
-government</em>. Use the <code>$</code> operator first. Then try to achieve the same
-result using the subsetting operators, i.e. <code>[]</code>.</p>
+<div id="task-2-6" class="section level2 unnumbered hasAnchor">
+<h2>Task 2<a href="exercise-7-ggplot.html#task-2-6" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Look at this graph and try to recreate it.</p>
+<p><img src="Intro-to-R_files/figure-html/unnamed-chunk-221-1.png" alt="" width="672" /></p>
 </div>
-<div id="task-3-1" class="section level2 unnumbered hasAnchor">
-<h2>Task 3<a href="exercise-2-base-r.html#task-3-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Print only the first 6 <em>trust in the government</em> numbers to the console.
-Use the <code>$</code> operator first. Then try to achieve the same result using
-the subsetting operators, i.e. <code>[]</code>.</p>
+<div id="task-3-6" class="section level2 unnumbered hasAnchor">
+<h2>Task 3<a href="exercise-7-ggplot.html#task-3-6" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Try to create an advanced version of your graph from Task 2 that shows
+the names of the journalists. You can use the geom_text function for the
+labels, like this:</p>
+<div class="sourceCode" id="cb350"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb350-1"><a href="exercise-7-ggplot.html#cb350-1" tabindex="-1"></a><span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> name), <span class="at">check_overlap =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<p>If you’d like to adjust the position of the labels, you can add the
+argument <code>, hjust = 0, vjust = 0</code> to this command, like this:</p>
+<div class="sourceCode" id="cb351"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb351-1"><a href="exercise-7-ggplot.html#cb351-1" tabindex="-1"></a><span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> name), <span class="at">check_overlap =</span> <span class="cn">TRUE</span>, <span class="at">hjust =</span> <span class="dv">0</span>, <span class="at">vjust =</span> <span class="dv">0</span>)</span></code></pre></div>
 </div>
-<div id="task-4" class="section level2 unnumbered hasAnchor">
-<h2>Task 4<a href="exercise-2-base-r.html#task-4" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Repeat Task 1, but use an R project this time to set your working directory.</p>
-<p>When you’re ready to look at the solutions, you can find them
-here: <a href="solutions.html#solutions-for-exercise-2">Solutions for Exercise 2</a>.</p>
+<div id="task-4-5" class="section level2 unnumbered hasAnchor">
+<h2>Task 4<a href="exercise-7-ggplot.html#task-4-5" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Next, try to recreate this bar plot. Use <code>geom_bar(position = "dodge")</code> to create it. <code>dodge</code>produces the graph below whereas <code>geom_bar(position = "stack")</code> will create a stacked bar chart.</p>
+<p><img src="Intro-to-R_files/figure-html/unnamed-chunk-224-1.png" alt="" width="672" /></p>
+</div>
+<div id="task-5-3" class="section level2 unnumbered hasAnchor">
+<h2>Task 5<a href="exercise-7-ggplot.html#task-5-3" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Try to create an advanced version of the graph from Task 4.</p>
+<p>First, create a new variable ‘experience_level’ that categorizes the
+‘work_experience’ into three groups:</p>
+<ul>
+<li>“Junior” for work_experience &lt;= 10</li>
+<li>“Mid-Level” for work_experience &gt; 10 &amp; &lt;= 20</li>
+<li>“Senior” for work_experience &gt; 20</li>
+</ul>
+<p>Next, use the new variable ‘experience_level’ to create separate graphs for juniors, mid-level staff, and seniors.</p>
+<p><strong>Note:</strong> To make the graph look better, you should rotate the x-axis labels
+and move the labels a bit more to the bottom of the graph. You can use
+the <code>theme()</code> function and adjust the <code>axis.text.x</code> argument. In this
+case, you’d use <code>theme(element_text(angle = 45, hjust = 1))</code> at the end
+of your code.</p>
+<p>When you’re ready to look at the solutions, you can find them here:
+<a href="solutions.html#solutions-for-exercise-7">Solutions for Exercise 7</a>.</p>
 </div>
 </div>
             </section>
@@ -487,8 +514,8 @@ here: <a href="solutions.html#solutions-for-exercise-2">Solutions for Exercise 2
           </div>
         </div>
       </div>
-<a href="tutorial-working-with-data-files.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="tutorial-data-management-with-dplyr.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="exercise-6-ggplot.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="solutions.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

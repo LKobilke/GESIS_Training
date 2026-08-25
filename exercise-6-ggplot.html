@@ -4,20 +4,20 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Exercise 2: Base R | Introduction to R</title>
-  <meta name="description" content="Exercise 2: Base R | Introduction to R - GESIS Training Course, 24-27 August 2026" />
+  <title>Exercise 6: ggplot | Introduction to R</title>
+  <meta name="description" content="Exercise 6: ggplot | Introduction to R - GESIS Training Course, 24-27 August 2026" />
   <meta name="generator" content="bookdown 0.47 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Exercise 2: Base R | Introduction to R" />
+  <meta property="og:title" content="Exercise 6: ggplot | Introduction to R" />
   <meta property="og:type" content="book" />
   
-  <meta property="og:description" content="Exercise 2: Base R | Introduction to R - GESIS Training Course, 24-27 August 2026" />
+  <meta property="og:description" content="Exercise 6: ggplot | Introduction to R - GESIS Training Course, 24-27 August 2026" />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Exercise 2: Base R | Introduction to R" />
+  <meta name="twitter:title" content="Exercise 6: ggplot | Introduction to R" />
   
-  <meta name="twitter:description" content="Exercise 2: Base R | Introduction to R - GESIS Training Course, 24-27 August 2026" />
+  <meta name="twitter:description" content="Exercise 6: ggplot | Introduction to R - GESIS Training Course, 24-27 August 2026" />
   
 
 <meta name="author" content="Lara Kobilke, Department of Communication and Media Research, University of Zurich" />
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="tutorial-working-with-data-files.html"/>
-<link rel="next" href="tutorial-data-management-with-dplyr.html"/>
+<link rel="prev" href="tutorial-data-visualization-with-ggplot.html"/>
+<link rel="next" href="exercise-7-ggplot.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -446,40 +446,77 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="exercise-2-base-r" class="section level1 unnumbered hasAnchor">
-<h1>Exercise 2: Base R<a href="exercise-2-base-r.html#exercise-2-base-r" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p><strong>After working through Exercise 2, you’ll…</strong></p>
+<div id="exercise-6-ggplot" class="section level1 unnumbered hasAnchor">
+<h1>Exercise 6: ggplot<a href="exercise-6-ggplot.html#exercise-6-ggplot" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p><strong>After working through Exercise 6, you’ll…</strong></p>
 <ul>
-<li>have double-checked whether you understand how to import data</li>
-<li>have learned to subset variables in data frames</li>
-<li>have learned to subset observations and values in data frames</li>
+<li>be able to see a problem and customize a scatter plot with <code>dplyr</code> &amp;
+<code>ggplot2</code> to solve it</li>
 </ul>
-<div id="task-1-1" class="section level2 unnumbered hasAnchor">
-<h2>Task 1<a href="exercise-2-base-r.html#task-1-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Download the <em>“WoJ_names.csv”</em> from GESIS Moodle and
-put it into the folder that you want to use as working directory.</p>
-<p>Set your working directory and load the data into R by saving it into a
-source object called <em>data</em>. Use <code>setwd()</code>.</p>
-<p><strong>Note:</strong> This time, it’s a csv that is separated by semicolons, not by
-commas.</p>
+<p>First, load the %&gt;% (World of Journalism) dataset from the <code>tidycomm</code>
+package. Install <code>tidycomm</code> if you haven’t already and then assign the
+WoJ dataset in its own R object:</p>
+<div class="sourceCode" id="cb344"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb344-1"><a href="exercise-6-ggplot.html#cb344-1" tabindex="-1"></a><span class="co"># install.packages(&quot;tidycomm&quot;) # run only the first time</span></span></code></pre></div>
+<div class="sourceCode" id="cb345"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb345-1"><a href="exercise-6-ggplot.html#cb345-1" tabindex="-1"></a>WoJ <span class="ot">&lt;-</span> tidycomm<span class="sc">::</span>WoJ</span></code></pre></div>
+<p>If you want help to solve this exercise, here’s a step-by-step tutorial
+that I’ve once created for my students:</p>
+<iframe src="https://www.youtube.com/embed/VgNimnC4syE" width="672" height="400px" data-external="1">
+</iframe>
+<div id="task-1-5" class="section level2 unnumbered hasAnchor">
+<h2>Task 1<a href="exercise-6-ggplot.html#task-1-5" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Try creating your own scatter plot. First, load <code>tidyverse</code> to access
+<code>ggplot2</code> for data visualization:</p>
+<div class="sourceCode" id="cb346"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb346-1"><a href="exercise-6-ggplot.html#cb346-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div>
+<p>Show how journalists’ work experience (<code>work_experience</code>) is associated
+with their trust in politicians (<code>trust_politicians</code>). To do this,
+create a very basic scatter plot using <code>ggplot2</code> and the respective
+<code>ggplot()</code> function. Use the <code>aes()</code> function inside <code>ggplot()</code> to map
+variables to the visual properties. Use <code>geom_point()</code> to add points to
+the plot.</p>
 </div>
-<div id="task-2-1" class="section level2 unnumbered hasAnchor">
-<h2>Task 2<a href="exercise-2-base-r.html#task-2-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Now, print only the column to the console that shows the <em>trust in the
-government</em>. Use the <code>$</code> operator first. Then try to achieve the same
-result using the subsetting operators, i.e. <code>[]</code>.</p>
+<div id="task-2-5" class="section level2 unnumbered hasAnchor">
+<h2>Task 2<a href="exercise-6-ggplot.html#task-2-5" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Do more experienced journalists become less trusting in politicians? Add
+this code to your plot to create a regression line:
+<code>+ geom_smooth(method = lm, se = FALSE)</code>.</p>
+<p>What can you conclude from the regression line?</p>
 </div>
-<div id="task-3-1" class="section level2 unnumbered hasAnchor">
-<h2>Task 3<a href="exercise-2-base-r.html#task-3-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Print only the first 6 <em>trust in the government</em> numbers to the console.
-Use the <code>$</code> operator first. Then try to achieve the same result using
-the subsetting operators, i.e. <code>[]</code>.</p>
+<div id="task-3-5" class="section level2 unnumbered hasAnchor">
+<h2>Task 3<a href="exercise-6-ggplot.html#task-3-5" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Does the relationship between work experience and trust in politicians
+remain stable across different countries? Alternatively, does work
+experience influence trust in politicians differently depending on the
+specific country context?</p>
+<p>Try to create a visualization to answer this question using
+<code>facet_wrap()</code>.</p>
 </div>
-<div id="task-4" class="section level2 unnumbered hasAnchor">
-<h2>Task 4<a href="exercise-2-base-r.html#task-4" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Repeat Task 1, but use an R project this time to set your working directory.</p>
-<p>When you’re ready to look at the solutions, you can find them
-here: <a href="solutions.html#solutions-for-exercise-2">Solutions for Exercise 2</a>.</p>
+<div id="task-4-4" class="section level2 unnumbered hasAnchor">
+<h2>Task 4<a href="exercise-6-ggplot.html#task-4-4" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>In your current visualization, it may be challenging to discern
+cross-country differences. Let’s aim to create a visualization that
+illustrates these differences across countries more distinctly.</p>
+<p>Remove the <code>facet_wrap()</code> and the <code>geom_point()</code> code line. This leaves
+you with this graph:</p>
+<div class="sourceCode" id="cb347"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb347-1"><a href="exercise-6-ggplot.html#cb347-1" tabindex="-1"></a>WoJ <span class="sc">%&gt;%</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> work_experience, <span class="at">y =</span> trust_politicians)) <span class="sc">+</span></span>
+<span id="cb347-2"><a href="exercise-6-ggplot.html#cb347-2" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> lm, <span class="at">se =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
+<p><img src="Intro-to-R_files/figure-html/unnamed-chunk-216-1.png" alt="" width="672" /></p>
+<p>Now, display every country in a separate color by using the <code>color</code>
+argument inside the <code>aes()</code> function.</p>
+</div>
+<div id="task-5-2" class="section level2 unnumbered hasAnchor">
+<h2>Task 5<a href="exercise-6-ggplot.html#task-5-2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Add fitting labels to your plot. For example, set the main title to
+display: “Impact of Work Experience on Trust in Politicians”. The x-axis
+label should read “Years of Work Experience in Journalism”, and the
+y-axis label should read “Trust in Politicians on a 5-point Likert
+Scale”. The label for the color legend should be “Country”.</p>
+</div>
+<div id="task-6-2" class="section level2 unnumbered hasAnchor">
+<h2>Task 6<a href="exercise-6-ggplot.html#task-6-2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Add a nice theme that you like, e.g. <code>theme_minimal()</code>,
+<code>theme_classic()</code> or <code>theme_bw()</code>.</p>
+<p>When you’re ready to look at the solutions, you can find them here:
+<a href="solutions.html#solutions-for-exercise-6">Solutions for Exercise 6</a>.</p>
 </div>
 </div>
             </section>
@@ -487,8 +524,8 @@ here: <a href="solutions.html#solutions-for-exercise-2">Solutions for Exercise 2
           </div>
         </div>
       </div>
-<a href="tutorial-working-with-data-files.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="tutorial-data-management-with-dplyr.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="tutorial-data-visualization-with-ggplot.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="exercise-7-ggplot.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
