@@ -315,7 +315,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.5" data-path="advanced-data-management.html"><a href="advanced-data-management.html#advanced-selection-of-rows"><i class="fa fa-check"></i><b>7.5</b> Advanced selection of rows</a></li>
 <li class="chapter" data-level="7.6" data-path="advanced-data-management.html"><a href="advanced-data-management.html#take-aways-5"><i class="fa fa-check"></i><b>7.6</b> Take-Aways</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="exercise-advanced-data-management.html"><a href="exercise-advanced-data-management.html"><i class="fa fa-check"></i>Exercise 5: Advanced data management</a>
+<li class="chapter" data-level="" data-path="exercise-advanced-data-management.html"><a href="exercise-advanced-data-management.html"><i class="fa fa-check"></i>Exercise 5: Advanced data management (optional)</a>
 <ul>
 <li class="chapter" data-level="" data-path="exercise-advanced-data-management.html"><a href="exercise-advanced-data-management.html#task-1-4"><i class="fa fa-check"></i>Task 1</a></li>
 <li class="chapter" data-level="" data-path="exercise-advanced-data-management.html"><a href="exercise-advanced-data-management.html#task-2-4"><i class="fa fa-check"></i>Task 2</a></li>
@@ -357,14 +357,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-3-8"><i class="fa fa-check"></i>Task 3</a></li>
 <li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-4-6"><i class="fa fa-check"></i>Task 4</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#solutions-advanced-data-management"><i class="fa fa-check"></i>Solutions for Exercise 5</a>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#solutions-advanced-data-management"><i class="fa fa-check"></i>Solutions for Exercise 5 (optional)</a>
 <ul>
-<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-1-import-and-combine-several-files"><i class="fa fa-check"></i>Task 1: Import and combine several files</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-1-9"><i class="fa fa-check"></i>Task 1</a></li>
 <li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-2-deal-with-messy-column-names"><i class="fa fa-check"></i>Task 2: Deal with messy column names</a></li>
-<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-3-choose-the-correct-join"><i class="fa fa-check"></i>Task 3: Choose the correct join</a></li>
-<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-4-reshape-panel-data"><i class="fa fa-check"></i>Task 4: Reshape panel data</a></li>
-<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-5-advanced-selection"><i class="fa fa-check"></i>Task 5: Advanced selection</a></li>
-<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-6-cumulative-challenge"><i class="fa fa-check"></i>Task 6: Cumulative challenge</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-3-9"><i class="fa fa-check"></i>Task 3</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-4-7"><i class="fa fa-check"></i>Task 4</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-5-3"><i class="fa fa-check"></i>Task 5</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-6-3"><i class="fa fa-check"></i>Task 6</a></li>
 </ul></li>
 </ul></li>
 <li class="divider"></li>
@@ -824,9 +824,11 @@ dataframe.</p>
 </div>
 </div>
 <div id="solutions-advanced-data-management" class="section level2 unnumbered hasAnchor">
-<h2>Solutions for Exercise 5<a href="solutions.html#solutions-advanced-data-management" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div id="task-1-import-and-combine-several-files" class="section level3 unnumbered hasAnchor">
-<h3>Task 1: Import and combine several files<a href="solutions.html#task-1-import-and-combine-several-files" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<h2>Solutions for Exercise 5 (optional)<a href="solutions.html#solutions-advanced-data-management" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><strong>NOTE:</strong> This part of the tutorial is not your typical beginner material — it covers some more advanced topics.
+The exercise is therefore <strong>OPTIONAL</strong> and is intended as a resource you can return to once you are ready to learn and apply these advanced data operations to your own projects. I do not expect you to complete these exercises during the beginner’s course.</p>
+<div id="task-1-9" class="section level3 unnumbered hasAnchor">
+<h3>Task 1<a href="solutions.html#task-1-9" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><em>Solution:</em></p>
 <div class="sourceCode" id="cb373"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb373-1"><a href="solutions.html#cb373-1" tabindex="-1"></a>path <span class="ot">&lt;-</span> <span class="st">&quot;data/advanced_practice/multiple_files&quot;</span></span>
 <span id="cb373-2"><a href="solutions.html#cb373-2" tabindex="-1"></a></span>
@@ -893,8 +895,8 @@ does not contain the <code>trust_government</code> variable. <code>bind_rows()</
 that column in the combined dataset and fills the unavailable values with
 <code>NA</code>.</p>
 </div>
-<div id="task-3-choose-the-correct-join" class="section level3 unnumbered hasAnchor">
-<h3>Task 3: Choose the correct join<a href="solutions.html#task-3-choose-the-correct-join" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="task-3-9" class="section level3 unnumbered hasAnchor">
+<h3>Task 3<a href="solutions.html#task-3-9" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><em>Solution:</em></p>
 <div class="sourceCode" id="cb387"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb387-1"><a href="solutions.html#cb387-1" tabindex="-1"></a>profiles <span class="ot">&lt;-</span> <span class="fu">read.csv2</span>(</span>
 <span id="cb387-2"><a href="solutions.html#cb387-2" tabindex="-1"></a>  <span class="st">&quot;data/advanced_practice/joins/journalist_profiles.csv&quot;</span></span>
@@ -946,8 +948,8 @@ that column in the combined dataset and fills the unavailable values with
 ## 9           J109     Austria  Full-time              10
 ## 10          J110     Germany  Part-time              13</code></pre>
 </div>
-<div id="task-4-reshape-panel-data" class="section level3 unnumbered hasAnchor">
-<h3>Task 4: Reshape panel data<a href="solutions.html#task-4-reshape-panel-data" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="task-4-7" class="section level3 unnumbered hasAnchor">
+<h3>Task 4<a href="solutions.html#task-4-7" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><em>Solution:</em></p>
 <div class="sourceCode" id="cb398"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb398-1"><a href="solutions.html#cb398-1" tabindex="-1"></a>panel_wide <span class="ot">&lt;-</span> <span class="fu">read.csv2</span>(</span>
 <span id="cb398-2"><a href="solutions.html#cb398-2" tabindex="-1"></a>  <span class="st">&quot;data/advanced_practice/panel/journalist_panel_wide.csv&quot;</span></span>
@@ -1009,8 +1011,8 @@ that column in the combined dataset and fills the unavailable values with
 <p>The original wide dataset contains <strong>10 rows and 6 columns</strong>. The long
 version contains <strong>40 rows and 5 columns</strong>.</p>
 </div>
-<div id="task-5-advanced-selection" class="section level3 unnumbered hasAnchor">
-<h3>Task 5: Advanced selection<a href="solutions.html#task-5-advanced-selection" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="task-5-3" class="section level3 unnumbered hasAnchor">
+<h3>Task 5<a href="solutions.html#task-5-3" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Select <code>respondent_id</code> and all autonomy variables:</p>
 <div class="sourceCode" id="cb409"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb409-1"><a href="solutions.html#cb409-1" tabindex="-1"></a>combined_data <span class="sc">%&gt;%</span></span>
 <span id="cb409-2"><a href="solutions.html#cb409-2" tabindex="-1"></a>  <span class="fu">select</span>(respondent_id, <span class="fu">starts_with</span>(<span class="st">&quot;autonomy&quot;</span>))</span></code></pre></div>
@@ -1373,8 +1375,8 @@ version contains <strong>40 rows and 5 columns</strong>.</p>
 ## 27                 3                1        4
 ## 28                 4                1        5</code></pre>
 </div>
-<div id="task-6-cumulative-challenge" class="section level3 unnumbered hasAnchor">
-<h3>Task 6: Cumulative challenge<a href="solutions.html#task-6-cumulative-challenge" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="task-6-3" class="section level3 unnumbered hasAnchor">
+<h3>Task 6<a href="solutions.html#task-6-3" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><em>Solution:</em></p>
 <div class="sourceCode" id="cb423"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb423-1"><a href="solutions.html#cb423-1" tabindex="-1"></a>advanced_summary <span class="ot">&lt;-</span> profiles <span class="sc">%&gt;%</span></span>
 <span id="cb423-2"><a href="solutions.html#cb423-2" tabindex="-1"></a>  <span class="fu">full_join</span>(attitudes, <span class="at">by =</span> <span class="st">&quot;respondent_id&quot;</span>) <span class="sc">%&gt;%</span></span>
