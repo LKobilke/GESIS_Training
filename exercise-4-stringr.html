@@ -23,7 +23,7 @@
 <meta name="author" content="Lara Kobilke, Department of Communication and Media Research, University of Zurich" />
 
 
-<meta name="date" content="2026-08-25" />
+<meta name="date" content="2026-08-26" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -462,15 +462,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="task-3-3" class="section level2 unnumbered hasAnchor">
 <h2>Task 3<a href="exercise-4-stringr.html#task-3-3" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Now download our newest dataset ‘seitenURL.csv’ from GESIS Moodle and load it into <code>R</code> as an object called “data”. It is a very reduced version of the original data set that I’ve worked with for a project. The data set investigates what kind of outlets and webpages are most often shared and engaged with on Twitter and Facebook. We have tracked every webpage, from big players like <em>BILD</em> to small, private blogs. However, this is a reduced version of my <strong>raw data</strong>. The outlets are still hidden in the URLs, so we need to extract them first using the regex patterns that you’ve just created.</p>
+<p>Now download our newest dataset ‘seitenURL.csv’ from GESIS Moodle and load it into <code>R</code> as an object called “url_data”. It is a very reduced version of the original data set that I’ve worked with for a project. The data set investigates what kind of outlets and webpages are most often shared and engaged with on Twitter and Facebook. We have tracked every webpage, from big players like <em>BILD</em> to small, private blogs. However, this is a reduced version of my <strong>raw data</strong>. The outlets are still hidden in the URLs, so we need to extract them first using the regex patterns that you’ve just created.</p>
 <p>Use this command and adapt it with your patterns (it uses str_replace in combination with mutate):</p>
-<div class="sourceCode" id="cb247"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb247-1"><a href="exercise-4-stringr.html#cb247-1" tabindex="-1"></a>data2 <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
+<div class="sourceCode" id="cb247"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb247-1"><a href="exercise-4-stringr.html#cb247-1" tabindex="-1"></a>url_data2 <span class="ot">&lt;-</span> url_data <span class="sc">%&gt;%</span></span>
 <span id="cb247-2"><a href="exercise-4-stringr.html#cb247-2" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">seitenURL =</span> <span class="fu">str_replace_all</span>(seitenURL, <span class="st">&quot;your https pattern here&quot;</span>, <span class="st">&quot;&quot;</span>)) <span class="sc">%&gt;%</span> </span>
 <span id="cb247-3"><a href="exercise-4-stringr.html#cb247-3" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">seitenURL =</span> <span class="fu">str_replace_all</span>(seitenURL, <span class="st">&quot;your .de/.com pattern here&quot;</span>, <span class="st">&quot;&quot;</span>)) </span></code></pre></div>
 </div>
 <div id="task-4-2" class="section level2 unnumbered hasAnchor">
 <h2>Task 4<a href="exercise-4-stringr.html#task-4-2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>The data set provides two additional, highly informative columns: “SeitenAnzahlTwitter” and “SeitenAnzahlFacebook”. These columns show the number of reactions (shares, likes, comments) for each URL. Having extracted the media outlets, let us examine which media outlet got the most engagement on Twitter and Facebook from all their URLs. Utilize your <code>dplyr</code> abilities to create an R object named “overview” that stores the summary statistic (remmeber <em>group_by</em> and <em>summarize</em>!) of the engagement on Twitter and Facebook per media outlet.</p>
+<p>The data set provides two additional, highly informative columns: “SeitenAnzahlTwitter” and “SeitenAnzahlFacebook”. These columns show the number of reactions (shares, likes, comments) for each URL. Having extracted the media outlets, let us examine which media outlet got the most engagement on Twitter and Facebook from all their URLs. Utilize your <code>dplyr</code> abilities to create an R object named “overview” that stores the summary statistic (remember <em>group_by</em> and <em>summarize</em>, which you can combine with the <code>sum()</code> function!) of the engagement on Twitter and Facebook per media outlet.</p>
 </div>
 </div>
             </section>
