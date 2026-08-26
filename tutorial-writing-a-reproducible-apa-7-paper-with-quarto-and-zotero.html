@@ -1,0 +1,1386 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title> 10 Tutorial: Writing a Reproducible APA 7 Paper with Quarto and Zotero | Introduction to R</title>
+  <meta name="description" content=" 10 Tutorial: Writing a Reproducible APA 7 Paper with Quarto and Zotero | Introduction to R - GESIS Training Course, 24-27 August 2026" />
+  <meta name="generator" content="bookdown 0.47 and GitBook 2.6.7" />
+
+  <meta property="og:title" content=" 10 Tutorial: Writing a Reproducible APA 7 Paper with Quarto and Zotero | Introduction to R" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content=" 10 Tutorial: Writing a Reproducible APA 7 Paper with Quarto and Zotero | Introduction to R - GESIS Training Course, 24-27 August 2026" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content=" 10 Tutorial: Writing a Reproducible APA 7 Paper with Quarto and Zotero | Introduction to R" />
+  
+  <meta name="twitter:description" content=" 10 Tutorial: Writing a Reproducible APA 7 Paper with Quarto and Zotero | Introduction to R - GESIS Training Course, 24-27 August 2026" />
+  
+
+<meta name="author" content="Lara Kobilke, Department of Communication and Media Research, University of Zurich" />
+
+
+<meta name="date" content="2026-08-26" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="exercise-8-dplyr-ggplot-tidycomm.html"/>
+<link rel="next" href="solutions.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Intro to R</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Intro to R</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#general-information-on-the-course"><i class="fa fa-check"></i><b>1.1</b> General information on the course</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#what-can-i-learn-from-this-tutorial"><i class="fa fa-check"></i><b>1.2</b> What can I learn from this tutorial?</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#how-this-tutorial-supports-the-four-day-workshop"><i class="fa fa-check"></i><b>1.3</b> How this tutorial supports the four-day workshop</a></li>
+<li class="chapter" data-level="1.4" data-path="index.html"><a href="index.html#prerequisites-and-software"><i class="fa fa-check"></i><b>1.4</b> Prerequisites and software</a>
+<ul>
+<li class="chapter" data-level="1.4.1" data-path="index.html"><a href="index.html#install-the-required-r-packages"><i class="fa fa-check"></i><b>1.4.1</b> Install the required R packages</a></li>
+<li class="chapter" data-level="1.4.2" data-path="index.html"><a href="index.html#windows-users-install-rtools"><i class="fa fa-check"></i><b>1.4.2</b> Windows users: Install Rtools</a></li>
+<li class="chapter" data-level="1.4.3" data-path="index.html"><a href="index.html#test-your-installation-before-the-course"><i class="fa fa-check"></i><b>1.4.3</b> Test your installation before the course</a></li>
+</ul></li>
+<li class="chapter" data-level="1.5" data-path="index.html"><a href="index.html#what-can-i-do-if-i-have-problems-with-my-r-code"><i class="fa fa-check"></i><b>1.5</b> What can I do if I have problems with my R code?</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="tutorial-installing-understanding-rr-studio.html"><a href="tutorial-installing-understanding-rr-studio.html"><i class="fa fa-check"></i><b>2</b> Tutorial: Installing &amp; Understanding R/R Studio</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="tutorial-installing-understanding-rr-studio.html"><a href="tutorial-installing-understanding-rr-studio.html#what-is-r"><i class="fa fa-check"></i><b>2.1</b> What is R?</a></li>
+<li class="chapter" data-level="2.2" data-path="tutorial-installing-understanding-rr-studio.html"><a href="tutorial-installing-understanding-rr-studio.html#installing-r"><i class="fa fa-check"></i><b>2.2</b> Installing R</a></li>
+<li class="chapter" data-level="2.3" data-path="tutorial-installing-understanding-rr-studio.html"><a href="tutorial-installing-understanding-rr-studio.html#installing-rstudio"><i class="fa fa-check"></i><b>2.3</b> Installing RStudio</a></li>
+<li class="chapter" data-level="2.4" data-path="tutorial-installing-understanding-rr-studio.html"><a href="tutorial-installing-understanding-rr-studio.html#updating-r-and-rstudio"><i class="fa fa-check"></i><b>2.4</b> Updating R and RStudio</a></li>
+<li class="chapter" data-level="2.5" data-path="tutorial-installing-understanding-rr-studio.html"><a href="tutorial-installing-understanding-rr-studio.html#how-does-r-work"><i class="fa fa-check"></i><b>2.5</b> How does R work?</a></li>
+<li class="chapter" data-level="2.6" data-path="tutorial-installing-understanding-rr-studio.html"><a href="tutorial-installing-understanding-rr-studio.html#why-should-i-use-r"><i class="fa fa-check"></i><b>2.6</b> Why should I use R?</a></li>
+<li class="chapter" data-level="2.7" data-path="tutorial-installing-understanding-rr-studio.html"><a href="tutorial-installing-understanding-rr-studio.html#how-does-r-studio-work"><i class="fa fa-check"></i><b>2.7</b> How does R Studio work?</a>
+<ul>
+<li class="chapter" data-level="2.7.1" data-path="tutorial-installing-understanding-rr-studio.html"><a href="tutorial-installing-understanding-rr-studio.html#source-writing-your-own-code"><i class="fa fa-check"></i><b>2.7.1</b> Source: Writing your own code</a></li>
+<li class="chapter" data-level="2.7.2" data-path="tutorial-installing-understanding-rr-studio.html"><a href="tutorial-installing-understanding-rr-studio.html#console-printing-results"><i class="fa fa-check"></i><b>2.7.2</b> Console: Printing results</a></li>
+<li class="chapter" data-level="2.7.3" data-path="tutorial-installing-understanding-rr-studio.html"><a href="tutorial-installing-understanding-rr-studio.html#environment-overview-of-objects"><i class="fa fa-check"></i><b>2.7.3</b> Environment: Overview of objects</a></li>
+<li class="chapter" data-level="2.7.4" data-path="tutorial-installing-understanding-rr-studio.html"><a href="tutorial-installing-understanding-rr-studio.html#plotshelppackages-do-everything-else"><i class="fa fa-check"></i><b>2.7.4</b> Plots/Help/Packages: Do everything else</a></li>
+</ul></li>
+<li class="chapter" data-level="2.8" data-path="tutorial-installing-understanding-rr-studio.html"><a href="tutorial-installing-understanding-rr-studio.html#why-arent-we-using-a-gui-for-point-and-click-analyses"><i class="fa fa-check"></i><b>2.8</b> Why aren’t we using a GUI for point-and-click analyses?</a></li>
+<li class="chapter" data-level="2.9" data-path="tutorial-installing-understanding-rr-studio.html"><a href="tutorial-installing-understanding-rr-studio.html#packages"><i class="fa fa-check"></i><b>2.9</b> Packages</a>
+<ul>
+<li class="chapter" data-level="2.9.1" data-path="tutorial-installing-understanding-rr-studio.html"><a href="tutorial-installing-understanding-rr-studio.html#installing-packages"><i class="fa fa-check"></i><b>2.9.1</b> Installing packages</a></li>
+<li class="chapter" data-level="2.9.2" data-path="tutorial-installing-understanding-rr-studio.html"><a href="tutorial-installing-understanding-rr-studio.html#activating-packages"><i class="fa fa-check"></i><b>2.9.2</b> Activating packages</a></li>
+<li class="chapter" data-level="2.9.3" data-path="tutorial-installing-understanding-rr-studio.html"><a href="tutorial-installing-understanding-rr-studio.html#getting-information-about-packages"><i class="fa fa-check"></i><b>2.9.3</b> Getting information about packages</a></li>
+</ul></li>
+<li class="chapter" data-level="2.10" data-path="tutorial-installing-understanding-rr-studio.html"><a href="tutorial-installing-understanding-rr-studio.html#optional-setting-global-options-in-r-for-a-customized-workflow"><i class="fa fa-check"></i><b>2.10</b> Optional: Setting global options in R for a customized workflow</a>
+<ul>
+<li class="chapter" data-level="2.10.1" data-path="tutorial-installing-understanding-rr-studio.html"><a href="tutorial-installing-understanding-rr-studio.html#understanding-options"><i class="fa fa-check"></i><b>2.10.1</b> Understanding <code>options()</code></a></li>
+<li class="chapter" data-level="2.10.2" data-path="tutorial-installing-understanding-rr-studio.html"><a href="tutorial-installing-understanding-rr-studio.html#turn-off-scientific-notation"><i class="fa fa-check"></i><b>2.10.2</b> Turn off scientific notation</a></li>
+<li class="chapter" data-level="2.10.3" data-path="tutorial-installing-understanding-rr-studio.html"><a href="tutorial-installing-understanding-rr-studio.html#customizing-tibble-display"><i class="fa fa-check"></i><b>2.10.3</b> Customizing tibble display</a></li>
+<li class="chapter" data-level="2.10.4" data-path="tutorial-installing-understanding-rr-studio.html"><a href="tutorial-installing-understanding-rr-studio.html#resetting-to-default"><i class="fa fa-check"></i><b>2.10.4</b> Resetting to default</a></li>
+</ul></li>
+<li class="chapter" data-level="2.11" data-path="tutorial-installing-understanding-rr-studio.html"><a href="tutorial-installing-understanding-rr-studio.html#take-aways"><i class="fa fa-check"></i><b>2.11</b> Take-Aways</a></li>
+<li class="chapter" data-level="2.12" data-path="tutorial-installing-understanding-rr-studio.html"><a href="tutorial-installing-understanding-rr-studio.html#additional-tutorials"><i class="fa fa-check"></i><b>2.12</b> Additional tutorials</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="tutorial-using-r-as-a-calculator.html"><a href="tutorial-using-r-as-a-calculator.html"><i class="fa fa-check"></i><b>3</b> Tutorial: Using R as a calculator</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="tutorial-using-r-as-a-calculator.html"><a href="tutorial-using-r-as-a-calculator.html#using-variables-for-calculation"><i class="fa fa-check"></i><b>3.1</b> Using variables for calculation</a></li>
+<li class="chapter" data-level="3.2" data-path="tutorial-using-r-as-a-calculator.html"><a href="tutorial-using-r-as-a-calculator.html#using-vectors-for-calculation"><i class="fa fa-check"></i><b>3.2</b> Using vectors for calculation</a></li>
+<li class="chapter" data-level="3.3" data-path="tutorial-using-r-as-a-calculator.html"><a href="tutorial-using-r-as-a-calculator.html#selecting-values-from-a-vector"><i class="fa fa-check"></i><b>3.3</b> Selecting values from a vector</a></li>
+<li class="chapter" data-level="3.4" data-path="tutorial-using-r-as-a-calculator.html"><a href="tutorial-using-r-as-a-calculator.html#take-aways-1"><i class="fa fa-check"></i><b>3.4</b> Take-Aways</a></li>
+<li class="chapter" data-level="3.5" data-path="tutorial-using-r-as-a-calculator.html"><a href="tutorial-using-r-as-a-calculator.html#additional-tutorials-1"><i class="fa fa-check"></i><b>3.5</b> Additional tutorials</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="exercise-1-base-r.html"><a href="exercise-1-base-r.html"><i class="fa fa-check"></i>Exercise 1: Base R</a>
+<ul>
+<li class="chapter" data-level="" data-path="exercise-1-base-r.html"><a href="exercise-1-base-r.html#task-1"><i class="fa fa-check"></i>Task 1</a></li>
+<li class="chapter" data-level="" data-path="exercise-1-base-r.html"><a href="exercise-1-base-r.html#task-2"><i class="fa fa-check"></i>Task 2</a></li>
+<li class="chapter" data-level="" data-path="exercise-1-base-r.html"><a href="exercise-1-base-r.html#task-3"><i class="fa fa-check"></i>Task 3</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="tutorial-working-with-data-files.html"><a href="tutorial-working-with-data-files.html"><i class="fa fa-check"></i><b>4</b> Tutorial: Working with data (files)</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="tutorial-working-with-data-files.html"><a href="tutorial-working-with-data-files.html#defining-your-working-directory"><i class="fa fa-check"></i><b>4.1</b> Defining your working directory</a></li>
+<li class="chapter" data-level="4.2" data-path="tutorial-working-with-data-files.html"><a href="tutorial-working-with-data-files.html#import-data-from-your-working-directory"><i class="fa fa-check"></i><b>4.2</b> Import data from your working directory</a></li>
+<li class="chapter" data-level="4.3" data-path="tutorial-working-with-data-files.html"><a href="tutorial-working-with-data-files.html#subsetting-variables-columns-in-data-frames"><i class="fa fa-check"></i><b>4.3</b> Subsetting variables / columns in data frames</a></li>
+<li class="chapter" data-level="4.4" data-path="tutorial-working-with-data-files.html"><a href="tutorial-working-with-data-files.html#subsetting-observations-rows-in-data-frames"><i class="fa fa-check"></i><b>4.4</b> Subsetting observations / rows in data frames</a></li>
+<li class="chapter" data-level="4.5" data-path="tutorial-working-with-data-files.html"><a href="tutorial-working-with-data-files.html#subsetting-values-cells-in-data-frames"><i class="fa fa-check"></i><b>4.5</b> Subsetting values / cells in data frames</a></li>
+<li class="chapter" data-level="4.6" data-path="tutorial-working-with-data-files.html"><a href="tutorial-working-with-data-files.html#subsetting-data-with-conditions"><i class="fa fa-check"></i><b>4.6</b> Subsetting data with conditions</a></li>
+<li class="chapter" data-level="4.7" data-path="tutorial-working-with-data-files.html"><a href="tutorial-working-with-data-files.html#eliminate-the-need-to-manually-set-working-directories-by-using-r-projects"><i class="fa fa-check"></i><b>4.7</b> Eliminate the need to manually set working directories by using R Projects</a>
+<ul>
+<li class="chapter" data-level="4.7.1" data-path="tutorial-working-with-data-files.html"><a href="tutorial-working-with-data-files.html#creating-a-new-r-project"><i class="fa fa-check"></i><b>4.7.1</b> Creating a new R Project</a></li>
+<li class="chapter" data-level="4.7.2" data-path="tutorial-working-with-data-files.html"><a href="tutorial-working-with-data-files.html#checking-your-working-directory"><i class="fa fa-check"></i><b>4.7.2</b> Checking your working directory</a></li>
+<li class="chapter" data-level="4.7.3" data-path="tutorial-working-with-data-files.html"><a href="tutorial-working-with-data-files.html#a-recommendation-for-designing-a-good-r-project-structure"><i class="fa fa-check"></i><b>4.7.3</b> A recommendation for designing a good R Project structure</a></li>
+<li class="chapter" data-level="4.7.4" data-path="tutorial-working-with-data-files.html"><a href="tutorial-working-with-data-files.html#navigating-your-working-directory-like-a-pro-the-concept-of-relative-paths"><i class="fa fa-check"></i><b>4.7.4</b> Navigating your working directory like a pro: The concept of relative paths</a></li>
+</ul></li>
+<li class="chapter" data-level="4.8" data-path="tutorial-working-with-data-files.html"><a href="tutorial-working-with-data-files.html#optional-import-data-from-various-file-formats"><i class="fa fa-check"></i><b>4.8</b> Optional: Import data from various file formats</a>
+<ul>
+<li class="chapter" data-level="4.8.1" data-path="tutorial-working-with-data-files.html"><a href="tutorial-working-with-data-files.html#importing-data-from-excel"><i class="fa fa-check"></i><b>4.8.1</b> Importing data from Excel</a></li>
+<li class="chapter" data-level="4.8.2" data-path="tutorial-working-with-data-files.html"><a href="tutorial-working-with-data-files.html#importing-data-from-json"><i class="fa fa-check"></i><b>4.8.2</b> Importing data from JSON</a></li>
+<li class="chapter" data-level="4.8.3" data-path="tutorial-working-with-data-files.html"><a href="tutorial-working-with-data-files.html#importing-data-from-spss"><i class="fa fa-check"></i><b>4.8.3</b> Importing data from SPSS</a></li>
+<li class="chapter" data-level="4.8.4" data-path="tutorial-working-with-data-files.html"><a href="tutorial-working-with-data-files.html#importing-data-from-stata"><i class="fa fa-check"></i><b>4.8.4</b> Importing data from Stata</a></li>
+</ul></li>
+<li class="chapter" data-level="4.9" data-path="tutorial-working-with-data-files.html"><a href="tutorial-working-with-data-files.html#take-aways-2"><i class="fa fa-check"></i><b>4.9</b> Take-Aways</a></li>
+<li class="chapter" data-level="4.10" data-path="tutorial-working-with-data-files.html"><a href="tutorial-working-with-data-files.html#additional-tutorials-2"><i class="fa fa-check"></i><b>4.10</b> Additional tutorials</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="exercise-2-base-r.html"><a href="exercise-2-base-r.html"><i class="fa fa-check"></i>Exercise 2: Base R</a>
+<ul>
+<li class="chapter" data-level="" data-path="exercise-2-base-r.html"><a href="exercise-2-base-r.html#task-1-1"><i class="fa fa-check"></i>Task 1</a></li>
+<li class="chapter" data-level="" data-path="exercise-2-base-r.html"><a href="exercise-2-base-r.html#task-2-1"><i class="fa fa-check"></i>Task 2</a></li>
+<li class="chapter" data-level="" data-path="exercise-2-base-r.html"><a href="exercise-2-base-r.html#task-3-1"><i class="fa fa-check"></i>Task 3</a></li>
+<li class="chapter" data-level="" data-path="exercise-2-base-r.html"><a href="exercise-2-base-r.html#task-4"><i class="fa fa-check"></i>Task 4</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="tutorial-data-management-with-dplyr.html"><a href="tutorial-data-management-with-dplyr.html"><i class="fa fa-check"></i><b>5</b> Tutorial: Data management with dplyr</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="tutorial-data-management-with-dplyr.html"><a href="tutorial-data-management-with-dplyr.html#why-not-stick-with-base-r"><i class="fa fa-check"></i><b>5.1</b> Why not stick with Base R?</a></li>
+<li class="chapter" data-level="5.2" data-path="tutorial-data-management-with-dplyr.html"><a href="tutorial-data-management-with-dplyr.html#tidyverse-packages"><i class="fa fa-check"></i><b>5.2</b> Tidyverse packages</a></li>
+<li class="chapter" data-level="5.3" data-path="tutorial-data-management-with-dplyr.html"><a href="tutorial-data-management-with-dplyr.html#tidy-data"><i class="fa fa-check"></i><b>5.3</b> Tidy data</a></li>
+<li class="chapter" data-level="5.4" data-path="tutorial-data-management-with-dplyr.html"><a href="tutorial-data-management-with-dplyr.html#the-pipe-operator"><i class="fa fa-check"></i><b>5.4</b> The pipe operator</a></li>
+<li class="chapter" data-level="5.5" data-path="tutorial-data-management-with-dplyr.html"><a href="tutorial-data-management-with-dplyr.html#helpful-shortcuts-in-r"><i class="fa fa-check"></i><b>5.5</b> Helpful shortcuts in R</a></li>
+<li class="chapter" data-level="5.6" data-path="tutorial-data-management-with-dplyr.html"><a href="tutorial-data-management-with-dplyr.html#data-transformation-with-dplyr"><i class="fa fa-check"></i><b>5.6</b> Data transformation with dplyr</a>
+<ul>
+<li class="chapter" data-level="5.6.1" data-path="tutorial-data-management-with-dplyr.html"><a href="tutorial-data-management-with-dplyr.html#select"><i class="fa fa-check"></i><b>5.6.1</b> select()</a></li>
+<li class="chapter" data-level="5.6.2" data-path="tutorial-data-management-with-dplyr.html"><a href="tutorial-data-management-with-dplyr.html#filter"><i class="fa fa-check"></i><b>5.6.2</b> filter()</a></li>
+<li class="chapter" data-level="5.6.3" data-path="tutorial-data-management-with-dplyr.html"><a href="tutorial-data-management-with-dplyr.html#arrange"><i class="fa fa-check"></i><b>5.6.3</b> arrange()</a></li>
+<li class="chapter" data-level="5.6.4" data-path="tutorial-data-management-with-dplyr.html"><a href="tutorial-data-management-with-dplyr.html#mutate"><i class="fa fa-check"></i><b>5.6.4</b> mutate()</a></li>
+<li class="chapter" data-level="5.6.5" data-path="tutorial-data-management-with-dplyr.html"><a href="tutorial-data-management-with-dplyr.html#summarize-group_by"><i class="fa fa-check"></i><b>5.6.5</b> summarize() [+ group_by()]</a></li>
+<li class="chapter" data-level="5.6.6" data-path="tutorial-data-management-with-dplyr.html"><a href="tutorial-data-management-with-dplyr.html#chaining-functions-in-a-pipe"><i class="fa fa-check"></i><b>5.6.6</b> Chaining functions in a pipe</a></li>
+</ul></li>
+<li class="chapter" data-level="5.7" data-path="tutorial-data-management-with-dplyr.html"><a href="tutorial-data-management-with-dplyr.html#printing-more-rows-in-the-console-using-dplyr"><i class="fa fa-check"></i><b>5.7</b> Printing more rows in the console using <code>dplyr</code></a></li>
+<li class="chapter" data-level="5.8" data-path="tutorial-data-management-with-dplyr.html"><a href="tutorial-data-management-with-dplyr.html#take-aways-3"><i class="fa fa-check"></i><b>5.8</b> Take-Aways</a></li>
+<li class="chapter" data-level="5.9" data-path="tutorial-data-management-with-dplyr.html"><a href="tutorial-data-management-with-dplyr.html#additional-tutorials-3"><i class="fa fa-check"></i><b>5.9</b> Additional tutorials</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="exercise-3-dplyr.html"><a href="exercise-3-dplyr.html"><i class="fa fa-check"></i>Exercise 3: dplyr</a>
+<ul>
+<li class="chapter" data-level="" data-path="exercise-3-dplyr.html"><a href="exercise-3-dplyr.html#task-1-2"><i class="fa fa-check"></i>Task 1</a></li>
+<li class="chapter" data-level="" data-path="exercise-3-dplyr.html"><a href="exercise-3-dplyr.html#task-2-2"><i class="fa fa-check"></i>Task 2</a></li>
+<li class="chapter" data-level="" data-path="exercise-3-dplyr.html"><a href="exercise-3-dplyr.html#task-3-2"><i class="fa fa-check"></i>Task 3</a></li>
+<li class="chapter" data-level="" data-path="exercise-3-dplyr.html"><a href="exercise-3-dplyr.html#task-4-1"><i class="fa fa-check"></i>Task 4</a></li>
+<li class="chapter" data-level="" data-path="exercise-3-dplyr.html"><a href="exercise-3-dplyr.html#task-5"><i class="fa fa-check"></i>Task 5</a></li>
+<li class="chapter" data-level="" data-path="exercise-3-dplyr.html"><a href="exercise-3-dplyr.html#task-6"><i class="fa fa-check"></i>Task 6</a></li>
+<li class="chapter" data-level="" data-path="exercise-3-dplyr.html"><a href="exercise-3-dplyr.html#task-7"><i class="fa fa-check"></i>Task 7</a></li>
+<li class="chapter" data-level="" data-path="exercise-3-dplyr.html"><a href="exercise-3-dplyr.html#task-8"><i class="fa fa-check"></i>Task 8</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="text-manipulation-with-stringr.html"><a href="text-manipulation-with-stringr.html"><i class="fa fa-check"></i><b>6</b> Text manipulation with stringr</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="text-manipulation-with-stringr.html"><a href="text-manipulation-with-stringr.html#whats-stringr"><i class="fa fa-check"></i><b>6.1</b> What’s stringr?</a></li>
+<li class="chapter" data-level="6.2" data-path="text-manipulation-with-stringr.html"><a href="text-manipulation-with-stringr.html#working-with-strings"><i class="fa fa-check"></i><b>6.2</b> Working with strings</a></li>
+<li class="chapter" data-level="6.3" data-path="text-manipulation-with-stringr.html"><a href="text-manipulation-with-stringr.html#working-with-string-patterns"><i class="fa fa-check"></i><b>6.3</b> Working with string patterns</a></li>
+<li class="chapter" data-level="6.4" data-path="text-manipulation-with-stringr.html"><a href="text-manipulation-with-stringr.html#working-with-regular-expressions"><i class="fa fa-check"></i><b>6.4</b> Working with regular expressions</a>
+<ul>
+<li class="chapter" data-level="6.4.1" data-path="text-manipulation-with-stringr.html"><a href="text-manipulation-with-stringr.html#anchors-alternates-and-quantifiers"><i class="fa fa-check"></i><b>6.4.1</b> Anchors, alternates, and quantifiers</a></li>
+<li class="chapter" data-level="6.4.2" data-path="text-manipulation-with-stringr.html"><a href="text-manipulation-with-stringr.html#look-arounds-and-groups"><i class="fa fa-check"></i><b>6.4.2</b> Look arounds and groups</a></li>
+<li class="chapter" data-level="6.4.3" data-path="text-manipulation-with-stringr.html"><a href="text-manipulation-with-stringr.html#match-specific-types-of-characters"><i class="fa fa-check"></i><b>6.4.3</b> Match specific types of characters</a></li>
+</ul></li>
+<li class="chapter" data-level="6.5" data-path="text-manipulation-with-stringr.html"><a href="text-manipulation-with-stringr.html#take-aways-4"><i class="fa fa-check"></i><b>6.5</b> Take-Aways</a></li>
+<li class="chapter" data-level="6.6" data-path="text-manipulation-with-stringr.html"><a href="text-manipulation-with-stringr.html#additional-tutorials-4"><i class="fa fa-check"></i><b>6.6</b> Additional tutorials</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="exercise-4-stringr.html"><a href="exercise-4-stringr.html"><i class="fa fa-check"></i>Exercise 4: stringr</a>
+<ul>
+<li class="chapter" data-level="" data-path="exercise-4-stringr.html"><a href="exercise-4-stringr.html#task-1-3"><i class="fa fa-check"></i>Task 1</a></li>
+<li class="chapter" data-level="" data-path="exercise-4-stringr.html"><a href="exercise-4-stringr.html#task-2-3"><i class="fa fa-check"></i>Task 2</a></li>
+<li class="chapter" data-level="" data-path="exercise-4-stringr.html"><a href="exercise-4-stringr.html#task-3-3"><i class="fa fa-check"></i>Task 3</a></li>
+<li class="chapter" data-level="" data-path="exercise-4-stringr.html"><a href="exercise-4-stringr.html#task-4-2"><i class="fa fa-check"></i>Task 4</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="advanced-data-management.html"><a href="advanced-data-management.html"><i class="fa fa-check"></i><b>7</b> Advanced data management</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="advanced-data-management.html"><a href="advanced-data-management.html#reading-multiple-files-into-r"><i class="fa fa-check"></i><b>7.1</b> Reading multiple files into R</a>
+<ul>
+<li class="chapter" data-level="7.1.1" data-path="advanced-data-management.html"><a href="advanced-data-management.html#reading-multiple-files-into-r-with-different-column-names"><i class="fa fa-check"></i><b>7.1.1</b> Reading multiple files into R with different column names</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="advanced-data-management.html"><a href="advanced-data-management.html#joining-two-datasets"><i class="fa fa-check"></i><b>7.2</b> Joining two datasets</a>
+<ul>
+<li class="chapter" data-level="7.2.1" data-path="advanced-data-management.html"><a href="advanced-data-management.html#inner_join"><i class="fa fa-check"></i><b>7.2.1</b> inner_join</a></li>
+<li class="chapter" data-level="7.2.2" data-path="advanced-data-management.html"><a href="advanced-data-management.html#left_join"><i class="fa fa-check"></i><b>7.2.2</b> left_join</a></li>
+<li class="chapter" data-level="7.2.3" data-path="advanced-data-management.html"><a href="advanced-data-management.html#right_join"><i class="fa fa-check"></i><b>7.2.3</b> right_join</a></li>
+<li class="chapter" data-level="7.2.4" data-path="advanced-data-management.html"><a href="advanced-data-management.html#full_join"><i class="fa fa-check"></i><b>7.2.4</b> full_join</a></li>
+<li class="chapter" data-level="7.2.5" data-path="advanced-data-management.html"><a href="advanced-data-management.html#join-without-.x-and-.y-suffixes"><i class="fa fa-check"></i><b>7.2.5</b> Join without .x and .y suffixes</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="advanced-data-management.html"><a href="advanced-data-management.html#reformatting-datasets"><i class="fa fa-check"></i><b>7.3</b> Reformatting datasets</a>
+<ul>
+<li class="chapter" data-level="7.3.1" data-path="advanced-data-management.html"><a href="advanced-data-management.html#pivot_longer"><i class="fa fa-check"></i><b>7.3.1</b> pivot_longer()</a></li>
+<li class="chapter" data-level="7.3.2" data-path="advanced-data-management.html"><a href="advanced-data-management.html#pivot_wider"><i class="fa fa-check"></i><b>7.3.2</b> pivot_wider()</a></li>
+</ul></li>
+<li class="chapter" data-level="7.4" data-path="advanced-data-management.html"><a href="advanced-data-management.html#advanced-column-selectors"><i class="fa fa-check"></i><b>7.4</b> Advanced column selectors</a>
+<ul>
+<li class="chapter" data-level="7.4.1" data-path="advanced-data-management.html"><a href="advanced-data-management.html#selecting-the-last-column"><i class="fa fa-check"></i><b>7.4.1</b> Selecting the last column</a></li>
+<li class="chapter" data-level="7.4.2" data-path="advanced-data-management.html"><a href="advanced-data-management.html#selecting-columns-that-start-with-end-with-or-contain-a-specific-string"><i class="fa fa-check"></i><b>7.4.2</b> Selecting columns that start with, end with or contain a specific string</a></li>
+<li class="chapter" data-level="7.4.3" data-path="advanced-data-management.html"><a href="advanced-data-management.html#selecting-columns-based-on-a-numeric-range"><i class="fa fa-check"></i><b>7.4.3</b> Selecting columns based on a numeric range</a></li>
+<li class="chapter" data-level="7.4.4" data-path="advanced-data-management.html"><a href="advanced-data-management.html#selecting-columns-based-on-their-type"><i class="fa fa-check"></i><b>7.4.4</b> Selecting columns based on their type</a></li>
+<li class="chapter" data-level="7.4.5" data-path="advanced-data-management.html"><a href="advanced-data-management.html#combine-selectors"><i class="fa fa-check"></i><b>7.4.5</b> Combine selectors</a></li>
+<li class="chapter" data-level="7.4.6" data-path="advanced-data-management.html"><a href="advanced-data-management.html#reorder-your-columns-with-everything"><i class="fa fa-check"></i><b>7.4.6</b> Reorder your columns with everything()</a></li>
+</ul></li>
+<li class="chapter" data-level="7.5" data-path="advanced-data-management.html"><a href="advanced-data-management.html#advanced-selection-of-rows"><i class="fa fa-check"></i><b>7.5</b> Advanced selection of rows</a></li>
+<li class="chapter" data-level="7.6" data-path="advanced-data-management.html"><a href="advanced-data-management.html#take-aways-5"><i class="fa fa-check"></i><b>7.6</b> Take-Aways</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="exercise-advanced-data-management.html"><a href="exercise-advanced-data-management.html"><i class="fa fa-check"></i>Exercise 5: Advanced data management (optional)</a>
+<ul>
+<li class="chapter" data-level="" data-path="exercise-advanced-data-management.html"><a href="exercise-advanced-data-management.html#task-1-4"><i class="fa fa-check"></i>Task 1</a></li>
+<li class="chapter" data-level="" data-path="exercise-advanced-data-management.html"><a href="exercise-advanced-data-management.html#task-2-4"><i class="fa fa-check"></i>Task 2</a></li>
+<li class="chapter" data-level="" data-path="exercise-advanced-data-management.html"><a href="exercise-advanced-data-management.html#task-3-4"><i class="fa fa-check"></i>Task 3</a></li>
+<li class="chapter" data-level="" data-path="exercise-advanced-data-management.html"><a href="exercise-advanced-data-management.html#task-4-3"><i class="fa fa-check"></i>Task 4</a></li>
+<li class="chapter" data-level="" data-path="exercise-advanced-data-management.html"><a href="exercise-advanced-data-management.html#task-5-1"><i class="fa fa-check"></i>Task 5</a></li>
+<li class="chapter" data-level="" data-path="exercise-advanced-data-management.html"><a href="exercise-advanced-data-management.html#task-6-1"><i class="fa fa-check"></i>Task 6</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="tutorial-data-visualization-with-ggplot.html"><a href="tutorial-data-visualization-with-ggplot.html"><i class="fa fa-check"></i><b>8</b> Tutorial: Data visualization with ggplot</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="tutorial-data-visualization-with-ggplot.html"><a href="tutorial-data-visualization-with-ggplot.html#why-not-stick-with-base-r-1"><i class="fa fa-check"></i><b>8.1</b> Why not stick with Base R?</a></li>
+<li class="chapter" data-level="8.2" data-path="tutorial-data-visualization-with-ggplot.html"><a href="tutorial-data-visualization-with-ggplot.html#components-of-a-ggplot-graph"><i class="fa fa-check"></i><b>8.2</b> Components of a ggplot graph</a></li>
+<li class="chapter" data-level="8.3" data-path="tutorial-data-visualization-with-ggplot.html"><a href="tutorial-data-visualization-with-ggplot.html#installing-activating-ggplot"><i class="fa fa-check"></i><b>8.3</b> Installing &amp; activating ggplot</a></li>
+<li class="chapter" data-level="8.4" data-path="tutorial-data-visualization-with-ggplot.html"><a href="tutorial-data-visualization-with-ggplot.html#building-your-first-plot"><i class="fa fa-check"></i><b>8.4</b> Building your first plot</a>
+<ul>
+<li class="chapter" data-level="8.4.1" data-path="tutorial-data-visualization-with-ggplot.html"><a href="tutorial-data-visualization-with-ggplot.html#data"><i class="fa fa-check"></i><b>8.4.1</b> Data</a></li>
+<li class="chapter" data-level="8.4.2" data-path="tutorial-data-visualization-with-ggplot.html"><a href="tutorial-data-visualization-with-ggplot.html#aesthetics"><i class="fa fa-check"></i><b>8.4.2</b> Aesthetics</a></li>
+<li class="chapter" data-level="8.4.3" data-path="tutorial-data-visualization-with-ggplot.html"><a href="tutorial-data-visualization-with-ggplot.html#geometrics"><i class="fa fa-check"></i><b>8.4.3</b> Geometrics</a></li>
+<li class="chapter" data-level="8.4.4" data-path="tutorial-data-visualization-with-ggplot.html"><a href="tutorial-data-visualization-with-ggplot.html#scales"><i class="fa fa-check"></i><b>8.4.4</b> Scales</a></li>
+<li class="chapter" data-level="8.4.5" data-path="tutorial-data-visualization-with-ggplot.html"><a href="tutorial-data-visualization-with-ggplot.html#themes"><i class="fa fa-check"></i><b>8.4.5</b> Themes</a></li>
+<li class="chapter" data-level="8.4.6" data-path="tutorial-data-visualization-with-ggplot.html"><a href="tutorial-data-visualization-with-ggplot.html#labs"><i class="fa fa-check"></i><b>8.4.6</b> Labs</a></li>
+<li class="chapter" data-level="8.4.7" data-path="tutorial-data-visualization-with-ggplot.html"><a href="tutorial-data-visualization-with-ggplot.html#facets"><i class="fa fa-check"></i><b>8.4.7</b> Facets</a></li>
+<li class="chapter" data-level="8.4.8" data-path="tutorial-data-visualization-with-ggplot.html"><a href="tutorial-data-visualization-with-ggplot.html#saving-graphs"><i class="fa fa-check"></i><b>8.4.8</b> Saving graphs</a></li>
+</ul></li>
+<li class="chapter" data-level="8.5" data-path="tutorial-data-visualization-with-ggplot.html"><a href="tutorial-data-visualization-with-ggplot.html#colors"><i class="fa fa-check"></i><b>8.5</b> Colors</a></li>
+<li class="chapter" data-level="8.6" data-path="tutorial-data-visualization-with-ggplot.html"><a href="tutorial-data-visualization-with-ggplot.html#highly-personalized-themes"><i class="fa fa-check"></i><b>8.6</b> Highly personalized themes</a></li>
+<li class="chapter" data-level="8.7" data-path="tutorial-data-visualization-with-ggplot.html"><a href="tutorial-data-visualization-with-ggplot.html#other-common-plot-types"><i class="fa fa-check"></i><b>8.7</b> Other common plot types</a>
+<ul>
+<li class="chapter" data-level="8.7.1" data-path="tutorial-data-visualization-with-ggplot.html"><a href="tutorial-data-visualization-with-ggplot.html#bar-plots"><i class="fa fa-check"></i><b>8.7.1</b> bar plots</a></li>
+<li class="chapter" data-level="8.7.2" data-path="tutorial-data-visualization-with-ggplot.html"><a href="tutorial-data-visualization-with-ggplot.html#box-plots"><i class="fa fa-check"></i><b>8.7.2</b> box plots</a></li>
+</ul></li>
+<li class="chapter" data-level="8.8" data-path="tutorial-data-visualization-with-ggplot.html"><a href="tutorial-data-visualization-with-ggplot.html#take-aways-6"><i class="fa fa-check"></i><b>8.8</b> Take Aways</a></li>
+<li class="chapter" data-level="8.9" data-path="tutorial-data-visualization-with-ggplot.html"><a href="tutorial-data-visualization-with-ggplot.html#additional-tutorials-5"><i class="fa fa-check"></i><b>8.9</b> Additional tutorials</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="exercise-6-ggplot.html"><a href="exercise-6-ggplot.html"><i class="fa fa-check"></i>Exercise 6: ggplot</a>
+<ul>
+<li class="chapter" data-level="" data-path="exercise-6-ggplot.html"><a href="exercise-6-ggplot.html#task-1-5"><i class="fa fa-check"></i>Task 1</a></li>
+<li class="chapter" data-level="" data-path="exercise-6-ggplot.html"><a href="exercise-6-ggplot.html#task-2-5"><i class="fa fa-check"></i>Task 2</a></li>
+<li class="chapter" data-level="" data-path="exercise-6-ggplot.html"><a href="exercise-6-ggplot.html#task-3-5"><i class="fa fa-check"></i>Task 3</a></li>
+<li class="chapter" data-level="" data-path="exercise-6-ggplot.html"><a href="exercise-6-ggplot.html#task-4-4"><i class="fa fa-check"></i>Task 4</a></li>
+<li class="chapter" data-level="" data-path="exercise-6-ggplot.html"><a href="exercise-6-ggplot.html#task-5-2"><i class="fa fa-check"></i>Task 5</a></li>
+<li class="chapter" data-level="" data-path="exercise-6-ggplot.html"><a href="exercise-6-ggplot.html#task-6-2"><i class="fa fa-check"></i>Task 6</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="exercise-7-ggplot.html"><a href="exercise-7-ggplot.html"><i class="fa fa-check"></i>Exercise 7: ggplot</a>
+<ul>
+<li class="chapter" data-level="" data-path="exercise-7-ggplot.html"><a href="exercise-7-ggplot.html#task-1-6"><i class="fa fa-check"></i>Task 1</a></li>
+<li class="chapter" data-level="" data-path="exercise-7-ggplot.html"><a href="exercise-7-ggplot.html#task-2-6"><i class="fa fa-check"></i>Task 2</a></li>
+<li class="chapter" data-level="" data-path="exercise-7-ggplot.html"><a href="exercise-7-ggplot.html#task-3-6"><i class="fa fa-check"></i>Task 3</a></li>
+<li class="chapter" data-level="" data-path="exercise-7-ggplot.html"><a href="exercise-7-ggplot.html#task-4-5"><i class="fa fa-check"></i>Task 4</a></li>
+<li class="chapter" data-level="" data-path="exercise-7-ggplot.html"><a href="exercise-7-ggplot.html#task-5-3"><i class="fa fa-check"></i>Task 5</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="tutorial-data-analysis-with-tidycomm.html"><a href="tutorial-data-analysis-with-tidycomm.html"><i class="fa fa-check"></i><b>9</b> Tutorial: Data analysis with tidycomm</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="tutorial-data-analysis-with-tidycomm.html"><a href="tutorial-data-analysis-with-tidycomm.html#is-tidycomm-a-niche-package"><i class="fa fa-check"></i><b>9.1</b> Is <code>tidycomm</code> a niche package?</a></li>
+<li class="chapter" data-level="9.2" data-path="tutorial-data-analysis-with-tidycomm.html"><a href="tutorial-data-analysis-with-tidycomm.html#getting-started-with-tidycomm"><i class="fa fa-check"></i><b>9.2</b> Getting started with tidycomm</a></li>
+<li class="chapter" data-level="9.3" data-path="tutorial-data-analysis-with-tidycomm.html"><a href="tutorial-data-analysis-with-tidycomm.html#first-data-inspection-descriptive-analysis"><i class="fa fa-check"></i><b>9.3</b> First data inspection: descriptive analysis</a>
+<ul>
+<li class="chapter" data-level="9.3.1" data-path="tutorial-data-analysis-with-tidycomm.html"><a href="tutorial-data-analysis-with-tidycomm.html#inspect-the-whole-data-set-at-once"><i class="fa fa-check"></i><b>9.3.1</b> Inspect the whole data set at once</a></li>
+<li class="chapter" data-level="9.3.2" data-path="tutorial-data-analysis-with-tidycomm.html"><a href="tutorial-data-analysis-with-tidycomm.html#inspect-selected-continuous-variables-in-more-detail"><i class="fa fa-check"></i><b>9.3.2</b> Inspect selected continuous variables in more detail</a></li>
+<li class="chapter" data-level="9.3.3" data-path="tutorial-data-analysis-with-tidycomm.html"><a href="tutorial-data-analysis-with-tidycomm.html#inspect-percentiles-and-distributions"><i class="fa fa-check"></i><b>9.3.3</b> Inspect percentiles and distributions</a></li>
+<li class="chapter" data-level="9.3.4" data-path="tutorial-data-analysis-with-tidycomm.html"><a href="tutorial-data-analysis-with-tidycomm.html#inspect-selected-categorical-variables-in-more-detail"><i class="fa fa-check"></i><b>9.3.4</b> Inspect selected categorical variables in more detail</a></li>
+</ul></li>
+<li class="chapter" data-level="9.4" data-path="tutorial-data-analysis-with-tidycomm.html"><a href="tutorial-data-analysis-with-tidycomm.html#prepare-variables-and-measures"><i class="fa fa-check"></i><b>9.4</b> Prepare variables and measures</a>
+<ul>
+<li class="chapter" data-level="9.4.1" data-path="tutorial-data-analysis-with-tidycomm.html"><a href="tutorial-data-analysis-with-tidycomm.html#build-indices-and-check-their-reliability"><i class="fa fa-check"></i><b>9.4.1</b> Build indices and check their reliability</a></li>
+<li class="chapter" data-level="9.4.2" data-path="tutorial-data-analysis-with-tidycomm.html"><a href="tutorial-data-analysis-with-tidycomm.html#transform-and-recode-measures"><i class="fa fa-check"></i><b>9.4.2</b> Transform and recode measures</a></li>
+</ul></li>
+<li class="chapter" data-level="9.5" data-path="tutorial-data-analysis-with-tidycomm.html"><a href="tutorial-data-analysis-with-tidycomm.html#explore-relationships-between-variables"><i class="fa fa-check"></i><b>9.5</b> Explore relationships between variables</a>
+<ul>
+<li class="chapter" data-level="9.5.1" data-path="tutorial-data-analysis-with-tidycomm.html"><a href="tutorial-data-analysis-with-tidycomm.html#categorical-relationships-crosstab"><i class="fa fa-check"></i><b>9.5.1</b> Categorical relationships: <code>crosstab()</code></a></li>
+<li class="chapter" data-level="9.5.2" data-path="tutorial-data-analysis-with-tidycomm.html"><a href="tutorial-data-analysis-with-tidycomm.html#continuous-relationships-correlate"><i class="fa fa-check"></i><b>9.5.2</b> Continuous relationships: <code>correlate()</code></a></li>
+</ul></li>
+<li class="chapter" data-level="9.6" data-path="tutorial-data-analysis-with-tidycomm.html"><a href="tutorial-data-analysis-with-tidycomm.html#test-group-differences-and-associations"><i class="fa fa-check"></i><b>9.6</b> Test group differences and associations</a>
+<ul>
+<li class="chapter" data-level="9.6.1" data-path="tutorial-data-analysis-with-tidycomm.html"><a href="tutorial-data-analysis-with-tidycomm.html#chi-square-test-for-categorical-variables"><i class="fa fa-check"></i><b>9.6.1</b> Chi-square test for categorical variables</a></li>
+<li class="chapter" data-level="9.6.2" data-path="tutorial-data-analysis-with-tidycomm.html"><a href="tutorial-data-analysis-with-tidycomm.html#compare-two-groups-t_test"><i class="fa fa-check"></i><b>9.6.2</b> Compare two groups: <code>t_test()</code></a></li>
+<li class="chapter" data-level="9.6.3" data-path="tutorial-data-analysis-with-tidycomm.html"><a href="tutorial-data-analysis-with-tidycomm.html#compare-more-than-two-groups-unianova"><i class="fa fa-check"></i><b>9.6.3</b> Compare more than two groups: <code>unianova()</code></a></li>
+</ul></li>
+<li class="chapter" data-level="9.7" data-path="tutorial-data-analysis-with-tidycomm.html"><a href="tutorial-data-analysis-with-tidycomm.html#build-a-multivariable-model"><i class="fa fa-check"></i><b>9.7</b> Build a multivariable model</a></li>
+<li class="chapter" data-level="9.8" data-path="tutorial-data-analysis-with-tidycomm.html"><a href="tutorial-data-analysis-with-tidycomm.html#for-content-analyses-intercoder-reliability"><i class="fa fa-check"></i><b>9.8</b> For content analyses: intercoder reliability</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="exercise-8-dplyr-ggplot-tidycomm.html"><a href="exercise-8-dplyr-ggplot-tidycomm.html"><i class="fa fa-check"></i>Exercise 8: dplyr, ggplot, tidycomm</a>
+<ul>
+<li class="chapter" data-level="" data-path="exercise-8-dplyr-ggplot-tidycomm.html"><a href="exercise-8-dplyr-ggplot-tidycomm.html#task-1-7"><i class="fa fa-check"></i>Task 1</a></li>
+<li class="chapter" data-level="" data-path="exercise-8-dplyr-ggplot-tidycomm.html"><a href="exercise-8-dplyr-ggplot-tidycomm.html#task-2-7"><i class="fa fa-check"></i>Task 2</a></li>
+<li class="chapter" data-level="" data-path="exercise-8-dplyr-ggplot-tidycomm.html"><a href="exercise-8-dplyr-ggplot-tidycomm.html#task-3-7"><i class="fa fa-check"></i>Task 3</a></li>
+<li class="chapter" data-level="" data-path="exercise-8-dplyr-ggplot-tidycomm.html"><a href="exercise-8-dplyr-ggplot-tidycomm.html#task-4-6"><i class="fa fa-check"></i>Task 4</a></li>
+<li class="chapter" data-level="" data-path="exercise-8-dplyr-ggplot-tidycomm.html"><a href="exercise-8-dplyr-ggplot-tidycomm.html#task-5-4"><i class="fa fa-check"></i>Task 5</a></li>
+<li class="chapter" data-level="" data-path="exercise-8-dplyr-ggplot-tidycomm.html"><a href="exercise-8-dplyr-ggplot-tidycomm.html#task-6-3"><i class="fa fa-check"></i>Task 6</a></li>
+<li class="chapter" data-level="" data-path="exercise-8-dplyr-ggplot-tidycomm.html"><a href="exercise-8-dplyr-ggplot-tidycomm.html#task-7-1"><i class="fa fa-check"></i>Task 7</a></li>
+<li class="chapter" data-level="" data-path="exercise-8-dplyr-ggplot-tidycomm.html"><a href="exercise-8-dplyr-ggplot-tidycomm.html#task-8-1"><i class="fa fa-check"></i>Task 8</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html"><i class="fa fa-check"></i><b>10</b> Tutorial: Writing a Reproducible APA 7 Paper with Quarto and Zotero</a>
+<ul>
+<li class="chapter" data-level="10.0.1" data-path="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#the-basic-idea"><i class="fa fa-check"></i><b>10.0.1</b> The basic idea</a></li>
+<li class="chapter" data-level="10.1" data-path="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#create-and-understand-your-first-quarto-document"><i class="fa fa-check"></i><b>10.1</b> Create and understand your first Quarto document</a>
+<ul>
+<li class="chapter" data-level="10.1.1" data-path="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#create-an-rstudio-project-for-your-paper"><i class="fa fa-check"></i><b>10.1.1</b> Create an RStudio Project for your paper</a></li>
+<li class="chapter" data-level="10.1.2" data-path="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#create-a-quarto-document"><i class="fa fa-check"></i><b>10.1.2</b> Create a Quarto document</a></li>
+<li class="chapter" data-level="10.1.3" data-path="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#what-is-quarto"><i class="fa fa-check"></i><b>10.1.3</b> What is Quarto?</a></li>
+<li class="chapter" data-level="10.1.4" data-path="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#start-in-visual-mode"><i class="fa fa-check"></i><b>10.1.4</b> Start in Visual mode</a></li>
+<li class="chapter" data-level="10.1.5" data-path="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#render-the-document-once"><i class="fa fa-check"></i><b>10.1.5</b> Render the document once</a></li>
+</ul></li>
+<li class="chapter" data-level="10.2" data-path="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#what-is-actually-inside-a-.qmd-file"><i class="fa fa-check"></i><b>10.2</b> What is actually inside a <code>.qmd</code> file?</a>
+<ul>
+<li class="chapter" data-level="10.2.1" data-path="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#what-is-yaml"><i class="fa fa-check"></i><b>10.2.1</b> What is YAML?</a></li>
+<li class="chapter" data-level="10.2.2" data-path="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#a-beginner-rule-for-yaml"><i class="fa fa-check"></i><b>10.2.2</b> A beginner rule for YAML</a></li>
+<li class="chapter" data-level="10.2.3" data-path="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#what-is-markdown"><i class="fa fa-check"></i><b>10.2.3</b> What is Markdown?</a></li>
+<li class="chapter" data-level="10.2.4" data-path="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#what-is-a-code-cell"><i class="fa fa-check"></i><b>10.2.4</b> What is a code cell?</a></li>
+<li class="chapter" data-level="10.2.5" data-path="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#what-does-render-do"><i class="fa fa-check"></i><b>10.2.5</b> What does Render do?</a></li>
+</ul></li>
+<li class="chapter" data-level="10.3" data-path="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#add-references-with-zotero"><i class="fa fa-check"></i><b>10.3</b> Add references with Zotero</a>
+<ul>
+<li class="chapter" data-level="10.3.1" data-path="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#connect-zotero"><i class="fa fa-check"></i><b>10.3.1</b> Connect Zotero</a></li>
+<li class="chapter" data-level="10.3.2" data-path="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#what-is-references.bib"><i class="fa fa-check"></i><b>10.3.2</b> What is <code>references.bib</code>?</a></li>
+<li class="chapter" data-level="10.3.3" data-path="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#what-is-a-citation-key"><i class="fa fa-check"></i><b>10.3.3</b> What is a citation key?</a></li>
+<li class="chapter" data-level="10.3.4" data-path="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#if-zotero-does-not-appear-in-rstudio"><i class="fa fa-check"></i><b>10.3.4</b> If Zotero does not appear in RStudio</a></li>
+<li class="chapter" data-level="10.3.5" data-path="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#two-sensible-zotero-workflows"><i class="fa fa-check"></i><b>10.3.5</b> Two sensible Zotero workflows</a></li>
+</ul></li>
+<li class="chapter" data-level="10.4" data-path="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#turn-the-document-into-an-apa-7-paper"><i class="fa fa-check"></i><b>10.4</b> Turn the document into an APA 7 paper</a>
+<ul>
+<li class="chapter" data-level="10.4.1" data-path="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#install-the-packages-used-in-this-tutorial"><i class="fa fa-check"></i><b>10.4.1</b> Install the packages used in this tutorial</a></li>
+<li class="chapter" data-level="10.4.2" data-path="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#install-apaquarto-for-this-paper"><i class="fa fa-check"></i><b>10.4.2</b> Install <code>apaquarto</code> for this paper</a></li>
+<li class="chapter" data-level="10.4.3" data-path="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#replace-the-simple-yaml-with-an-apa-7-yaml"><i class="fa fa-check"></i><b>10.4.3</b> Replace the simple YAML with an APA 7 YAML</a></li>
+<li class="chapter" data-level="10.4.4" data-path="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#render-the-apa-manuscript"><i class="fa fa-check"></i><b>10.4.4</b> Render the APA manuscript</a></li>
+</ul></li>
+<li class="chapter" data-level="10.5" data-path="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#structure-the-document-like-a-research-paper"><i class="fa fa-check"></i><b>10.5</b> Structure the document like a research paper</a>
+<ul>
+<li class="chapter" data-level="10.5.1" data-path="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#add-the-sections-of-the-manuscript"><i class="fa fa-check"></i><b>10.5.1</b> Add the sections of the manuscript</a></li>
+</ul></li>
+<li class="chapter" data-level="10.6" data-path="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#add-reproducible-r-analyses"><i class="fa fa-check"></i><b>10.6</b> Add reproducible R analyses</a>
+<ul>
+<li class="chapter" data-level="10.6.1" data-path="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#add-a-setup-cell"><i class="fa fa-check"></i><b>10.6.1</b> Add a setup cell</a></li>
+<li class="chapter" data-level="10.6.2" data-path="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#the-cell-options-beginners-actually-need"><i class="fa fa-check"></i><b>10.6.2</b> The cell options beginners actually need</a></li>
+<li class="chapter" data-level="10.6.3" data-path="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#yaml-settings-versus-cell-options"><i class="fa fa-check"></i><b>10.6.3</b> YAML settings versus cell options</a></li>
+<li class="chapter" data-level="10.6.4" data-path="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#use-project-relative-file-paths"><i class="fa fa-check"></i><b>10.6.4</b> Use project-relative file paths</a></li>
+</ul></li>
+<li class="chapter" data-level="10.7" data-path="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#put-analysis-results-directly-into-the-prose"><i class="fa fa-check"></i><b>10.7</b> Put analysis results directly into the prose</a>
+<ul>
+<li class="chapter" data-level="10.7.1" data-path="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#calculate-values-once"><i class="fa fa-check"></i><b>10.7.1</b> Calculate values once</a></li>
+<li class="chapter" data-level="10.7.2" data-path="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#insert-those-values-into-a-sentence"><i class="fa fa-check"></i><b>10.7.2</b> Insert those values into a sentence</a></li>
+</ul></li>
+<li class="chapter" data-level="10.8" data-path="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#create-tables-and-figures"><i class="fa fa-check"></i><b>10.8</b> Create tables and figures</a>
+<ul>
+<li class="chapter" data-level="10.8.1" data-path="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#create-a-publication-ready-table"><i class="fa fa-check"></i><b>10.8.1</b> Create a publication-ready table</a></li>
+<li class="chapter" data-level="10.8.2" data-path="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#create-and-cross-reference-a-figure"><i class="fa fa-check"></i><b>10.8.2</b> Create and cross-reference a figure</a></li>
+</ul></li>
+<li class="chapter" data-level="10.9" data-path="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#a-compact-template-for-a-new-paper"><i class="fa fa-check"></i><b>10.9</b> A compact template for a new paper</a></li>
+<li class="chapter" data-level="10.10" data-path="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#useful-options-once-the-basic-workflow-works"><i class="fa fa-check"></i><b>10.10</b> Useful options once the basic workflow works</a>
+<ul>
+<li class="chapter" data-level="10.10.1" data-path="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#produce-more-than-one-output-format"><i class="fa fa-check"></i><b>10.10.1</b> Produce more than one output format</a></li>
+<li class="chapter" data-level="10.10.2" data-path="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#anonymous-peer-review"><i class="fa fa-check"></i><b>10.10.2</b> Anonymous peer review</a></li>
+<li class="chapter" data-level="10.10.3" data-path="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#reproducible-package-versions-with-renv"><i class="fa fa-check"></i><b>10.10.3</b> Reproducible package versions with <code>renv</code></a></li>
+</ul></li>
+<li class="chapter" data-level="10.11" data-path="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#if-you-already-know-a-bit-markdown"><i class="fa fa-check"></i><b>10.11</b> If you already know a bit Markdown</a></li>
+<li class="chapter" data-level="10.12" data-path="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#final-advice"><i class="fa fa-check"></i><b>10.12</b> Final advice</a></li>
+<li class="chapter" data-level="10.13" data-path="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#further-resources"><i class="fa fa-check"></i><b>10.13</b> Further resources</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html"><i class="fa fa-check"></i>Solutions</a>
+<ul>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#solutions-for-exercise-1"><i class="fa fa-check"></i>Solutions for Exercise 1</a>
+<ul>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-1-8"><i class="fa fa-check"></i>Task 1</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-2-8"><i class="fa fa-check"></i>Task 2</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-3-8"><i class="fa fa-check"></i>Task 3</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#solutions-for-exercise-2"><i class="fa fa-check"></i>Solutions for Exercise 2</a>
+<ul>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-1-9"><i class="fa fa-check"></i>Task 1</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-2-9"><i class="fa fa-check"></i>Task 2</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-3-9"><i class="fa fa-check"></i>Task 3</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-4-7"><i class="fa fa-check"></i>Task 4</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#solutions-for-exercise-3"><i class="fa fa-check"></i>Solutions for Exercise 3</a>
+<ul>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-1-10"><i class="fa fa-check"></i>Task 1</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-2-10"><i class="fa fa-check"></i>Task 2</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-3-10"><i class="fa fa-check"></i>Task 3</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-4-8"><i class="fa fa-check"></i>Task 4</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-5-5"><i class="fa fa-check"></i>Task 5</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-6-4"><i class="fa fa-check"></i>Task 6</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-7-2"><i class="fa fa-check"></i>Task 7</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-8-2"><i class="fa fa-check"></i>Task 8</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#solutions-for-exercise-4"><i class="fa fa-check"></i>Solutions for Exercise 4</a>
+<ul>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-1-11"><i class="fa fa-check"></i>Task 1</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-2-11"><i class="fa fa-check"></i>Task 2</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-3-11"><i class="fa fa-check"></i>Task 3</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-4-9"><i class="fa fa-check"></i>Task 4</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#solutions-advanced-data-management"><i class="fa fa-check"></i>Solutions for Exercise 5 (optional)</a>
+<ul>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-1-12"><i class="fa fa-check"></i>Task 1</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-2-deal-with-messy-column-names"><i class="fa fa-check"></i>Task 2: Deal with messy column names</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-3-12"><i class="fa fa-check"></i>Task 3</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-4-10"><i class="fa fa-check"></i>Task 4</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-5-6"><i class="fa fa-check"></i>Task 5</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-6-5"><i class="fa fa-check"></i>Task 6</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#solutions-for-exercise-6"><i class="fa fa-check"></i>Solutions for Exercise 6</a>
+<ul>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-1-13"><i class="fa fa-check"></i>Task 1</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-2-12"><i class="fa fa-check"></i>Task 2</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-3-13"><i class="fa fa-check"></i>Task 3</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-4-11"><i class="fa fa-check"></i>Task 4</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-5-7"><i class="fa fa-check"></i>Task 5</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-6-6"><i class="fa fa-check"></i>Task 6</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#solutions-for-exercise-7"><i class="fa fa-check"></i>Solutions for Exercise 7</a>
+<ul>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-1-14"><i class="fa fa-check"></i>Task 1</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-2-13"><i class="fa fa-check"></i>Task 2</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-3-14"><i class="fa fa-check"></i>Task 3</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-4-12"><i class="fa fa-check"></i>Task 4</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-5-8"><i class="fa fa-check"></i>Task 5</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#solutions-for-exercise-8"><i class="fa fa-check"></i>Solutions for Exercise 8</a>
+<ul>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-1-15"><i class="fa fa-check"></i>Task 1</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-2-14"><i class="fa fa-check"></i>Task 2</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-3-15"><i class="fa fa-check"></i>Task 3</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-4-13"><i class="fa fa-check"></i>Task 4</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-5-9"><i class="fa fa-check"></i>Task 5</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-6-7"><i class="fa fa-check"></i>Task 6</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-7-3"><i class="fa fa-check"></i>Task 7</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#task-8-3"><i class="fa fa-check"></i>Task 8</a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://lkobilke.github.io/Intro_to_R/.git" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Introduction to R</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero" class="section level1 hasAnchor" number="10">
+<h1><span class="header-section-number"> 10</span> Tutorial: Writing a Reproducible APA 7 Paper with Quarto and Zotero<a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>This tutorial shows you how to write an academic paper in RStudio while keeping your text, citations, analyses, tables, and figures connected in one reproducible workflow.</p>
+<p>You do <strong>not</strong> need to know Quarto, Markdown, or YAML before starting. We will introduce each of these only when you actually need it.</p>
+<p><strong>After working through this tutorial, you’ll be able to…</strong></p>
+<ul>
+<li>create a Quarto paper in RStudio and turn it into a finished document</li>
+<li>understand what terms such as <em>YAML</em>, <em>Markdown</em>, <em>code cell</em>, and <em>render</em> mean</li>
+<li>write mostly in RStudio’s Visual Editor instead of memorizing Markdown syntax</li>
+<li>insert citations directly from Zotero</li>
+<li>produce an APA 7 manuscript with <code>apaquarto</code></li>
+<li>connect values in your text to your R analysis so that they update automatically</li>
+<li>create reproducible tables, figures, and cross-references</li>
+<li>organize a paper as an RStudio Project without using <code>setwd()</code></li>
+</ul>
+<div id="the-basic-idea" class="section level3 hasAnchor callout-tip" number="10.0.1">
+<h3><span class="header-section-number">10.0.1</span> The basic idea<a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#the-basic-idea" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Think of a Quarto paper as a Word document that can also contain R code.</p>
+<p>You write your paper, add citations, and place analyses where they belong. When you click <strong>Render</strong>, Quarto creates the finished Word, HTML, or PDF document for you.</p>
+</div>
+<div id="create-and-understand-your-first-quarto-document" class="section level2 hasAnchor" number="10.1">
+<h2><span class="header-section-number">10.1</span> Create and understand your first Quarto document<a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#create-and-understand-your-first-quarto-document" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="create-an-rstudio-project-for-your-paper" class="section level3 hasAnchor" number="10.1.1">
+<h3><span class="header-section-number">10.1.1</span> Create an RStudio Project for your paper<a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#create-an-rstudio-project-for-your-paper" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Before creating the paper itself, create an <strong>RStudio Project</strong>. A project gives your paper a clear home folder and makes file paths much easier to manage.</p>
+<p>In RStudio, choose:</p>
+<p><code>File &gt; New Project...</code></p>
+<p>Create a new project in a folder such as:</p>
+<pre class="text"><code>my-paper/</code></pre>
+<p>At the beginning, that folder does not need to contain much:</p>
+<pre class="text"><code>my-paper/
+├── my-paper.Rproj
+└── paper.qmd</code></pre>
+<p>Later, it might grow into something like this:</p>
+<pre class="text"><code>my-paper/
+├── my-paper.Rproj
+├── paper.qmd
+├── references.bib
+├── data/
+│   └── WoJ_names.csv
+├── R/
+│   └── functions.R
+└── figures/</code></pre>
+<p>The important principle is simple: <strong>keep the files belonging to the paper inside the same project folder</strong>.
+Then you do not need <code>setwd()</code> inside your paper.</p>
+</div>
+<div id="create-a-quarto-document" class="section level3 hasAnchor" number="10.1.2">
+<h3><span class="header-section-number">10.1.2</span> Create a Quarto document<a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#create-a-quarto-document" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>With your project open, choose:</p>
+<p><code>File &gt; New File &gt; Quarto Document...</code></p>
+<p>Give the document a temporary title and choose <strong>HTML</strong> as the output format for now. HTML is convenient while learning because it renders quickly.</p>
+<p>Save the document as:</p>
+<p><code>paper.qmd</code></p>
+<p>The file ending <code>.qmd</code> simply means <strong>Quarto document</strong>.</p>
+</div>
+<div id="what-is-quarto" class="section level3 hasAnchor callout-note" number="10.1.3">
+<h3><span class="header-section-number">10.1.3</span> What is Quarto?<a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#what-is-quarto" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Quarto is a system for combining ordinary writing, citations, R code, tables, and figures in one source document. It is the successor to the R Markdown workflow.</p>
+</div>
+<div id="start-in-visual-mode" class="section level3 hasAnchor" number="10.1.4">
+<h3><span class="header-section-number">10.1.4</span> Start in Visual mode<a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#start-in-visual-mode" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>At the top of the editor, RStudio lets you switch between <strong>Visual</strong> and <strong>Source</strong> mode.</p>
+<p>For this tutorial, start with <strong>Visual</strong> mode.</p>
+<p>Visual mode behaves much like a simple word processor. You can write paragraphs, create headings, insert links, add citations, and make lists without knowing Markdown syntax.</p>
+<p>Type a few sentences into the document, for example:</p>
+<blockquote>
+<p>This is my first Quarto paper. Eventually, this document will contain my text, analyses, tables, figures, and references.</p>
+</blockquote>
+<p>You do not need to understand everything else that RStudio placed in the file yet.</p>
+</div>
+<div id="render-the-document-once" class="section level3 hasAnchor" number="10.1.5">
+<h3><span class="header-section-number">10.1.5</span> Render the document once<a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#render-the-document-once" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Click <strong>Render</strong> at the top of the editor.</p>
+<p>Rendering means that Quarto takes the source file and produces the finished document. Depending on your settings, that finished document might be HTML, Word, or PDF.</p>
+<p>For example:</p>
+<pre class="text"><code>paper.qmd  →  Render  →  paper.html</code></pre>
+<p>Later in this tutorial we will change the output to an APA-style Word document.</p>
+<p>This is an important first milestone: <strong>if you can edit <code>paper.qmd</code> and click Render successfully, your basic Quarto setup works.</strong></p>
+</div>
+</div>
+<div id="what-is-actually-inside-a-.qmd-file" class="section level2 hasAnchor" number="10.2">
+<h2><span class="header-section-number">10.2</span> What is actually inside a <code>.qmd</code> file?<a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#what-is-actually-inside-a-.qmd-file" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Now that you have already created and rendered a Quarto document, it is useful to understand what is happening behind the scenes.</p>
+<p>Switch from <strong>Visual</strong> to <strong>Source</strong> mode.</p>
+<p>A very small Quarto document might look like this:</p>
+<div class="sourceCode" id="cb504"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb504-1"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb504-1" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb504-2"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb504-2" tabindex="-1"></a><span class="an">title:</span><span class="co"> &quot;My first Quarto document&quot;</span></span>
+<span id="cb504-3"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb504-3" tabindex="-1"></a><span class="an">format:</span><span class="co"> html</span></span>
+<span id="cb504-4"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb504-4" tabindex="-1"></a><span class="an">editor:</span><span class="co"> visual</span></span>
+<span id="cb504-5"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb504-5" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb504-6"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb504-6" tabindex="-1"></a></span>
+<span id="cb504-7"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb504-7" tabindex="-1"></a>This is ordinary text in my paper.</span>
+<span id="cb504-8"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb504-8" tabindex="-1"></a></span>
+<span id="cb504-9"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb504-9" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb504-10"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb504-10" tabindex="-1"></a><span class="in">WoJ %&gt;% tidycomm::describe()</span></span>
+<span id="cb504-11"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb504-11" tabindex="-1"></a><span class="in">```</span></span></code></pre></div>
+<p>There are three main parts:</p>
+<ol style="list-style-type: decimal">
+<li><strong>YAML</strong> header = settings for the document</li>
+<li><strong>Markdown</strong> = the written content and simple formatting</li>
+<li><strong>Code cells</strong> = R code that Quarto can run</li>
+</ol>
+<p>You do not need to become an expert in any of these to use Quarto effectively.</p>
+<div id="what-is-yaml" class="section level3 hasAnchor" number="10.2.1">
+<h3><span class="header-section-number">10.2.1</span> What is YAML?<a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#what-is-yaml" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>YAML</strong> is the small settings block at the very top of a Quarto file. It begins and ends with three dashes:</p>
+<div class="sourceCode" id="cb505"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb505-1"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb505-1" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="cb505-2"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb505-2" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;My first Quarto document&quot;</span></span>
+<span id="cb505-3"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb505-3" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span><span class="at"> html</span></span>
+<span id="cb505-4"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb505-4" tabindex="-1"></a><span class="fu">editor</span><span class="kw">:</span><span class="at"> visual</span></span>
+<span id="cb505-5"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb505-5" tabindex="-1"></a><span class="pp">---</span></span></code></pre></div>
+<p>It is <strong>not R code</strong>. Think of it as the document’s settings menu written as text.</p>
+<p>In this example:</p>
+<ul>
+<li><code>title:</code> tells Quarto the title of the document</li>
+<li><code>format:</code> tells Quarto what kind of output to create when rendering</li>
+<li><code>editor:</code> tells RStudio which editing mode to open by default</li>
+</ul>
+<p>You will sometimes see settings nested underneath another setting:</p>
+<div class="sourceCode" id="cb506"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb506-1"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb506-1" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
+<span id="cb506-2"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb506-2" tabindex="-1"></a><span class="at">  </span><span class="fu">apaquarto-docx</span><span class="kw">:</span><span class="at"> default</span></span></code></pre></div>
+<p>The indentation is meaningful, so it is best not to randomly add or remove spaces in YAML.</p>
+</div>
+<div id="a-beginner-rule-for-yaml" class="section level3 hasAnchor callout-tip" number="10.2.2">
+<h3><span class="header-section-number">10.2.2</span> A beginner rule for YAML<a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#a-beginner-rule-for-yaml" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>You do not need to write a YAML header from memory. Usually, you start from a working example and change only things such as the title, authors, abstract, or output format.</p>
+</div>
+<div id="what-is-markdown" class="section level3 hasAnchor" number="10.2.3">
+<h3><span class="header-section-number">10.2.3</span> What is Markdown?<a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#what-is-markdown" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>Markdown</strong> is a lightweight way of marking up ordinary text. In Visual mode, RStudio handles most of this for you.</p>
+<p>For example, in Source mode you might see:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">What you want</th>
+<th align="left">Markdown underneath</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Heading</td>
+<td align="left"><code># Heading</code></td>
+</tr>
+<tr class="even">
+<td align="left">Subheading</td>
+<td align="left"><code>## Subheading</code></td>
+</tr>
+<tr class="odd">
+<td align="left">Italics</td>
+<td align="left"><code>*text*</code></td>
+</tr>
+<tr class="even">
+<td align="left">Bold</td>
+<td align="left"><code>**text**</code></td>
+</tr>
+<tr class="odd">
+<td align="left">Bullet list</td>
+<td align="left"><code>- Item</code></td>
+</tr>
+<tr class="even">
+<td align="left">Numbered list</td>
+<td align="left"><code>1. Item</code></td>
+</tr>
+<tr class="odd">
+<td align="left">Link</td>
+<td align="left"><code>[link text](https://example.org)</code></td>
+</tr>
+<tr class="even">
+<td align="left">Image</td>
+<td align="left"><code>![Alt text](figures/myfigure.png)</code></td>
+</tr>
+</tbody>
+</table>
+<p>You do <strong>not</strong> need to memorize this table. If you prefer, create these elements in Visual mode and occasionally switch to Source mode to see how they are stored.</p>
+</div>
+<div id="what-is-a-code-cell" class="section level3 hasAnchor" number="10.2.4">
+<h3><span class="header-section-number">10.2.4</span> What is a code cell?<a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#what-is-a-code-cell" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>A <strong>code cell</strong> is a section of the document containing code that should be executed when the document is rendered.</p>
+<p>An R code cell looks like this:</p>
+<div class="sourceCode" id="cb507"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb507-1"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb507-1" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb507-2"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb507-2" tabindex="-1"></a><span class="in">WoJ %&gt;% tidycomm::describe()</span></span>
+<span id="cb507-3"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb507-3" tabindex="-1"></a><span class="in">```</span></span></code></pre></div>
+<p>The <code>{r}</code> tells Quarto that the contents should be run as R code.</p>
+<p>This is what makes a Quarto paper reproducible: your statistical analysis can live in the same workflow as the sentence that reports its result.</p>
+</div>
+<div id="what-does-render-do" class="section level3 hasAnchor" number="10.2.5">
+<h3><span class="header-section-number">10.2.5</span> What does Render do?<a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#what-does-render-do" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>When you click <strong>Render</strong>, Quarto roughly does the following:</p>
+<ol style="list-style-type: decimal">
+<li>reads the settings in the YAML header</li>
+<li>runs the code cells that should be executed</li>
+<li>combines your text with the generated results, tables, and figures</li>
+<li>processes citations and cross-references</li>
+<li>creates the final HTML, Word, or PDF document</li>
+</ol>
+<p>That is why changing the data and rendering again can update the entire paper.</p>
+</div>
+</div>
+<div id="add-references-with-zotero" class="section level2 hasAnchor" number="10.3">
+<h2><span class="header-section-number">10.3</span> Add references with Zotero<a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#add-references-with-zotero" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="connect-zotero" class="section level3 hasAnchor" number="10.3.1">
+<h3><span class="header-section-number">10.3.1</span> Connect Zotero<a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#connect-zotero" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>If you already use Zotero, keep your references there as usual. If not, install <strong>Zotero Desktop</strong> first.</p>
+<p>When <strong>RStudio Desktop and Zotero Desktop are running on the same computer</strong>, RStudio can normally detect your local Zotero library automatically.</p>
+<p>In your Quarto document, switch to <strong>Visual</strong> mode and choose:</p>
+<p><code>Insert &gt; Citation</code></p>
+<p>The citation dialog can search sources such as:</p>
+<ul>
+<li>your current bibliography</li>
+<li>Zotero libraries</li>
+<li>and many more</li>
+</ul>
+<p>Choose <strong>Zotero</strong> or <strong>My Library</strong>, search for a reference, select it, and click <strong>Insert</strong>.</p>
+<p>For collaborative projects, Zotero <strong>Group Libraries</strong> can also be used as citation sources in RStudio.</p>
+</div>
+<div id="what-is-references.bib" class="section level3 hasAnchor" number="10.3.2">
+<h3><span class="header-section-number">10.3.2</span> What is <code>references.bib</code>?<a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#what-is-references.bib" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Sooner or later, you will see a file called:</p>
+<p><code>references.bib</code></p>
+<p>A <code>.bib</code> file is simply a bibliography database that Quarto can read. It stores information such as authors, titles, years, journals, and DOIs in a structured format.</p>
+<p>You generally do <strong>not</strong> need to type its contents manually.</p>
+<p>When you insert a citation from an external source (e.g. Zotero), RStudio can create <code>references.bib</code> and add the reference for you automatically. Your YAML will then contain a line such as:</p>
+<div class="sourceCode" id="cb508"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb508-1"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb508-1" tabindex="-1"></a><span class="fu">bibliography</span><span class="kw">:</span><span class="at"> references.bib</span></span></code></pre></div>
+<p>That line simply means:</p>
+<blockquote>
+<p>Use the references stored in <code>references.bib</code> when processing citations.</p>
+</blockquote>
+</div>
+<div id="what-is-a-citation-key" class="section level3 hasAnchor" number="10.3.3">
+<h3><span class="header-section-number">10.3.3</span> What is a citation key?<a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#what-is-a-citation-key" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Behind the scenes, every reference has a short identifier called a <strong>citation key</strong>, for example:</p>
+<pre class="text"><code>smith2024</code></pre>
+<p>In Source mode, citations can therefore look like this:</p>
+<div class="sourceCode" id="cb510"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb510-1"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb510-1" tabindex="-1"></a>Smith argues that ... @smith2024</span>
+<span id="cb510-2"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb510-2" tabindex="-1"></a></span>
+<span id="cb510-3"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb510-3" tabindex="-1"></a>This has been shown previously <span class="co">[</span><span class="ot">@smith2024</span><span class="co">]</span>.</span>
+<span id="cb510-4"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb510-4" tabindex="-1"></a></span>
+<span id="cb510-5"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb510-5" tabindex="-1"></a>This is discussed in detail <span class="co">[</span><span class="ot">@smith2024, p. 42</span><span class="co">]</span>.</span>
+<span id="cb510-6"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb510-6" tabindex="-1"></a></span>
+<span id="cb510-7"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb510-7" tabindex="-1"></a>Several studies support this conclusion <span class="co">[</span><span class="ot">@smith2024; @jones2025</span><span class="co">]</span>.</span></code></pre></div>
+<p>If you work mainly in Visual mode, you usually do not need to type these manually. It is still useful to know what the syntax means when you encounter it.</p>
+</div>
+<div id="if-zotero-does-not-appear-in-rstudio" class="section level3 hasAnchor" number="10.3.4">
+<h3><span class="header-section-number">10.3.4</span> If Zotero does not appear in RStudio<a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#if-zotero-does-not-appear-in-rstudio" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Open:</p>
+<p><code>Tools &gt; Global Options &gt; R Markdown &gt; Citations</code></p>
+<p>There you can select a local Zotero library, enable group libraries, or connect through the Zotero Web API. The settings menu is still labelled <strong>R Markdown</strong>, but it also controls citations in Quarto’s Visual Editor.</p>
+</div>
+<div id="two-sensible-zotero-workflows" class="section level3 hasAnchor" number="10.3.5">
+<h3><span class="header-section-number">10.3.5</span> Two sensible Zotero workflows<a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#two-sensible-zotero-workflows" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>For most beginners, the built-in RStudio workflow is enough.</p>
+<div id="workflow-a-rstudio-inserts-citations-for-you" class="section level4 hasAnchor" number="10.3.5.1">
+<h4><span class="header-section-number">10.3.5.1</span> Workflow A: RStudio inserts citations for you<a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#workflow-a-rstudio-inserts-citations-for-you" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Use:</p>
+<p><code>Insert &gt; Citation</code></p>
+<p>and let RStudio add references to <code>references.bib</code> as you cite them. This is best for beginners, students, short projects, and researchers who want the simplest setup.</p>
+</div>
+<div id="workflow-b-better-bibtex-keeps-references.bib-synchronized" class="section level4 hasAnchor" number="10.3.5.2">
+<h4><span class="header-section-number">10.3.5.2</span> Workflow B: Better BibTeX keeps <code>references.bib</code> synchronized<a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#workflow-b-better-bibtex-keeps-references.bib-synchronized" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>For a longer paper, you may prefer to let Zotero maintain the entire bibliography file automatically.</p>
+<p>A typical workflow is:</p>
+<ol style="list-style-type: decimal">
+<li>install the <strong>Better BibTeX</strong> extension in Zotero</li>
+<li>create a Zotero collection for your paper</li>
+<li>export that collection as <strong>Better BibTeX</strong></li>
+<li>save the export as <code>references.bib</code> inside your RStudio Project</li>
+<li>enable <strong>Keep updated</strong> during export</li>
+</ol>
+<p>Zotero/Better BibTeX can then refresh the <code>.bib</code> file when the collection changes.</p>
+</div>
+</div>
+</div>
+<div id="turn-the-document-into-an-apa-7-paper" class="section level2 hasAnchor" number="10.4">
+<h2><span class="header-section-number">10.4</span> Turn the document into an APA 7 paper<a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#turn-the-document-into-an-apa-7-paper" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="install-the-packages-used-in-this-tutorial" class="section level3 hasAnchor" number="10.4.1">
+<h3><span class="header-section-number">10.4.1</span> Install the packages used in this tutorial<a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#install-the-packages-used-in-this-tutorial" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Most recent RStudio installations already include Quarto itself. If <strong>File &gt; New File &gt; Quarto Document…</strong> works and you can render the document, you do not need to install Quarto separately.</p>
+<p>For the R examples in this tutorial, install the packages you need once:</p>
+<div class="sourceCode" id="cb511"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb511-1"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb511-1" tabindex="-1"></a><span class="co"># install.packages(c(&quot;apa7&quot;, &quot;flextable&quot;)) # run only the first time</span></span></code></pre></div>
+<p>You only run <code>install.packages()</code> when installing a package, not every time you open the project.
+Later, inside the paper, you will use <code>library()</code> to load packages that are already installed.</p>
+</div>
+<div id="install-apaquarto-for-this-paper" class="section level3 hasAnchor" number="10.4.2">
+<h3><span class="header-section-number">10.4.2</span> Install <code>apaquarto</code> for this paper<a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#install-apaquarto-for-this-paper" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Quarto can create Word, HTML, and PDF documents by itself, but it does not automatically turn them into APA 7 manuscripts. For that, we can use the <strong><code>apaquarto</code> extension</strong>. Open the RStudio Project for your paper and run:</p>
+<div class="sourceCode" id="cb512"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb512-1"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb512-1" tabindex="-1"></a>apa7<span class="sc">::</span><span class="fu">install_apaquarto</span>()</span></code></pre></div>
+<p>The extension is stored with the project. This is useful because the paper carries its formatting setup with it.</p>
+</div>
+<div id="replace-the-simple-yaml-with-an-apa-7-yaml" class="section level3 hasAnchor" number="10.4.3">
+<h3><span class="header-section-number">10.4.3</span> Replace the simple YAML with an APA 7 YAML<a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#replace-the-simple-yaml-with-an-apa-7-yaml" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Now return to the YAML block at the top of <code>paper.qmd</code>.</p>
+<p>A useful APA-style starting point is:</p>
+<div class="sourceCode" id="cb513"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb513-1"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb513-1" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="cb513-2"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb513-2" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;The Title of Your Paper&quot;</span></span>
+<span id="cb513-3"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb513-3" tabindex="-1"></a><span class="fu">shorttitle</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;Short Paper Title&quot;</span></span>
+<span id="cb513-4"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb513-4" tabindex="-1"></a></span>
+<span id="cb513-5"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb513-5" tabindex="-1"></a><span class="fu">author</span><span class="kw">:</span></span>
+<span id="cb513-6"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb513-6" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;First Author&quot;</span></span>
+<span id="cb513-7"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb513-7" tabindex="-1"></a><span class="at">    </span><span class="fu">corresponding</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb513-8"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb513-8" tabindex="-1"></a><span class="at">    </span><span class="fu">orcid</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;0000-0000-0000-0000&quot;</span></span>
+<span id="cb513-9"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb513-9" tabindex="-1"></a><span class="at">    </span><span class="fu">email</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;first.author@example.org&quot;</span></span>
+<span id="cb513-10"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb513-10" tabindex="-1"></a><span class="at">    </span><span class="fu">affiliations</span><span class="kw">:</span></span>
+<span id="cb513-11"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb513-11" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;University of Zurich&quot;</span></span>
+<span id="cb513-12"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb513-12" tabindex="-1"></a><span class="at">        </span><span class="fu">department</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;Department Name&quot;</span></span>
+<span id="cb513-13"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb513-13" tabindex="-1"></a></span>
+<span id="cb513-14"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb513-14" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;Second Author&quot;</span></span>
+<span id="cb513-15"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb513-15" tabindex="-1"></a><span class="at">    </span><span class="fu">affiliations</span><span class="kw">:</span></span>
+<span id="cb513-16"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb513-16" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;Second University&quot;</span></span>
+<span id="cb513-17"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb513-17" tabindex="-1"></a></span>
+<span id="cb513-18"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb513-18" tabindex="-1"></a><span class="fu">abstract</span><span class="kw">: </span><span class="ch">|</span></span>
+<span id="cb513-19"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb513-19" tabindex="-1"></a>  This is the abstract of the paper.</span>
+<span id="cb513-20"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb513-20" tabindex="-1"></a></span>
+<span id="cb513-21"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb513-21" tabindex="-1"></a><span class="fu">keywords</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at">keyword1</span><span class="kw">,</span><span class="at"> keyword2</span><span class="kw">,</span><span class="at"> keyword3</span><span class="kw">]</span></span>
+<span id="cb513-22"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb513-22" tabindex="-1"></a></span>
+<span id="cb513-23"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb513-23" tabindex="-1"></a><span class="fu">bibliography</span><span class="kw">:</span><span class="at"> references.bib</span></span>
+<span id="cb513-24"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb513-24" tabindex="-1"></a></span>
+<span id="cb513-25"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb513-25" tabindex="-1"></a><span class="fu">floatsintext</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb513-26"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb513-26" tabindex="-1"></a></span>
+<span id="cb513-27"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb513-27" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
+<span id="cb513-28"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb513-28" tabindex="-1"></a><span class="at">  </span><span class="fu">apaquarto-docx</span><span class="kw">:</span><span class="at"> default</span></span>
+<span id="cb513-29"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb513-29" tabindex="-1"></a></span>
+<span id="cb513-30"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb513-30" tabindex="-1"></a><span class="fu">execute</span><span class="kw">:</span></span>
+<span id="cb513-31"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb513-31" tabindex="-1"></a><span class="at">  </span><span class="fu">echo</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
+<span id="cb513-32"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb513-32" tabindex="-1"></a><span class="at">  </span><span class="fu">warning</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
+<span id="cb513-33"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb513-33" tabindex="-1"></a><span class="at">  </span><span class="fu">message</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
+<span id="cb513-34"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb513-34" tabindex="-1"></a></span>
+<span id="cb513-35"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb513-35" tabindex="-1"></a><span class="fu">editor</span><span class="kw">:</span><span class="at"> visual</span></span>
+<span id="cb513-36"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb513-36" tabindex="-1"></a><span class="pp">---</span></span></code></pre></div>
+<p>Do not try to memorize this block. Copy a working template and change the entries that belong to your paper.</p>
+<p>The most important lines are:</p>
+<ul>
+<li><code>title:</code> and <code>author:</code> describe the paper</li>
+<li><code>abstract:</code> contains the abstract</li>
+<li><code>bibliography:</code> points to your bibliography file</li>
+<li><code>format:</code> determines the output format</li>
+<li><code>apaquarto-docx</code> creates an APA-style Word manuscript</li>
+<li><code>floatsintext: true</code> keeps figures and tables near the places where they are discussed</li>
+<li><code>execute:</code> gives default rules for how R code should appear in the manuscript</li>
+<li><code>editor: visual</code> opens the document in Visual mode by default</li>
+</ul>
+</div>
+<div id="render-the-apa-manuscript" class="section level3 hasAnchor" number="10.4.4">
+<h3><span class="header-section-number">10.4.4</span> Render the APA manuscript<a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#render-the-apa-manuscript" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Click <strong>Render</strong> again.</p>
+<p>Instead of an HTML preview, Quarto should now create an APA-style Word document.</p>
+<p>Conceptually, your workflow has become:</p>
+<pre class="text"><code>paper.qmd + references.bib + R code
+                  ↓
+               Render
+                  ↓
+          APA-style paper.docx</code></pre>
+<p>This is the key workflow to understand before adding more advanced features.</p>
+</div>
+</div>
+<div id="structure-the-document-like-a-research-paper" class="section level2 hasAnchor" number="10.5">
+<h2><span class="header-section-number">10.5</span> Structure the document like a research paper<a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#structure-the-document-like-a-research-paper" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="add-the-sections-of-the-manuscript" class="section level3 hasAnchor" number="10.5.1">
+<h3><span class="header-section-number">10.5.1</span> Add the sections of the manuscript<a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#add-the-sections-of-the-manuscript" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>For an APA article, you normally do <strong>not</strong> start the manuscript text with a <code># Introduction</code> heading. The title of the paper functions as the heading for the introduction.</p>
+<p>A basic manuscript can therefore look like this:</p>
+<div class="sourceCode" id="cb515"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb515-1"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb515-1" tabindex="-1"></a>This opening paragraph begins the introduction. The paper title is placed above it automatically.</span>
+<span id="cb515-2"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb515-2" tabindex="-1"></a></span>
+<span id="cb515-3"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb515-3" tabindex="-1"></a><span class="fu">## Theoretical Background</span></span>
+<span id="cb515-4"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb515-4" tabindex="-1"></a></span>
+<span id="cb515-5"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb515-5" tabindex="-1"></a>This is a subsection of the introduction.</span>
+<span id="cb515-6"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb515-6" tabindex="-1"></a></span>
+<span id="cb515-7"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb515-7" tabindex="-1"></a><span class="fu"># Method</span></span>
+<span id="cb515-8"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb515-8" tabindex="-1"></a></span>
+<span id="cb515-9"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb515-9" tabindex="-1"></a><span class="fu">## Participants</span></span>
+<span id="cb515-10"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb515-10" tabindex="-1"></a></span>
+<span id="cb515-11"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb515-11" tabindex="-1"></a><span class="fu">## Procedure</span></span>
+<span id="cb515-12"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb515-12" tabindex="-1"></a></span>
+<span id="cb515-13"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb515-13" tabindex="-1"></a><span class="fu">## Measures</span></span>
+<span id="cb515-14"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb515-14" tabindex="-1"></a></span>
+<span id="cb515-15"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb515-15" tabindex="-1"></a><span class="fu"># Results</span></span>
+<span id="cb515-16"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb515-16" tabindex="-1"></a></span>
+<span id="cb515-17"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb515-17" tabindex="-1"></a><span class="fu"># Discussion</span></span>
+<span id="cb515-18"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb515-18" tabindex="-1"></a></span>
+<span id="cb515-19"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb515-19" tabindex="-1"></a><span class="fu"># References</span></span></code></pre></div>
+<p><code>apaquarto</code> handles the APA heading formatting in the output. If you are working in Visual mode, you can create these headings using the heading menu instead of typing <code>#</code> or <code>##</code> yourself.</p>
+</div>
+</div>
+<div id="add-reproducible-r-analyses" class="section level2 hasAnchor" number="10.6">
+<h2><span class="header-section-number">10.6</span> Add reproducible R analyses<a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#add-reproducible-r-analyses" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The next sections are where Quarto becomes more than a writing tool. The goal is to connect the manuscript directly to the analysis.</p>
+<div id="add-a-setup-cell" class="section level3 hasAnchor" number="10.6.1">
+<h3><span class="header-section-number">10.6.1</span> Add a setup cell<a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#add-a-setup-cell" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Create an R code cell near the beginning of the document and use it to load packages and data.</p>
+<p>A useful setup cell is:</p>
+<div class="sourceCode" id="cb516"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb516-1"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb516-1" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb516-2"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb516-2" tabindex="-1"></a><span class="in">#| label: setup</span></span>
+<span id="cb516-3"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb516-3" tabindex="-1"></a><span class="in">#| include: false</span></span>
+<span id="cb516-4"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb516-4" tabindex="-1"></a></span>
+<span id="cb516-5"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb516-5" tabindex="-1"></a><span class="in">library(tidyverse)</span></span>
+<span id="cb516-6"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb516-6" tabindex="-1"></a><span class="in">library(tidycomm)</span></span>
+<span id="cb516-7"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb516-7" tabindex="-1"></a><span class="in">library(apa7)</span></span>
+<span id="cb516-8"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb516-8" tabindex="-1"></a><span class="in">library(flextable)</span></span>
+<span id="cb516-9"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb516-9" tabindex="-1"></a></span>
+<span id="cb516-10"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb516-10" tabindex="-1"></a><span class="in">data &lt;- readr::read_csv2(&quot;data/WoJ_names.csv&quot;)</span></span>
+<span id="cb516-11"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb516-11" tabindex="-1"></a><span class="in">```</span></span></code></pre></div>
+<p>The lines beginning with <code>#|</code> are <strong>cell options</strong>. They tell Quarto how this particular code cell should behave.</p>
+<p>Here:</p>
+<pre class="text"><code>#| include: false</code></pre>
+<p>means:</p>
+<blockquote>
+<p>Run the code, but do not show either the code or its output in the finished manuscript.</p>
+</blockquote>
+<p>That is useful for setup code that the reader does not need to see.</p>
+</div>
+<div id="the-cell-options-beginners-actually-need" class="section level3 hasAnchor" number="10.6.2">
+<h3><span class="header-section-number">10.6.2</span> The cell options beginners actually need<a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#the-cell-options-beginners-actually-need" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>You will encounter many Quarto options, but these five cover most basic paper workflows:</p>
+<table>
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Option</th>
+<th align="left">Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><code>eval: false</code></td>
+<td align="left">Do not run the code</td>
+</tr>
+<tr class="even">
+<td align="left"><code>echo: false</code></td>
+<td align="left">Run the code, hide the code, show its output</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>include: false</code></td>
+<td align="left">Run the code, but hide both the code and its output</td>
+</tr>
+<tr class="even">
+<td align="left"><code>warning: false</code></td>
+<td align="left">Hide R warnings in the rendered document</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>message: false</code></td>
+<td align="left">Hide package and other R messages</td>
+</tr>
+</tbody>
+</table>
+<p>Because our APA YAML already contains:</p>
+<div class="sourceCode" id="cb518"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb518-1"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb518-1" tabindex="-1"></a><span class="fu">execute</span><span class="kw">:</span></span>
+<span id="cb518-2"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb518-2" tabindex="-1"></a><span class="at">  </span><span class="fu">echo</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
+<span id="cb518-3"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb518-3" tabindex="-1"></a><span class="at">  </span><span class="fu">warning</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
+<span id="cb518-4"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb518-4" tabindex="-1"></a><span class="at">  </span><span class="fu">message</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span></code></pre></div>
+<p>those settings apply to all cells by default. You only need to add a cell-specific option when you want that cell to behave differently.</p>
+</div>
+<div id="yaml-settings-versus-cell-options" class="section level3 hasAnchor callout-tip" number="10.6.3">
+<h3><span class="header-section-number">10.6.3</span> YAML settings versus cell options<a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#yaml-settings-versus-cell-options" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Both use <code>name: value</code>, but they control different things.</p>
+<ul>
+<li>The <strong>YAML at the top</strong> controls the document as a whole.</li>
+<li>The <strong><code>#|</code> options inside a code cell</strong> control one particular code cell.</li>
+</ul>
+</div>
+<div id="use-project-relative-file-paths" class="section level3 hasAnchor" number="10.6.4">
+<h3><span class="header-section-number">10.6.4</span> Use project-relative file paths<a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#use-project-relative-file-paths" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>If your data file is located here:</p>
+<pre class="text"><code>my-paper/data/WoJ_names.csv</code></pre>
+<p>and <code>paper.qmd</code> is located in the main project folder, load the data with:</p>
+<div class="sourceCode" id="cb520"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb520-1"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb520-1" tabindex="-1"></a>data <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_csv2</span>(<span class="st">&quot;data/WoJ_names.csv&quot;</span>)</span></code></pre></div>
+<p>This path means:</p>
+<blockquote>
+<p>Starting from my project, go into the <code>data</code> folder and open <code>WoJ_names.csv</code>.</p>
+</blockquote>
+<p>This makes the project much easier to move to another computer or share with collaborators.</p>
+</div>
+</div>
+<div id="put-analysis-results-directly-into-the-prose" class="section level2 hasAnchor" number="10.7">
+<h2><span class="header-section-number">10.7</span> Put analysis results directly into the prose<a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#put-analysis-results-directly-into-the-prose" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="calculate-values-once" class="section level3 hasAnchor" number="10.7.1">
+<h3><span class="header-section-number">10.7.1</span> Calculate values once<a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#calculate-values-once" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Suppose you want to report the sample size and mean work experience in your Methods section.
+Calculate those values in a hidden cell:</p>
+<div class="sourceCode" id="cb521"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb521-1"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb521-1" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb521-2"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb521-2" tabindex="-1"></a><span class="in">#| label: calculate-results</span></span>
+<span id="cb521-3"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb521-3" tabindex="-1"></a><span class="in">#| include: false</span></span>
+<span id="cb521-4"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb521-4" tabindex="-1"></a></span>
+<span id="cb521-5"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb521-5" tabindex="-1"></a><span class="in">statistics_for_method_section &lt;- data %&gt;% </span></span>
+<span id="cb521-6"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb521-6" tabindex="-1"></a><span class="in">  summarize(</span></span>
+<span id="cb521-7"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb521-7" tabindex="-1"></a><span class="in">    number_participants = n(),</span></span>
+<span id="cb521-8"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb521-8" tabindex="-1"></a><span class="in">    mean_work_experience = mean(work_experience, na.rm = TRUE)</span></span>
+<span id="cb521-9"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb521-9" tabindex="-1"></a><span class="in">  )</span></span>
+<span id="cb521-10"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb521-10" tabindex="-1"></a></span>
+<span id="cb521-11"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb521-11" tabindex="-1"></a><span class="in">number_participants &lt;- statistics_for_method_section$number_participants</span></span>
+<span id="cb521-12"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb521-12" tabindex="-1"></a><span class="in">mean_work_experience &lt;- statistics_for_method_section$mean_work_experience</span></span>
+<span id="cb521-13"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb521-13" tabindex="-1"></a><span class="in">```</span></span></code></pre></div>
+<p>Now the values exist as R objects, stored in the objects “number_participants” and “mean_work_experience”.</p>
+</div>
+<div id="insert-those-values-into-a-sentence" class="section level3 hasAnchor" number="10.7.2">
+<h3><span class="header-section-number">10.7.2</span> Insert those values into a sentence<a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#insert-those-values-into-a-sentence" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>You can insert an R value directly into prose with <strong>inline R code</strong>:</p>
+<div class="sourceCode" id="cb522"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb522-1"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb522-1" tabindex="-1"></a>The sample consisted of <span class="in">`r number_participants`</span> participants. Mean work experience was <span class="in">`r round(mean_work_experience, 2)`</span> years.</span></code></pre></div>
+<p>When you render the paper, Quarto replaces the code with the current values.</p>
+<p>The advantage is substantial: if the data change, the reported number changes the next time you render. You no longer have to copy a number from the console into Word and hope that you remember to update it later.</p>
+</div>
+</div>
+<div id="create-tables-and-figures" class="section level2 hasAnchor" number="10.8">
+<h2><span class="header-section-number">10.8</span> Create tables and figures<a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#create-tables-and-figures" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="create-a-publication-ready-table" class="section level3 hasAnchor" number="10.8.1">
+<h3><span class="header-section-number">10.8.1</span> Create a publication-ready table<a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#create-a-publication-ready-table" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>For APA-style Word manuscripts, <code>flextable</code> is particularly useful because it works well with <code>.docx</code> output. The <code>apa7</code> package provides helpers for APA-style formatting.</p>
+<p>For example:</p>
+<div class="sourceCode" id="cb523"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb523-1"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb523-1" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb523-2"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb523-2" tabindex="-1"></a><span class="in">#| label: tbl-descriptives</span></span>
+<span id="cb523-3"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb523-3" tabindex="-1"></a><span class="in">#| tbl-cap: &quot;Descriptive Statistics for Work Experience by Country&quot;</span></span>
+<span id="cb523-4"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb523-4" tabindex="-1"></a></span>
+<span id="cb523-5"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb523-5" tabindex="-1"></a><span class="in">summary_table &lt;- data %&gt;%</span></span>
+<span id="cb523-6"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb523-6" tabindex="-1"></a><span class="in">  group_by(country) %&gt;%</span></span>
+<span id="cb523-7"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb523-7" tabindex="-1"></a><span class="in">  summarize(</span></span>
+<span id="cb523-8"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb523-8" tabindex="-1"></a><span class="in">    M = mean(work_experience, na.rm = TRUE),</span></span>
+<span id="cb523-9"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb523-9" tabindex="-1"></a><span class="in">    SD = sd(work_experience, na.rm = TRUE),</span></span>
+<span id="cb523-10"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb523-10" tabindex="-1"></a><span class="in">    N = sum(!is.na(work_experience))</span></span>
+<span id="cb523-11"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb523-11" tabindex="-1"></a><span class="in">  ) %&gt;%</span></span>
+<span id="cb523-12"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb523-12" tabindex="-1"></a><span class="in">  ungroup()</span></span>
+<span id="cb523-13"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb523-13" tabindex="-1"></a></span>
+<span id="cb523-14"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb523-14" tabindex="-1"></a><span class="in">apa7::apa_flextable(summary_table)</span></span>
+<span id="cb523-15"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb523-15" tabindex="-1"></a><span class="in">```</span></span></code></pre></div>
+<p>Two lines are especially important:</p>
+<pre class="text"><code>#| label: tbl-descriptives
+#| tbl-cap: &quot;Descriptive Statistics for Work Experience by Country&quot;</code></pre>
+<ul>
+<li>the <code>label</code> gives the table a stable internal name</li>
+<li>the <code>tbl-</code> prefix tells Quarto that this object is a table</li>
+<li><code>tbl-cap</code> provides the table caption</li>
+</ul>
+<p>You can now refer to the table in the text with:</p>
+<div class="sourceCode" id="cb525"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb525-1"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb525-1" tabindex="-1"></a>Descriptive statistics are reported in @tbl-descriptives.</span></code></pre></div>
+<p>Quarto inserts the correct table number automatically.</p>
+<p>If the table later changes from Table 2 to Table 3, the reference changes with it.</p>
+</div>
+<div id="create-and-cross-reference-a-figure" class="section level3 hasAnchor" number="10.8.2">
+<h3><span class="header-section-number">10.8.2</span> Create and cross-reference a figure<a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#create-and-cross-reference-a-figure" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Figures follow the same logic.</p>
+<div class="sourceCode" id="cb526"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb526-1"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb526-1" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb526-2"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb526-2" tabindex="-1"></a><span class="in">#| label: fig-work-experience</span></span>
+<span id="cb526-3"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb526-3" tabindex="-1"></a><span class="in">#| fig-cap: &quot;Distribution of Work Experience by Country&quot;</span></span>
+<span id="cb526-4"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb526-4" tabindex="-1"></a><span class="in">#| fig-width: 6</span></span>
+<span id="cb526-5"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb526-5" tabindex="-1"></a><span class="in">#| fig-height: 4</span></span>
+<span id="cb526-6"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb526-6" tabindex="-1"></a></span>
+<span id="cb526-7"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb526-7" tabindex="-1"></a><span class="in">data %&gt;%</span></span>
+<span id="cb526-8"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb526-8" tabindex="-1"></a><span class="in">  ggplot(aes(x = country, y = work_experience)) +</span></span>
+<span id="cb526-9"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb526-9" tabindex="-1"></a><span class="in">  geom_boxplot() +</span></span>
+<span id="cb526-10"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb526-10" tabindex="-1"></a><span class="in">  theme_minimal() +</span></span>
+<span id="cb526-11"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb526-11" tabindex="-1"></a><span class="in">  labs(</span></span>
+<span id="cb526-12"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb526-12" tabindex="-1"></a><span class="in">    x = NULL,</span></span>
+<span id="cb526-13"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb526-13" tabindex="-1"></a><span class="in">    y = &quot;Work Experience (Years)&quot;</span></span>
+<span id="cb526-14"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb526-14" tabindex="-1"></a><span class="in">  )</span></span>
+<span id="cb526-15"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb526-15" tabindex="-1"></a><span class="in">```</span></span></code></pre></div>
+<p>The <code>fig-</code> prefix tells Quarto that this is a figure.</p>
+<p>Refer to it in the prose with:</p>
+<div class="sourceCode" id="cb527"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb527-1"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb527-1" tabindex="-1"></a>The distribution of work experience is shown in @fig-work-experience.</span></code></pre></div>
+<p>Again, you do not need to type “Figure 1” manually.</p>
+</div>
+</div>
+<div id="a-compact-template-for-a-new-paper" class="section level2 hasAnchor" number="10.9">
+<h2><span class="header-section-number">10.9</span> A compact template for a new paper<a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#a-compact-template-for-a-new-paper" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Once you understand the individual pieces, a new paper can start from a template like this:</p>
+<div class="sourceCode" id="cb528"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb528-1"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb528-1" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb528-2"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb528-2" tabindex="-1"></a><span class="an">title:</span><span class="co"> &quot;The Title of Your Paper&quot;</span></span>
+<span id="cb528-3"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb528-3" tabindex="-1"></a><span class="an">shorttitle:</span><span class="co"> &quot;Short Title&quot;</span></span>
+<span id="cb528-4"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb528-4" tabindex="-1"></a></span>
+<span id="cb528-5"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb528-5" tabindex="-1"></a><span class="an">author:</span></span>
+<span id="cb528-6"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb528-6" tabindex="-1"></a><span class="co">  - name: &quot;First Author&quot;</span></span>
+<span id="cb528-7"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb528-7" tabindex="-1"></a><span class="co">    corresponding: true</span></span>
+<span id="cb528-8"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb528-8" tabindex="-1"></a><span class="co">    email: &quot;first.author@example.org&quot;</span></span>
+<span id="cb528-9"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb528-9" tabindex="-1"></a><span class="co">    affiliations:</span></span>
+<span id="cb528-10"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb528-10" tabindex="-1"></a><span class="co">      - name: &quot;University of Zurich&quot;</span></span>
+<span id="cb528-11"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb528-11" tabindex="-1"></a></span>
+<span id="cb528-12"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb528-12" tabindex="-1"></a><span class="an">abstract:</span><span class="co"> |</span></span>
+<span id="cb528-13"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb528-13" tabindex="-1"></a><span class="co">  Add your abstract here.</span></span>
+<span id="cb528-14"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb528-14" tabindex="-1"></a></span>
+<span id="cb528-15"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb528-15" tabindex="-1"></a><span class="an">keywords:</span><span class="co"> [keyword1, keyword2, keyword3]</span></span>
+<span id="cb528-16"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb528-16" tabindex="-1"></a></span>
+<span id="cb528-17"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb528-17" tabindex="-1"></a><span class="an">bibliography:</span><span class="co"> references.bib</span></span>
+<span id="cb528-18"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb528-18" tabindex="-1"></a><span class="an">floatsintext:</span><span class="co"> true</span></span>
+<span id="cb528-19"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb528-19" tabindex="-1"></a></span>
+<span id="cb528-20"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb528-20" tabindex="-1"></a><span class="an">format:</span></span>
+<span id="cb528-21"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb528-21" tabindex="-1"></a><span class="co">  apaquarto-docx: default</span></span>
+<span id="cb528-22"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb528-22" tabindex="-1"></a></span>
+<span id="cb528-23"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb528-23" tabindex="-1"></a><span class="an">execute:</span></span>
+<span id="cb528-24"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb528-24" tabindex="-1"></a><span class="co">  echo: false</span></span>
+<span id="cb528-25"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb528-25" tabindex="-1"></a><span class="co">  warning: false</span></span>
+<span id="cb528-26"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb528-26" tabindex="-1"></a><span class="co">  message: false</span></span>
+<span id="cb528-27"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb528-27" tabindex="-1"></a></span>
+<span id="cb528-28"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb528-28" tabindex="-1"></a><span class="an">editor:</span><span class="co"> visual</span></span>
+<span id="cb528-29"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb528-29" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb528-30"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb528-30" tabindex="-1"></a></span>
+<span id="cb528-31"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb528-31" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb528-32"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb528-32" tabindex="-1"></a><span class="in">#| label: setup</span></span>
+<span id="cb528-33"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb528-33" tabindex="-1"></a><span class="in">#| include: false</span></span>
+<span id="cb528-34"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb528-34" tabindex="-1"></a></span>
+<span id="cb528-35"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb528-35" tabindex="-1"></a><span class="in">library(tidyverse)</span></span>
+<span id="cb528-36"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb528-36" tabindex="-1"></a><span class="in">library(tidycomm)</span></span>
+<span id="cb528-37"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb528-37" tabindex="-1"></a><span class="in">library(apa7)</span></span>
+<span id="cb528-38"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb528-38" tabindex="-1"></a><span class="in">library(flextable)</span></span>
+<span id="cb528-39"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb528-39" tabindex="-1"></a></span>
+<span id="cb528-40"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb528-40" tabindex="-1"></a><span class="in">data &lt;- readr::read_csv2(&quot;data/WoJ_names.csv&quot;)</span></span>
+<span id="cb528-41"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb528-41" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb528-42"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb528-42" tabindex="-1"></a></span>
+<span id="cb528-43"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb528-43" tabindex="-1"></a>Write the introduction here. Add citations directly from Zotero <span class="co">[</span><span class="ot">@smith2024</span><span class="co">]</span>.</span>
+<span id="cb528-44"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb528-44" tabindex="-1"></a></span>
+<span id="cb528-45"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb528-45" tabindex="-1"></a><span class="fu"># Method</span></span>
+<span id="cb528-46"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb528-46" tabindex="-1"></a></span>
+<span id="cb528-47"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb528-47" tabindex="-1"></a><span class="fu">## Participants</span></span>
+<span id="cb528-48"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb528-48" tabindex="-1"></a></span>
+<span id="cb528-49"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb528-49" tabindex="-1"></a>Describe the participants here.</span>
+<span id="cb528-50"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb528-50" tabindex="-1"></a></span>
+<span id="cb528-51"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb528-51" tabindex="-1"></a><span class="fu">## Procedure</span></span>
+<span id="cb528-52"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb528-52" tabindex="-1"></a></span>
+<span id="cb528-53"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb528-53" tabindex="-1"></a>Describe the procedure here.</span>
+<span id="cb528-54"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb528-54" tabindex="-1"></a></span>
+<span id="cb528-55"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb528-55" tabindex="-1"></a><span class="fu"># Results</span></span>
+<span id="cb528-56"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb528-56" tabindex="-1"></a></span>
+<span id="cb528-57"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb528-57" tabindex="-1"></a>Report reproducible analyses, tables, and figures here.</span>
+<span id="cb528-58"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb528-58" tabindex="-1"></a></span>
+<span id="cb528-59"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb528-59" tabindex="-1"></a><span class="fu"># Discussion</span></span>
+<span id="cb528-60"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb528-60" tabindex="-1"></a></span>
+<span id="cb528-61"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb528-61" tabindex="-1"></a>Discuss the findings here.</span>
+<span id="cb528-62"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb528-62" tabindex="-1"></a></span>
+<span id="cb528-63"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb528-63" tabindex="-1"></a><span class="fu"># References</span></span>
+<span id="cb528-64"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb528-64" tabindex="-1"></a><span class="in">```</span></span></code></pre></div>
+<p>Do not worry if this template looks more technical than the tiny document you started with. At this point, every part should have a meaning:</p>
+<ul>
+<li>the first block contains document settings</li>
+<li>the setup cell prepares the R environment</li>
+<li>the body contains the actual manuscript</li>
+<li>citations point to the bibliography</li>
+<li>Render combines everything into the finished document</li>
+</ul>
+</div>
+<div id="useful-options-once-the-basic-workflow-works" class="section level2 hasAnchor" number="10.10">
+<h2><span class="header-section-number">10.10</span> Useful options once the basic workflow works<a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#useful-options-once-the-basic-workflow-works" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The sections below are valuable, but they are <strong>not required for your first Quarto paper</strong>.</p>
+<div id="produce-more-than-one-output-format" class="section level3 hasAnchor" number="10.10.1">
+<h3><span class="header-section-number">10.10.1</span> Produce more than one output format<a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#produce-more-than-one-output-format" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>One source document can create several output formats:</p>
+<div class="sourceCode" id="cb529"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb529-1"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb529-1" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
+<span id="cb529-2"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb529-2" tabindex="-1"></a><span class="at">  </span><span class="fu">apaquarto-html</span><span class="kw">:</span><span class="at"> default</span></span>
+<span id="cb529-3"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb529-3" tabindex="-1"></a><span class="at">  </span><span class="fu">apaquarto-docx</span><span class="kw">:</span><span class="at"> default</span></span>
+<span id="cb529-4"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb529-4" tabindex="-1"></a><span class="at">  </span><span class="fu">apaquarto-pdf</span><span class="kw">:</span></span>
+<span id="cb529-5"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb529-5" tabindex="-1"></a><span class="at">    </span><span class="fu">documentmode</span><span class="kw">:</span><span class="at"> man</span></span>
+<span id="cb529-6"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb529-6" tabindex="-1"></a><span class="at">    </span><span class="fu">a4paper</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span></code></pre></div>
+<p>A practical workflow is to use HTML while writing because it renders quickly, and create Word or PDF when you need a manuscript to share or submit.</p>
+</div>
+<div id="anonymous-peer-review" class="section level3 hasAnchor" number="10.10.2">
+<h3><span class="header-section-number">10.10.2</span> Anonymous peer review<a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#anonymous-peer-review" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><code>apaquarto</code> includes options for masked manuscripts. For example:</p>
+<div class="sourceCode" id="cb530"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb530-1"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb530-1" tabindex="-1"></a><span class="fu">mask</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb530-2"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb530-2" tabindex="-1"></a><span class="fu">masked-citations</span><span class="kw">:</span></span>
+<span id="cb530-3"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb530-3" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> myownpaper2025</span></span>
+<span id="cb530-4"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb530-4" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> myotherpaper2024</span></span></code></pre></div>
+<p><code>mask: true</code> removes identifying author information from the manuscript. References listed under <code>masked-citations</code> can also be masked for review.</p>
+<p>Always check the journal’s own instructions because journals differ in what they expect authors to remove.</p>
+</div>
+<div id="reproducible-package-versions-with-renv" class="section level3 hasAnchor" number="10.10.3">
+<h3><span class="header-section-number">10.10.3</span> Reproducible package versions with <code>renv</code><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#reproducible-package-versions-with-renv" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>A <code>.qmd</code> file preserves your R code, but R packages themselves change over time. For important or long-lived projects, <code>renv</code> can record the package versions used by the project.</p>
+<p>Install and initialize it with:</p>
+<div class="sourceCode" id="cb531"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb531-1"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb531-1" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;renv&quot;</span>)</span>
+<span id="cb531-2"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb531-2" tabindex="-1"></a>renv<span class="sc">::</span><span class="fu">init</span>()</span></code></pre></div>
+<p>After adding or updating packages, record the current environment with:</p>
+<div class="sourceCode" id="cb532"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb532-1"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb532-1" tabindex="-1"></a>renv<span class="sc">::</span><span class="fu">snapshot</span>()</span></code></pre></div>
+<p>A collaborator can restore those package versions with:</p>
+<div class="sourceCode" id="cb533"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb533-1"><a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#cb533-1" tabindex="-1"></a>renv<span class="sc">::</span><span class="fu">restore</span>()</span></code></pre></div>
+<p>You do not need <code>renv</code> to learn Quarto. It becomes useful when reproducibility across computers and over longer time periods matters.</p>
+</div>
+</div>
+<div id="if-you-already-know-a-bit-markdown" class="section level2 hasAnchor" number="10.11">
+<h2><span class="header-section-number">10.11</span> If you already know a bit Markdown<a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#if-you-already-know-a-bit-markdown" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>If you have used R Markdown before, the transition to Quarto is relatively small.</p>
+<table>
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">R Markdown</th>
+<th align="left">Quarto</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Create a new <code>.Rmd</code> file</td>
+<td align="left">Create a <code>.qmd</code> file</td>
+</tr>
+<tr class="even">
+<td align="left">Click <strong>Knit</strong></td>
+<td align="left">Click <strong>Render</strong></td>
+</tr>
+<tr class="odd">
+<td align="left">Put many chunk options inside <code>{r, ...}</code></td>
+<td align="left">Prefer readable <code>#| option: value</code> lines</td>
+</tr>
+<tr class="even">
+<td align="left">Use <code>bookdown</code> for many cross-references</td>
+<td align="left">Cross-referencing is built into Quarto</td>
+</tr>
+<tr class="odd">
+<td align="left">Use <code>setwd()</code> in a document</td>
+<td align="left">Use a project and relative paths</td>
+</tr>
+<tr class="even">
+<td align="left">Type “Table 1” and “Figure 1” manually</td>
+<td align="left">Use <code>@tbl-...</code> and <code>@fig-...</code> references</td>
+</tr>
+<tr class="odd">
+<td align="left">Copy results from the console into prose</td>
+<td align="left">Use inline R code when useful</td>
+</tr>
+<tr class="even">
+<td align="left">Commonly use <code>papaja</code> in older APA workflows</td>
+<td align="left"><code>apaquarto</code> provides an explicit Quarto/APA 7 workflow</td>
+</tr>
+<tr class="odd">
+<td align="left">Use older Zotero-to-RStudio add-ins</td>
+<td align="left">Use RStudio’s built-in citation integration or Better BibTeX</td>
+</tr>
+</tbody>
+</table>
+<p>Existing R Markdown projects do not need to be rewritten simply because Quarto exists. For a <strong>new</strong> paper, however, Quarto is usually the more convenient starting point.</p>
+</div>
+<div id="final-advice" class="section level2 hasAnchor" number="10.12">
+<h2><span class="header-section-number">10.12</span> Final advice<a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#final-advice" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ol style="list-style-type: decimal">
+<li>Render the document frequently. Fixing one small rendering problem immediately is much easier than debugging many problems at the end.</li>
+<li>Use <strong>Visual mode</strong> when it makes writing easier and <strong>Source mode</strong> when you want to understand or precisely edit the underlying document.</li>
+<li>Keep the manuscript, bibliography, data, scripts, and figures inside one RStudio Project. Prefer relative paths over <code>setwd()</code>.</li>
+<li>Let Quarto handle things it can handle reliably: citation formatting, table and figure numbering, cross-references, and reproducible values in the prose.</li>
+<li>For a simple workflow, use RStudio’s direct Zotero integration. For a long-lived paper, consider a paper-specific Zotero collection with Better BibTeX automatic export.</li>
+<li>Use <code>.docx</code> when collaborating with researchers who rely on Word comments and Track Changes. The same <code>.qmd</code> source can still create other formats when needed.</li>
+</ol>
+</div>
+<div id="further-resources" class="section level2 hasAnchor" number="10.13">
+<h2><span class="header-section-number">10.13</span> Further resources<a href="tutorial-writing-a-reproducible-apa-7-paper-with-quarto-and-zotero.html#further-resources" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li><a href="https://quarto.org/docs/get-started/">Quarto: Get Started</a></li>
+<li><a href="https://quarto.org/docs/tools/rstudio/">Quarto in RStudio</a></li>
+<li><a href="https://quarto.org/docs/authoring/citations.html">Quarto citations and bibliographies</a></li>
+<li><a href="https://quarto.org/docs/visual-editor/technical.html">Quarto Visual Editor and Zotero</a></li>
+<li><a href="https://quarto.org/docs/manuscripts/">Quarto Manuscripts</a></li>
+<li><a href="https://wjschne.github.io/apaquarto/">apaquarto</a></li>
+<li><a href="https://wjschne.github.io/apa7/">apa7 R package</a></li>
+<li><a href="https://retorque.re/zotero-better-bibtex/">Better BibTeX for Zotero</a></li>
+<li><a href="https://retorque.re/zotero-better-bibtex/exporting/auto/">Better BibTeX automatic export</a></li>
+</ul>
+<p>Congratulations, you did it! You managed to finish your “Intro to R course”! :)</p>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="exercise-8-dplyr-ggplot-tidycomm.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="solutions.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": "https://lkobilke.github.io/Intro_to_R/edit/main/index.Rmd",
+    "text": "Edit"
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": ["Intro to R.pdf"],
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "subsection"
+  }
+});
+});
+</script>
+
+</body>
+
+</html>
