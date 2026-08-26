@@ -341,13 +341,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="8.4.8" data-path="tutorial-data-visualization-with-ggplot.html"><a href="tutorial-data-visualization-with-ggplot.html#saving-graphs"><i class="fa fa-check"></i><b>8.4.8</b> Saving graphs</a></li>
 </ul></li>
 <li class="chapter" data-level="8.5" data-path="tutorial-data-visualization-with-ggplot.html"><a href="tutorial-data-visualization-with-ggplot.html#colors"><i class="fa fa-check"></i><b>8.5</b> Colors</a></li>
-<li class="chapter" data-level="8.6" data-path="tutorial-data-visualization-with-ggplot.html"><a href="tutorial-data-visualization-with-ggplot.html#other-common-plot-types"><i class="fa fa-check"></i><b>8.6</b> Other common plot types</a>
+<li class="chapter" data-level="8.6" data-path="tutorial-data-visualization-with-ggplot.html"><a href="tutorial-data-visualization-with-ggplot.html#highly-personalized-themes"><i class="fa fa-check"></i><b>8.6</b> Highly personalized themes</a></li>
+<li class="chapter" data-level="8.7" data-path="tutorial-data-visualization-with-ggplot.html"><a href="tutorial-data-visualization-with-ggplot.html#other-common-plot-types"><i class="fa fa-check"></i><b>8.7</b> Other common plot types</a>
 <ul>
-<li class="chapter" data-level="8.6.1" data-path="tutorial-data-visualization-with-ggplot.html"><a href="tutorial-data-visualization-with-ggplot.html#bar-plots"><i class="fa fa-check"></i><b>8.6.1</b> bar plots</a></li>
-<li class="chapter" data-level="8.6.2" data-path="tutorial-data-visualization-with-ggplot.html"><a href="tutorial-data-visualization-with-ggplot.html#box-plots"><i class="fa fa-check"></i><b>8.6.2</b> box plots</a></li>
+<li class="chapter" data-level="8.7.1" data-path="tutorial-data-visualization-with-ggplot.html"><a href="tutorial-data-visualization-with-ggplot.html#bar-plots"><i class="fa fa-check"></i><b>8.7.1</b> bar plots</a></li>
+<li class="chapter" data-level="8.7.2" data-path="tutorial-data-visualization-with-ggplot.html"><a href="tutorial-data-visualization-with-ggplot.html#box-plots"><i class="fa fa-check"></i><b>8.7.2</b> box plots</a></li>
 </ul></li>
-<li class="chapter" data-level="8.7" data-path="tutorial-data-visualization-with-ggplot.html"><a href="tutorial-data-visualization-with-ggplot.html#take-aways-6"><i class="fa fa-check"></i><b>8.7</b> Take Aways</a></li>
-<li class="chapter" data-level="8.8" data-path="tutorial-data-visualization-with-ggplot.html"><a href="tutorial-data-visualization-with-ggplot.html#additional-tutorials-5"><i class="fa fa-check"></i><b>8.8</b> Additional tutorials</a></li>
+<li class="chapter" data-level="8.8" data-path="tutorial-data-visualization-with-ggplot.html"><a href="tutorial-data-visualization-with-ggplot.html#take-aways-6"><i class="fa fa-check"></i><b>8.8</b> Take Aways</a></li>
+<li class="chapter" data-level="8.9" data-path="tutorial-data-visualization-with-ggplot.html"><a href="tutorial-data-visualization-with-ggplot.html#additional-tutorials-5"><i class="fa fa-check"></i><b>8.9</b> Additional tutorials</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="exercise-6-ggplot.html"><a href="exercise-6-ggplot.html"><i class="fa fa-check"></i>Exercise 6: ggplot</a>
 <ul>
@@ -456,9 +457,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="task-1-6" class="section level2 unnumbered hasAnchor">
 <h2>Task 1<a href="exercise-7-ggplot.html#task-1-6" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Please set your working directory and load the WoJ_names.csv.</p>
-<div class="sourceCode" id="cb348"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb348-1"><a href="exercise-7-ggplot.html#cb348-1" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read.csv2</span>(<span class="st">&quot;WoJ_names.csv&quot;</span>, <span class="at">header =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb351"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb351-1"><a href="exercise-7-ggplot.html#cb351-1" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read.csv2</span>(<span class="st">&quot;WoJ_names.csv&quot;</span>, <span class="at">header =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
 <p>Load the ggplot2 package.</p>
-<div class="sourceCode" id="cb349"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb349-1"><a href="exercise-7-ggplot.html#cb349-1" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span></code></pre></div>
+<div class="sourceCode" id="cb352"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb352-1"><a href="exercise-7-ggplot.html#cb352-1" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span></code></pre></div>
 <p>Now, create a box plot to visualize the distribution of work experience
 in years for each country in the dataset:</p>
 <ul>
@@ -467,27 +468,27 @@ in years for each country in the dataset:</p>
 <li>Choose an appropriate theme.</li>
 <li>Label the axes and the title appropriately using <code>labs()</code>.</li>
 </ul>
-<p><img src="Intro-to-R_files/figure-html/unnamed-chunk-220-1.png" alt="" width="672" /></p>
+<p><img src="Intro-to-R_files/figure-html/unnamed-chunk-223-1.png" alt="" width="672" /></p>
 </div>
 <div id="task-2-6" class="section level2 unnumbered hasAnchor">
 <h2>Task 2<a href="exercise-7-ggplot.html#task-2-6" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Look at this graph and try to recreate it.</p>
-<p><img src="Intro-to-R_files/figure-html/unnamed-chunk-221-1.png" alt="" width="672" /></p>
+<p><img src="Intro-to-R_files/figure-html/unnamed-chunk-224-1.png" alt="" width="672" /></p>
 </div>
 <div id="task-3-6" class="section level2 unnumbered hasAnchor">
 <h2>Task 3<a href="exercise-7-ggplot.html#task-3-6" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Try to create an advanced version of your graph from Task 2 that shows
 the names of the journalists. You can use the geom_text function for the
 labels, like this:</p>
-<div class="sourceCode" id="cb350"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb350-1"><a href="exercise-7-ggplot.html#cb350-1" tabindex="-1"></a><span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> name), <span class="at">check_overlap =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb353"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb353-1"><a href="exercise-7-ggplot.html#cb353-1" tabindex="-1"></a><span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> name), <span class="at">check_overlap =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
 <p>If you’d like to adjust the position of the labels, you can add the
 argument <code>, hjust = 0, vjust = 0</code> to this command, like this:</p>
-<div class="sourceCode" id="cb351"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb351-1"><a href="exercise-7-ggplot.html#cb351-1" tabindex="-1"></a><span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> name), <span class="at">check_overlap =</span> <span class="cn">TRUE</span>, <span class="at">hjust =</span> <span class="dv">0</span>, <span class="at">vjust =</span> <span class="dv">0</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb354"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb354-1"><a href="exercise-7-ggplot.html#cb354-1" tabindex="-1"></a><span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> name), <span class="at">check_overlap =</span> <span class="cn">TRUE</span>, <span class="at">hjust =</span> <span class="dv">0</span>, <span class="at">vjust =</span> <span class="dv">0</span>)</span></code></pre></div>
 </div>
 <div id="task-4-5" class="section level2 unnumbered hasAnchor">
 <h2>Task 4<a href="exercise-7-ggplot.html#task-4-5" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Next, try to recreate this bar plot. Use <code>geom_bar(position = "dodge")</code> to create it. <code>dodge</code>produces the graph below whereas <code>geom_bar(position = "stack")</code> will create a stacked bar chart.</p>
-<p><img src="Intro-to-R_files/figure-html/unnamed-chunk-224-1.png" alt="" width="672" /></p>
+<p><img src="Intro-to-R_files/figure-html/unnamed-chunk-227-1.png" alt="" width="672" /></p>
 </div>
 <div id="task-5-3" class="section level2 unnumbered hasAnchor">
 <h2>Task 5<a href="exercise-7-ggplot.html#task-5-3" class="anchor-section" aria-label="Anchor link to header"></a></h2>

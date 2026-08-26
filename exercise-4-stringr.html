@@ -341,13 +341,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="8.4.8" data-path="tutorial-data-visualization-with-ggplot.html"><a href="tutorial-data-visualization-with-ggplot.html#saving-graphs"><i class="fa fa-check"></i><b>8.4.8</b> Saving graphs</a></li>
 </ul></li>
 <li class="chapter" data-level="8.5" data-path="tutorial-data-visualization-with-ggplot.html"><a href="tutorial-data-visualization-with-ggplot.html#colors"><i class="fa fa-check"></i><b>8.5</b> Colors</a></li>
-<li class="chapter" data-level="8.6" data-path="tutorial-data-visualization-with-ggplot.html"><a href="tutorial-data-visualization-with-ggplot.html#other-common-plot-types"><i class="fa fa-check"></i><b>8.6</b> Other common plot types</a>
+<li class="chapter" data-level="8.6" data-path="tutorial-data-visualization-with-ggplot.html"><a href="tutorial-data-visualization-with-ggplot.html#highly-personalized-themes"><i class="fa fa-check"></i><b>8.6</b> Highly personalized themes</a></li>
+<li class="chapter" data-level="8.7" data-path="tutorial-data-visualization-with-ggplot.html"><a href="tutorial-data-visualization-with-ggplot.html#other-common-plot-types"><i class="fa fa-check"></i><b>8.7</b> Other common plot types</a>
 <ul>
-<li class="chapter" data-level="8.6.1" data-path="tutorial-data-visualization-with-ggplot.html"><a href="tutorial-data-visualization-with-ggplot.html#bar-plots"><i class="fa fa-check"></i><b>8.6.1</b> bar plots</a></li>
-<li class="chapter" data-level="8.6.2" data-path="tutorial-data-visualization-with-ggplot.html"><a href="tutorial-data-visualization-with-ggplot.html#box-plots"><i class="fa fa-check"></i><b>8.6.2</b> box plots</a></li>
+<li class="chapter" data-level="8.7.1" data-path="tutorial-data-visualization-with-ggplot.html"><a href="tutorial-data-visualization-with-ggplot.html#bar-plots"><i class="fa fa-check"></i><b>8.7.1</b> bar plots</a></li>
+<li class="chapter" data-level="8.7.2" data-path="tutorial-data-visualization-with-ggplot.html"><a href="tutorial-data-visualization-with-ggplot.html#box-plots"><i class="fa fa-check"></i><b>8.7.2</b> box plots</a></li>
 </ul></li>
-<li class="chapter" data-level="8.7" data-path="tutorial-data-visualization-with-ggplot.html"><a href="tutorial-data-visualization-with-ggplot.html#take-aways-6"><i class="fa fa-check"></i><b>8.7</b> Take Aways</a></li>
-<li class="chapter" data-level="8.8" data-path="tutorial-data-visualization-with-ggplot.html"><a href="tutorial-data-visualization-with-ggplot.html#additional-tutorials-5"><i class="fa fa-check"></i><b>8.8</b> Additional tutorials</a></li>
+<li class="chapter" data-level="8.8" data-path="tutorial-data-visualization-with-ggplot.html"><a href="tutorial-data-visualization-with-ggplot.html#take-aways-6"><i class="fa fa-check"></i><b>8.8</b> Take Aways</a></li>
+<li class="chapter" data-level="8.9" data-path="tutorial-data-visualization-with-ggplot.html"><a href="tutorial-data-visualization-with-ggplot.html#additional-tutorials-5"><i class="fa fa-check"></i><b>8.9</b> Additional tutorials</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="exercise-6-ggplot.html"><a href="exercise-6-ggplot.html"><i class="fa fa-check"></i>Exercise 6: ggplot</a>
 <ul>
@@ -470,7 +471,29 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="task-4-2" class="section level2 unnumbered hasAnchor">
 <h2>Task 4<a href="exercise-4-stringr.html#task-4-2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>The data set provides two additional, highly informative columns: “SeitenAnzahlTwitter” and “SeitenAnzahlFacebook”. These columns show the number of reactions (shares, likes, comments) for each URL. Having extracted the media outlets, let us examine which media outlet got the most engagement on Twitter and Facebook from all their URLs. Utilize your <code>dplyr</code> abilities to create an R object named “overview” that stores the summary statistic (remember <em>group_by</em> and <em>summarize</em>, which you can combine with the <code>sum()</code> function!) of the engagement on Twitter and Facebook per media outlet.</p>
+<p>The data set provides two additional, highly informative columns:
+<code>SeitenAnzahlTwitter</code> and <code>SeitenAnzahlFacebook</code>. These columns show the
+number of reactions (shares, likes, comments) received by each URL.</p>
+<p>Now that you have extracted the media outlets, let us examine <strong>how much
+total engagement each media outlet received across all of its URLs</strong>.</p>
+<p>To do this, you first need to <strong>group the data by media outlet</strong> using
+<code>group_by()</code>. Then use <code>summarize()</code> to reduce all rows belonging to the
+same media outlet to a single summary row.</p>
+<p>Inside <code>summarize()</code>, you can use the function <code>sum()</code> to <strong>add up all
+values of a variable within each group</strong>. For example:</p>
+<p><code>sum(variable)</code></p>
+<p>calculates the total of all values stored in that variable.</p>
+<p>Create an R object named <code>overview</code> that contains:</p>
+<ul>
+<li>one row for each media outlet,</li>
+<li>the <strong>total Twitter engagement</strong> across all URLs of that outlet, and</li>
+<li>the <strong>total Facebook engagement</strong> across all URLs of that outlet.</li>
+</ul>
+<p>Finally, sort your <code>overview</code> object to find out which media outlet
+received the most engagement on Twitter and Facebook.</p>
+<p><strong>Hint:</strong> You will need <code>group_by()</code>, <code>summarize()</code>, <code>sum()</code> (inside of <code>summarize()</code>, it replaces the part where, e.g. <code>mean()</code> would be placed!), and <code>arrange()</code>.</p>
+<p>When you’re ready to look at the solutions, you can find them here:
+<a href="solutions.html#solutions-for-exercise-4">Solutions for Exercise 4</a>.</p>
 </div>
 </div>
             </section>

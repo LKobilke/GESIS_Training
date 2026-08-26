@@ -341,13 +341,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="8.4.8" data-path="tutorial-data-visualization-with-ggplot.html"><a href="tutorial-data-visualization-with-ggplot.html#saving-graphs"><i class="fa fa-check"></i><b>8.4.8</b> Saving graphs</a></li>
 </ul></li>
 <li class="chapter" data-level="8.5" data-path="tutorial-data-visualization-with-ggplot.html"><a href="tutorial-data-visualization-with-ggplot.html#colors"><i class="fa fa-check"></i><b>8.5</b> Colors</a></li>
-<li class="chapter" data-level="8.6" data-path="tutorial-data-visualization-with-ggplot.html"><a href="tutorial-data-visualization-with-ggplot.html#other-common-plot-types"><i class="fa fa-check"></i><b>8.6</b> Other common plot types</a>
+<li class="chapter" data-level="8.6" data-path="tutorial-data-visualization-with-ggplot.html"><a href="tutorial-data-visualization-with-ggplot.html#highly-personalized-themes"><i class="fa fa-check"></i><b>8.6</b> Highly personalized themes</a></li>
+<li class="chapter" data-level="8.7" data-path="tutorial-data-visualization-with-ggplot.html"><a href="tutorial-data-visualization-with-ggplot.html#other-common-plot-types"><i class="fa fa-check"></i><b>8.7</b> Other common plot types</a>
 <ul>
-<li class="chapter" data-level="8.6.1" data-path="tutorial-data-visualization-with-ggplot.html"><a href="tutorial-data-visualization-with-ggplot.html#bar-plots"><i class="fa fa-check"></i><b>8.6.1</b> bar plots</a></li>
-<li class="chapter" data-level="8.6.2" data-path="tutorial-data-visualization-with-ggplot.html"><a href="tutorial-data-visualization-with-ggplot.html#box-plots"><i class="fa fa-check"></i><b>8.6.2</b> box plots</a></li>
+<li class="chapter" data-level="8.7.1" data-path="tutorial-data-visualization-with-ggplot.html"><a href="tutorial-data-visualization-with-ggplot.html#bar-plots"><i class="fa fa-check"></i><b>8.7.1</b> bar plots</a></li>
+<li class="chapter" data-level="8.7.2" data-path="tutorial-data-visualization-with-ggplot.html"><a href="tutorial-data-visualization-with-ggplot.html#box-plots"><i class="fa fa-check"></i><b>8.7.2</b> box plots</a></li>
 </ul></li>
-<li class="chapter" data-level="8.7" data-path="tutorial-data-visualization-with-ggplot.html"><a href="tutorial-data-visualization-with-ggplot.html#take-aways-6"><i class="fa fa-check"></i><b>8.7</b> Take Aways</a></li>
-<li class="chapter" data-level="8.8" data-path="tutorial-data-visualization-with-ggplot.html"><a href="tutorial-data-visualization-with-ggplot.html#additional-tutorials-5"><i class="fa fa-check"></i><b>8.8</b> Additional tutorials</a></li>
+<li class="chapter" data-level="8.8" data-path="tutorial-data-visualization-with-ggplot.html"><a href="tutorial-data-visualization-with-ggplot.html#take-aways-6"><i class="fa fa-check"></i><b>8.8</b> Take Aways</a></li>
+<li class="chapter" data-level="8.9" data-path="tutorial-data-visualization-with-ggplot.html"><a href="tutorial-data-visualization-with-ggplot.html#additional-tutorials-5"><i class="fa fa-check"></i><b>8.9</b> Additional tutorials</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="exercise-6-ggplot.html"><a href="exercise-6-ggplot.html"><i class="fa fa-check"></i>Exercise 6: ggplot</a>
 <ul>
@@ -456,8 +457,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>First, load the %&gt;% (World of Journalism) dataset from the <code>tidycomm</code>
 package. Install <code>tidycomm</code> if you haven’t already and then assign the
 WoJ dataset in its own R object:</p>
-<div class="sourceCode" id="cb344"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb344-1"><a href="exercise-6-ggplot.html#cb344-1" tabindex="-1"></a><span class="co"># install.packages(&quot;tidycomm&quot;) # run only the first time</span></span></code></pre></div>
-<div class="sourceCode" id="cb345"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb345-1"><a href="exercise-6-ggplot.html#cb345-1" tabindex="-1"></a>WoJ <span class="ot">&lt;-</span> tidycomm<span class="sc">::</span>WoJ</span></code></pre></div>
+<div class="sourceCode" id="cb347"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb347-1"><a href="exercise-6-ggplot.html#cb347-1" tabindex="-1"></a><span class="co"># install.packages(&quot;tidycomm&quot;) # run only the first time</span></span></code></pre></div>
+<div class="sourceCode" id="cb348"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb348-1"><a href="exercise-6-ggplot.html#cb348-1" tabindex="-1"></a>WoJ <span class="ot">&lt;-</span> tidycomm<span class="sc">::</span>WoJ</span></code></pre></div>
 <p>If you want help to solve this exercise, here’s a step-by-step tutorial
 that I’ve once created for my students:</p>
 <iframe src="https://www.youtube.com/embed/VgNimnC4syE" width="672" height="400px" data-external="1">
@@ -466,7 +467,7 @@ that I’ve once created for my students:</p>
 <h2>Task 1<a href="exercise-6-ggplot.html#task-1-5" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Try creating your own scatter plot. First, load <code>tidyverse</code> to access
 <code>ggplot2</code> for data visualization:</p>
-<div class="sourceCode" id="cb346"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb346-1"><a href="exercise-6-ggplot.html#cb346-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div>
+<div class="sourceCode" id="cb349"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb349-1"><a href="exercise-6-ggplot.html#cb349-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div>
 <p>Show how journalists’ work experience (<code>work_experience</code>) is associated
 with their trust in politicians (<code>trust_politicians</code>). To do this,
 create a very basic scatter plot using <code>ggplot2</code> and the respective
@@ -497,9 +498,9 @@ cross-country differences. Let’s aim to create a visualization that
 illustrates these differences across countries more distinctly.</p>
 <p>Remove the <code>facet_wrap()</code> and the <code>geom_point()</code> code line. This leaves
 you with this graph:</p>
-<div class="sourceCode" id="cb347"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb347-1"><a href="exercise-6-ggplot.html#cb347-1" tabindex="-1"></a>WoJ <span class="sc">%&gt;%</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> work_experience, <span class="at">y =</span> trust_politicians)) <span class="sc">+</span></span>
-<span id="cb347-2"><a href="exercise-6-ggplot.html#cb347-2" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> lm, <span class="at">se =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
-<p><img src="Intro-to-R_files/figure-html/unnamed-chunk-216-1.png" alt="" width="672" /></p>
+<div class="sourceCode" id="cb350"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb350-1"><a href="exercise-6-ggplot.html#cb350-1" tabindex="-1"></a>WoJ <span class="sc">%&gt;%</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> work_experience, <span class="at">y =</span> trust_politicians)) <span class="sc">+</span></span>
+<span id="cb350-2"><a href="exercise-6-ggplot.html#cb350-2" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> lm, <span class="at">se =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
+<p><img src="Intro-to-R_files/figure-html/unnamed-chunk-219-1.png" alt="" width="672" /></p>
 <p>Now, display every country in a separate color by using the <code>color</code>
 argument inside the <code>aes()</code> function.</p>
 </div>

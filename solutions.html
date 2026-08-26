@@ -341,13 +341,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="8.4.8" data-path="tutorial-data-visualization-with-ggplot.html"><a href="tutorial-data-visualization-with-ggplot.html#saving-graphs"><i class="fa fa-check"></i><b>8.4.8</b> Saving graphs</a></li>
 </ul></li>
 <li class="chapter" data-level="8.5" data-path="tutorial-data-visualization-with-ggplot.html"><a href="tutorial-data-visualization-with-ggplot.html#colors"><i class="fa fa-check"></i><b>8.5</b> Colors</a></li>
-<li class="chapter" data-level="8.6" data-path="tutorial-data-visualization-with-ggplot.html"><a href="tutorial-data-visualization-with-ggplot.html#other-common-plot-types"><i class="fa fa-check"></i><b>8.6</b> Other common plot types</a>
+<li class="chapter" data-level="8.6" data-path="tutorial-data-visualization-with-ggplot.html"><a href="tutorial-data-visualization-with-ggplot.html#highly-personalized-themes"><i class="fa fa-check"></i><b>8.6</b> Highly personalized themes</a></li>
+<li class="chapter" data-level="8.7" data-path="tutorial-data-visualization-with-ggplot.html"><a href="tutorial-data-visualization-with-ggplot.html#other-common-plot-types"><i class="fa fa-check"></i><b>8.7</b> Other common plot types</a>
 <ul>
-<li class="chapter" data-level="8.6.1" data-path="tutorial-data-visualization-with-ggplot.html"><a href="tutorial-data-visualization-with-ggplot.html#bar-plots"><i class="fa fa-check"></i><b>8.6.1</b> bar plots</a></li>
-<li class="chapter" data-level="8.6.2" data-path="tutorial-data-visualization-with-ggplot.html"><a href="tutorial-data-visualization-with-ggplot.html#box-plots"><i class="fa fa-check"></i><b>8.6.2</b> box plots</a></li>
+<li class="chapter" data-level="8.7.1" data-path="tutorial-data-visualization-with-ggplot.html"><a href="tutorial-data-visualization-with-ggplot.html#bar-plots"><i class="fa fa-check"></i><b>8.7.1</b> bar plots</a></li>
+<li class="chapter" data-level="8.7.2" data-path="tutorial-data-visualization-with-ggplot.html"><a href="tutorial-data-visualization-with-ggplot.html#box-plots"><i class="fa fa-check"></i><b>8.7.2</b> box plots</a></li>
 </ul></li>
-<li class="chapter" data-level="8.7" data-path="tutorial-data-visualization-with-ggplot.html"><a href="tutorial-data-visualization-with-ggplot.html#take-aways-6"><i class="fa fa-check"></i><b>8.7</b> Take Aways</a></li>
-<li class="chapter" data-level="8.8" data-path="tutorial-data-visualization-with-ggplot.html"><a href="tutorial-data-visualization-with-ggplot.html#additional-tutorials-5"><i class="fa fa-check"></i><b>8.8</b> Additional tutorials</a></li>
+<li class="chapter" data-level="8.8" data-path="tutorial-data-visualization-with-ggplot.html"><a href="tutorial-data-visualization-with-ggplot.html#take-aways-6"><i class="fa fa-check"></i><b>8.8</b> Take Aways</a></li>
+<li class="chapter" data-level="8.9" data-path="tutorial-data-visualization-with-ggplot.html"><a href="tutorial-data-visualization-with-ggplot.html#additional-tutorials-5"><i class="fa fa-check"></i><b>8.9</b> Additional tutorials</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="exercise-6-ggplot.html"><a href="exercise-6-ggplot.html"><i class="fa fa-check"></i>Exercise 6: ggplot</a>
 <ul>
@@ -493,14 +494,14 @@ vector. First, display all elements of the vector. Then print only the
 5th element. After that, display all elements except the 5th. Finally,
 display the elements at the positions 6 to 8.</p>
 <p><em>Solution:</em></p>
-<div class="sourceCode" id="cb352"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb352-1"><a href="solutions.html#cb352-1" tabindex="-1"></a>age <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">65</span>, <span class="dv">52</span>, <span class="dv">73</span>, <span class="dv">71</span>, <span class="dv">80</span>, <span class="dv">62</span>, <span class="dv">68</span>, <span class="dv">87</span>)</span>
-<span id="cb352-2"><a href="solutions.html#cb352-2" tabindex="-1"></a>age</span></code></pre></div>
+<div class="sourceCode" id="cb355"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb355-1"><a href="solutions.html#cb355-1" tabindex="-1"></a>age <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">65</span>, <span class="dv">52</span>, <span class="dv">73</span>, <span class="dv">71</span>, <span class="dv">80</span>, <span class="dv">62</span>, <span class="dv">68</span>, <span class="dv">87</span>)</span>
+<span id="cb355-2"><a href="solutions.html#cb355-2" tabindex="-1"></a>age</span></code></pre></div>
 <pre><code>## [1] 65 52 73 71 80 62 68 87</code></pre>
-<div class="sourceCode" id="cb354"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb354-1"><a href="solutions.html#cb354-1" tabindex="-1"></a>age[<span class="dv">5</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb357"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb357-1"><a href="solutions.html#cb357-1" tabindex="-1"></a>age[<span class="dv">5</span>]</span></code></pre></div>
 <pre><code>## [1] 80</code></pre>
-<div class="sourceCode" id="cb356"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb356-1"><a href="solutions.html#cb356-1" tabindex="-1"></a>age[<span class="sc">-</span><span class="dv">5</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb359"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb359-1"><a href="solutions.html#cb359-1" tabindex="-1"></a>age[<span class="sc">-</span><span class="dv">5</span>]</span></code></pre></div>
 <pre><code>## [1] 65 52 73 71 62 68 87</code></pre>
-<div class="sourceCode" id="cb358"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb358-1"><a href="solutions.html#cb358-1" tabindex="-1"></a>age[<span class="dv">6</span><span class="sc">:</span><span class="dv">8</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb361"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb361-1"><a href="solutions.html#cb361-1" tabindex="-1"></a>age[<span class="dv">6</span><span class="sc">:</span><span class="dv">8</span>]</span></code></pre></div>
 <pre><code>## [1] 62 68 87</code></pre>
 </div>
 <div id="task-3-7" class="section level3 unnumbered hasAnchor">
@@ -511,21 +512,21 @@ vector to the console. Then have only the value in the 2nd element
 displayed, then all values except the 2nd element. At the end, display
 the elements at the positions 2 to 4.</p>
 <p><em>Solution:</em></p>
-<div class="sourceCode" id="cb360"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb360-1"><a href="solutions.html#cb360-1" tabindex="-1"></a>eye_color <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;blue&quot;</span>, <span class="st">&quot;green&quot;</span>, <span class="st">&quot;brown&quot;</span>, <span class="st">&quot;grey&quot;</span>)</span>
-<span id="cb360-2"><a href="solutions.html#cb360-2" tabindex="-1"></a>eye_color</span></code></pre></div>
+<div class="sourceCode" id="cb363"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb363-1"><a href="solutions.html#cb363-1" tabindex="-1"></a>eye_color <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;blue&quot;</span>, <span class="st">&quot;green&quot;</span>, <span class="st">&quot;brown&quot;</span>, <span class="st">&quot;grey&quot;</span>)</span>
+<span id="cb363-2"><a href="solutions.html#cb363-2" tabindex="-1"></a>eye_color</span></code></pre></div>
 <pre><code>## [1] &quot;blue&quot;  &quot;green&quot; &quot;brown&quot; &quot;grey&quot;</code></pre>
-<div class="sourceCode" id="cb362"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb362-1"><a href="solutions.html#cb362-1" tabindex="-1"></a>eye_color[<span class="dv">2</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb365"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb365-1"><a href="solutions.html#cb365-1" tabindex="-1"></a>eye_color[<span class="dv">2</span>]</span></code></pre></div>
 <pre><code>## [1] &quot;green&quot;</code></pre>
-<div class="sourceCode" id="cb364"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb364-1"><a href="solutions.html#cb364-1" tabindex="-1"></a>eye_color[<span class="sc">-</span><span class="dv">2</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb367"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb367-1"><a href="solutions.html#cb367-1" tabindex="-1"></a>eye_color[<span class="sc">-</span><span class="dv">2</span>]</span></code></pre></div>
 <pre><code>## [1] &quot;blue&quot;  &quot;brown&quot; &quot;grey&quot;</code></pre>
-<div class="sourceCode" id="cb366"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb366-1"><a href="solutions.html#cb366-1" tabindex="-1"></a>eye_color[<span class="dv">2</span><span class="sc">:</span><span class="dv">4</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb369"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb369-1"><a href="solutions.html#cb369-1" tabindex="-1"></a>eye_color[<span class="dv">2</span><span class="sc">:</span><span class="dv">4</span>]</span></code></pre></div>
 <pre><code>## [1] &quot;green&quot; &quot;brown&quot; &quot;grey&quot;</code></pre>
-<div class="sourceCode" id="cb368"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb368-1"><a href="solutions.html#cb368-1" tabindex="-1"></a><span class="co"># Alternatively, you could also use this approach:</span></span>
-<span id="cb368-2"><a href="solutions.html#cb368-2" tabindex="-1"></a>eye_color[<span class="fu">c</span>(<span class="dv">2</span>)]</span></code></pre></div>
+<div class="sourceCode" id="cb371"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb371-1"><a href="solutions.html#cb371-1" tabindex="-1"></a><span class="co"># Alternatively, you could also use this approach:</span></span>
+<span id="cb371-2"><a href="solutions.html#cb371-2" tabindex="-1"></a>eye_color[<span class="fu">c</span>(<span class="dv">2</span>)]</span></code></pre></div>
 <pre><code>## [1] &quot;green&quot;</code></pre>
-<div class="sourceCode" id="cb370"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb370-1"><a href="solutions.html#cb370-1" tabindex="-1"></a>eye_color[<span class="fu">c</span>(<span class="sc">-</span><span class="dv">2</span>)]</span></code></pre></div>
+<div class="sourceCode" id="cb373"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb373-1"><a href="solutions.html#cb373-1" tabindex="-1"></a>eye_color[<span class="fu">c</span>(<span class="sc">-</span><span class="dv">2</span>)]</span></code></pre></div>
 <pre><code>## [1] &quot;blue&quot;  &quot;brown&quot; &quot;grey&quot;</code></pre>
-<div class="sourceCode" id="cb372"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb372-1"><a href="solutions.html#cb372-1" tabindex="-1"></a>eye_color[<span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>)]</span></code></pre></div>
+<div class="sourceCode" id="cb375"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb375-1"><a href="solutions.html#cb375-1" tabindex="-1"></a>eye_color[<span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>)]</span></code></pre></div>
 <pre><code>## [1] &quot;green&quot; &quot;brown&quot; &quot;grey&quot;</code></pre>
 </div>
 </div>
@@ -539,8 +540,8 @@ put it into the folder that you want to use as working directory.</p>
 source object called <em>data</em>. <strong>Note:</strong> This time, it’s a csv that is
 separated by semicolons, not by commas.</p>
 <p><em>Solution:</em></p>
-<div class="sourceCode" id="cb374"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb374-1"><a href="solutions.html#cb374-1" tabindex="-1"></a><span class="co"># Open the GESIS_R project first so that the project folder is your working directory.</span></span>
-<span id="cb374-2"><a href="solutions.html#cb374-2" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read.csv2</span>(<span class="st">&quot;WoJ_names.csv&quot;</span>, <span class="at">header =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb377"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb377-1"><a href="solutions.html#cb377-1" tabindex="-1"></a><span class="co"># Open the GESIS_R project first so that the project folder is your working directory.</span></span>
+<span id="cb377-2"><a href="solutions.html#cb377-2" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read.csv2</span>(<span class="st">&quot;WoJ_names.csv&quot;</span>, <span class="at">header =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
 </div>
 <div id="task-2-8" class="section level3 unnumbered hasAnchor">
 <h3>Task 2<a href="solutions.html#task-2-8" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -548,10 +549,10 @@ separated by semicolons, not by commas.</p>
 government</em>. Use the <code>$</code> operator first. Then try to achieve the same
 result using the subsetting operators, i.e. <code>[]</code>.</p>
 <p><em>Solution:</em></p>
-<div class="sourceCode" id="cb375"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb375-1"><a href="solutions.html#cb375-1" tabindex="-1"></a>data<span class="sc">$</span>trust_government <span class="co"># first version</span></span></code></pre></div>
+<div class="sourceCode" id="cb378"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb378-1"><a href="solutions.html#cb378-1" tabindex="-1"></a>data<span class="sc">$</span>trust_government <span class="co"># first version</span></span></code></pre></div>
 <pre><code>##  [1] 3 4 4 4 2 4 1 3 1 3 2 3 2 2 2 2 3 3 4 3 3 2 3 4 3 3 3 2 3 3 3 3 4 2 3 2 2 2
 ## [39] 2 3</code></pre>
-<div class="sourceCode" id="cb377"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb377-1"><a href="solutions.html#cb377-1" tabindex="-1"></a>data[, <span class="dv">8</span>] <span class="co"># second version</span></span></code></pre></div>
+<div class="sourceCode" id="cb380"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb380-1"><a href="solutions.html#cb380-1" tabindex="-1"></a>data[, <span class="dv">8</span>] <span class="co"># second version</span></span></code></pre></div>
 <pre><code>##  [1] 3 4 4 4 2 4 1 3 1 3 2 3 2 2 2 2 3 3 4 3 3 2 3 4 3 3 3 2 3 3 3 3 4 2 3 2 2 2
 ## [39] 2 3</code></pre>
 </div>
@@ -561,9 +562,9 @@ result using the subsetting operators, i.e. <code>[]</code>.</p>
 the <code>$</code> operator first. Then try to achieve the same result using the
 subsetting operators, i.e. <code>[]</code>.</p>
 <p><em>Solution:</em></p>
-<div class="sourceCode" id="cb379"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb379-1"><a href="solutions.html#cb379-1" tabindex="-1"></a>data<span class="sc">$</span>trust_government[<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>] <span class="co"># first version</span></span></code></pre></div>
+<div class="sourceCode" id="cb382"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb382-1"><a href="solutions.html#cb382-1" tabindex="-1"></a>data<span class="sc">$</span>trust_government[<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>] <span class="co"># first version</span></span></code></pre></div>
 <pre><code>## [1] 3 4 4 4 2 4</code></pre>
-<div class="sourceCode" id="cb381"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb381-1"><a href="solutions.html#cb381-1" tabindex="-1"></a>data[<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>, <span class="dv">8</span>] <span class="co"># second version</span></span></code></pre></div>
+<div class="sourceCode" id="cb384"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb384-1"><a href="solutions.html#cb384-1" tabindex="-1"></a>data[<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>, <span class="dv">8</span>] <span class="co"># second version</span></span></code></pre></div>
 <pre><code>## [1] 3 4 4 4 2 4</code></pre>
 </div>
 <div id="task-4-6" class="section level3 unnumbered hasAnchor">
@@ -625,13 +626,13 @@ approach?</strong></p>
 <div id="task-2-9" class="section level3 unnumbered hasAnchor">
 <h3>Task 2<a href="solutions.html#task-2-9" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>It’s your turn now. Load the starwars data like this:</p>
-<div class="sourceCode" id="cb383"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb383-1"><a href="solutions.html#cb383-1" tabindex="-1"></a><span class="fu">library</span>(dplyr) <span class="co"># to activate the dplyr package</span></span>
-<span id="cb383-2"><a href="solutions.html#cb383-2" tabindex="-1"></a>starwars_data <span class="ot">&lt;-</span> starwars <span class="co"># to assign the pre-installed starwars data set (dplyr) into a source object in our environment</span></span></code></pre></div>
+<div class="sourceCode" id="cb386"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb386-1"><a href="solutions.html#cb386-1" tabindex="-1"></a><span class="fu">library</span>(dplyr) <span class="co"># to activate the dplyr package</span></span>
+<span id="cb386-2"><a href="solutions.html#cb386-2" tabindex="-1"></a>starwars_data <span class="ot">&lt;-</span> starwars <span class="co"># to assign the pre-installed starwars data set (dplyr) into a source object in our environment</span></span></code></pre></div>
 <p><em>Solution:</em></p>
 <p>How many humans are contained in the starwars dataset overall?
 First, solve this task using <code>filter()</code> only.</p>
-<div class="sourceCode" id="cb384"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb384-1"><a href="solutions.html#cb384-1" tabindex="-1"></a>starwars_data <span class="sc">%&gt;%</span></span>
-<span id="cb384-2"><a href="solutions.html#cb384-2" tabindex="-1"></a>  <span class="fu">filter</span>(species <span class="sc">==</span> <span class="st">&quot;Human&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb387"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb387-1"><a href="solutions.html#cb387-1" tabindex="-1"></a>starwars_data <span class="sc">%&gt;%</span></span>
+<span id="cb387-2"><a href="solutions.html#cb387-2" tabindex="-1"></a>  <span class="fu">filter</span>(species <span class="sc">==</span> <span class="st">&quot;Human&quot;</span>)</span></code></pre></div>
 <pre><code>## # A tibble: 35 × 14
 ##    name     height  mass hair_color skin_color eye_color birth_year sex   gender
 ##    &lt;chr&gt;     &lt;int&gt; &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;      &lt;chr&gt;          &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt; 
@@ -649,16 +650,16 @@ First, solve this task using <code>filter()</code> only.</p>
 ## # ℹ 5 more variables: homeworld &lt;chr&gt;, species &lt;chr&gt;, films &lt;list&gt;,
 ## #   vehicles &lt;list&gt;, starships &lt;list&gt;</code></pre>
 <p>Next, solve it by combining <code>filter()</code> with <code>summarize(count = n())</code>.</p>
-<div class="sourceCode" id="cb386"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb386-1"><a href="solutions.html#cb386-1" tabindex="-1"></a>starwars_data <span class="sc">%&gt;%</span></span>
-<span id="cb386-2"><a href="solutions.html#cb386-2" tabindex="-1"></a>  <span class="fu">filter</span>(species <span class="sc">==</span> <span class="st">&quot;Human&quot;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb386-3"><a href="solutions.html#cb386-3" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">count =</span> <span class="fu">n</span>())</span></code></pre></div>
+<div class="sourceCode" id="cb389"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb389-1"><a href="solutions.html#cb389-1" tabindex="-1"></a>starwars_data <span class="sc">%&gt;%</span></span>
+<span id="cb389-2"><a href="solutions.html#cb389-2" tabindex="-1"></a>  <span class="fu">filter</span>(species <span class="sc">==</span> <span class="st">&quot;Human&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb389-3"><a href="solutions.html#cb389-3" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">count =</span> <span class="fu">n</span>())</span></code></pre></div>
 <pre><code>## # A tibble: 1 × 1
 ##   count
 ##   &lt;int&gt;
 ## 1    35</code></pre>
 <p>Finally, try to solve it with <code>count()</code>.</p>
-<div class="sourceCode" id="cb388"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb388-1"><a href="solutions.html#cb388-1" tabindex="-1"></a>starwars_data <span class="sc">%&gt;%</span></span>
-<span id="cb388-2"><a href="solutions.html#cb388-2" tabindex="-1"></a>  <span class="fu">count</span>(species <span class="sc">==</span> <span class="st">&quot;Human&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb391"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb391-1"><a href="solutions.html#cb391-1" tabindex="-1"></a>starwars_data <span class="sc">%&gt;%</span></span>
+<span id="cb391-2"><a href="solutions.html#cb391-2" tabindex="-1"></a>  <span class="fu">count</span>(species <span class="sc">==</span> <span class="st">&quot;Human&quot;</span>)</span></code></pre></div>
 <pre><code>## # A tibble: 3 × 2
 ##   `species == &quot;Human&quot;`     n
 ##   &lt;lgl&gt;                &lt;int&gt;
@@ -675,21 +676,21 @@ First, solve this task using <code>filter()</code> only.</p>
 <li>“tall” otherwise.</li>
 </ul>
 <p><em>Solution:</em></p>
-<div class="sourceCode" id="cb390"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb390-1"><a href="solutions.html#cb390-1" tabindex="-1"></a>starwars_data <span class="ot">&lt;-</span> starwars_data <span class="sc">%&gt;%</span></span>
-<span id="cb390-2"><a href="solutions.html#cb390-2" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">height_group =</span> <span class="fu">case_when</span>(</span>
-<span id="cb390-3"><a href="solutions.html#cb390-3" tabindex="-1"></a>    height <span class="sc">&lt;</span> <span class="dv">140</span> <span class="sc">~</span> <span class="st">&quot;short&quot;</span>,</span>
-<span id="cb390-4"><a href="solutions.html#cb390-4" tabindex="-1"></a>    height <span class="sc">&lt;</span> <span class="dv">180</span> <span class="sc">~</span> <span class="st">&quot;medium&quot;</span>,</span>
-<span id="cb390-5"><a href="solutions.html#cb390-5" tabindex="-1"></a>    height <span class="sc">&gt;=</span> <span class="dv">180</span> <span class="sc">~</span> <span class="st">&quot;tall&quot;</span></span>
-<span id="cb390-6"><a href="solutions.html#cb390-6" tabindex="-1"></a>  ))</span></code></pre></div>
+<div class="sourceCode" id="cb393"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb393-1"><a href="solutions.html#cb393-1" tabindex="-1"></a>starwars_data <span class="ot">&lt;-</span> starwars_data <span class="sc">%&gt;%</span></span>
+<span id="cb393-2"><a href="solutions.html#cb393-2" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">height_group =</span> <span class="fu">case_when</span>(</span>
+<span id="cb393-3"><a href="solutions.html#cb393-3" tabindex="-1"></a>    height <span class="sc">&lt;</span> <span class="dv">140</span> <span class="sc">~</span> <span class="st">&quot;short&quot;</span>,</span>
+<span id="cb393-4"><a href="solutions.html#cb393-4" tabindex="-1"></a>    height <span class="sc">&lt;</span> <span class="dv">180</span> <span class="sc">~</span> <span class="st">&quot;medium&quot;</span>,</span>
+<span id="cb393-5"><a href="solutions.html#cb393-5" tabindex="-1"></a>    height <span class="sc">&gt;=</span> <span class="dv">180</span> <span class="sc">~</span> <span class="st">&quot;tall&quot;</span></span>
+<span id="cb393-6"><a href="solutions.html#cb393-6" tabindex="-1"></a>  ))</span></code></pre></div>
 </div>
 <div id="task-4-7" class="section level3 unnumbered hasAnchor">
 <h3>Task 4<a href="solutions.html#task-4-7" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>How many humans are contained in starwars by height_group? (Hint: You’ll need to chain multiple functions. Remember that <code>summarize()</code> has a best friend that will help you solve this task. :))</p>
 <p><em>Solution:</em></p>
-<div class="sourceCode" id="cb391"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb391-1"><a href="solutions.html#cb391-1" tabindex="-1"></a>starwars_data <span class="sc">%&gt;%</span></span>
-<span id="cb391-2"><a href="solutions.html#cb391-2" tabindex="-1"></a>  <span class="fu">filter</span>(species <span class="sc">==</span> <span class="st">&quot;Human&quot;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb391-3"><a href="solutions.html#cb391-3" tabindex="-1"></a>  <span class="fu">group_by</span>(height_group) <span class="sc">%&gt;%</span></span>
-<span id="cb391-4"><a href="solutions.html#cb391-4" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">count =</span> <span class="fu">n</span>())</span></code></pre></div>
+<div class="sourceCode" id="cb394"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb394-1"><a href="solutions.html#cb394-1" tabindex="-1"></a>starwars_data <span class="sc">%&gt;%</span></span>
+<span id="cb394-2"><a href="solutions.html#cb394-2" tabindex="-1"></a>  <span class="fu">filter</span>(species <span class="sc">==</span> <span class="st">&quot;Human&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb394-3"><a href="solutions.html#cb394-3" tabindex="-1"></a>  <span class="fu">group_by</span>(height_group) <span class="sc">%&gt;%</span></span>
+<span id="cb394-4"><a href="solutions.html#cb394-4" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">count =</span> <span class="fu">n</span>())</span></code></pre></div>
 <pre><code>## # A tibble: 3 × 2
 ##   height_group count
 ##   &lt;chr&gt;        &lt;int&gt;
@@ -701,10 +702,10 @@ First, solve this task using <code>filter()</code> only.</p>
 <h3>Task 5<a href="solutions.html#task-5-4" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>What is the most common height_group among Star Wars characters? (Hint: You’ll need to chain multiple functions, but one of them should be <code>arrange()</code>)__</p>
 <p><em>Solution:</em></p>
-<div class="sourceCode" id="cb393"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb393-1"><a href="solutions.html#cb393-1" tabindex="-1"></a>starwars_data <span class="sc">%&gt;%</span></span>
-<span id="cb393-2"><a href="solutions.html#cb393-2" tabindex="-1"></a>  <span class="fu">group_by</span>(height_group) <span class="sc">%&gt;%</span></span>
-<span id="cb393-3"><a href="solutions.html#cb393-3" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">count =</span> <span class="fu">n</span>()) <span class="sc">%&gt;%</span></span>
-<span id="cb393-4"><a href="solutions.html#cb393-4" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(count))</span></code></pre></div>
+<div class="sourceCode" id="cb396"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb396-1"><a href="solutions.html#cb396-1" tabindex="-1"></a>starwars_data <span class="sc">%&gt;%</span></span>
+<span id="cb396-2"><a href="solutions.html#cb396-2" tabindex="-1"></a>  <span class="fu">group_by</span>(height_group) <span class="sc">%&gt;%</span></span>
+<span id="cb396-3"><a href="solutions.html#cb396-3" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">count =</span> <span class="fu">n</span>()) <span class="sc">%&gt;%</span></span>
+<span id="cb396-4"><a href="solutions.html#cb396-4" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(count))</span></code></pre></div>
 <pre><code>## # A tibble: 4 × 2
 ##   height_group count
 ##   &lt;chr&gt;        &lt;int&gt;
@@ -713,9 +714,9 @@ First, solve this task using <code>filter()</code> only.</p>
 ## 3 short           10
 ## 4 &lt;NA&gt;             6</code></pre>
 <p>Alternatively, you could use the <code>count()</code> function:</p>
-<div class="sourceCode" id="cb395"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb395-1"><a href="solutions.html#cb395-1" tabindex="-1"></a>starwars_data <span class="sc">%&gt;%</span></span>
-<span id="cb395-2"><a href="solutions.html#cb395-2" tabindex="-1"></a>  <span class="fu">count</span>(height_group) <span class="sc">%&gt;%</span></span>
-<span id="cb395-3"><a href="solutions.html#cb395-3" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(n))</span></code></pre></div>
+<div class="sourceCode" id="cb398"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb398-1"><a href="solutions.html#cb398-1" tabindex="-1"></a>starwars_data <span class="sc">%&gt;%</span></span>
+<span id="cb398-2"><a href="solutions.html#cb398-2" tabindex="-1"></a>  <span class="fu">count</span>(height_group) <span class="sc">%&gt;%</span></span>
+<span id="cb398-3"><a href="solutions.html#cb398-3" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(n))</span></code></pre></div>
 <pre><code>## # A tibble: 4 × 2
 ##   height_group     n
 ##   &lt;chr&gt;        &lt;int&gt;
@@ -729,9 +730,9 @@ First, solve this task using <code>filter()</code> only.</p>
 <p>What is the average mass of Star Wars characters that are not human and
 have yellow eyes? (Hint: You’ll need to calculate descriptive statistics and remove all <code>NAs</code>.)</p>
 <p><em>Solution:</em></p>
-<div class="sourceCode" id="cb397"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb397-1"><a href="solutions.html#cb397-1" tabindex="-1"></a>starwars_data <span class="sc">%&gt;%</span></span>
-<span id="cb397-2"><a href="solutions.html#cb397-2" tabindex="-1"></a>  <span class="fu">filter</span>(species <span class="sc">!=</span> <span class="st">&quot;Human&quot;</span> <span class="sc">&amp;</span> eye_color <span class="sc">==</span> <span class="st">&quot;yellow&quot;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb397-3"><a href="solutions.html#cb397-3" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">mean_mass =</span> <span class="fu">mean</span>(mass, <span class="at">na.rm =</span> <span class="cn">TRUE</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb400"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb400-1"><a href="solutions.html#cb400-1" tabindex="-1"></a>starwars_data <span class="sc">%&gt;%</span></span>
+<span id="cb400-2"><a href="solutions.html#cb400-2" tabindex="-1"></a>  <span class="fu">filter</span>(species <span class="sc">!=</span> <span class="st">&quot;Human&quot;</span> <span class="sc">&amp;</span> eye_color <span class="sc">==</span> <span class="st">&quot;yellow&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb400-3"><a href="solutions.html#cb400-3" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">mean_mass =</span> <span class="fu">mean</span>(mass, <span class="at">na.rm =</span> <span class="cn">TRUE</span>))</span></code></pre></div>
 <pre><code>## # A tibble: 1 × 1
 ##   mean_mass
 ##       &lt;dbl&gt;
@@ -742,14 +743,14 @@ have yellow eyes? (Hint: You’ll need to calculate descriptive statistics and r
 <p>Compare the mean, median, and standard deviation of mass for all humans
 and droids. (Hint: You’ll need to calculate descriptive statistics and remove all <code>NAs</code>.)</p>
 <p><em>Solution:</em></p>
-<div class="sourceCode" id="cb399"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb399-1"><a href="solutions.html#cb399-1" tabindex="-1"></a>starwars_data <span class="sc">%&gt;%</span></span>
-<span id="cb399-2"><a href="solutions.html#cb399-2" tabindex="-1"></a>  <span class="fu">filter</span>(species <span class="sc">==</span> <span class="st">&quot;Human&quot;</span> <span class="sc">|</span> species <span class="sc">==</span> <span class="st">&quot;Droid&quot;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb399-3"><a href="solutions.html#cb399-3" tabindex="-1"></a>  <span class="fu">group_by</span>(species) <span class="sc">%&gt;%</span></span>
-<span id="cb399-4"><a href="solutions.html#cb399-4" tabindex="-1"></a>  <span class="fu">summarize</span>(</span>
-<span id="cb399-5"><a href="solutions.html#cb399-5" tabindex="-1"></a>    <span class="at">M =</span> <span class="fu">mean</span>(mass, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb399-6"><a href="solutions.html#cb399-6" tabindex="-1"></a>    <span class="at">Med =</span> <span class="fu">median</span>(mass, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb399-7"><a href="solutions.html#cb399-7" tabindex="-1"></a>    <span class="at">SD =</span> <span class="fu">sd</span>(mass, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb399-8"><a href="solutions.html#cb399-8" tabindex="-1"></a>  )</span></code></pre></div>
+<div class="sourceCode" id="cb402"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb402-1"><a href="solutions.html#cb402-1" tabindex="-1"></a>starwars_data <span class="sc">%&gt;%</span></span>
+<span id="cb402-2"><a href="solutions.html#cb402-2" tabindex="-1"></a>  <span class="fu">filter</span>(species <span class="sc">==</span> <span class="st">&quot;Human&quot;</span> <span class="sc">|</span> species <span class="sc">==</span> <span class="st">&quot;Droid&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb402-3"><a href="solutions.html#cb402-3" tabindex="-1"></a>  <span class="fu">group_by</span>(species) <span class="sc">%&gt;%</span></span>
+<span id="cb402-4"><a href="solutions.html#cb402-4" tabindex="-1"></a>  <span class="fu">summarize</span>(</span>
+<span id="cb402-5"><a href="solutions.html#cb402-5" tabindex="-1"></a>    <span class="at">M =</span> <span class="fu">mean</span>(mass, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb402-6"><a href="solutions.html#cb402-6" tabindex="-1"></a>    <span class="at">Med =</span> <span class="fu">median</span>(mass, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb402-7"><a href="solutions.html#cb402-7" tabindex="-1"></a>    <span class="at">SD =</span> <span class="fu">sd</span>(mass, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb402-8"><a href="solutions.html#cb402-8" tabindex="-1"></a>  )</span></code></pre></div>
 <pre><code>## # A tibble: 2 × 4
 ##   species     M   Med    SD
 ##   &lt;chr&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
@@ -761,11 +762,11 @@ and droids. (Hint: You’ll need to calculate descriptive statistics and remove 
 <p>Create a new variable in which you store the mass in gram. Add it to the
 dataframe.</p>
 <p><em>Solution:</em></p>
-<div class="sourceCode" id="cb401"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb401-1"><a href="solutions.html#cb401-1" tabindex="-1"></a>starwars_data <span class="ot">&lt;-</span> starwars_data <span class="sc">%&gt;%</span></span>
-<span id="cb401-2"><a href="solutions.html#cb401-2" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">gr_mass =</span> mass <span class="sc">*</span> <span class="dv">1000</span>)</span>
-<span id="cb401-3"><a href="solutions.html#cb401-3" tabindex="-1"></a></span>
-<span id="cb401-4"><a href="solutions.html#cb401-4" tabindex="-1"></a>starwars_data <span class="sc">%&gt;%</span></span>
-<span id="cb401-5"><a href="solutions.html#cb401-5" tabindex="-1"></a>  <span class="fu">select</span>(name, species, mass, gr_mass)</span></code></pre></div>
+<div class="sourceCode" id="cb404"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb404-1"><a href="solutions.html#cb404-1" tabindex="-1"></a>starwars_data <span class="ot">&lt;-</span> starwars_data <span class="sc">%&gt;%</span></span>
+<span id="cb404-2"><a href="solutions.html#cb404-2" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">gr_mass =</span> mass <span class="sc">*</span> <span class="dv">1000</span>)</span>
+<span id="cb404-3"><a href="solutions.html#cb404-3" tabindex="-1"></a></span>
+<span id="cb404-4"><a href="solutions.html#cb404-4" tabindex="-1"></a>starwars_data <span class="sc">%&gt;%</span></span>
+<span id="cb404-5"><a href="solutions.html#cb404-5" tabindex="-1"></a>  <span class="fu">select</span>(name, species, mass, gr_mass)</span></code></pre></div>
 <pre><code>## # A tibble: 87 × 4
 ##    name               species  mass gr_mass
 ##    &lt;chr&gt;              &lt;chr&gt;   &lt;dbl&gt;   &lt;dbl&gt;
@@ -785,23 +786,23 @@ dataframe.</p>
 <div id="solutions-for-exercise-4" class="section level2 unnumbered hasAnchor">
 <h2>Solutions for Exercise 4<a href="solutions.html#solutions-for-exercise-4" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>First, load the library <code>stringr</code> (or the entire <code>tidyverse</code>).</p>
-<div class="sourceCode" id="cb403"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb403-1"><a href="solutions.html#cb403-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse) <span class="co"># loads stringr + dplyr and pipe operator</span></span></code></pre></div>
+<div class="sourceCode" id="cb406"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb406-1"><a href="solutions.html#cb406-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse) <span class="co"># loads stringr + dplyr and pipe operator</span></span></code></pre></div>
 <p>We will work on real data in this exercise. But before that, we will test our regex on a simple “test” vector that contains hyperlinks of media outlets and webpages. So run this code and create a vector called “seitenURL” in your environment:</p>
-<div class="sourceCode" id="cb404"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb404-1"><a href="solutions.html#cb404-1" tabindex="-1"></a>seitenURL <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;https://www.bild.de&quot;</span>, <span class="st">&quot;https://www.kicker.at/sport&quot;</span>, <span class="st">&quot;http://www.mycoffee.net/fresh&quot;</span>, <span class="st">&quot;http://www1.neuegedanken.blog&quot;</span>, <span class="st">&quot;https://home.1und1.info/magazine/unterhaltung&quot;</span>, <span class="st">&quot;https://de.sputniknews.com/technik&quot;</span>, <span class="st">&quot;https://rp-online.de/nrw/staedte/geldern&quot;</span>, <span class="st">&quot;https://www.bzbasel.ch/limmattal/region-limmattal&quot;</span>, <span class="st">&quot;http://sportdeutschland.tv/wm-maenner-2019&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb407"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb407-1"><a href="solutions.html#cb407-1" tabindex="-1"></a>seitenURL <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;https://www.bild.de&quot;</span>, <span class="st">&quot;https://www.kicker.at/sport&quot;</span>, <span class="st">&quot;http://www.mycoffee.net/fresh&quot;</span>, <span class="st">&quot;http://www1.neuegedanken.blog&quot;</span>, <span class="st">&quot;https://home.1und1.info/magazine/unterhaltung&quot;</span>, <span class="st">&quot;https://de.sputniknews.com/technik&quot;</span>, <span class="st">&quot;https://rp-online.de/nrw/staedte/geldern&quot;</span>, <span class="st">&quot;https://www.bzbasel.ch/limmattal/region-limmattal&quot;</span>, <span class="st">&quot;http://sportdeutschland.tv/wm-maenner-2019&quot;</span>)</span></code></pre></div>
 <div id="task-1-10" class="section level3 unnumbered hasAnchor">
 <h3>Task 1<a href="solutions.html#task-1-10" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Let’s get rid of the first part of the URL strings in our “seitenURL” vector, i.e., everything that comes before the name of the outlet (You will need to work with <code>str_replace</code>). Usually, this is some kind of version of “<a href="https://www" class="uri">https://www</a>.” or “<a href="http://www" class="uri">http://www</a>.” Try to make your pattern as versatile as possible! In a big data set, there will always be exceptions to the rule (e.g., “<a href="http://sportdeutschland.tv" class="uri">http://sportdeutschland.tv</a>”), so try to match regex–i.e., types of characters instead of real characters–as often as you can!</p>
-<div class="sourceCode" id="cb405"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb405-1"><a href="solutions.html#cb405-1" tabindex="-1"></a>seitenURL <span class="ot">&lt;-</span><span class="fu">str_replace</span>(seitenURL, <span class="st">&quot;^(http)(s?)[:punct:]{3}(www[:punct:]|www1[:punct:]|w?)(de[:punct:])?&quot;</span>, <span class="st">&quot;&quot;</span>)</span>
-<span id="cb405-2"><a href="solutions.html#cb405-2" tabindex="-1"></a><span class="co"># this matches all strings that start with http: &#39;^(http)&#39;</span></span>
-<span id="cb405-3"><a href="solutions.html#cb405-3" tabindex="-1"></a><span class="co"># this matches all strings that are either http or https: (s?) -&gt; because &#39;?&#39; means &quot;zero or more&quot;</span></span>
-<span id="cb405-4"><a href="solutions.html#cb405-4" tabindex="-1"></a><span class="co"># followed by exactly one dot and two forwardslashes: &#39;[:punct:]{3}&#39;</span></span>
-<span id="cb405-5"><a href="solutions.html#cb405-5" tabindex="-1"></a><span class="co"># followed by either a www.: &#39;(www[:punct:]&#39;</span></span>
-<span id="cb405-6"><a href="solutions.html#cb405-6" tabindex="-1"></a><span class="co"># or followed by a www1.: &#39;|www1[:punct:])&#39;</span></span>
-<span id="cb405-7"><a href="solutions.html#cb405-7" tabindex="-1"></a><span class="co"># or followed by zero or one w (this is necessary for the rp-online-URL): &#39;w?&#39;</span></span>
-<span id="cb405-8"><a href="solutions.html#cb405-8" tabindex="-1"></a><span class="co"># and followed by zero or one &quot;de.&quot;s (this is necessary for the sputniknews-URL): (de[:punct:])?</span></span>
-<span id="cb405-9"><a href="solutions.html#cb405-9" tabindex="-1"></a><span class="co"># and replaces the match with nothing, i.e., an empty string: &#39;, &quot;&quot;&#39;</span></span>
-<span id="cb405-10"><a href="solutions.html#cb405-10" tabindex="-1"></a></span>
-<span id="cb405-11"><a href="solutions.html#cb405-11" tabindex="-1"></a>seitenURL</span></code></pre></div>
+<div class="sourceCode" id="cb408"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb408-1"><a href="solutions.html#cb408-1" tabindex="-1"></a>seitenURL <span class="ot">&lt;-</span><span class="fu">str_replace</span>(seitenURL, <span class="st">&quot;^(http)(s?)[:punct:]{3}(www[:punct:]|www1[:punct:]|w?)(de[:punct:])?&quot;</span>, <span class="st">&quot;&quot;</span>)</span>
+<span id="cb408-2"><a href="solutions.html#cb408-2" tabindex="-1"></a><span class="co"># this matches all strings that start with http: &#39;^(http)&#39;</span></span>
+<span id="cb408-3"><a href="solutions.html#cb408-3" tabindex="-1"></a><span class="co"># this matches all strings that are either http or https: (s?) -&gt; because &#39;?&#39; means &quot;zero or more&quot;</span></span>
+<span id="cb408-4"><a href="solutions.html#cb408-4" tabindex="-1"></a><span class="co"># followed by exactly one dot and two forwardslashes: &#39;[:punct:]{3}&#39;</span></span>
+<span id="cb408-5"><a href="solutions.html#cb408-5" tabindex="-1"></a><span class="co"># followed by either a www.: &#39;(www[:punct:]&#39;</span></span>
+<span id="cb408-6"><a href="solutions.html#cb408-6" tabindex="-1"></a><span class="co"># or followed by a www1.: &#39;|www1[:punct:])&#39;</span></span>
+<span id="cb408-7"><a href="solutions.html#cb408-7" tabindex="-1"></a><span class="co"># or followed by zero or one w (this is necessary for the rp-online-URL): &#39;w?&#39;</span></span>
+<span id="cb408-8"><a href="solutions.html#cb408-8" tabindex="-1"></a><span class="co"># and followed by zero or one &quot;de.&quot;s (this is necessary for the sputniknews-URL): (de[:punct:])?</span></span>
+<span id="cb408-9"><a href="solutions.html#cb408-9" tabindex="-1"></a><span class="co"># and replaces the match with nothing, i.e., an empty string: &#39;, &quot;&quot;&#39;</span></span>
+<span id="cb408-10"><a href="solutions.html#cb408-10" tabindex="-1"></a></span>
+<span id="cb408-11"><a href="solutions.html#cb408-11" tabindex="-1"></a>seitenURL</span></code></pre></div>
 <pre><code>## [1] &quot;bild.de&quot;                              
 ## [2] &quot;kicker.at/sport&quot;                      
 ## [3] &quot;mycoffee.net/fresh&quot;                   
@@ -815,12 +816,12 @@ dataframe.</p>
 <div id="task-2-10" class="section level3 unnumbered hasAnchor">
 <h3>Task 2<a href="solutions.html#task-2-10" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Using the seitenURL vector, try to get rid of the characters that follow the media outlet (e.g., “.de” or “.com”).</p>
-<div class="sourceCode" id="cb407"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb407-1"><a href="solutions.html#cb407-1" tabindex="-1"></a>seitenURL <span class="ot">&lt;-</span> <span class="fu">str_replace</span>(seitenURL, <span class="st">&quot;[:punct:]{1}(com|de|blog|net|tv|at|ch|info).*&quot;</span>, <span class="st">&quot;&quot;</span>)</span>
-<span id="cb407-2"><a href="solutions.html#cb407-2" tabindex="-1"></a><span class="co"># this matches all strings that have exactly one dot: &quot;[:punct:]{1}&quot;</span></span>
-<span id="cb407-3"><a href="solutions.html#cb407-3" tabindex="-1"></a><span class="co"># this matches either com, de, blog and many more: &quot;(com|de|blog|net|tv|at|ch)&quot;</span></span>
-<span id="cb407-4"><a href="solutions.html#cb407-4" tabindex="-1"></a><span class="co"># this matches any character zero or multiple times: &quot;.*&quot;</span></span>
-<span id="cb407-5"><a href="solutions.html#cb407-5" tabindex="-1"></a></span>
-<span id="cb407-6"><a href="solutions.html#cb407-6" tabindex="-1"></a>seitenURL</span></code></pre></div>
+<div class="sourceCode" id="cb410"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb410-1"><a href="solutions.html#cb410-1" tabindex="-1"></a>seitenURL <span class="ot">&lt;-</span> <span class="fu">str_replace</span>(seitenURL, <span class="st">&quot;[:punct:]{1}(com|de|blog|net|tv|at|ch|info).*&quot;</span>, <span class="st">&quot;&quot;</span>)</span>
+<span id="cb410-2"><a href="solutions.html#cb410-2" tabindex="-1"></a><span class="co"># this matches all strings that have exactly one dot: &quot;[:punct:]{1}&quot;</span></span>
+<span id="cb410-3"><a href="solutions.html#cb410-3" tabindex="-1"></a><span class="co"># this matches either com, de, blog and many more: &quot;(com|de|blog|net|tv|at|ch)&quot;</span></span>
+<span id="cb410-4"><a href="solutions.html#cb410-4" tabindex="-1"></a><span class="co"># this matches any character zero or multiple times: &quot;.*&quot;</span></span>
+<span id="cb410-5"><a href="solutions.html#cb410-5" tabindex="-1"></a></span>
+<span id="cb410-6"><a href="solutions.html#cb410-6" tabindex="-1"></a>seitenURL</span></code></pre></div>
 <pre><code>## [1] &quot;bild&quot;             &quot;kicker&quot;           &quot;mycoffee&quot;         &quot;neuegedanken&quot;    
 ## [5] &quot;home.1und1&quot;       &quot;sputniknews&quot;      &quot;rp-online&quot;        &quot;bzbasel&quot;         
 ## [9] &quot;sportdeutschland&quot;</code></pre>
@@ -828,23 +829,23 @@ dataframe.</p>
 <div id="task-3-10" class="section level3 unnumbered hasAnchor">
 <h3>Task 3<a href="solutions.html#task-3-10" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Use this command and adapt it with your patterns (it uses <code>str_replace</code> in combination with <code>mutate</code>):</p>
-<div class="sourceCode" id="cb409"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb409-1"><a href="solutions.html#cb409-1" tabindex="-1"></a>url_data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;seitenURLs.csv&quot;</span>, <span class="at">header =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb409-2"><a href="solutions.html#cb409-2" tabindex="-1"></a></span>
-<span id="cb409-3"><a href="solutions.html#cb409-3" tabindex="-1"></a>url_data2 <span class="ot">&lt;-</span> url_data <span class="sc">%&gt;%</span></span>
-<span id="cb409-4"><a href="solutions.html#cb409-4" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">seitenURL =</span> <span class="fu">str_replace_all</span>(seitenURL, <span class="st">&quot;^(http)(s?)[:punct:]{3}(www[:punct:]|www1[:punct:]|w?)(de[:punct:])?&quot;</span>, <span class="st">&quot;&quot;</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb409-5"><a href="solutions.html#cb409-5" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">seitenURL =</span> <span class="fu">str_replace_all</span>(seitenURL, <span class="st">&quot;[:punct:]{1}(com|de|blog|net|tv|at|ch|info).*&quot;</span>, <span class="st">&quot;&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb412"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb412-1"><a href="solutions.html#cb412-1" tabindex="-1"></a>url_data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;seitenURLs.csv&quot;</span>, <span class="at">header =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb412-2"><a href="solutions.html#cb412-2" tabindex="-1"></a></span>
+<span id="cb412-3"><a href="solutions.html#cb412-3" tabindex="-1"></a>url_data2 <span class="ot">&lt;-</span> url_data <span class="sc">%&gt;%</span></span>
+<span id="cb412-4"><a href="solutions.html#cb412-4" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">seitenURL =</span> <span class="fu">str_replace_all</span>(seitenURL, <span class="st">&quot;^(http)(s?)[:punct:]{3}(www[:punct:]|www1[:punct:]|w?)(de[:punct:])?&quot;</span>, <span class="st">&quot;&quot;</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb412-5"><a href="solutions.html#cb412-5" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">seitenURL =</span> <span class="fu">str_replace_all</span>(seitenURL, <span class="st">&quot;[:punct:]{1}(com|de|blog|net|tv|at|ch|info).*&quot;</span>, <span class="st">&quot;&quot;</span>))</span></code></pre></div>
 </div>
 <div id="task-4-8" class="section level3 unnumbered hasAnchor">
 <h3>Task 4<a href="solutions.html#task-4-8" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The data set provides two additional, highly informative columns: “SeitenAnzahlTwitter” and “SeitenAnzahlFacebook”. These columns show the number of reactions (shares, likes, comments) for each URL. Having extracted the media outlets, let us examine which media outlet got the most engagement on Twitter and Facebook from all their URLs. Utilize your <code>dplyr</code> abilities to create an R object named “overview” that stores the summary statistic (remember <em>group_by</em> and <em>summarize</em>, which you can combine with the <code>sum()</code> function!) of the engagement on Twitter and Facebook per media outlet.</p>
 <p>Next, arrange your “overview” data to reveal which media outlet creates the most engagement on Twitter. Do the same for Facebook.</p>
-<div class="sourceCode" id="cb410"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb410-1"><a href="solutions.html#cb410-1" tabindex="-1"></a>overview <span class="ot">&lt;-</span> url_data2 <span class="sc">%&gt;%</span></span>
-<span id="cb410-2"><a href="solutions.html#cb410-2" tabindex="-1"></a>  <span class="fu">group_by</span>(seitenURL) <span class="sc">%&gt;%</span></span>
-<span id="cb410-3"><a href="solutions.html#cb410-3" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">twitter =</span> <span class="fu">sum</span>(seitenAnzahlTwitter),</span>
-<span id="cb410-4"><a href="solutions.html#cb410-4" tabindex="-1"></a>            <span class="at">facebook =</span> <span class="fu">sum</span>(seitenAnzahlFacebook))</span>
-<span id="cb410-5"><a href="solutions.html#cb410-5" tabindex="-1"></a></span>
-<span id="cb410-6"><a href="solutions.html#cb410-6" tabindex="-1"></a>overview <span class="sc">%&gt;%</span></span>
-<span id="cb410-7"><a href="solutions.html#cb410-7" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(twitter))</span></code></pre></div>
+<div class="sourceCode" id="cb413"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb413-1"><a href="solutions.html#cb413-1" tabindex="-1"></a>overview <span class="ot">&lt;-</span> url_data2 <span class="sc">%&gt;%</span></span>
+<span id="cb413-2"><a href="solutions.html#cb413-2" tabindex="-1"></a>  <span class="fu">group_by</span>(seitenURL) <span class="sc">%&gt;%</span></span>
+<span id="cb413-3"><a href="solutions.html#cb413-3" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">twitter =</span> <span class="fu">sum</span>(seitenAnzahlTwitter),</span>
+<span id="cb413-4"><a href="solutions.html#cb413-4" tabindex="-1"></a>            <span class="at">facebook =</span> <span class="fu">sum</span>(seitenAnzahlFacebook))</span>
+<span id="cb413-5"><a href="solutions.html#cb413-5" tabindex="-1"></a></span>
+<span id="cb413-6"><a href="solutions.html#cb413-6" tabindex="-1"></a>overview <span class="sc">%&gt;%</span></span>
+<span id="cb413-7"><a href="solutions.html#cb413-7" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(twitter))</span></code></pre></div>
 <pre><code>## # A tibble: 196 × 3
 ##    seitenURL            twitter facebook
 ##    &lt;chr&gt;                  &lt;int&gt;    &lt;int&gt;
@@ -859,8 +860,8 @@ dataframe.</p>
 ##  9 faz                       29       40
 ## 10 gamestar                  28      344
 ## # ℹ 186 more rows</code></pre>
-<div class="sourceCode" id="cb412"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb412-1"><a href="solutions.html#cb412-1" tabindex="-1"></a>overview <span class="sc">%&gt;%</span></span>
-<span id="cb412-2"><a href="solutions.html#cb412-2" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(facebook))</span></code></pre></div>
+<div class="sourceCode" id="cb415"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb415-1"><a href="solutions.html#cb415-1" tabindex="-1"></a>overview <span class="sc">%&gt;%</span></span>
+<span id="cb415-2"><a href="solutions.html#cb415-2" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(facebook))</span></code></pre></div>
 <pre><code>## # A tibble: 196 × 3
 ##    seitenURL        twitter facebook
 ##    &lt;chr&gt;              &lt;int&gt;    &lt;int&gt;
@@ -884,24 +885,24 @@ The exercise is therefore <strong>OPTIONAL</strong> and is intended as a resourc
 <div id="task-1-11" class="section level3 unnumbered hasAnchor">
 <h3>Task 1<a href="solutions.html#task-1-11" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><em>Solution:</em></p>
-<div class="sourceCode" id="cb414"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb414-1"><a href="solutions.html#cb414-1" tabindex="-1"></a>path <span class="ot">&lt;-</span> <span class="st">&quot;advanced_practice/multiple_files&quot;</span></span>
-<span id="cb414-2"><a href="solutions.html#cb414-2" tabindex="-1"></a></span>
-<span id="cb414-3"><a href="solutions.html#cb414-3" tabindex="-1"></a>file_paths <span class="ot">&lt;-</span> <span class="fu">list.files</span>(</span>
-<span id="cb414-4"><a href="solutions.html#cb414-4" tabindex="-1"></a>  <span class="at">path =</span> path,</span>
-<span id="cb414-5"><a href="solutions.html#cb414-5" tabindex="-1"></a>  <span class="at">pattern =</span> <span class="st">&quot;</span><span class="sc">\\</span><span class="st">.csv$&quot;</span>,</span>
-<span id="cb414-6"><a href="solutions.html#cb414-6" tabindex="-1"></a>  <span class="at">full.names =</span> <span class="cn">TRUE</span></span>
-<span id="cb414-7"><a href="solutions.html#cb414-7" tabindex="-1"></a>)</span>
-<span id="cb414-8"><a href="solutions.html#cb414-8" tabindex="-1"></a></span>
-<span id="cb414-9"><a href="solutions.html#cb414-9" tabindex="-1"></a>file_paths</span></code></pre></div>
+<div class="sourceCode" id="cb417"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb417-1"><a href="solutions.html#cb417-1" tabindex="-1"></a>path <span class="ot">&lt;-</span> <span class="st">&quot;advanced_practice/multiple_files&quot;</span></span>
+<span id="cb417-2"><a href="solutions.html#cb417-2" tabindex="-1"></a></span>
+<span id="cb417-3"><a href="solutions.html#cb417-3" tabindex="-1"></a>file_paths <span class="ot">&lt;-</span> <span class="fu">list.files</span>(</span>
+<span id="cb417-4"><a href="solutions.html#cb417-4" tabindex="-1"></a>  <span class="at">path =</span> path,</span>
+<span id="cb417-5"><a href="solutions.html#cb417-5" tabindex="-1"></a>  <span class="at">pattern =</span> <span class="st">&quot;</span><span class="sc">\\</span><span class="st">.csv$&quot;</span>,</span>
+<span id="cb417-6"><a href="solutions.html#cb417-6" tabindex="-1"></a>  <span class="at">full.names =</span> <span class="cn">TRUE</span></span>
+<span id="cb417-7"><a href="solutions.html#cb417-7" tabindex="-1"></a>)</span>
+<span id="cb417-8"><a href="solutions.html#cb417-8" tabindex="-1"></a></span>
+<span id="cb417-9"><a href="solutions.html#cb417-9" tabindex="-1"></a>file_paths</span></code></pre></div>
 <pre><code>## [1] &quot;data/advanced_practice/multiple_files/journalist_batch_1.csv&quot;
 ## [2] &quot;data/advanced_practice/multiple_files/journalist_batch_2.csv&quot;
 ## [3] &quot;data/advanced_practice/multiple_files/journalist_batch_3.csv&quot;</code></pre>
 <p>Read and combine the files:</p>
-<div class="sourceCode" id="cb416"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb416-1"><a href="solutions.html#cb416-1" tabindex="-1"></a>combined_data <span class="ot">&lt;-</span> file_paths <span class="sc">%&gt;%</span></span>
-<span id="cb416-2"><a href="solutions.html#cb416-2" tabindex="-1"></a>  <span class="fu">map</span>(<span class="sc">~</span> <span class="fu">read.csv2</span>(.x)) <span class="sc">%&gt;%</span></span>
-<span id="cb416-3"><a href="solutions.html#cb416-3" tabindex="-1"></a>  <span class="fu">bind_rows</span>()</span>
-<span id="cb416-4"><a href="solutions.html#cb416-4" tabindex="-1"></a></span>
-<span id="cb416-5"><a href="solutions.html#cb416-5" tabindex="-1"></a>combined_data</span></code></pre></div>
+<div class="sourceCode" id="cb419"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb419-1"><a href="solutions.html#cb419-1" tabindex="-1"></a>combined_data <span class="ot">&lt;-</span> file_paths <span class="sc">%&gt;%</span></span>
+<span id="cb419-2"><a href="solutions.html#cb419-2" tabindex="-1"></a>  <span class="fu">map</span>(<span class="sc">~</span> <span class="fu">read.csv2</span>(.x)) <span class="sc">%&gt;%</span></span>
+<span id="cb419-3"><a href="solutions.html#cb419-3" tabindex="-1"></a>  <span class="fu">bind_rows</span>()</span>
+<span id="cb419-4"><a href="solutions.html#cb419-4" tabindex="-1"></a></span>
+<span id="cb419-5"><a href="solutions.html#cb419-5" tabindex="-1"></a>combined_data</span></code></pre></div>
 <pre><code>##    respondent_id     country employment work_experience autonomy_selection
 ## 1           J001 Switzerland  Temporary              30                  3
 ## 2           J002     Germany  Full-time               2                  5
@@ -982,24 +983,24 @@ and <strong>8 variables</strong>.</p>
 <div id="task-2-deal-with-messy-column-names" class="section level3 unnumbered hasAnchor">
 <h3>Task 2: Deal with messy column names<a href="solutions.html#task-2-deal-with-messy-column-names" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><em>Solution:</em></p>
-<div class="sourceCode" id="cb418"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb418-1"><a href="solutions.html#cb418-1" tabindex="-1"></a>messy_paths <span class="ot">&lt;-</span> <span class="fu">list.files</span>(</span>
-<span id="cb418-2"><a href="solutions.html#cb418-2" tabindex="-1"></a>  <span class="at">path =</span> <span class="st">&quot;advanced_practice/multiple_files_messy&quot;</span>,</span>
-<span id="cb418-3"><a href="solutions.html#cb418-3" tabindex="-1"></a>  <span class="at">pattern =</span> <span class="st">&quot;</span><span class="sc">\\</span><span class="st">.csv$&quot;</span>,</span>
-<span id="cb418-4"><a href="solutions.html#cb418-4" tabindex="-1"></a>  <span class="at">full.names =</span> <span class="cn">TRUE</span></span>
-<span id="cb418-5"><a href="solutions.html#cb418-5" tabindex="-1"></a>)</span>
-<span id="cb418-6"><a href="solutions.html#cb418-6" tabindex="-1"></a></span>
-<span id="cb418-7"><a href="solutions.html#cb418-7" tabindex="-1"></a>combined_messy <span class="ot">&lt;-</span> messy_paths <span class="sc">%&gt;%</span></span>
-<span id="cb418-8"><a href="solutions.html#cb418-8" tabindex="-1"></a>  <span class="fu">map</span>(<span class="sc">~</span> <span class="fu">read.csv2</span>(.x, <span class="at">check.names =</span> <span class="cn">FALSE</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb418-9"><a href="solutions.html#cb418-9" tabindex="-1"></a>        <span class="fu">setNames</span>(</span>
-<span id="cb418-10"><a href="solutions.html#cb418-10" tabindex="-1"></a>          <span class="fu">gsub</span>(</span>
-<span id="cb418-11"><a href="solutions.html#cb418-11" tabindex="-1"></a>            <span class="st">&quot;</span><span class="sc">\\</span><span class="st">s+&quot;</span>, <span class="st">&quot;_&quot;</span>,</span>
-<span id="cb418-12"><a href="solutions.html#cb418-12" tabindex="-1"></a>            <span class="fu">tolower</span>(<span class="fu">trimws</span>(<span class="fu">names</span>(.)))</span>
-<span id="cb418-13"><a href="solutions.html#cb418-13" tabindex="-1"></a>          )</span>
-<span id="cb418-14"><a href="solutions.html#cb418-14" tabindex="-1"></a>        )) <span class="sc">%&gt;%</span></span>
-<span id="cb418-15"><a href="solutions.html#cb418-15" tabindex="-1"></a>  <span class="fu">bind_rows</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb421"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb421-1"><a href="solutions.html#cb421-1" tabindex="-1"></a>messy_paths <span class="ot">&lt;-</span> <span class="fu">list.files</span>(</span>
+<span id="cb421-2"><a href="solutions.html#cb421-2" tabindex="-1"></a>  <span class="at">path =</span> <span class="st">&quot;advanced_practice/multiple_files_messy&quot;</span>,</span>
+<span id="cb421-3"><a href="solutions.html#cb421-3" tabindex="-1"></a>  <span class="at">pattern =</span> <span class="st">&quot;</span><span class="sc">\\</span><span class="st">.csv$&quot;</span>,</span>
+<span id="cb421-4"><a href="solutions.html#cb421-4" tabindex="-1"></a>  <span class="at">full.names =</span> <span class="cn">TRUE</span></span>
+<span id="cb421-5"><a href="solutions.html#cb421-5" tabindex="-1"></a>)</span>
+<span id="cb421-6"><a href="solutions.html#cb421-6" tabindex="-1"></a></span>
+<span id="cb421-7"><a href="solutions.html#cb421-7" tabindex="-1"></a>combined_messy <span class="ot">&lt;-</span> messy_paths <span class="sc">%&gt;%</span></span>
+<span id="cb421-8"><a href="solutions.html#cb421-8" tabindex="-1"></a>  <span class="fu">map</span>(<span class="sc">~</span> <span class="fu">read.csv2</span>(.x, <span class="at">check.names =</span> <span class="cn">FALSE</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb421-9"><a href="solutions.html#cb421-9" tabindex="-1"></a>        <span class="fu">setNames</span>(</span>
+<span id="cb421-10"><a href="solutions.html#cb421-10" tabindex="-1"></a>          <span class="fu">gsub</span>(</span>
+<span id="cb421-11"><a href="solutions.html#cb421-11" tabindex="-1"></a>            <span class="st">&quot;</span><span class="sc">\\</span><span class="st">s+&quot;</span>, <span class="st">&quot;_&quot;</span>,</span>
+<span id="cb421-12"><a href="solutions.html#cb421-12" tabindex="-1"></a>            <span class="fu">tolower</span>(<span class="fu">trimws</span>(<span class="fu">names</span>(.)))</span>
+<span id="cb421-13"><a href="solutions.html#cb421-13" tabindex="-1"></a>          )</span>
+<span id="cb421-14"><a href="solutions.html#cb421-14" tabindex="-1"></a>        )) <span class="sc">%&gt;%</span></span>
+<span id="cb421-15"><a href="solutions.html#cb421-15" tabindex="-1"></a>  <span class="fu">bind_rows</span>()</span></code></pre></div>
 <p>Count the missing values in <code>trust_government</code>:</p>
-<div class="sourceCode" id="cb419"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb419-1"><a href="solutions.html#cb419-1" tabindex="-1"></a>combined_messy <span class="sc">%&gt;%</span></span>
-<span id="cb419-2"><a href="solutions.html#cb419-2" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">is.na</span>(trust_government))</span></code></pre></div>
+<div class="sourceCode" id="cb422"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb422-1"><a href="solutions.html#cb422-1" tabindex="-1"></a>combined_messy <span class="sc">%&gt;%</span></span>
+<span id="cb422-2"><a href="solutions.html#cb422-2" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">is.na</span>(trust_government))</span></code></pre></div>
 <pre><code>##   respondent_id     country employment work_experience autonomy_selection
 ## 1          J053     Germany  Part-time               7                  1
 ## 2          J054 Switzerland  Temporary              22                  4
@@ -1026,20 +1027,20 @@ that column in the combined dataset and fills the unavailable values with
 <div id="task-3-11" class="section level3 unnumbered hasAnchor">
 <h3>Task 3<a href="solutions.html#task-3-11" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><em>Solution:</em></p>
-<div class="sourceCode" id="cb421"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb421-1"><a href="solutions.html#cb421-1" tabindex="-1"></a>profiles <span class="ot">&lt;-</span> <span class="fu">read.csv2</span>(</span>
-<span id="cb421-2"><a href="solutions.html#cb421-2" tabindex="-1"></a>  <span class="st">&quot;advanced_practice/joins/journalist_profiles.csv&quot;</span></span>
-<span id="cb421-3"><a href="solutions.html#cb421-3" tabindex="-1"></a>)</span>
-<span id="cb421-4"><a href="solutions.html#cb421-4" tabindex="-1"></a></span>
-<span id="cb421-5"><a href="solutions.html#cb421-5" tabindex="-1"></a>attitudes <span class="ot">&lt;-</span> <span class="fu">read.csv2</span>(</span>
-<span id="cb421-6"><a href="solutions.html#cb421-6" tabindex="-1"></a>  <span class="st">&quot;advanced_practice/joins/journalist_attitudes.csv&quot;</span></span>
-<span id="cb421-7"><a href="solutions.html#cb421-7" tabindex="-1"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb424"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb424-1"><a href="solutions.html#cb424-1" tabindex="-1"></a>profiles <span class="ot">&lt;-</span> <span class="fu">read.csv2</span>(</span>
+<span id="cb424-2"><a href="solutions.html#cb424-2" tabindex="-1"></a>  <span class="st">&quot;advanced_practice/joins/journalist_profiles.csv&quot;</span></span>
+<span id="cb424-3"><a href="solutions.html#cb424-3" tabindex="-1"></a>)</span>
+<span id="cb424-4"><a href="solutions.html#cb424-4" tabindex="-1"></a></span>
+<span id="cb424-5"><a href="solutions.html#cb424-5" tabindex="-1"></a>attitudes <span class="ot">&lt;-</span> <span class="fu">read.csv2</span>(</span>
+<span id="cb424-6"><a href="solutions.html#cb424-6" tabindex="-1"></a>  <span class="st">&quot;advanced_practice/joins/journalist_attitudes.csv&quot;</span></span>
+<span id="cb424-7"><a href="solutions.html#cb424-7" tabindex="-1"></a>)</span></code></pre></div>
 <p>Create the four joins:</p>
-<div class="sourceCode" id="cb422"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb422-1"><a href="solutions.html#cb422-1" tabindex="-1"></a>inner_data <span class="ot">&lt;-</span> <span class="fu">inner_join</span>(profiles, attitudes, <span class="at">by =</span> <span class="st">&quot;respondent_id&quot;</span>)</span>
-<span id="cb422-2"><a href="solutions.html#cb422-2" tabindex="-1"></a>left_data  <span class="ot">&lt;-</span> <span class="fu">left_join</span>(profiles, attitudes, <span class="at">by =</span> <span class="st">&quot;respondent_id&quot;</span>)</span>
-<span id="cb422-3"><a href="solutions.html#cb422-3" tabindex="-1"></a>right_data <span class="ot">&lt;-</span> <span class="fu">right_join</span>(profiles, attitudes, <span class="at">by =</span> <span class="st">&quot;respondent_id&quot;</span>)</span>
-<span id="cb422-4"><a href="solutions.html#cb422-4" tabindex="-1"></a>full_data  <span class="ot">&lt;-</span> <span class="fu">full_join</span>(profiles, attitudes, <span class="at">by =</span> <span class="st">&quot;respondent_id&quot;</span>)</span>
-<span id="cb422-5"><a href="solutions.html#cb422-5" tabindex="-1"></a></span>
-<span id="cb422-6"><a href="solutions.html#cb422-6" tabindex="-1"></a>inner_data</span></code></pre></div>
+<div class="sourceCode" id="cb425"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb425-1"><a href="solutions.html#cb425-1" tabindex="-1"></a>inner_data <span class="ot">&lt;-</span> <span class="fu">inner_join</span>(profiles, attitudes, <span class="at">by =</span> <span class="st">&quot;respondent_id&quot;</span>)</span>
+<span id="cb425-2"><a href="solutions.html#cb425-2" tabindex="-1"></a>left_data  <span class="ot">&lt;-</span> <span class="fu">left_join</span>(profiles, attitudes, <span class="at">by =</span> <span class="st">&quot;respondent_id&quot;</span>)</span>
+<span id="cb425-3"><a href="solutions.html#cb425-3" tabindex="-1"></a>right_data <span class="ot">&lt;-</span> <span class="fu">right_join</span>(profiles, attitudes, <span class="at">by =</span> <span class="st">&quot;respondent_id&quot;</span>)</span>
+<span id="cb425-4"><a href="solutions.html#cb425-4" tabindex="-1"></a>full_data  <span class="ot">&lt;-</span> <span class="fu">full_join</span>(profiles, attitudes, <span class="at">by =</span> <span class="st">&quot;respondent_id&quot;</span>)</span>
+<span id="cb425-5"><a href="solutions.html#cb425-5" tabindex="-1"></a></span>
+<span id="cb425-6"><a href="solutions.html#cb425-6" tabindex="-1"></a>inner_data</span></code></pre></div>
 <pre><code>##    respondent_id     country employment work_experience autonomy_selection
 ## 1           J111 Switzerland Freelancer              16                  2
 ## 2           J112     Austria  Temporary              19                  3
@@ -1062,7 +1063,7 @@ that column in the combined dataset and fills the unavailable values with
 ## 8                  1                5                   2
 ## 9                  2                1                   3
 ## 10                 3                2                   4</code></pre>
-<div class="sourceCode" id="cb424"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb424-1"><a href="solutions.html#cb424-1" tabindex="-1"></a>left_data</span></code></pre></div>
+<div class="sourceCode" id="cb427"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb427-1"><a href="solutions.html#cb427-1" tabindex="-1"></a>left_data</span></code></pre></div>
 <pre><code>##    respondent_id     country employment work_experience autonomy_selection
 ## 1           J101     Germany  Full-time              15                 NA
 ## 2           J102 Switzerland  Part-time              18                 NA
@@ -1105,7 +1106,7 @@ that column in the combined dataset and fills the unavailable values with
 ## 18                 1                5                   2
 ## 19                 2                1                   3
 ## 20                 3                2                   4</code></pre>
-<div class="sourceCode" id="cb426"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb426-1"><a href="solutions.html#cb426-1" tabindex="-1"></a>right_data</span></code></pre></div>
+<div class="sourceCode" id="cb429"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb429-1"><a href="solutions.html#cb429-1" tabindex="-1"></a>right_data</span></code></pre></div>
 <pre><code>##    respondent_id     country employment work_experience autonomy_selection
 ## 1           J111 Switzerland Freelancer              16                  2
 ## 2           J112     Austria  Temporary              19                  3
@@ -1148,7 +1149,7 @@ that column in the combined dataset and fills the unavailable values with
 ## 18                 1                5                   2
 ## 19                 2                1                   3
 ## 20                 3                2                   4</code></pre>
-<div class="sourceCode" id="cb428"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb428-1"><a href="solutions.html#cb428-1" tabindex="-1"></a>full_data</span></code></pre></div>
+<div class="sourceCode" id="cb431"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb431-1"><a href="solutions.html#cb431-1" tabindex="-1"></a>full_data</span></code></pre></div>
 <pre><code>##    respondent_id     country employment work_experience autonomy_selection
 ## 1           J101     Germany  Full-time              15                 NA
 ## 2           J102 Switzerland  Part-time              18                 NA
@@ -1226,8 +1227,8 @@ that column in the combined dataset and fills the unavailable values with
 <li><code>full_join()</code> keeps all cases found in either dataset.</li>
 </ul>
 <p>The bonus task can be solved with:</p>
-<div class="sourceCode" id="cb430"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb430-1"><a href="solutions.html#cb430-1" tabindex="-1"></a>profiles <span class="sc">%&gt;%</span></span>
-<span id="cb430-2"><a href="solutions.html#cb430-2" tabindex="-1"></a>  <span class="fu">anti_join</span>(attitudes, <span class="at">by =</span> <span class="st">&quot;respondent_id&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb433"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb433-1"><a href="solutions.html#cb433-1" tabindex="-1"></a>profiles <span class="sc">%&gt;%</span></span>
+<span id="cb433-2"><a href="solutions.html#cb433-2" tabindex="-1"></a>  <span class="fu">anti_join</span>(attitudes, <span class="at">by =</span> <span class="st">&quot;respondent_id&quot;</span>)</span></code></pre></div>
 <pre><code>##    respondent_id     country employment work_experience
 ## 1           J101     Germany  Full-time              15
 ## 2           J102 Switzerland  Part-time              18
@@ -1243,11 +1244,11 @@ that column in the combined dataset and fills the unavailable values with
 <div id="task-4-9" class="section level3 unnumbered hasAnchor">
 <h3>Task 4<a href="solutions.html#task-4-9" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><em>Solution:</em></p>
-<div class="sourceCode" id="cb432"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb432-1"><a href="solutions.html#cb432-1" tabindex="-1"></a>panel_wide <span class="ot">&lt;-</span> <span class="fu">read.csv2</span>(</span>
-<span id="cb432-2"><a href="solutions.html#cb432-2" tabindex="-1"></a>  <span class="st">&quot;advanced_practice/panel/journalist_panel_wide.csv&quot;</span></span>
-<span id="cb432-3"><a href="solutions.html#cb432-3" tabindex="-1"></a>)</span>
-<span id="cb432-4"><a href="solutions.html#cb432-4" tabindex="-1"></a></span>
-<span id="cb432-5"><a href="solutions.html#cb432-5" tabindex="-1"></a>panel_wide</span></code></pre></div>
+<div class="sourceCode" id="cb435"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb435-1"><a href="solutions.html#cb435-1" tabindex="-1"></a>panel_wide <span class="ot">&lt;-</span> <span class="fu">read.csv2</span>(</span>
+<span id="cb435-2"><a href="solutions.html#cb435-2" tabindex="-1"></a>  <span class="st">&quot;advanced_practice/panel/journalist_panel_wide.csv&quot;</span></span>
+<span id="cb435-3"><a href="solutions.html#cb435-3" tabindex="-1"></a>)</span>
+<span id="cb435-4"><a href="solutions.html#cb435-4" tabindex="-1"></a></span>
+<span id="cb435-5"><a href="solutions.html#cb435-5" tabindex="-1"></a>panel_wide</span></code></pre></div>
 <pre><code>##    respondent_id     country autonomy_selection_w1 autonomy_selection_w2
 ## 1           J201     Germany                     2                     2
 ## 2           J202 Switzerland                     3                     3
@@ -1271,15 +1272,15 @@ that column in the combined dataset and fills the unavailable values with
 ## 9                    2                   1
 ## 10                   3                   4</code></pre>
 <p>Transform the data into long format:</p>
-<div class="sourceCode" id="cb434"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb434-1"><a href="solutions.html#cb434-1" tabindex="-1"></a>panel_long <span class="ot">&lt;-</span> panel_wide <span class="sc">%&gt;%</span></span>
-<span id="cb434-2"><a href="solutions.html#cb434-2" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(</span>
-<span id="cb434-3"><a href="solutions.html#cb434-3" tabindex="-1"></a>    <span class="at">cols =</span> <span class="sc">-</span><span class="fu">c</span>(respondent_id, country),</span>
-<span id="cb434-4"><a href="solutions.html#cb434-4" tabindex="-1"></a>    <span class="at">names_to =</span> <span class="fu">c</span>(<span class="st">&quot;measure&quot;</span>, <span class="st">&quot;wave&quot;</span>),</span>
-<span id="cb434-5"><a href="solutions.html#cb434-5" tabindex="-1"></a>    <span class="at">names_pattern =</span> <span class="st">&quot;(.*)_(w</span><span class="sc">\\</span><span class="st">d+)&quot;</span>,</span>
-<span id="cb434-6"><a href="solutions.html#cb434-6" tabindex="-1"></a>    <span class="at">values_to =</span> <span class="st">&quot;score&quot;</span></span>
-<span id="cb434-7"><a href="solutions.html#cb434-7" tabindex="-1"></a>  )</span>
-<span id="cb434-8"><a href="solutions.html#cb434-8" tabindex="-1"></a></span>
-<span id="cb434-9"><a href="solutions.html#cb434-9" tabindex="-1"></a>panel_long</span></code></pre></div>
+<div class="sourceCode" id="cb437"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb437-1"><a href="solutions.html#cb437-1" tabindex="-1"></a>panel_long <span class="ot">&lt;-</span> panel_wide <span class="sc">%&gt;%</span></span>
+<span id="cb437-2"><a href="solutions.html#cb437-2" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(</span>
+<span id="cb437-3"><a href="solutions.html#cb437-3" tabindex="-1"></a>    <span class="at">cols =</span> <span class="sc">-</span><span class="fu">c</span>(respondent_id, country),</span>
+<span id="cb437-4"><a href="solutions.html#cb437-4" tabindex="-1"></a>    <span class="at">names_to =</span> <span class="fu">c</span>(<span class="st">&quot;measure&quot;</span>, <span class="st">&quot;wave&quot;</span>),</span>
+<span id="cb437-5"><a href="solutions.html#cb437-5" tabindex="-1"></a>    <span class="at">names_pattern =</span> <span class="st">&quot;(.*)_(w</span><span class="sc">\\</span><span class="st">d+)&quot;</span>,</span>
+<span id="cb437-6"><a href="solutions.html#cb437-6" tabindex="-1"></a>    <span class="at">values_to =</span> <span class="st">&quot;score&quot;</span></span>
+<span id="cb437-7"><a href="solutions.html#cb437-7" tabindex="-1"></a>  )</span>
+<span id="cb437-8"><a href="solutions.html#cb437-8" tabindex="-1"></a></span>
+<span id="cb437-9"><a href="solutions.html#cb437-9" tabindex="-1"></a>panel_long</span></code></pre></div>
 <pre><code>## # A tibble: 40 × 5
 ##    respondent_id country     measure            wave  score
 ##    &lt;chr&gt;         &lt;chr&gt;       &lt;chr&gt;              &lt;chr&gt; &lt;int&gt;
@@ -1295,14 +1296,14 @@ that column in the combined dataset and fills the unavailable values with
 ## 10 J203          Austria     autonomy_selection w2        5
 ## # ℹ 30 more rows</code></pre>
 <p>Transform it back into wide format:</p>
-<div class="sourceCode" id="cb436"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb436-1"><a href="solutions.html#cb436-1" tabindex="-1"></a>panel_wide_again <span class="ot">&lt;-</span> panel_long <span class="sc">%&gt;%</span></span>
-<span id="cb436-2"><a href="solutions.html#cb436-2" tabindex="-1"></a>  <span class="fu">pivot_wider</span>(</span>
-<span id="cb436-3"><a href="solutions.html#cb436-3" tabindex="-1"></a>    <span class="at">names_from =</span> <span class="fu">c</span>(measure, wave),</span>
-<span id="cb436-4"><a href="solutions.html#cb436-4" tabindex="-1"></a>    <span class="at">names_sep =</span> <span class="st">&quot;_&quot;</span>,</span>
-<span id="cb436-5"><a href="solutions.html#cb436-5" tabindex="-1"></a>    <span class="at">values_from =</span> score</span>
-<span id="cb436-6"><a href="solutions.html#cb436-6" tabindex="-1"></a>  )</span>
-<span id="cb436-7"><a href="solutions.html#cb436-7" tabindex="-1"></a></span>
-<span id="cb436-8"><a href="solutions.html#cb436-8" tabindex="-1"></a>panel_wide_again</span></code></pre></div>
+<div class="sourceCode" id="cb439"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb439-1"><a href="solutions.html#cb439-1" tabindex="-1"></a>panel_wide_again <span class="ot">&lt;-</span> panel_long <span class="sc">%&gt;%</span></span>
+<span id="cb439-2"><a href="solutions.html#cb439-2" tabindex="-1"></a>  <span class="fu">pivot_wider</span>(</span>
+<span id="cb439-3"><a href="solutions.html#cb439-3" tabindex="-1"></a>    <span class="at">names_from =</span> <span class="fu">c</span>(measure, wave),</span>
+<span id="cb439-4"><a href="solutions.html#cb439-4" tabindex="-1"></a>    <span class="at">names_sep =</span> <span class="st">&quot;_&quot;</span>,</span>
+<span id="cb439-5"><a href="solutions.html#cb439-5" tabindex="-1"></a>    <span class="at">values_from =</span> score</span>
+<span id="cb439-6"><a href="solutions.html#cb439-6" tabindex="-1"></a>  )</span>
+<span id="cb439-7"><a href="solutions.html#cb439-7" tabindex="-1"></a></span>
+<span id="cb439-8"><a href="solutions.html#cb439-8" tabindex="-1"></a>panel_wide_again</span></code></pre></div>
 <pre><code>## # A tibble: 10 × 6
 ##    respondent_id country     autonomy_selection_w1 autonomy_selection_w2
 ##    &lt;chr&gt;         &lt;chr&gt;                       &lt;int&gt;                 &lt;int&gt;
@@ -1323,8 +1324,8 @@ version contains <strong>40 rows and 5 columns</strong>.</p>
 <div id="task-5-5" class="section level3 unnumbered hasAnchor">
 <h3>Task 5<a href="solutions.html#task-5-5" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Select <code>respondent_id</code> and all autonomy variables:</p>
-<div class="sourceCode" id="cb438"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb438-1"><a href="solutions.html#cb438-1" tabindex="-1"></a>combined_data <span class="sc">%&gt;%</span></span>
-<span id="cb438-2"><a href="solutions.html#cb438-2" tabindex="-1"></a>  <span class="fu">select</span>(respondent_id, <span class="fu">starts_with</span>(<span class="st">&quot;autonomy&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb441"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb441-1"><a href="solutions.html#cb441-1" tabindex="-1"></a>combined_data <span class="sc">%&gt;%</span></span>
+<span id="cb441-2"><a href="solutions.html#cb441-2" tabindex="-1"></a>  <span class="fu">select</span>(respondent_id, <span class="fu">starts_with</span>(<span class="st">&quot;autonomy&quot;</span>))</span></code></pre></div>
 <pre><code>##    respondent_id autonomy_selection autonomy_emphasis
 ## 1           J001                  3                 2
 ## 2           J002                  5                 5
@@ -1363,8 +1364,8 @@ version contains <strong>40 rows and 5 columns</strong>.</p>
 ## 35          J035                  3                 3
 ## 36          J036                  3                 4</code></pre>
 <p>Select numeric variables:</p>
-<div class="sourceCode" id="cb440"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb440-1"><a href="solutions.html#cb440-1" tabindex="-1"></a>combined_data <span class="sc">%&gt;%</span></span>
-<span id="cb440-2"><a href="solutions.html#cb440-2" tabindex="-1"></a>  <span class="fu">select</span>(<span class="fu">where</span>(is.numeric))</span></code></pre></div>
+<div class="sourceCode" id="cb443"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb443-1"><a href="solutions.html#cb443-1" tabindex="-1"></a>combined_data <span class="sc">%&gt;%</span></span>
+<span id="cb443-2"><a href="solutions.html#cb443-2" tabindex="-1"></a>  <span class="fu">select</span>(<span class="fu">where</span>(is.numeric))</span></code></pre></div>
 <pre><code>##    work_experience autonomy_selection autonomy_emphasis trust_government
 ## 1               30                  3                 2                4
 ## 2                2                  5                 5                4
@@ -1440,8 +1441,8 @@ version contains <strong>40 rows and 5 columns</strong>.</p>
 ## 35        4
 ## 36        5</code></pre>
 <p>Select character variables:</p>
-<div class="sourceCode" id="cb442"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb442-1"><a href="solutions.html#cb442-1" tabindex="-1"></a>combined_data <span class="sc">%&gt;%</span></span>
-<span id="cb442-2"><a href="solutions.html#cb442-2" tabindex="-1"></a>  <span class="fu">select</span>(<span class="fu">where</span>(is.character))</span></code></pre></div>
+<div class="sourceCode" id="cb445"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb445-1"><a href="solutions.html#cb445-1" tabindex="-1"></a>combined_data <span class="sc">%&gt;%</span></span>
+<span id="cb445-2"><a href="solutions.html#cb445-2" tabindex="-1"></a>  <span class="fu">select</span>(<span class="fu">where</span>(is.character))</span></code></pre></div>
 <pre><code>##    respondent_id     country employment
 ## 1           J001 Switzerland  Temporary
 ## 2           J002     Germany  Full-time
@@ -1480,8 +1481,8 @@ version contains <strong>40 rows and 5 columns</strong>.</p>
 ## 35          J035     Germany  Part-time
 ## 36          J036     Austria  Full-time</code></pre>
 <p>Reorder columns:</p>
-<div class="sourceCode" id="cb444"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb444-1"><a href="solutions.html#cb444-1" tabindex="-1"></a>combined_data <span class="sc">%&gt;%</span></span>
-<span id="cb444-2"><a href="solutions.html#cb444-2" tabindex="-1"></a>  <span class="fu">select</span>(respondent_id, country, employment, <span class="fu">everything</span>())</span></code></pre></div>
+<div class="sourceCode" id="cb447"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb447-1"><a href="solutions.html#cb447-1" tabindex="-1"></a>combined_data <span class="sc">%&gt;%</span></span>
+<span id="cb447-2"><a href="solutions.html#cb447-2" tabindex="-1"></a>  <span class="fu">select</span>(respondent_id, country, employment, <span class="fu">everything</span>())</span></code></pre></div>
 <pre><code>##    respondent_id     country employment work_experience autonomy_selection
 ## 1           J001 Switzerland  Temporary              30                  3
 ## 2           J002     Germany  Full-time               2                  5
@@ -1557,8 +1558,8 @@ version contains <strong>40 rows and 5 columns</strong>.</p>
 ## 35                 3                1        4
 ## 36                 4                1        5</code></pre>
 <p>Select freelancers:</p>
-<div class="sourceCode" id="cb446"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb446-1"><a href="solutions.html#cb446-1" tabindex="-1"></a>combined_data <span class="sc">%&gt;%</span></span>
-<span id="cb446-2"><a href="solutions.html#cb446-2" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">str_detect</span>(employment, <span class="st">&quot;Free&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb449"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb449-1"><a href="solutions.html#cb449-1" tabindex="-1"></a>combined_data <span class="sc">%&gt;%</span></span>
+<span id="cb449-2"><a href="solutions.html#cb449-2" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">str_detect</span>(employment, <span class="st">&quot;Free&quot;</span>))</span></code></pre></div>
 <pre><code>##   respondent_id     country employment work_experience autonomy_selection
 ## 1          J003     Austria Freelancer              21                  4
 ## 2          J020     Germany Freelancer               4                  1
@@ -1578,8 +1579,8 @@ version contains <strong>40 rows and 5 columns</strong>.</p>
 ## 7                 5                2        2
 ## 8                 5                2        4</code></pre>
 <p>Select employment categories ending in <code>"time"</code>:</p>
-<div class="sourceCode" id="cb448"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb448-1"><a href="solutions.html#cb448-1" tabindex="-1"></a>combined_data <span class="sc">%&gt;%</span></span>
-<span id="cb448-2"><a href="solutions.html#cb448-2" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">str_detect</span>(employment, <span class="st">&quot;time$&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb451"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb451-1"><a href="solutions.html#cb451-1" tabindex="-1"></a>combined_data <span class="sc">%&gt;%</span></span>
+<span id="cb451-2"><a href="solutions.html#cb451-2" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">str_detect</span>(employment, <span class="st">&quot;time$&quot;</span>))</span></code></pre></div>
 <pre><code>##    respondent_id     country employment work_experience autonomy_selection
 ## 1           J002     Germany  Full-time               2                  5
 ## 2           J006 Switzerland  Part-time              26                  4
@@ -1623,8 +1624,8 @@ version contains <strong>40 rows and 5 columns</strong>.</p>
 ## 19                 3                1        4
 ## 20                 4                1        5</code></pre>
 <p>Select both groups:</p>
-<div class="sourceCode" id="cb450"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb450-1"><a href="solutions.html#cb450-1" tabindex="-1"></a>combined_data <span class="sc">%&gt;%</span></span>
-<span id="cb450-2"><a href="solutions.html#cb450-2" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">str_detect</span>(employment, <span class="st">&quot;Free|time$&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb453"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb453-1"><a href="solutions.html#cb453-1" tabindex="-1"></a>combined_data <span class="sc">%&gt;%</span></span>
+<span id="cb453-2"><a href="solutions.html#cb453-2" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">str_detect</span>(employment, <span class="st">&quot;Free|time$&quot;</span>))</span></code></pre></div>
 <pre><code>##    respondent_id     country employment work_experience autonomy_selection
 ## 1           J002     Germany  Full-time               2                  5
 ## 2           J003     Austria Freelancer              21                  4
@@ -1687,27 +1688,27 @@ version contains <strong>40 rows and 5 columns</strong>.</p>
 <div id="task-6-4" class="section level3 unnumbered hasAnchor">
 <h3>Task 6<a href="solutions.html#task-6-4" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><em>Solution:</em></p>
-<div class="sourceCode" id="cb452"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb452-1"><a href="solutions.html#cb452-1" tabindex="-1"></a>advanced_summary <span class="ot">&lt;-</span> profiles <span class="sc">%&gt;%</span></span>
-<span id="cb452-2"><a href="solutions.html#cb452-2" tabindex="-1"></a>  <span class="fu">full_join</span>(attitudes, <span class="at">by =</span> <span class="st">&quot;respondent_id&quot;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb452-3"><a href="solutions.html#cb452-3" tabindex="-1"></a>  <span class="fu">select</span>(</span>
-<span id="cb452-4"><a href="solutions.html#cb452-4" tabindex="-1"></a>    respondent_id,</span>
-<span id="cb452-5"><a href="solutions.html#cb452-5" tabindex="-1"></a>    country,</span>
-<span id="cb452-6"><a href="solutions.html#cb452-6" tabindex="-1"></a>    employment,</span>
-<span id="cb452-7"><a href="solutions.html#cb452-7" tabindex="-1"></a>    work_experience,</span>
-<span id="cb452-8"><a href="solutions.html#cb452-8" tabindex="-1"></a>    <span class="fu">starts_with</span>(<span class="st">&quot;autonomy&quot;</span>),</span>
-<span id="cb452-9"><a href="solutions.html#cb452-9" tabindex="-1"></a>    trust_government</span>
-<span id="cb452-10"><a href="solutions.html#cb452-10" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb452-11"><a href="solutions.html#cb452-11" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(employment)) <span class="sc">%&gt;%</span></span>
-<span id="cb452-12"><a href="solutions.html#cb452-12" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">str_detect</span>(employment, <span class="st">&quot;Free&quot;</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb452-13"><a href="solutions.html#cb452-13" tabindex="-1"></a>  <span class="fu">group_by</span>(country) <span class="sc">%&gt;%</span></span>
-<span id="cb452-14"><a href="solutions.html#cb452-14" tabindex="-1"></a>  <span class="fu">summarize</span>(</span>
-<span id="cb452-15"><a href="solutions.html#cb452-15" tabindex="-1"></a>    <span class="at">mean_autonomy =</span> <span class="fu">mean</span>(autonomy_selection, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb452-16"><a href="solutions.html#cb452-16" tabindex="-1"></a>    <span class="at">mean_experience =</span> <span class="fu">mean</span>(work_experience, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb452-17"><a href="solutions.html#cb452-17" tabindex="-1"></a>    <span class="at">n =</span> <span class="fu">n</span>()</span>
-<span id="cb452-18"><a href="solutions.html#cb452-18" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb452-19"><a href="solutions.html#cb452-19" tabindex="-1"></a>  <span class="fu">arrange</span>(country)</span>
-<span id="cb452-20"><a href="solutions.html#cb452-20" tabindex="-1"></a></span>
-<span id="cb452-21"><a href="solutions.html#cb452-21" tabindex="-1"></a>advanced_summary</span></code></pre></div>
+<div class="sourceCode" id="cb455"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb455-1"><a href="solutions.html#cb455-1" tabindex="-1"></a>advanced_summary <span class="ot">&lt;-</span> profiles <span class="sc">%&gt;%</span></span>
+<span id="cb455-2"><a href="solutions.html#cb455-2" tabindex="-1"></a>  <span class="fu">full_join</span>(attitudes, <span class="at">by =</span> <span class="st">&quot;respondent_id&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb455-3"><a href="solutions.html#cb455-3" tabindex="-1"></a>  <span class="fu">select</span>(</span>
+<span id="cb455-4"><a href="solutions.html#cb455-4" tabindex="-1"></a>    respondent_id,</span>
+<span id="cb455-5"><a href="solutions.html#cb455-5" tabindex="-1"></a>    country,</span>
+<span id="cb455-6"><a href="solutions.html#cb455-6" tabindex="-1"></a>    employment,</span>
+<span id="cb455-7"><a href="solutions.html#cb455-7" tabindex="-1"></a>    work_experience,</span>
+<span id="cb455-8"><a href="solutions.html#cb455-8" tabindex="-1"></a>    <span class="fu">starts_with</span>(<span class="st">&quot;autonomy&quot;</span>),</span>
+<span id="cb455-9"><a href="solutions.html#cb455-9" tabindex="-1"></a>    trust_government</span>
+<span id="cb455-10"><a href="solutions.html#cb455-10" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb455-11"><a href="solutions.html#cb455-11" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(employment)) <span class="sc">%&gt;%</span></span>
+<span id="cb455-12"><a href="solutions.html#cb455-12" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">str_detect</span>(employment, <span class="st">&quot;Free&quot;</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb455-13"><a href="solutions.html#cb455-13" tabindex="-1"></a>  <span class="fu">group_by</span>(country) <span class="sc">%&gt;%</span></span>
+<span id="cb455-14"><a href="solutions.html#cb455-14" tabindex="-1"></a>  <span class="fu">summarize</span>(</span>
+<span id="cb455-15"><a href="solutions.html#cb455-15" tabindex="-1"></a>    <span class="at">mean_autonomy =</span> <span class="fu">mean</span>(autonomy_selection, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb455-16"><a href="solutions.html#cb455-16" tabindex="-1"></a>    <span class="at">mean_experience =</span> <span class="fu">mean</span>(work_experience, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb455-17"><a href="solutions.html#cb455-17" tabindex="-1"></a>    <span class="at">n =</span> <span class="fu">n</span>()</span>
+<span id="cb455-18"><a href="solutions.html#cb455-18" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb455-19"><a href="solutions.html#cb455-19" tabindex="-1"></a>  <span class="fu">arrange</span>(country)</span>
+<span id="cb455-20"><a href="solutions.html#cb455-20" tabindex="-1"></a></span>
+<span id="cb455-21"><a href="solutions.html#cb455-21" tabindex="-1"></a>advanced_summary</span></code></pre></div>
 <pre><code>## # A tibble: 3 × 4
 ##   country     mean_autonomy mean_experience     n
 ##   &lt;chr&gt;               &lt;dbl&gt;           &lt;dbl&gt; &lt;int&gt;
@@ -1730,9 +1731,9 @@ create a very basic scatter plot using <code>ggplot2</code> and the respective
 variables to the visual properties. Use <code>geom_point()</code> to add points to
 the plot.</p>
 <p><em>Solution:</em></p>
-<div class="sourceCode" id="cb454"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb454-1"><a href="solutions.html#cb454-1" tabindex="-1"></a>WoJ <span class="sc">%&gt;%</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> work_experience, <span class="at">y =</span> trust_politicians)) <span class="sc">+</span></span>
-<span id="cb454-2"><a href="solutions.html#cb454-2" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code></pre></div>
-<p><img src="Intro-to-R_files/figure-html/unnamed-chunk-247-1.png" alt="" width="672" /></p>
+<div class="sourceCode" id="cb457"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb457-1"><a href="solutions.html#cb457-1" tabindex="-1"></a>WoJ <span class="sc">%&gt;%</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> work_experience, <span class="at">y =</span> trust_politicians)) <span class="sc">+</span></span>
+<span id="cb457-2"><a href="solutions.html#cb457-2" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code></pre></div>
+<p><img src="Intro-to-R_files/figure-html/unnamed-chunk-250-1.png" alt="" width="672" /></p>
 </div>
 <div id="task-2-11" class="section level3 unnumbered hasAnchor">
 <h3>Task 2<a href="solutions.html#task-2-11" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -1741,10 +1742,10 @@ this code to your plot to create a regression line:
 <code>+ geom_smooth(method = lm, se = FALSE)</code>.</p>
 <p>What can you conclude from the regression line?</p>
 <p><em>Solution:</em></p>
-<div class="sourceCode" id="cb455"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb455-1"><a href="solutions.html#cb455-1" tabindex="-1"></a>WoJ <span class="sc">%&gt;%</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> work_experience, <span class="at">y =</span> trust_politicians)) <span class="sc">+</span></span>
-<span id="cb455-2"><a href="solutions.html#cb455-2" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb455-3"><a href="solutions.html#cb455-3" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> lm, <span class="at">se =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
-<p><img src="Intro-to-R_files/figure-html/unnamed-chunk-248-1.png" alt="" width="672" /></p>
+<div class="sourceCode" id="cb458"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb458-1"><a href="solutions.html#cb458-1" tabindex="-1"></a>WoJ <span class="sc">%&gt;%</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> work_experience, <span class="at">y =</span> trust_politicians)) <span class="sc">+</span></span>
+<span id="cb458-2"><a href="solutions.html#cb458-2" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb458-3"><a href="solutions.html#cb458-3" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> lm, <span class="at">se =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
+<p><img src="Intro-to-R_files/figure-html/unnamed-chunk-251-1.png" alt="" width="672" /></p>
 <p>The regression line shows us that there is no relationship between work
 experience and trust in politicians. In other words, more experienced
 journalists <strong>do not</strong> become less trusting in politicians.</p>
@@ -1758,11 +1759,11 @@ specific country context?</p>
 <p>Try to create a visualization to answer this question using
 <code>facet_wrap()</code>.</p>
 <p><em>Solution:</em></p>
-<div class="sourceCode" id="cb456"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb456-1"><a href="solutions.html#cb456-1" tabindex="-1"></a>WoJ <span class="sc">%&gt;%</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> work_experience, <span class="at">y =</span> trust_politicians)) <span class="sc">+</span></span>
-<span id="cb456-2"><a href="solutions.html#cb456-2" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb456-3"><a href="solutions.html#cb456-3" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> lm, <span class="at">se =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
-<span id="cb456-4"><a href="solutions.html#cb456-4" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>country)</span></code></pre></div>
-<p><img src="Intro-to-R_files/figure-html/unnamed-chunk-249-1.png" alt="" width="672" /></p>
+<div class="sourceCode" id="cb459"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb459-1"><a href="solutions.html#cb459-1" tabindex="-1"></a>WoJ <span class="sc">%&gt;%</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> work_experience, <span class="at">y =</span> trust_politicians)) <span class="sc">+</span></span>
+<span id="cb459-2"><a href="solutions.html#cb459-2" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb459-3"><a href="solutions.html#cb459-3" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> lm, <span class="at">se =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb459-4"><a href="solutions.html#cb459-4" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>country)</span></code></pre></div>
+<p><img src="Intro-to-R_files/figure-html/unnamed-chunk-252-1.png" alt="" width="672" /></p>
 </div>
 <div id="task-4-10" class="section level3 unnumbered hasAnchor">
 <h3>Task 4<a href="solutions.html#task-4-10" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -1771,15 +1772,15 @@ cross-country differences. Let’s aim to create a visualization that
 illustrates these differences across countries more distinctly.</p>
 <p>Remove the <code>facet_wrap()</code> and the <code>geom_point()</code> code line. This leaves
 you with this graph:</p>
-<div class="sourceCode" id="cb457"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb457-1"><a href="solutions.html#cb457-1" tabindex="-1"></a>WoJ <span class="sc">%&gt;%</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> work_experience, <span class="at">y =</span> trust_politicians)) <span class="sc">+</span></span>
-<span id="cb457-2"><a href="solutions.html#cb457-2" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> lm, <span class="at">se =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
-<p><img src="Intro-to-R_files/figure-html/unnamed-chunk-250-1.png" alt="" width="672" /></p>
+<div class="sourceCode" id="cb460"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb460-1"><a href="solutions.html#cb460-1" tabindex="-1"></a>WoJ <span class="sc">%&gt;%</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> work_experience, <span class="at">y =</span> trust_politicians)) <span class="sc">+</span></span>
+<span id="cb460-2"><a href="solutions.html#cb460-2" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> lm, <span class="at">se =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
+<p><img src="Intro-to-R_files/figure-html/unnamed-chunk-253-1.png" alt="" width="672" /></p>
 <p>Now, display every country in a separate color by using the <code>color</code>
 argument inside the <code>aes()</code> function.</p>
 <p><em>Solution:</em></p>
-<div class="sourceCode" id="cb458"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb458-1"><a href="solutions.html#cb458-1" tabindex="-1"></a>WoJ <span class="sc">%&gt;%</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> work_experience, <span class="at">y =</span> trust_politicians, <span class="at">color =</span> country)) <span class="sc">+</span></span>
-<span id="cb458-2"><a href="solutions.html#cb458-2" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> lm, <span class="at">se =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
-<p><img src="Intro-to-R_files/figure-html/unnamed-chunk-251-1.png" alt="" width="672" /></p>
+<div class="sourceCode" id="cb461"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb461-1"><a href="solutions.html#cb461-1" tabindex="-1"></a>WoJ <span class="sc">%&gt;%</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> work_experience, <span class="at">y =</span> trust_politicians, <span class="at">color =</span> country)) <span class="sc">+</span></span>
+<span id="cb461-2"><a href="solutions.html#cb461-2" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> lm, <span class="at">se =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
+<p><img src="Intro-to-R_files/figure-html/unnamed-chunk-254-1.png" alt="" width="672" /></p>
 </div>
 <div id="task-5-6" class="section level3 unnumbered hasAnchor">
 <h3>Task 5<a href="solutions.html#task-5-6" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -1789,31 +1790,31 @@ label should read “Years of Work Experience in Journalism”, and the
 y-axis label should read “Trust in Politicians on a 5-point Likert
 Scale”. The label for the color legend should be “Country”.</p>
 <p><em>Solution:</em></p>
-<div class="sourceCode" id="cb459"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb459-1"><a href="solutions.html#cb459-1" tabindex="-1"></a>WoJ <span class="sc">%&gt;%</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> work_experience, <span class="at">y =</span> trust_politicians, <span class="at">color =</span> country)) <span class="sc">+</span></span>
-<span id="cb459-2"><a href="solutions.html#cb459-2" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> lm, <span class="at">se =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
-<span id="cb459-3"><a href="solutions.html#cb459-3" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
-<span id="cb459-4"><a href="solutions.html#cb459-4" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">&quot;Impact of Work Experience on Trust in Politicians&quot;</span>,</span>
-<span id="cb459-5"><a href="solutions.html#cb459-5" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">&quot;Trust in Politicians on a 5-point Likert Scale&quot;</span>,</span>
-<span id="cb459-6"><a href="solutions.html#cb459-6" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">&quot;Years of Work Experience in Journalism&quot;</span>,</span>
-<span id="cb459-7"><a href="solutions.html#cb459-7" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">&quot;Country&quot;</span></span>
-<span id="cb459-8"><a href="solutions.html#cb459-8" tabindex="-1"></a>  )</span></code></pre></div>
-<p><img src="Intro-to-R_files/figure-html/unnamed-chunk-252-1.png" alt="" width="672" /></p>
+<div class="sourceCode" id="cb462"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb462-1"><a href="solutions.html#cb462-1" tabindex="-1"></a>WoJ <span class="sc">%&gt;%</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> work_experience, <span class="at">y =</span> trust_politicians, <span class="at">color =</span> country)) <span class="sc">+</span></span>
+<span id="cb462-2"><a href="solutions.html#cb462-2" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> lm, <span class="at">se =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb462-3"><a href="solutions.html#cb462-3" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb462-4"><a href="solutions.html#cb462-4" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">&quot;Impact of Work Experience on Trust in Politicians&quot;</span>,</span>
+<span id="cb462-5"><a href="solutions.html#cb462-5" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">&quot;Trust in Politicians on a 5-point Likert Scale&quot;</span>,</span>
+<span id="cb462-6"><a href="solutions.html#cb462-6" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">&quot;Years of Work Experience in Journalism&quot;</span>,</span>
+<span id="cb462-7"><a href="solutions.html#cb462-7" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">&quot;Country&quot;</span></span>
+<span id="cb462-8"><a href="solutions.html#cb462-8" tabindex="-1"></a>  )</span></code></pre></div>
+<p><img src="Intro-to-R_files/figure-html/unnamed-chunk-255-1.png" alt="" width="672" /></p>
 </div>
 <div id="task-6-5" class="section level3 unnumbered hasAnchor">
 <h3>Task 6<a href="solutions.html#task-6-5" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Add a nice theme that you like, e.g. <code>theme_minimal()</code>,
 <code>theme_classic()</code> or <code>theme_bw()</code>.</p>
 <p><em>Solution:</em></p>
-<div class="sourceCode" id="cb460"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb460-1"><a href="solutions.html#cb460-1" tabindex="-1"></a>WoJ <span class="sc">%&gt;%</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> work_experience, <span class="at">y =</span> trust_politicians, <span class="at">color =</span> country)) <span class="sc">+</span></span>
-<span id="cb460-2"><a href="solutions.html#cb460-2" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> lm, <span class="at">se =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
-<span id="cb460-3"><a href="solutions.html#cb460-3" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
-<span id="cb460-4"><a href="solutions.html#cb460-4" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">&quot;Impact of Work Experience on Trust in Politicians&quot;</span>,</span>
-<span id="cb460-5"><a href="solutions.html#cb460-5" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">&quot;Trust in Politicians on a 5-point Likert Scale&quot;</span>,</span>
-<span id="cb460-6"><a href="solutions.html#cb460-6" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">&quot;Years of Work Experience&quot;</span>,</span>
-<span id="cb460-7"><a href="solutions.html#cb460-7" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">&quot;Country&quot;</span></span>
-<span id="cb460-8"><a href="solutions.html#cb460-8" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb460-9"><a href="solutions.html#cb460-9" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code></pre></div>
-<p><img src="Intro-to-R_files/figure-html/unnamed-chunk-253-1.png" alt="" width="672" /></p>
+<div class="sourceCode" id="cb463"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb463-1"><a href="solutions.html#cb463-1" tabindex="-1"></a>WoJ <span class="sc">%&gt;%</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> work_experience, <span class="at">y =</span> trust_politicians, <span class="at">color =</span> country)) <span class="sc">+</span></span>
+<span id="cb463-2"><a href="solutions.html#cb463-2" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> lm, <span class="at">se =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb463-3"><a href="solutions.html#cb463-3" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb463-4"><a href="solutions.html#cb463-4" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">&quot;Impact of Work Experience on Trust in Politicians&quot;</span>,</span>
+<span id="cb463-5"><a href="solutions.html#cb463-5" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">&quot;Trust in Politicians on a 5-point Likert Scale&quot;</span>,</span>
+<span id="cb463-6"><a href="solutions.html#cb463-6" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">&quot;Years of Work Experience&quot;</span>,</span>
+<span id="cb463-7"><a href="solutions.html#cb463-7" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">&quot;Country&quot;</span></span>
+<span id="cb463-8"><a href="solutions.html#cb463-8" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb463-9"><a href="solutions.html#cb463-9" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code></pre></div>
+<p><img src="Intro-to-R_files/figure-html/unnamed-chunk-256-1.png" alt="" width="672" /></p>
 </div>
 </div>
 <div id="solutions-for-exercise-7" class="section level2 unnumbered hasAnchor">
@@ -1821,50 +1822,50 @@ Scale”. The label for the color legend should be “Country”.</p>
 <div id="task-1-13" class="section level3 unnumbered hasAnchor">
 <h3>Task 1<a href="solutions.html#task-1-13" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><em>Solution:</em></p>
-<div class="sourceCode" id="cb461"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb461-1"><a href="solutions.html#cb461-1" tabindex="-1"></a>data <span class="sc">%&gt;%</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> country, <span class="at">y =</span> work_experience)) <span class="sc">+</span></span>
-<span id="cb461-2"><a href="solutions.html#cb461-2" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
-<span id="cb461-3"><a href="solutions.html#cb461-3" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
-<span id="cb461-4"><a href="solutions.html#cb461-4" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Country&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Work Experience (Years)&quot;</span>, <span class="at">title =</span> <span class="st">&quot;Distribution of Work Experience by Country&quot;</span>)</span></code></pre></div>
-<p><img src="Intro-to-R_files/figure-html/unnamed-chunk-254-1.png" alt="" width="672" /></p>
+<div class="sourceCode" id="cb464"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb464-1"><a href="solutions.html#cb464-1" tabindex="-1"></a>data <span class="sc">%&gt;%</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> country, <span class="at">y =</span> work_experience)) <span class="sc">+</span></span>
+<span id="cb464-2"><a href="solutions.html#cb464-2" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
+<span id="cb464-3"><a href="solutions.html#cb464-3" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb464-4"><a href="solutions.html#cb464-4" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Country&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Work Experience (Years)&quot;</span>, <span class="at">title =</span> <span class="st">&quot;Distribution of Work Experience by Country&quot;</span>)</span></code></pre></div>
+<p><img src="Intro-to-R_files/figure-html/unnamed-chunk-257-1.png" alt="" width="672" /></p>
 </div>
 <div id="task-2-12" class="section level3 unnumbered hasAnchor">
 <h3>Task 2<a href="solutions.html#task-2-12" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><em>Solution:</em></p>
-<div class="sourceCode" id="cb462"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb462-1"><a href="solutions.html#cb462-1" tabindex="-1"></a>data <span class="sc">%&gt;%</span></span>
-<span id="cb462-2"><a href="solutions.html#cb462-2" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> work_experience, <span class="at">y =</span> trust_government, <span class="at">color =</span> country)) <span class="sc">+</span></span>
-<span id="cb462-3"><a href="solutions.html#cb462-3" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb462-4"><a href="solutions.html#cb462-4" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
-<span id="cb462-5"><a href="solutions.html#cb462-5" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Work Experience (Years)&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Trust in Government&quot;</span>, <span class="at">color =</span> <span class="st">&quot;Country&quot;</span>, <span class="at">title =</span> <span class="st">&quot;Trust in Government by Work Experience and Country&quot;</span>)</span></code></pre></div>
-<p><img src="Intro-to-R_files/figure-html/unnamed-chunk-255-1.png" alt="" width="672" /></p>
+<div class="sourceCode" id="cb465"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb465-1"><a href="solutions.html#cb465-1" tabindex="-1"></a>data <span class="sc">%&gt;%</span></span>
+<span id="cb465-2"><a href="solutions.html#cb465-2" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> work_experience, <span class="at">y =</span> trust_government, <span class="at">color =</span> country)) <span class="sc">+</span></span>
+<span id="cb465-3"><a href="solutions.html#cb465-3" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb465-4"><a href="solutions.html#cb465-4" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb465-5"><a href="solutions.html#cb465-5" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Work Experience (Years)&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Trust in Government&quot;</span>, <span class="at">color =</span> <span class="st">&quot;Country&quot;</span>, <span class="at">title =</span> <span class="st">&quot;Trust in Government by Work Experience and Country&quot;</span>)</span></code></pre></div>
+<p><img src="Intro-to-R_files/figure-html/unnamed-chunk-258-1.png" alt="" width="672" /></p>
 </div>
 <div id="task-3-13" class="section level3 unnumbered hasAnchor">
 <h3>Task 3<a href="solutions.html#task-3-13" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><em>Solution:</em></p>
-<div class="sourceCode" id="cb463"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb463-1"><a href="solutions.html#cb463-1" tabindex="-1"></a>data <span class="sc">%&gt;%</span></span>
-<span id="cb463-2"><a href="solutions.html#cb463-2" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> work_experience, <span class="at">y =</span> trust_government, <span class="at">color =</span> country)) <span class="sc">+</span></span>
-<span id="cb463-3"><a href="solutions.html#cb463-3" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb463-4"><a href="solutions.html#cb463-4" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> name), <span class="at">check_overlap =</span> <span class="cn">TRUE</span>, <span class="at">hjust =</span> <span class="dv">0</span>, <span class="at">vjust =</span> <span class="dv">0</span>) <span class="sc">+</span></span>
-<span id="cb463-5"><a href="solutions.html#cb463-5" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
-<span id="cb463-6"><a href="solutions.html#cb463-6" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Work Experience (Years)&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Trust in Government&quot;</span>, <span class="at">color =</span> <span class="st">&quot;Country&quot;</span>, <span class="at">title =</span> <span class="st">&quot;Trust in Government by Work Experience and Country&quot;</span>)</span></code></pre></div>
-<p><img src="Intro-to-R_files/figure-html/unnamed-chunk-256-1.png" alt="" width="672" /></p>
+<div class="sourceCode" id="cb466"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb466-1"><a href="solutions.html#cb466-1" tabindex="-1"></a>data <span class="sc">%&gt;%</span></span>
+<span id="cb466-2"><a href="solutions.html#cb466-2" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> work_experience, <span class="at">y =</span> trust_government, <span class="at">color =</span> country)) <span class="sc">+</span></span>
+<span id="cb466-3"><a href="solutions.html#cb466-3" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb466-4"><a href="solutions.html#cb466-4" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> name), <span class="at">check_overlap =</span> <span class="cn">TRUE</span>, <span class="at">hjust =</span> <span class="dv">0</span>, <span class="at">vjust =</span> <span class="dv">0</span>) <span class="sc">+</span></span>
+<span id="cb466-5"><a href="solutions.html#cb466-5" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb466-6"><a href="solutions.html#cb466-6" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Work Experience (Years)&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Trust in Government&quot;</span>, <span class="at">color =</span> <span class="st">&quot;Country&quot;</span>, <span class="at">title =</span> <span class="st">&quot;Trust in Government by Work Experience and Country&quot;</span>)</span></code></pre></div>
+<p><img src="Intro-to-R_files/figure-html/unnamed-chunk-259-1.png" alt="" width="672" /></p>
 </div>
 <div id="task-4-11" class="section level3 unnumbered hasAnchor">
 <h3>Task 4<a href="solutions.html#task-4-11" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><em>Solution:</em></p>
-<div class="sourceCode" id="cb464"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb464-1"><a href="solutions.html#cb464-1" tabindex="-1"></a>data <span class="sc">%&gt;%</span></span>
-<span id="cb464-2"><a href="solutions.html#cb464-2" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> country, <span class="at">fill =</span> employment)) <span class="sc">+</span></span>
-<span id="cb464-3"><a href="solutions.html#cb464-3" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="st">&quot;dodge&quot;</span>) <span class="sc">+</span></span>
-<span id="cb464-4"><a href="solutions.html#cb464-4" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
-<span id="cb464-5"><a href="solutions.html#cb464-5" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Country&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Count&quot;</span>, <span class="at">fill =</span> <span class="st">&quot;Employment Type&quot;</span>, <span class="at">title =</span> <span class="st">&quot;Employment Types by Country&quot;</span>)</span></code></pre></div>
-<p><img src="Intro-to-R_files/figure-html/unnamed-chunk-257-1.png" alt="" width="672" /></p>
+<div class="sourceCode" id="cb467"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb467-1"><a href="solutions.html#cb467-1" tabindex="-1"></a>data <span class="sc">%&gt;%</span></span>
+<span id="cb467-2"><a href="solutions.html#cb467-2" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> country, <span class="at">fill =</span> employment)) <span class="sc">+</span></span>
+<span id="cb467-3"><a href="solutions.html#cb467-3" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="st">&quot;dodge&quot;</span>) <span class="sc">+</span></span>
+<span id="cb467-4"><a href="solutions.html#cb467-4" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb467-5"><a href="solutions.html#cb467-5" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Country&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Count&quot;</span>, <span class="at">fill =</span> <span class="st">&quot;Employment Type&quot;</span>, <span class="at">title =</span> <span class="st">&quot;Employment Types by Country&quot;</span>)</span></code></pre></div>
+<p><img src="Intro-to-R_files/figure-html/unnamed-chunk-260-1.png" alt="" width="672" /></p>
 <p><em>Alternative Solution:</em> Those who prefer the width of the bars to be
 aligned can use this code:</p>
-<div class="sourceCode" id="cb465"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb465-1"><a href="solutions.html#cb465-1" tabindex="-1"></a>data <span class="sc">%&gt;%</span></span>
-<span id="cb465-2"><a href="solutions.html#cb465-2" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> country, <span class="at">fill =</span> employment)) <span class="sc">+</span></span>
-<span id="cb465-3"><a href="solutions.html#cb465-3" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="fu">position_dodge</span>(<span class="at">preserve =</span> <span class="st">&quot;single&quot;</span>)) <span class="sc">+</span></span>
-<span id="cb465-4"><a href="solutions.html#cb465-4" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
-<span id="cb465-5"><a href="solutions.html#cb465-5" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Country&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Count&quot;</span>, <span class="at">fill =</span> <span class="st">&quot;Employment Type&quot;</span>, <span class="at">title =</span> <span class="st">&quot;Employment Types by Country&quot;</span>)</span></code></pre></div>
-<p><img src="Intro-to-R_files/figure-html/unnamed-chunk-258-1.png" alt="" width="672" /></p>
+<div class="sourceCode" id="cb468"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb468-1"><a href="solutions.html#cb468-1" tabindex="-1"></a>data <span class="sc">%&gt;%</span></span>
+<span id="cb468-2"><a href="solutions.html#cb468-2" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> country, <span class="at">fill =</span> employment)) <span class="sc">+</span></span>
+<span id="cb468-3"><a href="solutions.html#cb468-3" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="fu">position_dodge</span>(<span class="at">preserve =</span> <span class="st">&quot;single&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb468-4"><a href="solutions.html#cb468-4" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb468-5"><a href="solutions.html#cb468-5" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Country&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Count&quot;</span>, <span class="at">fill =</span> <span class="st">&quot;Employment Type&quot;</span>, <span class="at">title =</span> <span class="st">&quot;Employment Types by Country&quot;</span>)</span></code></pre></div>
+<p><img src="Intro-to-R_files/figure-html/unnamed-chunk-261-1.png" alt="" width="672" /></p>
 </div>
 <div id="task-5-7" class="section level3 unnumbered hasAnchor">
 <h3>Task 5<a href="solutions.html#task-5-7" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -1873,39 +1874,39 @@ to create a new variable called <em>experience_level</em> and save it in your
 original data set to be used for data visualization in the next,
 separate step:</p>
 <p><em>Solution:</em></p>
-<div class="sourceCode" id="cb466"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb466-1"><a href="solutions.html#cb466-1" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
-<span id="cb466-2"><a href="solutions.html#cb466-2" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">experience_level =</span> <span class="fu">case_when</span>(</span>
-<span id="cb466-3"><a href="solutions.html#cb466-3" tabindex="-1"></a>    work_experience <span class="sc">&lt;=</span> <span class="dv">10</span> <span class="sc">~</span> <span class="st">&quot;Junior&quot;</span>,</span>
-<span id="cb466-4"><a href="solutions.html#cb466-4" tabindex="-1"></a>    work_experience <span class="sc">&gt;</span> <span class="dv">10</span> <span class="sc">&amp;</span> work_experience <span class="sc">&lt;=</span> <span class="dv">20</span> <span class="sc">~</span> <span class="st">&quot;Mid-Level&quot;</span>,</span>
-<span id="cb466-5"><a href="solutions.html#cb466-5" tabindex="-1"></a>    work_experience <span class="sc">&gt;</span> <span class="dv">20</span> <span class="sc">~</span> <span class="st">&quot;Senior&quot;</span></span>
-<span id="cb466-6"><a href="solutions.html#cb466-6" tabindex="-1"></a>  ))</span>
-<span id="cb466-7"><a href="solutions.html#cb466-7" tabindex="-1"></a></span>
-<span id="cb466-8"><a href="solutions.html#cb466-8" tabindex="-1"></a>data <span class="sc">%&gt;%</span></span>
-<span id="cb466-9"><a href="solutions.html#cb466-9" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> country, <span class="at">fill =</span> employment)) <span class="sc">+</span></span>
-<span id="cb466-10"><a href="solutions.html#cb466-10" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="st">&quot;dodge&quot;</span>) <span class="sc">+</span></span>
-<span id="cb466-11"><a href="solutions.html#cb466-11" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
-<span id="cb466-12"><a href="solutions.html#cb466-12" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Country&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Count&quot;</span>, <span class="at">fill =</span> <span class="st">&quot;Employment Type&quot;</span>, <span class="at">title =</span> <span class="st">&quot;Employment Types by Country and Level of Experience&quot;</span>) <span class="sc">+</span></span>
-<span id="cb466-13"><a href="solutions.html#cb466-13" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>experience_level) <span class="sc">+</span></span>
-<span id="cb466-14"><a href="solutions.html#cb466-14" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="dv">1</span>))</span></code></pre></div>
-<p><img src="Intro-to-R_files/figure-html/unnamed-chunk-259-1.png" alt="" width="672" /></p>
+<div class="sourceCode" id="cb469"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb469-1"><a href="solutions.html#cb469-1" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
+<span id="cb469-2"><a href="solutions.html#cb469-2" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">experience_level =</span> <span class="fu">case_when</span>(</span>
+<span id="cb469-3"><a href="solutions.html#cb469-3" tabindex="-1"></a>    work_experience <span class="sc">&lt;=</span> <span class="dv">10</span> <span class="sc">~</span> <span class="st">&quot;Junior&quot;</span>,</span>
+<span id="cb469-4"><a href="solutions.html#cb469-4" tabindex="-1"></a>    work_experience <span class="sc">&gt;</span> <span class="dv">10</span> <span class="sc">&amp;</span> work_experience <span class="sc">&lt;=</span> <span class="dv">20</span> <span class="sc">~</span> <span class="st">&quot;Mid-Level&quot;</span>,</span>
+<span id="cb469-5"><a href="solutions.html#cb469-5" tabindex="-1"></a>    work_experience <span class="sc">&gt;</span> <span class="dv">20</span> <span class="sc">~</span> <span class="st">&quot;Senior&quot;</span></span>
+<span id="cb469-6"><a href="solutions.html#cb469-6" tabindex="-1"></a>  ))</span>
+<span id="cb469-7"><a href="solutions.html#cb469-7" tabindex="-1"></a></span>
+<span id="cb469-8"><a href="solutions.html#cb469-8" tabindex="-1"></a>data <span class="sc">%&gt;%</span></span>
+<span id="cb469-9"><a href="solutions.html#cb469-9" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> country, <span class="at">fill =</span> employment)) <span class="sc">+</span></span>
+<span id="cb469-10"><a href="solutions.html#cb469-10" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="st">&quot;dodge&quot;</span>) <span class="sc">+</span></span>
+<span id="cb469-11"><a href="solutions.html#cb469-11" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb469-12"><a href="solutions.html#cb469-12" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Country&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Count&quot;</span>, <span class="at">fill =</span> <span class="st">&quot;Employment Type&quot;</span>, <span class="at">title =</span> <span class="st">&quot;Employment Types by Country and Level of Experience&quot;</span>) <span class="sc">+</span></span>
+<span id="cb469-13"><a href="solutions.html#cb469-13" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>experience_level) <span class="sc">+</span></span>
+<span id="cb469-14"><a href="solutions.html#cb469-14" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="dv">1</span>))</span></code></pre></div>
+<p><img src="Intro-to-R_files/figure-html/unnamed-chunk-262-1.png" alt="" width="672" /></p>
 <p>The more elegant solution is to perform your data management in one go
 without saving the variable experience_level back into your original
 data set. Using this approach will help declutter your data because you
 won’t need to create and save a new variable that is only required for a
 single visualization:</p>
-<div class="sourceCode" id="cb467"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb467-1"><a href="solutions.html#cb467-1" tabindex="-1"></a>data <span class="sc">%&gt;%</span></span>
-<span id="cb467-2"><a href="solutions.html#cb467-2" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">experience_level =</span> <span class="fu">case_when</span>(</span>
-<span id="cb467-3"><a href="solutions.html#cb467-3" tabindex="-1"></a>    work_experience <span class="sc">&lt;=</span> <span class="dv">10</span> <span class="sc">~</span> <span class="st">&quot;Junior&quot;</span>,</span>
-<span id="cb467-4"><a href="solutions.html#cb467-4" tabindex="-1"></a>    work_experience <span class="sc">&gt;</span> <span class="dv">10</span> <span class="sc">&amp;</span> work_experience <span class="sc">&lt;=</span> <span class="dv">20</span> <span class="sc">~</span> <span class="st">&quot;Mid-Level&quot;</span>,</span>
-<span id="cb467-5"><a href="solutions.html#cb467-5" tabindex="-1"></a>    work_experience <span class="sc">&gt;</span> <span class="dv">20</span> <span class="sc">~</span> <span class="st">&quot;Senior&quot;</span></span>
-<span id="cb467-6"><a href="solutions.html#cb467-6" tabindex="-1"></a>  )) <span class="sc">%&gt;%</span></span>
-<span id="cb467-7"><a href="solutions.html#cb467-7" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> country, <span class="at">fill =</span> employment)) <span class="sc">+</span></span>
-<span id="cb467-8"><a href="solutions.html#cb467-8" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="st">&quot;dodge&quot;</span>) <span class="sc">+</span></span>
-<span id="cb467-9"><a href="solutions.html#cb467-9" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
-<span id="cb467-10"><a href="solutions.html#cb467-10" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Country&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Count&quot;</span>, <span class="at">fill =</span> <span class="st">&quot;Employment Type&quot;</span>, <span class="at">title =</span> <span class="st">&quot;Employment Types by Country and Level of Experience&quot;</span>) <span class="sc">+</span></span>
-<span id="cb467-11"><a href="solutions.html#cb467-11" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>experience_level) <span class="sc">+</span></span>
-<span id="cb467-12"><a href="solutions.html#cb467-12" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="dv">1</span>))</span></code></pre></div>
-<p><img src="Intro-to-R_files/figure-html/unnamed-chunk-260-1.png" alt="" width="672" /></p>
+<div class="sourceCode" id="cb470"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb470-1"><a href="solutions.html#cb470-1" tabindex="-1"></a>data <span class="sc">%&gt;%</span></span>
+<span id="cb470-2"><a href="solutions.html#cb470-2" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">experience_level =</span> <span class="fu">case_when</span>(</span>
+<span id="cb470-3"><a href="solutions.html#cb470-3" tabindex="-1"></a>    work_experience <span class="sc">&lt;=</span> <span class="dv">10</span> <span class="sc">~</span> <span class="st">&quot;Junior&quot;</span>,</span>
+<span id="cb470-4"><a href="solutions.html#cb470-4" tabindex="-1"></a>    work_experience <span class="sc">&gt;</span> <span class="dv">10</span> <span class="sc">&amp;</span> work_experience <span class="sc">&lt;=</span> <span class="dv">20</span> <span class="sc">~</span> <span class="st">&quot;Mid-Level&quot;</span>,</span>
+<span id="cb470-5"><a href="solutions.html#cb470-5" tabindex="-1"></a>    work_experience <span class="sc">&gt;</span> <span class="dv">20</span> <span class="sc">~</span> <span class="st">&quot;Senior&quot;</span></span>
+<span id="cb470-6"><a href="solutions.html#cb470-6" tabindex="-1"></a>  )) <span class="sc">%&gt;%</span></span>
+<span id="cb470-7"><a href="solutions.html#cb470-7" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> country, <span class="at">fill =</span> employment)) <span class="sc">+</span></span>
+<span id="cb470-8"><a href="solutions.html#cb470-8" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="st">&quot;dodge&quot;</span>) <span class="sc">+</span></span>
+<span id="cb470-9"><a href="solutions.html#cb470-9" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb470-10"><a href="solutions.html#cb470-10" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Country&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Count&quot;</span>, <span class="at">fill =</span> <span class="st">&quot;Employment Type&quot;</span>, <span class="at">title =</span> <span class="st">&quot;Employment Types by Country and Level of Experience&quot;</span>) <span class="sc">+</span></span>
+<span id="cb470-11"><a href="solutions.html#cb470-11" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>experience_level) <span class="sc">+</span></span>
+<span id="cb470-12"><a href="solutions.html#cb470-12" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="dv">1</span>))</span></code></pre></div>
+<p><img src="Intro-to-R_files/figure-html/unnamed-chunk-263-1.png" alt="" width="672" /></p>
 
 </div>
 </div>
